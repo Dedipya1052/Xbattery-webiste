@@ -1,0 +1,28 @@
+.videoContainer {
+    position: relative;
+    overflow: hidden;
+}
+
+.video {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.gradientOverlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(rgba(0, 0, 0, 0) 0%,
+            rgba(0, 0, 0, 0.5) 100%);
+    transition: opacity 0.5s ease-in-out;
+    opacity: 0;
+    /* Hidden by default */
+}
+
+.overlayVisible {
+    opacity: 1;
+    /* Show the overlay */
+}

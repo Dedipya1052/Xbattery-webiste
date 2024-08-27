@@ -1,0 +1,129 @@
+
+.wrapper{
+  width: 90%;
+  margin: 50px auto;
+}
+.wrapper h3{
+text-align: center;
+font-size: xx-large;
+margin-bottom: 2rem;
+}
+
+.card_grid {
+display: grid;
+grid-template-columns: repeat(3, 1fr); 
+row-gap: 4.5rem;
+column-gap: 2rem;
+justify-content: center; 
+padding: 1.25rem; 
+}
+@media (min-width:650px) and (max-width:1124px) {
+.wrapper{
+  width: 90%;
+}
+.card_grid {
+  grid-template-columns: repeat(2, 1fr); 
+}
+
+}
+@media (max-width:650px) {
+.wrapper{
+  width: 90%;
+}
+.card_grid {
+  grid-template-columns: repeat(1, 1fr); 
+}
+}
+
+/* category dropdown styles */
+
+.selectContainer{
+padding-bottom: 5px;
+font-family: 'headingFont';
+display: flex;
+justify-content: flex-end;
+position: relative;
+width: 250px;
+/* background: red; */
+}
+
+.selectContainer select{
+appearance: none;
+-webkit-appearance: none;
+font-size: 1.15rem;
+width: 100%;
+padding: 10px;
+background-color: #fff;
+border: 1px solid #caced1;
+border-radius: 0.25rem;
+color: #000;
+cursor: pointer;
+}
+
+.selectContainer::before,
+.selectContainer::after {
+--size: 0.3rem;
+content: "";
+position: absolute;
+right: 1rem;
+pointer-events: none;
+}
+
+.selectContainer::before {
+border-left: var(--size) solid transparent;
+border-right: var(--size) solid transparent;
+border-bottom: var(--size) solid black;
+top: 40%;
+}
+
+.selectContainer::after {
+border-left: var(--size) solid transparent;
+border-right: var(--size) solid transparent;
+border-top: var(--size) solid black;
+top: 55%;
+}
+
+.utilsContainer{
+display: flex;
+justify-content: space-between;
+margin: 1.5rem auto;
+}
+
+/* search */
+.searchInput {
+padding: 8px;
+border-radius: 5px;
+border: 1px solid #b6b6b6;
+box-shadow: 0 0px 4px rgba(0, 0, 0, 0.1);
+font-size: 13px;
+outline: none;
+color: #333;
+background-color: #f8f8f8;
+transition: all 0.3s ease-in-out;
+width: 250px; 
+}
+
+.searchInput:focus ,
+.searchInput:hover {
+border: 1px solid #495968;
+box-shadow: 0 0 15px rgba(6, 6, 6, 0.1);
+scale: 1.01;
+}
+@media (max-width:650px) {
+.utilsContainer{
+ flex-direction: column;
+ gap: 10px;
+ align-items: center;
+}
+}
+
+
+
+
+
+
+/* new thing */
+.head1 {
+  font-family: 'Open Sans', sans-serif;
+}
+
