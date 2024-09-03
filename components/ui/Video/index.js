@@ -1,18 +1,21 @@
 import { useRef, useEffect, useState } from 'react';
-import styles from "./video.module.css"
+import styles from "./video.module.css";
 
 const VideoComponent = () => {
   const videoRef = useRef(null);
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
+    // Store the current ref value in a local variable
+    const currentVideoRef = videoRef.current; 
+
     const handlePlayPause = (entries) => {
       const [entry] = entries;
       if (entry.isIntersecting) {
-        videoRef.current.play();
+        currentVideoRef.play();
         setIsVisible(true); // Show gradient overlay when video is in view
       } else {
-        videoRef.current.pause();
+        currentVideoRef.pause();
         setIsVisible(false); // Hide gradient overlay when video is out of view
       }
     };
@@ -22,42 +25,35 @@ const VideoComponent = () => {
       threshold: 0.5, // 50% in view 
     });
 
-    if (videoRef.current) {
-      observer.observe(videoRef.current);
+    if (currentVideoRef) {
+      observer.observe(currentVideoRef);
     }
 
     return () => {
-      if (videoRef.current) {
-        observer.unobserve(videoRef.current);
+      if (currentVideoRef) {
+        observer.unobserve(currentVideoRef);
       }
     };
-  }, []);
-  return (
+  }, []); // Dependencies remain empty since we're only using a stable ref value
 
-     <div className={styles.videoContainer}>
-      <video width="100%"
-    // controls
-    autoPlay
-    loop
-    muted>
-      <source src="/videos/video1.mp4" type="video/mp4" />
-      Your browser does not support the video tag.
-    </video>
-      {/* <video
+  return (
+    <div className={styles.videoContainer}>
+      <video
         ref={videoRef}
-        className={styles['video']}
+        width="100%"
         autoPlay
         loop
         muted
       >
-        <source src="path_to_your_video.mp4" type="video/mp4" />
+        <source src="/videos/video1.mp4" type="video/mp4" />
         Your browser does not support the video tag.
-      </video> */}
+      </video>
       <div
-        className={`${styles['gradientOverlay']} ${isVisible ? styles['overlayVisible'] : ''}`}
+        className={`${styles.gradientOverlay} ${isVisible ? styles.overlayVisible : ''}`}
       ></div>
     </div>
   );
 };
 
 export default VideoComponent;
+
