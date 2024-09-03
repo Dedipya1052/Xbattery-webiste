@@ -73,12 +73,12 @@ export default function Blogs({ blogs }) {
         <meta property="og:image" content="/images/thumbnail.webp" />
       </Head>
       <div className="w-[100%]">
-        <div className={`${styles.head1} border-b-[1px] border-[#20c420]`}>
+        {/* <div className={`${styles.head1} border-b-[1px] border-[#aeaeae]`}>
           <div className=" w-[96%] mx-auto pt-[1rem] pb-[1rem] text-[2.1rem] font-[520]">
             Blog
           </div>
-        </div>
-        <div className=" mt-[5rem] mb-[5rem] flex flex-col justify-center items-center gap-[1rem]">
+        </div> */}
+        <div className=" mt-[3rem] mb-[5rem] flex flex-col justify-center items-center gap-[1rem]">
           <div className={`text-[3.1rem] font-semibold ${styles.head1}`}>
           Explore the blogs
           </div>

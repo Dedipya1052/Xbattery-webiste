@@ -1,9 +1,10 @@
-import Hero from '@/components/ui/Hero'
+
+import LearnComp from '@/components/ui/LearnComponent'
 import React from 'react'
 
  const Learn = () => {
   return (
-    <Hero/>
+    <LearnComp/>
   )
 }
 

@@ -20,6 +20,149 @@ import { FaFacebook } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
 import { useEffect, useState } from "react";
 
+const energyStorage = [
+  { name: "ES Systems", link: "/learn/what-are-energy-storage-systems" },
+  {
+    name: "ES Technologies",
+    link: "/learn/what-are-energy-storage-technologies",
+  },
+  {
+    name: "Digital twin for ES",
+    link: "/learn/digital-twin-technology-for-energy-storage",
+  },
+  {
+    name: "Battery Management Systems (BMS)",
+    link: "/learn/what-are-battery-management-systems",
+  },
+  { name: "Future Trends", link: "/learn/future-trends-in-energy-storage" },
+];
+const renewableEnergy = [
+  {
+    name: "Hydro and tidal power",
+    link: "/learn/what-are-energy-storage-systems",
+  },
+  { name: "Fuel cells", link: "/learn/what-are-energy-storage-technologies" },
+  {
+    name: "Biomass power",
+    link: "/learn/digital-twin-technology-for-energy-storage",
+  },
+  {
+    name: "Carbon Footprint",
+    link: "/learn/what-are-battery-management-systems",
+  },
+  { name: "Biodiversity", link: "/learn/future-trends-in-energy-storage" },
+];
+const electricity = [
+  { name: "Power systems", link: "/learn/what-are-energy-storage-systems" },
+  {
+    name: "Power consumption",
+    link: "/learn/what-are-energy-storage-technologies",
+  },
+  {
+    name: "Renewable Electricity",
+    link: "/learn/digital-twin-technology-for-energy-storage",
+  },
+  {
+    name: "Electricity in Everyday Life",
+    link: "/learn/what-are-battery-management-systems",
+  },
+  {
+    name: "Load Balancing in Power Grids",
+    link: "/learn/future-trends-in-energy-storage",
+  },
+];
+const electricVehicles = [
+  {
+    name: "Charging Infrastructure",
+    link: "/learn/what-are-energy-storage-systems",
+  },
+  {
+    name: "EV Maintenance",
+    link: "/learn/what-are-energy-storage-technologies",
+  },
+  {
+    name: "EV Market and Trends",
+    link: "/learn/digital-twin-technology-for-energy-storage",
+  },
+  {
+    name: "EV Lifetime Costs",
+    link: "/learn/what-are-battery-management-systems",
+  },
+  {
+    name: "Battery Swapping Technology",
+    link: "/learn/future-trends-in-energy-storage",
+  },
+];
+const batteries = [
+  { name: "Battery economics", link: "/learn/what-are-energy-storage-systems" },
+  {
+    name: "Battery Applications",
+    link: "/learn/what-are-energy-storage-technologies",
+  },
+  {
+    name: "Battery charge and discharge",
+    link: "/learn/digital-twin-technology-for-energy-storage",
+  },
+  {
+    name: "Battery Software & Analytics",
+    link: "/learn/what-are-battery-management-systems",
+  },
+  { name: "Battery & IoT", link: "/learn/future-trends-in-energy-storage" },
+];
+const grid = [
+  { name: "Grid Technologies", link: "/learn/what-are-energy-storage-systems" },
+  {
+    name: "Grid balancing",
+    link: "/learn/what-are-energy-storage-technologies",
+  },
+  {
+    name: "Smart Meters",
+    link: "/learn/digital-twin-technology-for-energy-storage",
+  },
+  {
+    name: "Sensors and Automation",
+    link: "/learn/what-are-battery-management-systems",
+  },
+  { name: "Grid EMS", link: "/learn/future-trends-in-energy-storage" },
+];
+const allBlogs = [
+  {
+    name: "Energy storage",
+    link: "/learn/energy-storage",
+  },
+  ...energyStorage,
+  {
+    name: "Renewable energy",
+    link: "/learn/renewable-energy",
+  },
+  ...renewableEnergy,
+  {
+    name: "Electricity",
+    link: "/learn/electricity",
+  },
+  ...electricity,
+  {
+    name: "Electric Vehicles",
+    link: "/learn/electric-vehicles",
+  },
+  ...electricVehicles,
+  {
+    name: "Batteries",
+    link: "/learn/batteries",
+  },
+  ...batteries,
+  {
+    name: "Grid",
+    link: "/learn/grid",
+  },
+  ...grid,
+];
+
+// Function to find the index of the current blog
+const findBlogIndex = (slug) => {
+  return allBlogs.findIndex((blog) => blog.link.includes(slug));
+};
+
 // * fetch blogs from contentful CMS
 async function fetchBlogs() {
   const client = createClient({
@@ -138,7 +281,7 @@ export async function getStaticProps({ params }) {
         author,
         blogContent,
         slug,
-        animation,
+        animation: animation ? animation : null,
         faqs: faqs ? faqs : null,
       },
       // blogs:filteredBlogs,
@@ -170,6 +313,15 @@ export default function BlogPage({ blog }) {
   useEffect(() => {
     setIsMounted(true);
   }, []);
+
+  const currentBlogIndex = findBlogIndex(slug);
+
+  // Determine the next and previous blogs
+  const prevBlog = currentBlogIndex > 0 ? allBlogs[currentBlogIndex - 1] : null;
+  const nextBlog =
+    currentBlogIndex < allBlogs.length - 1
+      ? allBlogs[currentBlogIndex + 1]
+      : null;
 
   useEffect(() => {
     if (animation) {
@@ -279,18 +431,45 @@ export default function BlogPage({ blog }) {
             {documentToReactComponents(blogContent, renderOption)}
           </article>
         </div>
-        {isMounted && (
+        {isMounted && animation && (
           <div className="mt-[4rem] flex justify-center items-center w-[100%]  mb-[2rem]">
             <div dangerouslySetInnerHTML={{ __html: contentMatch }} />
           </div>
         )}
+        {/* Next and Previous buttons */}
+        <div
+          className={`flex ${(prevBlog && nextBlog)? "justify-between" : "justify-center"} mt-[6rem] `}
+        >
+          {prevBlog && (
+            <Button
+              onClick={() => router.push(prevBlog.link)}
+              bg="white"
+              color="black"
+              border="1px solid #000"
+              _hover={{   color: "rgb(42, 193, 42)" }}
+            >
+              Previous: {prevBlog.name}
+            </Button>
+          )}
+          {nextBlog && (
+            <Button
+              onClick={() => router.push(nextBlog.link)}
+              bg="white"
+              color="black"
+              border="1px solid #000"
+              _hover={{  color: "rgb(42, 193, 42)" }}
+            >
+              Next: {nextBlog.name}
+            </Button>
+          )}
+        </div>
       </div>
       {/* <div className="bg-black h-[0.7px] w-[90%] mx-auto mt-[5rem] mb-[6rem]"></div> */}
       {/* <TopBlogs blogs={blogs} slug={slug}/> */}
       {/* <TopBlogs blogs={blogs} slug={slug}/> */}
 
       <div
-        className={`w-[100%] mt-[8rem] mx-auto ${styles.head1} flex xl:flex-row  justify-between border-t-[0.8px] border-black`}
+        className={`w-[100%] mt-[-2rem] mx-auto ${styles.head1} flex xl:flex-row  justify-between border-t-[0.8px] border-black`}
       >
         <div className="w-[65%] border-r-[0.8px] border-black">
           <div className=" text-[1.2rem] pb-[0.8rem] pl-[2rem]  pt-[1rem] border-b-[0.8px] border-black font-semibold">
@@ -303,66 +482,29 @@ export default function BlogPage({ blog }) {
                   <h2
                     className={`text-[1rem] font-semibold mb-2 ${styles.head1} leading-[45px] hover:text-[#27b633]`}
                   >
-                    <Link href="learn/what-is-relative-strength-index">
+                    <Link href="/learn/energy-storage">
                       {" "}
                       <span className="hover:text-[#27b633] hover:no-underline">
-                      Energy Storage
+                        Energy Storage
                       </span>
                     </Link>
                   </h2>
                 </div>
                 <div className=" flex flex-col justify-start mt-[-0.5rem]">
                   <ul className=" pl-[0.4rem] flex flex-col gap-1">
-                    <li
-                      className={`cursor-pointer text-[0.9rem] font-semibold ${styles.head1}`}
-                    >
-                      <Link
-                        href="learn/what-is-relative-strength-index"
-                        className=" hover:text-[#27b633] opacity-[70%]"
+                    {energyStorage.map((item, index) => (
+                      <li
+                        key={index}
+                        className={`cursor-pointer text-[0.9rem] font-semibold ${styles.head1}`}
                       >
-                        Sub topic 1
-                      </Link>
-                    </li>
-                    <li
-                      className={`cursor-pointer text-[0.9rem] font-semibold ${styles.head1}`}
-                    >
-                      <Link
-                        href="learn/what-is-relative-strength-index"
-                        className=" hover:text-[#27b633] opacity-[70%]"
-                      >
-                        Sub topic 2
-                      </Link>
-                    </li>
-                    <li
-                      className={`cursor-pointer text-[0.9rem] font-semibold ${styles.head1}`}
-                    >
-                      <Link
-                        href="learn/what-is-relative-strength-index"
-                        className=" hover:text-[#27b633] opacity-[70%]"
-                      >
-                        Sub topic 3
-                      </Link>
-                    </li>
-                    <li
-                      className={`cursor-pointer text-[0.9rem] font-semibold ${styles.head1}`}
-                    >
-                      <Link
-                        href="learn/what-is-relative-strength-index"
-                        className=" hover:text-[#27b633] opacity-[70%]"
-                      >
-                        Sub topic 4
-                      </Link>
-                    </li>
-                    <li
-                      className={`cursor-pointer text-[0.9rem] font-semibold ${styles.head1}`}
-                    >
-                      <Link
-                        href="learn/what-is-relative-strength-index"
-                        className=" hover:text-[#27b633] opacity-[70%]"
-                      >
-                        Sub topic 5
-                      </Link>
-                    </li>
+                        <Link
+                          href={item.link}
+                          className="hover:text-[#27b633] opacity-[70%]"
+                        >
+                          {item.name}
+                        </Link>
+                      </li>
+                    ))}
                   </ul>
                 </div>
               </div>
@@ -372,66 +514,29 @@ export default function BlogPage({ blog }) {
                   <h2
                     className={`text-[1rem] font-semibold mb-2 ${styles.head1} leading-[45px] hover:text-[#27b633]`}
                   >
-                    <Link href="learn/what-is-relative-strength-index">
+                    <Link href="learn/renewable-energy">
                       {" "}
                       <span className="hover:text-[#27b633] hover:no-underline">
-                      Renewable Energy
+                        Renewable Energy
                       </span>
                     </Link>
                   </h2>
                 </div>
                 <div className=" flex flex-col justify-start mt-[-0.5rem]">
                   <ul className=" pl-[0.4rem] flex flex-col gap-1">
-                    <li
-                      className={`cursor-pointer text-[0.9rem] font-semibold ${styles.head1}`}
-                    >
-                      <Link
-                        href="learn/what-is-relative-strength-index"
-                        className=" hover:text-[#27b633] opacity-[70%]"
+                    {renewableEnergy.map((item, index) => (
+                      <li
+                        key={index}
+                        className={`cursor-pointer text-[0.9rem] font-semibold ${styles.head1}`}
                       >
-                        Hydro and tidal power
-                      </Link>
-                    </li>
-                    <li
-                      className={`cursor-pointer text-[0.9rem] font-semibold ${styles.head1}`}
-                    >
-                      <Link
-                        href="learn/what-is-relative-strength-index"
-                        className=" hover:text-[#27b633] opacity-[70%]"
-                      >
-                       Fuel cells
-                      </Link>
-                    </li>
-                    <li
-                      className={`cursor-pointer text-[0.9rem] font-semibold ${styles.head1}`}
-                    >
-                      <Link
-                        href="learn/what-is-relative-strength-index"
-                        className=" hover:text-[#27b633] opacity-[70%]"
-                      >
-                        Biomass power
-                      </Link>
-                    </li>
-                    <li
-                      className={`cursor-pointer text-[0.9rem] font-semibold ${styles.head1}`}
-                    >
-                      <Link
-                        href="learn/what-is-relative-strength-index"
-                        className=" hover:text-[#27b633] opacity-[70%]"
-                      >
-                       Carbon Footprint
-                      </Link>
-                    </li>
-                    <li
-                      className={`cursor-pointer text-[0.9rem] font-semibold ${styles.head1}`}
-                    >
-                      <Link
-                        href="learn/what-is-relative-strength-index"
-                        className=" hover:text-[#27b633] opacity-[70%]"
-                      >
-                       Biodiversity
-                      </Link>
-                    </li>
+                        <Link
+                          href={item.link}
+                          className="hover:text-[#27b633] opacity-[70%]"
+                        >
+                          {item.name}
+                        </Link>
+                      </li>
+                    ))}
                   </ul>
                 </div>
               </div>
@@ -441,66 +546,29 @@ export default function BlogPage({ blog }) {
                   <h2
                     className={`text-[1rem] font-semibold mb-2 ${styles.head1} leading-[45px] hover:text-[#27b633]`}
                   >
-                    <Link href="learn/what-is-relative-strength-index">
+                    <Link href="learn/electricity">
                       {" "}
                       <span className="hover:text-[#27b633] hover:no-underline">
-                      Electricity
+                        Electricity
                       </span>
                     </Link>
                   </h2>
                 </div>
                 <div className=" flex flex-col justify-start mt-[-0.5rem]">
                   <ul className=" pl-[0.4rem] flex flex-col gap-1">
-                    <li
-                      className={`cursor-pointer text-[0.9rem] font-semibold ${styles.head1}`}
-                    >
-                      <Link
-                        href="learn/what-is-relative-strength-index"
-                        className=" hover:text-[#27b633] opacity-[70%]"
+                    {electricity.map((item, index) => (
+                      <li
+                        key={index}
+                        className={`cursor-pointer text-[0.9rem] font-semibold ${styles.head1}`}
                       >
-                        Sub topic 1
-                      </Link>
-                    </li>
-                    <li
-                      className={`cursor-pointer text-[0.9rem] font-semibold ${styles.head1}`}
-                    >
-                      <Link
-                        href="learn/what-is-relative-strength-index"
-                        className=" hover:text-[#27b633] opacity-[70%]"
-                      >
-                        Sub topic 2
-                      </Link>
-                    </li>
-                    <li
-                      className={`cursor-pointer text-[0.9rem] font-semibold ${styles.head1}`}
-                    >
-                      <Link
-                        href="learn/what-is-relative-strength-index"
-                        className=" hover:text-[#27b633] opacity-[70%]"
-                      >
-                        Sub topic 3
-                      </Link>
-                    </li>
-                    <li
-                      className={`cursor-pointer text-[0.9rem] font-semibold ${styles.head1}`}
-                    >
-                      <Link
-                        href="learn/what-is-relative-strength-index"
-                        className=" hover:text-[#27b633] opacity-[70%]"
-                      >
-                        Sub topic 4
-                      </Link>
-                    </li>
-                    <li
-                      className={`cursor-pointer text-[0.9rem] font-semibold ${styles.head1}`}
-                    >
-                      <Link
-                        href="learn/what-is-relative-strength-index"
-                        className=" hover:text-[#27b633] opacity-[70%]"
-                      >
-                        Sub topic 5
-                      </Link>
-                    </li>
+                        <Link
+                          href={item.link}
+                          className="hover:text-[#27b633] opacity-[70%]"
+                        >
+                          {item.name}
+                        </Link>
+                      </li>
+                    ))}
                   </ul>
                 </div>
               </div>
@@ -510,66 +578,29 @@ export default function BlogPage({ blog }) {
                   <h2
                     className={`text-[1rem] font-semibold mb-2 ${styles.head1} leading-[45px] hover:text-[#27b633]`}
                   >
-                    <Link href="learn/what-is-relative-strength-index">
+                    <Link href="/learn/electric-vehicles">
                       {" "}
                       <span className="hover:text-[#27b633] hover:no-underline">
-                      Electric Vehicles (EV's)
+                        Electric Vehicles (EV's)
                       </span>
                     </Link>
                   </h2>
                 </div>
                 <div className=" flex flex-col justify-start mt-[-0.5rem]">
                   <ul className=" pl-[0.4rem] flex flex-col gap-1">
-                    <li
-                      className={`cursor-pointer text-[0.9rem] font-semibold ${styles.head1}`}
-                    >
-                      <Link
-                        href="learn/what-is-relative-strength-index"
-                        className=" hover:text-[#27b633] opacity-[70%]"
+                    {electricVehicles.map((item, index) => (
+                      <li
+                        key={index}
+                        className={`cursor-pointer text-[0.9rem] font-semibold ${styles.head1}`}
                       >
-                       Charging Infrastructure
-                      </Link>
-                    </li>
-                    <li
-                      className={`cursor-pointer text-[0.9rem] font-semibold ${styles.head1}`}
-                    >
-                      <Link
-                        href="learn/what-is-relative-strength-index"
-                        className=" hover:text-[#27b633] opacity-[70%]"
-                      >
-                       EV Maintenance
-                      </Link>
-                    </li>
-                    <li
-                      className={`cursor-pointer text-[0.9rem] font-semibold ${styles.head1}`}
-                    >
-                      <Link
-                        href="learn/what-is-relative-strength-index"
-                        className=" hover:text-[#27b633] opacity-[70%]"
-                      >
-                       EV Market and Trends
-                      </Link>
-                    </li>
-                    <li
-                      className={`cursor-pointer text-[0.9rem] font-semibold ${styles.head1}`}
-                    >
-                      <Link
-                        href="learn/what-is-relative-strength-index"
-                        className=" hover:text-[#27b633] opacity-[70%]"
-                      >
-                      EV Lifetime Costs
-                      </Link>
-                    </li>
-                    <li
-                      className={`cursor-pointer text-[0.9rem] font-semibold ${styles.head1}`}
-                    >
-                      <Link
-                        href="learn/what-is-relative-strength-index"
-                        className=" hover:text-[#27b633] opacity-[70%]"
-                      >
-                      Battery Swapping Technology
-                      </Link>
-                    </li>
+                        <Link
+                          href={item.link}
+                          className="hover:text-[#27b633] opacity-[70%]"
+                        >
+                          {item.name}
+                        </Link>
+                      </li>
+                    ))}
                   </ul>
                 </div>
               </div>
@@ -579,66 +610,29 @@ export default function BlogPage({ blog }) {
                   <h2
                     className={`text-[1rem] font-semibold mb-2 ${styles.head1} leading-[45px] hover:text-[#27b633]`}
                   >
-                    <Link href="learn/what-is-relative-strength-index">
+                    <Link href="learn/batteries">
                       {" "}
                       <span className="hover:text-[#27b633] hover:no-underline">
-                      Batteries
+                        Batteries
                       </span>
                     </Link>
                   </h2>
                 </div>
                 <div className=" flex flex-col justify-start mt-[-0.5rem]">
                   <ul className=" pl-[0.4rem] flex flex-col gap-1">
-                    <li
-                      className={`cursor-pointer text-[0.9rem] font-semibold ${styles.head1}`}
-                    >
-                      <Link
-                        href="learn/what-is-relative-strength-index"
-                        className=" hover:text-[#27b633] opacity-[70%]"
+                    {batteries.map((item, index) => (
+                      <li
+                        key={index}
+                        className={`cursor-pointer text-[0.9rem] font-semibold ${styles.head1}`}
                       >
-                       Battery economics
-                      </Link>
-                    </li>
-                    <li
-                      className={`cursor-pointer text-[0.9rem] font-semibold ${styles.head1}`}
-                    >
-                      <Link
-                        href="learn/what-is-relative-strength-index"
-                        className=" hover:text-[#27b633] opacity-[70%]"
-                      >
-                       Battery Applications
-                      </Link>
-                    </li>
-                    <li
-                      className={`cursor-pointer text-[0.9rem] font-semibold ${styles.head1}`}
-                    >
-                      <Link
-                        href="learn/what-is-relative-strength-index"
-                        className=" hover:text-[#27b633] opacity-[70%]"
-                      >
-                       Battery charge and discharge
-                      </Link>
-                    </li>
-                    <li
-                      className={`cursor-pointer text-[0.9rem] font-semibold ${styles.head1}`}
-                    >
-                      <Link
-                        href="learn/what-is-relative-strength-index"
-                        className=" hover:text-[#27b633] opacity-[70%]"
-                      >
-                       Battery Software & Analytics
-                      </Link>
-                    </li>
-                    <li
-                      className={`cursor-pointer text-[0.9rem] font-semibold ${styles.head1}`}
-                    >
-                      <Link
-                        href="learn/what-is-relative-strength-index"
-                        className=" hover:text-[#27b633] opacity-[70%]"
-                      >
-                       Battery & IoT
-                      </Link>
-                    </li>
+                        <Link
+                          href={item.link}
+                          className="hover:text-[#27b633] opacity-[70%]"
+                        >
+                          {item.name}
+                        </Link>
+                      </li>
+                    ))}
                   </ul>
                 </div>
               </div>
@@ -648,66 +642,29 @@ export default function BlogPage({ blog }) {
                   <h2
                     className={`text-[1rem] font-semibold mb-2 ${styles.head1} leading-[45px] hover:text-[#27b633]`}
                   >
-                    <Link href="learn/what-is-relative-strength-index">
+                    <Link href="learn/grid">
                       {" "}
                       <span className="hover:text-[#27b633] hover:no-underline">
-                      Grid
+                        Grid
                       </span>
                     </Link>
                   </h2>
                 </div>
                 <div className=" flex flex-col justify-start mt-[-0.5rem]">
                   <ul className=" pl-[0.4rem] flex flex-col gap-1">
-                    <li
-                      className={`cursor-pointer text-[0.9rem] font-semibold ${styles.head1}`}
-                    >
-                      <Link
-                        href="learn/what-is-relative-strength-index"
-                        className=" hover:text-[#27b633] opacity-[70%]"
+                    {grid.map((item, index) => (
+                      <li
+                        key={index}
+                        className={`cursor-pointer text-[0.9rem] font-semibold ${styles.head1}`}
                       >
-                       Grid Technologies
-                      </Link>
-                    </li>
-                    <li
-                      className={`cursor-pointer text-[0.9rem] font-semibold ${styles.head1}`}
-                    >
-                      <Link
-                        href="learn/what-is-relative-strength-index"
-                        className=" hover:text-[#27b633] opacity-[70%]"
-                      >
-                       Grid balancing
-                      </Link>
-                    </li>
-                    <li
-                      className={`cursor-pointer text-[0.9rem] font-semibold ${styles.head1}`}
-                    >
-                      <Link
-                        href="learn/what-is-relative-strength-index"
-                        className=" hover:text-[#27b633] opacity-[70%]"
-                      >
-                       Smart Meters
-                      </Link>
-                    </li>
-                    <li
-                      className={`cursor-pointer text-[0.9rem] font-semibold ${styles.head1}`}
-                    >
-                      <Link
-                        href="learn/what-is-relative-strength-index"
-                        className=" hover:text-[#27b633] opacity-[70%]"
-                      >
-                       Sensors and Automation
-                      </Link>
-                    </li>
-                    <li
-                      className={`cursor-pointer text-[0.9rem] font-semibold ${styles.head1}`}
-                    >
-                      <Link
-                        href="learn/what-is-relative-strength-index"
-                        className=" hover:text-[#27b633] opacity-[70%]"
-                      >
-                       Grid EMS
-                      </Link>
-                    </li>
+                        <Link
+                          href={item.link}
+                          className="hover:text-[#27b633] opacity-[70%]"
+                        >
+                          {item.name}
+                        </Link>
+                      </li>
+                    ))}
                   </ul>
                 </div>
               </div>

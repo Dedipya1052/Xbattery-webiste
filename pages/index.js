@@ -1,10 +1,10 @@
-import Hero from "@/components/ui/Hero";
+import Example from "@/components/ui/Home1";
 
 
 export default function Home() {
   return (
     <>
-      <Hero />
+     <Example/>
     
     </>
   );
