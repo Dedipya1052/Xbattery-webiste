@@ -4,7 +4,8 @@ import { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 import ScrollTrigger from "gsap/dist/ScrollTrigger";
 
-import { useGSAP } from '@gsap/react';
+// import { useGSAP } from '@gsap/react';
+import { Image } from "@chakra-ui/react";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -83,7 +84,7 @@ useEffect(() => {
           </div>
           <div className="w-[60%]">
             {" "}
-            <img src="/images/hero1.svg" width={"80%"} />
+            <Image src="/images/hero1.svg" width={"80%"} alt="hero" />
           </div>
         </div>
       </div>
@@ -114,7 +115,7 @@ useEffect(() => {
           have been worth only about 73 cents on February 11, 2020.
         </div>
         <div className="w-[35%] h-[100%] flex justify-center sticky top-[5rem] ">
-        <img ref={imgRef} src="/images/rotate.png" width="200px" alt="Rotating Windmill" />;
+        <Image ref={imgRef} src="/images/rotate.png" width="200px" alt="Rotating Windmill" />;
         </div>
       </div>
 

@@ -132,7 +132,7 @@ export async function getStaticProps({ params }) {
   const currentBlog = res.items[0].fields;
 
   //console.log(currentBlog);
-  const { title, coverImage, blogContent, slug, pdf, animation } = currentBlog;
+  const { title, coverImage, blogContent, slug, pdf } = currentBlog;
   // console.log({ blog: res.items });
   const blogs = await fetchBlogs();
   //console.log("initial blogs :",blogs.length);
@@ -156,8 +156,7 @@ export async function getStaticProps({ params }) {
         coverImage,
         blogContent,
         slug,
-        pdf,
-        animation
+        pdf
         // faqs : faqs?faqs:null
       },
       blogs: filteredBlogs,
@@ -183,7 +182,6 @@ export default function BlogPage({ blog, blogs }) {
 
     blogContent,
     pdf,
-    animation
   } = blog;
 
   // console.log("pdf : ",pdf.fields.file.url );

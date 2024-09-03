@@ -12,6 +12,7 @@ const Footer = () => {
             <a
               href="mailto:support@XBattery.energy"
               target="_blank"
+              rel="noreferrer"
               aria-label="email"
             >
               <svg

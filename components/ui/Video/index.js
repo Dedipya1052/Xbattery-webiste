@@ -19,7 +19,7 @@ const VideoComponent = () => {
 
     const observer = new IntersectionObserver(handlePlayPause, {
       root: null, // viewport
-      threshold: 0.5, // 50% in view
+      threshold: 0.5, // 50% in view 
     });
 
     if (videoRef.current) {

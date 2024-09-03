@@ -2,6 +2,7 @@
 import { useEffect, useRef, useState } from "react";
 import NavLink from "../NavLink";
 import Link from "next/link";
+import Image from "next/image";
 
 
 const Navbar = () => {
@@ -64,7 +65,7 @@ const Navbar = () => {
       <div className="flex gap-[2rem] justify-center items-center">
         <div className="w-[170px] h-[63px]  border-r-[1px] border-black flex justify-center items-center">
         <Link  href="/">
-          <img src="/images/logo.webp"  className=" ml-[-10px] scale-[1.3]" />
+          <Image src="/images/logo.webp"  className=" ml-[-10px] scale-[1.3]" width={"180"} height={"180"} alt="logo"/>
           </Link>
         </div>
         <div className="flex gap-[2rem]">

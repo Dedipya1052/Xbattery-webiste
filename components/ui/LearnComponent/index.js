@@ -5,6 +5,7 @@ import { FaTwitter } from "react-icons/fa";
 import { FaYoutube } from "react-icons/fa";
 import { FaFacebook } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
+import { Image } from "@chakra-ui/react";
 
 
 const energyStorage=[
@@ -93,7 +94,7 @@ const LearnComp= () => {
         </div>
         <div className="mt-[5rem] w-[90%] mx-auto grid xl:grid-cols-3 lg:grid-cols-2 justify-center lg:justify-start items-center gap-[1.2rem]">
           <div className="relative inline-block border-[0.8px] border-black rounded-md xl:h-[220px]">
-            <img src="/images/comp5/box6.svg" className="block rounded-md h-[219px] w-[100%] object-cover" />
+            <Image alt="image" src="/images/comp5/box6.svg" className="block rounded-md h-[219px] w-[100%] object-cover" />
 
             <div className="absolute top-0 flex flex-col items-start justify-center p-4">
               <div className="p-0.5 rounded-md text-left">
@@ -122,7 +123,7 @@ const LearnComp= () => {
             </div>
           </div>
           <div className="relative inline-block border-[0.8px] border-black rounded-md xl:h-[220px]">
-            <img src="/images/comp5/box5.svg" className="block rounded-md h-[219px] w-auto object-cover " />
+            <Image alt="image" src="/images/comp5/box5.svg" className="block rounded-md h-[219px] w-auto object-cover " />
 
             <div className="absolute top-0 flex flex-col items-start justify-center p-4">
               <div className="p-0.5 rounded-md text-left">
@@ -151,7 +152,7 @@ const LearnComp= () => {
             </div>
           </div>
           <div className="relative inline-block border-[0.8px] border-black rounded-md xl:h-[220px]">
-            <img src="/images/comp5/box8.svg" className="block rounded-md h-[219px] w-[100%] object-cover" />
+            <Image alt="image" src="/images/comp5/box10.svg" className="block rounded-md h-[219px] w-[100%] object-cover object-left-bottom" />
 
             <div className="absolute top-0 flex flex-col items-start justify-center p-4">
               <div className="p-0.5 rounded-md text-left">
@@ -180,7 +181,7 @@ const LearnComp= () => {
             </div>
           </div>
           <div className="relative inline-block border-[0.8px] border-black rounded-md xl:h-[220px]">
-            <img src="/images/comp5/box7.svg" className="block rounded-md h-[219px] w-[100%] object-cover"  />
+            <Image alt="image" src="/images/comp5/box7.svg" className="block rounded-md h-[219px] w-[100%] object-cover"  />
 
             <div className="absolute top-0 flex flex-col items-start justify-center p-4">
               <div className="p-0.5 rounded-md text-left">
@@ -209,7 +210,7 @@ const LearnComp= () => {
             </div>
           </div>
           <div className="relative inline-block border-[0.8px] border-black rounded-md xl:h-[220px]">
-            <img src="/images/comp5/box9.svg" className="block rounded-md h-[219px] w-[100%] object-cover" />
+            <Image alt="image" src="/images/comp5/box11.svg" className="block rounded-md h-[219px] w-[100%] object-cover" />
 
             <div className="absolute top-0 flex flex-col items-start justify-center p-4">
               <div className="p-0.5 rounded-md text-left">
@@ -238,7 +239,7 @@ const LearnComp= () => {
             </div>
           </div>
           <div className="relative inline-block border-[0.8px] border-black rounded-md xl:h-[220px]">
-            <img src="/images/comp5/box3.svg" className="block rounded-md h-[220px] w-[100%] object-cover" />
+            <Image alt="image" src="/images/comp5/box3.svg" className="block rounded-md h-[220px] w-[100%] object-cover" />
 
             <div className="absolute top-0 flex flex-col items-start justify-center p-4">
               <div className="p-0.5 rounded-md text-left">
@@ -284,7 +285,7 @@ const LearnComp= () => {
         <div className="mt-[5rem] flex justify-center items-center gap-[1.2rem]">
           <div className="relative inline-block cursor-pointer group">
             <Link href="/learn/energy-storage">
-              <img src="/images/comp2/box1.svg" className="block" />
+              <Image alt="image" src="/images/comp2/box1.svg" className="block" />
 
               <div className="absolute inset-0 flex items-start justify-center p-4">
                 <div className="p-4 rounded-md text-left ">
@@ -304,7 +305,7 @@ const LearnComp= () => {
 
           <div className="relative inline-block cursor-pointer group">
             <Link href="/learn/renewable-energy">
-              <img src="/images/comp2/box2.svg" className="block" />
+              <Image alt="image" src="/images/comp2/box2.svg" className="block" />
 
               <div className="absolute inset-0 flex items-start justify-center p-4">
                 <div className="p-4 rounded-md text-left group-hover:text-white">
@@ -324,7 +325,7 @@ const LearnComp= () => {
 
           <div className="relative inline-block cursor-pointer group">
             <Link href="/learn/grid">
-              <img src="/images/comp2/box3.svg" className="block" />
+              <Image alt="image" src="/images/comp2/box3.svg" className="block" />
 
               <div className="absolute inset-0 flex items-start justify-center p-4 ">
                 <div className="p-4 rounded-md text-left">
@@ -391,7 +392,7 @@ const LearnComp= () => {
         <div className="mt-[5rem] flex justify-center items-center gap-[1.2rem]">
           <div className="relative inline-block cursor-pointer group">
             <Link href="/learn/electric-vehicles">
-              <img src="/images/comp4/box1.svg" className="block" />
+              <Image alt="image" src="/images/comp4/box1.svg" className="block" />
 
               <div className="absolute inset-0 flex items-start justify-center p-4">
                 <div className="p-4 rounded-md text-left">
@@ -411,7 +412,7 @@ const LearnComp= () => {
           </div>
           <div className="relative inline-block cursor-pointer group">
             <Link href="/learn/electricity">
-              <img src="/images/comp4/box2.svg" className="block" />
+              <Image alt="image" src="/images/comp4/box2.svg" className="block" />
 
               <div className="absolute inset-0 flex items-start justify-center p-4">
                 <div className="p-4 rounded-md text-left">
@@ -431,7 +432,7 @@ const LearnComp= () => {
           </div>
           <div className="relative inline-block cursor-pointer group">
             <Link href="/learn/batteries">
-              <img src="/images/comp4/box3.svg" className="block" />
+              <Image alt="image" src="/images/comp4/box3.svg" className="block" />
 
               <div className="absolute inset-0 flex items-start justify-center p-4">
                 <div className="p-4 rounded-md text-left">
@@ -499,7 +500,7 @@ const LearnComp= () => {
         </div>
         <div className="mt-[5rem] w-[70%] mx-auto flex flex-wrap justify-start items-center gap-[1.2rem]">
           <div className="relative inline-block cursor-pointer border-[0.8px] border-black rounded-md ">
-            <img src="/images/comp5/box1.svg" className="block rounded-md" />
+            <Image alt="image" src="/images/comp5/box1.svg" className="block rounded-md" />
 
             <div className="absolute top-0 flex items-start justify-center p-4">
               <div className="p-4 rounded-md text-left">
@@ -512,7 +513,7 @@ const LearnComp= () => {
             </div>
           </div>
           <div className="relative inline-block cursor-pointer border-[0.8px] border-black rounded-md">
-            <img src="/images/comp5/box2.svg" className="block rounded-md" />
+            <Image alt="image" src="/images/comp5/box2.svg" className="block rounded-md" />
 
             <div className="absolute top-0 flex items-start justify-center p-4">
               <div className="p-4 rounded-md text-left">
@@ -525,7 +526,7 @@ const LearnComp= () => {
             </div>
           </div>
           <div className="relative inline-block cursor-pointer border-[0.8px] border-black rounded-md">
-            <img src="/images/comp5/box3.svg" className="block rounded-md" />
+            <Image alt="image" src="/images/comp5/box3.svg" className="block rounded-md" />
 
             <div className="absolute top-0 flex items-start justify-center p-4">
               <div className="p-4 rounded-md text-left">
@@ -559,9 +560,9 @@ const LearnComp= () => {
           Options trading entails significant risk and is not appropriate for
           all customers. Customers must read and understand the{" "}
           <span>
-            <a href="/" className=" underline hover:text-green-600">
+            <Link href="/" className=" underline hover:text-green-600">
               Characteristics and Risks of Standardized Options
-            </a>
+            </Link>
           </span>{" "}
           before engaging in any options trading strategies. Supporting
           documentation for any claims, if applicable, will be furnished upon

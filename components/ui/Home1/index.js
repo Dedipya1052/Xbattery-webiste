@@ -26,6 +26,7 @@ import Link from 'next/link';
 
 
 
+
 const Example = () => {
  
     // const [imageSrc, setImageSrc] = useState(HeroImg);
@@ -86,7 +87,7 @@ const Example = () => {
     <nav className="fixed top-3 left-[0%] right-0 w-[95%] mx-auto flex items-center justify-between p-4 z-50 bg-transparent">
       <div>
         <Link href="/">
-          <img src="/images/logo1.png" width="160" alt="logo" />
+          <Image src="/images/logo1.png" width="160" height={"160"} alt="logo" />
         </Link>
       </div>
   
