@@ -18,4 +18,4 @@ RUN npm cache clean --force
 RUN npm run build
 RUN rm -rf /tmp/*
 CMD [ "npm", "start" ]
-EXPOSE 5000
+EXPOSE 3000
