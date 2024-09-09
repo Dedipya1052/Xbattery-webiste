@@ -201,7 +201,7 @@ const Footer = () => {
         <p
           style={{
             fontSize: "12px",
-            opacity: "70%",
+            opacity: "45%",
             marginBottom: "7px",
             marginTop: "25px",
           }}
