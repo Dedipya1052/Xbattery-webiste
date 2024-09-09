@@ -188,8 +188,7 @@ export default function BlogPage({ blog, blogs }) {
 
 
   const [formData, setFormData] = useState({
-    firstName: '',
-    lastName: '',
+    name: '',
     email: '',
   });
 
@@ -209,7 +208,7 @@ export default function BlogPage({ blog, blogs }) {
 
   };
 
-  const isFormComplete = formData.firstName && formData.lastName && formData.email;
+  const isFormComplete = formData.name && formData.email;
 
 
   // useEffect(() => {
@@ -342,19 +341,19 @@ export default function BlogPage({ blog, blogs }) {
           <ModalHeader>Download Your Free Copy</ModalHeader>
           <ModalCloseButton />
           <ModalBody>
-            <SimpleGrid columns={2} spacing={4}>
+            <SimpleGrid columns={1} spacing={4}>
               {/* First row with First Name and Last Name */}
               <FormControl isRequired>
-                <FormLabel fontSize="sm">First Name</FormLabel>
+                <FormLabel fontSize="sm"> Name</FormLabel>
                 <Input
-                  name="firstName"
-                  placeholder="First Name"
-                  value={formData.firstName}
+                  name="name"
+                  placeholder="Name"
+                  value={formData.name}
                   onChange={handleChange}
                   required
                 />
               </FormControl>
-              <FormControl isRequired>
+              {/* <FormControl isRequired>
                 <FormLabel fontSize="sm">Last Name</FormLabel>
                 <Input
                   name="lastName"
@@ -363,7 +362,7 @@ export default function BlogPage({ blog, blogs }) {
                   onChange={handleChange}
                   required
                 />
-              </FormControl>
+              </FormControl> */}
             </SimpleGrid>
             {/* Second row with Email */}
             <FormControl isRequired mt={4}>

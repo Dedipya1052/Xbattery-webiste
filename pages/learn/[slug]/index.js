@@ -438,7 +438,7 @@ export default function BlogPage({ blog }) {
         )}
         {/* Next and Previous buttons */}
         <div
-          className={`flex ${(prevBlog && nextBlog)? "justify-between" : "justify-center"} mt-[6rem] `}
+          className={`flex ${(prevBlog && nextBlog)? "justify-between" : "justify-center"} mt-[6rem] mb-[-3.5rem] `}
         >
           {prevBlog && (
             <Button
@@ -468,8 +468,8 @@ export default function BlogPage({ blog }) {
       {/* <TopBlogs blogs={blogs} slug={slug}/> */}
       {/* <TopBlogs blogs={blogs} slug={slug}/> */}
 
-      <div
-        className={`w-[100%] mt-[-2rem] mx-auto ${styles.head1} flex xl:flex-row  justify-between border-t-[0.8px] border-black`}
+      {/* <div
+        className={`w-[100%] mt-[-2rem] mx-auto ${styles.head1} flex xl:flex-row  justify-between border-t-[0.8px] border-b-[0.8px] border-black`}
       >
         <div className="w-[65%] border-r-[0.8px] border-black">
           <div className=" text-[1.2rem] pb-[0.8rem] pl-[2rem]  pt-[1rem] border-b-[0.8px] border-black font-semibold">
@@ -718,8 +718,13 @@ export default function BlogPage({ blog }) {
               />
             </div>
           </div>
+          <div className="">
+          <p className="text-gray-400 text-left font-sans pl-[0.8rem] mt-3 text-[0.9rem]">
+            © 2024 XBattery. All rights reserved.
+          </p>
+          </div>
         </div>
-      </div>
+      </div> */}
     </>
   );
 }

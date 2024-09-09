@@ -5,9 +5,9 @@ import { useRouter } from 'next/router';
 
 export default function App({ Component, pageProps }) {
   const router = useRouter();
-  const isHomePage = router.pathname === '/';
+  const isHomePage = router.pathname === "/" || router.pathname === "/terms" || router.pathname === "/about" || router.pathname === "/privacy";
   return (
-    <div className={isHomePage ? 'bg-black ' : 'bg-white text-black'}>
+    <div className={isHomePage ? 'bg-[black] ' : 'bg-white text-black'}>
     <Layout>
         <ChakraProvider>
         <Component {...pageProps} />

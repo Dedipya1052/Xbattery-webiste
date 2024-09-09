@@ -94,7 +94,7 @@ const LearnComp= () => {
         </div>
         <div className="mt-[5rem] w-[90%] mx-auto grid xl:grid-cols-3 lg:grid-cols-2 justify-center lg:justify-start items-center gap-[1.2rem]">
           <div className="relative inline-block border-[0.8px] border-black rounded-md xl:h-[220px]">
-            <Image alt="image" src="/images/comp5/box6.svg" className="block rounded-md h-[219px] w-[100%] object-cover" />
+            <Image alt="image" src="/images/comp5/box12.svg" className="block rounded-md h-[219px] w-[100%] object-cover object-right-bottom" />
 
             <div className="absolute top-0 flex flex-col items-start justify-center p-4">
               <div className="p-0.5 rounded-md text-left">
@@ -181,7 +181,7 @@ const LearnComp= () => {
             </div>
           </div>
           <div className="relative inline-block border-[0.8px] border-black rounded-md xl:h-[220px]">
-            <Image alt="image" src="/images/comp5/box7.svg" className="block rounded-md h-[219px] w-[100%] object-cover"  />
+            <Image alt="image" src="/images/comp5/box13.svg" className="block rounded-md h-[219px] w-[100%] object-cover"  />
 
             <div className="absolute top-0 flex flex-col items-start justify-center p-4">
               <div className="p-0.5 rounded-md text-left">
@@ -210,7 +210,7 @@ const LearnComp= () => {
             </div>
           </div>
           <div className="relative inline-block border-[0.8px] border-black rounded-md xl:h-[220px]">
-            <Image alt="image" src="/images/comp5/box11.svg" className="block rounded-md h-[219px] w-[100%] object-cover" />
+            <Image alt="image" src="/images/comp5/box11.svg" className="block rounded-md h-[219px] w-[100%] object-cover object-right-bottom" />
 
             <div className="absolute top-0 flex flex-col items-start justify-center p-4">
               <div className="p-0.5 rounded-md text-left">
@@ -548,7 +548,7 @@ const LearnComp= () => {
 
       <div className="bg-black h-[0.7px] w-[100%] mx-auto mt-[6rem] mb-[6rem]"></div>
 
-      <div className="flex flex-col gap-[1rem] w-[60%] mx-auto">
+      <div className="flex flex-col gap-[1rem] w-[60%] mx-auto mb-[3rem]">
         <div className="text-black opacity-[70%] text-left text-[1.15rem]">
           Content is provided for informational purposes only, does not
           constitute tax or investment advice, and is not a recommendation for
@@ -574,7 +574,7 @@ const LearnComp= () => {
 
       {/* footer */}
 
-      <div
+      {/* <div
         className={`w-[100%] mt-[8rem] mx-auto ${styles.head1} flex xl:flex-row  justify-between border-t-[0.8px] border-black`}
       >
         <div className="w-[65%] border-r-[0.8px] border-black">
@@ -825,7 +825,7 @@ const LearnComp= () => {
             </div>
           </div>
         </div>
-      </div>
+      </div> */}
     </>
   );
 }

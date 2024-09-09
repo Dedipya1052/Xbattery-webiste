@@ -3,9 +3,10 @@ import Footer from "./ui/Footer";
 import Navbar from "./ui/Navbar";
 import { useRouter } from "next/router";
 
+
 const Layout = ({ children }) => {
   const router = useRouter();
-  const isHomePage = router.pathname === "/";
+  const isHomePage = router.pathname === "/" || router.pathname === "/terms" || router.pathname === "/about" || router.pathname === "/privacy";
   return (
     <div className="flex flex-col min-h-screen">
       <Head>
@@ -19,7 +20,7 @@ const Layout = ({ children }) => {
       </Head>
       {!isHomePage && <Navbar />}
       <main className="flex-grow mt-[4rem]">{children}</main>
-      {!isHomePage && <Footer />}
+       <Footer />
     </div>
   );
 };
