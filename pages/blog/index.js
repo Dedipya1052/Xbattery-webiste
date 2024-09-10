@@ -79,10 +79,10 @@ export default function Blogs({ blogs }) {
           </div>
         </div> */}
         <div className=" mt-[3rem] mb-[5rem] flex flex-col justify-center items-center gap-[1rem]">
-          <div className={`text-[3.1rem] font-semibold ${styles.head1}`}>
+          <div className={`text-[2.3rem] md:text-[3.1rem] text-center font-semibold ${styles.head1}`}>
           Explore the blogs
           </div>
-          <div className={`${styles.head1} text-[1.25rem] font-semibold`}>
+          <div className={`${styles.head1}  text-[1.05rem] md:text-[1.28rem] text-center  font-semibold`}>
           Investing basics—in plain English.
           </div>
           

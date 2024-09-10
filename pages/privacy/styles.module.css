@@ -3,7 +3,7 @@
 }
 
 .affiliatewrapper {
-max-width: 75%; /* Adjust the max-width as needed */
+max-width: 55%; /* Adjust the max-width as needed */
 margin: 2rem auto;
 padding: 20px;
 }
@@ -16,7 +16,7 @@ padding: 20px;
 .affBackButton{
 position: absolute;
 top: 10px;
-right: 10%;
+right: 20%;
 border-radius: 10px;
 padding: 10px;
 cursor: pointer;
@@ -74,16 +74,16 @@ color: white;
 }
 
 .h3inaffiliate {
-font-size: larger;
+font-size: large;
 color: #ffffff; /* Change to black */
 margin-bottom: 12px;
-font-weight: 600;
+font-weight: bolder;
 }
 
 /* Style the list items */
 .ulholder {
 padding: 0;
-line-height: 2;
+line-height: 1.5;
 word-spacing: 1.2px;
 letter-spacing: 0.2px;
 color: #f0f0f0;

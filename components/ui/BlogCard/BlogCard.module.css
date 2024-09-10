@@ -38,7 +38,7 @@
   }
   @media (max-width:500px) {
     .card {
-      height: 355px;
+      height: auto;
     }
   }
   

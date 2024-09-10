@@ -54,7 +54,7 @@ const grid=[
 
 const LearnComp= () => {
   return (
-    <>
+    <div className="w-[100%] overflow-x-hidden">
       {/* hero */}
       {/* <div className={`bg-[#E1EBDC] w-[100%] border-b-[1px] border-black`}>
         <div className={`${styles.head1} border-b-[1px] border-black`}>
@@ -85,16 +85,24 @@ const LearnComp= () => {
           </div>
         </div> */}
         <div className=" mt-[3rem] mb-[5rem] flex flex-col justify-center items-center gap-[1rem] w-[100%]">
-          <div className={`text-[3.1rem] font-semibold ${styles.head1}`}>
+          <div
+            className={`text-[2.3rem] md:text-[3.1rem] text-center font-semibold ${styles.head1}`}
+          >
             Explore the topics
           </div>
-          <div className={`${styles.head1} text-[1.25rem] font-semibold`}>
+          <div
+            className={`${styles.head1} text-[1.05rem] md:text-[1.28rem] text-center font-semibold p-2`}
+          >
             There’s always more to learn when it comes to knowledge.
           </div>
         </div>
-        <div className="mt-[5rem] w-[90%] mx-auto grid xl:grid-cols-3 lg:grid-cols-2 justify-center lg:justify-start items-center gap-[1.2rem]">
+        <div className="mt-[-2rem] md:mt-[5rem] w-[90%] mx-auto grid xl:grid-cols-3 lg:grid-cols-2 justify-center lg:justify-start items-center gap-[1.2rem]">
           <div className="relative inline-block border-[0.8px] border-black rounded-md xl:h-[220px]">
-            <Image alt="image" src="/images/comp5/box12.svg" className="block rounded-md h-[219px] w-[100%] object-cover object-right-bottom" />
+            <Image
+              alt="image"
+              src="/images/comp5/box12.svg"
+              className="block rounded-md h-[219px] w-[100%] object-cover object-right-bottom"
+            />
 
             <div className="absolute top-0 flex flex-col items-start justify-center p-4">
               <div className="p-0.5 rounded-md text-left">
@@ -123,7 +131,11 @@ const LearnComp= () => {
             </div>
           </div>
           <div className="relative inline-block border-[0.8px] border-black rounded-md xl:h-[220px]">
-            <Image alt="image" src="/images/comp5/box5.svg" className="block rounded-md h-[219px] w-auto object-cover " />
+            <Image
+              alt="image"
+              src="/images/comp5/box5.svg"
+              className="block rounded-md h-[219px] w-auto object-cover "
+            />
 
             <div className="absolute top-0 flex flex-col items-start justify-center p-4">
               <div className="p-0.5 rounded-md text-left">
@@ -152,7 +164,11 @@ const LearnComp= () => {
             </div>
           </div>
           <div className="relative inline-block border-[0.8px] border-black rounded-md xl:h-[220px]">
-            <Image alt="image" src="/images/comp5/box10.svg" className="block rounded-md h-[219px] w-[100%] object-cover object-left-bottom" />
+            <Image
+              alt="image"
+              src="/images/comp5/box10.svg"
+              className="block rounded-md h-[219px] w-[100%] object-cover object-left-bottom"
+            />
 
             <div className="absolute top-0 flex flex-col items-start justify-center p-4">
               <div className="p-0.5 rounded-md text-left">
@@ -181,7 +197,11 @@ const LearnComp= () => {
             </div>
           </div>
           <div className="relative inline-block border-[0.8px] border-black rounded-md xl:h-[220px]">
-            <Image alt="image" src="/images/comp5/box13.svg" className="block rounded-md h-[219px] w-[100%] object-cover"  />
+            <Image
+              alt="image"
+              src="/images/comp5/box13.svg"
+              className="block rounded-md h-[219px] w-[100%] object-cover"
+            />
 
             <div className="absolute top-0 flex flex-col items-start justify-center p-4">
               <div className="p-0.5 rounded-md text-left">
@@ -210,7 +230,11 @@ const LearnComp= () => {
             </div>
           </div>
           <div className="relative inline-block border-[0.8px] border-black rounded-md xl:h-[220px]">
-            <Image alt="image" src="/images/comp5/box11.svg" className="block rounded-md h-[219px] w-[100%] object-cover object-right-bottom" />
+            <Image
+              alt="image"
+              src="/images/comp5/box11.svg"
+              className="block rounded-md h-[219px] w-[100%] object-cover object-right-bottom"
+            />
 
             <div className="absolute top-0 flex flex-col items-start justify-center p-4">
               <div className="p-0.5 rounded-md text-left">
@@ -239,7 +263,11 @@ const LearnComp= () => {
             </div>
           </div>
           <div className="relative inline-block border-[0.8px] border-black rounded-md xl:h-[220px]">
-            <Image alt="image" src="/images/comp5/box3.svg" className="block rounded-md h-[220px] w-[100%] object-cover" />
+            <Image
+              alt="image"
+              src="/images/comp5/box3.svg"
+              className="block rounded-md h-[220px] w-[100%] object-cover"
+            />
 
             <div className="absolute top-0 flex flex-col items-start justify-center p-4">
               <div className="p-0.5 rounded-md text-left">
@@ -275,14 +303,18 @@ const LearnComp= () => {
       {/* Investing 101 */}
       <div className="mt-[6rem]">
         <div className="flex flex-col justify-center items-center gap-[1rem]">
-          <div className={`text-[3rem] font-semibold ${styles.head1}`}>
+          <div
+            className={`text-[2.2rem] md:text-[3rem] text-center font-semibold ${styles.head1}`}
+          >
             Investing 101
           </div>
-          <div className={`${styles.head1} text-[1.25rem] font-semibold`}>
+          <div
+            className={`${styles.head1} text-[1.05rem] md:text-[1.25rem] text-center font-semibold`}
+          >
             A good place to start. Get the <br></br>low-down before you dive in.
           </div>
         </div>
-        <div className="mt-[5rem] flex justify-center items-center gap-[1.2rem]">
+        {/* <div className="mt-[5rem] flex justify-center items-center gap-[1.2rem]">
           <div className="relative inline-block cursor-pointer group">
             <Link href="/learn/energy-storage">
               <Image alt="image" src="/images/comp2/box1.svg" className="block" />
@@ -343,63 +375,113 @@ const LearnComp= () => {
               </div>
             </Link>
           </div>
+        </div> */}
+        <div className="mt-[5rem] w-[85%] mx-auto sm:w-[90%] md:w-[85%] lg:[87%] xl:w-[75%] grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-[1.2rem] justify-items-center">
+          <div className="relative cursor-pointer group h-[500px] w-[300px] sm:w-full sm:h-auto object-contain">
+            <Link href="/learn/energy-storage">
+              <Image
+                alt="image"
+                src="/images/comp2/box1.svg"
+                className="block w-full h-full object-cover"
+              />
+              <div className="absolute inset-0 flex items-start justify-center p-4">
+                <div className="p-4 rounded-md text-left">
+                  <h2
+                    className={`text-[1.7rem] font-semibold mb-2 ${styles.head1} leading-[45px] group-hover:text-white`}
+                  >
+                    What is an <br /> Energy Storage?
+                  </h2>
+                  <p className="text-black text-md group-hover:text-white">
+                    Energy storage has come a long way. Before, pumped
+                    hydroelectric storage worked as a system of storing energy.
+                  </p>
+                </div>
+              </div>
+            </Link>
+          </div>
+
+          <div className="relative cursor-pointer group h-[500px] w-[300px] sm:w-full sm:h-auto object-contain">
+            <Link href="/learn/renewable-energy">
+              <Image
+                alt="image"
+                src="/images/comp2/box2.svg"
+                className="block w-full h-full object-cover"
+              />
+              <div className="absolute inset-0 flex items-start justify-center p-4">
+                <div className="p-4 rounded-md text-left">
+                  <h2
+                    className={`text-[1.7rem] font-semibold mb-2 ${styles.head1} leading-[45px] group-hover:text-white`}
+                  >
+                    What is a <br /> Renewable Energy?
+                  </h2>
+                  <p className="text-black text-md group-hover:text-white">
+                    Renewable energy comes from natural sources that replenish
+                    themselves, like solar, wind, and hydro power.
+                  </p>
+                </div>
+              </div>
+            </Link>
+          </div>
+
+          <div className="relative cursor-pointer group h-[500px] w-[300px] sm:w-full sm:h-auto object-contain">
+            <Link href="/learn/grid">
+              <Image
+                alt="image"
+                src="/images/comp2/box3.svg"
+                className="block w-full h-full object-cover"
+              />
+              <div className="absolute inset-0 flex items-start justify-center p-4">
+                <div className="p-4 rounded-md text-left">
+                  <h2
+                    className={`text-[1.7rem] font-semibold mb-2 ${styles.head1} leading-[45px] group-hover:text-white`}
+                  >
+                    What is the <br /> Grid?
+                  </h2>
+                  <p className="text-black text-md group-hover:text-white">
+                    The power grid, or simply "the grid," is a massive network
+                    of power plants and transformers that work together to
+                    deliver electricity to consumers.
+                  </p>
+                </div>
+              </div>
+            </Link>
+          </div>
         </div>
       </div>
-
-      {/* <div className="mt-[5.5rem]">
-        <div
-          className={`text-[2rem] text-center font-semibold ${styles.head1}`}
-        >
-          There’s more to learn
-        </div>
-        <div className="mt-[2rem] w-[60%] mx-auto">
-          <div>
-            <div className="pt-[20px] pb-[20px] border-t-[2px] border-b-[2px]">
-              Three things to do before you start investing
-            </div>
-            <div className="pt-[20px] pb-[20px] border-b-[2px]">
-              Picking an investment: How to approach analyzing a stock
-            </div>
-          </div>
-
-          <div className="mt-[2rem] flex flex-col justify-center items-center gap-[1rem]">
-            <div className="px-[30px] py-[7px] w-[250px] rounded-[100px] text-white border-[1px] border-black bg-black font-bold text-center">
-              See Investing Articles
-            </div>
-
-            <div className="px-[30px] py-[7px] w-[250px] rounded-[100px] text-white border-[1px] border-black bg-black font-bold text-center">
-              Investor's Guild
-            </div>
-          </div>
-        </div>
-      </div> */}
 
       <div className="bg-black h-[0.7px] w-[90%] mx-auto mt-[8rem] mb-[6rem]"></div>
 
       {/* Options trading essentials */}
       <div className="">
         <div className="flex flex-col justify-center items-center gap-[1.4rem]">
-          <div className={`text-[3rem] font-semibold ${styles.head1}`}>
+          <div
+            className={`text-[2.2rem] md:text-[3rem] text-center font-semibold ${styles.head1}`}
+          >
             Options trading essentials
           </div>
           <div
-            className={`${styles.head1} text-[1.25rem] font-semibold text-center`}
+            className={`${styles.head1} text-[1.05rem] md:text-[1.25rem] font-semibold text-center`}
           >
             Curious about options? Learn the ins and outs from <br></br>
             the pros before making your move.
           </div>
         </div>
-        <div className="mt-[5rem] flex justify-center items-center gap-[1.2rem]">
-          <div className="relative inline-block cursor-pointer group">
+        <div className="mt-[5rem] w-[85%] mx-auto sm:w-[90%] md:w-[85%] lg:[87%] xl:w-[75%] grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-[1.2rem] justify-items-center">
+          <div className="relative cursor-pointer group h-[500px] w-[300px] sm:w-full sm:h-auto object-contain">
             <Link href="/learn/electric-vehicles">
-              <Image alt="image" src="/images/comp4/box1.svg" className="block" />
+              <Image
+                alt="image"
+                src="/images/comp4/box1.svg"
+                className="block w-full h-full object-cover"
+              />
 
               <div className="absolute inset-0 flex items-start justify-center p-4">
                 <div className="p-4 rounded-md text-left">
                   <h2
-                    className={`text-[2rem] font-semibold mb-2 ${styles.head1} leading-[45px] group-hover:text-white`}
+                    className={`text-[1.7rem] font-semibold mb-2 ${styles.head1} leading-[45px] group-hover:text-white`}
                   >
-                    What is an<br></br> Electric Vehicle?
+                    What is an
+                    <br /> Electric Vehicle?
                   </h2>
                   <p className="text-black text-md group-hover:text-white">
                     EVs use electricity stored in batteries to power an electric
@@ -410,16 +492,21 @@ const LearnComp= () => {
               </div>
             </Link>
           </div>
-          <div className="relative inline-block cursor-pointer group">
+
+          <div className="relative cursor-pointer group h-[500px] w-[300px] sm:w-full sm:h-auto object-contain">
             <Link href="/learn/electricity">
-              <Image alt="image" src="/images/comp4/box2.svg" className="block" />
+              <Image
+                alt="image"
+                src="/images/comp4/box2.svg"
+                className="block w-full h-full object-cover"
+              />
 
               <div className="absolute inset-0 flex items-start justify-center p-4">
                 <div className="p-4 rounded-md text-left">
                   <h2
-                    className={`text-[2rem] font-semibold mb-2 ${styles.head1} leading-[45px] group-hover:text-white`}
+                    className={`text-[1.7rem] font-semibold mb-2 ${styles.head1} leading-[45px] group-hover:text-white`}
                   >
-                    What is <br></br>Electricity?
+                    What is <br /> Electricity?
                   </h2>
                   <p className="text-black text-md group-hover:text-white">
                     Electricity is the flow of electrical power used to energize
@@ -430,16 +517,22 @@ const LearnComp= () => {
               </div>
             </Link>
           </div>
-          <div className="relative inline-block cursor-pointer group">
+
+          <div className="relative cursor-pointer group h-[500px] w-[300px] sm:w-full sm:h-auto object-contain">
             <Link href="/learn/batteries">
-              <Image alt="image" src="/images/comp4/box3.svg" className="block" />
+              <Image
+                alt="image"
+                src="/images/comp4/box3.svg"
+                className="block w-full h-full object-cover"
+              />
 
               <div className="absolute inset-0 flex items-start justify-center p-4">
                 <div className="p-4 rounded-md text-left">
                   <h2
-                    className={`text-[2rem] font-semibold mb-2 ${styles.head1} leading-[45px] group-hover:text-white`}
+                    className={`text-[1.7rem] font-semibold mb-2 ${styles.head1} leading-[45px] group-hover:text-white`}
                   >
-                    what are<br></br> Batteries?
+                    What are
+                    <br /> Batteries?
                   </h2>
                   <p className="text-black text-md group-hover:text-white">
                     Batteries convert and store electrical energy for use in
@@ -453,54 +546,30 @@ const LearnComp= () => {
         </div>
       </div>
 
-      {/* <div className="mt-[6rem]">
-        <div
-          className={`text-[2rem] text-center font-semibold ${styles.head1}`}
-        >
-          There’s more to learn
-        </div>
-        <div className="mt-[2rem] w-[60%] mx-auto">
-          <div>
-            <div className="pt-[20px] pb-[20px] border-t-[2px] border-b-[2px]">
-              The long & short of trading
-            </div>
-            <div className="pt-[20px] pb-[20px] border-b-[2px]">
-              Trading calls & puts
-            </div>
-            <div className="pt-[20px] pb-[20px] border-b-[2px]">
-              Navigating exercise & assignment
-            </div>
-            <div className="pt-[20px] pb-[20px] border-b-[2px]">
-              Volatility explained
-            </div>
-          </div>
-
-          <div className="mt-[2rem] flex flex-col justify-center items-center gap-[1rem]">
-            <div className="px-[30px] py-[7px] w-[250px] rounded-[100px] text-white border-[1px] border-black bg-black font-bold text-center">
-              See Options Articles
-            </div>
-          </div>
-        </div>
-      </div> */}
-
       <div className="bg-black h-[0.7px] w-[90%] mx-auto mt-[8rem] mb-[7rem]"></div>
 
       {/* The library */}
       <div className="">
         <div className="flex flex-col justify-center items-center gap-[1.4rem]">
-          <div className={`text-[3rem] font-semibold ${styles.head1}`}>
+          <div
+            className={`text-[2.2rem] md:text-[3rem] text-center font-semibold ${styles.head1}`}
+          >
             The library
           </div>
           <div
-            className={`${styles.head1} text-[1.25rem] font-semibold text-center`}
+            className={`${styles.head1} text-[1.05rem] md:text-[1.28rem] font-semibold text-center`}
           >
             There’s always more to learn when it comes to <br></br>
             investing. Check out our entire library.
           </div>
         </div>
-        <div className="mt-[5rem] w-[70%] mx-auto flex flex-wrap justify-start items-center gap-[1.2rem]">
+        <div className="mt-[5rem] w-[95%] md:w-[70%] mx-auto flex flex-wrap justify-center xl:justify-start items-center gap-[1.2rem]">
           <div className="relative inline-block cursor-pointer border-[0.8px] border-black rounded-md ">
-            <Image alt="image" src="/images/comp5/box1.svg" className="block rounded-md" />
+            <Image
+              alt="image"
+              src="/images/comp5/box1.svg"
+              className="block rounded-md"
+            />
 
             <div className="absolute top-0 flex items-start justify-center p-4">
               <div className="p-4 rounded-md text-left">
@@ -513,7 +582,11 @@ const LearnComp= () => {
             </div>
           </div>
           <div className="relative inline-block cursor-pointer border-[0.8px] border-black rounded-md">
-            <Image alt="image" src="/images/comp5/box2.svg" className="block rounded-md" />
+            <Image
+              alt="image"
+              src="/images/comp5/box2.svg"
+              className="block rounded-md"
+            />
 
             <div className="absolute top-0 flex items-start justify-center p-4">
               <div className="p-4 rounded-md text-left">
@@ -526,7 +599,11 @@ const LearnComp= () => {
             </div>
           </div>
           <div className="relative inline-block cursor-pointer border-[0.8px] border-black rounded-md">
-            <Image alt="image" src="/images/comp5/box3.svg" className="block rounded-md" />
+            <Image
+              alt="image"
+              src="/images/comp5/box3.svg"
+              className="block rounded-md"
+            />
 
             <div className="absolute top-0 flex items-start justify-center p-4">
               <div className="p-4 rounded-md text-left">
@@ -548,15 +625,15 @@ const LearnComp= () => {
 
       <div className="bg-black h-[0.7px] w-[100%] mx-auto mt-[6rem] mb-[6rem]"></div>
 
-      <div className="flex flex-col gap-[1rem] w-[60%] mx-auto mb-[3rem]">
-        <div className="text-black opacity-[70%] text-left text-[1.15rem]">
+      <div className="flex flex-col gap-[1rem] w-[90%]  md:w-[60%] mx-auto mb-[3rem]">
+        <div className="text-black opacity-[70%] text-center md:text-left text-[1.15rem]">
           Content is provided for informational purposes only, does not
           constitute tax or investment advice, and is not a recommendation for
           any security or trading strategy. All investments involve risk,
           including the possible loss of capital. Past performance does not
           guarantee future results.
         </div>
-        <div className="text-black opacity-[70%] text-left text-[1.15rem]">
+        <div className="text-black opacity-[70%] text-center md:text-left text-[1.15rem]">
           Options trading entails significant risk and is not appropriate for
           all customers. Customers must read and understand the{" "}
           <span>
@@ -826,7 +903,7 @@ const LearnComp= () => {
           </div>
         </div>
       </div> */}
-    </>
+    </div>
   );
 }
 

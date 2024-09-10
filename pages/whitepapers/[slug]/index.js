@@ -294,7 +294,7 @@ export default function BlogPage({ blog, blogs }) {
             className={styles.coverImage}
           />
         </div>
-        <div className="mt-[2rem] w-[80%] mx-auto flex gap-2">
+        <div className="mt-[2rem] w-[80%] mx-auto flex md:flex-row flex-col gap-2">
           <div className={styles.blogholder}>
             <article className={styles.blog} style={{ marginTop: "1rem" }}>
               {documentToReactComponents(blogContent, renderOption)}

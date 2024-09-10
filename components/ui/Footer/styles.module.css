@@ -1,5 +1,7 @@
 .head1 {
     font-family: 'Open Sans', sans-serif;
+    max-width: 100vw;
+    overflow-x: hidden;
   }
 
   
@@ -50,16 +52,19 @@
   @media (min-width: 500px) and (max-width: 700px) {
     .Footer_content__4wtov {
       gap: 0.5rem;
+      max-width: 95%;
     }
   }
   @media (min-width: 350px) and (max-width: 500px) {
     .Footer_content__4wtov {
       gap: 0.5rem;
+      max-width: 98%;
     }
   }
   @media (max-width: 350px) {
     .Footer_content__4wtov {
       gap: 0.2rem;
+      max-width: 98%;
     }
   }
   @media (min-width: 380px) and(max-width: 760px) {
@@ -204,6 +209,14 @@
       color: #ffffff;
     }
   }
+
+
+  @media (max-width:700px) {
+    .Footer_social__XfgO0 {
+      display: none;
+    }
+  }
+
   .Footer_social__XfgO0 {
     grid-area: social;
   }
@@ -277,7 +290,24 @@
     flex-wrap: wrap;
     gap:0.8rem;
   }
+  .linksFot2{
    
+    font-size: 14.5px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap:0.8rem;
+  }
+
+  @media (min-width:700px) {
+    .linksFot2{
+      display: none;
+    }
+  }
+
+
   .lineMiddle{
     height: auto;
     margin-top: 5%;
@@ -320,14 +350,14 @@
       gap: 4rem;
     }
     .footerElementDesktop {
-      gap: 4rem;
+      gap: 3rem;
     }
     .footerElements {
       font-size: 17px;
     }
     .footerDescription {
       font-size: 13px;
-      margin-top: -2rem;
+      
     }
     .footerHeader{
       margin-top: -3rem;
@@ -339,13 +369,13 @@
     }
     .footerDescription {
       font-size: 13px;
-      margin-top: -2.5rem;
+     
     }
   }
   @media (min-width: 600px) and (max-width: 700px) {
     .footerDescription {
       font-size: 14.5px;
-      margin-top: -10px;
+      
     }
   }
   @media (min-width: 600px) and (max-width: 787px) {
@@ -353,7 +383,7 @@
       gap: 2rem;
     }
     .footerElementDesktop {
-      gap: 2rem;
+      gap: 1.5rem;
     }
     .footerElements {
       font-size: 17px;
@@ -396,16 +426,17 @@
       padding-top: 0px;
     }
     .footerElementDesktop{
-      gap: 1.4rem;
-      width: 300px;
+      gap: 0.6rem;
+      width: 340px;
+      padding-left: 2rem;
       /* padding-left: 12px; */
-      flex-wrap: wrap;
+      /* flex-wrap: wrap; */
       justify-content: center;
       align-items: center;
     }
     .contactAndComp{
       flex-direction: row;
-      margin-top: 1rem;
+      margin-top: 0rem;
       justify-content: center;
       align-items: start;
       gap: 1.4rem;
