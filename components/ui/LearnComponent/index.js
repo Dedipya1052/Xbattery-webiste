@@ -54,7 +54,7 @@ const grid=[
 
 const LearnComp= () => {
   return (
-    <div className="w-[100%] overflow-x-hidden">
+    <div className={styles.head1}>
       {/* hero */}
       {/* <div className={`bg-[#E1EBDC] w-[100%] border-b-[1px] border-black`}>
         <div className={`${styles.head1} border-b-[1px] border-black`}>
@@ -167,7 +167,7 @@ const LearnComp= () => {
             <Image
               alt="image"
               src="/images/comp5/box10.svg"
-              className="block rounded-md h-[219px] w-[100%] object-cover object-left-bottom"
+              className="block rounded-md h-[219px] w-[100%] object-cover"
             />
 
             <div className="absolute top-0 flex flex-col items-start justify-center p-4">

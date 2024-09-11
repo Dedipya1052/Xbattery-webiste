@@ -2,4 +2,12 @@
 /* component1 header */
 .head1 {
     font-family: 'Open Sans', sans-serif;
+    width: 100%;
+    overflow-x: hidden;
+}
+@media (min-width:1500px) {
+  .head1 {
+    max-width: 1500px;
+    margin: 0 auto;
   }
+}

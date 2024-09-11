@@ -73,6 +73,7 @@ export default function Blogs({ blogs }) {
         </title>
         <meta property="og:image" content="/images/thumbnail.webp" />
       </Head>
+      <div className={styles.head1}>
       <div className="w-[100%]">
         {/* <div className={`${styles.head1} border-b-[1px] border-[#aeaeae]`}>
           <div className=" w-[96%] mx-auto pt-[1rem] pb-[1rem] text-[2.1rem] font-[520]">
@@ -120,6 +121,7 @@ export default function Blogs({ blogs }) {
             ))}
           </AnimatePresence>
         </motion.div>
+      </div>
       </div>
     </>
   );

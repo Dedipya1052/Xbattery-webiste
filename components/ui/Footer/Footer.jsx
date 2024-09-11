@@ -73,6 +73,7 @@ const Footer = () => {
                   width="160"
                   height={"160"}
                   alt="logo"
+                  
                 />
               </Link>
               <div className={`${styles.Footer_social__XfgO0} mr-[2rem]`}>

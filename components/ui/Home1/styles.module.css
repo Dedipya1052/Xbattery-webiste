@@ -1,6 +1,12 @@
 .head1 {
   font-family: 'Open Sans', sans-serif;
 }
+@media (min-width:1500px) {
+  .head1 {
+    max-width: 1500px;
+    margin: 0 auto;
+  }
+}
 
 @keyframes slideUp {
     from {
