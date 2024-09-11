@@ -65,7 +65,7 @@ const Footer = () => {
     <div className={styles.head1}>
     <div className={styles.Footer_root__HZhgG}>
         <div className={styles.Footer_content__4wtov}>
-          <div className={styles.footerHeader}>
+          <div className={`${styles.footerHeader} ${styles.footerHeader1}`}>
             <div className={styles.footerLogo} aria-label="Go to homepage">
               <Link href={"/"}>
                 <Image
