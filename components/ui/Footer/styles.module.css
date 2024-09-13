@@ -152,11 +152,12 @@
     word-spacing: 0.5px;
     line-height: 27px;
     margin-bottom: 50px;
-    font-size: 15px;
+    font-size: 14px;
   }
   .footerDescription1 {
     display: none;
     margin-bottom: 20px;
+    font-size: small;
   }
   .footerElementDesktop {
     display: flex;
