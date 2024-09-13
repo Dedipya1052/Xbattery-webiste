@@ -55,7 +55,7 @@ const About = () => {
           </div>
 
           <button className="text-white bg-transparent border border-white px-4 py-2 rounded-full hover:bg-white hover:text-black transition-colors duration-300 hidden md:block">
-            <Link href="/coming-soon">Coming Soon</Link>
+            <Link href="/">Coming Soon</Link>
           </button>
 
           <button
@@ -117,7 +117,7 @@ const About = () => {
               </button>
             </Link>
 
-            <Link href="/coming-soon">
+            <Link href="/">
               <button
                 className="text-white bg-transparent border border-white px-4 py-2 rounded-full hover:bg-white hover:text-black transition-colors duration-300"
                 onClick={handleMenuItemClick}
