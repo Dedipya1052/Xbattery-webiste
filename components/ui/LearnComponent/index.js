@@ -84,20 +84,20 @@ const LearnComp= () => {
             Learn
           </div>
         </div> */}
-        <div className=" mt-[3rem] mb-[5rem] flex flex-col justify-center items-center gap-[1rem] w-[100%]">
+        <div className=" mt-[2.5rem] mb-[2rem] flex flex-col justify-center items-center gap-[1rem] w-[100%]">
           <div
-            className={`text-[2.3rem] md:text-[3.1rem] text-center font-semibold ${styles.head1}`}
+            className={`text-[2.22rem] md:text-[2.8rem] text-center font-semibold ${styles.head1}`}
           >
             Explore the topics
           </div>
-          <div
+          {/* <div
             className={`${styles.head1} text-[1.05rem] md:text-[1.28rem] text-center font-semibold p-2`}
           >
             There’s always more to learn when it comes to knowledge.
-          </div>
+          </div> */}
         </div>
-        <div className="mt-[-2rem] md:mt-[5rem] w-[90%] mx-auto grid xl:grid-cols-3 lg:grid-cols-2 justify-center lg:justify-start items-center gap-[1.2rem]">
-          <div className="relative inline-block border-[0.8px] border-black rounded-md xl:h-[220px]">
+        <div className="mt-[2.8rem] md:mt-[4.5rem] w-[90%] mx-auto grid xl:grid-cols-3 lg:grid-cols-2 justify-center lg:justify-start items-center gap-[1.2rem]">
+          <div className="relative inline-block border-[0.8px] border-black rounded-md xl:h-[220px] overflow-hidden">
             <Image
               alt="image"
               src="/images/comp5/box12.svg"
@@ -130,7 +130,7 @@ const LearnComp= () => {
               </div>
             </div>
           </div>
-          <div className="relative inline-block border-[0.8px] border-black rounded-md xl:h-[220px]">
+          <div className="relative inline-block border-[0.8px] border-black rounded-md xl:h-[220px] overflow-hidden">
             <Image
               alt="image"
               src="/images/comp5/box5.svg"
@@ -163,7 +163,7 @@ const LearnComp= () => {
               </div>
             </div>
           </div>
-          <div className="relative inline-block border-[0.8px] border-black rounded-md xl:h-[220px]">
+          <div className="relative inline-block border-[0.8px] border-black rounded-md xl:h-[220px] overflow-hidden">
             <Image
               alt="image"
               src="/images/comp5/box10.svg"
@@ -196,7 +196,7 @@ const LearnComp= () => {
               </div>
             </div>
           </div>
-          <div className="relative inline-block border-[0.8px] border-black rounded-md xl:h-[220px]">
+          <div className="relative inline-block border-[0.8px] border-black rounded-md xl:h-[220px] overflow-hidden">
             <Image
               alt="image"
               src="/images/comp5/box13.svg"
@@ -229,7 +229,7 @@ const LearnComp= () => {
               </div>
             </div>
           </div>
-          <div className="relative inline-block border-[0.8px] border-black rounded-md xl:h-[220px]">
+          <div className="relative inline-block border-[0.8px] border-black rounded-md xl:h-[220px] overflow-hidden">
             <Image
               alt="image"
               src="/images/comp5/box11.svg"
@@ -262,7 +262,7 @@ const LearnComp= () => {
               </div>
             </div>
           </div>
-          <div className="relative inline-block border-[0.8px] border-black rounded-md xl:h-[220px]">
+          <div className="relative inline-block border-[0.8px] border-black rounded-md xl:h-[220px] overflow-hidden">
             <Image
               alt="image"
               src="/images/comp5/box3.svg"
@@ -301,7 +301,7 @@ const LearnComp= () => {
       <div className="bg-black h-[0.7px] w-[90%] mx-auto mt-[7rem] mb-[6rem]"></div>
 
       {/* Investing 101 */}
-      <div className="mt-[6rem]">
+      {/* <div className="mt-[6rem]">
         <div className="flex flex-col justify-center items-center gap-[1rem]">
           <div
             className={`text-[2.2rem] md:text-[3rem] text-center font-semibold ${styles.head1}`}
@@ -314,68 +314,7 @@ const LearnComp= () => {
             A good place to start. Get the <br></br>low-down before you dive in.
           </div>
         </div>
-        {/* <div className="mt-[5rem] flex justify-center items-center gap-[1.2rem]">
-          <div className="relative inline-block cursor-pointer group">
-            <Link href="/learn/energy-storage">
-              <Image alt="image" src="/images/comp2/box1.svg" className="block" />
-
-              <div className="absolute inset-0 flex items-start justify-center p-4">
-                <div className="p-4 rounded-md text-left ">
-                  <h2
-                    className={`text-[1.7rem] font-semibold mb-2 ${styles.head1} leading-[45px] group-hover:text-white`}
-                  >
-                    What is an <br></br>Energy storage?
-                  </h2>
-                  <p className="text-black text-md group-hover:text-white">
-                    Energy storage has come a long way. Before, pumped
-                    hydroelectric storage worked as a system of storing energy.
-                  </p>
-                </div>
-              </div>
-            </Link>
-          </div>
-
-          <div className="relative inline-block cursor-pointer group">
-            <Link href="/learn/renewable-energy">
-              <Image alt="image" src="/images/comp2/box2.svg" className="block" />
-
-              <div className="absolute inset-0 flex items-start justify-center p-4">
-                <div className="p-4 rounded-md text-left group-hover:text-white">
-                  <h2
-                    className={`text-[1.7rem] font-semibold mb-2 ${styles.head1} leading-[45px] group-hover:text-white`}
-                  >
-                    What is a <br></br>Renewable Energy?
-                  </h2>
-                  <p className="text-black text-md group-hover:text-white">
-                    Renewable energy comes from natural sources that replenish
-                    themselves, like solar, wind, and hydro power.
-                  </p>
-                </div>
-              </div>
-            </Link>
-          </div>
-
-          <div className="relative inline-block cursor-pointer group">
-            <Link href="/learn/grid">
-              <Image alt="image" src="/images/comp2/box3.svg" className="block" />
-
-              <div className="absolute inset-0 flex items-start justify-center p-4 ">
-                <div className="p-4 rounded-md text-left">
-                  <h2
-                    className={`text-[1.7rem] font-semibold mb-2 ${styles.head1} leading-[45px] group-hover:text-white`}
-                  >
-                    What is the <br></br>Grid?
-                  </h2>
-                  <p className="text-black text-md group-hover:text-white">
-                    The power grid, or simply "the grid," is a massive network
-                    of power plants, transformers,that work together to deliver
-                    electricity to consumers.
-                  </p>
-                </div>
-              </div>
-            </Link>
-          </div>
-        </div> */}
+        
         <div className="mt-[5rem] w-[85%] mx-auto sm:w-[90%] md:w-[85%] lg:[87%] xl:w-[75%] grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-[1.2rem] justify-items-center">
           <div className="relative cursor-pointer group h-[500px] w-[300px] sm:w-full sm:h-auto object-contain">
             <Link href="/learn/energy-storage">
@@ -447,26 +386,26 @@ const LearnComp= () => {
             </Link>
           </div>
         </div>
-      </div>
+      </div> */}
 
-      <div className="bg-black h-[0.7px] w-[90%] mx-auto mt-[8rem] mb-[6rem]"></div>
+      {/* <div className="bg-black h-[0.7px] w-[90%] mx-auto mt-[8rem] mb-[6rem]"></div> */}
 
       {/* Options trading essentials */}
       <div className="">
         <div className="flex flex-col justify-center items-center gap-[1.4rem]">
           <div
-            className={`text-[2.2rem] md:text-[3rem] text-center font-semibold ${styles.head1}`}
+            className={`text-[2.22rem] md:text-[2.8rem] text-center font-semibold ${styles.head1}`}
           >
             Options trading essentials
           </div>
           <div
-            className={`${styles.head1} text-[1.05rem] md:text-[1.25rem] font-semibold text-center`}
+            className={`${styles.head1} text-[0.8rem] md:text-[1.2rem] font-semibold text-center`}
           >
             Curious about options? Learn the ins and outs from <br></br>
             the pros before making your move.
           </div>
         </div>
-        <div className="mt-[5rem] w-[85%] mx-auto sm:w-[90%] md:w-[85%] lg:[87%] xl:w-[75%] grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-[1.2rem] justify-items-center">
+        <div className="mt-[2.5rem] md:mt-[5rem] w-[85%] mx-auto sm:w-[90%] md:w-[85%] lg:[87%] xl:w-[75%] grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-[1.2rem] justify-items-center">
           <div className="relative cursor-pointer group h-[500px] w-[300px] sm:w-full sm:h-auto object-contain">
             <Link href="/learn/electric-vehicles">
               <Image
@@ -546,10 +485,10 @@ const LearnComp= () => {
         </div>
       </div>
 
-      <div className="bg-black h-[0.7px] w-[90%] mx-auto mt-[8rem] mb-[7rem]"></div>
+      {/* <div className="bg-black h-[0.7px] w-[90%] mx-auto mt-[8rem] mb-[7rem]"></div> */}
 
       {/* The library */}
-      <div className="">
+      {/* <div className="">
         <div className="flex flex-col justify-center items-center gap-[1.4rem]">
           <div
             className={`text-[2.2rem] md:text-[3rem] text-center font-semibold ${styles.head1}`}
@@ -621,7 +560,7 @@ const LearnComp= () => {
             See Library
           </div>
         </div>
-      </div>
+      </div> */}
 
       <div className="bg-black h-[0.7px] w-[100%] mx-auto mt-[6rem] mb-[6rem]"></div>
 

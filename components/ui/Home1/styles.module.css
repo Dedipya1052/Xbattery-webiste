@@ -1,12 +1,12 @@
 .head1 {
   font-family: 'Open Sans', sans-serif;
 }
-@media (min-width:1500px) {
+/* @media (min-width:1600px) {
   .head1 {
-    max-width: 1500px;
+    max-width: 1600px;
     margin: 0 auto;
   }
-}
+} */
 
 @keyframes slideUp {
     from {
@@ -49,7 +49,7 @@
   border-radius: 0.375rem;
   color: white;
   background: linear-gradient(to right, #7ee37e, #8181e4);
-  /* transition: background 0.5s ease-in-out; */
+  /* transition: background 0.5s ease-in-out; */ 
 }
 
 /* block2 */

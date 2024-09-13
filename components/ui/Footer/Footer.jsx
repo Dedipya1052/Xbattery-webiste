@@ -111,10 +111,7 @@ const Footer = () => {
 
           <div className={styles.footerElementDesktop}>
             <div className={styles.footerDescription}>
-            XBattery is a reliable EV battery built for better performance and
-            longer life. It charges quickly and provides consistent power,
-            helping electric vehicles run smoothly while supporting a cleaner
-            future.
+            XBattery is building giant batteries to transform energy storage in India using advanced BMS, IoT, Digital Twins, and AI.
               <br />
             </div>
 
@@ -162,10 +159,7 @@ const Footer = () => {
             </div>
           </div>
           <div className={styles.footerDescription1}>
-            XBattery is a reliable EV battery built for better performance and
-            longer life. It charges quickly and provides consistent power,
-            helping electric vehicles run smoothly while supporting a cleaner
-            future.
+          XBattery is building giant batteries to transform energy storage in India using advanced BMS, IoT, Digital Twins, and AI.
             <br />
           </div>
           <div className={styles.linksFot2}>
@@ -473,7 +467,7 @@ const Footer = () => {
         </div>
       </div> */}
       
-      <div className={`w-full mt-[3rem] mb-1 mx-auto ${styles.head1} flex flex-col xl:flex-row justify-between border-t-[0.8px] border-b-[0.8px] border-black`}>
+      <div className={`w-full mt-[3rem] mx-auto ${styles.head1} flex flex-col xl:flex-row justify-between border-t-[0.8px] border-b-[0.8px] border-black`}>
   <div className="w-full xl:w-[65%] border-b-[0.8px] xl:border-r-[0.8px] border-black">
     <div className="text-[1.2rem] pb-[0.8rem] pl-[2rem] pt-[1rem] border-b-[0.8px] border-black font-semibold">
       Learn
