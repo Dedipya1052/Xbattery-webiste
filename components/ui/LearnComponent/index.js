@@ -100,7 +100,7 @@ const LearnComp= () => {
           <div className="relative inline-block border-[0.8px] border-black rounded-md xl:h-[220px] overflow-hidden">
             <Image
               alt="image"
-              src="/images/comp5/box12.svg"
+              src="/images/comp5/box1.svg"
               className="block rounded-md h-[219px] w-[100%] object-cover object-right-bottom"
             />
 
@@ -133,8 +133,8 @@ const LearnComp= () => {
           <div className="relative inline-block border-[0.8px] border-black rounded-md xl:h-[220px] overflow-hidden">
             <Image
               alt="image"
-              src="/images/comp5/box5.svg"
-              className="block rounded-md h-[219px] w-auto object-cover "
+              src="/images/comp5/box2.svg"
+              className="block rounded-md h-[219px] w-[100%] object-cover "
             />
 
             <div className="absolute top-0 flex flex-col items-start justify-center p-4">
@@ -166,8 +166,8 @@ const LearnComp= () => {
           <div className="relative inline-block border-[0.8px] border-black rounded-md xl:h-[220px] overflow-hidden">
             <Image
               alt="image"
-              src="/images/comp5/box10.svg"
-              className="block rounded-md h-[219px] w-[100%] object-cover"
+              src="/images/comp5/box3.svg"
+              className="block rounded-md h-[219px] w-[100%] object-cover "
             />
 
             <div className="absolute top-0 flex flex-col items-start justify-center p-4">
@@ -199,8 +199,8 @@ const LearnComp= () => {
           <div className="relative inline-block border-[0.8px] border-black rounded-md xl:h-[220px] overflow-hidden">
             <Image
               alt="image"
-              src="/images/comp5/box13.svg"
-              className="block rounded-md h-[219px] w-[100%] object-cover"
+              src="/images/comp5/box4.svg"
+              className="block rounded-md  w-[100%] h-[219px]  object-cover"
             />
 
             <div className="absolute top-0 flex flex-col items-start justify-center p-4">
@@ -232,7 +232,7 @@ const LearnComp= () => {
           <div className="relative inline-block border-[0.8px] border-black rounded-md xl:h-[220px] overflow-hidden">
             <Image
               alt="image"
-              src="/images/comp5/box11.svg"
+              src="/images/comp5/box5.svg"
               className="block rounded-md h-[219px] w-[100%] object-cover object-right-bottom"
             />
 
@@ -265,8 +265,8 @@ const LearnComp= () => {
           <div className="relative inline-block border-[0.8px] border-black rounded-md xl:h-[220px] overflow-hidden">
             <Image
               alt="image"
-              src="/images/comp5/box3.svg"
-              className="block rounded-md h-[220px] w-[100%] object-cover"
+              src="/images/comp5/box6.svg" 
+              className="block rounded-md h-[220px] w-[100%] object-cover object-right-bottom"
             />
 
             <div className="absolute top-0 flex flex-col items-start justify-center p-4">
