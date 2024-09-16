@@ -199,7 +199,7 @@ const Footer = () => {
             marginTop: "25px",
           }}
         >
-          © {new Date().getFullYear()} XBattery. All rights reserved.
+          © {new Date().getFullYear()} XBattery Energy Private Limited. All rights reserved.
         </p>
       </div>
     </div> :
@@ -638,8 +638,8 @@ const Footer = () => {
       </div>
     </div>
     <div>
-      <p className="text-gray-400 text-left font-sans pl-[0.8rem] mt-1 text-[0.85rem]">
-        © {new Date().getFullYear()} XBattery. All rights reserved.
+      <p className="text-gray-400 text-left font-sans pl-[0.8rem] mt-1 text-[0.75rem]">
+        © {new Date().getFullYear()} XBattery Energy Private Limited. All rights reserved.
       </p>
     </div>
   </div>
