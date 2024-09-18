@@ -55,11 +55,11 @@
 /* block2 */
 
 .block2Head{
-  font-size: 73px;
+  font-size: 25px;
   font-weight: 700;
-  color: transparent;
-  background-image: linear-gradient(90deg,#2c7ed0 -10.12%,#00a9ed 11.59%,#00db84 69.71%);
-  
+  /* color: transparent;
+  background-image: linear-gradient(90deg,#2c7ed0 -10.12%,#00a9ed 11.59%,#00db84 69.71%); */
+  color: white;
   -webkit-background-clip: text;
   background-clip: text;
 

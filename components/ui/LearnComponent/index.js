@@ -6,6 +6,7 @@ import { FaYoutube } from "react-icons/fa";
 import { FaFacebook } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
 import { Image } from "@chakra-ui/react";
+import CompleteSolarCalculator from "@/components/unchanged-solar-calculator";
 
 
 const energyStorage=[
@@ -585,6 +586,8 @@ const LearnComp= () => {
           request.
         </div>
       </div>
+
+      {/* <CompleteSolarCalculator/> */}
 
       {/* <div className="bg-black h-[0.8px] w-[100%] mx-auto mt-[8rem] mb-[3rem]"></div> */}
 

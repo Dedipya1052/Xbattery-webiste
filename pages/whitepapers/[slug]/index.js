@@ -14,16 +14,18 @@ import Card from "@/components/ui/BlogCard/BlogCard";
 import TopBlogs from "@/components/ui/TopBlogs";
 import { useEffect, useState } from "react";
 import {
-    Modal,
-    ModalOverlay,
-    ModalContent,
-    ModalHeader,
-    ModalFooter,
-    ModalBody,
-    ModalCloseButton,
-    Input, 
-    FormControl, FormLabel, SimpleGrid 
-  } from '@chakra-ui/react'
+  Modal,
+  ModalOverlay,
+  ModalContent,
+  ModalHeader,
+  ModalFooter,
+  ModalBody,
+  ModalCloseButton,
+  Input,
+  FormControl,
+  FormLabel,
+  SimpleGrid,
+} from "@chakra-ui/react";
 
 // * fetch blogs from contentful CMS
 async function fetchBlogs() {
@@ -64,7 +66,6 @@ const renderOption = {
               title="Whitepaper PDF"
               width="100%"
               height="500px"
-             
             ></iframe>
             <a href={pdfUrl} target="_blank" rel="noopener noreferrer" download>
               Download PDF
@@ -156,7 +157,7 @@ export async function getStaticProps({ params }) {
         coverImage,
         blogContent,
         slug,
-        pdf
+        pdf,
         // faqs : faqs?faqs:null
       },
       blogs: filteredBlogs,
@@ -168,13 +169,12 @@ export default function BlogPage({ blog, blogs }) {
   //console.log(blog)
   //console.log("blogs : ",blogs);
 
-
   const router = useRouter();
 
-  const { isOpen, onOpen, onClose } = useDisclosure()
+  const { isOpen, onOpen, onClose } = useDisclosure();
 
-  const [showButton,setShowButton] =useState(false)
- 
+  const [showButton, setShowButton] = useState(false);
+
   const {
     title,
 
@@ -186,10 +186,30 @@ export default function BlogPage({ blog, blogs }) {
 
   // console.log("pdf : ",pdf.fields.file.url );
 
+  async function sendDataToAPI(name, email) {
+    try {
+      const response = await fetch("/api/userDetails", {
+        method: "POST", // Use POST method
+        headers: {
+          "Content-Type": "application/json", // Send JSON data
+        },
+        body: JSON.stringify({ name, email }), // Convert name and email to JSON
+      });
+
+      if (!response.ok) {
+        throw new Error(`Error: ${response.statusText}`);
+      }
+
+      const data = await response.json();
+      console.log("Document inserted successfully:", data);
+    } catch (error) {
+      console.error("Error inserting document:", error);
+    }
+  }
 
   const [formData, setFormData] = useState({
-    name: '',
-    email: '',
+    name: "",
+    email: "",
   });
 
   const handleChange = (e) => {
@@ -200,16 +220,24 @@ export default function BlogPage({ blog, blogs }) {
     }));
   };
 
-  const handleSubmit = () => {
-    // Validate and handle form submission logic here
-    console.log(formData);
-    setShowButton(true);
-    onClose();
+  const handleSubmit = async () => {
+    if (isFormComplete) {
+      try {
+        // Call the API function to send the data
+        await sendDataToAPI(formData.name, formData.email);
+        console.log("Form submitted:", formData);
 
+        // Show button or any success action
+        setShowButton(true);
+
+        onClose();
+      } catch (error) {
+        console.error("Error submitting form:", error);
+      }
+    }
   };
 
   const isFormComplete = formData.name && formData.email;
-
 
   // useEffect(() => {
   //   // Extract and inject styles from the animation code
@@ -230,7 +258,6 @@ export default function BlogPage({ blog, blogs }) {
 
   // Extract the HTML content without the <style> tag
   //const contentMatch = animation.replace(/<style[^>]*>([\s\S]*?)<\/style>/, '');
-
 
   // console.log("blog deatils : ",blog);
 
@@ -324,7 +351,7 @@ export default function BlogPage({ blog, blogs }) {
               ) : (
                 <div className={styles.paperButton} onClick={onOpen}>
                   {" "}
-                 Download
+                  Download
                 </div>
               )}
             </div>
@@ -393,7 +420,7 @@ export default function BlogPage({ blog, blogs }) {
                   rel="noopener noreferrer"
                   download
                 >
-                 Download
+                  Download
                 </a>
               </Button>
             </div>

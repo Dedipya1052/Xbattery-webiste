@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@azure/cosmos": "^4.1.1",
     "@chakra-ui/react": "^2.8.2",
     "@contentful/rich-text-react-renderer": "^15.22.9",
     "@emotion/react": "^11.13.3",
@@ -24,6 +25,7 @@
     "eslint-config-next": "13.1.6",
     "framer-motion": "^9.1.7",
     "gsap": "^3.12.5",
+    "lucide-react": "^0.441.0",
     "next": "13.1.6",
     "react": "18.2.0",
     "react-dom": "18.2.0",
