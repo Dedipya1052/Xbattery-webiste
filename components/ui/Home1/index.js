@@ -7,16 +7,22 @@ import { useState } from "react";
 import { useEffect } from "react";
 import { useAnimation, useInView } from "framer-motion";
 import { useRef } from "react";
-import { motion } from "framer-motion";
 import Link from "next/link";
 import AnimatedDiv from "../Animate";
+import { motion} from "framer-motion";
 
-const Example = () => {
+
+// * fetch blogs from contentful CMS
+
+const Example = ({media}) => {
   // const [imageSrc, setImageSrc] = useState(HeroImg);
   const [para, setPara] = useState(false);
   const [para1, setPara1] = useState(false);
   const [para2, setPara2] = useState(false);
   const [para3, setPara3] = useState(false);
+
+  const videoUrl1 = media?.video1?.fields?.file?.url;
+  
 
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
@@ -237,8 +243,9 @@ const Example = () => {
             muted
             playsInline
             preload="auto"
+            onLoadedData={(e) => e.target.play()} // Ensure video starts playing after it's loaded
           >
-            <source src="/videos/1.mp4" type="video/mp4" />
+            <source src={`https:${videoUrl1}`} type="video/mp4" />
             Your browser does not support the video tag.
           </video>
           <motion.div
@@ -433,12 +440,21 @@ const Example = () => {
             layout="responsive"
             width={1000}
             height={1000}
+            alt="image"
             className="w-full h-auto"
           />
           <div className="absolute top-10 left-1/2 transform -translate-x-1/2 text-black text-center">
             <h1 className="text-2xl font-bold">Power Your Home, Save Money</h1>
             <p className="mt-4">
-            XBattery is a cutting-edge solution for energy storage in India, featuring large-scale batteries equipped with advanced Battery Management Systems (BMS), IoT integration, Digital Twins, and Artificial Intelligence (AI). These technologies allow you to store energy efficiently from various sources and manage it for optimal use. Whether for powering your home, reducing electricity costs, or ensuring reliable energy during outages, XBattery provides customizable modes to enhance performance and adaptability.
+              XBattery is a cutting-edge solution for energy storage in India,
+              featuring large-scale batteries equipped with advanced Battery
+              Management Systems (BMS), IoT integration, Digital Twins, and
+              Artificial Intelligence (AI). These technologies allow you to
+              store energy efficiently from various sources and manage it for
+              optimal use. Whether for powering your home, reducing electricity
+              costs, or ensuring reliable energy during outages, XBattery
+              provides customizable modes to enhance performance and
+              adaptability.
             </p>
           </div>
         </div>
