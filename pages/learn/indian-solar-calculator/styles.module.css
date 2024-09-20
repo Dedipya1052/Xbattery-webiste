@@ -1,0 +1,96 @@
+.head1 {
+    font-family: 'Open Sans', sans-serif;
+    width: 100%;
+    overflow-x: hidden;
+}
+
+@media (min-width:1500px) {
+    .head1 {
+        max-width: 1500px;
+        margin: 0 auto;
+    }
+}
+
+.container {
+    width: 60%;
+    margin: 6rem auto;
+    position: relative;
+}
+
+@media (min-width: 500px) and (max-width: 1024px) {
+    .container {
+        width: 85%;
+    }
+}
+
+@media (max-width: 500px) {
+    .container {
+        width: 95%;
+        margin: 50px auto;
+    }
+}
+
+.affBackButton {
+    position: absolute;
+    top: -48px;
+    left: -20%;
+    border-radius: 10px;
+    padding: 10px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    border: 1px solid rgb(174, 174, 174);
+    transition: all 0.4s;
+    z-index: 30;
+}
+
+@media (min-width:768px) and (max-width:1024px) {
+    .affBackButton {
+        top: -54px;
+        left: -6%;
+    }
+}
+
+@media (min-width:600px) and (max-width:768px) {
+    .affBackButton {
+        top: -60px;
+        left: -8%;
+    }
+}
+
+@media (min-width:0px) and (max-width:600px) {
+    .affBackButton {
+        display: none;
+    }
+}
+
+.affBackButton p {
+    font-family: "leadfont";
+    font-weight: bolder;
+}
+
+.affBackButton:hover {
+    background-color: rgb(245, 245, 245);
+    border: 1px solid rgb(180, 180, 180);
+    scale: 1.05;
+}
+
+
+.title {
+    font-size: 2.7rem;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 2rem;
+    line-height: 45px;
+}
+
+.container a {
+    cursor: pointer;
+    color: rgb(42, 193, 42);
+    font-weight: bold;
+}
+
+.container a:hover {
+    text-decoration: underline;
+}

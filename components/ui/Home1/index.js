@@ -281,157 +281,159 @@ const Example = ({media}) => {
         </div>
       </LayoutEffect>
 
-      <div className="mt-[2.5rem] mb-[5rem] w-[90%] md:[85%] lg:w-[80%] 2xl:w-[1450px] mx-auto">
-        <AnimatedDiv>
-          <div className=" mx-auto flex justify-between items-center relative">
-            <div className={`${styles.block2Head} text-start w-[45%]`}>
-              XBattery Specifications
-            </div>
-
-            <div className="w-[55%] mx-auto flex gap-[2rem] justify-evenly relative">
-              {/* Active border element */}
-              <div
-                className="absolute bottom-[-15px] h-[2px] bg-white transition-all duration-300 ease-in-out"
-                style={{
-                  width: "30%",
-                  left:
-                    activeBattery === "XBattery1"
-                      ? "0%"
-                      : activeBattery === "XBattery2"
-                      ? "35%"
-                      : "70%",
-                }}
-              />
-
-              {/* Battery options */}
-              <div
-                onClick={() => handleBatteryChange("XBattery1")}
-                className={`cursor-pointer flex-1 text-center relative ${
-                  activeBattery === "XBattery1"
-                    ? "text-white"
-                    : "text-[#b5b5b5]"
-                }`}
-              >
-                XBattery1
-              </div>
-
-              <div
-                onClick={() => handleBatteryChange("XBattery2")}
-                className={`cursor-pointer flex-1 text-center relative ${
-                  activeBattery === "XBattery2"
-                    ? "text-white"
-                    : "text-[#b5b5b5]"
-                }`}
-              >
-                XBattery2
-              </div>
-
-              <div
-                onClick={() => handleBatteryChange("XBattery3")}
-                className={`cursor-pointer flex-1 text-center relative ${
-                  activeBattery === "XBattery3"
-                    ? "text-white"
-                    : "text-[#b5b5b5]"
-                }`}
-              >
-                XBattery3
-              </div>
-            </div>
-          </div>
-        </AnimatedDiv>
-
-        <AnimatedDiv>
-          <div className="mt-[4rem] flex flex-col gap-[1rem] pb-[4rem] border-b-[1px] border-[#2e2e2e]">
-            <div className="text-white font-bold text-xl">Power</div>
-            <div className="flex justify-start gap-[10%]">
-              <div className="flex flex-col gap-2">
-                <div className="text-[#979797] text-sm">Energy Capacity</div>
-                <div id="value">
-                  <div className="text-white text-sm">
-                    {currentBattery.energyCapacity}
-                  </div>
-                </div>
-              </div>
-
-              <div className="flex flex-col gap-2">
-                <div className="text-[#979797] text-sm">On-Grid Power</div>
-                <div id="value">
-                  <div className="text-white text-sm">
-                    {currentBattery.onGridPower}
-                  </div>
-                </div>
-              </div>
-
-              <div className="flex flex-col gap-2">
-                <div className="text-[#979797] text-sm">Backup Power</div>
-                <div id="value">
-                  <div className="text-white text-sm">
-                    {currentBattery.backupPower.peak}
-                  </div>
-                  <div className="text-white text-sm">
-                    {currentBattery.backupPower.motorStart}
-                  </div>
-                  <div className="text-white text-sm">
-                    {currentBattery.backupPower.transition}
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </AnimatedDiv>
-        <AnimatedDiv>
-          <div className="mt-[2rem] flex flex-col gap-[1rem] pb-[4rem] border-b-[1px] border-[#2e2e2e]">
-            <div className="text-white font-bold text-xl">Features</div>
-            <div className="flex justify-start gap-[10%]">
-              <div className="flex flex-col gap-2">
-                <div className="text-[#979797] text-sm">Size and Weight</div>
-                <div id="value">
-                  <div className="text-white text-sm">
-                    {currentBattery.energyCapacity}
-                  </div>
-                </div>
-              </div>
-
-              <div className="flex flex-col gap-2">
-                <div className="text-[#979797] text-sm">Scalable</div>
-                <div id="value">
-                  <div className="text-white text-sm">
-                    {currentBattery.onGridPower}
-                  </div>
-                </div>
-              </div>
-
-              <div className="flex flex-col gap-2">
-                <div className="text-[#979797] text-sm">Installation</div>
-                <div id="value">
-                  <div className="text-white text-sm">
-                    {currentBattery.backupPower.peak}
-                  </div>
-                  <div className="text-white text-sm">
-                    {currentBattery.backupPower.motorStart}
-                  </div>
-                  <div className="text-white text-sm">
-                    {currentBattery.backupPower.transition}
-                  </div>
-                </div>
-              </div>
-
-              <div className="flex flex-col gap-2">
-                <div className="text-[#979797] text-sm">Certification</div>
-                <div id="value">
-                  <div className="text-white text-sm">
-                    {currentBattery.backupPower.peak}
-                  </div>
-                  <div className="text-white text-sm">
-                    {currentBattery.backupPower.motorStart}
-                  </div>
-                  <div className="text-white text-sm">SEMI standards</div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </AnimatedDiv>
+      <div className="mt-[2.5rem] mb-[5rem] w-[94%] md:w-[90%] lg:w-[85%] xl:w-[80%] 2xl:w-[1450px] mx-auto">
+  <AnimatedDiv>
+    <div className="flex flex-col gap-6 md:gap-0 md:flex-row justify-between items-center relative ">
+      <div className={`${styles.block2Head} text-center md:text-left w-full md:w-[45%]`}>
+        XBattery Specifications
       </div>
+
+      <div className="w-full md:w-[55%] flex flex-row md:flex-row gap-[2rem] md:gap-[1rem] justify-evenly relative">
+        {/* Active border element */}
+        <div
+          className="absolute bottom-[-15px] h-[2px] bg-white transition-all duration-300 ease-in-out"
+          style={{
+            width: "30%",
+            left:
+              activeBattery === "XBattery1"
+                ? "0%"
+                : activeBattery === "XBattery2"
+                ? "35%"
+                : "70%",
+          }}
+        />
+
+        {/* Battery options */}
+        <div
+          onClick={() => handleBatteryChange("XBattery1")}
+          className={`cursor-pointer flex-1 text-center relative ${
+            activeBattery === "XBattery1"
+              ? "text-white"
+              : "text-[#b5b5b5]"
+          }`}
+        >
+          XBattery1
+        </div>
+
+        <div
+          onClick={() => handleBatteryChange("XBattery2")}
+          className={`cursor-pointer flex-1 text-center relative ${
+            activeBattery === "XBattery2"
+              ? "text-white"
+              : "text-[#b5b5b5]"
+          }`}
+        >
+          XBattery2
+        </div>
+
+        <div
+          onClick={() => handleBatteryChange("XBattery3")}
+          className={`cursor-pointer flex-1 text-center relative ${
+            activeBattery === "XBattery3"
+              ? "text-white"
+              : "text-[#b5b5b5]"
+          }`}
+        >
+          XBattery3
+        </div>
+      </div>
+    </div>
+  </AnimatedDiv>
+
+  <AnimatedDiv>
+    <div className="mt-[4rem] flex flex-col gap-[1rem] pb-[4rem] border-b-[1px] border-[#2e2e2e]">
+      <div className="text-white font-bold text-xl text-center sm:text-left">Power</div>
+      <div className="w-full mx-auto flex flex-row flex-wrap  sm:justify-start sm:flex-row gap-[2rem]  sm:gap-[10%]">
+        <div className="flex flex-col gap-2">
+          <div className="text-[#979797] text-sm">Energy Capacity</div>
+          <div id="value">
+            <div className="text-white text-sm">
+              {currentBattery.energyCapacity}
+            </div>
+          </div>
+        </div>
+
+        <div className="flex flex-col gap-2">
+          <div className="text-[#979797] text-sm">On-Grid Power</div>
+          <div id="value">
+            <div className="text-white text-sm">
+              {currentBattery.onGridPower}
+            </div>
+          </div>
+        </div>
+
+        <div className="flex flex-col gap-2">
+          <div className="text-[#979797] text-sm">Backup Power</div>
+          <div id="value">
+            <div className="text-white text-sm">
+              {currentBattery.backupPower.peak}
+            </div>
+            <div className="text-white text-sm">
+              {currentBattery.backupPower.motorStart}
+            </div>
+            <div className="text-white text-sm">
+              {currentBattery.backupPower.transition}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </AnimatedDiv>
+
+  <AnimatedDiv>
+    <div className="mt-[2rem] flex flex-col gap-[1rem] pb-[4rem] border-b-[1px] border-[#2e2e2e]">
+      <div className="text-white font-bold text-xl">Features</div>
+      <div className="flex flex-col md:flex-row gap-[1rem] md:gap-[10%]">
+        <div className="flex flex-col gap-2">
+          <div className="text-[#979797] text-sm">Size and Weight</div>
+          <div id="value">
+            <div className="text-white text-sm">
+              {currentBattery.energyCapacity}
+            </div>
+          </div>
+        </div>
+
+        <div className="flex flex-col gap-2">
+          <div className="text-[#979797] text-sm">Scalable</div>
+          <div id="value">
+            <div className="text-white text-sm">
+              {currentBattery.onGridPower}
+            </div>
+          </div>
+        </div>
+
+        <div className="flex flex-col gap-2">
+          <div className="text-[#979797] text-sm">Installation</div>
+          <div id="value">
+            <div className="text-white text-sm">
+              {currentBattery.backupPower.peak}
+            </div>
+            <div className="text-white text-sm">
+              {currentBattery.backupPower.motorStart}
+            </div>
+            <div className="text-white text-sm">
+              {currentBattery.backupPower.transition}
+            </div>
+          </div>
+        </div>
+
+        <div className="flex flex-col gap-2">
+          <div className="text-[#979797] text-sm">Certification</div>
+          <div id="value">
+            <div className="text-white text-sm">
+              {currentBattery.backupPower.peak}
+            </div>
+            <div className="text-white text-sm">
+              {currentBattery.backupPower.motorStart}
+            </div>
+            <div className="text-white text-sm">SEMI standards</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </AnimatedDiv>
+</div>
+
 
       <AnimatedDiv>
         <div className="relative w-full">

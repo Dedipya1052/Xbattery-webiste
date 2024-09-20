@@ -6,7 +6,7 @@ import { FaYoutube } from "react-icons/fa";
 import { FaFacebook } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
 import { Image } from "@chakra-ui/react";
-import CompleteSolarCalculator from "@/components/unchanged-solar-calculator";
+
 
 
 const energyStorage=[
