@@ -13,7 +13,7 @@ import { FaLinkedin } from "react-icons/fa";
 
 const Footer = () => {
   const router = useRouter();
-  const isHomePage = router.pathname === "/" || router.pathname === "/terms" || router.pathname === "/about" || router.pathname === "/privacy" || router.pathname==="/careers";
+  const isHomePage = router.pathname === "/" || router.pathname === "/terms" || router.pathname === "/about" || router.pathname === "/privacy" || router.pathname==="/careers" || router.pathname.includes("careers");
  
 
   const energyStorage=[

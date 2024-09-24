@@ -322,6 +322,16 @@ scale: 1.02;
   color: rgb(240, 240, 240); /* Change to a visible color, such as black */
   font-size: 15px; /* Adjusts the size for readability */
 }
+.dot {
+  color: #eeeeee; /* Set the dot color */
+  font-size: 12px; /* Set a consistent font size */
+  margin-right: 8px; /* Space between dot and text */
+  line-height: 1; /* Ensure the dot is vertically aligned */
+  display: inline-flex; /* Use inline-flex for consistent sizing */
+  align-items: center; /* Center the icon vertically */
+  margin-top: 8px;
+}
+
 @media (max-width:500px) {
   .affPara{
     font-size: small;

@@ -1,19 +1,40 @@
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import classes from "./styles.module.css";
 import Link from "next/link";
 import Image from "next/image";
 import { Button } from "@chakra-ui/react";
 import { useRouter } from "next/router";
 import { IoArrowBack } from "react-icons/io5";
+import { motion } from "framer-motion";
+import AnimatedDiv from "@/components/ui/Animate";
 
 const Careers = () => {
   const router = useRouter();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const opportunitiesRef = useRef(null);
+
   const handleMenuItemClick = () => {
     setMobileMenuOpen(false);
   };
+
+  const scrollToOpportunities = (event) => {
+    event.preventDefault(); // Prevent the default link behavior
+    if (opportunitiesRef.current) {
+      const headerOffset = 80; // Adjust this value to match your header height
+      const elementPosition =
+        opportunitiesRef.current.getBoundingClientRect().top;
+      const offsetPosition =
+        elementPosition + window.pageYOffset - headerOffset;
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: "smooth", // Smooth scrolling
+      });
+    }
+  };
+
   return (
-    <div className={classes.head1}>
+    <div className={`${classes.head1} bg-black`}>
       <nav
         className={`fixed top-0 left-0 w-full mx-auto flex items-center justify-between p-4 z-50 transition-colors duration-300 bg-black`}
       >
@@ -130,14 +151,117 @@ const Careers = () => {
           </div>
         )}
       </nav>
-      <div className="w-full h-[450px] overflow-hidden">
+      <div className="w-full h-[450px] md:h-[450px] relative overflow-hidden">
         <Image
-          src="/images/careers/3.jpg"
-          width={1500}
+          src="/images/careers/1.webp" // Ensure the correct path to your image
+          width={1500} 
           height={1500}
-          className="w-full h-[400px] object-cover object-center"
+          className="w-full h-full  object-cover object-center scale-[1.2] sm:scale-[1.0]"
           alt="career"
         />
+
+        <motion.div
+          initial={{ x: "-100%" }}
+          animate={{ x: 0 }} // Assuming you want it to always animate in
+          transition={{ duration: 0.75, delay: 0 }}
+          className="absolute md:top-0 md:left-0  md:right-0 top-[-4rem] w-full h-full flex flex-col items-center md:items-start justify-center p-4 md:p-16 space-y-2 text-left"
+        >
+          <div className="text-white text-4xl lg:text-4xl font-medium mb-4">
+            Careers
+          </div>
+          <div className="text-white text-4xl lg:text-5xl text-center md:text-left font-bold">
+            Shape Tomorrow, Today
+          </div>
+          <div className="pt-8 flex gap-7 pl-2">
+            <Button
+              bg="transparent"
+              border="1px"
+              borderColor="white"
+              color="white"
+              _hover={{ bg: "transparent" }}
+              onClick={scrollToOpportunities}
+            >
+              Explore Opportunities
+            </Button>
+          </div>
+        </motion.div>
+      </div>
+
+      <div
+        className=" w-[95%] sm:w-[87%] lg:w-[80%] 2xl:w-[1500px] mx-auto mb-[3rem] mt-[2rem] md:mt-[5rem]"
+        id="opportunities"
+        ref={opportunitiesRef}
+      >
+       <AnimatedDiv>
+        <div className="text-3xl text-[#e6e6e6] font-bold mt-6 mb-5 md:text-center text-center">
+          Opportunities
+        </div>
+        </AnimatedDiv>
+        <AnimatedDiv>
+        <div className=" grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 p-6 bg-black text-white">
+          {/* Box 1 */}
+          <Link
+            href={
+              "/careers/senior-embedded-application-engineer-microcontroller"
+            }
+          >
+            <div className="bg-[#212020] rounded-lg shadow-lg p-1 hover:cursor-pointer hover:bg-[#282828] transition-all duration-400">
+              <img
+                src="/images/careers/card1.webp"
+                alt="Product Solutions Engineer"
+                className="w-full h-48 object-cover rounded-t-lg"
+              />
+              <div className="p-2 pb-6 px-4">
+                <h2 className="text-xl font-semibold mt-4">
+                  Senior Embedded Application Engineer- Microcontroller
+                </h2>
+                <p className="text-sm mt-2">Hyderabad, Telangana, India</p>
+                {/* <p className="mt-4 text-gray-400">
+            Google Pay provides secure solutions for easy digital transactions.
+          </p> */}
+              </div>
+            </div>
+          </Link>
+
+          {/* Box 2 */}
+          <div className="bg-[#212020] rounded-lg shadow-lg p-1 hover:cursor-pointer hover:bg-[#282828] transition-all duration-400">
+            <img
+              src="/images/careers/card2.webp"
+              alt="Google AI and ML roles"
+              className="w-full h-48 object-cover rounded-t-lg"
+            />
+            <div className="p-2 pb-6 px-4">
+              <h2 className="text-xl font-semibold mt-4">
+                Google AI and ML roles, Google Pay
+              </h2>
+              <p className="text-sm mt-2">Hyderabad, Telangana, India</p>
+              {/* <p className="mt-4 text-gray-400">
+            Search for roles focused on innovation in machine learning and AI at
+            Google.
+          </p> */}
+            </div>
+          </div>
+
+          {/* Box 3 */}
+          <div className="bg-[#212020] rounded-lg shadow-lg p-1  hover:cursor-pointer hover:bg-[#282828] transition-all duration-400">
+            <img
+              src="/images/careers/card3.webp"
+              alt="Software Engineer III"
+              className="w-full h-48 object-cover rounded-t-lg"
+            />
+            <div className="p-2 pb-6 px-4">
+              <h2 className="text-xl font-semibold mt-4">
+                Software Engineer III, Full Stack, Core
+              </h2>
+              <p className="text-sm mt-2">Hyderabad, Telangana, India</p>
+              {/* <p className="mt-4 text-gray-400">
+            Work on Google Ads to create user-centered digital advertising
+            experiences.
+          </p> */}
+            </div>
+          </div>
+        </div>
+        </AnimatedDiv>
       </div>
     </div>
   );
