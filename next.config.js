@@ -10,6 +10,9 @@ const nextConfig = {
   //     },
   //   ];
   // },
+  images: {
+    domains: ['images.ctfassets.net'], // Add the domain here
+  },
 }
 
 module.exports = nextConfig;

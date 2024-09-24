@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import { Image } from "@chakra-ui/react";
 
 export default function Card({ blog }) {
-  const { title, thumbnail, categories, slug, date, description, author} = blog;
+  const { title, thumbnail, categories, slug, date, description, author,subtitle} = blog;
   const dateObject = new Date(date);
 
   const monthName = [
@@ -45,9 +45,9 @@ export default function Card({ blog }) {
           <div className=" text-sm text-gray-700 font-[500]">{`Updated ${monthName[month]} ${day}, ${year}`}</div>
           <div className=" text-sm text-gray-700 font-[500]">{author}</div>
           </div>
-          <div className="text-[1.9rem] font-semibold">{title}</div>
+          <div className="text-[1.5rem] font-semibold h-[4rem]">{subtitle}</div>
 
-          <div className="text-[1rem] min-h-[6rem] ">{description}</div>
+          <div className="text-[0.9rem] min-h-[6rem] ">{description}</div>
 
           </div>
           {/* <div className={styles.categories}>

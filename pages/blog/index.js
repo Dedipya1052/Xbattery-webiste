@@ -28,7 +28,8 @@ export async function getStaticProps() {
     slug: blog.fields.slug,
     date:blog.fields.date,
     description:blog.fields.description,
-    author:blog.fields.author
+    author:blog.fields.author,
+    subtitle:blog.fields.subtitle
   }));
   return {
     props: {

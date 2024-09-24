@@ -47,6 +47,26 @@ const renderOption = {
         </a>
       );
     },
+    [BLOCKS.PARAGRAPH]: (node, children) => {
+      const textContent = node.content.map(item => item.value).join(''); // Combine all text parts
+      //console.log("text content: ", textContent);
+    
+      // Check for custom markers
+      if (textContent.includes('[[code]]') && textContent.includes('[[*code]]')) {
+        const codeText = textContent
+          .replace('[[code]]', '')
+          .replace('[[*code]]', '')
+          .trim(); // Extract and clean the code
+        return (
+          <pre className={styles.codeBlock}>
+            <code>{codeText}</code>
+          </pre>
+        );
+      }
+    
+      return <p>{children}</p>; // Otherwise, treat it as normal text
+    }
+    ,
     'table': (node, children) => (
       // Wrap the table in a div with the tableWrapper class only if the table exists
       node && node.content && node.content.length > 0 ? (

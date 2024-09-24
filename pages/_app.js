@@ -5,7 +5,7 @@ import { useRouter } from 'next/router';
 
 export default function App({ Component, pageProps }) {
   const router = useRouter();
-  const isHomePage = router.pathname === "/" || router.pathname === "/terms" || router.pathname === "/about" || router.pathname === "/privacy";
+  const isHomePage = router.pathname === "/" || router.pathname === "/terms" || router.pathname === "/about" || router.pathname === "/privacy" || router.pathname==="/careers";
   return (
     <div className={isHomePage ? 'bg-[black] ' : 'bg-white text-black'}>
     <Layout>

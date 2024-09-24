@@ -9,12 +9,11 @@ import { useAnimation, useInView } from "framer-motion";
 import { useRef } from "react";
 import Link from "next/link";
 import AnimatedDiv from "../Animate";
-import { motion} from "framer-motion";
-
+import { motion } from "framer-motion";
 
 // * fetch blogs from contentful CMS
 
-const Example = ({media}) => {
+const Example = ({ media }) => {
   // const [imageSrc, setImageSrc] = useState(HeroImg);
   const [para, setPara] = useState(false);
   const [para1, setPara1] = useState(false);
@@ -22,7 +21,6 @@ const Example = ({media}) => {
   const [para3, setPara3] = useState(false);
 
   const videoUrl1 = media?.video1?.fields?.file?.url;
-  
 
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
@@ -282,160 +280,165 @@ const Example = ({media}) => {
       </LayoutEffect>
 
       <div className="mt-[2.5rem] mb-[5rem] w-[94%] md:w-[90%] lg:w-[85%] xl:w-[80%] 2xl:w-[1450px] mx-auto">
-  <AnimatedDiv>
-    <div className="flex flex-col gap-6 md:gap-0 md:flex-row justify-between items-center relative ">
-      <div className={`${styles.block2Head} text-center md:text-left w-full md:w-[45%]`}>
-        XBattery Specifications
+        <AnimatedDiv>
+          <div className="flex flex-col gap-6 md:gap-0 md:flex-row justify-between items-center relative ">
+            <div
+              className={`${styles.block2Head} text-center md:text-left w-full md:w-[45%]`}
+            >
+              XBattery Specifications
+            </div>
+
+            <div className="w-full md:w-[55%] flex flex-row md:flex-row gap-[2rem] md:gap-[1rem] justify-evenly relative">
+              {/* Active border element */}
+              <div
+                className="absolute bottom-[-15px] h-[2px] bg-white transition-all duration-300 ease-in-out"
+                style={{
+                  width: "30%",
+                  left:
+                    activeBattery === "XBattery1"
+                      ? "0%"
+                      : activeBattery === "XBattery2"
+                      ? "35%"
+                      : "70%",
+                }}
+              />
+
+              {/* Battery options */}
+              <div
+                onClick={() => handleBatteryChange("XBattery1")}
+                className={`cursor-pointer flex-1 text-center relative ${
+                  activeBattery === "XBattery1"
+                    ? "text-white"
+                    : "text-[#b5b5b5]"
+                }`}
+              >
+                XBattery1
+              </div>
+
+              <div
+                onClick={() => handleBatteryChange("XBattery2")}
+                className={`cursor-pointer flex-1 text-center relative ${
+                  activeBattery === "XBattery2"
+                    ? "text-white"
+                    : "text-[#b5b5b5]"
+                }`}
+              >
+                XBattery2
+              </div>
+
+              <div
+                onClick={() => handleBatteryChange("XBattery3")}
+                className={`cursor-pointer flex-1 text-center relative ${
+                  activeBattery === "XBattery3"
+                    ? "text-white"
+                    : "text-[#b5b5b5]"
+                }`}
+              >
+                XBattery3
+              </div>
+            </div>
+          </div>
+        </AnimatedDiv>
+
+        <AnimatedDiv>
+          <div className="mt-[4rem] flex flex-col gap-[1rem] pb-[4rem] border-b-[1px] border-[#2e2e2e]">
+            <div className="text-white font-bold text-xl text-center sm:text-left mb-3 md:mb-0">
+              Power
+            </div>
+            <div className="w-[85%] mx-auto md:w-full flex flex-row flex-wrap md:flex-nowrap justify-between md:justify-start sm:flex-row gap-[2rem]  sm:gap-[10%]">
+              <div className="flex flex-col gap-2">
+                <div className="text-[#979797] text-sm">Energy Capacity</div>
+                <div id="value">
+                  <div className="text-white text-sm">
+                    {currentBattery.energyCapacity}
+                  </div>
+                </div>
+              </div>
+
+              <div className="flex flex-col gap-2">
+                <div className="text-[#979797] text-sm">On-Grid Power</div>
+                <div id="value">
+                  <div className="text-white text-sm">
+                    {currentBattery.onGridPower}
+                  </div>
+                </div>
+              </div>
+
+              <div className="flex flex-col gap-2">
+                <div className="text-[#979797] text-sm">Backup Power</div>
+                <div id="value">
+                  <div className="text-white text-sm">
+                    {currentBattery.backupPower.peak}
+                  </div>
+                  <div className="text-white text-sm">
+                    {currentBattery.backupPower.motorStart}
+                  </div>
+                  <div className="text-white text-sm">
+                    {currentBattery.backupPower.transition}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </AnimatedDiv>
+
+        <AnimatedDiv>
+          <div className="mt-[2rem] flex flex-col gap-[1rem] pb-[4rem] border-b-[1px] border-[#2e2e2e]">
+            <div className="text-white font-bold text-xl text-center sm:text-left mb-3 md:mb-0">
+              Features
+            </div>
+            <div className="w-[85%] mx-auto md:w-full flex flex-row flex-wrap md:flex-nowrap justify-between   md:justify-start sm:flex-row gap-[2rem] sm:gap-[10%]">
+              <div className="flex flex-col gap-2">
+                <div className="text-[#979797] text-sm text-left">Size and Weight</div>
+                <div id="value">
+                  <div className="text-white text-sm">
+                    {currentBattery.energyCapacity}
+                  </div>
+                </div>
+              </div>
+
+              <div className="flex flex-col gap-2">
+                <div className="text-[#979797] text-sm">Scalable</div>
+                <div id="value">
+                  <div className="text-white text-sm">
+                    {currentBattery.onGridPower}
+                  </div>
+                </div>
+              </div>
+
+              <div className="flex flex-col gap-2">
+                <div className="text-[#979797] text-sm">Installation</div>
+                <div id="value">
+                  <div className="text-white text-sm">
+                    {currentBattery.backupPower.peak}
+                  </div>
+                  <div className="text-white text-sm">
+                    {currentBattery.backupPower.motorStart}
+                  </div>
+                  <div className="text-white text-sm">
+                    {currentBattery.backupPower.transition}
+                  </div>
+                </div>
+              </div>
+
+              <div className="flex flex-col gap-2">
+                <div className="text-[#979797] text-sm">Certification</div>
+                <div id="value">
+                  <div className="text-white text-sm">
+                    {currentBattery.backupPower.peak}
+                  </div>
+                  <div className="text-white text-sm">
+                    {currentBattery.backupPower.motorStart}
+                  </div>
+                  <div className="text-white text-sm">SEMI standards</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </AnimatedDiv>
       </div>
 
-      <div className="w-full md:w-[55%] flex flex-row md:flex-row gap-[2rem] md:gap-[1rem] justify-evenly relative">
-        {/* Active border element */}
-        <div
-          className="absolute bottom-[-15px] h-[2px] bg-white transition-all duration-300 ease-in-out"
-          style={{
-            width: "30%",
-            left:
-              activeBattery === "XBattery1"
-                ? "0%"
-                : activeBattery === "XBattery2"
-                ? "35%"
-                : "70%",
-          }}
-        />
-
-        {/* Battery options */}
-        <div
-          onClick={() => handleBatteryChange("XBattery1")}
-          className={`cursor-pointer flex-1 text-center relative ${
-            activeBattery === "XBattery1"
-              ? "text-white"
-              : "text-[#b5b5b5]"
-          }`}
-        >
-          XBattery1
-        </div>
-
-        <div
-          onClick={() => handleBatteryChange("XBattery2")}
-          className={`cursor-pointer flex-1 text-center relative ${
-            activeBattery === "XBattery2"
-              ? "text-white"
-              : "text-[#b5b5b5]"
-          }`}
-        >
-          XBattery2
-        </div>
-
-        <div
-          onClick={() => handleBatteryChange("XBattery3")}
-          className={`cursor-pointer flex-1 text-center relative ${
-            activeBattery === "XBattery3"
-              ? "text-white"
-              : "text-[#b5b5b5]"
-          }`}
-        >
-          XBattery3
-        </div>
-      </div>
-    </div>
-  </AnimatedDiv>
-
-  <AnimatedDiv>
-    <div className="mt-[4rem] flex flex-col gap-[1rem] pb-[4rem] border-b-[1px] border-[#2e2e2e]">
-      <div className="text-white font-bold text-xl text-center sm:text-left">Power</div>
-      <div className="w-full mx-auto flex flex-row flex-wrap  sm:justify-start sm:flex-row gap-[2rem]  sm:gap-[10%]">
-        <div className="flex flex-col gap-2">
-          <div className="text-[#979797] text-sm">Energy Capacity</div>
-          <div id="value">
-            <div className="text-white text-sm">
-              {currentBattery.energyCapacity}
-            </div>
-          </div>
-        </div>
-
-        <div className="flex flex-col gap-2">
-          <div className="text-[#979797] text-sm">On-Grid Power</div>
-          <div id="value">
-            <div className="text-white text-sm">
-              {currentBattery.onGridPower}
-            </div>
-          </div>
-        </div>
-
-        <div className="flex flex-col gap-2">
-          <div className="text-[#979797] text-sm">Backup Power</div>
-          <div id="value">
-            <div className="text-white text-sm">
-              {currentBattery.backupPower.peak}
-            </div>
-            <div className="text-white text-sm">
-              {currentBattery.backupPower.motorStart}
-            </div>
-            <div className="text-white text-sm">
-              {currentBattery.backupPower.transition}
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </AnimatedDiv>
-
-  <AnimatedDiv>
-    <div className="mt-[2rem] flex flex-col gap-[1rem] pb-[4rem] border-b-[1px] border-[#2e2e2e]">
-      <div className="text-white font-bold text-xl">Features</div>
-      <div className="flex flex-col md:flex-row gap-[1rem] md:gap-[10%]">
-        <div className="flex flex-col gap-2">
-          <div className="text-[#979797] text-sm">Size and Weight</div>
-          <div id="value">
-            <div className="text-white text-sm">
-              {currentBattery.energyCapacity}
-            </div>
-          </div>
-        </div>
-
-        <div className="flex flex-col gap-2">
-          <div className="text-[#979797] text-sm">Scalable</div>
-          <div id="value">
-            <div className="text-white text-sm">
-              {currentBattery.onGridPower}
-            </div>
-          </div>
-        </div>
-
-        <div className="flex flex-col gap-2">
-          <div className="text-[#979797] text-sm">Installation</div>
-          <div id="value">
-            <div className="text-white text-sm">
-              {currentBattery.backupPower.peak}
-            </div>
-            <div className="text-white text-sm">
-              {currentBattery.backupPower.motorStart}
-            </div>
-            <div className="text-white text-sm">
-              {currentBattery.backupPower.transition}
-            </div>
-          </div>
-        </div>
-
-        <div className="flex flex-col gap-2">
-          <div className="text-[#979797] text-sm">Certification</div>
-          <div id="value">
-            <div className="text-white text-sm">
-              {currentBattery.backupPower.peak}
-            </div>
-            <div className="text-white text-sm">
-              {currentBattery.backupPower.motorStart}
-            </div>
-            <div className="text-white text-sm">SEMI standards</div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </AnimatedDiv>
-</div>
-
-
-      <AnimatedDiv>
+      {/* <AnimatedDiv>
         <div className="relative w-full">
           <Image
             src="/images/hero/1.png"
@@ -457,6 +460,35 @@ const Example = ({media}) => {
               costs, or ensuring reliable energy during outages, XBattery
               provides customizable modes to enhance performance and
               adaptability.
+            </p>
+          </div>
+        </div>
+      </AnimatedDiv> */}
+
+      <AnimatedDiv>
+        <div className="relative w-full mb-2">
+          <div className="block md:hidden text-[white] text-center px-4 mt-[-1rem] mb-7 w-[90%] mx-auto">
+            <h1 className="text-2xl font-bold">Power Your Home, Save Money</h1>
+            <p className="mt-4">
+              XBattery offers efficient energy storage solutions in India,
+              integrating advanced technologies for optimal energy management.
+            </p>
+          </div>
+          <Image
+            src="/images/hero/1.png"
+            layout="responsive"
+            width={1000}
+            height={1000}
+            alt="image"
+            className="w-full h-auto"
+          />
+          <div className="md:block hidden absolute top-4 xl:top-10 left-1/2 transform -translate-x-1/2 text-black text-center">
+            <h1 className="text-2xl font-bold">Power Your Home, Save Money</h1>
+            <p className="mt-4">
+              XBattery offers advanced energy storage in India with large-scale
+              batteries, BMS, IoT, Digital Twins, and AI, allowing efficient
+              energy management, reduced electricity costs, and reliable power
+              during outages with customizable performance modes.{" "}
             </p>
           </div>
         </div>

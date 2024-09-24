@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import classes from "./styles.module.css";
 import Link from "next/link";
 import Image from "next/image";
-import { Button } from "@chakra-ui/react";
+import { Button ,} from "@chakra-ui/react";
 import { useRouter } from "next/router";
 import { IoArrowBack } from "react-icons/io5";
 
