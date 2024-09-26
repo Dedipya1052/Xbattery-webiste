@@ -45,7 +45,7 @@ export default function Card({ blog }) {
           <div className=" text-sm text-gray-700 font-[500]">{`Updated ${monthName[month]} ${day}, ${year}`}</div>
           <div className=" text-sm text-gray-700 font-[500]">{author}</div>
           </div>
-          <div className="text-[1.5rem] font-semibold h-[4rem]">{subtitle}</div>
+          <div className="text-[1.5rem] font-semibold">{subtitle}</div>
 
           <div className="text-[0.9rem] min-h-[6rem] ">{description}</div>
 

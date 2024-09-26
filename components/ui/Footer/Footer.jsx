@@ -153,6 +153,9 @@ const Footer = () => {
                   <Link href="/privacy" className={styles.footerElements}>
                     Privacy
                   </Link>
+                  <Link href="/careers" className={styles.footerElements}>
+                    Careers
+                  </Link>
                 </div>
               </div>
              

@@ -282,8 +282,11 @@ const Job1 = () => {
             Microcontroller – XBattery."
           </p>
         </div>
-
-        <div className={classes.affiliateholder}>
+        
+        <div className="mt-[2rem]">
+        <iframe src="https://app.youform.com/forms/euzhliaa" loading="lazy" width="100%" height="700" frameborder="0" marginheight="0" marginwidth="0"></iframe>
+        </div>
+        {/* <div className={classes.affiliateholder}>
           <Button
             className=" mt-2"
             onClick={() =>
@@ -292,7 +295,7 @@ const Job1 = () => {
           >
             Apply
           </Button>
-        </div>
+        </div> */}
       </div>
     </div>
   );

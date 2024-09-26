@@ -12,6 +12,7 @@ import { IoArrowBack } from "react-icons/io5";
 import { useRouter } from "next/router";
 import Card from "@/components/ui/BlogCard/BlogCard";
 import TopBlogs from "@/components/ui/TopBlogs";
+import { MathJax } from 'better-react-mathjax';
 
 
 
@@ -49,9 +50,8 @@ const renderOption = {
     },
     [BLOCKS.PARAGRAPH]: (node, children) => {
       const textContent = node.content.map(item => item.value).join(''); // Combine all text parts
-      //console.log("text content: ", textContent);
     
-      // Check for custom markers
+      // Check for custom markers for code
       if (textContent.includes('[[code]]') && textContent.includes('[[*code]]')) {
         const codeText = textContent
           .replace('[[code]]', '')
@@ -64,9 +64,17 @@ const renderOption = {
         );
       }
     
+      // Check if the content contains LaTeX mathematical formulas
+      if (textContent.includes('$$')) {
+        return (
+          <MathJax>
+            {textContent}
+          </MathJax>
+        );
+      }
+    
       return <p>{children}</p>; // Otherwise, treat it as normal text
-    }
-    ,
+    },
     'table': (node, children) => (
       // Wrap the table in a div with the tableWrapper class only if the table exists
       node && node.content && node.content.length > 0 ? (

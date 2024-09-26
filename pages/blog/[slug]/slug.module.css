@@ -84,12 +84,16 @@
 
 .container .embeddedImage {
   display: block;
-  height: 400px;
-  width: auto;
-  object-fit: contain;
+  height: auto; /* Natural height for images between min-height and max-height */
+  min-height: 300px; /* Ensure images shorter than 300px are stretched */
+  max-height: 500px; /* Cap height for taller images */
+  width: auto; /* Maintain aspect ratio */
+  object-fit: cover; /* Prevent distortion and ensure proper image fit */
   margin: 2rem auto;
-  border-radius: 15px;
+  border-radius: 10px;
 }
+
+
 
 @media (max-width: 550px) {
   .container .embeddedImage {
