@@ -10,17 +10,13 @@ import { FaLocationDot } from "react-icons/fa6";
 import { HiOfficeBuilding } from "react-icons/hi";
 import { IoArrowBack } from "react-icons/io5";
 
-const Job1 = () => {
+const Job2 = () => {
   const router = useRouter();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const handleMenuItemClick = () => {
     setMobileMenuOpen(false);
   };
-  // const screenWidth = window.innerWidth;
-  // const formDesktop=useState(screenWidth>"600"? true:false)
-  // //const formDesktop= screenWidth>"600"? true:false;
-  // console.log({screenWidth});
-  // console.log({formDesktop});
+
   return (
     <div className={classes.head1}>
       <nav
@@ -140,15 +136,12 @@ const Job1 = () => {
         )}
       </nav>
 
-      <div
-        className={classes.affiliatewrapper}
-        style={{ position: "relative" }}
-      >
+      <div className={classes.affiliatewrapper} style={{ position: "relative" }}>
         <Button
           className="absolute top-[-1rem] right-[15%]"
           gap={"0.3rem"}
           onClick={() => router.push("/careers")}
-          display={{ base: "none", md: "flex" }} // base (small screens) is hidden, sm and above is flex
+          display={{ base: "none", md: "flex" }}
         >
           <IoArrowBack />
           <p>Back</p>
@@ -156,7 +149,7 @@ const Job1 = () => {
 
         <div className={classes.affiliateheader}>
           <h1 className={classes.headername}>
-            Senior Embedded Application Engineer - Microcontroller
+            Junior Embedded Application Engineer - Microcontroller
           </h1>
         </div>
 
@@ -171,7 +164,6 @@ const Job1 = () => {
                 className="text-yellow-400 mr-2"
               />
               <span className={classes.affiliateInfo}>
-                {" "}
                 <span className="text-white">Hyderabad, Telangana, India</span>
               </span>
             </div>
@@ -181,10 +173,9 @@ const Job1 = () => {
             >
               <HiOfficeBuilding
                 fontSize={"14px"}
-                className=" text-yellow-400 mr-2"
+                className="text-yellow-400 mr-2"
               />
               <span className={classes.affiliateInfo}>
-                {" "}
                 <span className="text-white">XBattery Energy Private Ltd.</span>
               </span>
             </div>
@@ -194,10 +185,9 @@ const Job1 = () => {
             >
               <MdOutlineWork
                 fontSize={"14px"}
-                className=" text-yellow-400 mr-2"
+                className="text-yellow-400 mr-2"
               />
               <span className={classes.affiliateInfo}>
-                {" "}
                 <span className="text-white">Full-time</span>
               </span>
             </div>
@@ -207,11 +197,11 @@ const Job1 = () => {
         <div className={classes.affiliateholder}>
           <h3 className={classes.h3inaffiliate}>Job Description:</h3>
           <p className={classes.affPara}>
-            We are looking for a highly skilled Embedded Application Developer
-            with a strong background in NXP and STM32 boards, Battery Management
-            Systems (BMS), and energy solutions. The ideal candidate will have
-            experience in writing optimized embedded software, interfacing with
-            hardware peripherals, and working on innovative energy projects.
+            We are looking for motivated fresh graduates with a strong foundation
+            in embedded systems and a keen interest in Battery Management Systems
+            (BMS) and energy solutions. This is an excellent opportunity for recent
+            graduates to kickstart their career in the exciting field of embedded
+            software development and renewable energy technology.
           </p>
         </div>
 
@@ -219,19 +209,16 @@ const Job1 = () => {
           <h3 className={classes.h3inaffiliate}>Key Responsibilities:</h3>
           <UnorderedList spacing={3}>
             {[
-              "Develop, test, and maintain embedded firmware for NXP and STM32 microcontrollers.",
-              "Design low-level drivers, communication protocols (CAN, SPI, I2C, UART), and hardware interfaces.",
-              "Work on Battery Management Systems (BMS), including SOC (State of Charge), SOH (State of Health) algorithms, and balancing techniques.",
-              "Collaborate with cross-functional teams to integrate energy storage solutions with power distribution and energy management systems.",
-              "Optimize software for power consumption, performance, and safety in embedded systems.",
-              "Conduct debugging and validation of embedded systems using tools such as JTAG, SWD, and oscilloscopes.",
-              "Implement communication protocols and work on firmware updates and bootloader development.",
-              "Maintain technical documentation and ensure compliance with relevant safety standards.",
+              "Learn to develop, test, and maintain embedded firmware for NXP and STM32 microcontrollers under guidance.",
+              "Assist in designing low-level drivers, communication protocols (CAN, SPI, I2C, UART), and hardware interfaces.",
+              "Gain hands-on experience with Battery Management Systems (BMS), including SOC (State of Charge), SOH (State of Health) algorithms, and balancing techniques.",
+              "Collaborate with cross-functional teams to understand the integration of energy storage solutions with power distribution and energy management systems.",
+              "Learn to optimize software for power consumption, performance, and safety in embedded systems.",
+              "Assist in debugging and validation of embedded systems using tools such as JTAG, SWD, and oscilloscopes.",
+              "Help implement communication protocols and contribute to firmware updates and bootloader development.",
+              "Participate in maintaining technical documentation and learn about compliance with relevant safety standards.",
             ].map((item, index) => (
-              <ListItem
-                key={index}
-                className={`text-[#e2e2e2] ${classes.affPara}`}
-              >
+              <ListItem key={index} className={`text-[#e2e2e2] ${classes.affPara}`}>
                 {item}
               </ListItem>
             ))}
@@ -239,23 +226,34 @@ const Job1 = () => {
         </div>
 
         <div className={classes.affiliateholder}>
-          <h3 className={classes.h3inaffiliate}>
-            Practical Skills & Experience:
-          </h3>
+          <h3 className={classes.h3inaffiliate}>Required Skills & Qualifications:</h3>
           <UnorderedList spacing={3}>
             {[
-              "C/C++ Programming Skills.",
-              "Experience in developing with Arm Based Microcontroller Architectures ideally with experience specifically on one or more of the microcontroller platforms from NXP, ST, Renesas or Infineon.",
-              "Experience in Software development based on Eclipse based GCC & GBD tool chains.",
-              "Experience on using/integrating RTOS (FreeRTOS or Zephyr) and most popular middleware (wireless connectivity, USB, Ethernet) into embedded software projects.",
-              "A working knowledge of IoT Security standards such as Arm’s Platform Security Architecture (PSA) Certification Framework.",
-              "Bachelor’s or Master’s degree in Electrical Engineering, Computer Engineering, or related fields.",
-              "3-5 years of experience in embedded software development with NXP (e.g., S32, i.MX) and STM32 microcontrollers.",
+              "Bachelor's degree in Electrical Engineering, Computer Engineering, or a related field.",
+              "Strong foundation in C/C++ programming.",
+              "Basic understanding of microcontroller architectures, preferably Arm-based.",
+              "Familiarity with embedded systems development concepts.",
+              "Eagerness to learn about Battery Management Systems and energy solutions.",
+              "Good problem-solving skills and attention to detail.",
+              "Excellent communication and teamwork abilities.",
             ].map((item, index) => (
-              <ListItem
-                key={index}
-                className={`text-[#e2e2e2] ${classes.affPara}`}
-              >
+              <ListItem key={index} className={`text-[#e2e2e2] ${classes.affPara}`}>
+                {item}
+              </ListItem>
+            ))}
+          </UnorderedList>
+        </div>
+
+        <div className={classes.affiliateholder}>
+          <h3 className={classes.h3inaffiliate}>Preferred Skills:</h3>
+          <UnorderedList spacing={3}>
+            {[
+              "Experience with real-time operating systems (RTOS).",
+              "Basic knowledge of power electronics or energy storage systems.",
+              "Exposure to NXP or STM32 microcontroller development.",
+              "Understanding of safety standards for embedded systems.",
+            ].map((item, index) => (
+              <ListItem key={index} className={`text-[#e2e2e2] ${classes.affPara}`}>
                 {item}
               </ListItem>
             ))}
@@ -266,61 +264,25 @@ const Job1 = () => {
           <h3 className={classes.h3inaffiliate}>Why XBattery Energy?</h3>
           <UnorderedList spacing={3}>
             {[
-              "Work on impactful projects that shape the future of energy solutions.",
-              "A collaborative environment with opportunities for career growth and professional development.",
-              "Competitive salary and benefits.",
+              "Opportunity to work in the fast-growing renewable energy industry.",
+              "Hands-on experience with cutting-edge Battery Management System technology.",
+              "Supportive and collaborative team environment.",
+              "Mentorship from industry experts.",
+              "Career growth opportunities in embedded systems and energy solutions.",
             ].map((item, index) => (
-              <ListItem
-                key={index}
-                className={`text-[#e2e2e2] ${classes.affPara}`}
-              >
+              <ListItem key={index} className={`text-[#e2e2e2] ${classes.affPara}`}>
                 {item}
               </ListItem>
             ))}
           </UnorderedList>
         </div>
 
-        {/* <div className={classes.affiliateholder}>
-          <h3 className={classes.h3inaffiliate}>How to Apply:</h3>
-          <p className={classes.affPara}>
-            Please send your resume and a cover letter to{" "}
-            <span className="text-white font-semibold">
-              <a
-                href="mailto:sonu@XBattery.energy"
-                className={`${classes.link} text-white`}
-              >
-                sonu@XBattery.energy
-              </a>{" "}
-            </span>{" "}
-            with the subject line "Senior Embedded Application Engineer -
-            Microcontroller – XBattery."
-          </p>
-        </div> */}
-
         <div className="mt-[2rem] w-[95%] mx-auto">
-          <iframe
-            src="https://app.youform.com/forms/euzhliaa"
-            loading="lazy"
-            width="100%"
-            height="550"
-            frameborder="0"
-            marginheight="0"
-            marginwidth="0"
-          ></iframe>
+        <iframe src="https://app.youform.com/forms/euzhliaa" loading="lazy" width="100%" height="550" frameborder="0" marginheight="0" marginwidth="0"></iframe>
         </div>
-        {/* <div className={classes.affiliateholder}>
-          <Button
-            className=" mt-2"
-            onClick={() =>
-              (window.location.href = "mailto:sonu@XBattery.energy")
-            }
-          >
-            Apply
-          </Button>
-        </div> */}
       </div>
     </div>
   );
 };
 
-export default Job1;
+export default Job2;

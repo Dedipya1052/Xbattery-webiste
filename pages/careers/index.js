@@ -224,6 +224,7 @@ const Careers = () => {
           </Link>
 
           {/* Box 2 */}
+          <Link href="/careers/junior-embedded-application-engineer-microcontroller">
           <div className="bg-[#212020] rounded-lg shadow-lg p-1 hover:cursor-pointer hover:bg-[#282828] transition-all duration-400">
             <img
               src="/images/careers/card2.webp"
@@ -232,7 +233,7 @@ const Careers = () => {
             />
             <div className="p-2 pb-6 px-4">
               <h2 className="text-xl font-semibold mt-4">
-                Google AI and ML roles, Google Pay
+              Junior Embedded Application Engineer - Microcontroller
               </h2>
               <p className="text-sm mt-2">Hyderabad, Telangana, India</p>
               {/* <p className="mt-4 text-gray-400">
@@ -241,6 +242,7 @@ const Careers = () => {
           </p> */}
             </div>
           </div>
+          </Link>
 
           {/* Box 3 */}
           <div className="bg-[#212020] rounded-lg shadow-lg p-1  hover:cursor-pointer hover:bg-[#282828] transition-all duration-400">
