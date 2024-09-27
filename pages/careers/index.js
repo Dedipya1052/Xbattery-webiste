@@ -153,7 +153,7 @@ const Careers = () => {
       </nav>
       <div className="w-full h-[450px] md:h-[450px] relative overflow-hidden">
         <Image
-          src="/images/careers/1.webp" // Ensure the correct path to your image
+          src="/images/careers/1.png" // Ensure the correct path to your image
           width={1500} 
           height={1500}
           className="w-full h-full  object-cover object-center scale-[1.2] sm:scale-[1.0]"
