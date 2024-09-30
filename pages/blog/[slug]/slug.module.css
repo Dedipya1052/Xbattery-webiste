@@ -263,7 +263,7 @@
 }
 
 .blog h4 {
-  font-size: x-large;
+  font-size: large;
   text-align: left;
   font-weight: bold;
   line-height: 30px;
@@ -275,7 +275,7 @@
 
 .blog h5,
 .blog h6 {
-  font-size: large;
+  font-size: medium;
   text-align: left;
   font-weight: bold;
   line-height: 30px;
@@ -287,7 +287,7 @@
 
 .blog h3 {
   font-weight: 600;
-  font-size: large;
+  font-size: x-large;
   line-height: 27px;
   margin: 10px;
   margin-bottom: 1rem;
@@ -295,7 +295,7 @@
 }
 
 .blog h2 {
-  font-size: x-large;
+  font-size: xx-large;
   margin: 10px;
   margin-bottom: 10px;
   padding-left: 29px;

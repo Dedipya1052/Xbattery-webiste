@@ -108,6 +108,29 @@ const Example = ({ media }) => {
 
   const currentBattery = batteryData[activeBattery];
 
+  const [batteryCount, setBatteryCount] = useState(1);
+  const [applianceIndex, setApplianceIndex] = useState(0);
+
+  const applianceImages = [
+    "/images/batteryApp/2.1.png",
+    "/images/batteryApp/2.2.png",
+    "/images/batteryApp/2.3.png",
+  ];
+
+  const addBattery = () => {
+    if (batteryCount < 3) {
+      setBatteryCount(batteryCount + 1);
+      setApplianceIndex((applianceIndex + 1) % applianceImages.length);
+    }
+  };
+
+  const removeBattery = (index) => {
+    if (batteryCount > 1) {
+      setBatteryCount(batteryCount - 1);
+      setApplianceIndex((applianceIndex - 1 + applianceImages.length) % applianceImages.length);
+    }
+  };
+
   return (
     <div className={styles.head1}>
       <nav
@@ -438,32 +461,103 @@ const Example = ({ media }) => {
         </AnimatedDiv>
       </div>
 
-      {/* <AnimatedDiv>
-        <div className="relative w-full">
-          <Image
-            src="/images/hero/1.png"
-            layout="responsive"
-            width={1000}
-            height={1000}
-            alt="image"
-            className="w-full h-auto"
-          />
-          <div className="absolute top-10 left-1/2 transform -translate-x-1/2 text-black text-center">
-            <h1 className="text-2xl font-bold">Power Your Home, Save Money</h1>
-            <p className="mt-4">
-              XBattery is a cutting-edge solution for energy storage in India,
-              featuring large-scale batteries equipped with advanced Battery
-              Management Systems (BMS), IoT integration, Digital Twins, and
-              Artificial Intelligence (AI). These technologies allow you to
-              store energy efficiently from various sources and manage it for
-              optimal use. Whether for powering your home, reducing electricity
-              costs, or ensuring reliable energy during outages, XBattery
-              provides customizable modes to enhance performance and
-              adaptability.
-            </p>
+      <div className="mx-auto w-[70%] mt-[7rem] mb-[5rem]">
+      <AnimatedDiv>
+        <div className={`${styles.block3Head} text-center`}>
+          Energy Customized to Your Needs
+        </div>
+      </AnimatedDiv>
+      <AnimatedDiv>
+        <div className="text-white text-[1.3rem] text-center mt-3">
+          Scale power from 5kWh to 180kWh or 3kW to 36kW to perfectly match your
+          needs with X1. No matter how much power or backup capacity you need.
+        </div>
+      </AnimatedDiv>
+      <AnimatedDiv>
+        <div className="flex flex-col justify-evenly mt-[4rem]">
+          <div className="flex flex-col gap-[1rem]">
+            <div className="flex gap-[8rem]">
+              <div className="flex flex-col gap-[1rem] w-[40%]">
+                <div className="text-white text-[1.6rem] ml-[3.2rem]">
+                  Essential Appliances
+                </div>
+                <img
+                  src="/images/batteryApp/1.png"
+                  alt="1"
+                  width={"80%"}
+                  className="mx-auto"
+                />
+              </div>
+              <div className={`flex flex-col gap-0.5 w-[60%]`}>
+                <div className="text-white text-[2.4rem] font-bold">
+                  <div className={styles.textColor}>
+                    {`${3 * batteryCount}kW/${5 * batteryCount}kWh`}
+                  </div>
+                </div>
+                <div className="text-white text-[1.3rem] font-light opacity-[60%]">
+                  {`${batteryCount} Power Module + ${batteryCount} Battery Module`}
+                </div>
+              </div>
+            </div>
+            <div className="flex gap-[8rem] mt-[2rem]">
+              <div className="flex flex-col gap-[1rem] w-[40%]">
+                <div className="text-white text-[1.6rem] ml-[3.2rem] ">
+                  Heavy Appliances
+                </div>
+                <img
+                  src={applianceImages[applianceIndex]}
+                  alt="Heavy Appliances"
+                  width={"80%"}
+                  className="mx-auto mt-[0.5rem] scale-[1.03]"
+                />
+              </div>
+              <div className="flex justify-start items-center gap-2 relative w-[60%]">
+                {[...Array(batteryCount)].map((_, index) => (
+                  <div key={index} className="relative flex flex-col items-center">
+                    {index > 0 && (
+                      <div
+                        className="absolute top-[-15%] left-[0%]"
+                        onClick={removeBattery}
+                      >
+                        <div className="text-[0.8rem] text-white w-[150px]">
+                         Remove
+                        </div>
+                        <div className={styles.plus1}>
+                          <div className="mt-[-0.85rem] ml-[-0.11rem] cursor-pointer text-[1.2rem]">
+                           -
+                          </div>
+                        </div>
+                      </div>
+                    )}
+                    <img
+                      src="/images/batteryApp/xbattery.png"
+                      alt="Battery"
+                      width={"150px"}
+                      className="mx-auto"
+                    />
+                    {index === batteryCount - 1 && batteryCount < 3 && (
+                      <div
+                        className="absolute top-[-15%] left-[90%]"
+                        onClick={addBattery}
+                      >
+                        <div className="text-[0.8rem] text-white w-[150px]">
+                          Add More Power
+                        </div>
+                        <div className={styles.plus1}>
+                          <div className="mt-[-0.5rem] ml-[-0.15rem] cursor-pointer">
+                            +
+                          </div>
+                        </div>
+                      </div>
+                    )}
+                  </div>
+                ))}
+              </div>
+            </div>
           </div>
         </div>
-      </AnimatedDiv> */}
+      </AnimatedDiv>
+    </div>
 
       <AnimatedDiv>
         <div className="relative w-full mb-2">
