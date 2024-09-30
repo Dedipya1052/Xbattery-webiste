@@ -416,6 +416,7 @@
     .footerElementDesktop {
       gap: 4rem;
       padding-left: 30px;
+      
     }
     .footerElements {
       font-size: 14px;
@@ -433,7 +434,7 @@
       /* padding-left: 12px; */
       /* flex-wrap: wrap; */
       justify-content: center;
-      align-items: center;
+      align-items: start;
     }
     .contactAndComp{
       flex-direction: row;
