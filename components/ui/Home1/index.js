@@ -461,7 +461,7 @@ const Example = ({ media }) => {
         </AnimatedDiv>
       </div>
 
-      <div className="mx-auto w-[70%] mt-[7rem] mb-[5rem]">
+      <div className="mx-auto w-[94%] md:w-[90%] lg:w-[85%] xl:w-[80%] 2xl:w-[1450px] mt-[7rem] mb-[5rem]">
       <AnimatedDiv>
         <div className={`${styles.block3Head} text-center`}>
           Energy Customized to Your Needs
@@ -569,7 +569,7 @@ const Example = ({ media }) => {
             </p>
           </div>
           <Image
-            src="/images/hero/1.png"
+            src="/images/hero/houseXbattery.png"
             layout="responsive"
             width={1000}
             height={1000}
