@@ -654,7 +654,7 @@ const Example = ({ media }) => {
       </div> */}
 
       <AnimatedDiv>
-        <div className="relative w-full mb-2">
+        <div className="relative w-full mb-2 mt-[9rem] sm:mt-0">
           <div className="block md:hidden text-[white] text-center px-4 mt-[-1rem] mb-7 w-[90%] mx-auto">
             <h1 className="text-2xl font-bold">Power Your Home, Save Money</h1>
             <p className="mt-4">
