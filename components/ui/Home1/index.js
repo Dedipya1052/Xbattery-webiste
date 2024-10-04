@@ -10,6 +10,64 @@ import { useRef } from "react";
 import Link from "next/link";
 import AnimatedDiv from "../Animate";
 import { motion } from "framer-motion";
+import {
+  FaWifi,
+  FaLightbulb,
+  FaTv,
+  FaLaptop,
+  FaSnowflake,
+  FaTshirt,
+} from "react-icons/fa";
+import {
+  GiAirConditioner,
+  GiDishwasher,
+  GiElectric,
+  GiPoolDive,
+  GiCarBattery,
+  GiHeatPump,
+} from "react-icons/gi";
+import { TbAirConditioning } from "react-icons/tb";
+import {
+  FaHome,
+  FaCar,
+  FaApple,
+  FaCloud,
+  FaHeart,
+  FaCamera,
+  FaUser,
+  FaBell,
+  FaBook,
+  FaCoffee,
+  FaMusic,
+  FaStar,
+} from "react-icons/fa"; // Import your icons
+
+const icons = [
+  <FaHome />,
+  <FaCar />,
+  <FaApple />,
+  <FaCloud />,
+  <FaHeart />,
+  <FaStar />,
+];
+
+const essentialAppliances = [
+  { name: "Wi-Fi Router", icon: <FaWifi /> },
+  { name: "Lights", icon: <FaLightbulb /> },
+  { name: "Television", icon: <FaTv /> },
+  { name: "Laptop/Home PC", icon: <FaLaptop /> },
+  { name: "Freezer", icon: <FaSnowflake /> },
+  { name: "Washer/Dryer", icon: <FaTshirt /> },
+];
+
+const heavyAppliances = [
+  { name: "Air Conditioner", icon: <TbAirConditioning /> },
+  { name: "Dishwasher", icon: <TbAirConditioning /> },
+  { name: "Electric Oven", icon: <TbAirConditioning /> },
+  { name: "Pool Pump", icon: <TbAirConditioning /> },
+  { name: "Electric Vehicle", icon: <TbAirConditioning /> },
+  { name: "Heat Pump", icon: <TbAirConditioning /> },
+];
 
 // * fetch blogs from contentful CMS
 
@@ -116,6 +174,11 @@ const Example = ({ media }) => {
     "/images/batteryApp/2.2.png",
     "/images/batteryApp/2.3.png",
   ];
+  const applianceImages1 = [
+    "/images/hero/appliances/1.1.png",
+    "/images/hero/appliances/1.2.png",
+    "/images/hero/appliances/1.3.png",
+  ];
 
   const addBattery = () => {
     if (batteryCount < 3) {
@@ -127,7 +190,9 @@ const Example = ({ media }) => {
   const removeBattery = (index) => {
     if (batteryCount > 1) {
       setBatteryCount(batteryCount - 1);
-      setApplianceIndex((applianceIndex - 1 + applianceImages.length) % applianceImages.length);
+      setApplianceIndex(
+        (applianceIndex - 1 + applianceImages.length) % applianceImages.length
+      );
     }
   };
 
@@ -412,7 +477,9 @@ const Example = ({ media }) => {
             </div>
             <div className="w-[85%] mx-auto md:w-full flex flex-row flex-wrap md:flex-nowrap justify-between   md:justify-start sm:flex-row gap-[2rem] sm:gap-[10%]">
               <div className="flex flex-col gap-2">
-                <div className="text-[#979797] text-sm text-left">Size and Weight</div>
+                <div className="text-[#979797] text-sm text-left">
+                  Size and Weight
+                </div>
                 <div id="value">
                   <div className="text-white text-sm">
                     {currentBattery.energyCapacity}
@@ -462,18 +529,19 @@ const Example = ({ media }) => {
       </div>
 
       <div className="mx-auto w-[94%] md:w-[90%] lg:w-[85%] xl:w-[80%] 2xl:w-[1450px] mt-[7rem] mb-[5rem]">
-      <AnimatedDiv>
-        <div className={`${styles.block3Head} text-center`}>
-          Energy Customized to Your Needs
-        </div>
-      </AnimatedDiv>
-      <AnimatedDiv>
-        <div className="text-white text-[1.3rem] text-center mt-3">
-          Scale power from 5kWh to 180kWh or 3kW to 36kW to perfectly match your
-          needs with X1. No matter how much power or backup capacity you need.
-        </div>
-      </AnimatedDiv>
-      <AnimatedDiv>
+        <AnimatedDiv>
+          <div className={`${styles.block3Head} text-center`}>
+            Energy Customized to Your Needs
+          </div>
+        </AnimatedDiv>
+        <AnimatedDiv>
+          <div className="text-white text-[1.3rem] text-center mt-3">
+            Scale power from 5kWh to 180kWh or 3kW to 36kW to perfectly match
+            your needs with X1. No matter how much power or backup capacity you
+            need.
+          </div>
+        </AnimatedDiv>
+        {/* <AnimatedDiv>
         <div className="flex flex-col justify-evenly mt-[4rem]">
           <div className="flex flex-col gap-[1rem]">
             <div className="flex gap-[8rem]">
@@ -556,8 +624,88 @@ const Example = ({ media }) => {
             </div>
           </div>
         </div>
-      </AnimatedDiv>
-    </div>
+      </AnimatedDiv> */}
+        <AnimatedDiv>
+          <div className="flex flex-col justify-evenly mt-[4rem] mb-[-8rem]">
+            <div className="flex flex-col gap-[1rem] relative">
+              <div className="flex justify-center">
+                <div className={`flex flex-col gap-0.5`}>
+                  <div className="text-white text-[2.4rem] font-bold text-center">
+                    <div className={styles.textColor}>
+                      {`${3 * batteryCount}kW/${5 * batteryCount}kWh`}
+                    </div>
+                  </div>
+                  <div className="text-white text-[1.3rem] font-light opacity-[60%] text-center">
+                    {`${batteryCount} Power Module + ${batteryCount} Battery Module`}
+                  </div>
+                </div>
+              </div>
+              <div className="flex mt-[4rem] justify-center ">
+                <div className="flex justify-center items-center gap-2 relative z-30 flex-wrap md:flex-nowrap">
+                  {[...Array(batteryCount)].map((_, index) => (
+                    <div
+                      key={index}
+                      className="relative flex flex-col items-center"
+                    >
+                      {index > 0 && (
+                        <div
+                          className="absolute top-[-15%] left-[0%]"
+                          onClick={removeBattery}
+                        >
+                          <div className="text-[0.8rem] text-white w-[150px]">
+                            Remove
+                          </div>
+                          <div className={styles.plus1}>
+                            <div className="mt-[-0.85rem] ml-[-0.11rem] cursor-pointer text-[1.2rem]">
+                              -
+                            </div>
+                          </div>
+                        </div>
+                      )}
+                      <img
+                        src="/images/batteryApp/xbattery.png"
+                        alt="Battery"
+                        width={"150px"}
+                        className="mx-auto"
+                      />
+                      {index === batteryCount - 1 && batteryCount < 3 && (
+                        <div
+                          className="absolute top-[-15%] left-[90%]"
+                          onClick={addBattery}
+                        >
+                          <div className="text-[0.8rem] text-white w-[150px]">
+                            Add More Power
+                          </div>
+                          <div className={styles.plus1}>
+                            <div className="mt-[-0.5rem] ml-[-0.15rem] cursor-pointer">
+                              +
+                            </div>
+                          </div>
+                        </div>
+                      )}
+                    </div>
+                  ))}
+                </div>
+              </div>
+              {/* <div className={styles.circle}></div>
+      <div className={styles.circle1}></div> */}
+              <div className="w-full mx-auto flex justify-center mt-[-2.2rem] md:mt-[-5.5rem] z-[0]">
+                <Image
+                  src={applianceImages1[applianceIndex]}
+                  width={"1000"}
+                  height={"1000"}
+                />
+              </div>
+            </div>
+          </div>
+        </AnimatedDiv>
+      </div>
+
+      {/* <div className="mx-auto w-[94%] md:w-[90%] lg:w-[85%] xl:w-[80%] 2xl:w-[1450px] mt-[8rem] mb-[5rem]">
+      <div className="mx-auto w-full">
+        <Image src={"/images/hero/50kwh/battery50.png"} width={"1000"} height={"1000"} className="mx-auto w-[300px] z-20"/>
+      </div>
+      </div> */}
 
       <AnimatedDiv>
         <div className="relative w-full mb-2">
