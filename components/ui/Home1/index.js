@@ -10,64 +10,10 @@ import { useRef } from "react";
 import Link from "next/link";
 import AnimatedDiv from "../Animate";
 import { motion } from "framer-motion";
-import {
-  FaWifi,
-  FaLightbulb,
-  FaTv,
-  FaLaptop,
-  FaSnowflake,
-  FaTshirt,
-} from "react-icons/fa";
-import {
-  GiAirConditioner,
-  GiDishwasher,
-  GiElectric,
-  GiPoolDive,
-  GiCarBattery,
-  GiHeatPump,
-} from "react-icons/gi";
-import { TbAirConditioning } from "react-icons/tb";
-import {
-  FaHome,
-  FaCar,
-  FaApple,
-  FaCloud,
-  FaHeart,
-  FaCamera,
-  FaUser,
-  FaBell,
-  FaBook,
-  FaCoffee,
-  FaMusic,
-  FaStar,
-} from "react-icons/fa"; // Import your icons
 
-const icons = [
-  <FaHome />,
-  <FaCar />,
-  <FaApple />,
-  <FaCloud />,
-  <FaHeart />,
-  <FaStar />,
-];
 
-const essentialAppliances = [
-  { name: "Wi-Fi Router", icon: <FaWifi /> },
-  { name: "Lights", icon: <FaLightbulb /> },
-  { name: "Television", icon: <FaTv /> },
-  { name: "Laptop/Home PC", icon: <FaLaptop /> },
-  { name: "Freezer", icon: <FaSnowflake /> },
-  { name: "Washer/Dryer", icon: <FaTshirt /> },
-];
 
-const heavyAppliances = [
-  { name: "Air Conditioner", icon: <TbAirConditioning /> },
-  { name: "Dishwasher", icon: <TbAirConditioning /> },
-  { name: "Electric Oven", icon: <TbAirConditioning /> },
-  { name: "Pool Pump", icon: <TbAirConditioning /> },
-  { name: "Electric Vehicle", icon: <TbAirConditioning /> },
-  { name: "Heat Pump", icon: <TbAirConditioning /> },
-];
+
 
 // * fetch blogs from contentful CMS
 
