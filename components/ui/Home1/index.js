@@ -177,6 +177,21 @@ const Example = ({ media }) => {
     }
   };
 
+
+
+  // for videos
+
+  useEffect(() => {
+    const videoElement = document.querySelector("video");
+    if (videoElement) {
+      videoElement.muted = true;
+      videoElement.play().catch((error) => {
+        console.error("Autoplay failed: ", error);
+      });
+    }
+  }, []);
+  
+
   return (
     <div className={styles.head1}>
       <nav
