@@ -10,10 +10,7 @@ import { useRef } from "react";
 import Link from "next/link";
 import AnimatedDiv from "../Animate";
 import { motion } from "framer-motion";
-
-
-
-
+import { Typewriter } from "react-simple-typewriter";
 
 // * fetch blogs from contentful CMS
 
@@ -52,6 +49,8 @@ const Example = ({ media }) => {
 
   const ref = useRef(null);
   const ref1 = useRef(null);
+  const reference = useRef(null);
+  const isView = useInView(reference, { once: false });
   const isInView = useInView(ref, { once: true });
   const isInView1 = useInView(ref1, { triggerOnce: false });
 
@@ -139,6 +138,42 @@ const Example = ({ media }) => {
       setApplianceIndex(
         (applianceIndex - 1 + applianceImages.length) % applianceImages.length
       );
+    }
+  };
+
+  const [selectedIndex, setSelectedIndex] = useState(0);
+  const videoRef1 = useRef(null);
+
+  useEffect(() => {
+    const handlePlayVideo = (entries, observer) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.play();
+        } else {
+          entry.target.pause();
+        }
+      });
+    };
+
+    const observer = new IntersectionObserver(handlePlayVideo, {
+      threshold: 0.5, // Adjust this value as needed
+    });
+
+    if (videoRef1.current) {
+      observer.observe(videoRef1.current);
+    }
+
+    return () => {
+      if (videoRef1.current) {
+        observer.unobserve(videoRef1.current);
+      }
+    };
+  }, []);
+
+  const handleVideoChange = (index) => {
+    setSelectedIndex(index);
+    if (videoRef1.current) {
+      videoRef1.current.load();
     }
   };
 
@@ -261,6 +296,7 @@ const Example = ({ media }) => {
         )}
       </nav>
 
+      {/* hero block */}
       <LayoutEffect
         className="duration-1000 delay-300"
         isInviewState={{
@@ -313,6 +349,7 @@ const Example = ({ media }) => {
         </div>
       </LayoutEffect>
 
+      {/* specifications */}
       <div className="mt-[2.5rem] mb-[5rem] w-[94%] md:w-[90%] lg:w-[85%] xl:w-[80%] 2xl:w-[1450px] mx-auto">
         <AnimatedDiv>
           <div className="flex flex-col gap-6 md:gap-0 md:flex-row justify-between items-center relative ">
@@ -474,6 +511,7 @@ const Example = ({ media }) => {
         </AnimatedDiv>
       </div>
 
+      {/* Energy Customized to Your Needs */}
       <div className="mx-auto w-[94%] md:w-[90%] lg:w-[85%] xl:w-[80%] 2xl:w-[1450px] mt-[7rem] mb-[5rem]">
         <AnimatedDiv>
           <div className={`${styles.block3Head} text-center`}>
@@ -598,7 +636,7 @@ const Example = ({ media }) => {
                           className="absolute top-[-15%] left-[0%]"
                           onClick={removeBattery}
                         >
-                          <div className="text-[0.8rem] text-white w-[150px]">
+                          <div className="text-[0.6rem] md:text-[0.8rem] text-white hidden md:flex  w-[150px] ">
                             Remove
                           </div>
                           <div className={styles.plus1}>
@@ -608,18 +646,19 @@ const Example = ({ media }) => {
                           </div>
                         </div>
                       )}
-                      <img
+                      <Image
                         src="/images/batteryApp/xbattery.png"
                         alt="Battery"
-                        width={"150px"}
-                        className="mx-auto"
+                        width={"1000"}
+                        height={"1000"}
+                        className="mx-auto w-[100px] md:w-[150px]"
                       />
                       {index === batteryCount - 1 && batteryCount < 3 && (
                         <div
                           className="absolute top-[-15%] left-[90%]"
                           onClick={addBattery}
                         >
-                          <div className="text-[0.8rem] text-white w-[150px]">
+                          <div className="text-[0.6rem] md:text-[0.8rem] text-white hidden md:flex w-[150px] ">
                             Add More Power
                           </div>
                           <div className={styles.plus1}>
@@ -635,7 +674,7 @@ const Example = ({ media }) => {
               </div>
               {/* <div className={styles.circle}></div>
       <div className={styles.circle1}></div> */}
-              <div className="w-full mx-auto flex justify-center mt-[-2.2rem] md:mt-[-5.5rem] z-[0]">
+              <div className="w-full mx-auto flex justify-center mt-[-1.2rem] md:mt-[-2.5rem] lg:mt-[-5.5rem]  z-[0]">
                 <Image
                   src={applianceImages1[applianceIndex]}
                   width={"1000"}
@@ -647,16 +686,365 @@ const Example = ({ media }) => {
         </AnimatedDiv>
       </div>
 
-      {/* <div className="mx-auto w-[94%] md:w-[90%] lg:w-[85%] xl:w-[80%] 2xl:w-[1450px] mt-[8rem] mb-[5rem]">
-      <div className="mx-auto w-full">
-        <Image src={"/images/hero/50kwh/battery50.png"} width={"1000"} height={"1000"} className="mx-auto w-[300px] z-20"/>
+      {/* 50 kWh Powerhouse */}
+      <div className="w-[75%] mx-auto mt-[8rem]">
+        <AnimatedDiv>
+          <div className={`${styles.block3Head} text-center`}>
+            50 kWh Powerhouse
+          </div>
+        </AnimatedDiv>
+        <AnimatedDiv>
+          <div className="text-white text-[1.3rem] text-center mt-3">
+            X1 is ultra-thin and packed with a power density of 8.7W/ft³, the
+            highest in the industry, thanks to its all-in-one design that
+            combines battery and power modules. Install it almost anywhere
+            around your home.
+          </div>
+        </AnimatedDiv>
       </div>
+      <div
+        ref={reference}
+        className="mx-auto w-[95%] md:w-[90%] lg:w-[85%] xl:w-[75%] 2xl:w-[1450px] mt-[5rem] mb-[5rem] flex flex-col lg:flex-row gap-[3rem] justify-center items-center  overflow-hidden xl:overflow-visible"
+      >
+        {/* Left Div - Animated from the left */}
+        <motion.div
+          initial={{ x: "-150%", opacity: 0 }} // Starts off the screen to the right
+          animate={{ x: isView ? 0 : "-150%", opacity: isView ? "100%" : "0" }} // Moves to original position when in view
+          transition={{ duration: 0.6, delay: 0.4 }} // Adjust delay as needed
+          className="z-20"
+        >
+          <Image
+            src="/images/hero/50kwh/battery50.png"
+            width={1000}
+            height={1000}
+            className=" w-[200px] lg:w-[300px]"
+          />
+        </motion.div>
+
+        {/* Right Div - Animated from the right */}
+        <motion.div
+          initial={{ x: "150%", opacity: 0 }} // Starts off the screen to the right
+          animate={{ x: isView ? 0 : "150%", opacity: isView ? "100%" : "0" }} // Moves to original position when in view
+          transition={{ duration: 0.6, delay: 0.4 }} // Match duration and delay for synchronization
+          className={`${styles.typingHead}  w-[100%]  lg:w-[450px] text-center lg:text-left `}
+        >
+          <Typewriter
+            words={[
+              "Advanced Battery Management",
+              "IoT Integration",
+              "Digital Twin Monitoring",
+              "AI-Driven Optimization",
+            ]}
+            loop={0}
+            cursor
+            cursorStyle="_"
+            typeSpeed={100}
+            deleteSpeed={60}
+            delaySpeed={2000}
+          />
+        </motion.div>
+      </div>
+
+      {/* Extreme Off-Grid Performance */}
+      {/* <div className="mx-auto w-[75%] mt-[9rem]">
+        <AnimatedDiv>
+          <div className={`${styles.block3Head} text-center`}>
+            Extreme Off-Grid Performance
+          </div>
+        </AnimatedDiv>
+        <AnimatedDiv>
+          <div className="text-white text-[1.3rem] text-center mt-3">
+            You're protected at all stages of an outage with X1 and its four
+            off-grid features. They start long before a blackout occurs.
+          </div>
+        </AnimatedDiv>
+
+        <div className=" mt-[3rem] ">
+          <AnimatedDiv>
+            <video
+              ref={videoRef1}
+              width="100%"
+              autoPlay
+              muted
+              className=" min-h-[650px]"
+            >
+              <source
+                src={
+                  selectedIndex === 0
+                    ? "/videos/steps/1.mp4"
+                    : selectedIndex === 1
+                    ? "/videos/steps/2.mp4"
+                    : selectedIndex === 2
+                    ? "/videos/steps/3.mp4"
+                    : selectedIndex === 3
+                    ? "/videos/steps/4.mp4"
+                    : ""
+                }
+                type="video/mp4"
+              />
+              Your browser does not support the video tag.
+            </video>
+
+            <div className={styles.switchBox}>
+              <div
+                className={`${styles.textBox} ${
+                  selectedIndex === 0
+                    ? `${styles.selected} ${styles.animate}`
+                    : ""
+                }`}
+                onClick={() => handleVideoChange(0)}
+              >
+                Before Outage
+              </div>
+              <div
+                className={`${styles.textBox} ${
+                  selectedIndex === 1
+                    ? `${styles.selected} ${styles.animate}`
+                    : ""
+                }`}
+                onClick={() => handleVideoChange(1)}
+              >
+                Outage Occurance
+              </div>
+              <div
+                className={`${styles.textBox} ${
+                  selectedIndex === 2
+                    ? `${styles.selected} ${styles.animate}`
+                    : ""
+                }`}
+                onClick={() => handleVideoChange(2)}
+              >
+                During Blackouts
+              </div>
+              <div
+                className={`${styles.textBox} ${
+                  selectedIndex === 3
+                    ? `${styles.selected} ${styles.animate}`
+                    : ""
+                }`}
+                onClick={() => handleVideoChange(3)}
+              >
+                Extended Outages
+              </div>
+            </div>
+          </AnimatedDiv>
+          <AnimatedDiv>
+            {selectedIndex === 0 && (
+              <div className="w-[90%] mx-auto flex justify-between mt-[2rem]">
+                <div className="w-[50%] text-white opacity-[50%]">
+                  X1 activates Storm Guard mode automatically when the National
+                  Weather Service issues a warning. Your battery will be fully
+                  charged in case an outage occurs.
+                </div>
+                <div className="flex flex-col gap-[0rem]">
+                  <div className="text-white text-[2rem] font-bold">
+                    Storm Guard Mode
+                  </div>
+                  <div className="text-white opacity-[50%]">
+                    Automatically detects and prepares for outages.
+                  </div>
+                </div>
+              </div>
+            )}
+
+            {selectedIndex === 1 && (
+              <div className="w-[90%] mx-auto flex justify-between mt-[2rem]">
+                <div className="w-[50%] text-white opacity-[50%]">
+                  In less than 20ms, your power switches over to X1, so you can
+                  run appliances without interruption.
+                </div>
+                <div className="flex flex-col gap-[0rem]">
+                  <div className="text-white text-[2rem] font-bold">
+                    Under 20ms
+                  </div>
+                  <div className="text-white opacity-[50%]">
+                    Enjoy seamless backup transition.
+                  </div>
+                </div>
+              </div>
+            )}
+
+            {selectedIndex === 2 && (
+              <div className="w-[90%] mx-auto flex justify-between mt-[2rem]">
+                <div className="w-[50%] text-white opacity-[50%]">
+                  Power with confidence thanks to the 1.1X rated power output.
+                  It's more than enough to run high-wattage home appliances at
+                  the same time.
+                </div>
+                <div className="flex flex-col gap-[0rem]">
+                  <div className="text-white text-[2rem] font-bold">
+                    1.1X Rated Power Output
+                  </div>
+                  <div className="text-white opacity-[50%]">
+                    With InfiniPower™, you always have electricity.
+                  </div>
+                </div>
+              </div>
+            )}
+
+            {selectedIndex === 3 && (
+              <div className="w-[90%] mx-auto flex justify-between mt-[2rem]">
+                <div className="w-[50%] text-white opacity-[50%]">
+                  Normally, blackouts disrupt solar systems, too. Not with X1.
+                  You'll have a constant power supply fo
+                </div>
+                <div className="flex flex-col gap-[0rem]">
+                  <div className="text-white text-[2rem] font-bold">
+                    24/7 Solar Power
+                  </div>
+                  <div className="text-white opacity-[50%]">
+                    Keep life smooth, even during lengthy outages.
+                  </div>
+                </div>
+              </div>
+            )}
+          </AnimatedDiv>
+        </div>
       </div> */}
 
+      <div className="mx-auto w-[95%] md:w-[75%] mt-[9rem]">
+        <AnimatedDiv>
+          <div
+            className={`${styles.block3Head} text-center text-[1.5rem] md:text-[2rem]`}
+          >
+            Extreme Off-Grid Performance
+          </div>
+        </AnimatedDiv>
+        <AnimatedDiv>
+          <div className="text-white text-[1.2rem] md:text-[1.5rem] text-center mt-3">
+            You're protected at all stages of an outage with X1 and its four
+            off-grid features. They start long before a blackout occurs.
+          </div>
+        </AnimatedDiv>
+
+        <div className="mt-[3rem]">
+          <AnimatedDiv>
+            <video
+              ref={videoRef1}
+              className="w-full min-h-[400px] md:min-h-[650px] object-cover"
+              autoPlay
+              muted
+            >
+              <source
+                src={
+                  selectedIndex === 0
+                    ? "/videos/steps/1.mp4"
+                    : selectedIndex === 1
+                    ? "/videos/steps/2.mp4"
+                    : selectedIndex === 2
+                    ? "/videos/steps/3.mp4"
+                    : selectedIndex === 3
+                    ? "/videos/steps/4.mp4"
+                    : ""
+                }
+                type="video/mp4"
+              />
+              Your browser does not support the video tag.
+            </video>
+
+            <div className={styles.switchBox}>
+              {[
+                "Before Outage",
+                "Outage Occurrence",
+                "During Blackouts",
+                "Extended Outages",
+              ].map((label, index) => (
+                <div
+                  key={index}
+                  className={`${styles.textBox} ${
+                    selectedIndex === index
+                      ? `${styles.selected} ${styles.animate}`
+                      : ""
+                  }`}
+                  onClick={() => handleVideoChange(index)}
+                >
+                  {label}
+                </div>
+              ))}
+            </div>
+          </AnimatedDiv>
+
+          <AnimatedDiv>
+            {selectedIndex === 0 && (
+              <div className="w-[90%] mx-auto flex flex-col md:flex-row justify-between mt-[2rem]">
+                <div className="w-full md:w-[50%] text-white opacity-[50%]">
+                  X1 activates Storm Guard mode automatically when the National
+                  Weather Service issues a warning. Your battery will be fully
+                  charged in case an outage occurs.
+                </div>
+                <div className="flex flex-col gap-[0rem] mt-3 md:mt-0">
+                  <div className="text-white text-[1.3rem] md:text-[2rem] font-bold">
+                    Storm Guard Mode
+                  </div>
+                  <div className="text-white opacity-[50%]">
+                    Automatically detects and prepares for outages.
+                  </div>
+                </div>
+              </div>
+            )}
+
+            {selectedIndex === 1 && (
+              <div className="w-[90%] mx-auto flex flex-col md:flex-row justify-between mt-[2rem]">
+                <div className="w-full md:w-[50%] text-white opacity-[50%]">
+                  In less than 20ms, your power switches over to X1, so you can
+                  run appliances without interruption.
+                </div>
+                <div className="flex flex-col gap-[0rem] mt-3 md:mt-0">
+                  <div className="text-white text-[1.3rem] md:text-[2rem] font-bold">
+                    Under 20ms
+                  </div>
+                  <div className="text-white opacity-[50%]">
+                    Enjoy seamless backup transition.
+                  </div>
+                </div>
+              </div>
+            )}
+
+            {selectedIndex === 2 && (
+              <div className="w-[90%] mx-auto flex flex-col md:flex-row justify-between mt-[2rem]">
+                <div className="w-full md:w-[50%] text-white opacity-[50%]">
+                  Power with confidence thanks to the 1.1X rated power output.
+                  It's more than enough to run high-wattage home appliances at
+                  the same time.
+                </div>
+                <div className="flex flex-col gap-[0rem] mt-3 md:mt-0">
+                  <div className="text-white text-[1.3rem] md:text-[2rem] font-bold">
+                    1.1X Rated Power Output
+                  </div>
+                  <div className="text-white opacity-[50%]">
+                    With InfiniPower™, you always have electricity.
+                  </div>
+                </div>
+              </div>
+            )}
+
+            {selectedIndex === 3 && (
+              <div className="w-[90%] mx-auto flex flex-col md:flex-row justify-between mt-[2rem]">
+                <div className="w-full md:w-[50%] text-white opacity-[50%]">
+                  Normally, blackouts disrupt solar systems, too. Not with X1.
+                  You'll have a constant power supply.
+                </div>
+                <div className="flex flex-col gap-[0rem] mt-3 md:mt-0">
+                  <div className="text-white text-[1.3rem] md:text-[2rem] font-bold">
+                    24/7 Solar Power
+                  </div>
+                  <div className="text-white opacity-[50%]">
+                    Keep life smooth, even during lengthy outages.
+                  </div>
+                </div>
+              </div>
+            )}
+          </AnimatedDiv>
+        </div>
+      </div>
+
+      {/* last Image */}
       <AnimatedDiv>
-        <div className="relative w-full mb-2 mt-[9rem] sm:mt-0">
+        <div className="relative w-full mb-2 mt-[9rem] sm:mt-[8rem]">
           <div className="block md:hidden text-[white] text-center px-4 mt-[-1rem] mb-7 w-[90%] mx-auto">
-            <h1 className="text-2xl font-bold">Power Your Home, Save Money</h1>
+            <h1 className={`${styles.textColor} font-bold`}>
+              Power Your Home, Save Money
+            </h1>
             <p className="mt-4">
               XBattery offers efficient energy storage solutions in India,
               integrating advanced technologies for optimal energy management.
