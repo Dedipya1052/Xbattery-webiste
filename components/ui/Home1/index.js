@@ -310,8 +310,16 @@ const Example = ({ media }) => {
             autoPlay
             muted
             playsInline
-            preload="auto"
-            onLoadedData={(e) => e.target.play()} // Ensure video starts playing after it's loaded
+            preload="metadata" // Load only metadata for better performance
+            onLoadedData={(e) => {
+              // Ensure video starts playing after it's loaded
+              if (e.target.readyState >= 3) {
+                // Check if video can be played
+                e.target.play().catch((error) => {
+                  console.error("Autoplay failed:", error);
+                });
+              }
+            }}
           >
             <source src={`https:${videoUrl1}`} type="video/mp4" />
             Your browser does not support the video tag.
@@ -745,163 +753,7 @@ const Example = ({ media }) => {
         </motion.div>
       </div>
 
-      {/* Extreme Off-Grid Performance */}
-      {/* <div className="mx-auto w-[75%] mt-[9rem]">
-        <AnimatedDiv>
-          <div className={`${styles.block3Head} text-center`}>
-            Extreme Off-Grid Performance
-          </div>
-        </AnimatedDiv>
-        <AnimatedDiv>
-          <div className="text-white text-[1.3rem] text-center mt-3">
-            You're protected at all stages of an outage with X1 and its four
-            off-grid features. They start long before a blackout occurs.
-          </div>
-        </AnimatedDiv>
-
-        <div className=" mt-[3rem] ">
-          <AnimatedDiv>
-            <video
-              ref={videoRef1}
-              width="100%"
-              autoPlay
-              muted
-              className=" min-h-[650px]"
-            >
-              <source
-                src={
-                  selectedIndex === 0
-                    ? "/videos/steps/1.mp4"
-                    : selectedIndex === 1
-                    ? "/videos/steps/2.mp4"
-                    : selectedIndex === 2
-                    ? "/videos/steps/3.mp4"
-                    : selectedIndex === 3
-                    ? "/videos/steps/4.mp4"
-                    : ""
-                }
-                type="video/mp4"
-              />
-              Your browser does not support the video tag.
-            </video>
-
-            <div className={styles.switchBox}>
-              <div
-                className={`${styles.textBox} ${
-                  selectedIndex === 0
-                    ? `${styles.selected} ${styles.animate}`
-                    : ""
-                }`}
-                onClick={() => handleVideoChange(0)}
-              >
-                Before Outage
-              </div>
-              <div
-                className={`${styles.textBox} ${
-                  selectedIndex === 1
-                    ? `${styles.selected} ${styles.animate}`
-                    : ""
-                }`}
-                onClick={() => handleVideoChange(1)}
-              >
-                Outage Occurance
-              </div>
-              <div
-                className={`${styles.textBox} ${
-                  selectedIndex === 2
-                    ? `${styles.selected} ${styles.animate}`
-                    : ""
-                }`}
-                onClick={() => handleVideoChange(2)}
-              >
-                During Blackouts
-              </div>
-              <div
-                className={`${styles.textBox} ${
-                  selectedIndex === 3
-                    ? `${styles.selected} ${styles.animate}`
-                    : ""
-                }`}
-                onClick={() => handleVideoChange(3)}
-              >
-                Extended Outages
-              </div>
-            </div>
-          </AnimatedDiv>
-          <AnimatedDiv>
-            {selectedIndex === 0 && (
-              <div className="w-[90%] mx-auto flex justify-between mt-[2rem]">
-                <div className="w-[50%] text-white opacity-[50%]">
-                  X1 activates Storm Guard mode automatically when the National
-                  Weather Service issues a warning. Your battery will be fully
-                  charged in case an outage occurs.
-                </div>
-                <div className="flex flex-col gap-[0rem]">
-                  <div className="text-white text-[2rem] font-bold">
-                    Storm Guard Mode
-                  </div>
-                  <div className="text-white opacity-[50%]">
-                    Automatically detects and prepares for outages.
-                  </div>
-                </div>
-              </div>
-            )}
-
-            {selectedIndex === 1 && (
-              <div className="w-[90%] mx-auto flex justify-between mt-[2rem]">
-                <div className="w-[50%] text-white opacity-[50%]">
-                  In less than 20ms, your power switches over to X1, so you can
-                  run appliances without interruption.
-                </div>
-                <div className="flex flex-col gap-[0rem]">
-                  <div className="text-white text-[2rem] font-bold">
-                    Under 20ms
-                  </div>
-                  <div className="text-white opacity-[50%]">
-                    Enjoy seamless backup transition.
-                  </div>
-                </div>
-              </div>
-            )}
-
-            {selectedIndex === 2 && (
-              <div className="w-[90%] mx-auto flex justify-between mt-[2rem]">
-                <div className="w-[50%] text-white opacity-[50%]">
-                  Power with confidence thanks to the 1.1X rated power output.
-                  It's more than enough to run high-wattage home appliances at
-                  the same time.
-                </div>
-                <div className="flex flex-col gap-[0rem]">
-                  <div className="text-white text-[2rem] font-bold">
-                    1.1X Rated Power Output
-                  </div>
-                  <div className="text-white opacity-[50%]">
-                    With InfiniPower™, you always have electricity.
-                  </div>
-                </div>
-              </div>
-            )}
-
-            {selectedIndex === 3 && (
-              <div className="w-[90%] mx-auto flex justify-between mt-[2rem]">
-                <div className="w-[50%] text-white opacity-[50%]">
-                  Normally, blackouts disrupt solar systems, too. Not with X1.
-                  You'll have a constant power supply fo
-                </div>
-                <div className="flex flex-col gap-[0rem]">
-                  <div className="text-white text-[2rem] font-bold">
-                    24/7 Solar Power
-                  </div>
-                  <div className="text-white opacity-[50%]">
-                    Keep life smooth, even during lengthy outages.
-                  </div>
-                </div>
-              </div>
-            )}
-          </AnimatedDiv>
-        </div>
-      </div> */}
-
+      {/* modes */}
       <div className="mx-auto w-[95%] md:w-[75%] mt-[9rem]">
         <AnimatedDiv>
           <div
@@ -924,6 +776,9 @@ const Example = ({ media }) => {
               className="w-full min-h-[400px] md:min-h-[650px] object-cover"
               autoPlay
               muted
+              playsInline
+              preload="auto"
+              onLoadedData={(e) => e.target.play()}
             >
               <source
                 src={
