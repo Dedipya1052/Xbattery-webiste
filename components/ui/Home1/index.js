@@ -311,6 +311,8 @@ const Example = ({ media }) => {
         )}
       </nav>
 
+
+     <div className=" overflow-hidden">
       {/* hero block */}
       <LayoutEffect
         className="duration-1000 delay-300"
@@ -325,7 +327,7 @@ const Example = ({ media }) => {
             autoPlay
             muted
             playsInline
-            preload="metadata" // Load only metadata for better performance
+            preload="none" // Load only metadata for better performance
             onLoadedData={(e) => {
               // Ensure video starts playing after it's loaded
               if (e.target.readyState >= 3) {
@@ -709,65 +711,6 @@ const Example = ({ media }) => {
         </AnimatedDiv>
       </div>
 
-      {/* 50 kWh Powerhouse */}
-      <div className="w-[75%] mx-auto mt-[8rem]">
-        <AnimatedDiv>
-          <div className={`${styles.block3Head} text-center`}>
-            50 kWh Powerhouse
-          </div>
-        </AnimatedDiv>
-        <AnimatedDiv>
-          <div className="text-white text-[1.3rem] text-center mt-3">
-            X1 is ultra-thin and packed with a power density of 8.7W/ft³, the
-            highest in the industry, thanks to its all-in-one design that
-            combines battery and power modules. Install it almost anywhere
-            around your home.
-          </div>
-        </AnimatedDiv>
-      </div>
-      <div
-        ref={reference}
-        className="mx-auto w-[95%] md:w-[90%] lg:w-[85%] xl:w-[75%] 2xl:w-[1450px] mt-[5rem] mb-[5rem] flex flex-col lg:flex-row gap-[3rem] justify-center items-center  overflow-hidden xl:overflow-visible"
-      >
-        {/* Left Div - Animated from the left */}
-        <motion.div
-          initial={{ x: "-150%", opacity: 0 }} // Starts off the screen to the right
-          animate={{ x: isView ? 0 : "-150%", opacity: isView ? "100%" : "0" }} // Moves to original position when in view
-          transition={{ duration: 0.6, delay: 0.4 }} // Adjust delay as needed
-          className="z-20"
-        >
-          <Image
-            src="/images/hero/50kwh/battery50.png"
-            width={1000}
-            height={1000}
-            className=" w-[200px] lg:w-[300px]"
-          />
-        </motion.div>
-
-        {/* Right Div - Animated from the right */}
-        <motion.div
-          initial={{ x: "150%", opacity: 0 }} // Starts off the screen to the right
-          animate={{ x: isView ? 0 : "150%", opacity: isView ? "100%" : "0" }} // Moves to original position when in view
-          transition={{ duration: 0.6, delay: 0.4 }} // Match duration and delay for synchronization
-          className={`${styles.typingHead}  w-[100%]  lg:w-[450px] text-center lg:text-left `}
-        >
-          <Typewriter
-            words={[
-              "Advanced Battery Management",
-              "IoT Integration",
-              "Digital Twin Monitoring",
-              "AI-Driven Optimization",
-            ]}
-            loop={0}
-            cursor
-            cursorStyle="_"
-            typeSpeed={100}
-            deleteSpeed={60}
-            delaySpeed={2000}
-          />
-        </motion.div>
-      </div>
-
       {/* modes */}
       <div className="mx-auto w-[95%] md:w-[75%] mt-[9rem]">
         <AnimatedDiv>
@@ -939,6 +882,66 @@ const Example = ({ media }) => {
           </div>
         </div>
       </AnimatedDiv>
+  
+       {/* 50 kWh Powerhouse */}
+       <div className="w-[75%] mx-auto mt-[8rem]">
+        <AnimatedDiv>
+          <div className={`${styles.block3Head} text-center`}>
+            50 kWh Powerhouse
+          </div>
+        </AnimatedDiv>
+        <AnimatedDiv>
+          <div className="text-white text-[1.3rem] text-center mt-3">
+            X1 is ultra-thin and packed with a power density of 8.7W/ft³, the
+            highest in the industry, thanks to its all-in-one design that
+            combines battery and power modules. Install it almost anywhere
+            around your home.
+          </div>
+        </AnimatedDiv>
+      </div>
+      <div
+        ref={reference}
+        className="mx-auto w-[95%] md:w-[90%] lg:w-[85%] xl:w-[75%] 2xl:w-[1450px] mt-[5rem] mb-[5rem] flex flex-col lg:flex-row gap-[3rem] justify-center items-center  overflow-hidden xl:overflow-visible"
+      >
+        {/* Left Div - Animated from the left */}
+        <motion.div
+          initial={{ x: "-150%", opacity: 0 }} // Starts off the screen to the right
+          animate={{ x: isView ? 0 : "-150%", opacity: isView ? "100%" : "0" }} // Moves to original position when in view
+          transition={{ duration: 0.6, delay: 0.4 }} // Adjust delay as needed
+          className="z-20"
+        >
+          <Image
+            src="/images/hero/50kwh/battery50.png"
+            width={1000}
+            height={1000}
+            className=" w-[200px] lg:w-[300px]"
+          />
+        </motion.div>
+
+        {/* Right Div - Animated from the right */}
+        <motion.div
+          initial={{ x: "150%", opacity: 0 }} // Starts off the screen to the right
+          animate={{ x: isView ? 0 : "150%", opacity: isView ? "100%" : "0" }} // Moves to original position when in view
+          transition={{ duration: 0.6, delay: 0.4 }} // Match duration and delay for synchronization
+          className={`${styles.typingHead}  w-[100%]  lg:w-[450px] text-center lg:text-left `}
+        >
+          <Typewriter
+            words={[
+              "Advanced Battery Management",
+              "IoT Integration",
+              "Digital Twin Monitoring",
+              "AI-Driven Optimization",
+            ]}
+            loop={0}
+            cursor
+            cursorStyle="_"
+            typeSpeed={100}
+            deleteSpeed={60}
+            delaySpeed={2000}
+          />
+        </motion.div>
+      </div>
+      </div>
     </div>
   );
 };
