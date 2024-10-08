@@ -312,7 +312,7 @@ const Example = ({ media }) => {
       </nav>
 
 
-     <div className=" overflow-hidden">
+     <div >
       {/* hero block */}
       <LayoutEffect
         className="duration-1000 delay-300"
