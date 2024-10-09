@@ -10,7 +10,8 @@ import { useRef } from "react";
 import Link from "next/link";
 import AnimatedDiv from "../Animate";
 import { motion } from "framer-motion";
-import { Typewriter } from "react-simple-typewriter";
+// import { Typewriter } from "react-simple-typewriter";
+import { gsap } from "gsap";
 
 // * fetch blogs from contentful CMS
 
@@ -143,11 +144,13 @@ const Example = ({ media }) => {
 
   const [selectedIndex, setSelectedIndex] = useState(0);
   const videoRef1 = useRef(null);
+  const videoRef2 = useRef(null);
 
   useEffect(() => {
     const handlePlayVideo = (entries, observer) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
+          entry.target.currentTime = 0;
           entry.target.play();
         } else {
           entry.target.pause();
@@ -162,10 +165,16 @@ const Example = ({ media }) => {
     if (videoRef1.current) {
       observer.observe(videoRef1.current);
     }
+    if (videoRef2.current) {
+      observer.observe(videoRef2.current);
+    }
 
     return () => {
       if (videoRef1.current) {
         observer.unobserve(videoRef1.current);
+      }
+      if (videoRef2.current) {
+        observer.unobserve(videoRef2.current);
       }
     };
   }, []);
@@ -176,8 +185,6 @@ const Example = ({ media }) => {
       videoRef1.current.load();
     }
   };
-
-
 
   // for videos
 
@@ -190,6 +197,7 @@ const Example = ({ media }) => {
       });
     }
   }, []);
+
   
 
   return (
@@ -311,246 +319,245 @@ const Example = ({ media }) => {
         )}
       </nav>
 
-
-     <div >
-      {/* hero block */}
-      <LayoutEffect
-        className="duration-1000 delay-300"
-        isInviewState={{
-          trueState: "opacity-1",
-          falseState: "opacity-0",
-        }}
-      >
-        <div className="relative w-full top-[-4rem] ">
-          <video
-            className={`w-auto h-[85vh] md:w-full md:h-auto object-cover ${objectPosition}`}
-            autoPlay
-            muted
-            playsInline
-            preload="none" // Load only metadata for better performance
-            onLoadedData={(e) => {
-              // Ensure video starts playing after it's loaded
-              if (e.target.readyState >= 3) {
-                // Check if video can be played
-                e.target.play().catch((error) => {
-                  console.error("Autoplay failed:", error);
-                });
-              }
-            }}
-          >
-            <source src={`https:${videoUrl1}`} type="video/mp4" />
-            Your browser does not support the video tag.
-          </video>
-          <motion.div
-            ref={ref}
-            initial={{ x: "-100%" }}
-            animate={{ x: isInView ? 0 : "-100%" }}
-            transition={{ duration: 1, delay: 6 }}
-            // className="absolute top-8 left-0 w-full h-full flex flex-col items-start justify-center p-16 space-y-2"
-            className="absolute top-0 md:top-8 left-0 right-0 w-full h-full flex flex-col items-center md:items-start justify-center p-4 md:p-16 space-y-2 text-left"
-          >
-            <div className="text-white text-3xl lg:text-4xl font-medium mb-4">
-              XBattery
-            </div>
-            <div className="text-white text-4xl lg:text-6xl text-center md:text-left font-bold">
-              Power for the Extreme
-            </div>
-            <div className="text-white text-lg lg:text-2xl text-center md:text-left font-light pt-5 pl-1">
-              Extreme Performance Energy Storage System
-            </div>
-            <div className=" pt-8 flex gap-7 pl-2">
-              {/* <div className={styles.gradientButton}>Watch Video</div> */}
-              <Button
-                bg="transparent"
-                border="1px"
-                borderColor="white"
-                color="white"
-                _hover={{ bg: "transparent" }}
-              >
-                Watch the Event
-              </Button>
-            </div>
-          </motion.div>
-        </div>
-      </LayoutEffect>
-
-      {/* specifications */}
-      <div className="mt-[2.5rem] mb-[5rem] w-[94%] md:w-[90%] lg:w-[85%] xl:w-[80%] 2xl:w-[1450px] mx-auto">
-        <AnimatedDiv>
-          <div className="flex flex-col gap-6 md:gap-0 md:flex-row justify-between items-center relative ">
-            <div
-              className={`${styles.block2Head} text-center md:text-left w-full md:w-[45%]`}
+      <div>
+        {/* hero block */}
+        <LayoutEffect
+          className="duration-1000 delay-300"
+          isInviewState={{
+            trueState: "opacity-1",
+            falseState: "opacity-0",
+          }}
+        >
+          <div className="relative w-full top-[-4rem] ">
+            <video
+              className={`w-auto h-[85vh] md:w-full md:h-auto object-cover ${objectPosition}`}
+              autoPlay
+              muted
+              playsInline
+              preload="none" // Load only metadata for better performance
+              onLoadedData={(e) => {
+                // Ensure video starts playing after it's loaded
+                if (e.target.readyState >= 3) {
+                  // Check if video can be played
+                  e.target.play().catch((error) => {
+                    console.error("Autoplay failed:", error);
+                  });
+                }
+              }}
             >
-              XBattery Specifications
-            </div>
+              <source src={`https:${videoUrl1}`} type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
+            <motion.div
+              ref={ref}
+              initial={{ x: "-100%" }}
+              animate={{ x: isInView ? 0 : "-100%" }}
+              transition={{ duration: 1, delay: 6 }}
+              // className="absolute top-8 left-0 w-full h-full flex flex-col items-start justify-center p-16 space-y-2"
+              className="absolute top-0 md:top-8 left-0 right-0 w-full h-full flex flex-col items-center md:items-start justify-center p-4 md:p-16 space-y-2 text-left"
+            >
+              <div className="text-white text-3xl lg:text-4xl font-medium mb-4">
+                XBattery
+              </div>
+              <div className="text-white text-4xl lg:text-6xl text-center md:text-left font-bold">
+                Power for the Extreme
+              </div>
+              <div className="text-white text-lg lg:text-2xl text-center md:text-left font-light pt-5 pl-1">
+                Extreme Performance Energy Storage System
+              </div>
+              <div className=" pt-8 flex gap-7 pl-2">
+                {/* <div className={styles.gradientButton}>Watch Video</div> */}
+                <Button
+                  bg="transparent"
+                  border="1px"
+                  borderColor="white"
+                  color="white"
+                  _hover={{ bg: "transparent" }}
+                >
+                  Watch the Event
+                </Button>
+              </div>
+            </motion.div>
+          </div>
+        </LayoutEffect>
 
-            <div className="w-full md:w-[55%] flex flex-row md:flex-row gap-[2rem] md:gap-[1rem] justify-evenly relative">
-              {/* Active border element */}
+        {/* specifications 1 */}
+        <div className="mt-[2.5rem] mb-[5rem] w-[94%] md:w-[90%] lg:w-[85%] xl:w-[80%] 2xl:w-[1450px] mx-auto">
+          <AnimatedDiv>
+            <div className="flex flex-col gap-6 md:gap-0 md:flex-row justify-between items-center relative ">
               <div
-                className="absolute bottom-[-15px] h-[2px] bg-white transition-all duration-300 ease-in-out"
-                style={{
-                  width: "30%",
-                  left:
+                className={`${styles.block2Head} text-center md:text-left w-full md:w-[45%]`}
+              >
+                XBattery Specifications
+              </div>
+
+              <div className="w-full md:w-[55%] flex flex-row md:flex-row gap-[2rem] md:gap-[1rem] justify-evenly relative">
+                {/* Active border element */}
+                <div
+                  className="absolute bottom-[-15px] h-[2px] bg-white transition-all duration-300 ease-in-out"
+                  style={{
+                    width: "30%",
+                    left:
+                      activeBattery === "XBattery1"
+                        ? "0%"
+                        : activeBattery === "XBattery2"
+                        ? "35%"
+                        : "70%",
+                  }}
+                />
+
+                {/* Battery options */}
+                <div
+                  onClick={() => handleBatteryChange("XBattery1")}
+                  className={`cursor-pointer flex-1 text-center relative ${
                     activeBattery === "XBattery1"
-                      ? "0%"
-                      : activeBattery === "XBattery2"
-                      ? "35%"
-                      : "70%",
-                }}
-              />
+                      ? "text-white"
+                      : "text-[#b5b5b5]"
+                  }`}
+                >
+                  XBattery1
+                </div>
 
-              {/* Battery options */}
-              <div
-                onClick={() => handleBatteryChange("XBattery1")}
-                className={`cursor-pointer flex-1 text-center relative ${
-                  activeBattery === "XBattery1"
-                    ? "text-white"
-                    : "text-[#b5b5b5]"
-                }`}
-              >
-                XBattery1
-              </div>
+                <div
+                  onClick={() => handleBatteryChange("XBattery2")}
+                  className={`cursor-pointer flex-1 text-center relative ${
+                    activeBattery === "XBattery2"
+                      ? "text-white"
+                      : "text-[#b5b5b5]"
+                  }`}
+                >
+                  XBattery2
+                </div>
 
-              <div
-                onClick={() => handleBatteryChange("XBattery2")}
-                className={`cursor-pointer flex-1 text-center relative ${
-                  activeBattery === "XBattery2"
-                    ? "text-white"
-                    : "text-[#b5b5b5]"
-                }`}
-              >
-                XBattery2
-              </div>
-
-              <div
-                onClick={() => handleBatteryChange("XBattery3")}
-                className={`cursor-pointer flex-1 text-center relative ${
-                  activeBattery === "XBattery3"
-                    ? "text-white"
-                    : "text-[#b5b5b5]"
-                }`}
-              >
-                XBattery3
-              </div>
-            </div>
-          </div>
-        </AnimatedDiv>
-
-        <AnimatedDiv>
-          <div className="mt-[4rem] flex flex-col gap-[1rem] pb-[4rem] border-b-[1px] border-[#2e2e2e]">
-            <div className="text-white font-bold text-xl text-center sm:text-left mb-3 md:mb-0">
-              Power
-            </div>
-            <div className="w-[85%] mx-auto md:w-full flex flex-row flex-wrap md:flex-nowrap justify-between md:justify-start sm:flex-row gap-[2rem]  sm:gap-[10%]">
-              <div className="flex flex-col gap-2">
-                <div className="text-[#979797] text-sm">Energy Capacity</div>
-                <div id="value">
-                  <div className="text-white text-sm">
-                    {currentBattery.energyCapacity}
-                  </div>
+                <div
+                  onClick={() => handleBatteryChange("XBattery3")}
+                  className={`cursor-pointer flex-1 text-center relative ${
+                    activeBattery === "XBattery3"
+                      ? "text-white"
+                      : "text-[#b5b5b5]"
+                  }`}
+                >
+                  XBattery3
                 </div>
               </div>
+            </div>
+          </AnimatedDiv>
 
-              <div className="flex flex-col gap-2">
-                <div className="text-[#979797] text-sm">On-Grid Power</div>
-                <div id="value">
-                  <div className="text-white text-sm">
-                    {currentBattery.onGridPower}
+          <AnimatedDiv>
+            <div className="mt-[4rem] flex flex-col gap-[1rem] pb-[4rem] border-b-[1px] border-[#2e2e2e]">
+              <div className="text-white font-bold text-xl text-center sm:text-left mb-3 md:mb-0">
+                Power
+              </div>
+              <div className="w-[85%] mx-auto md:w-full flex flex-row flex-wrap md:flex-nowrap justify-between md:justify-start sm:flex-row gap-[2rem]  sm:gap-[10%]">
+                <div className="flex flex-col gap-2">
+                  <div className="text-[#979797] text-sm">Energy Capacity</div>
+                  <div id="value">
+                    <div className="text-white text-sm">
+                      {currentBattery.energyCapacity}
+                    </div>
                   </div>
                 </div>
-              </div>
 
-              <div className="flex flex-col gap-2">
-                <div className="text-[#979797] text-sm">Backup Power</div>
-                <div id="value">
-                  <div className="text-white text-sm">
-                    {currentBattery.backupPower.peak}
+                <div className="flex flex-col gap-2">
+                  <div className="text-[#979797] text-sm">On-Grid Power</div>
+                  <div id="value">
+                    <div className="text-white text-sm">
+                      {currentBattery.onGridPower}
+                    </div>
                   </div>
-                  <div className="text-white text-sm">
-                    {currentBattery.backupPower.motorStart}
-                  </div>
-                  <div className="text-white text-sm">
-                    {currentBattery.backupPower.transition}
+                </div>
+
+                <div className="flex flex-col gap-2">
+                  <div className="text-[#979797] text-sm">Backup Power</div>
+                  <div id="value">
+                    <div className="text-white text-sm">
+                      {currentBattery.backupPower.peak}
+                    </div>
+                    <div className="text-white text-sm">
+                      {currentBattery.backupPower.motorStart}
+                    </div>
+                    <div className="text-white text-sm">
+                      {currentBattery.backupPower.transition}
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
-          </div>
-        </AnimatedDiv>
+          </AnimatedDiv>
 
-        <AnimatedDiv>
-          <div className="mt-[2rem] flex flex-col gap-[1rem] pb-[4rem] border-b-[1px] border-[#2e2e2e]">
-            <div className="text-white font-bold text-xl text-center sm:text-left mb-3 md:mb-0">
-              Features
+          <AnimatedDiv>
+            <div className="mt-[2rem] flex flex-col gap-[1rem] pb-[4rem] border-b-[1px] border-[#2e2e2e]">
+              <div className="text-white font-bold text-xl text-center sm:text-left mb-3 md:mb-0">
+                Features
+              </div>
+              <div className="w-[85%] mx-auto md:w-full flex flex-row flex-wrap md:flex-nowrap justify-between   md:justify-start sm:flex-row gap-[2rem] sm:gap-[10%]">
+                <div className="flex flex-col gap-2">
+                  <div className="text-[#979797] text-sm text-left">
+                    Size and Weight
+                  </div>
+                  <div id="value">
+                    <div className="text-white text-sm">
+                      {currentBattery.energyCapacity}
+                    </div>
+                  </div>
+                </div>
+
+                <div className="flex flex-col gap-2">
+                  <div className="text-[#979797] text-sm">Scalable</div>
+                  <div id="value">
+                    <div className="text-white text-sm">
+                      {currentBattery.onGridPower}
+                    </div>
+                  </div>
+                </div>
+
+                <div className="flex flex-col gap-2">
+                  <div className="text-[#979797] text-sm">Installation</div>
+                  <div id="value">
+                    <div className="text-white text-sm">
+                      {currentBattery.backupPower.peak}
+                    </div>
+                    <div className="text-white text-sm">
+                      {currentBattery.backupPower.motorStart}
+                    </div>
+                    <div className="text-white text-sm">
+                      {currentBattery.backupPower.transition}
+                    </div>
+                  </div>
+                </div>
+
+                <div className="flex flex-col gap-2">
+                  <div className="text-[#979797] text-sm">Certification</div>
+                  <div id="value">
+                    <div className="text-white text-sm">
+                      {currentBattery.backupPower.peak}
+                    </div>
+                    <div className="text-white text-sm">
+                      {currentBattery.backupPower.motorStart}
+                    </div>
+                    <div className="text-white text-sm">SEMI standards</div>
+                  </div>
+                </div>
+              </div>
             </div>
-            <div className="w-[85%] mx-auto md:w-full flex flex-row flex-wrap md:flex-nowrap justify-between   md:justify-start sm:flex-row gap-[2rem] sm:gap-[10%]">
-              <div className="flex flex-col gap-2">
-                <div className="text-[#979797] text-sm text-left">
-                  Size and Weight
-                </div>
-                <div id="value">
-                  <div className="text-white text-sm">
-                    {currentBattery.energyCapacity}
-                  </div>
-                </div>
-              </div>
+          </AnimatedDiv>
+        </div>
 
-              <div className="flex flex-col gap-2">
-                <div className="text-[#979797] text-sm">Scalable</div>
-                <div id="value">
-                  <div className="text-white text-sm">
-                    {currentBattery.onGridPower}
-                  </div>
-                </div>
-              </div>
-
-              <div className="flex flex-col gap-2">
-                <div className="text-[#979797] text-sm">Installation</div>
-                <div id="value">
-                  <div className="text-white text-sm">
-                    {currentBattery.backupPower.peak}
-                  </div>
-                  <div className="text-white text-sm">
-                    {currentBattery.backupPower.motorStart}
-                  </div>
-                  <div className="text-white text-sm">
-                    {currentBattery.backupPower.transition}
-                  </div>
-                </div>
-              </div>
-
-              <div className="flex flex-col gap-2">
-                <div className="text-[#979797] text-sm">Certification</div>
-                <div id="value">
-                  <div className="text-white text-sm">
-                    {currentBattery.backupPower.peak}
-                  </div>
-                  <div className="text-white text-sm">
-                    {currentBattery.backupPower.motorStart}
-                  </div>
-                  <div className="text-white text-sm">SEMI standards</div>
-                </div>
-              </div>
+        {/* Energy Customized to Your Needs */}
+        <div className="mx-auto w-[94%] md:w-[90%] lg:w-[85%] xl:w-[80%] 2xl:w-[1450px] mt-[7rem] mb-[5rem]">
+          <AnimatedDiv>
+            <div className={`${styles.block3Head} text-center`}>
+              Energy Customized to Your Needs
             </div>
-          </div>
-        </AnimatedDiv>
-      </div>
-
-      {/* Energy Customized to Your Needs */}
-      <div className="mx-auto w-[94%] md:w-[90%] lg:w-[85%] xl:w-[80%] 2xl:w-[1450px] mt-[7rem] mb-[5rem]">
-        <AnimatedDiv>
-          <div className={`${styles.block3Head} text-center`}>
-            Energy Customized to Your Needs
-          </div>
-        </AnimatedDiv>
-        <AnimatedDiv>
-          <div className="text-white text-[1.3rem] text-center mt-3">
-            Scale power from 5kWh to 180kWh or 3kW to 36kW to perfectly match
-            your needs with X1. No matter how much power or backup capacity you
-            need.
-          </div>
-        </AnimatedDiv>
-        {/* <AnimatedDiv>
+          </AnimatedDiv>
+          <AnimatedDiv>
+            <div className="text-white text-[1.3rem] text-center mt-3">
+              Scale power from 5kWh to 180kWh or 3kW to 36kW to perfectly match
+              your needs with X1. No matter how much power or backup capacity
+              you need.
+            </div>
+          </AnimatedDiv>
+          {/* <AnimatedDiv>
         <div className="flex flex-col justify-evenly mt-[4rem]">
           <div className="flex flex-col gap-[1rem]">
             <div className="flex gap-[8rem]">
@@ -634,313 +641,498 @@ const Example = ({ media }) => {
           </div>
         </div>
       </AnimatedDiv> */}
-        <AnimatedDiv>
-          <div className="flex flex-col justify-evenly mt-[4rem] mb-[-8rem]">
-            <div className="flex flex-col gap-[1rem] relative">
-              <div className="flex justify-center">
-                <div className={`flex flex-col gap-0.5`}>
-                  <div className="text-white text-[2.4rem] font-bold text-center">
-                    <div className={styles.textColor}>
-                      {`${3 * batteryCount}kW/${5 * batteryCount}kWh`}
+          <AnimatedDiv>
+            <div className="flex flex-col justify-evenly mt-[4rem] mb-[-8rem]">
+              <div className="flex flex-col gap-[1rem] relative">
+                <div className="flex justify-center">
+                  <div className={`flex flex-col gap-0.5`}>
+                    <div className="text-white text-[2.4rem] font-bold text-center">
+                      <div className={styles.textColor}>
+                        {`${3 * batteryCount}kW/${5 * batteryCount}kWh`}
+                      </div>
+                    </div>
+                    <div className="text-white text-[1.3rem] font-light opacity-[60%] text-center">
+                      {`${batteryCount} Power Module + ${batteryCount} Battery Module`}
                     </div>
                   </div>
-                  <div className="text-white text-[1.3rem] font-light opacity-[60%] text-center">
-                    {`${batteryCount} Power Module + ${batteryCount} Battery Module`}
+                </div>
+                <div className="flex mt-[4rem] justify-center ">
+                  <div className="flex justify-center items-center gap-2 relative z-30 flex-wrap md:flex-nowrap">
+                    {[...Array(batteryCount)].map((_, index) => (
+                      <div
+                        key={index}
+                        className="relative flex flex-col items-center"
+                      >
+                        {index > 0 && (
+                          <div
+                            className="absolute top-[-15%] left-[0%]"
+                            onClick={removeBattery}
+                          >
+                            <div className="text-[0.6rem] md:text-[0.8rem] text-white hidden md:flex  w-[150px] ">
+                              Remove
+                            </div>
+                            <div className={styles.plus1}>
+                              <div className="mt-[-0.85rem] ml-[-0.11rem] cursor-pointer text-[1.2rem]">
+                                -
+                              </div>
+                            </div>
+                          </div>
+                        )}
+                        <Image
+                          src="/images/batteryApp/xbattery.png"
+                          alt="Battery"
+                          width={"1000"}
+                          height={"1000"}
+                          className="mx-auto w-[100px] md:w-[150px]"
+                        />
+                        {index === batteryCount - 1 && batteryCount < 3 && (
+                          <div
+                            className="absolute top-[-15%] left-[90%]"
+                            onClick={addBattery}
+                          >
+                            <div className="text-[0.6rem] md:text-[0.8rem] text-white hidden md:flex w-[150px] ">
+                              Add More Power
+                            </div>
+                            <div className={styles.plus1}>
+                              <div className="mt-[-0.5rem] ml-[-0.15rem] cursor-pointer">
+                                +
+                              </div>
+                            </div>
+                          </div>
+                        )}
+                      </div>
+                    ))}
                   </div>
                 </div>
-              </div>
-              <div className="flex mt-[4rem] justify-center ">
-                <div className="flex justify-center items-center gap-2 relative z-30 flex-wrap md:flex-nowrap">
-                  {[...Array(batteryCount)].map((_, index) => (
-                    <div
-                      key={index}
-                      className="relative flex flex-col items-center"
-                    >
-                      {index > 0 && (
-                        <div
-                          className="absolute top-[-15%] left-[0%]"
-                          onClick={removeBattery}
-                        >
-                          <div className="text-[0.6rem] md:text-[0.8rem] text-white hidden md:flex  w-[150px] ">
-                            Remove
-                          </div>
-                          <div className={styles.plus1}>
-                            <div className="mt-[-0.85rem] ml-[-0.11rem] cursor-pointer text-[1.2rem]">
-                              -
-                            </div>
-                          </div>
-                        </div>
-                      )}
-                      <Image
-                        src="/images/batteryApp/xbattery.png"
-                        alt="Battery"
-                        width={"1000"}
-                        height={"1000"}
-                        className="mx-auto w-[100px] md:w-[150px]"
-                      />
-                      {index === batteryCount - 1 && batteryCount < 3 && (
-                        <div
-                          className="absolute top-[-15%] left-[90%]"
-                          onClick={addBattery}
-                        >
-                          <div className="text-[0.6rem] md:text-[0.8rem] text-white hidden md:flex w-[150px] ">
-                            Add More Power
-                          </div>
-                          <div className={styles.plus1}>
-                            <div className="mt-[-0.5rem] ml-[-0.15rem] cursor-pointer">
-                              +
-                            </div>
-                          </div>
-                        </div>
-                      )}
-                    </div>
-                  ))}
-                </div>
-              </div>
-              {/* <div className={styles.circle}></div>
+                {/* <div className={styles.circle}></div>
       <div className={styles.circle1}></div> */}
-              <div className="w-full mx-auto flex justify-center mt-[-1.2rem] md:mt-[-2.5rem] lg:mt-[-5.5rem]  z-[0]">
-                <Image
-                  src={applianceImages1[applianceIndex]}
-                  width={"1000"}
-                  height={"1000"}
-                />
+                <div className="w-full mx-auto flex justify-center mt-[-1.2rem] md:mt-[-2.5rem] lg:mt-[-5.5rem]  z-[0]">
+                  <Image
+                    src={applianceImages1[applianceIndex]}
+                    width={"1000"}
+                    height={"1000"}
+                  />
+                </div>
               </div>
             </div>
-          </div>
-        </AnimatedDiv>
-      </div>
+          </AnimatedDiv>
+        </div>
 
-      {/* modes */}
-      <div className="mx-auto w-[95%] md:w-[75%] mt-[9rem]">
-        <AnimatedDiv>
-          <div
-            className={`${styles.block3Head} text-center text-[1.5rem] md:text-[2rem]`}
-          >
-            Extreme Off-Grid Performance
-          </div>
-        </AnimatedDiv>
-        <AnimatedDiv>
-          <div className="text-white text-[1.2rem] md:text-[1.5rem] text-center mt-3">
-            You're protected at all stages of an outage with X1 and its four
-            off-grid features. They start long before a blackout occurs.
-          </div>
-        </AnimatedDiv>
-
-        <div className="mt-[3rem]">
+        {/* modes */}
+        <div className="mx-auto w-[95%] md:w-[75%] xl:w-[80%] 2xl:w-[1450px] mt-[9rem]">
           <AnimatedDiv>
-            <video
-              ref={videoRef1}
-              className="w-full min-h-[400px] md:min-h-[650px] object-cover"
-              autoPlay
-              muted
-              playsInline
-              preload="auto"
-              onLoadedData={(e) => e.target.play()}
+            <div
+              className={`${styles.block3Head} text-center text-[1.5rem] md:text-[2rem]`}
             >
-              <source
-                src={
-                  selectedIndex === 0
-                    ? "/videos/steps/1.mp4"
-                    : selectedIndex === 1
-                    ? "/videos/steps/2.mp4"
-                    : selectedIndex === 2
-                    ? "/videos/steps/3.mp4"
-                    : selectedIndex === 3
-                    ? "/videos/steps/4.mp4"
-                    : ""
-                }
-                type="video/mp4"
-              />
-              Your browser does not support the video tag.
-            </video>
+              Extreme Off-Grid Performance
+            </div>
+          </AnimatedDiv>
+          <AnimatedDiv>
+            <div className="text-white text-[1.2rem] md:text-[1.5rem] text-center mt-3">
+              You're protected at all stages of an outage with X1 and its four
+              off-grid features. They start long before a blackout occurs.
+            </div>
+          </AnimatedDiv>
 
-            <div className={styles.switchBox}>
-              {[
-                "Before Outage",
-                "Outage Occurrence",
-                "During Blackouts",
-                "Extended Outages",
-              ].map((label, index) => (
-                <div
-                  key={index}
-                  className={`${styles.textBox} ${
-                    selectedIndex === index
-                      ? `${styles.selected} ${styles.animate}`
+          <div className="mt-[3rem]">
+            <AnimatedDiv>
+              <video
+                ref={videoRef1}
+                className="w-full min-h-[400px] md:min-h-[650px] object-cover"
+                autoPlay
+                muted
+                playsInline
+                preload="auto"
+                onLoadedData={(e) => e.target.play()}
+              >
+                <source
+                  src={
+                    selectedIndex === 0
+                      ? "/videos/steps/1.mp4"
+                      : selectedIndex === 1
+                      ? "/videos/steps/2.mp4"
+                      : selectedIndex === 2
+                      ? "/videos/steps/3.mp4"
+                      : selectedIndex === 3
+                      ? "/videos/steps/4.mp4"
                       : ""
-                  }`}
-                  onClick={() => handleVideoChange(index)}
-                >
-                  {label}
+                  }
+                  type="video/mp4"
+                />
+                Your browser does not support the video tag.
+              </video>
+
+              <div className={styles.switchBox}>
+                {[
+                  "Before Outage",
+                  "Outage Occurrence",
+                  "During Blackouts",
+                  "Extended Outages",
+                ].map((label, index) => (
+                  <div
+                    key={index}
+                    className={`${styles.textBox} ${
+                      selectedIndex === index
+                        ? `${styles.selected} ${styles.animate}`
+                        : ""
+                    }`}
+                    onClick={() => handleVideoChange(index)}
+                  >
+                    {label}
+                  </div>
+                ))}
+              </div>
+            </AnimatedDiv>
+
+            <AnimatedDiv>
+              {selectedIndex === 0 && (
+                <div className="w-[90%] mx-auto flex flex-col md:flex-row justify-between mt-[2rem]">
+                  <div className="w-full md:w-[50%] text-white opacity-[50%]">
+                    X1 activates Storm Guard mode automatically when the
+                    National Weather Service issues a warning. Your battery will
+                    be fully charged in case an outage occurs.
+                  </div>
+                  <div className="flex flex-col gap-[0rem] mt-3 md:mt-0">
+                    <div className="text-white text-[1.3rem] md:text-[2rem] font-bold">
+                      Storm Guard Mode
+                    </div>
+                    <div className="text-white opacity-[50%]">
+                      Automatically detects and prepares for outages.
+                    </div>
+                  </div>
                 </div>
-              ))}
+              )}
+
+              {selectedIndex === 1 && (
+                <div className="w-[90%] mx-auto flex flex-col md:flex-row justify-between mt-[2rem]">
+                  <div className="w-full md:w-[50%] text-white opacity-[50%]">
+                    In less than 20ms, your power switches over to X1, so you
+                    can run appliances without interruption.
+                  </div>
+                  <div className="flex flex-col gap-[0rem] mt-3 md:mt-0">
+                    <div className="text-white text-[1.3rem] md:text-[2rem] font-bold">
+                      Under 20ms
+                    </div>
+                    <div className="text-white opacity-[50%]">
+                      Enjoy seamless backup transition.
+                    </div>
+                  </div>
+                </div>
+              )}
+
+              {selectedIndex === 2 && (
+                <div className="w-[90%] mx-auto flex flex-col md:flex-row justify-between mt-[2rem]">
+                  <div className="w-full md:w-[50%] text-white opacity-[50%]">
+                    Power with confidence thanks to the 1.1X rated power output.
+                    It's more than enough to run high-wattage home appliances at
+                    the same time.
+                  </div>
+                  <div className="flex flex-col gap-[0rem] mt-3 md:mt-0">
+                    <div className="text-white text-[1.3rem] md:text-[2rem] font-bold">
+                      1.1X Rated Power Output
+                    </div>
+                    <div className="text-white opacity-[50%]">
+                      With InfiniPower™, you always have electricity.
+                    </div>
+                  </div>
+                </div>
+              )}
+
+              {selectedIndex === 3 && (
+                <div className="w-[90%] mx-auto flex flex-col md:flex-row justify-between mt-[2rem]">
+                  <div className="w-full md:w-[50%] text-white opacity-[50%]">
+                    Normally, blackouts disrupt solar systems, too. Not with X1.
+                    You'll have a constant power supply.
+                  </div>
+                  <div className="flex flex-col gap-[0rem] mt-3 md:mt-0">
+                    <div className="text-white text-[1.3rem] md:text-[2rem] font-bold">
+                      24/7 Solar Power
+                    </div>
+                    <div className="text-white opacity-[50%]">
+                      Keep life smooth, even during lengthy outages.
+                    </div>
+                  </div>
+                </div>
+              )}
+            </AnimatedDiv>
+          </div>
+        </div>
+
+        {/* last Image */}
+        <AnimatedDiv>
+          <div className="relative w-full mb-2 mt-[9rem] sm:mt-[8rem]">
+            <div className="block md:hidden text-[white] text-center px-4 mt-[-1rem] mb-7 w-[90%] mx-auto">
+              <h1 className={`${styles.textColor} font-bold`}>
+                Power Your Home, Save Money
+              </h1>
+              <p className="mt-4">
+                XBattery offers efficient energy storage solutions in India,
+                integrating advanced technologies for optimal energy management.
+              </p>
+            </div>
+            <Image
+              src="/images/hero/houseXbattery.png"
+              layout="responsive"
+              width={1000}
+              height={1000}
+              alt="image"
+              className="w-full h-auto"
+            />
+            <div className="md:block hidden absolute top-4 xl:top-10 left-1/2 transform -translate-x-1/2 text-black text-center">
+              <h1 className="text-2xl font-bold">
+                Power Your Home, Save Money
+              </h1>
+              <p className="mt-4">
+                XBattery offers advanced energy storage in India with
+                large-scale batteries, BMS, IoT, Digital Twins, and AI, allowing
+                efficient energy management, reduced electricity costs, and
+                reliable power during outages with customizable performance
+                modes.{" "}
+              </p>
+            </div>
+          </div>
+        </AnimatedDiv>
+
+        {/* 50 kWh Powerhouse */}
+        {/* <div className="w-[95%] md:w-[75%] 2xl:w-[1450px] mx-auto mt-[8rem] flex flex-col  justify-center items-center gap-[1rem] md:flex-row">
+          <div className="w-[55%]">
+            <AnimatedDiv>
+              <div className="w-[full] h-full flex justify-center items-center">
+                <video
+                  className="w-full h-[85vh] object-cover" // Adjust height as needed
+                  autoPlay
+                  muted
+                  playsInline
+                  preload="none"
+                  ref={videoRef2}
+                >
+                  <source src={"/videos/rotate50.mp4"} type="video/mp4" />
+                  Your browser does not support the video tag.
+                </video>
+              </div>
+            </AnimatedDiv>
+          </div>
+          <div className="w-[45%]" ref={reference}>
+            <motion.div
+              initial={{ x: "100%", opacity: 0 }} // Start from off-screen right
+              animate={{ x: isView ? 0:"100%", opacity: isView ?1:0 }} // Animate to its final position
+              transition={{ duration: 0.8, ease: "easeInOut" }} // Customize the animation timing
+              className="text-center md:text-left"
+            >
+              <div className={`${styles.block3Head}`}>50 kWh Powerhouse</div>
+              <div className="text-white text-[1.3rem] mt-3">
+                X1 is ultra-thin and packed with a power density of 8.7W/ft³,
+                the highest in the industry, thanks to its all-in-one design
+                that combines battery and power modules. Install it almost
+                anywhere around your home.
+              </div>
+            </motion.div>
+          </div>
+        </div> */}
+
+        <div className="w-[95%] md:w-[75%] 2xl:w-[1450px] mx-auto mt-[8rem] flex flex-col-reverse lg:flex-row justify-center items-center gap-[1rem] overflow-hidden">
+          {/* Video Section */}
+          <div className="w-full lg:w-[55%] flex justify-center">
+            <AnimatedDiv>
+              <div className="w-full h-full flex justify-center items-center">
+                <video
+                  className="w-full h-[65vh] md:h-[65vh] lg:h-[85vh] object-cover"
+                  autoPlay
+                  muted
+                  playsInline
+                  preload="none"
+                  ref={videoRef2}
+                >
+                  <source src={"/videos/rotate50.mp4"} type="video/mp4" />
+                  Your browser does not support the video tag.
+                </video>
+              </div>
+            </AnimatedDiv>
+          </div>
+
+          {/* Text Section */}
+          <div
+            className="w-full lg:w-[45%] mt-6 md:mt-0 px-4 md:px-0"
+            ref={reference}
+          >
+            <motion.div
+              initial={{ x: "100%", opacity: 0 }}
+              animate={{ x: isView ? 0 : "100%", opacity: isView ? 1 : 0 }}
+              transition={{ duration: 0.8, ease: "easeInOut" }}
+              className="text-center lg:text-left"
+            >
+              <div className={`${styles.block3Head}`}>50 kWh Powerhouse</div>
+              <div className="text-white text-[1.2rem] sm:text-[1.3rem] mt-3">
+                X1 is ultra-thin and packed with a power density of 8.7W/ft³,
+                the highest in the industry, thanks to its all-in-one design
+                that combines battery and power modules. Install it almost
+                anywhere around your home.
+              </div>
+            </motion.div>
+          </div>
+        </div>
+
+        {/* specifications 2 */}
+        <div className="mt-[7rem] mb-[5rem] w-[94%] md:w-[90%] lg:w-[85%] xl:w-[80%] 2xl:w-[1450px] mx-auto">
+          <AnimatedDiv>
+            <div className="flex flex-col gap-6 md:gap-0 md:flex-row justify-between items-center relative ">
+              <div
+                className={`${styles.block2Head} text-center md:text-left w-full md:w-[45%]`}
+              >
+                50 kwh Powerhouse Specifications
+              </div>
+
+              <div className="w-full md:w-[55%] flex flex-row md:flex-row gap-[2rem] md:gap-[1rem] justify-evenly relative">
+                {/* Active border element */}
+                <div
+                  className="absolute bottom-[-15px] h-[2px] bg-white transition-all duration-300 ease-in-out"
+                  style={{
+                    width: "30%",
+                    left:
+                      activeBattery === "XBattery1"
+                        ? "0%"
+                        : activeBattery === "XBattery2"
+                        ? "35%"
+                        : "70%",
+                  }}
+                />
+
+                {/* Battery options */}
+                <div
+                  onClick={() => handleBatteryChange("XBattery1")}
+                  className={`cursor-pointer flex-1 text-center relative ${
+                    activeBattery === "XBattery1"
+                      ? "text-white"
+                      : "text-[#b5b5b5]"
+                  }`}
+                >
+                  XBattery1
+                </div>
+
+                <div
+                  onClick={() => handleBatteryChange("XBattery2")}
+                  className={`cursor-pointer flex-1 text-center relative ${
+                    activeBattery === "XBattery2"
+                      ? "text-white"
+                      : "text-[#b5b5b5]"
+                  }`}
+                >
+                  XBattery2
+                </div>
+
+                <div
+                  onClick={() => handleBatteryChange("XBattery3")}
+                  className={`cursor-pointer flex-1 text-center relative ${
+                    activeBattery === "XBattery3"
+                      ? "text-white"
+                      : "text-[#b5b5b5]"
+                  }`}
+                >
+                  XBattery3
+                </div>
+              </div>
             </div>
           </AnimatedDiv>
 
           <AnimatedDiv>
-            {selectedIndex === 0 && (
-              <div className="w-[90%] mx-auto flex flex-col md:flex-row justify-between mt-[2rem]">
-                <div className="w-full md:w-[50%] text-white opacity-[50%]">
-                  X1 activates Storm Guard mode automatically when the National
-                  Weather Service issues a warning. Your battery will be fully
-                  charged in case an outage occurs.
-                </div>
-                <div className="flex flex-col gap-[0rem] mt-3 md:mt-0">
-                  <div className="text-white text-[1.3rem] md:text-[2rem] font-bold">
-                    Storm Guard Mode
-                  </div>
-                  <div className="text-white opacity-[50%]">
-                    Automatically detects and prepares for outages.
-                  </div>
-                </div>
+            <div className="mt-[4rem] flex flex-col gap-[1rem] pb-[4rem] border-b-[1px] border-[#2e2e2e]">
+              <div className="text-white font-bold text-xl text-center sm:text-left mb-3 md:mb-0">
+                Power
               </div>
-            )}
+              <div className="w-[85%] mx-auto md:w-full flex flex-row flex-wrap md:flex-nowrap justify-between md:justify-start sm:flex-row gap-[2rem]  sm:gap-[10%]">
+                <div className="flex flex-col gap-2">
+                  <div className="text-[#979797] text-sm">Energy Capacity</div>
+                  <div id="value">
+                    <div className="text-white text-sm">
+                      {currentBattery.energyCapacity}
+                    </div>
+                  </div>
+                </div>
 
-            {selectedIndex === 1 && (
-              <div className="w-[90%] mx-auto flex flex-col md:flex-row justify-between mt-[2rem]">
-                <div className="w-full md:w-[50%] text-white opacity-[50%]">
-                  In less than 20ms, your power switches over to X1, so you can
-                  run appliances without interruption.
-                </div>
-                <div className="flex flex-col gap-[0rem] mt-3 md:mt-0">
-                  <div className="text-white text-[1.3rem] md:text-[2rem] font-bold">
-                    Under 20ms
-                  </div>
-                  <div className="text-white opacity-[50%]">
-                    Enjoy seamless backup transition.
+                <div className="flex flex-col gap-2">
+                  <div className="text-[#979797] text-sm">On-Grid Power</div>
+                  <div id="value">
+                    <div className="text-white text-sm">
+                      {currentBattery.onGridPower}
+                    </div>
                   </div>
                 </div>
-              </div>
-            )}
 
-            {selectedIndex === 2 && (
-              <div className="w-[90%] mx-auto flex flex-col md:flex-row justify-between mt-[2rem]">
-                <div className="w-full md:w-[50%] text-white opacity-[50%]">
-                  Power with confidence thanks to the 1.1X rated power output.
-                  It's more than enough to run high-wattage home appliances at
-                  the same time.
-                </div>
-                <div className="flex flex-col gap-[0rem] mt-3 md:mt-0">
-                  <div className="text-white text-[1.3rem] md:text-[2rem] font-bold">
-                    1.1X Rated Power Output
-                  </div>
-                  <div className="text-white opacity-[50%]">
-                    With InfiniPower™, you always have electricity.
+                <div className="flex flex-col gap-2">
+                  <div className="text-[#979797] text-sm">Backup Power</div>
+                  <div id="value">
+                    <div className="text-white text-sm">
+                      {currentBattery.backupPower.peak}
+                    </div>
+                    <div className="text-white text-sm">
+                      {currentBattery.backupPower.motorStart}
+                    </div>
+                    <div className="text-white text-sm">
+                      {currentBattery.backupPower.transition}
+                    </div>
                   </div>
                 </div>
               </div>
-            )}
+            </div>
+          </AnimatedDiv>
 
-            {selectedIndex === 3 && (
-              <div className="w-[90%] mx-auto flex flex-col md:flex-row justify-between mt-[2rem]">
-                <div className="w-full md:w-[50%] text-white opacity-[50%]">
-                  Normally, blackouts disrupt solar systems, too. Not with X1.
-                  You'll have a constant power supply.
-                </div>
-                <div className="flex flex-col gap-[0rem] mt-3 md:mt-0">
-                  <div className="text-white text-[1.3rem] md:text-[2rem] font-bold">
-                    24/7 Solar Power
+          <AnimatedDiv>
+            <div className="mt-[2rem] flex flex-col gap-[1rem] pb-[4rem] border-b-[1px] border-[#2e2e2e]">
+              <div className="text-white font-bold text-xl text-center sm:text-left mb-3 md:mb-0">
+                Features
+              </div>
+              <div className="w-[85%] mx-auto md:w-full flex flex-row flex-wrap md:flex-nowrap justify-between   md:justify-start sm:flex-row gap-[2rem] sm:gap-[10%]">
+                <div className="flex flex-col gap-2">
+                  <div className="text-[#979797] text-sm text-left">
+                    Size and Weight
                   </div>
-                  <div className="text-white opacity-[50%]">
-                    Keep life smooth, even during lengthy outages.
+                  <div id="value">
+                    <div className="text-white text-sm">
+                      {currentBattery.energyCapacity}
+                    </div>
+                  </div>
+                </div>
+
+                <div className="flex flex-col gap-2">
+                  <div className="text-[#979797] text-sm">Scalable</div>
+                  <div id="value">
+                    <div className="text-white text-sm">
+                      {currentBattery.onGridPower}
+                    </div>
+                  </div>
+                </div>
+
+                <div className="flex flex-col gap-2">
+                  <div className="text-[#979797] text-sm">Installation</div>
+                  <div id="value">
+                    <div className="text-white text-sm">
+                      {currentBattery.backupPower.peak}
+                    </div>
+                    <div className="text-white text-sm">
+                      {currentBattery.backupPower.motorStart}
+                    </div>
+                    <div className="text-white text-sm">
+                      {currentBattery.backupPower.transition}
+                    </div>
+                  </div>
+                </div>
+
+                <div className="flex flex-col gap-2">
+                  <div className="text-[#979797] text-sm">Certification</div>
+                  <div id="value">
+                    <div className="text-white text-sm">
+                      {currentBattery.backupPower.peak}
+                    </div>
+                    <div className="text-white text-sm">
+                      {currentBattery.backupPower.motorStart}
+                    </div>
+                    <div className="text-white text-sm">SEMI standards</div>
                   </div>
                 </div>
               </div>
-            )}
+            </div>
           </AnimatedDiv>
         </div>
-      </div>
-
-      {/* last Image */}
-      <AnimatedDiv>
-        <div className="relative w-full mb-2 mt-[9rem] sm:mt-[8rem]">
-          <div className="block md:hidden text-[white] text-center px-4 mt-[-1rem] mb-7 w-[90%] mx-auto">
-            <h1 className={`${styles.textColor} font-bold`}>
-              Power Your Home, Save Money
-            </h1>
-            <p className="mt-4">
-              XBattery offers efficient energy storage solutions in India,
-              integrating advanced technologies for optimal energy management.
-            </p>
-          </div>
-          <Image
-            src="/images/hero/houseXbattery.png"
-            layout="responsive"
-            width={1000}
-            height={1000}
-            alt="image"
-            className="w-full h-auto"
-          />
-          <div className="md:block hidden absolute top-4 xl:top-10 left-1/2 transform -translate-x-1/2 text-black text-center">
-            <h1 className="text-2xl font-bold">Power Your Home, Save Money</h1>
-            <p className="mt-4">
-              XBattery offers advanced energy storage in India with large-scale
-              batteries, BMS, IoT, Digital Twins, and AI, allowing efficient
-              energy management, reduced electricity costs, and reliable power
-              during outages with customizable performance modes.{" "}
-            </p>
-          </div>
-        </div>
-      </AnimatedDiv>
-  
-       {/* 50 kWh Powerhouse */}
-       <div className="w-[75%] mx-auto mt-[8rem]">
-        <AnimatedDiv>
-          <div className={`${styles.block3Head} text-center`}>
-            50 kWh Powerhouse
-          </div>
-        </AnimatedDiv>
-        <AnimatedDiv>
-          <div className="text-white text-[1.3rem] text-center mt-3">
-            X1 is ultra-thin and packed with a power density of 8.7W/ft³, the
-            highest in the industry, thanks to its all-in-one design that
-            combines battery and power modules. Install it almost anywhere
-            around your home.
-          </div>
-        </AnimatedDiv>
-      </div>
-      <div
-        ref={reference}
-        className="mx-auto w-[95%] md:w-[90%] lg:w-[85%] xl:w-[75%] 2xl:w-[1450px] mt-[5rem] mb-[5rem] flex flex-col lg:flex-row gap-[3rem] justify-center items-center  overflow-hidden xl:overflow-visible"
-      >
-        {/* Left Div - Animated from the left */}
-        <motion.div
-          initial={{ x: "-150%", opacity: 0 }} // Starts off the screen to the right
-          animate={{ x: isView ? 0 : "-150%", opacity: isView ? "100%" : "0" }} // Moves to original position when in view
-          transition={{ duration: 0.6, delay: 0.4 }} // Adjust delay as needed
-          className="z-20"
-        >
-          <Image
-            src="/images/hero/50kwh/battery50.png"
-            width={1000}
-            height={1000}
-            className=" w-[200px] lg:w-[300px]"
-          />
-        </motion.div>
-
-        {/* Right Div - Animated from the right */}
-        <motion.div
-          initial={{ x: "150%", opacity: 0 }} // Starts off the screen to the right
-          animate={{ x: isView ? 0 : "150%", opacity: isView ? "100%" : "0" }} // Moves to original position when in view
-          transition={{ duration: 0.6, delay: 0.4 }} // Match duration and delay for synchronization
-          className={`${styles.typingHead}  w-[100%]  lg:w-[450px] text-center lg:text-left `}
-        >
-          <Typewriter
-            words={[
-              "Advanced Battery Management",
-              "IoT Integration",
-              "Digital Twin Monitoring",
-              "AI-Driven Optimization",
-            ]}
-            loop={0}
-            cursor
-            cursorStyle="_"
-            typeSpeed={100}
-            deleteSpeed={60}
-            delaySpeed={2000}
-          />
-        </motion.div>
-      </div>
       </div>
     </div>
   );
