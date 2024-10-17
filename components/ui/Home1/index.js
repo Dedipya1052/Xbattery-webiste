@@ -557,90 +557,7 @@ const Example = ({ media }) => {
               you need.
             </div>
           </AnimatedDiv>
-          {/* <AnimatedDiv>
-        <div className="flex flex-col justify-evenly mt-[4rem]">
-          <div className="flex flex-col gap-[1rem]">
-            <div className="flex gap-[8rem]">
-              <div className="flex flex-col gap-[1rem] w-[40%]">
-                <div className="text-white text-[1.6rem] ml-[3.2rem]">
-                  Essential Appliances
-                </div>
-                <img
-                  src="/images/batteryApp/1.png"
-                  alt="1"
-                  width={"80%"}
-                  className="mx-auto"
-                />
-              </div>
-              <div className={`flex flex-col gap-0.5 w-[60%]`}>
-                <div className="text-white text-[2.4rem] font-bold">
-                  <div className={styles.textColor}>
-                    {`${3 * batteryCount}kW/${5 * batteryCount}kWh`}
-                  </div>
-                </div>
-                <div className="text-white text-[1.3rem] font-light opacity-[60%]">
-                  {`${batteryCount} Power Module + ${batteryCount} Battery Module`}
-                </div>
-              </div>
-            </div>
-            <div className="flex gap-[8rem] mt-[2rem]">
-              <div className="flex flex-col gap-[1rem] w-[40%]">
-                <div className="text-white text-[1.6rem] ml-[3.2rem] ">
-                  Heavy Appliances
-                </div>
-                <img
-                  src={applianceImages[applianceIndex]}
-                  alt="Heavy Appliances"
-                  width={"80%"}
-                  className="mx-auto mt-[0.5rem] scale-[1.03]"
-                />
-              </div>
-              <div className="flex justify-start items-center gap-2 relative w-[60%]">
-                {[...Array(batteryCount)].map((_, index) => (
-                  <div key={index} className="relative flex flex-col items-center">
-                    {index > 0 && (
-                      <div
-                        className="absolute top-[-15%] left-[0%]"
-                        onClick={removeBattery}
-                      >
-                        <div className="text-[0.8rem] text-white w-[150px]">
-                         Remove
-                        </div>
-                        <div className={styles.plus1}>
-                          <div className="mt-[-0.85rem] ml-[-0.11rem] cursor-pointer text-[1.2rem]">
-                           -
-                          </div>
-                        </div>
-                      </div>
-                    )}
-                    <img
-                      src="/images/batteryApp/xbattery.png"
-                      alt="Battery"
-                      width={"150px"}
-                      className="mx-auto"
-                    />
-                    {index === batteryCount - 1 && batteryCount < 3 && (
-                      <div
-                        className="absolute top-[-15%] left-[90%]"
-                        onClick={addBattery}
-                      >
-                        <div className="text-[0.8rem] text-white w-[150px]">
-                          Add More Power
-                        </div>
-                        <div className={styles.plus1}>
-                          <div className="mt-[-0.5rem] ml-[-0.15rem] cursor-pointer">
-                            +
-                          </div>
-                        </div>
-                      </div>
-                    )}
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-        </div>
-      </AnimatedDiv> */}
+         
           <AnimatedDiv>
             <div className="flex flex-col justify-evenly mt-[4rem] mb-[-8rem]">
               <div className="flex flex-col gap-[1rem] relative">
@@ -704,8 +621,7 @@ const Example = ({ media }) => {
                     ))}
                   </div>
                 </div>
-                {/* <div className={styles.circle}></div>
-      <div className={styles.circle1}></div> */}
+               
                 <div className="w-full mx-auto flex justify-center mt-[-1.2rem] md:mt-[-2.5rem] lg:mt-[-5.5rem]  z-[0]">
                   <Image
                     src={applianceImages1[applianceIndex]}
@@ -894,42 +810,6 @@ const Example = ({ media }) => {
         </AnimatedDiv>
 
         {/* 50 kWh Powerhouse */}
-        {/* <div className="w-[95%] md:w-[75%] 2xl:w-[1450px] mx-auto mt-[8rem] flex flex-col  justify-center items-center gap-[1rem] md:flex-row">
-          <div className="w-[55%]">
-            <AnimatedDiv>
-              <div className="w-[full] h-full flex justify-center items-center">
-                <video
-                  className="w-full h-[85vh] object-cover" // Adjust height as needed
-                  autoPlay
-                  muted
-                  playsInline
-                  preload="none"
-                  ref={videoRef2}
-                >
-                  <source src={"/videos/rotate50.mp4"} type="video/mp4" />
-                  Your browser does not support the video tag.
-                </video>
-              </div>
-            </AnimatedDiv>
-          </div>
-          <div className="w-[45%]" ref={reference}>
-            <motion.div
-              initial={{ x: "100%", opacity: 0 }} // Start from off-screen right
-              animate={{ x: isView ? 0:"100%", opacity: isView ?1:0 }} // Animate to its final position
-              transition={{ duration: 0.8, ease: "easeInOut" }} // Customize the animation timing
-              className="text-center md:text-left"
-            >
-              <div className={`${styles.block3Head}`}>50 kWh Powerhouse</div>
-              <div className="text-white text-[1.3rem] mt-3">
-                X1 is ultra-thin and packed with a power density of 8.7W/ft³,
-                the highest in the industry, thanks to its all-in-one design
-                that combines battery and power modules. Install it almost
-                anywhere around your home.
-              </div>
-            </motion.div>
-          </div>
-        </div> */}
-
         <div className="w-[95%] md:w-[75%] 2xl:w-[1450px] mx-auto mt-[8rem] flex flex-col-reverse lg:flex-row justify-center items-center gap-[1rem] overflow-hidden">
           {/* Video Section */}
           <div className="w-full lg:w-[55%] flex justify-center">
