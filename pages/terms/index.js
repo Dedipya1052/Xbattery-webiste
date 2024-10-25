@@ -159,7 +159,7 @@ const Terms = () => {
             <p>
               1.1 These Terms and Conditions ("Terms") govern the sale, use, and
               service of battery energy storage products ("Products") by
-              XBattery Energy Private Limited ("XBattery", "we", "us", or
+              Xbattery Energy Private Limited ("Xbattery", "we", "us", or
               "our"), a company registered under the laws of India.
             </p>
             <p>
@@ -174,7 +174,7 @@ const Terms = () => {
           <ul className={classes.ulholder}>
             <p>
               2.1 "Product" refers to any battery energy storage system
-              manufactured or sold by XBattery Energy Private Limited.
+              manufactured or sold by Xbattery Energy Private Limited.
             </p>
             <p>
               2.2 "Customer" refers to the individual, business, or entity
@@ -208,7 +208,7 @@ const Terms = () => {
           <h3 className={classes.h3inaffiliate}>4. Operational Efficiency</h3>
           <ul className={classes.ulholder}>
             <p>
-              4.1 XBattery guarantees the stated operational efficiency of the
+              4.1 Xbattery guarantees the stated operational efficiency of the
               Product under normal use conditions.
             </p>
             <p>
@@ -230,7 +230,7 @@ const Terms = () => {
               outlined in the product manual.
             </p>
             <p>
-              5.2 XBattery offers optional maintenance services for an
+              5.2 Xbattery offers optional maintenance services for an
               additional fee.
             </p>
             <p>
@@ -252,7 +252,7 @@ const Terms = () => {
               designed capabilities is prohibited.
             </p>
             <p>
-              6.3 XBattery reserves the right to void warranties in cases of
+              6.3 Xbattery reserves the right to void warranties in cases of
               unfair use.
             </p>
           </ul>
@@ -262,7 +262,7 @@ const Terms = () => {
           <h3 className={classes.h3inaffiliate}>7. Liability</h3>
           <ul className={classes.ulholder}>
             <p>
-              7.1 XBattery is not liable for damages resulting from improper
+              7.1 Xbattery is not liable for damages resulting from improper
               installation, use, or maintenance.
             </p>
             <p>
@@ -270,7 +270,7 @@ const Terms = () => {
               Product.
             </p>
             <p>
-              7.3 XBattery is not responsible for indirect, incidental, or
+              7.3 Xbattery is not responsible for indirect, incidental, or
               consequential damages.
             </p>
           </ul>
@@ -343,7 +343,7 @@ const Terms = () => {
           <ul className={classes.ulholder}>
             <p>
               11.1 All intellectual property related to the Product remains the
-              property of XBattery Energy Private Limited.
+              property of Xbattery Energy Private Limited.
             </p>
             <p>
               11.2 Customers agree not to reverse engineer or attempt to derive
@@ -356,7 +356,7 @@ const Terms = () => {
           <h3 className={classes.h3inaffiliate}>12. Termination</h3>
           <ul className={classes.ulholder}>
             <p>
-              12.1 XBattery reserves the right to terminate service for
+              12.1 Xbattery reserves the right to terminate service for
               violation of these terms.
             </p>
             <p>
@@ -370,7 +370,7 @@ const Terms = () => {
           <h3 className={classes.h3inaffiliate}>13. Force Majeure</h3>
           <ul className={classes.ulholder}>
             <p>
-              13.1 XBattery shall not be liable for any failure or delay in
+              13.1 Xbattery shall not be liable for any failure or delay in
               performance due to circumstances beyond its reasonable control.
             </p>
           </ul>
@@ -395,7 +395,7 @@ const Terms = () => {
               these Terms without XBattery's prior written consent.
             </p>
             <p>
-              15.2 XBattery may assign its rights and obligations under these
+              15.2 Xbattery may assign its rights and obligations under these
               Terms without Customer's consent.
             </p>
           </ul>
@@ -425,7 +425,7 @@ const Terms = () => {
           <h3 className={classes.h3inaffiliate}>18. Notices</h3>
           <ul className={classes.ulholder}>
             <p>
-              18.1 Any notices to XBattery must be sent to our registered office
+              18.1 Any notices to Xbattery must be sent to our registered office
               address.
             </p>
             <p>
@@ -453,7 +453,7 @@ const Terms = () => {
           <h3 className={classes.h3inaffiliate}>20. Changes to Terms</h3>
           <ul className={classes.ulholder}>
             <p>
-              20.1 XBattery Energy Private Limited reserves the right to modify
+              20.1 Xbattery Energy Private Limited reserves the right to modify
               these terms. Customers will be notified of significant changes.
             </p>
           </ul>
@@ -473,7 +473,7 @@ const Terms = () => {
           <h3 className={classes.h3inaffiliate}>22. Indemnification</h3>
           <ul className={classes.ulholder}>
             <p>
-              22.1 Customers agree to indemnify and hold XBattery Energy Private
+              22.1 Customers agree to indemnify and hold Xbattery Energy Private
               Limited harmless from any claims resulting from their use of the
               Product.
             </p>
@@ -506,8 +506,8 @@ const Terms = () => {
           <h3 className={classes.h3inaffiliate}>25. Feedback</h3>
           <ul className={classes.ulholder}>
             <p>
-              25.1 Any feedback provided to XBattery Energy Private Limited
-              shall be deemed non-confidential and XBattery shall be free to use
+              25.1 Any feedback provided to Xbattery Energy Private Limited
+              shall be deemed non-confidential and Xbattery shall be free to use
               such information on an unrestricted basis.
             </p>
           </ul>
@@ -516,7 +516,7 @@ const Terms = () => {
         <div className={classes.affiliateholder}>
           <ul className={classes.ulholder}>
             <p>
-              By purchasing or using XBattery Energy Private Limited Products,
+              By purchasing or using Xbattery Energy Private Limited Products,
               Customers agree to these terms and conditions. For detailed
               information about how we collect, use, and protect your data,
               please refer to our{" "}

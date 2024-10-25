@@ -388,7 +388,7 @@ const Example = ({ media }) => {
               <div
                 className={`${styles.block2Head} text-center md:text-left w-full md:w-[45%]`}
               >
-                XBattery Specifications
+                Xbattery Specifications
               </div>
 
               <div className="w-full md:w-[55%] flex flex-row md:flex-row gap-[2rem] md:gap-[1rem] justify-evenly relative">
@@ -782,7 +782,7 @@ const Example = ({ media }) => {
                 Power Your Home, Save Money
               </h1>
               <p className="mt-4">
-                XBattery offers efficient energy storage solutions in India,
+                Xbattery offers efficient energy storage solutions in India,
                 integrating advanced technologies for optimal energy management.
               </p>
             </div>
@@ -799,7 +799,7 @@ const Example = ({ media }) => {
                 Power Your Home, Save Money
               </h1>
               <p className="mt-4">
-                XBattery offers advanced energy storage in India with
+                Xbattery offers advanced energy storage in India with
                 large-scale batteries, BMS, IoT, Digital Twins, and AI, allowing
                 efficient energy management, reduced electricity costs, and
                 reliable power during outages with customizable performance

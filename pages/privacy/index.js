@@ -198,7 +198,7 @@ const Privacy = () => {
           <h3 className={classes.h3inaffiliate}>4. Cookies</h3>
           <ul className={classes.ulholder}>
             <p>
-              XBattery uses cookies to enhance your experience on our website.
+              Xbattery uses cookies to enhance your experience on our website.
               You can adjust your browser settings to refuse cookies, but this
               may limit your ability to use certain features.
             </p>

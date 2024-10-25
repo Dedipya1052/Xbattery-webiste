@@ -187,6 +187,32 @@ margin: 0 auto;
 margin-top: 20px;
 }
 
+.block3Head{
+  font-size: 2.7rem;
+  font-weight: 700;
+  margin-bottom:rem;
+  color: transparent;
+  background-image: linear-gradient(90deg,#2c7ed0 -10.12%,#00a9ed 11.59%,#00db84 69.71%);
+  /* color: white; */
+  -webkit-background-clip: text;
+  background-clip: text;
+
+}
+
+.block4Head{
+  font-size: 1.6rem;
+  font-weight: 700;
+  line-height: 33px;
+  margin-bottom:rem;
+  color: transparent;
+  background-image: linear-gradient(90deg,#2c7ed0 -10.12%,#00a9ed 11.59%,#00db84 69.71%);
+  /* color: white; */
+  -webkit-background-clip: text;
+  background-clip: text;
+
+}
+
+
 
 
 .boxWrapper{

@@ -176,7 +176,7 @@ const Job2 = () => {
                 className="text-yellow-400 mr-2"
               />
               <span className={classes.affiliateInfo}>
-                <span className="text-white">XBattery Energy Private Ltd.</span>
+                <span className="text-white">Xbattery Energy Private Ltd.</span>
               </span>
             </div>
 
@@ -261,7 +261,7 @@ const Job2 = () => {
         </div>
 
         <div className={classes.affiliateholder}>
-          <h3 className={classes.h3inaffiliate}>Why XBattery Energy?</h3>
+          <h3 className={classes.h3inaffiliate}>Why Xbattery Energy?</h3>
           <UnorderedList spacing={3}>
             {[
               "Opportunity to work in the fast-growing renewable energy industry.",

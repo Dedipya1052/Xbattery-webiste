@@ -11,7 +11,7 @@ export default function App({ Component, pageProps }) {
     router.pathname === "/terms" ||
     router.pathname === "/about" ||
     router.pathname === "/privacy" ||
-    router.pathname === "/careers" ||
+    router.pathname.includes("about") ||
     router.pathname.includes("careers");
   return (
     <div className={isHomePage ? "bg-[black] " : "bg-white text-black"}>
