@@ -28,6 +28,7 @@ import { MathJax } from 'better-react-mathjax';
 }
 
 
+
 const renderOption = {
   renderNode: {
     [BLOCKS.EMBEDDED_ASSET]: (node, children) => {
