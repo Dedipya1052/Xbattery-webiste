@@ -64,6 +64,18 @@ const renderOption = {
           </pre>
         );
       }
+
+      if (textContent.includes('[[where]]') && textContent.includes('[[*where]]')) {
+        const codeText = textContent
+          .replace('[[where]]', '')
+          .replace('[[*where]]', '')
+          .trim(); // Extract and clean the code
+        return (
+          <pre className={styles.whereBlock}>
+            <MathJax>{codeText}</MathJax>
+          </pre>
+        );
+      }
     
       // Check if the content contains LaTeX mathematical formulas
       if (textContent.includes('$$')) {
