@@ -68,8 +68,7 @@ export default function Blogs({ blogs }) {
     <>
       <Head>
         <title>
-          Blog | Best AI Headshot Generator for Exceptional User Experiences |
-          Alter AI
+         Whitepaper | Xbattery
         </title>
         <meta property="og:image" content="/images/thumbnail.webp" />
       </Head>
