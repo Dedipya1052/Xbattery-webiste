@@ -253,6 +253,7 @@ export default function BlogPage({ blog,blogs}) {
           mainEntity={faqs}
       />
       } */}
+      
       <div className={styles.container}>
      <div className={styles.affBackButton} onClick={()=>router.push("/blog")}> <IoArrowBack /> <p>Back</p></div>
         <h2 className={styles.title}>{title}</h2>
