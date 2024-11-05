@@ -659,6 +659,7 @@ const Example = ({ media }) => {
                 muted
                 playsInline
                 preload="auto"
+                loop
                 onLoadedData={(e) => e.target.play()}
               >
                 <source
