@@ -357,7 +357,7 @@ const Example = ({ media }) => {
               className="absolute top-0 md:top-8 left-0 right-0 w-full h-full flex flex-col items-center md:items-start justify-center p-4 md:p-16 space-y-2 text-left"
             >
               <div className="text-white text-3xl lg:text-4xl font-medium mb-4">
-                XBattery
+                Xbattery
               </div>
               <div className="text-white text-4xl lg:text-6xl text-center md:text-left font-bold">
                 Power for the Extreme
@@ -415,7 +415,7 @@ const Example = ({ media }) => {
                       : "text-[#b5b5b5]"
                   }`}
                 >
-                  XBattery1
+                  Xbattery1
                 </div>
 
                 <div
@@ -426,7 +426,7 @@ const Example = ({ media }) => {
                       : "text-[#b5b5b5]"
                   }`}
                 >
-                  XBattery2
+                  Xbattery2
                 </div>
 
                 <div
@@ -437,7 +437,7 @@ const Example = ({ media }) => {
                       : "text-[#b5b5b5]"
                   }`}
                 >
-                  XBattery3
+                  Xbattery3
                 </div>
               </div>
             </div>
@@ -887,7 +887,7 @@ const Example = ({ media }) => {
                       : "text-[#b5b5b5]"
                   }`}
                 >
-                  XBattery1
+                  Xbattery1
                 </div>
 
                 <div
@@ -898,7 +898,7 @@ const Example = ({ media }) => {
                       : "text-[#b5b5b5]"
                   }`}
                 >
-                  XBattery2
+                  Xbattery2
                 </div>
 
                 <div
@@ -909,7 +909,7 @@ const Example = ({ media }) => {
                       : "text-[#b5b5b5]"
                   }`}
                 >
-                  XBattery3
+                  Xbattery3
                 </div>
               </div>
             </div>
