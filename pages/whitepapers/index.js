@@ -70,7 +70,7 @@ export default function Blogs({ blogs }) {
         <title>
          Whitepaper | Xbattery
         </title>
-        <meta property="og:image" content="/images/thumbnail.webp" />
+        <meta property="og:image" content="/favicon.webp" />
       </Head>
       <div className={styles.head1}>
       <div className="w-[100%]">

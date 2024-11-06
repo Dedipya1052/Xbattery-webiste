@@ -290,7 +290,12 @@ export default function BlogPage({ blog, blogs }) {
   return (
     <>
       <Head>
-        <title>{`${title} | Alter AI`}</title>
+        <title>{`${title} | Whitepapers | Xbattery`}</title>
+        <meta
+          property="og:image"
+          content={`https:${coverImage.fields.file.url}`}
+        />
+         <meta property="og:type" content="article" />
         {/* <meta name="description" content={description} />
         <meta
           property="og:image"
@@ -321,7 +326,7 @@ export default function BlogPage({ blog, blogs }) {
             className={styles.coverImage}
           />
         </div>
-        <div className="mt-[2rem] w-[80%] mx-auto flex md:flex-row flex-col gap-2">
+        <div className="mt-[2rem] w-[95%] md:w-[80%] mx-auto flex md:flex-row flex-col md:gap-2">
           <div className={styles.blogholder}>
             <article className={styles.blog} style={{ marginTop: "1rem" }}>
               {documentToReactComponents(blogContent, renderOption)}

@@ -15,6 +15,7 @@ import {
 import styles from "./styles.module.css";
 import { IoArrowBack } from "react-icons/io5";
 import { useRouter } from "next/router";
+import Head from "next/head";
 
 const fullEnergyData = {
  " Thermal": 242996.91,
@@ -134,127 +135,156 @@ const EnergyContributionDashboard = () => {
   };
 
   return (
-    <div className={styles.head1}>
-      <div className={styles.container}>
-        <h2 className={styles.title}>Indian Energy Mix</h2>
-        <div className="text-lg text-center mt-[2rem] mb-[2rem]">
-        India's total power generation capacity stands at 4,48,381.44 MW, with Thermal power contributing 2,42,996.91 MW. Solar & Wind energy at 1,50,276.36 MW, while Hydro and Nuclear energy add 46,928.17 MW and 8,180.00 MW, respectively, showcasing a balanced energy mix as of July 2024.
-        </div>
+    <>
+      <Head>
+        <title>{`Indian Energy Mix | Learn | Xbattery`}</title>
+        <meta
+          name="description"
+          content="Discover India’s energy mix, covering sources of electricity generation, their impacts, and the future of sustainable energy in India."
+        />
 
-        <div className="mt-[3rem]">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
-            {/* Pie Chart */}
-            <div className="bg-gray-100 p-1 rounded-xl shadow-xl flex flex-col items-center justify-center relative">
-              <h2 className="text-xl font-bold mb-4 text-center p-4">
-                Current Energy Mix
-              </h2>
+        <meta property="og:image" content={`/favicon.webp`} />
+        <meta property="og:site_name" content="Xbattery" />
+        <meta property="og:title" content="Indian Energy Mix" />
+        <meta property="og:type" content="article" />
+        <meta
+          property="og:url"
+          content={`https://xbattery.energy/learn/indian-energy-mix`}
+        />
 
-              <ResponsiveContainer width="100%" height={300}>
-                <PieChart>
-                  <Pie
-                    data={currentEnergyData}
-                    cx="50%"
-                    cy="50%"
-                    labelLine={false}
-                    outerRadius="70%"
-                    innerRadius="40%"
-                    dataKey="value"
-                    className="cursor-pointer"
-                    onMouseLeave={handleMouseLeave}
-                  >
-                    {currentEnergyData.map((entry, index) => (
-                      <Cell
-                        key={`cell-${index}`}
-                        fill={
-                          activeIndex === null || activeIndex === index
-                            ? entry.color
-                            : "gray"
-                        }
-                        stroke="#e2e8f0"
-                        strokeWidth={2}
-                        style={{
-                          filter:
-                            activeIndex === index || activeIndex === null
-                              ? "none"
-                              : "grayscale(80%)",
-                          transform:
-                            activeIndex === index ? "scale(1.02)" : "scale(1)",
-                          transformOrigin: "center center",
-                          transition:
-                            "transform 0.35s cubic-bezier(0.25, 0.1, 0.25, 1), filter 0.15s ease",
-                        }}
-                        onMouseEnter={() => handleMouseEnter(index)}
-                      />
-                    ))}
-                  </Pie>
-                  <Tooltip content={<CustomTooltip />} />
-                  <Legend
-                    layout="vertical"
-                    align="right"
-                    verticalAlign="middle"
-                    onMouseEnter={(_, index) => handleMouseEnter(index)}
-                    onMouseLeave={handleMouseLeave}
-                  />
-                </PieChart>
-              </ResponsiveContainer>
-            </div>
+        {/* Canonical Link */}
+        <link
+          rel="canonical"
+          href={`https://xbattery.energy/learn/indian-energy-mix`}
+        />
+      </Head>
 
-            {/* Bar Chart */}
-            <div className="bg-gray-100 p-1 rounded-xl shadow-xl">
-              <h2 className="text-xl font-bold mb-4 text-center p-4">
-                Installed Capacity by Source
-              </h2>
-              <ResponsiveContainer width="100%" height={310}>
-                <BarChart
-                  data={currentEnergyData}
-                  margin={{ top: 20, right: 30, left: 20, bottom: 5 }}
-                >
-                  <CartesianGrid strokeDasharray="3 3" stroke="#e2e8f0" />
-                  <XAxis
-                    dataKey="barName"
-                    stroke="#4a5568"
-                    className="text-[10px] mt-3"
-                  />
-                  <YAxis
-                    stroke="#4a5568"
-                    className="text-[12.5px]"
-                    label={{
-                      value: "Megawatts (MW)",
-                      angle: -90,
-                      position: "insideLeft",
-                      offset: -7,
-                      fill: "#4a5568",
-                      fontSize: 10,
-                    }}
-                  />
-                  <Tooltip
-                    contentStyle={{
-                      backgroundColor: "#f7fafc",
-                      border: "none",
-                      color: "#1a202c",
-                    }}
-                    itemStyle={{ color: "#1a202c" }}
-                  />
-                  <Bar dataKey="value" name="Capacity (MW)">
-                    {currentEnergyData.map((entry, index) => (
-                      <Cell key={`cell-${index}`} fill={entry.color} />
-                    ))}
-                  </Bar>
-                </BarChart>
-              </ResponsiveContainer>
-            </div>
+      <div className={styles.head1}>
+        <div className={styles.container}>
+          <h2 className={styles.title}>Indian Energy Mix</h2>
+          <div className="text-lg text-center mt-[2rem] mb-[2rem]">
+            India's total power generation capacity stands at 4,48,381.44 MW,
+            with Thermal power contributing 2,42,996.91 MW. Solar & Wind energy
+            at 1,50,276.36 MW, while Hydro and Nuclear energy add 46,928.17 MW
+            and 8,180.00 MW, respectively, showcasing a balanced energy mix as
+            of July 2024.
           </div>
 
-          {/* Data Table */}
-          <div className="bg-gray-100 p-6 rounded-xl shadow-xl">
-            <h2 className="text-2xl font-bold mb-4">
-              Energy Distribution 
-            </h2>
-            <DataTable data={fullEnergyData} />
+          <div className="mt-[3rem]">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+              {/* Pie Chart */}
+              <div className="bg-gray-100 p-1 rounded-xl shadow-xl flex flex-col items-center justify-center relative">
+                <h2 className="text-xl font-bold mb-4 text-center p-4">
+                  Current Energy Mix
+                </h2>
+
+                <ResponsiveContainer width="100%" height={300}>
+                  <PieChart>
+                    <Pie
+                      data={currentEnergyData}
+                      cx="50%"
+                      cy="50%"
+                      labelLine={false}
+                      outerRadius="70%"
+                      innerRadius="40%"
+                      dataKey="value"
+                      className="cursor-pointer"
+                      onMouseLeave={handleMouseLeave}
+                    >
+                      {currentEnergyData.map((entry, index) => (
+                        <Cell
+                          key={`cell-${index}`}
+                          fill={
+                            activeIndex === null || activeIndex === index
+                              ? entry.color
+                              : "gray"
+                          }
+                          stroke="#e2e8f0"
+                          strokeWidth={2}
+                          style={{
+                            filter:
+                              activeIndex === index || activeIndex === null
+                                ? "none"
+                                : "grayscale(80%)",
+                            transform:
+                              activeIndex === index
+                                ? "scale(1.02)"
+                                : "scale(1)",
+                            transformOrigin: "center center",
+                            transition:
+                              "transform 0.35s cubic-bezier(0.25, 0.1, 0.25, 1), filter 0.15s ease",
+                          }}
+                          onMouseEnter={() => handleMouseEnter(index)}
+                        />
+                      ))}
+                    </Pie>
+                    <Tooltip content={<CustomTooltip />} />
+                    <Legend
+                      layout="vertical"
+                      align="right"
+                      verticalAlign="middle"
+                      onMouseEnter={(_, index) => handleMouseEnter(index)}
+                      onMouseLeave={handleMouseLeave}
+                    />
+                  </PieChart>
+                </ResponsiveContainer>
+              </div>
+
+              {/* Bar Chart */}
+              <div className="bg-gray-100 p-1 rounded-xl shadow-xl">
+                <h2 className="text-xl font-bold mb-4 text-center p-4">
+                  Installed Capacity by Source
+                </h2>
+                <ResponsiveContainer width="100%" height={310}>
+                  <BarChart
+                    data={currentEnergyData}
+                    margin={{ top: 20, right: 30, left: 20, bottom: 5 }}
+                  >
+                    <CartesianGrid strokeDasharray="3 3" stroke="#e2e8f0" />
+                    <XAxis
+                      dataKey="barName"
+                      stroke="#4a5568"
+                      className="text-[10px] mt-3"
+                    />
+                    <YAxis
+                      stroke="#4a5568"
+                      className="text-[12.5px]"
+                      label={{
+                        value: "Megawatts (MW)",
+                        angle: -90,
+                        position: "insideLeft",
+                        offset: -7,
+                        fill: "#4a5568",
+                        fontSize: 10,
+                      }}
+                    />
+                    <Tooltip
+                      contentStyle={{
+                        backgroundColor: "#f7fafc",
+                        border: "none",
+                        color: "#1a202c",
+                      }}
+                      itemStyle={{ color: "#1a202c" }}
+                    />
+                    <Bar dataKey="value" name="Capacity (MW)">
+                      {currentEnergyData.map((entry, index) => (
+                        <Cell key={`cell-${index}`} fill={entry.color} />
+                      ))}
+                    </Bar>
+                  </BarChart>
+                </ResponsiveContainer>
+              </div>
+            </div>
+
+            {/* Data Table */}
+            <div className="bg-gray-100 p-6 rounded-xl shadow-xl">
+              <h2 className="text-2xl font-bold mb-4">Energy Distribution</h2>
+              <DataTable data={fullEnergyData} />
+            </div>
           </div>
         </div>
       </div>
-    </div>
+    </>
   );
 };
 

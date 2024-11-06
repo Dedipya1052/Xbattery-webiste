@@ -3,6 +3,7 @@ import { Tv, Laptop, Smartphone, Fan, Lightbulb, Refrigerator, WashingMachine, W
 import { IoArrowBack } from 'react-icons/io5';
 import styles from './styles.module.css';
 import { useRouter } from 'next/router';
+import Head from 'next/head';
 
 const ELECTRICITY_RATE = 5.5;
 
@@ -129,6 +130,22 @@ const HomeEnergyCalculator = () => {
   }, [appliances, applianceTypes]);
 
   return (
+    <>
+    <Head>
+        <title>{`Energy Consumption Calculator | Learn | Xbattery`}</title>
+        <meta name="description" content={"Estimate your monthly energy use in kWh with our calculator. Input wattage, daily hours, and days to understand electricity needs and costs."} />
+        <meta
+          property="og:image"
+          content={`/favicon.webp`}
+        />
+        <meta property="og:site_name" content="Xbattery" />
+        <meta property="og:title" content="Energy Consumption Calculator" />
+        <meta property="og:type" content="article" />
+        <meta property="og:url" content={`https://xbattery.energy/learn/energy-consumption-calculator`} />
+        {/* <meta property="article:published_time" content={date} /> */}
+        {/* <meta property="article:modified_time" content={modifiedOn} /> */}
+        <link rel="canonical" href={`https://xbattery.energy/learn/energy-consumption-calculator`} />
+      </Head>
     <div className={styles.head1}>
       <div className={styles.container}>
         <div>
@@ -138,9 +155,9 @@ const HomeEnergyCalculator = () => {
           >
             <IoArrowBack /> <p>Back</p>
           </div> */}
-          <h2 className={styles.title}>Home Energy Consumption Calculator</h2>
+          <h2 className={styles.title}>Energy Consumption Calculator</h2>
           <div className="text-lg text-center mt-[2rem] mb-[2rem]">
-          The Home Energy Calculator helps estimate your monthly energy consumption in kilowatt-hours (kWh). By entering the wattage, hours of use per day, and number of days, you can easily calculate your electricity usage and better understand your energy needs.
+          The Energy Consumption Calculator helps estimate your monthly energy consumption in kilowatt-hours (kWh). By entering the wattage, hours of use per day, and number of days, you can easily calculate your electricity usage and better understand your energy needs.
           </div>
           <CardContent className="space-y-6 mt-[3rem]">
             <div className="bg-gray-100 p-6 rounded-lg shadow-lg">
@@ -178,6 +195,7 @@ const HomeEnergyCalculator = () => {
         </div>
       </div>
     </div>
+    </>
   );
 };
 

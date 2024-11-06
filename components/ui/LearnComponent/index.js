@@ -6,6 +6,7 @@ import { FaYoutube } from "react-icons/fa";
 import { FaFacebook } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
 import { Image } from "@chakra-ui/react";
+import Head from "next/head";
 
 
 
@@ -55,9 +56,15 @@ const grid=[
 
 const LearnComp= () => {
   return (
-    <div className={styles.head1}>
-      {/* hero */}
-      {/* <div className={`bg-[#E1EBDC] w-[100%] border-b-[1px] border-black`}>
+    <>
+      <Head>
+        <title>Learn | Xbattery</title>
+        <meta property="og:image" content="/favicon.webp" />
+      </Head>
+
+      <div className={styles.head1}>
+        {/* hero */}
+        {/* <div className={`bg-[#E1EBDC] w-[100%] border-b-[1px] border-black`}>
         <div className={`${styles.head1} border-b-[1px] border-black`}>
           <div className=" w-[96%] mx-auto pt-[1rem] pb-[1rem] text-[2.1rem]">
             Investing basics
@@ -79,230 +86,230 @@ const LearnComp= () => {
         </div>
       </div> */}
 
-      <div className="w-[100%]">
-        {/* <div className={`${styles.head1} border-b-[1px] border-[#aeaeae]`}>
+        <div className="w-[100%]">
+          {/* <div className={`${styles.head1} border-b-[1px] border-[#aeaeae]`}>
           <div className=" w-[96%] mx-auto pt-[1rem] pb-[1rem] text-[2.1rem] font-[520]">
             Learn
           </div>
         </div> */}
-        <div className=" mt-[2.5rem] mb-[2rem] flex flex-col justify-center items-center gap-[1rem] w-[100%]">
-          <div
-            className={`text-[2.22rem] md:text-[2.8rem] text-center font-semibold ${styles.head1}`}
-          >
-            Explore the topics
-          </div>
-          {/* <div
+          <div className=" mt-[2.5rem] mb-[2rem] flex flex-col justify-center items-center gap-[1rem] w-[100%]">
+            <div
+              className={`text-[2.22rem] md:text-[2.8rem] text-center font-semibold ${styles.head1}`}
+            >
+              Explore the topics
+            </div>
+            {/* <div
             className={`${styles.head1} text-[1.05rem] md:text-[1.28rem] text-center font-semibold p-2`}
           >
             There’s always more to learn when it comes to knowledge.
           </div> */}
+          </div>
+          <div className="mt-[2.8rem] md:mt-[4.5rem] w-[90%] mx-auto grid xl:grid-cols-3 lg:grid-cols-2 justify-center lg:justify-start items-center gap-[1.2rem]">
+            <div className="relative inline-block border-[0.8px] border-black rounded-md xl:h-[220px] overflow-hidden">
+              <Image
+                alt="image"
+                src="/images/comp5/box1.svg"
+                className="block rounded-md h-[219px] w-[100%] object-cover object-right-bottom"
+              />
+
+              <div className="absolute top-0 flex flex-col items-start justify-center p-4">
+                <div className="p-0.5 rounded-md text-left">
+                  <h2
+                    className={`text-[1.3rem] font-semibold mb-2 ${styles.head1} leading-[45px] hover:text-[#33c433]`}
+                  >
+                    <Link href="/learn/energy-storage">
+                      {" "}
+                      <span className="hover:text-[#33c433] hover:no-underline">
+                        Energy Storage
+                      </span>
+                    </Link>
+                  </h2>
+                </div>
+                <div className=" flex flex-col justify-start mt-[-0.5rem]">
+                  <ul className=" pl-[0.5rem] flex flex-col gap-1">
+                    {energyStorage.map((item, index) => (
+                      <li key={index} className="cursor-pointer text-md">
+                        <Link href={item.link} className="hover:text-[#33c433]">
+                          {item.name}
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div className="relative inline-block border-[0.8px] border-black rounded-md xl:h-[220px] overflow-hidden">
+              <Image
+                alt="image"
+                src="/images/comp5/box2.svg"
+                className="block rounded-md h-[219px] w-[100%] object-cover "
+              />
+
+              <div className="absolute top-0 flex flex-col items-start justify-center p-4">
+                <div className="p-0.5 rounded-md text-left">
+                  <h2
+                    className={`text-[1.3rem] font-semibold mb-2 ${styles.head1} leading-[45px] hover:text-[#33c433]`}
+                  >
+                    <Link href="/learn/renewable-energy">
+                      {" "}
+                      <span className="hover:text-[#33c433] hover:no-underline">
+                        Renewable Energy
+                      </span>
+                    </Link>
+                  </h2>
+                </div>
+                <div className=" flex flex-col justify-start mt-[-0.5rem]">
+                  <ul className=" pl-[0.5rem] flex flex-col gap-1">
+                    {renewableEnergy.map((item, index) => (
+                      <li key={index} className="cursor-pointer text-md">
+                        <Link href={item.link} className="hover:text-[#33c433]">
+                          {item.name}
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div className="relative inline-block border-[0.8px] border-black rounded-md xl:h-[220px] overflow-hidden">
+              <Image
+                alt="image"
+                src="/images/comp5/box3.svg"
+                className="block rounded-md h-[219px] w-[100%] object-cover "
+              />
+
+              <div className="absolute top-0 flex flex-col items-start justify-center p-4">
+                <div className="p-0.5 rounded-md text-left">
+                  <h2
+                    className={`text-[1.3rem] font-semibold mb-2 ${styles.head1} leading-[45px] hover:text-[#33c433]`}
+                  >
+                    <Link href="/learn/electricity">
+                      {" "}
+                      <span className="hover:text-[#33c433] hover:no-underline">
+                        Electricity
+                      </span>
+                    </Link>
+                  </h2>
+                </div>
+                <div className=" flex flex-col justify-start mt-[-0.5rem]">
+                  <ul className=" pl-[0.5rem] flex flex-col gap-1">
+                    {electricity.map((item, index) => (
+                      <li key={index} className="cursor-pointer text-md">
+                        <Link href={item.link} className="hover:text-[#33c433]">
+                          {item.name}
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div className="relative inline-block border-[0.8px] border-black rounded-md xl:h-[220px] overflow-hidden">
+              <Image
+                alt="image"
+                src="/images/comp5/box4.svg"
+                className="block rounded-md  w-[100%] h-[219px]  object-cover"
+              />
+
+              <div className="absolute top-0 flex flex-col items-start justify-center p-4">
+                <div className="p-0.5 rounded-md text-left">
+                  <h2
+                    className={`text-[1.3rem] font-semibold mb-2 ${styles.head1} leading-[45px] hover:text-[#33c433]`}
+                  >
+                    <Link href="/learn/electric-vehicles">
+                      {" "}
+                      <span className="hover:text-[#33c433] hover:no-underline">
+                        Electric Vehicles (EV's)
+                      </span>
+                    </Link>
+                  </h2>
+                </div>
+                <div className=" flex flex-col justify-start mt-[-0.5rem]">
+                  <ul className=" pl-[0.5rem] flex flex-col gap-1">
+                    {electricVehicles.map((item, index) => (
+                      <li key={index} className="cursor-pointer text-md">
+                        <Link href={item.link} className="hover:text-[#33c433]">
+                          {item.name}
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div className="relative inline-block border-[0.8px] border-black rounded-md xl:h-[220px] overflow-hidden">
+              <Image
+                alt="image"
+                src="/images/comp5/box5.svg"
+                className="block rounded-md h-[219px] w-[100%] object-cover object-right-bottom"
+              />
+
+              <div className="absolute top-0 flex flex-col items-start justify-center p-4">
+                <div className="p-0.5 rounded-md text-left">
+                  <h2
+                    className={`text-[1.3rem] font-semibold mb-2 ${styles.head1} leading-[45px] hover:text-[#33c433]`}
+                  >
+                    <Link href="/learn/batteries">
+                      {" "}
+                      <span className="hover:text-[#33c433] hover:no-underline">
+                        Batteries
+                      </span>
+                    </Link>
+                  </h2>
+                </div>
+                <div className=" flex flex-col justify-start mt-[-0.5rem]">
+                  <ul className=" pl-[0.5rem] flex flex-col gap-1">
+                    {batteries.map((item, index) => (
+                      <li key={index} className="cursor-pointer text-md">
+                        <Link href={item.link} className="hover:text-[#33c433]">
+                          {item.name}
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div className="relative inline-block border-[0.8px] border-black rounded-md xl:h-[220px] overflow-hidden">
+              <Image
+                alt="image"
+                src="/images/comp5/box6.svg"
+                className="block rounded-md h-[220px] w-[100%] object-cover object-right-bottom"
+              />
+
+              <div className="absolute top-0 flex flex-col items-start justify-center p-4">
+                <div className="p-0.5 rounded-md text-left">
+                  <h2
+                    className={`text-[1.3rem] font-semibold mb-2 ${styles.head1} leading-[45px] hover:text-[#33c433]`}
+                  >
+                    <Link href="/learn/grid">
+                      {" "}
+                      <span className="hover:text-[#33c433] hover:no-underline">
+                        Grid
+                      </span>
+                    </Link>
+                  </h2>
+                </div>
+                <div className=" flex flex-col justify-start mt-[-0.5rem]">
+                  <ul className=" pl-[0.5rem] flex flex-col gap-1">
+                    {grid.map((item, index) => (
+                      <li key={index} className="cursor-pointer text-md">
+                        <Link href={item.link} className="hover:text-[#33c433]">
+                          {item.name}
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-        <div className="mt-[2.8rem] md:mt-[4.5rem] w-[90%] mx-auto grid xl:grid-cols-3 lg:grid-cols-2 justify-center lg:justify-start items-center gap-[1.2rem]">
-          <div className="relative inline-block border-[0.8px] border-black rounded-md xl:h-[220px] overflow-hidden">
-            <Image
-              alt="image"
-              src="/images/comp5/box1.svg"
-              className="block rounded-md h-[219px] w-[100%] object-cover object-right-bottom"
-            />
 
-            <div className="absolute top-0 flex flex-col items-start justify-center p-4">
-              <div className="p-0.5 rounded-md text-left">
-                <h2
-                  className={`text-[1.3rem] font-semibold mb-2 ${styles.head1} leading-[45px] hover:text-[#33c433]`}
-                >
-                  <Link href="/learn/energy-storage">
-                    {" "}
-                    <span className="hover:text-[#33c433] hover:no-underline">
-                      Energy Storage
-                    </span>
-                  </Link>
-                </h2>
-              </div>
-              <div className=" flex flex-col justify-start mt-[-0.5rem]">
-                <ul className=" pl-[0.5rem] flex flex-col gap-1">
-                  {energyStorage.map((item, index) => (
-                    <li key={index} className="cursor-pointer text-md">
-                      <Link href={item.link} className="hover:text-[#33c433]">
-                        {item.name}
-                      </Link>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </div>
-          </div>
-          <div className="relative inline-block border-[0.8px] border-black rounded-md xl:h-[220px] overflow-hidden">
-            <Image
-              alt="image"
-              src="/images/comp5/box2.svg"
-              className="block rounded-md h-[219px] w-[100%] object-cover "
-            />
+        <div className="bg-black h-[0.7px] w-[90%] mx-auto mt-[7rem] mb-[6rem]"></div>
 
-            <div className="absolute top-0 flex flex-col items-start justify-center p-4">
-              <div className="p-0.5 rounded-md text-left">
-                <h2
-                  className={`text-[1.3rem] font-semibold mb-2 ${styles.head1} leading-[45px] hover:text-[#33c433]`}
-                >
-                  <Link href="/learn/renewable-energy">
-                    {" "}
-                    <span className="hover:text-[#33c433] hover:no-underline">
-                      Renewable Energy
-                    </span>
-                  </Link>
-                </h2>
-              </div>
-              <div className=" flex flex-col justify-start mt-[-0.5rem]">
-                <ul className=" pl-[0.5rem] flex flex-col gap-1">
-                  {renewableEnergy.map((item, index) => (
-                    <li key={index} className="cursor-pointer text-md">
-                      <Link href={item.link} className="hover:text-[#33c433]">
-                        {item.name}
-                      </Link>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </div>
-          </div>
-          <div className="relative inline-block border-[0.8px] border-black rounded-md xl:h-[220px] overflow-hidden">
-            <Image
-              alt="image"
-              src="/images/comp5/box3.svg"
-              className="block rounded-md h-[219px] w-[100%] object-cover "
-            />
-
-            <div className="absolute top-0 flex flex-col items-start justify-center p-4">
-              <div className="p-0.5 rounded-md text-left">
-                <h2
-                  className={`text-[1.3rem] font-semibold mb-2 ${styles.head1} leading-[45px] hover:text-[#33c433]`}
-                >
-                  <Link href="/learn/electricity">
-                    {" "}
-                    <span className="hover:text-[#33c433] hover:no-underline">
-                      Electricity
-                    </span>
-                  </Link>
-                </h2>
-              </div>
-              <div className=" flex flex-col justify-start mt-[-0.5rem]">
-                <ul className=" pl-[0.5rem] flex flex-col gap-1">
-                  {electricity.map((item, index) => (
-                    <li key={index} className="cursor-pointer text-md">
-                      <Link href={item.link} className="hover:text-[#33c433]">
-                        {item.name}
-                      </Link>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </div>
-          </div>
-          <div className="relative inline-block border-[0.8px] border-black rounded-md xl:h-[220px] overflow-hidden">
-            <Image
-              alt="image"
-              src="/images/comp5/box4.svg"
-              className="block rounded-md  w-[100%] h-[219px]  object-cover"
-            />
-
-            <div className="absolute top-0 flex flex-col items-start justify-center p-4">
-              <div className="p-0.5 rounded-md text-left">
-                <h2
-                  className={`text-[1.3rem] font-semibold mb-2 ${styles.head1} leading-[45px] hover:text-[#33c433]`}
-                >
-                  <Link href="/learn/electric-vehicles">
-                    {" "}
-                    <span className="hover:text-[#33c433] hover:no-underline">
-                      Electric Vehicles (EV's)
-                    </span>
-                  </Link>
-                </h2>
-              </div>
-              <div className=" flex flex-col justify-start mt-[-0.5rem]">
-                <ul className=" pl-[0.5rem] flex flex-col gap-1">
-                  {electricVehicles.map((item, index) => (
-                    <li key={index} className="cursor-pointer text-md">
-                      <Link href={item.link} className="hover:text-[#33c433]">
-                        {item.name}
-                      </Link>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </div>
-          </div>
-          <div className="relative inline-block border-[0.8px] border-black rounded-md xl:h-[220px] overflow-hidden">
-            <Image
-              alt="image"
-              src="/images/comp5/box5.svg"
-              className="block rounded-md h-[219px] w-[100%] object-cover object-right-bottom"
-            />
-
-            <div className="absolute top-0 flex flex-col items-start justify-center p-4">
-              <div className="p-0.5 rounded-md text-left">
-                <h2
-                  className={`text-[1.3rem] font-semibold mb-2 ${styles.head1} leading-[45px] hover:text-[#33c433]`}
-                >
-                  <Link href="/learn/batteries">
-                    {" "}
-                    <span className="hover:text-[#33c433] hover:no-underline">
-                      Batteries
-                    </span>
-                  </Link>
-                </h2>
-              </div>
-              <div className=" flex flex-col justify-start mt-[-0.5rem]">
-                <ul className=" pl-[0.5rem] flex flex-col gap-1">
-                  {batteries.map((item, index) => (
-                    <li key={index} className="cursor-pointer text-md">
-                      <Link href={item.link} className="hover:text-[#33c433]">
-                        {item.name}
-                      </Link>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </div>
-          </div>
-          <div className="relative inline-block border-[0.8px] border-black rounded-md xl:h-[220px] overflow-hidden">
-            <Image
-              alt="image"
-              src="/images/comp5/box6.svg" 
-              className="block rounded-md h-[220px] w-[100%] object-cover object-right-bottom"
-            />
-
-            <div className="absolute top-0 flex flex-col items-start justify-center p-4">
-              <div className="p-0.5 rounded-md text-left">
-                <h2
-                  className={`text-[1.3rem] font-semibold mb-2 ${styles.head1} leading-[45px] hover:text-[#33c433]`}
-                >
-                  <Link href="/learn/grid">
-                    {" "}
-                    <span className="hover:text-[#33c433] hover:no-underline">
-                      Grid
-                    </span>
-                  </Link>
-                </h2>
-              </div>
-              <div className=" flex flex-col justify-start mt-[-0.5rem]">
-                <ul className=" pl-[0.5rem] flex flex-col gap-1">
-                  {grid.map((item, index) => (
-                    <li key={index} className="cursor-pointer text-md">
-                      <Link href={item.link} className="hover:text-[#33c433]">
-                        {item.name}
-                      </Link>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div className="bg-black h-[0.7px] w-[90%] mx-auto mt-[7rem] mb-[6rem]"></div>
-
-      {/* Investing 101 */}
-      {/* <div className="mt-[6rem]">
+        {/* Investing 101 */}
+        {/* <div className="mt-[6rem]">
         <div className="flex flex-col justify-center items-center gap-[1rem]">
           <div
             className={`text-[2.2rem] md:text-[3rem] text-center font-semibold ${styles.head1}`}
@@ -389,101 +396,108 @@ const LearnComp= () => {
         </div>
       </div> */}
 
-      {/* <div className="bg-black h-[0.7px] w-[90%] mx-auto mt-[8rem] mb-[6rem]"></div> */}
+        {/* <div className="bg-black h-[0.7px] w-[90%] mx-auto mt-[8rem] mb-[6rem]"></div> */}
 
-      {/* Options trading essentials */}
-      <div className="">
-        <div className="flex flex-col justify-center items-center gap-[1.4rem]">
-          <div
-            className={`text-[2.22rem] md:text-[2.8rem] text-center font-semibold ${styles.head1}`}
-          >
-            Energy Insights and Calculators
+        {/* Options trading essentials */}
+        <div className="">
+          <div className="flex flex-col justify-center items-center gap-[1.4rem]">
+            <div
+              className={`text-[2.22rem] md:text-[2.8rem] text-center font-semibold ${styles.head1}`}
+            >
+              Energy Insights and Calculators
+            </div>
+            <div
+              className={`${styles.head1} text-[0.8rem] md:text-[1.2rem] font-semibold text-center`}
+            >
+              Explore tools to calculate your energy usage, understand India's
+              power distribution, <br></br>
+              and assess solar energy benefits for a sustainable future.
+            </div>
           </div>
-          <div
-            className={`${styles.head1} text-[0.8rem] md:text-[1.2rem] font-semibold text-center`}
-          >
-           Explore tools to calculate your energy usage, understand India's power distribution, <br></br>
-           and assess solar energy benefits for a sustainable future.
+          <div className="mt-[2.5rem] md:mt-[5rem] w-[85%] mx-auto sm:w-[90%] md:w-[85%] lg:[87%] xl:w-[75%] grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-[1.2rem] justify-items-center">
+            <div className="relative cursor-pointer group h-[500px] w-[300px] sm:w-full sm:h-auto object-contain">
+              <Link href="/learn/indian-solar-calculator">
+                <Image
+                  alt="image"
+                  src="/images/comp4/box1.png"
+                  className="block w-full h-full object-cover"
+                />
+
+                <div className="absolute inset-0 flex items-start justify-center p-4">
+                  <div className="p-4 rounded-md text-left">
+                    <h2
+                      className={`text-[1.7rem] font-semibold mb-2 ${styles.head1} leading-[45px] group-hover:text-white`}
+                    >
+                      Indian Solar
+                      <br /> Calculator
+                    </h2>
+                    <p className="text-black text-md group-hover:text-white">
+                      Estimate energy, savings, and CO₂ reduction with the
+                      Indian Solar Calculator. Specify panels, sunlight hours,
+                      and rates for a detailed view of your solar impact.
+                    </p>
+                  </div>
+                </div>
+              </Link>
+            </div>
+
+            <div className="relative cursor-pointer group h-[500px] w-[300px] sm:w-full sm:h-auto object-contain">
+              <Link href="/learn/indian-energy-mix">
+                <Image
+                  alt="image"
+                  src="/images/comp4/box2.png"
+                  className="block w-full h-full object-cover"
+                />
+
+                <div className="absolute inset-0 flex items-start justify-center p-4">
+                  <div className="p-4 rounded-md text-left">
+                    <h2
+                      className={`text-[1.7rem] font-semibold mb-2 ${styles.head1} leading-[45px] group-hover:text-white`}
+                    >
+                      Indian <br /> Energy Mix
+                    </h2>
+                    <p className="text-black text-md group-hover:text-white">
+                      Explore India’s power sources, from thermal and solar to
+                      hydro and nuclear. Visualize the energy mix and capacity
+                      to see how India meets its power needs.
+                    </p>
+                  </div>
+                </div>
+              </Link>
+            </div>
+
+            <div className="relative cursor-pointer group h-[500px] w-[300px] sm:w-full sm:h-auto object-contain">
+              <Link href="/learn/energy-consumption-calculator">
+                <Image
+                  alt="image"
+                  src="/images/comp4/box3.png"
+                  className="block w-full h-full object-cover"
+                />
+
+                <div className="absolute inset-0 flex items-start justify-center p-4">
+                  <div className="p-4 rounded-md text-left">
+                    <h2
+                      className={`text-[1.7rem] font-semibold mb-2 ${styles.head1} leading-[45px] group-hover:text-white`}
+                    >
+                      Energy Consumption
+                      <br /> Calculator
+                    </h2>
+                    <p className="text-black text-md group-hover:text-white">
+                      Estimate your monthly energy use in kWh with our
+                      calculator. Input wattage, daily hours, and days to
+                      understand electricity needs and costs.
+                    </p>
+                  </div>
+                </div>
+              </Link>
+            </div>
           </div>
         </div>
-        <div className="mt-[2.5rem] md:mt-[5rem] w-[85%] mx-auto sm:w-[90%] md:w-[85%] lg:[87%] xl:w-[75%] grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-[1.2rem] justify-items-center">
-          <div className="relative cursor-pointer group h-[500px] w-[300px] sm:w-full sm:h-auto object-contain">
-            <Link href="/learn/indian-solar-calculator">
-              <Image
-                alt="image"
-                src="/images/comp4/box1.png"
-                className="block w-full h-full object-cover"
-              />
 
-              <div className="absolute inset-0 flex items-start justify-center p-4">
-                <div className="p-4 rounded-md text-left">
-                  <h2
-                    className={`text-[1.7rem] font-semibold mb-2 ${styles.head1} leading-[45px] group-hover:text-white`}
-                  >
-                  Indian Solar
-                    <br /> Calculator
-                  </h2>
-                  <p className="text-black text-md group-hover:text-white">
-                  Estimate energy, savings, and CO₂ reduction with the Indian Solar Calculator. Specify panels, sunlight hours, and rates for a detailed view of your solar impact.
-                  </p>
-                </div>
-              </div>
-            </Link>
-          </div>
+        {/* <div className="bg-black h-[0.7px] w-[90%] mx-auto mt-[8rem] mb-[7rem]"></div> */}
 
-          <div className="relative cursor-pointer group h-[500px] w-[300px] sm:w-full sm:h-auto object-contain">
-            <Link href="/learn/indian-energy-mix">
-              <Image
-                alt="image"
-                src="/images/comp4/box2.png"
-                className="block w-full h-full object-cover"
-              />
-
-              <div className="absolute inset-0 flex items-start justify-center p-4">
-                <div className="p-4 rounded-md text-left">
-                  <h2
-                    className={`text-[1.7rem] font-semibold mb-2 ${styles.head1} leading-[45px] group-hover:text-white`}
-                  >
-                    Indian <br /> Energy Mix
-                  </h2>
-                  <p className="text-black text-md group-hover:text-white">
-                  Explore India’s power sources, from thermal and solar to hydro and nuclear. Visualize the energy mix and capacity to see how India meets its power needs.
-                  </p>
-                </div>
-              </div>
-            </Link>
-          </div>
-
-          <div className="relative cursor-pointer group h-[500px] w-[300px] sm:w-full sm:h-auto object-contain">
-            <Link href="/learn/energy-consumption-calculator">
-              <Image
-                alt="image"
-                src="/images/comp4/box3.png"
-                className="block w-full h-full object-cover"
-              />
-
-              <div className="absolute inset-0 flex items-start justify-center p-4">
-                <div className="p-4 rounded-md text-left">
-                  <h2
-                    className={`text-[1.7rem] font-semibold mb-2 ${styles.head1} leading-[45px] group-hover:text-white`}
-                  >
-                   Energy Consumption 
-                    <br /> Calculator
-                  </h2>
-                  <p className="text-black text-md group-hover:text-white">
-                  Estimate your monthly energy use in kWh with our calculator. Input wattage, daily hours, and days to understand electricity needs and costs.
-                  </p>
-                </div>
-              </div>
-            </Link>
-          </div>
-        </div>
-      </div>
-
-      {/* <div className="bg-black h-[0.7px] w-[90%] mx-auto mt-[8rem] mb-[7rem]"></div> */}
-
-      {/* The library */}
-      {/* <div className="">
+        {/* The library */}
+        {/* <div className="">
         <div className="flex flex-col justify-center items-center gap-[1.4rem]">
           <div
             className={`text-[2.2rem] md:text-[3rem] text-center font-semibold ${styles.head1}`}
@@ -557,37 +571,37 @@ const LearnComp= () => {
         </div>
       </div> */}
 
-      <div className="bg-black h-[0.7px] w-[100%] mx-auto mt-[6rem] mb-[6rem]"></div>
+        <div className="bg-black h-[0.7px] w-[100%] mx-auto mt-[6rem] mb-[6rem]"></div>
 
-      <div className="flex flex-col gap-[1rem] w-[90%]  md:w-[60%] mx-auto mb-[3rem]">
-        <div className="text-black opacity-[70%] text-center md:text-left text-[1.15rem]">
-          Content is provided for informational purposes only, does not
-          constitute tax or investment advice, and is not a recommendation for
-          any security or trading strategy. All investments involve risk,
-          including the possible loss of capital. Past performance does not
-          guarantee future results.
+        <div className="flex flex-col gap-[1rem] w-[90%]  md:w-[60%] mx-auto mb-[3rem]">
+          <div className="text-black opacity-[70%] text-center md:text-left text-[1.15rem]">
+            Content is provided for informational purposes only, does not
+            constitute tax or investment advice, and is not a recommendation for
+            any security or trading strategy. All investments involve risk,
+            including the possible loss of capital. Past performance does not
+            guarantee future results.
+          </div>
+          <div className="text-black opacity-[70%] text-center md:text-left text-[1.15rem]">
+            Options trading entails significant risk and is not appropriate for
+            all customers. Customers must read and understand the{" "}
+            <span>
+              <Link href="/" className=" underline hover:text-green-600">
+                Characteristics and Risks of Standardized Options
+              </Link>
+            </span>{" "}
+            before engaging in any options trading strategies. Supporting
+            documentation for any claims, if applicable, will be furnished upon
+            request.
+          </div>
         </div>
-        <div className="text-black opacity-[70%] text-center md:text-left text-[1.15rem]">
-          Options trading entails significant risk and is not appropriate for
-          all customers. Customers must read and understand the{" "}
-          <span>
-            <Link href="/" className=" underline hover:text-green-600">
-              Characteristics and Risks of Standardized Options
-            </Link>
-          </span>{" "}
-          before engaging in any options trading strategies. Supporting
-          documentation for any claims, if applicable, will be furnished upon
-          request.
-        </div>
-      </div>
 
-      {/* <CompleteSolarCalculator/> */}
+        {/* <CompleteSolarCalculator/> */}
 
-      {/* <div className="bg-black h-[0.8px] w-[100%] mx-auto mt-[8rem] mb-[3rem]"></div> */}
+        {/* <div className="bg-black h-[0.8px] w-[100%] mx-auto mt-[8rem] mb-[3rem]"></div> */}
 
-      {/* footer */}
+        {/* footer */}
 
-      {/* <div
+        {/* <div
         className={`w-[100%] mt-[8rem] mx-auto ${styles.head1} flex xl:flex-row  justify-between border-t-[0.8px] border-black`}
       >
         <div className="w-[65%] border-r-[0.8px] border-black">
@@ -839,7 +853,8 @@ const LearnComp= () => {
           </div>
         </div>
       </div> */}
-    </div>
+      </div>
+    </>
   );
 }
 

@@ -378,19 +378,19 @@ export default function BlogPage({ blog }) {
   return (
     <>
       <Head>
-        <title>{`${title} | Alter AI`}</title>
+        <title>{`${title} | Learn | Xbattery`}</title>
         <meta name="description" content={description} />
         <meta
           property="og:image"
           content={`https:${coverImage.fields.file.url}`}
         />
-        <meta property="og:site_name" content="Alter AI" />
+        <meta property="og:site_name" content="Xbattery" />
         <meta property="og:title" content={title} />
         <meta property="og:type" content="article" />
-        <meta property="og:url" content={`https://getalter.ai/blog/${slug}`} />
+        <meta property="og:url" content={`https://xbattery.energy/learn/${slug}`} />
         <meta property="article:published_time" content={date} />
         {/* <meta property="article:modified_time" content={modifiedOn} /> */}
-        <link rel="canonical" href={`https://getalter.ai/blog/${slug}`} />
+        <link rel="canonical" href={`https://xbattery.energy/learn/${slug}`} />
       </Head>
       {/* { faqs.length>0 &&
       <FAQPageJsonLd
