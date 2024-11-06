@@ -397,21 +397,21 @@ const LearnComp= () => {
           <div
             className={`text-[2.22rem] md:text-[2.8rem] text-center font-semibold ${styles.head1}`}
           >
-            Options trading essentials
+            Energy Insights and Calculators
           </div>
           <div
             className={`${styles.head1} text-[0.8rem] md:text-[1.2rem] font-semibold text-center`}
           >
-            Curious about options? Learn the ins and outs from <br></br>
-            the pros before making your move.
+           Explore tools to calculate your energy usage, understand India's power distribution, <br></br>
+           and assess solar energy benefits for a sustainable future.
           </div>
         </div>
         <div className="mt-[2.5rem] md:mt-[5rem] w-[85%] mx-auto sm:w-[90%] md:w-[85%] lg:[87%] xl:w-[75%] grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-[1.2rem] justify-items-center">
           <div className="relative cursor-pointer group h-[500px] w-[300px] sm:w-full sm:h-auto object-contain">
-            <Link href="/learn/electric-vehicles">
+            <Link href="/learn/indian-solar-calculator">
               <Image
                 alt="image"
-                src="/images/comp4/box1.svg"
+                src="/images/comp4/box1.png"
                 className="block w-full h-full object-cover"
               />
 
@@ -420,13 +420,11 @@ const LearnComp= () => {
                   <h2
                     className={`text-[1.7rem] font-semibold mb-2 ${styles.head1} leading-[45px] group-hover:text-white`}
                   >
-                    What is an
-                    <br /> Electric Vehicle?
+                  Indian Solar
+                    <br /> Calculator
                   </h2>
                   <p className="text-black text-md group-hover:text-white">
-                    EVs use electricity stored in batteries to power an electric
-                    motor, offering a cleaner and more efficient alternative to
-                    traditional gasoline-powered cars.
+                  Estimate energy, savings, and CO₂ reduction with the Indian Solar Calculator. Specify panels, sunlight hours, and rates for a detailed view of your solar impact.
                   </p>
                 </div>
               </div>
@@ -434,10 +432,10 @@ const LearnComp= () => {
           </div>
 
           <div className="relative cursor-pointer group h-[500px] w-[300px] sm:w-full sm:h-auto object-contain">
-            <Link href="/learn/electricity">
+            <Link href="/learn/indian-energy-mix">
               <Image
                 alt="image"
-                src="/images/comp4/box2.svg"
+                src="/images/comp4/box2.png"
                 className="block w-full h-full object-cover"
               />
 
@@ -446,12 +444,10 @@ const LearnComp= () => {
                   <h2
                     className={`text-[1.7rem] font-semibold mb-2 ${styles.head1} leading-[45px] group-hover:text-white`}
                   >
-                    What is <br /> Electricity?
+                    Indian <br /> Energy Mix
                   </h2>
                   <p className="text-black text-md group-hover:text-white">
-                    Electricity is the flow of electrical power used to energize
-                    devices and systems, while power consumption refers to the
-                    amount of electrical energy used by these devices over time.
+                  Explore India’s power sources, from thermal and solar to hydro and nuclear. Visualize the energy mix and capacity to see how India meets its power needs.
                   </p>
                 </div>
               </div>
@@ -459,10 +455,10 @@ const LearnComp= () => {
           </div>
 
           <div className="relative cursor-pointer group h-[500px] w-[300px] sm:w-full sm:h-auto object-contain">
-            <Link href="/learn/batteries">
+            <Link href="/learn/energy-consumption-calculator">
               <Image
                 alt="image"
-                src="/images/comp4/box3.svg"
+                src="/images/comp4/box3.png"
                 className="block w-full h-full object-cover"
               />
 
@@ -471,13 +467,11 @@ const LearnComp= () => {
                   <h2
                     className={`text-[1.7rem] font-semibold mb-2 ${styles.head1} leading-[45px] group-hover:text-white`}
                   >
-                    What are
-                    <br /> Batteries?
+                   Energy Consumption 
+                    <br /> Calculator
                   </h2>
                   <p className="text-black text-md group-hover:text-white">
-                    Batteries convert and store electrical energy for use in
-                    powering various devices and systems, from everyday
-                    electronics to advanced technologies.
+                  Estimate your monthly energy use in kWh with our calculator. Input wattage, daily hours, and days to understand electricity needs and costs.
                   </p>
                 </div>
               </div>
