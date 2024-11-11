@@ -78,12 +78,19 @@ const Example = ({ media }) => {
 
   const batteryData = {
     XBattery1: {
-      energyCapacity: "13.5 kWh1",
+      energyCapacity: "5 kWh",
       onGridPower: "5 kW continuous",
       backupPower: {
         peak: "7 kW peak",
         motorStart: "106A LRA motor start",
         transition: "Seamless backup transition",
+      },
+      size: "37 kgs",
+      scalable: "5 MW continuous",
+      certifications: {
+        one: "UL 1973",
+        two: "IEEE 154",
+        three: "IEC 62477-1",
       },
     },
     XBattery2: {
@@ -94,6 +101,13 @@ const Example = ({ media }) => {
         motorStart: "110A LRA motor start",
         transition: "Fast backup transition",
       },
+      size: "37 kgs",
+      scalable: "5 MW continuous",
+      certifications: {
+        one: "UL 1973",
+        two: "IEEE 154",
+        three: "IEC 62477-1",
+      },
     },
     XBattery3: {
       energyCapacity: "15 kWh",
@@ -103,6 +117,64 @@ const Example = ({ media }) => {
         motorStart: "120A LRA motor start",
         transition: "Instant backup transition",
       },
+      size: "37 kgs",
+      scalable: "5 MW continuous",
+      certifications: {
+        one: "UL 1973",
+        two: "IEEE 154",
+        three: "IEC 62477-1",
+      },
+    },
+  };
+
+  const batteryData50 = {
+    XBattery1: {
+      energyCapacity: "50 kWh",
+      onGridPower: "50 kW continuous",
+      backupPower: {
+        peak: "7 kW peak",
+        motorStart: "106A LRA motor start",
+        transition: "Seamless backup transition",
+      },
+      size: "370 kgs",
+      scalable: "5 MW continuous",
+      certifications: {
+        one: "UL 1973",
+        two: "IEEE 154",
+        three: "IEC 62477-1",
+      },
+    },
+    XBattery2: {
+      energyCapacity: "14 kWh",
+      onGridPower: "6 kW continuous",
+      backupPower: {
+        peak: "8 kW peak",
+        motorStart: "110A LRA motor start",
+        transition: "Fast backup transition",
+      },
+      size: "370 kgs",
+      scalable: "5 MW continuous",
+      certifications: {
+        one: "UL 1973",
+        two: "IEEE 154",
+        three: "IEC 62477-1",
+      },
+    },
+    XBattery3: {
+      energyCapacity: "15 kWh",
+      onGridPower: "7 kW continuous",
+      backupPower: {
+        peak: "9 kW peak",
+        motorStart: "120A LRA motor start",
+        transition: "Instant backup transition",
+      },
+      size: "370 kgs",
+      scalable: "5 MW continuous",
+      certifications: {
+        one: "UL 1973",
+        two: "IEEE 154",
+        three: "IEC 62477-1",
+      },
     },
   };
 
@@ -111,6 +183,7 @@ const Example = ({ media }) => {
   };
 
   const currentBattery = batteryData[activeBattery];
+  const currentBattery1 = batteryData50[activeBattery];
 
   const [batteryCount, setBatteryCount] = useState(1);
   const [applianceIndex, setApplianceIndex] = useState(0);
@@ -354,19 +427,19 @@ const Example = ({ media }) => {
               animate={{ x: isInView ? 0 : "-100%" }}
               transition={{ duration: 1, delay: 6 }}
               // className="absolute top-8 left-0 w-full h-full flex flex-col items-start justify-center p-16 space-y-2"
-              className="absolute top-0 md:top-8 left-0 right-0 w-full h-full flex flex-col items-center md:items-start justify-center p-4 md:p-16 space-y-2 text-left"
+              className="absolute top-0 md:top-0 left-0 right-0 w-full h-full flex flex-col items-center md:items-start justify-center p-4 md:p-16 space-y-2 text-left"
             >
-              <div className="text-white text-3xl lg:text-4xl font-medium mb-4">
+              {/* <div className="text-white text-3xl lg:text-4xl font-medium mb-4">
                 Xbattery
-              </div>
+              </div> */}
               <div className="text-white text-4xl lg:text-6xl text-center md:text-left font-bold">
-                Power for the Extreme
+              Power Your Home 24/7
               </div>
               <div className="text-white text-lg lg:text-2xl text-center md:text-left font-light pt-5 pl-1">
-                Extreme Performance Energy Storage System
+              High-performance lithium battery packs designed for India
               </div>
-              <div className=" pt-8 flex gap-7 pl-2">
-                {/* <div className={styles.gradientButton}>Watch Video</div> */}
+              {/* <div className=" pt-8 flex gap-7 pl-2">
+                <div className={styles.gradientButton}>Watch Video</div>
                 <Button
                   bg="transparent"
                   border="1px"
@@ -376,7 +449,7 @@ const Example = ({ media }) => {
                 >
                   Watch the Event
                 </Button>
-              </div>
+              </div> */}
             </motion.div>
           </div>
         </LayoutEffect>
@@ -490,14 +563,14 @@ const Example = ({ media }) => {
               <div className="text-white font-bold text-xl text-center sm:text-left mb-3 md:mb-0">
                 Features
               </div>
-              <div className="w-[85%] mx-auto md:w-full flex flex-row flex-wrap md:flex-nowrap justify-between   md:justify-start sm:flex-row gap-[2rem] sm:gap-[10%]">
+              <div className="w-[85%] mx-auto md:w-full flex flex-row flex-wrap md:flex-nowrap justify-between md:justify-start sm:flex-row gap-[2rem]  sm:gap-[10%]">
                 <div className="flex flex-col gap-2">
                   <div className="text-[#979797] text-sm text-left">
                     Size and Weight
                   </div>
                   <div id="value">
                     <div className="text-white text-sm">
-                      {currentBattery.energyCapacity}
+                      {currentBattery.size}
                     </div>
                   </div>
                 </div>
@@ -506,12 +579,12 @@ const Example = ({ media }) => {
                   <div className="text-[#979797] text-sm">Scalable</div>
                   <div id="value">
                     <div className="text-white text-sm">
-                      {currentBattery.onGridPower}
+                      {currentBattery.scalable}
                     </div>
                   </div>
                 </div>
 
-                <div className="flex flex-col gap-2">
+                {/* <div className="flex flex-col gap-2">
                   <div className="text-[#979797] text-sm">Installation</div>
                   <div id="value">
                     <div className="text-white text-sm">
@@ -524,18 +597,18 @@ const Example = ({ media }) => {
                       {currentBattery.backupPower.transition}
                     </div>
                   </div>
-                </div>
+                </div> */}
 
                 <div className="flex flex-col gap-2">
                   <div className="text-[#979797] text-sm">Certification</div>
                   <div id="value">
                     <div className="text-white text-sm">
-                      {currentBattery.backupPower.peak}
+                      {currentBattery.certifications.one}
                     </div>
                     <div className="text-white text-sm">
-                      {currentBattery.backupPower.motorStart}
+                      {currentBattery.certifications.two}
                     </div>
-                    <div className="text-white text-sm">SEMI standards</div>
+                    <div className="text-white text-sm">{currentBattery.certifications.three}</div>
                   </div>
                 </div>
               </div>
@@ -925,7 +998,7 @@ const Example = ({ media }) => {
                   <div className="text-[#979797] text-sm">Energy Capacity</div>
                   <div id="value">
                     <div className="text-white text-sm">
-                      {currentBattery.energyCapacity}
+                      {currentBattery1.energyCapacity}
                     </div>
                   </div>
                 </div>
@@ -934,7 +1007,7 @@ const Example = ({ media }) => {
                   <div className="text-[#979797] text-sm">On-Grid Power</div>
                   <div id="value">
                     <div className="text-white text-sm">
-                      {currentBattery.onGridPower}
+                      {currentBattery1.onGridPower}
                     </div>
                   </div>
                 </div>
@@ -943,13 +1016,13 @@ const Example = ({ media }) => {
                   <div className="text-[#979797] text-sm">Backup Power</div>
                   <div id="value">
                     <div className="text-white text-sm">
-                      {currentBattery.backupPower.peak}
+                      {currentBattery1.backupPower.peak}
                     </div>
                     <div className="text-white text-sm">
-                      {currentBattery.backupPower.motorStart}
+                      {currentBattery1.backupPower.motorStart}
                     </div>
                     <div className="text-white text-sm">
-                      {currentBattery.backupPower.transition}
+                      {currentBattery1.backupPower.transition}
                     </div>
                   </div>
                 </div>
@@ -969,7 +1042,7 @@ const Example = ({ media }) => {
                   </div>
                   <div id="value">
                     <div className="text-white text-sm">
-                      {currentBattery.energyCapacity}
+                      {currentBattery1.size}
                     </div>
                   </div>
                 </div>
@@ -978,12 +1051,12 @@ const Example = ({ media }) => {
                   <div className="text-[#979797] text-sm">Scalable</div>
                   <div id="value">
                     <div className="text-white text-sm">
-                      {currentBattery.onGridPower}
+                      {currentBattery1.scalable}
                     </div>
                   </div>
                 </div>
 
-                <div className="flex flex-col gap-2">
+                {/* <div className="flex flex-col gap-2">
                   <div className="text-[#979797] text-sm">Installation</div>
                   <div id="value">
                     <div className="text-white text-sm">
@@ -996,18 +1069,18 @@ const Example = ({ media }) => {
                       {currentBattery.backupPower.transition}
                     </div>
                   </div>
-                </div>
+                </div> */}
 
                 <div className="flex flex-col gap-2">
                   <div className="text-[#979797] text-sm">Certification</div>
                   <div id="value">
                     <div className="text-white text-sm">
-                      {currentBattery.backupPower.peak}
+                      {currentBattery1.certifications.one}
                     </div>
                     <div className="text-white text-sm">
-                      {currentBattery.backupPower.motorStart}
+                      {currentBattery1.certifications.two}
                     </div>
-                    <div className="text-white text-sm">SEMI standards</div>
+                    <div className="text-white text-sm">{currentBattery1.certifications.three}</div>
                   </div>
                 </div>
               </div>
