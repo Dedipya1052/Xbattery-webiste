@@ -174,14 +174,26 @@ const About = () => {
         </nav>
 
         {/* banner */}
-        <div className="w-full  h-[450px] md:h-[550px] 2xl:h-[650px] relative overflow-hidden">
-          <Image
+        <div className="w-full  h-[550px] md:h-[600px] 2xl:h-[70vh] relative overflow-hidden">
+          {/* <Image
             src="/images/about/hero.png" // Ensure the correct path to your image 
             width={1500}
             height={1500}
             className="w-full h-full  object-cover object-top" 
             alt="hero"
-          />
+          /> */}
+          <video
+              className={`w-auto h-[85vh] md:w-full md:h-auto object-cover `}
+              style={{ objectPosition: 'center bottom' }}
+              autoPlay
+              muted
+              playsInline
+              loop
+              preload="none"              
+            >
+              <source src={"/videos/about/1.mp4"} type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
 
           <motion.div
             initial={{ x: "-100%" }}
@@ -211,7 +223,7 @@ const About = () => {
         </div>
 
         {/* Xbattery: Powering the Future  and story*/}
-        <div className="w-[100%] mx-auto overflow-hidden mt-[2rem]">
+        <div className="w-[100%] mx-auto overflow-hidden mt-[-2rem] md:mt-[2rem]">
           <section className="bg-black py-12 mt-[3rem] ">
             <AnimatedDiv>
               <div className="text-center mb-12 text-white w-[90%] mx-auto">
@@ -574,7 +586,7 @@ const About = () => {
                       alt="photo"
                       width={1500}
                       height={1500}
-                      className="shadow-2xl shadow-[#101010] filter blur-[0.09rem]"
+                      className="shadow-2xl shadow-[#101010] filter blur-[0.09rem] object-cover h-[210px] sm:h-auto"
                     />
                     <div className="absolute inset-0 flex justify-center items-center">
                       <div className="text-[#ffffff] text-[2.5rem] md:text-[4rem] font-bold drop-shadow-xl ">
@@ -725,13 +737,13 @@ const About = () => {
                 />
               </div>
 
-              <div className=" absolute top-20 right-[-6rem] ">
+              <div className=" absolute top-20 right-[-6rem] xl:overflow-hidden">
                 <Image
                   src={"/images/logo1.png"}
                   alt="logo"
                   height={650}
                   width={650}
-                  className=" opacity-[3%] z-[-20px] hidden md:block"
+                  className=" opacity-[3%] z-[-20px] hidden md:block "
                 />
               </div>
             </div>
