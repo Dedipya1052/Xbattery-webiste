@@ -179,7 +179,7 @@ const About = () => {
             src="/images/about/hero.jpeg" // Ensure the correct path to your image 
             width={1500}
             height={1500}
-            className="w-full h-full  object-cover object-top"
+            className="w-full h-full  object-cover object-top" 
             alt="career"
           />
 
