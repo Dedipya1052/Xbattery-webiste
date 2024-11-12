@@ -174,19 +174,19 @@ const About = () => {
         </nav>
 
         {/* banner */}
-        <div className="w-full  h-[450px] md:h-[500px] 2xl:h-[650px] relative overflow-hidden">
+        <div className="w-full  h-[450px] md:h-[550px] 2xl:h-[650px] relative overflow-hidden">
           <Image
-            src="/images/about/hero.jpeg" // Ensure the correct path to your image
+            src="/images/about/hero.jpeg" // Ensure the correct path to your image 
             width={1500}
             height={1500}
-            className="w-full h-full  object-cover object-bottom scale-[1.2] sm:scale-[1.0]"
+            className="w-full h-full  object-cover object-top"
             alt="career"
           />
 
           <motion.div
             initial={{ x: "-100%" }}
             animate={{ x: 0 }} // Assuming you want it to always animate in
-            transition={{ duration: 0.75, delay: 0 }}
+            transition={{ duration: 0.75, delay: 0 }} 
             className="absolute md:top-0 md:left-0  md:right-0 top-[-2rem] w-full md:w-[90%]  mx-auto h-full flex flex-col items-center md:items-start justify-center p-4 md:p-16 space-y-2 text-left"
           >
             <div className="text-white text-4xl lg:text-4xl font-medium mb-4">
@@ -536,39 +536,40 @@ const About = () => {
                 </div>
 
                 <div className="absolute bottom-[-12rem] left-0 right-0 w-[93%] md:w-[90%] xl:w-[85%] 2xl:w-[1450px] mx-auto flex justify-evenly">
-                  <Image
-                    src="/images/about/people/1.jpeg"
-                    height="600"
-                    width="600"
-                    className="w-[30%] h-[450px] object-cover rounded-md"
-                  />
+                 
                   <Image
                     src="/images/about/people/2.jpeg"
                     height="600"
                     width="600"
-                    className="w-[30%] h-[450px] object-cover rounded-md"
+                    className="w-[30%] h-[450px] object-cover rounded-md" 
+                  />
+                   <Image
+                    src="/images/about/people/1.jpeg"
+                    height="600"
+                    width="600"
+                    className="w-[30%] h-[450px] object-cover rounded-md "
                   />
                   <Image
                     src="/images/about/people/3.jpeg"
                     height="600"
                     width="600"
-                    className="w-[30%] h-[450px] object-cover rounded-md"
+                    className="w-[30%] h-[450px] object-cover rounded-md "
                   />
                 </div>
               </div>
             </AnimatedDiv>
             <AnimatedDiv>
-              <div className="relative bg-[#242323] min-h-[7rem] xs:min-h-[25rem] sm:min-h-[17rem] md:min-h-[20rem]  xl:min-h-[31rem]">
-                <div className="w-[90%] lg:w-[78%] 2xl:w-[1140px] mx-auto absolute top-[-7rem] left-1/2 transform -translate-x-1/2">
+              <div className="relative bg-[#242323] min-h-[7rem] xs:min-h-[12rem] sm:min-h-[14rem] md:min-h-[16rem] lg:min-h-[15rem]  xl:min-h-[21rem]">
+                <div className="w-[95%] lg:w-[78%] 2xl:w-[1140px] mx-auto absolute top-[-7rem] left-1/2 transform -translate-x-1/2">
                   <div className="relative">
                     <Image
                       src={"/images/about/group.jpeg"}
                       width={1500}
                       height={1500}
-                      className="shadow-2xl shadow-[#101010] filter blur-[0.13rem]"
+                      className="shadow-2xl shadow-[#101010] filter blur-[0.09rem]"
                     />
                     <div className="absolute inset-0 flex justify-center items-center">
-                      <div className="text-[#e6e6e6] text-[2.5rem] md:text-[4rem] font-bold drop-shadow-xl ">
+                      <div className="text-[#ffffff] text-[2.5rem] md:text-[4rem] font-bold drop-shadow-xl ">
                         Our Story
                       </div>
                     </div>
