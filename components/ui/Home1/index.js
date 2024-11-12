@@ -220,7 +220,7 @@ const Example = ({ media }) => {
   const videoRef2 = useRef(null);
 
   useEffect(() => {
-    const handlePlayVideo = (entries, observer) => {
+    const handlePlayVideo = (entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
           entry.target.currentTime = 0;
@@ -230,27 +230,25 @@ const Example = ({ media }) => {
         }
       });
     };
-
+  
     const observer = new IntersectionObserver(handlePlayVideo, {
       threshold: 0.5, // Adjust this value as needed
     });
-
-    if (videoRef1.current) {
-      observer.observe(videoRef1.current);
-    }
-    if (videoRef2.current) {
-      observer.observe(videoRef2.current);
-    }
-
+  
+    // Copy the current ref values into local variables
+    const currentVideoRef1 = videoRef1.current;
+    const currentVideoRef2 = videoRef2.current;
+  
+    if (currentVideoRef1) observer.observe(currentVideoRef1);
+    if (currentVideoRef2) observer.observe(currentVideoRef2);
+  
     return () => {
-      if (videoRef1.current) {
-        observer.unobserve(videoRef1.current);
-      }
-      if (videoRef2.current) {
-        observer.unobserve(videoRef2.current);
-      }
+      // Use the copied ref values for cleanup
+      if (currentVideoRef1) observer.unobserve(currentVideoRef1);
+      if (currentVideoRef2) observer.unobserve(currentVideoRef2);
     };
   }, []);
+  
 
   const handleVideoChange = (index) => {
     setSelectedIndex(index);
@@ -700,6 +698,7 @@ const Example = ({ media }) => {
                     src={applianceImages1[applianceIndex]}
                     width={"1000"}
                     height={"1000"}
+                    alt="battery"
                   />
                 </div>
               </div>

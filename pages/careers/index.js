@@ -223,8 +223,10 @@ const Careers = () => {
                 }
               >
                 <div className="bg-[#212020] rounded-lg shadow-lg p-1 hover:cursor-pointer hover:bg-[#282828] transition-all duration-400">
-                  <img
+                  <Image
                     src="/images/careers/card1.webp"
+                    width={600}
+                    height={600}
                     alt="Product Solutions Engineer"
                     className="w-full h-48 object-cover rounded-t-lg"
                   />
@@ -243,8 +245,10 @@ const Careers = () => {
               {/* Box 2 */}
               <Link href="/careers/junior-embedded-application-engineer-microcontroller">
                 <div className="bg-[#212020] rounded-lg shadow-lg p-1 hover:cursor-pointer hover:bg-[#282828] transition-all duration-400">
-                  <img
+                  <Image
                     src="/images/careers/card2.webp"
+                    width={600}
+                    height={600}
                     alt="Google AI and ML roles"
                     className="w-full h-48 object-cover rounded-t-lg"
                   />
@@ -263,8 +267,10 @@ const Careers = () => {
 
               {/* Box 3 */}
               <div className="bg-[#212020] rounded-lg shadow-lg p-1  hover:cursor-pointer hover:bg-[#282828] transition-all duration-400">
-                <img
+                <Image
                   src="/images/careers/card3.webp"
+                  width={600}
+                  height={600}
                   alt="Software Engineer III"
                   className="w-full h-48 object-cover rounded-t-lg"
                 />

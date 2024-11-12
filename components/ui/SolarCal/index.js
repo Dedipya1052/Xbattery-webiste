@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Plus, Minus, Sun, Zap, Home, Thermometer, Battery, IndianRupee, Calendar } from 'lucide-react';
+import Image from "next/image";
 
 const SolarPanelIcon = ({ x, y }) => (
   <svg x={x} y={y} width="10" height="6" viewBox="0 0 12 8">
@@ -202,8 +203,10 @@ const CompleteSolarCalculator = () => {
       >
         {/* Image Section with Overlay */}
         <div className="relative h-full">
-          <img
+          <Image
             src="/images/solar.jpg"
+            width={1000}
+            height={1000}
             alt="House with solar panels"
             className="absolute inset-0 w-full h-full object-cover rounded-lg "
           />

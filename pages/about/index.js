@@ -176,11 +176,11 @@ const About = () => {
         {/* banner */}
         <div className="w-full  h-[450px] md:h-[550px] 2xl:h-[650px] relative overflow-hidden">
           <Image
-            src="/images/about/hero.jpeg" // Ensure the correct path to your image 
+            src="/images/about/hero.png" // Ensure the correct path to your image 
             width={1500}
             height={1500}
             className="w-full h-full  object-cover object-top" 
-            alt="career"
+            alt="hero"
           />
 
           <motion.div
@@ -481,18 +481,21 @@ const About = () => {
                     <div className="flex gap-[0.4rem] justify-center items-center mb-[1rem]">
                       <Image
                         src="/images/about/teams/shortimages/1.png"
+                        alt="photo"
                         height="50"
                         width="50"
                         className="rounded-full"
                       />
                       <Image
                         src="/images/about/teams/shortimages/2.png"
+                        alt="photo"
                         height="50"
                         width="50"
                         className="rounded-full"
                       />
                       <Image
                         src="/images/about/teams/shortimages/3.png"
+                        alt="photo"
                         height="50"
                         width="50"
                         className="rounded-full"
@@ -518,6 +521,7 @@ const About = () => {
                     <div className="flex gap-[0.4rem] justify-center items-center mb-[0.5rem]">
                       <Image
                         src="/images/about/teams/shortimages/4.svg"
+                        alt="photo"
                         height="45"
                         width="45"
                         className="rounded-full"
@@ -538,19 +542,22 @@ const About = () => {
                 <div className="absolute bottom-[-12rem] left-0 right-0 w-[93%] md:w-[90%] xl:w-[85%] 2xl:w-[1450px] mx-auto flex justify-evenly">
                  
                   <Image
-                    src="/images/about/people/2.jpeg"
+                    src="/images/about/people/2.png"
+                    alt="photo"
                     height="600"
                     width="600"
                     className="w-[30%] h-[450px] object-cover rounded-md" 
                   />
                    <Image
-                    src="/images/about/people/1.jpeg"
+                    src="/images/about/people/1.png"
+                    alt="photo"
                     height="600"
                     width="600"
                     className="w-[30%] h-[450px] object-cover rounded-md "
                   />
                   <Image
-                    src="/images/about/people/3.jpeg"
+                    src="/images/about/people/3.png"
+                    alt="photo"
                     height="600"
                     width="600"
                     className="w-[30%] h-[450px] object-cover rounded-md "
@@ -563,7 +570,8 @@ const About = () => {
                 <div className="w-[95%] lg:w-[78%] 2xl:w-[1140px] mx-auto absolute top-[-7rem] left-1/2 transform -translate-x-1/2">
                   <div className="relative">
                     <Image
-                      src={"/images/about/group.jpeg"}
+                      src={"/images/about/group.png"}
+                      alt="photo"
                       width={1500}
                       height={1500}
                       className="shadow-2xl shadow-[#101010] filter blur-[0.09rem]"
@@ -628,7 +636,8 @@ const About = () => {
           <AnimatedDiv>
             <div className="mt-[3rem] flex flex-col md:flex-row gap-[2rem] md:gap-[5%] items-center">
               <Image
-                src={"/images/about/leaders/1.jpeg"}
+                src={"/images/about/leaders/1.png"}
+                alt="photo"
                 width={"600"}
                 height={"600"}
                 className="w-full md:w-[30%] h-[350px] object-cover rounded-md"
@@ -657,7 +666,8 @@ const About = () => {
           <AnimatedDiv>
             <div className="mt-[3rem] flex flex-col gap-[2rem]  md:flex-row-reverse md:gap-[5%] items-center">
               <Image
-                src={"/images/about/leaders/2.jpeg"}
+                src={"/images/about/leaders/2.png"}
+                alt="photo"
                 width={"600"}
                 height={"600"}
                 className="w-full md:w-[30%] h-[350px] object-cover rounded-md"
@@ -707,7 +717,7 @@ const About = () => {
               {/* Image Section */}
               <div className="w-full flex justify-center mx-auto ">
                 <Image
-                  src="/images/about/group2.jpeg" // Replace with your actual image path
+                  src="/images/about/group2.png" // Replace with your actual image path
                   alt="Group photo"
                   width={700}
                   height={500}
@@ -718,6 +728,7 @@ const About = () => {
               <div className=" absolute top-20 right-[-6rem] ">
                 <Image
                   src={"/images/logo1.png"}
+                  alt="logo"
                   height={650}
                   width={650}
                   className=" opacity-[3%] z-[-20px] hidden md:block"
