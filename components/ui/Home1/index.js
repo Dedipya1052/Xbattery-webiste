@@ -1193,7 +1193,7 @@ const Example = ({ media }) => {
                 >
                   Explore Topics in Energy Innovation
                 </h1>
-                <p className="text-base md:text-lg mb-6">
+                <p className="text-base md:text-lg mb-6 text-white">
                   Dive deep into energy solutions, advanced BMS, IoT, Digital
                   Twins, AI, and the future of energy storage in India.
                 </p>
