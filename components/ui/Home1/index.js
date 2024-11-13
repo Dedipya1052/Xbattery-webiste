@@ -1200,7 +1200,7 @@ const Example = ({ media }) => {
                 <button
                   className={`px-6 py-3 rounded-lg font-bold text-white bg-transparent border-[2px] ${styles.gradientBorder}`}
                 >
-                  Learn More →
+                  Learn More → 
                 </button>
               </div>
             </div>
