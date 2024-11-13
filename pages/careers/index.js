@@ -51,7 +51,7 @@ const Careers = () => {
         />
       </Head>
 
-      <div className={`${classes.head1} bg-black`}>
+      <div className={`${classes.head1} bg-black`}>      
         <nav
           className={`fixed top-0 left-0 w-full mx-auto flex items-center justify-between p-4 z-50 transition-colors duration-300 bg-black`}
         >
@@ -75,15 +75,15 @@ const Careers = () => {
                 </button>
               </Link>
 
-              <Link href="/blog">
+              <Link href="/about">
                 <button className="text-[#cacaca] text-lg font-medium hover:text-white transition-colors duration-300">
-                  Blog
+                  About
                 </button>
               </Link>
 
-              <Link href="/learn">
+              <Link href="/blog">
                 <button className="text-[#cacaca] text-lg font-medium hover:text-white transition-colors duration-300">
-                  Learn
+                  Blog
                 </button>
               </Link>
 
@@ -130,21 +130,21 @@ const Careers = () => {
                 </button>
               </Link>
 
+              <Link href="/about">
+                <button
+                  className="text-lg font-medium"
+                  onClick={handleMenuItemClick}
+                >
+                  About
+                </button>
+              </Link>
+
               <Link href="/blog">
                 <button
                   className="text-lg font-medium"
                   onClick={handleMenuItemClick}
                 >
                   Blog
-                </button>
-              </Link>
-
-              <Link href="/learn">
-                <button
-                  className="text-lg font-medium"
-                  onClick={handleMenuItemClick}
-                >
-                  Learn
                 </button>
               </Link>
 
@@ -168,12 +168,13 @@ const Careers = () => {
             </div>
           )}
         </nav>
-        <div className="w-full h-[450px] md:h-[450px] relative overflow-hidden">
+        
+        <div className="w-full h-[450px] md:h-[450px] xl:h-[550px] 2xl:h-[55vh] relative overflow-hidden">
           <Image
-            src="/images/careers/1.png" // Ensure the correct path to your image
+            src="/images/careers/hero.png" // Ensure the correct path to your image
             width={1500}
             height={1500}
-            className="w-full h-full  object-cover object-center scale-[1.2] sm:scale-[1.0]"
+            className="w-full h-full  object-cover object-top "
             alt="career"
           />
 

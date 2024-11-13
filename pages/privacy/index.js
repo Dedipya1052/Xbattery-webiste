@@ -54,15 +54,15 @@ const Privacy = () => {
                 </button>
               </Link>
 
-              <Link href="/blog">
+              <Link href="/about">
                 <button className="text-[#cacaca] text-lg font-medium hover:text-white transition-colors duration-300">
-                  Blog
+                  About
                 </button>
               </Link>
 
-              <Link href="/learn">
+              <Link href="/blog">
                 <button className="text-[#cacaca] text-lg font-medium hover:text-white transition-colors duration-300">
-                  Learn
+                  Blog
                 </button>
               </Link>
 
@@ -109,21 +109,21 @@ const Privacy = () => {
                 </button>
               </Link>
 
+              <Link href="/about">
+                <button
+                  className="text-lg font-medium"
+                  onClick={handleMenuItemClick}
+                >
+                  About
+                </button>
+              </Link>
+
               <Link href="/blog">
                 <button
                   className="text-lg font-medium"
                   onClick={handleMenuItemClick}
                 >
                   Blog
-                </button>
-              </Link>
-
-              <Link href="/learn">
-                <button
-                  className="text-lg font-medium"
-                  onClick={handleMenuItemClick}
-                >
-                  Learn
                 </button>
               </Link>
 

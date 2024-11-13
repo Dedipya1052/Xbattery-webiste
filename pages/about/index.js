@@ -79,15 +79,15 @@ const About = () => {
                 </button>
               </Link>
 
-              <Link href="/blog">
+              <Link href="/about">
                 <button className="text-[#cacaca] text-lg font-medium hover:text-white transition-colors duration-300">
-                  Blog
+                  About
                 </button>
               </Link>
 
-              <Link href="/learn">
+              <Link href="/blog">
                 <button className="text-[#cacaca] text-lg font-medium hover:text-white transition-colors duration-300">
-                  Learn
+                  Blog
                 </button>
               </Link>
 
@@ -134,21 +134,21 @@ const About = () => {
                 </button>
               </Link>
 
+              <Link href="/about">
+                <button
+                  className="text-lg font-medium"
+                  onClick={handleMenuItemClick}
+                >
+                  About
+                </button>
+              </Link>
+
               <Link href="/blog">
                 <button
                   className="text-lg font-medium"
                   onClick={handleMenuItemClick}
                 >
                   Blog
-                </button>
-              </Link>
-
-              <Link href="/learn">
-                <button
-                  className="text-lg font-medium"
-                  onClick={handleMenuItemClick}
-                >
-                  Learn
                 </button>
               </Link>
 
@@ -174,7 +174,7 @@ const About = () => {
         </nav>
 
         {/* banner */}
-        <div className="w-full  h-[550px] md:h-[600px] 2xl:h-[70vh] relative overflow-hidden">
+        <div className="w-full  h-[550px] md:h-[650px] 2xl:h-[80vh] relative overflow-hidden">
           {/* <Image
             src="/images/about/hero.png" // Ensure the correct path to your image 
             width={1500}
@@ -183,7 +183,7 @@ const About = () => {
             alt="hero"
           /> */}
           <video
-              className={`w-auto h-[85vh] md:w-full md:h-auto object-cover `}
+              className={`w-auto h-[85vh] md:w-full md:h-[650px] 2xl:h-[80vh] object-cover object-bottom`}
               style={{ objectPosition: 'center bottom' }}
               autoPlay
               muted
@@ -199,9 +199,9 @@ const About = () => {
             initial={{ x: "-100%" }}
             animate={{ x: 0 }} // Assuming you want it to always animate in
             transition={{ duration: 0.75, delay: 0 }} 
-            className="absolute md:top-0 md:left-0  md:right-0 top-[-2rem] w-full md:w-[90%]  mx-auto h-full flex flex-col items-center md:items-start justify-center p-4 md:p-16 space-y-2 text-left"
+            className={`absolute md:top-0 md:left-0  md:right-0 top-[-2rem] w-full md:w-[90%]  mx-auto h-full flex flex-col items-center md:items-start justify-center p-4 md:p-16 space-y-2 text-left ${classes.color}`}
           >
-            <div className="text-white text-4xl lg:text-4xl font-medium mb-4">
+            <div className="text-[white] text-4xl lg:text-4xl font-medium mb-4">
               About us
             </div>
             <div className="text-white text-4xl lg:text-4xl text-center md:text-left font-bold">
@@ -221,6 +221,7 @@ const About = () => {
             </div>
           </motion.div>
         </div>
+
 
         {/* Xbattery: Powering the Future  and story*/}
         <div className="w-[100%] mx-auto overflow-hidden mt-[-2rem] md:mt-[2rem]">
@@ -656,21 +657,10 @@ const About = () => {
               />
               <div className="text-white  w-full md:w-[65%] flex flex-col gap-[1rem] text-center md:text-left">
                 <div className=" text-2xl font-semibold">
-                  John Doe, CEO of Xbattery
+                Satish Reddy, CEO of Xbattery
                 </div>
                 <div className=" opacity-[80%] text-lg text-center md:text-left">
-                  John Doe is a visionary leader with over two decades of
-                  experience in the energy sector. His passion for
-                  sustainability and innovation has driven Xbattery’s mission to
-                  revolutionize energy storage solutions. Under his leadership,
-                  Xbattery has grown from a small startup into a leading player
-                  in the renewable energy industry, focusing on providing
-                  efficient, scalable, and affordable energy solutions for
-                  homes, businesses, and industries. John's deep understanding
-                  of the global energy landscape and his commitment to
-                  environmental responsibility continue to shape Xbattery’s
-                  future as a company that is pushing the boundaries of clean
-                  energy.
+                Satish Reddy leads XBattery as founder and CEO. He spent 15 years in tech, working at Microsoft before starting his own company. His first venture, Pascalcase, grew to 35 people and hit $500K in annual revenue within 5 years. Now he's switched gears completely. Instead of building software, he's tackling something bigger: India's power backup problems. His experience scaling companies and building solid teams comes in handy when you're trying to change how energy storage works in India.
                 </div>
               </div>
             </div>
@@ -686,21 +676,10 @@ const About = () => {
               />
               <div className="text-white  w-full md:w-[65%] flex flex-col gap-[1rem] text-center md:text-left">
                 <div className=" text-2xl font-semibold">
-                  Jane Smith, CTO of Xbattery
+                Sonu Mishra, CTO of Xbattery
                 </div>
                 <div className=" opacity-[80%] text-lg">
-                  Jane Smith brings unparalleled technical expertise to the
-                  company with her background in electrical engineering and
-                  advanced battery technology. With a strong track record in
-                  research and development, Jane leads the innovation efforts at
-                  Xbattery, constantly exploring new ways to enhance battery
-                  performance, efficiency, and sustainability. Her
-                  forward-thinking approach and dedication to cutting-edge
-                  technology have been instrumental in the development of
-                  Xbattery's unique solutions, ensuring the company stays ahead
-                  in an ever-evolving industry. Jane’s leadership in technology
-                  drives Xbattery's goal of delivering state-of-the-art energy
-                  solutions for a greener future.
+                Sonu Mishra brings hands-on battery expertise to XBattery as co-founder and CTO. After getting his Master's in Embedded Systems from Stuttgart, he spent 5 years at Bosch Germany working on energy systems and battery management. Now back in India, he's putting his German engineering experience to work on local power problems. Turns out, designing chips and battery systems for one of Germany's biggest tech companies is pretty useful when you're building power backup solutions for Indian conditions.
                 </div>
               </div>
             </div>

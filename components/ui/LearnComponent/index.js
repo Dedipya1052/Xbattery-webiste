@@ -10,48 +10,84 @@ import Head from "next/head";
 
 
 
-const energyStorage=[
-  {name:"ES Systems",link:"/learn/what-are-energy-storage-systems"},
-  {name:"ES Technologies",link:"/learn/what-are-energy-storage-technologies"},
-  {name:"Digital twin for ES",link:"/learn/digital-twin-technology-for-energy-storage"},
-  {name:"Battery Management System",link:"/learn/what-are-battery-management-systems"},
-  {name:"Future Trends",link:"/learn/future-trends-in-energy-storage"}
-]
-const renewableEnergy=[
-  {name:"Hydro and tidal power",link:"/learn/what-are-energy-storage-systems"},
-  {name:"Fuel cells",link:"/learn/what-are-energy-storage-technologies"},
-  {name:"Biomass power",link:"/learn/digital-twin-technology-for-energy-storage"},
-  {name:"Carbon Footprint",link:"/learn/what-are-battery-management-systems"},
-  {name:"Biodiversity",link:"/learn/future-trends-in-energy-storage"}
-]
-const electricity=[
-  {name:"Power systems",link:"/learn/what-are-energy-storage-systems"},
-  {name:"Power consumption",link:"/learn/what-are-energy-storage-technologies"},
-  {name:"Renewable Electricity",link:"/learn/digital-twin-technology-for-energy-storage"},
-  {name:"Electricity in Everyday Life",link:"/learn/what-are-battery-management-systems"},
-  {name:"Load Balancing in Power Grids",link:"/learn/future-trends-in-energy-storage"}
-]
-const electricVehicles=[
-  {name:"Charging Infrastructure",link:"/learn/what-are-energy-storage-systems"},
-  {name:"EV Maintenance",link:"/learn/what-are-energy-storage-technologies"},
-  {name:"EV Market and Trends",link:"/learn/digital-twin-technology-for-energy-storage"},
-  {name:"EV Lifetime Costs",link:"/learn/what-are-battery-management-systems"},
-  {name:"Battery Swapping Technology",link:"/learn/future-trends-in-energy-storage"}
-]
-const batteries=[
-  {name:"Battery economics",link:"/learn/what-are-energy-storage-systems"},
-  {name:"Battery Applications",link:"/learn/what-are-energy-storage-technologies"},
-  {name:"Battery charge and discharge",link:"/learn/digital-twin-technology-for-energy-storage"},
-  {name:"Battery Software & Analytics",link:"/learn/what-are-battery-management-systems"},
-  {name:"Battery & IoT",link:"/learn/future-trends-in-energy-storage"}
-]
-const grid=[
-  {name:"Grid Technologies",link:"/learn/what-are-energy-storage-systems"},
-  {name:"Grid balancing",link:"/learn/what-are-energy-storage-technologies"},
-  {name:"Smart Meters",link:"/learn/digital-twin-technology-for-energy-storage"},
-  {name:"Sensors and Automation",link:"/learn/what-are-battery-management-systems"},
-  {name:"Grid EMS",link:"/learn/future-trends-in-energy-storage"}
-]
+// const energyStorage=[
+//   {name:"ES Systems",link:"/learn/what-are-energy-storage-systems"},
+//   {name:"ES Technologies",link:"/learn/what-are-energy-storage-technologies"},
+//   {name:"Digital twin for ES",link:"/learn/digital-twin-technology-for-energy-storage"},
+//   {name:"Battery Management System",link:"/learn/what-are-battery-management-systems"},
+//   {name:"Future Trends",link:"/learn/future-trends-in-energy-storage"}
+// ]
+// const renewableEnergy=[
+//   {name:"Hydro and tidal power",link:"/learn/what-are-energy-storage-systems"},
+//   {name:"Fuel cells",link:"/learn/what-are-energy-storage-technologies"},
+//   {name:"Biomass power",link:"/learn/digital-twin-technology-for-energy-storage"},
+//   {name:"Carbon Footprint",link:"/learn/what-are-battery-management-systems"},
+//   {name:"Biodiversity",link:"/learn/future-trends-in-energy-storage"}
+// ]
+// const electricity=[
+//   {name:"Power systems",link:"/learn/what-are-energy-storage-systems"},
+//   {name:"Power consumption",link:"/learn/what-are-energy-storage-technologies"},
+//   {name:"Renewable Electricity",link:"/learn/digital-twin-technology-for-energy-storage"},
+//   {name:"Electricity in Everyday Life",link:"/learn/what-are-battery-management-systems"},
+//   {name:"Load Balancing in Power Grids",link:"/learn/future-trends-in-energy-storage"}
+// ]
+// const electricVehicles=[
+//   {name:"Charging Infrastructure",link:"/learn/what-are-energy-storage-systems"},
+//   {name:"EV Maintenance",link:"/learn/what-are-energy-storage-technologies"},
+//   {name:"EV Market and Trends",link:"/learn/digital-twin-technology-for-energy-storage"},
+//   {name:"EV Lifetime Costs",link:"/learn/what-are-battery-management-systems"},
+//   {name:"Battery Swapping Technology",link:"/learn/future-trends-in-energy-storage"}
+// ]
+// const batteries=[
+//   {name:"Battery economics",link:"/learn/what-are-energy-storage-systems"},
+//   {name:"Battery Applications",link:"/learn/what-are-energy-storage-technologies"},
+//   {name:"Battery charge and discharge",link:"/learn/digital-twin-technology-for-energy-storage"},
+//   {name:"Battery Software & Analytics",link:"/learn/what-are-battery-management-systems"},
+//   {name:"Battery & IoT",link:"/learn/future-trends-in-energy-storage"}
+// ]
+// const grid=[
+//   {name:"Grid Technologies",link:"/learn/what-are-energy-storage-systems"},
+//   {name:"Grid balancing",link:"/learn/what-are-energy-storage-technologies"},
+//   {name:"Smart Meters",link:"/learn/digital-twin-technology-for-energy-storage"},
+//   {name:"Sensors and Automation",link:"/learn/what-are-battery-management-systems"},
+//   {name:"Grid EMS",link:"/learn/future-trends-in-energy-storage"}
+// ]
+
+
+const energyStorage = [
+  { name: "Battery Energy Storage System", link: "/learn/battery-energy-storage-systems" },
+  { name: "Types of Energy Storage Systems", link: "/learn/types-of-energy-storage-systems" },
+ // { name: "Emerging and Innovative Energy Storage Technologies", link: "/learn/emerging-innovative-energy-storage-technologies" },
+  { name: "Energy Storage Applications", link: "/learn/understanding-energy-storage-applications" }
+];
+
+const renewableEnergy = [
+  { name: "Solar Energy", link: "/learn/solar-energy" },
+  { name: "Wind Energy", link: "/learn/wind-energy" },
+  { name: "Geothermal Energy", link: "/learn/geothermal-energy" },
+  { name: "Biomass Energy", link: "/learn/biomass-energy" }
+];
+
+const electricVehicles = [
+  { name: "Charging Infrastructure", link: "/learn/ev-charging-infrastructure" },
+  { name: "Economics of EV Ownership", link: "/learn/economics-of-ev-ownership" }
+];
+
+const electricity = [
+  { name: "Electric Utilities", link: "/learn/electric-utilities" },
+  { name: "Tariffs and PPA’s", link: "/learn/tariffs-ppas" }
+];
+
+const grid = [
+  { name: "Renewable Integration", link: "/learn/renewable-integration" },
+  { name: "Smart Grid", link: "/learn/smart-grid" }
+];
+
+const batteries = [
+  { name: "Lithium and its Significance", link: "/learn/lithium-significance" },
+  { name: "Emerging Battery Technologies", link: "/learn/emerging-battery-technologies" }
+];
+
 
 
 const LearnComp= () => {
@@ -219,7 +255,7 @@ const LearnComp= () => {
                     <Link href="/learn/electric-vehicles">
                       {" "}
                       <span className="hover:text-[#33c433] hover:no-underline">
-                        Electric Vehicles (EV's)
+                        Electric Vehicles
                       </span>
                     </Link>
                   </h2>
@@ -308,96 +344,7 @@ const LearnComp= () => {
 
         <div className="bg-black h-[0.7px] w-[90%] mx-auto mt-[7rem] mb-[6rem]"></div>
 
-        {/* Investing 101 */}
-        {/* <div className="mt-[6rem]">
-        <div className="flex flex-col justify-center items-center gap-[1rem]">
-          <div
-            className={`text-[2.2rem] md:text-[3rem] text-center font-semibold ${styles.head1}`}
-          >
-            Investing 101
-          </div>
-          <div
-            className={`${styles.head1} text-[1.05rem] md:text-[1.25rem] text-center font-semibold`}
-          >
-            A good place to start. Get the <br></br>low-down before you dive in.
-          </div>
-        </div>
-        
-        <div className="mt-[5rem] w-[85%] mx-auto sm:w-[90%] md:w-[85%] lg:[87%] xl:w-[75%] grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-[1.2rem] justify-items-center">
-          <div className="relative cursor-pointer group h-[500px] w-[300px] sm:w-full sm:h-auto object-contain">
-            <Link href="/learn/energy-storage">
-              <Image
-                alt="image"
-                src="/images/comp2/box1.svg"
-                className="block w-full h-full object-cover"
-              />
-              <div className="absolute inset-0 flex items-start justify-center p-4">
-                <div className="p-4 rounded-md text-left">
-                  <h2
-                    className={`text-[1.7rem] font-semibold mb-2 ${styles.head1} leading-[45px] group-hover:text-white`}
-                  >
-                    What is an <br /> Energy Storage?
-                  </h2>
-                  <p className="text-black text-md group-hover:text-white">
-                    Energy storage has come a long way. Before, pumped
-                    hydroelectric storage worked as a system of storing energy.
-                  </p>
-                </div>
-              </div>
-            </Link>
-          </div>
-
-          <div className="relative cursor-pointer group h-[500px] w-[300px] sm:w-full sm:h-auto object-contain">
-            <Link href="/learn/renewable-energy">
-              <Image
-                alt="image"
-                src="/images/comp2/box2.svg"
-                className="block w-full h-full object-cover"
-              />
-              <div className="absolute inset-0 flex items-start justify-center p-4">
-                <div className="p-4 rounded-md text-left">
-                  <h2
-                    className={`text-[1.7rem] font-semibold mb-2 ${styles.head1} leading-[45px] group-hover:text-white`}
-                  >
-                    What is a <br /> Renewable Energy?
-                  </h2>
-                  <p className="text-black text-md group-hover:text-white">
-                    Renewable energy comes from natural sources that replenish
-                    themselves, like solar, wind, and hydro power.
-                  </p>
-                </div>
-              </div>
-            </Link>
-          </div>
-
-          <div className="relative cursor-pointer group h-[500px] w-[300px] sm:w-full sm:h-auto object-contain">
-            <Link href="/learn/grid">
-              <Image
-                alt="image"
-                src="/images/comp2/box3.svg"
-                className="block w-full h-full object-cover"
-              />
-              <div className="absolute inset-0 flex items-start justify-center p-4">
-                <div className="p-4 rounded-md text-left">
-                  <h2
-                    className={`text-[1.7rem] font-semibold mb-2 ${styles.head1} leading-[45px] group-hover:text-white`}
-                  >
-                    What is the <br /> Grid?
-                  </h2>
-                  <p className="text-black text-md group-hover:text-white">
-                    The power grid, or simply "the grid," is a massive network
-                    of power plants and transformers that work together to
-                    deliver electricity to consumers.
-                  </p>
-                </div>
-              </div>
-            </Link>
-          </div>
-        </div>
-      </div> */}
-
-        {/* <div className="bg-black h-[0.7px] w-[90%] mx-auto mt-[8rem] mb-[6rem]"></div> */}
-
+       
         {/* Options trading essentials */}
         <div className="">
           <div className="flex flex-col justify-center items-center gap-[1.4rem]">
@@ -714,7 +661,7 @@ const LearnComp= () => {
                     <Link href="/learn/electric-vehicles">
                       {" "}
                       <span className="hover:text-[#27b633] hover:no-underline">
-                        Electric Vehicles (EV's)
+                        Electric Vehicles 
                       </span>
                     </Link>
                   </h2>

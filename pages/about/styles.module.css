@@ -192,7 +192,8 @@ margin-top: 20px;
   font-weight: 700;
   margin-bottom:rem;
   color: transparent;
-  background-image: linear-gradient(90deg,#2c7ed0 -10.12%,#00a9ed 11.59%,#00db84 69.71%);
+  /* background-image: linear-gradient(90deg,#2c7ed0 -10.12%,#00a9ed 11.59%,#00db84 69.71%); */
+  background-image: linear-gradient(90deg, #25f1fc, #5bb2ff, #b15dfb);
   /* color: white; */
   -webkit-background-clip: text;
   background-clip: text;
@@ -205,7 +206,8 @@ margin-top: 20px;
   line-height: 33px;
   margin-bottom:rem;
   color: transparent;
-  background-image: linear-gradient(90deg,#2c7ed0 -10.12%,#00a9ed 11.59%,#00db84 69.71%);
+  /* background-image: linear-gradient(90deg,#2c7ed0 -10.12%,#00a9ed 11.59%,#00db84 69.71%); */
+  background-image: linear-gradient(90deg, #25f1fc, #5bb2ff, #b15dfb);
   /* color: white; */
   -webkit-background-clip: text;
   background-clip: text;
@@ -365,4 +367,14 @@ scale: 1.02;
   .mylist li {
     font-size: small;
   }
+}
+
+.color{
+  color: transparent;
+  /* background-image: linear-gradient(90deg,#2c7ed0 -10.12%,#00a9ed 11.59%,#00db84 69.71%); */
+  background-image: linear-gradient(90deg, #25f1fc, #5bb2ff, #b15dfb);
+  /* color: white; */
+  -webkit-background-clip: text;
+  background-clip: text;
+
 }
