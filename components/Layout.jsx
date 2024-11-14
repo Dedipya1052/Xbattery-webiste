@@ -6,7 +6,7 @@ import { useRouter } from "next/router";
 
 const Layout = ({ children }) => {
   const router = useRouter();
-  const isHomePage = router.pathname === "/" || router.pathname === "/terms" || router.pathname === "/about" || router.pathname === "/privacy" || router.pathname.includes("about") || router.pathname.includes("careers");
+  const isHomePage = router.pathname === "/" || router.pathname === "/terms" || router.pathname === "/about" || router.pathname === "/privacy" || router.pathname.includes("about") || router.pathname.includes("careers") ||  router.pathname.includes("bharat-bms");
   return (
     <div className="flex flex-col min-h-screen">
       <Head>

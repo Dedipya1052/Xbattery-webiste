@@ -17,11 +17,10 @@ import { useRouter } from "next/router";
 // * fetch blogs from contentful CMS
 
 const Example = ({ media }) => {
-  // const [imageSrc, setImageSrc] = useState(HeroImg);
-  const [para, setPara] = useState(false);
-  const [para1, setPara1] = useState(false);
-  const [para2, setPara2] = useState(false);
-  const [para3, setPara3] = useState(false);
+
+  const Xbattery5Ref= useRef(null);
+  const Xbattery50Ref= useRef(null);
+  
 
   const videoUrl1 = media?.video1?.fields?.file?.url;
 
@@ -244,6 +243,68 @@ const Example = ({ media }) => {
   const handleRedirect = () => {
     router.push('/learn'); // Adjust the path if needed
   };
+
+
+  // last email
+
+  const [email, setEmail] = useState('');
+  const [message, setMessage] = useState('');
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    // Simple email validation
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
+      setMessage('Please enter a valid email address.');
+      return;
+    }
+
+    // Placeholder for API request
+    try {
+      const res = await fetch('/api/email', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ email }),
+      });
+
+
+      if (res.ok) {
+        setMessage('Thank you for registering!');
+      } else {
+        setMessage('Oops! Something went wrong.');
+      }
+    } catch (error) {
+      setMessage('Error while submitting. Please try again.');
+    }
+  };
+
+  //console.log({message});
+
+
+
+  // redirect to email 
+
+  const emailRef = useRef(null);
+
+
+  const scrollToEmail = (event) => {
+    event.preventDefault(); // Prevent the default link behavior
+    if (emailRef.current) {
+      const headerOffset = 80; // Adjust this value to match your header height
+      const elementPosition =
+      emailRef.current.getBoundingClientRect().top;
+      const offsetPosition =
+        elementPosition + window.pageYOffset - headerOffset;
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: "smooth", // Smooth scrolling
+      });
+    }
+  };
   
 
   return (
@@ -291,7 +352,7 @@ const Example = ({ media }) => {
           </div>
 
           <button className="text-white bg-transparent border border-white px-4 py-2 rounded-full hover:bg-white hover:text-black transition-colors duration-300 hidden md:block">
-            <Link href="/">Coming Soon</Link>
+            <Link href="/#registerEmail">Coming Soon</Link>
           </button>
 
           <button
@@ -374,7 +435,7 @@ const Example = ({ media }) => {
             falseState: "opacity-0",
           }}
         >
-          <div className="relative w-full top-[-4rem] ">
+          <div className="relative w-full top-[-4rem] " id="xbattery5kwh">
             <video
               className={`w-auto h-[85vh] md:w-full md:h-auto object-cover ${objectPosition}`}
               autoPlay
@@ -411,18 +472,19 @@ const Example = ({ media }) => {
               <div className="text-white text-lg lg:text-2xl text-center md:text-left font-light pt-5 pl-1">
                 High-performance lithium battery packs designed for India
               </div>
-              {/* <div className=" pt-8 flex gap-7 pl-2">
-                <div className={styles.gradientButton}>Watch Video</div>
+              <div className=" pt-8 flex gap-7 pl-2">
+                {/* <div className={styles.gradientButton}>Watch Video</div> */}
                 <Button
                   bg="transparent"
                   border="1px"
                   borderColor="white"
                   color="white"
                   _hover={{ bg: "transparent" }}
+                  onClick={scrollToEmail}
                 >
-                  Watch the Event
+                  Register now
                 </Button>
-              </div> */}
+              </div>
             </motion.div>
           </div>
         </LayoutEffect>
@@ -521,7 +583,7 @@ const Example = ({ media }) => {
 
         {/* specifications 1 */}
 
-        <div id="features" className="mb-[4rem]"></div>
+        <div className="mb-[4rem]"></div>
 
         <div className=" mb-[6rem] w-[94%] md:w-[90%] lg:w-[85%] xl:w-[75%] 2xl:w-[1450px] mx-auto">
           <AnimatedDiv>
@@ -836,7 +898,8 @@ const Example = ({ media }) => {
         </AnimatedDiv>
 
         {/* 50 kWh Powerhouse */}
-        <div className="w-[95%] md:w-[75%] 2xl:w-[1450px] mx-auto mt-[8rem] flex flex-col-reverse lg:flex-row justify-center items-center gap-[1rem] overflow-hidden">
+        <div id="xbattery50kwh" className="mb-[8rem]"></div>
+        <div className="w-[95%] md:w-[75%] 2xl:w-[1450px] mx-auto  flex flex-col-reverse lg:flex-row justify-center items-center gap-[1rem] overflow-hidden">
           {/* Video Section */}
           <div className="w-full lg:w-[55%] flex justify-center">
             <AnimatedDiv>
@@ -1171,7 +1234,7 @@ const Example = ({ media }) => {
 
         {/* Learn redirect */}
 
-        <AnimatedDiv>
+        {/* <AnimatedDiv>
         <div className="w-full bg-[#1f1f1f]">
           <div
             className="mt-[7rem] mb-[0rem] pt-[3rem] pb-[4rem] w-[94%] md:w-[90%] lg:w-[85%] xl:w-[80%] 2xl:w-[1450px] mx-auto cursor-pointer"
@@ -1206,43 +1269,67 @@ const Example = ({ media }) => {
             </div>
           </div>
         </div>
-        </AnimatedDiv>
+        </AnimatedDiv> */}
 
-        {/* <div className="w-full h-[400px] flex items-center justify-center">
-          <div
-            className="w-full h-full mx-auto cursor-pointer relative overflow-hidden"
-            onClick={handleRedirect}
-          >
-            
+        <AnimatedDiv>
+          <div className="w-full h-[400px] flex items-center justify-center">
             <div
-              className="absolute inset-0"
-              style={{
-                backgroundImage: `url('/images/hero/learn.png')`,
-                backgroundSize: "cover",
-                backgroundPosition: "center",
-                opacity: 0.25, // Set the image opacity here
-              }}
-            ></div>
+              className="w-full h-full mx-auto cursor-pointer relative overflow-hidden"
+              onClick={handleRedirect}
+            >
+              <div
+                className="absolute inset-0"
+                style={{
+                  backgroundImage: `url('/images/hero/learn.png')`,
+                  backgroundSize: "cover",
+                  backgroundPosition: "center",
+                  opacity: 0.25, // Set the image opacity here
+                }}
+              ></div>
 
-            
-            <div className="w-[94%] md:w-[90%] lg:w-[85%] xl:w-[80%] 2xl:w-[1450px] h-full mx-auto relative flex items-center justify-center p-6 text-center">
-              <div className="text-white w-[90%] md:w-[70%] lg:w-[60%]">
-                <h1 className="text-2xl md:text-3xl font-bold mb-4">
-                  Explore Topics in Energy Innovation
-                </h1>
-                <p className="text-base md:text-lg mb-6">
-                  Dive deep into energy solutions, advanced BMS, IoT, Digital
-                  Twins, AI, and the future of energy storage in India.
-                </p>
-                <button
-                  className={`px-6 py-3 rounded-lg font-bold text-white bg-transparent border-[2px] ${styles.gradientBorder}`}
-                >
-                  Learn More →
-                </button>
+              <div className="w-[94%] md:w-[90%] lg:w-[85%] xl:w-[80%] 2xl:w-[1450px] h-full mx-auto relative flex items-center justify-center p-6 text-center">
+                <div className="text-white w-[90%] md:w-[70%] lg:w-[60%]">
+                  <h1 className="text-2xl md:text-3xl font-bold mb-4">
+                    Explore Topics in Energy Innovation
+                  </h1>
+                  <p className="text-base md:text-lg mb-6">
+                    Dive deep into energy solutions, advanced BMS, IoT, Digital
+                    Twins, AI, and the future of energy storage in India.
+                  </p>
+                  <button
+                    className={`px-6 py-3 rounded-lg font-bold text-white bg-transparent border-[2px] ${styles.gradientBorder}`}
+                  >
+                    Learn More →
+                  </button>
+                </div>
               </div>
             </div>
           </div>
-        </div> */}
+        </AnimatedDiv>
+        
+        <AnimatedDiv>
+        <div className="email-registration text-center pt-[2rem] pb-[2rem] bg-[#111111]" ref={emailRef} id="registerEmail">
+          <h2 className={`text-xl font-semibold mb-4 ${styles.color} font-bolder`}>Register for Updates</h2>
+          <form onSubmit={handleSubmit} className="flex justify-center items-center mb-4]">
+            <input
+              type="email"
+              placeholder="Enter your email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              required
+              className="px-4 py-2 border border-gray-300 rounded-l-md focus:outline-none focus:ring-2 focus:border-[#bbbbbb] w-auto sm:w-[300px]"
+            />
+            <button
+              type="submit"
+              className="px-6 py-2 border border-gray-300 text-white rounded-r-md hover:bg-[#404040] focus:outline-none focus:ring-2"
+            >
+              Register
+            </button>
+
+          </form>
+          {message && <p className="text-gray-400 mt-4">{message}</p>}
+        </div>
+        </AnimatedDiv>
       </div>
     </div>
   );

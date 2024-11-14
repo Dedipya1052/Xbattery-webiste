@@ -553,7 +553,7 @@ const About = () => {
 
                 <div className="absolute bottom-[-12rem] left-0 right-0 w-[95%] md:w-[90%] xl:w-[95%] 2xl:w-[1450px] mx-auto flex justify-evenly flex-wrap md:flex-nowrap">
                   {/* Image wrapper that hides all but one image on mobile */}
-                  <div className="w-[90%] md:w-[30%] h-[450px] object-cover rounded-md">
+                  <div className="w-[90%] md:w-[45%] lg:w-[30%] h-[450px] object-cover rounded-md">
                     <Image
                       src="/images/about/people/2.png"
                       alt="photo"
@@ -564,7 +564,7 @@ const About = () => {
                   </div>
 
                   {/* Display the rest of the images only on medium screens and above */}
-                  <div className="hidden md:block w-[30%] h-[450px] object-cover rounded-md">
+                  <div className="hidden md:block md:w-[45%] lg:w-[30%] h-[450px] object-cover rounded-md">
                     <Image
                       src="/images/about/people/1.png"
                       alt="photo"
@@ -573,7 +573,7 @@ const About = () => {
                       className="object-cover rounded-md w-full h-full"
                     />
                   </div>
-                  <div className="hidden md:block w-[30%] h-[450px] object-cover rounded-md">
+                  <div className="hidden lg:block w-[30%] h-[450px] object-cover rounded-md">
                     <Image
                       src="/images/about/people/3.png"
                       alt="photo"
@@ -583,7 +583,7 @@ const About = () => {
                     />
                   </div>
                 </div>
-                
+
               </div>
             </AnimatedDiv>
             <AnimatedDiv>
@@ -608,8 +608,8 @@ const About = () => {
             </AnimatedDiv>
             <AnimatedDiv>
               <div className=" bg-[#242323]  ">
-                <div className="w-[93%] md:w-[90%] xl:w-[80%] 2xl:w-[1450px] mx-auto p-[1rem] pb-[2rem] bg-[#242323] flex flex-col md:flex-row gap-[2rem] md:gap-[4%]">
-                  <p className="text-white text-lg w-[100%] md:w-[48%] text-center  md:text-left">
+                <div className="w-[93%] md:w-[90%] xl:w-[80%] 2xl:w-[1450px] mx-auto p-[1rem] pb-[2rem] bg-[#242323] flex flex-col justify-center items-center gap-[2rem] md:gap-[0.5rem]">
+                  <p className="text-white text-lg w-[100%] md:w-[75%] lg:w-[65%] 2xl:w-[60%] text-center  md:text-left mx-auto">
                     Xbattery was founded with the vision of revolutionizing the
                     way energy is stored and consumed. Our story began when a
                     group of engineers and innovators came together to solve one
@@ -622,7 +622,7 @@ const About = () => {
                     only stored energy but did so in a way that was both
                     cost-effective and scalable.
                   </p>
-                  <p className="text-white text-lg w-[100%] md:w-[48%] text-center  md:text-left">
+                  <p className="text-white text-lg w-[100%] md:w-[75%] lg:w-[65%] 2xl:w-[60%] text-center  md:text-left mx-auto">
                     After years of research and development, Xbattery was born.
                     Our batteries are designed to cater to a wide range of
                     applications, from powering homes to supporting heavy
@@ -714,15 +714,15 @@ const About = () => {
 
         <div className="bg-[#181818] text-white py-3 pt-[2rem] mt-3rem">
           <AnimatedDiv>
-            <div className="w-[93%] md:w-[90%] xl:w-[85%] 2xl:w-[1450px] mx-auto flex flex-col gap-[1.5rem] items-start justify-between relative overflow-hidden xl:overflow-visible">
+            <div className="w-[93%] md:w-[90%] xl:w-[85%] 2xl:w-[1450px] mx-auto flex flex-col gap-[1.5rem] items-start justify-between  overflow-hidden xl:overflow-visible">
               {/* Text Section */}
-              <div className="md:w-1/2 px-4 md:px-8 text-left">
+              <div className="w-[90%] mx-auto px-4 md:px-8 text-center mt-[1rem]">
                 <h2
-                  className={`${classes.block4Head}  mb-4 text-center md:text-left`}
+                  className={`${classes.block5Head}  mb-6 text-center md:text-center  text-3xl`}
                 >
                   XBattery’s team is driving sustainable energy for India
                 </h2>
-                <p className="text-md opacity-[80%] text-center md:text-left">
+                <p className="text-md opacity-[80%] text-center md:text-center mb-3">
                   The Xbattery team is dedicated to revolutionizing energy
                   storage with advanced BMS, IoT, Digital Twins, and AI. We’re
                   committed to optimizing clean energy solutions, working
@@ -734,13 +734,13 @@ const About = () => {
                 <Image
                   src="/images/about/group2.png" // Replace with your actual image path
                   alt="Group photo"
-                  width={700}
-                  height={500}
+                  width={1000}
+                  height={700}
                   className="rounded-md mx-auto z-10"
                 />
               </div>
 
-              <div className=" absolute top-20 right-[-6rem] xl:overflow-hidden">
+              {/* <div className=" absolute top-20 right-[-6rem] xl:overflow-hidden">
                 <Image
                   src={"/images/logo1.png"}
                   alt="logo"
@@ -748,7 +748,7 @@ const About = () => {
                   width={650}
                   className=" opacity-[3%] z-[-20px] hidden md:block "
                 />
-              </div>
+              </div> */}
             </div>
           </AnimatedDiv>
         </div>

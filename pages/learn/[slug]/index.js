@@ -142,6 +142,7 @@ const renewableEnergy = [
 ];
 
 const electricVehicles = [
+  { name: "EV vs ICE Costs", link: "/learn/ev-vs-ice-costs" },
   { name: "Charging Infrastructure", link: "/learn/ev-charging-infrastructure" },
   { name: "Economics of EV Ownership", link: "/learn/economics-of-ev-ownership" }
 ];

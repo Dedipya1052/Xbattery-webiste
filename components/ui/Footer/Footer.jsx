@@ -13,7 +13,7 @@ import { FaLinkedin } from "react-icons/fa";
 
 const Footer = () => {
   const router = useRouter();
-  const isHomePage = router.pathname === "/" || router.pathname === "/terms" || router.pathname === "/about" || router.pathname === "/privacy" || router.pathname==="/careers" || router.pathname.includes("careers");
+  const isHomePage = router.pathname === "/" || router.pathname === "/terms" || router.pathname === "/about" || router.pathname === "/privacy" || router.pathname==="/careers" || router.pathname.includes("careers") ||  router.pathname.includes("bharat-bms");
  
 
   const energyStorage = [
@@ -31,6 +31,7 @@ const Footer = () => {
   ];
   
   const electricVehicles = [
+    { name: "EV vs ICE Costs", link: "/learn/ev-vs-ice-costs" },
     { name: "Charging Infrastructure", link: "/learn/ev-charging-infrastructure" },
     { name: "Economics of EV Ownership", link: "/learn/economics-of-ev-ownership" }
   ];
@@ -107,15 +108,15 @@ const Footer = () => {
                 </div>
 
                 <div className={styles.Footer_navigation__GbeEa}>
-                  <h3 className={styles.footerSubheading}>Product</h3>
-                  <Link href="/#features" className={styles.footerElements}>
-                    Features
+                  <h3 className={styles.footerSubheading}>Products</h3>
+                  <Link href="/#xbattery5kwh" className={styles.footerElements}>
+                  Xbattery 5kwh
                   </Link>
-                  <Link href="/" className={styles.footerElements}>
-                    FAQs
+                  <Link href="/#xbattery50kwh" className={styles.footerElements}>
+                  Xbattery 50kwh
                   </Link>
-                  <Link href="/" className={styles.footerElements}>
-                    Pricing
+                  <Link href="/bharat-bms" className={styles.footerElements}>
+                   Bharat BMS
                   </Link>
                 </div>
                 <div className={styles.Footer_navigation__GbeEa}>
@@ -123,11 +124,12 @@ const Footer = () => {
                   <Link href="/blog" className={styles.footerElements}>
                     Blog
                   </Link>
-                  <Link href="/learn" className={styles.footerElements}>
-                    Learn
-                  </Link>
+                 
                   <Link href="/whitepapers" className={styles.footerElements}>
                     Whitepapers
+                  </Link>
+                  <Link href="/learn" className={styles.footerElements}>
+                    Learn
                   </Link>
                 </div>
 
@@ -141,12 +143,12 @@ const Footer = () => {
                       <Link href="/careers" className={styles.footerElements}>
                         Careers
                       </Link>
-                      <Link href="/terms" className={styles.footerElements}>
+                      {/* <Link href="/terms" className={styles.footerElements}>
                         Terms
                       </Link>
                       <Link href="/privacy" className={styles.footerElements}>
                         Privacy
-                      </Link>
+                      </Link> */}
                      
                     </div>
                   </div>
@@ -191,10 +193,11 @@ const Footer = () => {
                 opacity: "45%",
                 marginBottom: "7px",
                 marginTop: "25px",
+                textAlign: "center",
               }}
             >
-              © {new Date().getFullYear()} XBattery Energy Private Limited. All
-              rights reserved.
+              © {new Date().getFullYear()} Xbattery Energy Private Limited. All
+              rights reserved. <span><Link href={"/terms"} className=" hover:underline ">Terms</Link> and <Link  href={"/privacy"} className=" hover:underline ">Privacy.</Link></span>
             </p>
           </div>
         </div>
@@ -454,7 +457,7 @@ const Footer = () => {
               </div>
               <div>
                 <p className="text-gray-400 text-left font-sans pl-[0.8rem] mt-1 text-[0.75rem]">
-                  © {new Date().getFullYear()} XBattery Energy Private Limited.
+                  © {new Date().getFullYear()} Xbattery Energy Private Limited.
                   All rights reserved.
                 </p>
               </div>

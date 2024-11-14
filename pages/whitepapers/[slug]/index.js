@@ -133,7 +133,7 @@ export async function getStaticProps({ params }) {
   const currentBlog = res.items[0].fields;
 
   //console.log(currentBlog);
-  const { title, coverImage, blogContent, slug, pdf } = currentBlog;
+  const { title, coverImage, blogContent, slug, pdf,previewImage } = currentBlog;
   // console.log({ blog: res.items });
   const blogs = await fetchBlogs();
   //console.log("initial blogs :",blogs.length);
@@ -147,6 +147,7 @@ export async function getStaticProps({ params }) {
     // categories: blog.fields.categories,
     slug: blog.fields.slug,
     pdf: blog.fields.pdf,
+    previewImage:blog.fields.previewImage,
   }));
 
   //console.log({blogs});
@@ -158,6 +159,7 @@ export async function getStaticProps({ params }) {
         blogContent,
         slug,
         pdf,
+        previewImage
         // faqs : faqs?faqs:null
       },
       blogs: filteredBlogs,
@@ -182,6 +184,7 @@ export default function BlogPage({ blog, blogs }) {
 
     blogContent,
     pdf,
+    previewImage
   } = blog;
 
   // console.log("pdf : ",pdf.fields.file.url );
@@ -317,6 +320,7 @@ export default function BlogPage({ blog, blogs }) {
       <div className={styles.container}>
         {/* <div className={styles.affBackButton} onClick={()=>router.push("/whitepapers")}> <IoArrowBack /> <p>Back</p></div> */}
         <div className={styles.mainDiv}>
+         <div className={styles.mainDiv1}>
           <h2 className={`${styles.title} font-semibold`}>{title}</h2>
           <Image
             src={"https:" + coverImage.fields.file.url}
@@ -325,15 +329,16 @@ export default function BlogPage({ blog, blogs }) {
             height={coverImage.fields.file.details.image.height}
             className={styles.coverImage}
           />
+          </div>
         </div>
-        <div className="mt-[2rem] w-[95%] md:w-[80%] mx-auto flex md:flex-row flex-col md:gap-2">
+        <div className="mt-[2rem] w-[95%] md:w-[80%] 2xl:w-[1450px] mx-auto flex md:flex-row flex-col md:gap-2">
           <div className={styles.blogholder}>
             <article className={styles.blog} style={{ marginTop: "1rem" }}>
               {documentToReactComponents(blogContent, renderOption)}
             </article>
           </div>
           <div className={styles.pdfBlock}>
-            <div className="relative w-full h-[85%]">
+            {/* <div className="relative w-full h-[85%]">
               <iframe
                 src={pdf.fields.file.url}
                 title="Whitepaper PDF"
@@ -342,7 +347,14 @@ export default function BlogPage({ blog, blogs }) {
               <div className="absolute top-1 left-[1%] w-[98%] h-12 bg-white flex items-center justify-center z-10 font-bold">
                 Whitepaper
               </div>
-            </div>
+            </div> */}
+            <Image
+            src={"https:" + previewImage.fields.file.url}
+            alt={previewImage.fields.title}
+            width={previewImage.fields.file.details.image.width}
+            height={previewImage.fields.file.details.image.height}
+            className={styles.previewImage}
+          />
             <div className="mt-[3rem] flex justify-center">
               {showButton ? (
                 <a
@@ -359,13 +371,14 @@ export default function BlogPage({ blog, blogs }) {
                   Download
                 </div>
               )}
-            </div>
+            </div>  
           </div>
         </div>
 
-        {/* <div className="mt-[4rem] flex justify-center items-center w-[100%]  mb-[2rem]">
-          <div dangerouslySetInnerHTML={{ __html: contentMatch }} />
-        </div> */}
+       
+
+
+       
       </div>
       <Modal isOpen={isOpen} onClose={onClose}>
         <ModalOverlay />
