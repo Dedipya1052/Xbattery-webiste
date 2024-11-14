@@ -138,15 +138,16 @@ const Footer = () => {
                       <Link href="/about" className={styles.footerElements}>
                         About us
                       </Link>
+                      <Link href="/careers" className={styles.footerElements}>
+                        Careers
+                      </Link>
                       <Link href="/terms" className={styles.footerElements}>
                         Terms
                       </Link>
                       <Link href="/privacy" className={styles.footerElements}>
                         Privacy
                       </Link>
-                      <Link href="/careers" className={styles.footerElements}>
-                        Careers
-                      </Link>
+                     
                     </div>
                   </div>
                 </div>

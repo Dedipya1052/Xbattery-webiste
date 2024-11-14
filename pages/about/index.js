@@ -183,22 +183,22 @@ const About = () => {
             alt="hero"
           /> */}
           <video
-              className={`w-auto h-[85vh] md:w-full md:h-[650px] 2xl:h-[80vh] object-cover object-bottom`}
-              style={{ objectPosition: 'center bottom' }}
-              autoPlay
-              muted
-              playsInline
-              loop
-              preload="none"              
-            >
-              <source src={"/videos/about/1.mp4"} type="video/mp4" />
-              Your browser does not support the video tag.
-            </video>
+            className={`w-auto h-[85vh] md:w-full md:h-[650px] 2xl:h-[80vh] object-cover object-bottom`}
+            style={{ objectPosition: "center bottom" }}
+            autoPlay
+            muted
+            playsInline
+            loop
+            preload="none"
+          >
+            <source src={"/videos/about/1.mp4"} type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
 
           <motion.div
             initial={{ x: "-100%" }}
             animate={{ x: 0 }} // Assuming you want it to always animate in
-            transition={{ duration: 0.75, delay: 0 }} 
+            transition={{ duration: 0.75, delay: 0 }}
             className={`absolute md:top-0 md:left-0  md:right-0 top-[-2rem] w-full md:w-[90%]  mx-auto h-full flex flex-col items-center md:items-start justify-center p-4 md:p-16 space-y-2 text-left ${classes.color}`}
           >
             <div className="text-[white] text-4xl lg:text-4xl font-medium mb-4">
@@ -221,7 +221,6 @@ const About = () => {
             </div>
           </motion.div>
         </div>
-
 
         {/* Xbattery: Powering the Future  and story*/}
         <div className="w-[100%] mx-auto overflow-hidden mt-[-2rem] md:mt-[2rem]">
@@ -489,7 +488,7 @@ const About = () => {
 
             <AnimatedDiv>
               <div className="relative bg-[#1f1e1e] py-16 mt-[5rem] mb-[30rem] pb-[20rem] ">
-                <div className="flex flex-col gap-[3rem] md:gap-0 md:flex-row justify-around relative z-10 w-[93%] md:w-[90%] xl:w-[85%] 2xl:w-[1450px] mx-auto">
+                <div className="flex flex-col gap-[3rem] md:gap-0 md:flex-row justify-around relative z-10 w-[93%] md:w-[90%] xl:w-[90%] 2xl:w-[1450px] mx-auto">
                   <div className="text-center text-white">
                     <div className="flex gap-[0.4rem] justify-center items-center mb-[1rem]">
                       <Image
@@ -552,30 +551,39 @@ const About = () => {
                   </div>
                 </div>
 
-                <div className="absolute bottom-[-12rem] left-0 right-0 w-[93%] md:w-[90%] xl:w-[85%] 2xl:w-[1450px] mx-auto flex justify-evenly">
-                 
-                  <Image
-                    src="/images/about/people/2.png"
-                    alt="photo"
-                    height="600"
-                    width="600"
-                    className="w-[30%] h-[450px] object-cover rounded-md" 
-                  />
-                   <Image
-                    src="/images/about/people/1.png"
-                    alt="photo"
-                    height="600"
-                    width="600"
-                    className="w-[30%] h-[450px] object-cover rounded-md "
-                  />
-                  <Image
-                    src="/images/about/people/3.png"
-                    alt="photo"
-                    height="600"
-                    width="600"
-                    className="w-[30%] h-[450px] object-cover rounded-md "
-                  />
+                <div className="absolute bottom-[-12rem] left-0 right-0 w-[95%] md:w-[90%] xl:w-[95%] 2xl:w-[1450px] mx-auto flex justify-evenly flex-wrap md:flex-nowrap">
+                  {/* Image wrapper that hides all but one image on mobile */}
+                  <div className="w-[90%] md:w-[30%] h-[450px] object-cover rounded-md">
+                    <Image
+                      src="/images/about/people/2.png"
+                      alt="photo"
+                      height="600"
+                      width="600"
+                      className="object-cover rounded-md w-full h-full"
+                    />
+                  </div>
+
+                  {/* Display the rest of the images only on medium screens and above */}
+                  <div className="hidden md:block w-[30%] h-[450px] object-cover rounded-md">
+                    <Image
+                      src="/images/about/people/1.png"
+                      alt="photo"
+                      height="600"
+                      width="600"
+                      className="object-cover rounded-md w-full h-full"
+                    />
+                  </div>
+                  <div className="hidden md:block w-[30%] h-[450px] object-cover rounded-md">
+                    <Image
+                      src="/images/about/people/3.png"
+                      alt="photo"
+                      height="600"
+                      width="600"
+                      className="object-cover rounded-md w-full h-full"
+                    />
+                  </div>
                 </div>
+                
               </div>
             </AnimatedDiv>
             <AnimatedDiv>
@@ -657,10 +665,18 @@ const About = () => {
               />
               <div className="text-white  w-full md:w-[65%] flex flex-col gap-[1rem] text-center md:text-left">
                 <div className=" text-2xl font-semibold">
-                Satish Reddy, CEO of Xbattery
+                  Satish Reddy, CEO of Xbattery
                 </div>
                 <div className=" opacity-[80%] text-lg text-center md:text-left">
-                Satish Reddy leads XBattery as founder and CEO. He spent 15 years in tech, working at Microsoft before starting his own company. His first venture, Pascalcase, grew to 35 people and hit $500K in annual revenue within 5 years. Now he's switched gears completely. Instead of building software, he's tackling something bigger: India's power backup problems. His experience scaling companies and building solid teams comes in handy when you're trying to change how energy storage works in India.
+                  Satish Reddy leads XBattery as founder and CEO. He spent 15
+                  years in tech, working at Microsoft before starting his own
+                  company. His first venture, Pascalcase, grew to 35 people and
+                  hit $500K in annual revenue within 5 years. Now he's switched
+                  gears completely. Instead of building software, he's tackling
+                  something bigger: India's power backup problems. His
+                  experience scaling companies and building solid teams comes in
+                  handy when you're trying to change how energy storage works in
+                  India.
                 </div>
               </div>
             </div>
@@ -676,10 +692,18 @@ const About = () => {
               />
               <div className="text-white  w-full md:w-[65%] flex flex-col gap-[1rem] text-center md:text-left">
                 <div className=" text-2xl font-semibold">
-                Sonu Mishra, CTO of Xbattery
+                  Sonu Mishra, CTO of Xbattery
                 </div>
                 <div className=" opacity-[80%] text-lg">
-                Sonu Mishra brings hands-on battery expertise to XBattery as co-founder and CTO. After getting his Master's in Embedded Systems from Stuttgart, he spent 5 years at Bosch Germany working on energy systems and battery management. Now back in India, he's putting his German engineering experience to work on local power problems. Turns out, designing chips and battery systems for one of Germany's biggest tech companies is pretty useful when you're building power backup solutions for Indian conditions.
+                  Sonu Mishra brings hands-on battery expertise to XBattery as
+                  co-founder and CTO. After getting his Master's in Embedded
+                  Systems from Stuttgart, he spent 5 years at Bosch Germany
+                  working on energy systems and battery management. Now back in
+                  India, he's putting his German engineering experience to work
+                  on local power problems. Turns out, designing chips and
+                  battery systems for one of Germany's biggest tech companies is
+                  pretty useful when you're building power backup solutions for
+                  Indian conditions.
                 </div>
               </div>
             </div>
