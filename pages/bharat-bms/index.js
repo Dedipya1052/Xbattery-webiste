@@ -16,15 +16,18 @@ const BharatBMS = () => {
   return (
     <>
       <Head>
-        <title>Bharat BMS | Xbattery</title>
+        <title>BharatBMS | Xbattery</title>
 
         <meta property="og:image" content="/favicon.webp" />
         <meta property="og:site_name" content="Xbattery" />
-        <meta property="og:title" content="Bharat BMS | Xbattery" />
+        <meta property="og:title" content="BharatBMS | Xbattery" />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://xbattery.energy/bharat-bms" />
 
-        <meta name="description" content="Advanced Battery Management System by XBattery" />
+        <meta
+          name="description"
+          content="Advanced Battery Management System by XBattery"
+        />
       </Head>
 
       <div className={classes.head1}>
@@ -71,7 +74,7 @@ const BharatBMS = () => {
             </div>
 
             <button className="text-white bg-transparent border border-white px-4 py-2 rounded-full hover:bg-white hover:text-black transition-colors duration-300 hidden md:block">
-              <Link href="/">Coming Soon</Link>
+              <Link href="/#registerEmail">Get Notified</Link>
             </button>
 
             <button
@@ -133,34 +136,87 @@ const BharatBMS = () => {
                 </button>
               </Link>
 
-              <Link href="/">
+              <Link href="/#registerEmail">
                 <button
                   className="text-white bg-transparent border border-white px-4 py-2 rounded-full hover:bg-white hover:text-black transition-colors duration-300"
                   onClick={handleMenuItemClick}
                 >
-                  Coming Soon
+                  Get Notified
                 </button>
               </Link>
             </div>
           )}
         </nav>
-        
-        <div className="flex flex-col justify-center items-center bg-black text-white">
+
+        {/* <div className="flex flex-col justify-center items-center bg-black text-white">
      
 
       <main className="text-center px-6 mt-[3.5rem]  md:mt-[6rem] mb-[6rem]">
-        <h1 className={`text-5xl font-bold mb-8 ${classes.color}`}>Introducing Bharat BMS</h1>
+        <h1 className={`text-5xl font-bold mb-8 ${classes.color}`}>Introducing BharatBMS</h1>
         <p className="text-lg max-w-3xl mx-auto leading-relaxed mb-8">
-          Bharat BMS is a state-of-the-art Battery Management System designed to optimize, protect,
+          BharatBMS is a state-of-the-art Battery Management System designed to optimize, protect,
           and enhance the efficiency of your energy storage systems. With intelligent monitoring and
-          control, Bharat BMS ensures long-lasting performance and reliability for both our XBattery
+          control, BharatBMS ensures long-lasting performance and reliability for both our XBattery
           5kWh and XBattery 50kWh solutions. 
         </p>
         <button className="text-white font-semibold px-8 py-3 border border-white rounded-3xl transition duration-300">
           Coming Soon
         </button>
       </main>
-    </div>
+    </div> */}
+
+        <div className="flex flex-col justify-center items-center bg-black text-white">
+          <main className="text-center px-6 mt-[3.5rem] md:mt-[6rem] mb-[6rem]">
+            <h1 className={`text-5xl font-bold mb-8 ${classes.color}`}>
+              Introducing BharatBMS
+            </h1>
+            <p className="text-lg max-w-3xl mx-auto leading-relaxed mb-8">
+              BharatBMS is a state-of-the-art Battery Management System designed
+              to optimize, protect, and enhance the efficiency of your energy
+              storage systems. With intelligent monitoring and control,
+              BharatBMS ensures long-lasting performance and reliability for
+              both our XBattery 5kWh and XBattery 50kWh solutions.
+            </p>
+
+            {/* Image Section */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-10 w-[90%]  md:w-[80%] lg:w-[70%] mx-auto px-4 md:px-8">
+              <div className="flex justify-center">
+                <Image
+                  src="/images/bharatbms/1.png"
+                  alt="Battery System Image 1"
+                  className="rounded-lg shadow-lg"
+                  width={400}
+                  height={300}
+                  style={{ objectFit: "cover" }}
+                />
+              </div>
+              <div className="flex justify-center">
+                <Image
+                  src="/images/bharatbms/2.png"
+                  alt="Battery System Image 2"
+                  className="rounded-lg shadow-lg"
+                  width={400}
+                  height={300}
+                  style={{ objectFit: "cover" }}
+                />
+              </div>
+              <div className="flex justify-center">
+                <Image
+                  src="/images/bharatbms/3.png"
+                  alt="Battery System Image 3"
+                  className="rounded-lg shadow-lg"
+                  width={400}
+                  height={300}
+                  style={{ objectFit: "cover" }}
+                />
+              </div>
+            </div>
+
+            <button className="text-white font-semibold px-8 py-3 border border-white rounded-3xl transition duration-300 mt-[3rem]">
+              Coming Soon
+            </button>
+          </main>
+        </div>
       </div>
     </>
   );

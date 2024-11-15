@@ -318,6 +318,16 @@
   -webkit-background-clip: text;
   background-clip: text;
 }
+.color1{
+  font-size: 2.2rem;
+  font-weight: 700;
+ 
+  color: transparent;
+  background-image: linear-gradient(90deg, #25f1fc, #5bb2ff, #b15dfb);
+
+  -webkit-background-clip: text;
+  background-clip: text;
+}
 
 .gradientBorder {
   border-image: linear-gradient(90deg, #25f1fc, #5bb2ff, #b15dfb) 1;

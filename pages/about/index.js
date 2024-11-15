@@ -37,6 +37,21 @@ const About = () => {
       });
     }
   };
+  const handleScroll1 = async (e) => {
+    e.preventDefault();
+
+    // Navigate to the about page, then smooth scroll
+    await router.push('/about'); // This navigates to /about page
+    const teamsSection = document.querySelector('#story');
+
+    if (teamsSection) {
+      // Smoothly scrolls to the section and stops exactly at it
+      teamsSection.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start', // 'start' to align to the top of the viewport, 'center' for middle
+      });
+    }
+  };
 
   return (
     <>
@@ -99,7 +114,7 @@ const About = () => {
             </div>
 
             <button className="text-white bg-transparent border border-white px-4 py-2 rounded-full hover:bg-white hover:text-black transition-colors duration-300 hidden md:block">
-              <Link href="/">Coming Soon</Link>
+              <Link href="/#registerEmail">Get Notified</Link>
             </button>
 
             <button
@@ -161,12 +176,12 @@ const About = () => {
                 </button>
               </Link>
 
-              <Link href="/">
+              <Link href="/#registerEmail">
                 <button
                   className="text-white bg-transparent border border-white px-4 py-2 rounded-full hover:bg-white hover:text-black transition-colors duration-300"
                   onClick={handleMenuItemClick}
                 >
-                  Coming Soon
+                  Get Notified
                 </button>
               </Link>
             </div>
@@ -214,7 +229,7 @@ const About = () => {
                 borderColor="white"
                 color="white"
                 _hover={{ bg: "transparent" }}
-                //onClick={scrollToOpportunities}
+                onClick={handleScroll1}
               >
                 Learn More About Us
               </Button>
@@ -579,13 +594,13 @@ const About = () => {
                       alt="photo"
                       height="600"
                       width="600"
-                      className="object-cover rounded-md w-full h-full"
+                      className="object-cover rounded-md w-full h-full object-center "
                     />
                   </div>
                 </div>
-
               </div>
             </AnimatedDiv>
+            <div id="story"></div>
             <AnimatedDiv>
               <div className="relative bg-[#242323] min-h-[7rem] xs:min-h-[12rem] sm:min-h-[14rem] md:min-h-[16rem] lg:min-h-[15rem]  xl:min-h-[21rem]">
                 <div className="w-[95%] lg:w-[78%] 2xl:w-[1140px] mx-auto absolute top-[-7rem] left-1/2 transform -translate-x-1/2">
@@ -606,9 +621,23 @@ const About = () => {
                 </div>
               </div>
             </AnimatedDiv>
+           
             <AnimatedDiv>
               <div className=" bg-[#242323]  ">
                 <div className="w-[93%] md:w-[90%] xl:w-[80%] 2xl:w-[1450px] mx-auto p-[1rem] pb-[2rem] bg-[#242323] flex flex-col justify-center items-center gap-[2rem] md:gap-[0.5rem]">
+                  <div class="flex flex-wrap items-center text-center gap-5 mb-4 w-[100%] md:w-[75%] lg:w-[65%] 2xl:w-[60%] justify-center md:justify-start" >
+                    <Image
+                      src="/images/about/teams/shortimages/1.png"
+                      alt="Founder Image"
+                      height={100}
+                      width={100}
+                      class="w-20 h-20 rounded-full "
+                    />
+                    <div className="text-left">
+                    <h2 class="text-white text-xl font-bold">Satish Reddy</h2>
+                    <p class="text-gray-400 text-md">Founder & CEO</p>
+                    </div>
+                  </div>
                   <p className="text-white text-lg w-[100%] md:w-[75%] lg:w-[65%] 2xl:w-[60%] text-center  md:text-left mx-auto">
                     Xbattery was founded with the vision of revolutionizing the
                     way energy is stored and consumed. Our story began when a
@@ -720,7 +749,7 @@ const About = () => {
                 <h2
                   className={`${classes.block5Head}  mb-6 text-center md:text-center  text-3xl`}
                 >
-                  XBattery’s team is driving sustainable energy for India
+                  Xbattery’s team is driving sustainable energy for India
                 </h2>
                 <p className="text-md opacity-[80%] text-center md:text-center mb-3">
                   The Xbattery team is dedicated to revolutionizing energy
@@ -734,8 +763,8 @@ const About = () => {
                 <Image
                   src="/images/about/group2.png" // Replace with your actual image path
                   alt="Group photo"
-                  width={1000}
-                  height={700}
+                  width={900}
+                  height={600}
                   className="rounded-md mx-auto z-10"
                 />
               </div>

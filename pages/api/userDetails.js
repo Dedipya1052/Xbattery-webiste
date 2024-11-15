@@ -24,7 +24,7 @@ export default async function handler(req, res) {
     // Return the created document as the response
     return res.status(201).json({
       message: "Document inserted successfully",
-      data: createdItem,
+      data: createdItem, 
     });
   } catch (error) {
     console.error("Error inserting document into Cosmos DB:", error);

@@ -352,7 +352,7 @@ const Example = ({ media }) => {
           </div>
 
           <button className="text-white bg-transparent border border-white px-4 py-2 rounded-full hover:bg-white hover:text-black transition-colors duration-300 hidden md:block">
-            <Link href="/#registerEmail">Coming Soon</Link>
+            <Link href="/#registerEmail">Get Notified</Link>
           </button>
 
           <button
@@ -414,12 +414,12 @@ const Example = ({ media }) => {
               </button>
             </Link>
 
-            <Link href="/">
+            <Link href="/#registerEmail">
               <button
                 className="text-white bg-transparent border border-white px-4 py-2 rounded-full hover:bg-white hover:text-black transition-colors duration-300"
                 onClick={handleMenuItemClick}
               >
-                Coming Soon
+               Get Notified
               </button>
             </Link>
           </div>
@@ -482,7 +482,7 @@ const Example = ({ media }) => {
                   _hover={{ bg: "transparent" }}
                   onClick={scrollToEmail}
                 >
-                  Register now
+                  Get Notified
                 </Button>
               </div>
             </motion.div>
@@ -1283,7 +1283,7 @@ const Example = ({ media }) => {
                   backgroundImage: `url('/images/hero/learn.png')`,
                   backgroundSize: "cover",
                   backgroundPosition: "center",
-                  opacity: 0.25, // Set the image opacity here
+                  opacity: 0.2, 
                 }}
               ></div>
 
@@ -1308,8 +1308,8 @@ const Example = ({ media }) => {
         </AnimatedDiv>
         
         <AnimatedDiv>
-        <div className="email-registration text-center pt-[2rem] pb-[2rem] bg-[#111111]" ref={emailRef} id="registerEmail">
-          <h2 className={`text-xl font-semibold mb-4 ${styles.color} font-bolder`}>Register for Updates</h2>
+        <div className="email-registration text-center pt-[2rem] pb-[2rem] " ref={emailRef} id="registerEmail">
+          <h2 className={`text-3xl font-semibold mb-[1.5rem] ${styles.color1} font-bolder`}>Discover the Latest</h2>
           <form onSubmit={handleSubmit} className="flex justify-center items-center mb-4]">
             <input
               type="email"
@@ -1317,13 +1317,13 @@ const Example = ({ media }) => {
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               required
-              className="px-4 py-2 border border-gray-300 rounded-l-md focus:outline-none focus:ring-2 focus:border-[#bbbbbb] w-auto sm:w-[300px]"
+              className="px-4 py-2 border border-gray-300 rounded-l-md focus:outline-none focus:ring-2 focus:border-[#bbbbbb] w-auto sm:w-[300px] bg-[#0f0f0f]"
             />
             <button
               type="submit"
-              className="px-6 py-2 border border-gray-300 text-white rounded-r-md hover:bg-[#404040] focus:outline-none focus:ring-2"
+              className="px-6 py-2 border border-gray-300 text-white rounded-r-md hover:bg-[#181818] focus:outline-none focus:ring-2"
             >
-              Register
+             Get Notified
             </button>
 
           </form>

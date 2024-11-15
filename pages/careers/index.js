@@ -95,7 +95,7 @@ const Careers = () => {
             </div>
 
             <button className="text-white bg-transparent border border-white px-4 py-2 rounded-full hover:bg-white hover:text-black transition-colors duration-300 hidden md:block">
-              <Link href="/">Coming Soon</Link>
+              <Link href="/#registerEmail">Get Notified</Link>
             </button>
 
             <button
@@ -157,12 +157,12 @@ const Careers = () => {
                 </button>
               </Link>
 
-              <Link href="/">
+              <Link href="/#registerEmail">
                 <button
                   className="text-white bg-transparent border border-white px-4 py-2 rounded-full hover:bg-white hover:text-black transition-colors duration-300"
                   onClick={handleMenuItemClick}
                 >
-                  Coming Soon
+                 Get Notified
                 </button>
               </Link>
             </div>
@@ -267,6 +267,7 @@ const Careers = () => {
               </Link>
 
               {/* Box 3 */}
+              <Link href={"/careers/software-engineer-full-stack-core"}>
               <div className="bg-[#212020] rounded-lg shadow-lg p-1  hover:cursor-pointer hover:bg-[#282828] transition-all duration-400">
                 <Image
                   src="/images/careers/card3.webp"
@@ -277,7 +278,7 @@ const Careers = () => {
                 />
                 <div className="p-2 pb-6 px-4">
                   <h2 className="text-xl font-semibold mt-4">
-                    Software Engineer III, Full Stack, Core
+                    Software Engineer, Full Stack - Core
                   </h2>
                   <p className="text-sm mt-2">Hyderabad, Telangana, India</p>
                   {/* <p className="mt-4 text-gray-400">
@@ -286,6 +287,7 @@ const Careers = () => {
           </p> */}
                 </div>
               </div>
+              </Link>
             </div>
           </AnimatedDiv>
         </div>

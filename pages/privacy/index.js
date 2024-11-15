@@ -6,6 +6,7 @@ import { Button ,} from "@chakra-ui/react";
 import { useRouter } from "next/router";
 import { IoArrowBack } from "react-icons/io5";
 import Head from "next/head";
+import { UnorderedList, ListItem } from "@chakra-ui/react";
 
 const Privacy = () => {
   const router = useRouter();
@@ -74,7 +75,7 @@ const Privacy = () => {
             </div>
 
             <button className="text-white bg-transparent border border-white px-4 py-2 rounded-full hover:bg-white hover:text-black transition-colors duration-300 hidden md:block">
-              <Link href="/">Coming Soon</Link>
+              <Link href="/#registerEmail">Get Notified</Link>
             </button>
 
             <button
@@ -136,12 +137,12 @@ const Privacy = () => {
                 </button>
               </Link>
 
-              <Link href="/">
+              <Link href="/#registerEmail">
                 <button
                   className="text-white bg-transparent border border-white px-4 py-2 rounded-full hover:bg-white hover:text-black transition-colors duration-300"
                   onClick={handleMenuItemClick}
                 >
-                  Coming Soon
+                 Get Notified
                 </button>
               </Link>
             </div>
@@ -183,17 +184,17 @@ const Privacy = () => {
             <h3 className={classes.h3inaffiliate}>
               2. How We Use Your Information
             </h3>
-            <ul className={classes.ulholder}>
+            <div className={classes.ulholder}>
               <p>
                 We use your personal information to:
                 <ul>
-                  <li>Process your orders and payments</li>
-                  <li>Provide customer support</li>
-                  <li>Send updates and promotions (with your consent)</li>
-                  <li>Improve our services</li>
+                  <li>1. Process your orders and payments</li>
+                  <li>2. Provide customer support</li>
+                  <li>3. Send updates and promotions (with your consent)</li>
+                  <li>4. Improve our services</li>
                 </ul>
               </p>
-            </ul>
+            </div>
           </div>
           <div className={classes.affiliateholder}>
             <h3 className={classes.h3inaffiliate}>3. Sharing of Information</h3>
@@ -203,10 +204,10 @@ const Privacy = () => {
                 except:
                 <ul>
                   <li>
-                    To service providers assisting in order fulfillment and
+                    1. To service providers assisting in order fulfillment and
                     payment processing
                   </li>
-                  <li>When required by law</li>
+                  <li>2. When required by law</li>
                 </ul>
               </p>
             </ul>

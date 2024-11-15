@@ -86,7 +86,7 @@ const Job2 = () => {
             </div>
 
             <button className="text-white bg-transparent border border-white px-4 py-2 rounded-full hover:bg-white hover:text-black transition-colors duration-300 hidden md:block">
-              <Link href="/">Coming Soon</Link>
+              <Link href="/#registerEmail">Get Notified</Link>
             </button>
 
             <button
@@ -148,12 +148,12 @@ const Job2 = () => {
                 </button>
               </Link>
 
-              <Link href="/">
+              <Link href="/#registerEmail">
                 <button
                   className="text-white bg-transparent border border-white px-4 py-2 rounded-full hover:bg-white hover:text-black transition-colors duration-300"
                   onClick={handleMenuItemClick}
                 >
-                  Coming Soon
+                 Get Notified
                 </button>
               </Link>
             </div>

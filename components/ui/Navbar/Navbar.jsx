@@ -77,10 +77,10 @@ const Navbar = () => {
         </div>
         <div className="hidden md:flex items-center">
           <NavLink
-            href="/"
+            href="/#registerEmail"
             className="flex items-center justify-center gap-x-1 text-sm text-black font-bold custom-btn-bg border border-gray-500 active:bg-gray-900"
           >
-            Coming soon
+           Get Notified
           </NavLink>
         </div>
         {/* Mobile menu toggle */}
@@ -102,11 +102,11 @@ const Navbar = () => {
             <Link href="/learn" className="block text-[1rem] hover:text-[#2faf2f] transition-all duration-200 mb-2" onClick={closeMenu}>Learn</Link>
             <Link href="/whitepapers" className="block text-[1rem] hover:text-[#2faf2f] transition-all duration-200 mb-2" onClick={closeMenu}>Whitepapers</Link>
             <NavLink
-              href="/"
+              href="/#registerEmail"
               className="flex items-center justify-center gap-x-1 text-sm text-black font-bold custom-btn-bg border border-gray-500 active:bg-gray-900 mt-5"
               onClick={closeMenu}
             >
-              Coming soon
+             Get Notified
             </NavLink>
           </div>
         </div>

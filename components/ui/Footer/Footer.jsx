@@ -15,43 +15,41 @@ const Footer = () => {
   const router = useRouter();
   const isHomePage = router.pathname === "/" || router.pathname === "/terms" || router.pathname === "/about" || router.pathname === "/privacy" || router.pathname==="/careers" || router.pathname.includes("careers") ||  router.pathname.includes("bharat-bms");
  
+const energyStorage = [
+  { name: "Battery Energy Storage System", link: "/learn/battery-energy-storage-systems" },
+  //{ name: "Types of Energy Storage Systems", link: "/learn/types-of-energy-storage-systems" },
+  { name: "Energy Storage Applications", link: "/learn/understanding-energy-storage-applications" }
+];
 
-  const energyStorage = [
-    { name: "Battery Energy Storage System", link: "/learn/battery-energy-storage-systems" },
-    { name: "Types of Energy Storage Systems", link: "/learn/types-of-energy-storage-systems" },
-   // { name: "Emerging and Innovative Energy Storage Technologies", link: "/learn/emerging-innovative-energy-storage-technologies" },
-    { name: "Energy Storage Applications", link: "/learn/understanding-energy-storage-applications" }
-  ];
-  
-  const renewableEnergy = [
-    { name: "Solar Energy", link: "/learn/solar-energy" },
-    { name: "Wind Energy", link: "/learn/wind-energy" },
-    { name: "Geothermal Energy", link: "/learn/geothermal-energy" },
-    { name: "Biomass Energy", link: "/learn/biomass-energy" }
-  ];
-  
-  const electricVehicles = [
-    { name: "EV vs ICE Costs", link: "/learn/ev-vs-ice-costs" },
-    { name: "Charging Infrastructure", link: "/learn/ev-charging-infrastructure" },
-    { name: "Economics of EV Ownership", link: "/learn/economics-of-ev-ownership" }
-  ];
-  
-  const electricity = [
-    { name: "Electric Utilities", link: "/learn/electric-utilities" },
-    { name: "Tariffs and PPA’s", link: "/learn/tariffs-ppas" }
-  ];
-  
-  const grid = [
-    { name: "Renewable Integration", link: "/learn/renewable-integration" },
-    { name: "Smart Grid", link: "/learn/smart-grid" }
-  ];
-  
-  const batteries = [
-    { name: "Lithium and its Significance", link: "/learn/lithium-significance" },
-    { name: "Emerging Battery Technologies", link: "/learn/emerging-battery-technologies" }
-  ];
-  
-  
+const renewableEnergy = [
+  { name: "Solar Energy", link: "/learn/solar-energy" },
+  { name: "Wind Energy", link: "/learn/wind-energy" }, 
+  // { name: "Geothermal Energy", link: "/learn/geothermal-energy" },
+  // { name: "Biomass Energy", link: "/learn/biomass-energy" }
+];
+
+const electricVehicles = [
+  { name: "EV vs ICE Costs", link: "/learn/ev-vs-ice-costs" },
+  { name: "Charging Infrastructure", link: "/learn/ev-charging-infrastructure" },
+  // { name: "Economics of EV Ownership", link: "/learn/economics-of-ev-ownership" }
+];
+
+const electricity = [
+  { name: "India’s Electricity Sector", link: "/learn/indias-electricity-sector" },
+  { name: "Tariffs and PPA’s", link: "/learn/tariffs-ppas" },
+  // { name: "Electric Utilities", link: "/learn/electric-utilities" }
+];
+
+const grid = [
+  { name: "Renewable Integration", link: "/learn/renewable-integration" }, 
+  { name: "Smart Grid", link: "/learn/smart-grid" }
+];
+
+const batteries = [
+  { name: "Understanding Lithium", link: "/learn/understanding-lithium" }, 
+  { name: "Emerging Battery Technologies", link: "/learn/emerging-battery-technologies" }
+];
+
 
   return (
     <>
@@ -116,7 +114,7 @@ const Footer = () => {
                   Xbattery 50kwh
                   </Link>
                   <Link href="/bharat-bms" className={styles.footerElements}>
-                   Bharat BMS
+                   BharatBMS
                   </Link>
                 </div>
                 <div className={styles.Footer_navigation__GbeEa}>
