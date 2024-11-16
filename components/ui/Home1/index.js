@@ -74,7 +74,7 @@ const Example = ({ media }) => {
     }
   }, [controls, isInView1]);
 
-  const [activeBattery, setActiveBattery] = useState("XBattery1");
+  const [activeBattery, setActiveBattery] = useState("XBattery1"); 
 
   const batteryData = {
     XBattery1: {
