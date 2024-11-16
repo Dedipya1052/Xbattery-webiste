@@ -1039,10 +1039,11 @@ const Example = ({ media }) => {
                 Xbattery <br /> 50kWh
               </div>
               <div className="text-white text-[1.2rem] sm:text-[1.3rem] mt-3">
-                Xbattery 50kWh is a powerful energy solution for businesses, UPS
+                {/* Xbattery 50kWh is a powerful energy solution for businesses, UPS
                 systems, and LEO operations, giving reliable and scalable power
                 to ensure the critical systems that you depend on will run
-                smoothly and efficiently.
+                smoothly and efficiently. */}
+                Xbattery 50kWh is a powerful energy solution for businesses and UPS systems, giving reliable and scalable power to ensure the critical systems that you depend on will run smoothly and efficiently.
               </div>
             </motion.div>
           </div>
