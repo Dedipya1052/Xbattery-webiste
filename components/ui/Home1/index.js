@@ -122,7 +122,7 @@ const Example = ({ media }) => {
         transition: "Seamless backup transition",
       },
       size: "370 kgs",
-      scalable: "5 MW continuous",
+      scalable: "50 MW continuous",
       certifications: {
         one: "UL 1973",
         two: "IEEE 154",
@@ -147,6 +147,45 @@ const Example = ({ media }) => {
     },
    
   };
+
+  const batteryFeatures = [
+    {
+      heading: "Reliable Backup",
+      content: "Powers your home for up to 5 days during outages.",
+    },
+    {
+      heading: "Solar Safeguard",
+      content: "Stops charging automatically when the battery is full.",
+    },
+    {
+      heading: "Intelligent Modes",
+      content: "Adjusts for power cuts and restores seamlessly.",
+    },
+    {
+      heading: "Expandable System",
+      content: "Add modules as your energy needs grow.",
+    },
+  ];
+
+  const batteryFeatures2 = [
+    {
+      heading: "Reliable Backup",
+      content: "Keeps your business running during power outages, minimizing downtime.",
+    },
+    {
+      heading: "Solar Safeguard",
+      content: "Stops charging when the battery is full, optimizing efficiency.",
+    },
+    {
+      heading: "Intelligent Modes",
+      content: "Adapts to power cuts and restores seamlessly.",
+    },
+    {
+      heading: "Scalable for Business",
+      content: "Grows with your energy needs, ideal for large operations.",
+    },
+  ];
+  
 
   const handleBatteryChange = (battery) => {
     setActiveBattery(battery);
@@ -419,7 +458,7 @@ const Example = ({ media }) => {
                 className="text-white bg-transparent border border-white px-4 py-2 rounded-full hover:bg-white hover:text-black transition-colors duration-300"
                 onClick={handleMenuItemClick}
               >
-               Get Notified
+                Get Notified
               </button>
             </Link>
           </div>
@@ -498,9 +537,9 @@ const Example = ({ media }) => {
           </AnimatedDiv>
           <AnimatedDiv>
             <div className="text-white text-[1.3rem] text-center mt-3">
-              Scale power from 5kWh to 180kWh or 3kW to 36kW to perfectly match
-              your needs with X1. No matter how much power or backup capacity
-              you need.
+              Xbattery’s 5kWh system is designed to grow with your needs. Simply
+              add more modules to expand capacity and keep up with your power
+              demands.
             </div>
           </AnimatedDiv>
 
@@ -511,7 +550,7 @@ const Example = ({ media }) => {
                   <div className={`flex flex-col gap-0.5`}>
                     <div className="text-white text-[2.4rem] font-bold text-center">
                       <div className={styles.textColor}>
-                        {`${3 * batteryCount}kW/${5 * batteryCount}kWh`}
+                        {`${5 * batteryCount}kWh`}
                       </div>
                     </div>
                     <div className="text-white text-[1.3rem] font-light opacity-[60%] text-center">
@@ -638,6 +677,31 @@ const Example = ({ media }) => {
                   Features
                 </div>
                 <div className="w-[85%] mx-auto md:w-full flex flex-row flex-wrap md:flex-nowrap justify-between md:justify-start sm:flex-row gap-[2rem] sm:gap-[10%]">
+                  {batteryFeatures.map((feature, index) => (
+                    <div key={index} className="flex flex-col gap-2">
+                      <div className="text-[#979797] text-sm text-left">
+                        {feature.heading}
+                      </div>
+                      <div id="value">
+                        <div className="text-white text-sm">
+                          {feature.content}
+                        </div>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </AnimatedDiv>
+          )}
+
+          {/* Features for Xbattery2 */}
+          {activeBattery === "XBattery2" && (
+            <AnimatedDiv>
+              <div className="mt-[4rem] flex flex-col gap-[1rem] pb-[4rem] border-b-[1px] border-[#2e2e2e]">
+                <div className="text-white font-bold text-xl text-center md:text-left mb-3 md:mb-0">
+                  Specifications
+                </div>
+                <div className="w-[85%] mx-auto md:w-full flex flex-row flex-wrap md:flex-nowrap justify-between md:justify-start sm:flex-row gap-[2rem] sm:gap-[10%]">
                   <div className="flex flex-col gap-2">
                     <div className="text-[#979797] text-sm text-left">
                       Size and Weight
@@ -645,6 +709,16 @@ const Example = ({ media }) => {
                     <div id="value">
                       <div className="text-white text-sm">
                         {currentBattery.size}
+                      </div>
+                    </div>
+                  </div>
+                  <div className="flex flex-col gap-2">
+                    <div className="text-[#979797] text-sm">
+                      Energy Capacity
+                    </div>
+                    <div id="value">
+                      <div className="text-white text-sm">
+                        {currentBattery.energyCapacity}
                       </div>
                     </div>
                   </div>
@@ -674,51 +748,6 @@ const Example = ({ media }) => {
               </div>
             </AnimatedDiv>
           )}
-
-          {/* Features for Xbattery2 */}
-          {activeBattery === "XBattery2" && (
-            <AnimatedDiv>
-              <div className="mt-[4rem] flex flex-col gap-[1rem] pb-[4rem] border-b-[1px] border-[#2e2e2e]">
-                <div className="text-white font-bold text-xl text-center md:text-left mb-3 md:mb-0">
-                  Specifications
-                </div>
-                <div className="w-[85%] mx-auto md:w-full flex flex-row flex-wrap md:flex-nowrap justify-between md:justify-start sm:flex-row gap-[2rem] sm:gap-[10%]">
-                  <div className="flex flex-col gap-2">
-                    <div className="text-[#979797] text-sm">
-                      Energy Capacity
-                    </div>
-                    <div id="value">
-                      <div className="text-white text-sm">
-                        {currentBattery.energyCapacity}
-                      </div>
-                    </div>
-                  </div>
-                  <div className="flex flex-col gap-2">
-                    <div className="text-[#979797] text-sm">On-Grid Power</div>
-                    <div id="value">
-                      <div className="text-white text-sm">
-                        {currentBattery.onGridPower}
-                      </div>
-                    </div>
-                  </div>
-                  <div className="flex flex-col gap-2">
-                    <div className="text-[#979797] text-sm">Backup Power</div>
-                    <div id="value">
-                      <div className="text-white text-sm">
-                        {currentBattery.backupPower.peak}
-                      </div>
-                      <div className="text-white text-sm">
-                        {currentBattery.backupPower.motorStart}
-                      </div>
-                      <div className="text-white text-sm">
-                        {currentBattery.backupPower.transition}
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </AnimatedDiv>
-          )}
         </div>
 
         {/* modes */}
@@ -727,13 +756,14 @@ const Example = ({ media }) => {
             <div
               className={`${styles.block3Head} text-center text-[1.5rem] md:text-[2rem]`}
             >
-              Extreme Off-Grid Performance
+              How It Works
             </div>
           </AnimatedDiv>
           <AnimatedDiv>
             <div className="text-white text-[1.2rem] md:text-[1.5rem] text-center mt-3">
-              You're protected at all stages of an outage with X1 and its four
-              off-grid features. They start long before a blackout occurs.
+              You’re covered at every stage of an outage. Its intelligent modes
+              kick in before the power goes out, ensuring your stays powered
+              through any disruption.
             </div>
           </AnimatedDiv>
 
@@ -741,7 +771,7 @@ const Example = ({ media }) => {
             <AnimatedDiv>
               <video
                 ref={videoRef1}
-                className="w-full min-h-[400px] md:min-h-[650px] object-cover"
+                className="w-full min-h-[400px] md:min-h-[650px] object-cover object-right md:object-center"
                 autoPlay
                 muted
                 playsInline
@@ -768,10 +798,10 @@ const Example = ({ media }) => {
 
               <div className={styles.switchBox}>
                 {[
-                  "Before Outage",
-                  "Outage Occurrence",
-                  "During Blackouts",
-                  "Extended Outages",
+                  "Normal Operation",
+                  "During Power Outages",
+                  "Power Restoration",
+                  "Solar Integration",
                 ].map((label, index) => (
                   <div
                     key={index}
@@ -788,7 +818,7 @@ const Example = ({ media }) => {
               </div>
             </AnimatedDiv>
 
-            <AnimatedDiv>
+            {/* <AnimatedDiv>
               {selectedIndex === 0 && (
                 <div className="w-[90%] mx-auto flex flex-col md:flex-row justify-between mt-[2rem]">
                   <div className="w-full md:w-[50%] text-white opacity-[50%]">
@@ -858,6 +888,80 @@ const Example = ({ media }) => {
                   </div>
                 </div>
               )}
+            </AnimatedDiv> */}
+
+            <AnimatedDiv>
+              {selectedIndex === 0 && (
+                <div className="w-[90%] mx-auto flex flex-col md:flex-row justify-between mt-[2rem]">
+                  <div className="w-full md:w-[50%] text-white opacity-[50%]">
+                    In Normal Mode, the 5kWh Xbattery provides reliable power
+                    for your home, ensuring daily activities run smoothly
+                    without any interruptions.
+                  </div>
+                  <div className="flex flex-col gap-[0rem] mt-3 md:mt-0">
+                    <div className="text-white text-[1.3rem] md:text-[2rem] font-bold">
+                      Normal Mode
+                    </div>
+                    <div className="text-white opacity-[50%]">
+                      Powers your home seamlessly throughout the day.
+                    </div>
+                  </div>
+                </div>
+              )}
+
+              {selectedIndex === 1 && (
+                <div className="w-[90%] mx-auto flex flex-col md:flex-row justify-between mt-[2rem]">
+                  <div className="w-full md:w-[50%] text-white opacity-[50%]">
+                    When a power outage occurs, the 5kWh Xbattery instantly
+                    switches to backup mode, keeping your home powered for up to
+                    5 days without interruption.
+                  </div>
+                  <div className="flex flex-col gap-[0rem] mt-3 md:mt-0">
+                    <div className="text-white text-[1.3rem] md:text-[2rem] font-bold">
+                      Backup Power
+                    </div>
+                    <div className="text-white opacity-[50%]">
+                      Keeps your home running smoothly during power cuts.
+                    </div>
+                  </div>
+                </div>
+              )}
+
+              {selectedIndex === 2 && (
+                <div className="w-[90%] mx-auto flex flex-col md:flex-row justify-between mt-[2rem]">
+                  <div className="w-full md:w-[50%] text-white opacity-[50%]">
+                    Once the grid power is restored, the 5kWh Xbattery
+                    automatically switches back to normal mode, ensuring a
+                    smooth and seamless transition.
+                  </div>
+                  <div className="flex flex-col gap-[0rem] mt-3 md:mt-0">
+                    <div className="text-white text-[1.3rem] md:text-[2rem] font-bold">
+                      Power Restoration
+                    </div>
+                    <div className="text-white opacity-[50%]">
+                      Switches back to normal once power is restored.
+                    </div>
+                  </div>
+                </div>
+              )}
+
+              {selectedIndex === 3 && (
+                <div className="w-[90%] mx-auto flex flex-col md:flex-row justify-between mt-[2rem]">
+                  <div className="w-full md:w-[50%] text-white opacity-[50%]">
+                    The 5kWh Xbattery works seamlessly with your solar system,
+                    managing energy usage and maximizing storage to reduce your
+                    reliance on the grid.
+                  </div>
+                  <div className="flex flex-col gap-[0rem] mt-3 md:mt-0">
+                    <div className="text-white text-[1.3rem] md:text-[2rem] font-bold">
+                      Solar Integration
+                    </div>
+                    <div className="text-white opacity-[50%]">
+                      Optimizes your solar power usage for maximum efficiency.
+                    </div>
+                  </div>
+                </div>
+              )}
             </AnimatedDiv>
           </div>
         </div>
@@ -867,11 +971,13 @@ const Example = ({ media }) => {
           <div className="relative w-full mb-2 mt-[9rem] sm:mt-[8rem]">
             <div className="block md:hidden text-[white] text-center px-4 mt-[-1rem] mb-7 w-[90%] mx-auto">
               <h1 className={`${styles.textColor} font-bold`}>
-                Power Your Home, Save Money
+                Reliable Energy Storage for Your Home
               </h1>
               <p className="mt-4">
-                Xbattery offers efficient energy storage solutions in India,
-                integrating advanced technologies for optimal energy management.
+                Xbattery fits easily into your home, saving space while
+                providing reliable energy storage. It helps reduce electricity
+                bills and ensures backup power during outages with customizable
+                modes.
               </p>
             </div>
             <Image
@@ -884,14 +990,13 @@ const Example = ({ media }) => {
             />
             <div className="md:block hidden absolute top-4 xl:top-10 left-1/2 transform -translate-x-1/2 text-black text-center">
               <h1 className="text-2xl font-bold">
-                Power Your Home, Save Money
+                Reliable Energy Storage for Your Home
               </h1>
               <p className="mt-4">
-                Xbattery offers advanced energy storage in India with
-                large-scale batteries, BMS, IoT, Digital Twins, and AI, allowing
-                efficient energy management, reduced electricity costs, and
-                reliable power during outages with customizable performance
-                modes.{" "}
+                Xbattery blends seamlessly into your home, occupying minimal
+                space while providing reliable energy storage. It helps manage
+                energy efficiently, lowers electricity bills, and ensures
+                dependable backup power during outages.
               </p>
             </div>
           </div>
@@ -930,12 +1035,14 @@ const Example = ({ media }) => {
               transition={{ duration: 0.8, ease: "easeInOut" }}
               className="text-center lg:text-left"
             >
-              <div className={`${styles.block3Head}`}>50 kWh Powerhouse</div>
+              <div className={`${styles.block3Head}`}>
+                Xbattery <br /> 50kWh
+              </div>
               <div className="text-white text-[1.2rem] sm:text-[1.3rem] mt-3">
-                X1 is ultra-thin and packed with a power density of 8.7W/ft³,
-                the highest in the industry, thanks to its all-in-one design
-                that combines battery and power modules. Install it almost
-                anywhere around your home.
+                Xbattery 50kWh is a powerful energy solution for businesses, UPS
+                systems, and LEO operations, giving reliable and scalable power
+                to ensure the critical systems that you depend on will run
+                smoothly and efficiently.
               </div>
             </motion.div>
           </div>
@@ -1098,7 +1205,7 @@ const Example = ({ media }) => {
               <div
                 className={`${styles.block2Head} text-center md:text-left w-full md:w-[45%]`}
               >
-                50 kWh Powerhouse
+                Xbattery 50kWh
               </div>
 
               <div className="w-full md:w-[42%] flex flex-row gap-[2rem] md:gap-[1rem] justify-evenly relative">
@@ -1137,12 +1244,37 @@ const Example = ({ media }) => {
             </div>
           </AnimatedDiv>
 
-          {/* Features for XBattery2 */}
+          {/* Specifications for Xbattery1 */}
           {activeBattery === "XBattery2" && (
             <AnimatedDiv>
               <div className="mt-[4rem] flex flex-col gap-[1rem] pb-[4rem] border-b-[1px] border-[#2e2e2e]">
-                <div className="text-white font-bold text-xl text-center sm:text-left mb-3 md:mb-0">
+                <div className="text-white font-bold text-xl text-center md:text-left mb-3 md:mb-0">
                   Features
+                </div>
+                <div className="w-[85%] mx-auto md:w-full flex flex-row flex-wrap md:flex-nowrap justify-between md:justify-start sm:flex-row gap-[2rem] sm:gap-[10%]">
+                  {batteryFeatures2.map((feature, index) => (
+                    <div key={index} className="flex flex-col gap-2">
+                      <div className="text-[#979797] text-sm text-left">
+                        {feature.heading}
+                      </div>
+                      <div id="value">
+                        <div className="text-white text-sm">
+                          {feature.content}
+                        </div>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </AnimatedDiv>
+          )}
+
+          {/* Features for Xbattery2 */}
+          {activeBattery === "XBattery1" && (
+            <AnimatedDiv>
+              <div className="mt-[4rem] flex flex-col gap-[1rem] pb-[4rem] border-b-[1px] border-[#2e2e2e]">
+                <div className="text-white font-bold text-xl text-center md:text-left mb-3 md:mb-0">
+                  Specifications
                 </div>
                 <div className="w-[85%] mx-auto md:w-full flex flex-row flex-wrap md:flex-nowrap justify-between md:justify-start sm:flex-row gap-[2rem] sm:gap-[10%]">
                   <div className="flex flex-col gap-2">
@@ -1155,7 +1287,16 @@ const Example = ({ media }) => {
                       </div>
                     </div>
                   </div>
-
+                  <div className="flex flex-col gap-2">
+                    <div className="text-[#979797] text-sm">
+                      Energy Capacity
+                    </div>
+                    <div id="value">
+                      <div className="text-white text-sm">
+                        {currentBattery1.energyCapacity}
+                      </div>
+                    </div>
+                  </div>
                   <div className="flex flex-col gap-2">
                     <div className="text-[#979797] text-sm">Scalable</div>
                     <div id="value">
@@ -1164,7 +1305,6 @@ const Example = ({ media }) => {
                       </div>
                     </div>
                   </div>
-
                   <div className="flex flex-col gap-2">
                     <div className="text-[#979797] text-sm">Certification</div>
                     <div id="value">
@@ -1176,53 +1316,6 @@ const Example = ({ media }) => {
                       </div>
                       <div className="text-white text-sm">
                         {currentBattery1.certifications.three}
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </AnimatedDiv>
-          )}
-
-          {/* Specifications for XBattery1 */}
-          {activeBattery === "XBattery1" && (
-            <AnimatedDiv>
-              <div className="mt-[4rem] flex flex-col gap-[1rem] pb-[4rem] border-b-[1px] border-[#2e2e2e]">
-                <div className="text-white font-bold text-xl text-center sm:text-left mb-3 md:mb-0">
-                  Specifications
-                </div>
-                <div className="w-[85%] mx-auto md:w-full flex flex-row flex-wrap md:flex-nowrap justify-between md:justify-start sm:flex-row gap-[2rem] sm:gap-[10%]">
-                  <div className="flex flex-col gap-2">
-                    <div className="text-[#979797] text-sm">
-                      Energy Capacity
-                    </div>
-                    <div id="value">
-                      <div className="text-white text-sm">
-                        {currentBattery1.energyCapacity}
-                      </div>
-                    </div>
-                  </div>
-
-                  <div className="flex flex-col gap-2">
-                    <div className="text-[#979797] text-sm">On-Grid Power</div>
-                    <div id="value">
-                      <div className="text-white text-sm">
-                        {currentBattery1.onGridPower}
-                      </div>
-                    </div>
-                  </div>
-
-                  <div className="flex flex-col gap-2">
-                    <div className="text-[#979797] text-sm">Backup Power</div>
-                    <div id="value">
-                      <div className="text-white text-sm">
-                        {currentBattery1.backupPower.peak}
-                      </div>
-                      <div className="text-white text-sm">
-                        {currentBattery1.backupPower.motorStart}
-                      </div>
-                      <div className="text-white text-sm">
-                        {currentBattery1.backupPower.transition}
                       </div>
                     </div>
                   </div>
@@ -1283,18 +1376,17 @@ const Example = ({ media }) => {
                   backgroundImage: `url('/images/hero/learn.png')`,
                   backgroundSize: "cover",
                   backgroundPosition: "center",
-                  opacity: 0.2, 
+                  opacity: 0.2,
                 }}
               ></div>
 
               <div className="w-[94%] md:w-[90%] lg:w-[85%] xl:w-[80%] 2xl:w-[1450px] h-full mx-auto relative flex items-center justify-center p-6 text-center">
                 <div className="text-white w-[90%] md:w-[70%] lg:w-[60%]">
                   <h1 className="text-2xl md:text-3xl font-bold mb-4">
-                    Explore Topics in Energy Innovation
+                  Learn About Energy Innovations
                   </h1>
                   <p className="text-base md:text-lg mb-6">
-                    Dive deep into energy solutions, advanced BMS, IoT, Digital
-                    Twins, AI, and the future of energy storage in India.
+                  Get insights into energy, energy storage, and how they work. Our learning hub simplifies these concepts to help you understand and make the most of sustainable energy.
                   </p>
                   <button
                     className={`px-6 py-3 rounded-lg font-bold text-white bg-transparent border-[2px] ${styles.gradientBorder}`}
@@ -1306,29 +1398,39 @@ const Example = ({ media }) => {
             </div>
           </div>
         </AnimatedDiv>
-        
-        <AnimatedDiv>
-        <div className="email-registration text-center pt-[2rem] pb-[2rem] " ref={emailRef} id="registerEmail">
-          <h2 className={`text-3xl font-semibold mb-[1.5rem] ${styles.color1} font-bolder`}>Discover the Latest</h2>
-          <form onSubmit={handleSubmit} className="flex justify-center items-center mb-4]">
-            <input
-              type="email"
-              placeholder="Enter your email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              required
-              className="px-4 py-2 border border-gray-300 rounded-l-md focus:outline-none focus:ring-2 focus:border-[#bbbbbb] w-auto sm:w-[300px] bg-[#0f0f0f] text-white "
-            />
-            <button
-              type="submit"
-              className="px-6 py-2 border border-gray-300 text-white rounded-r-md hover:bg-[#181818] focus:outline-none focus:ring-2"
-            >
-             Get Notified
-            </button>
 
-          </form>
-          {message && <p className="text-gray-400 mt-4">{message}</p>}
-        </div>
+        <AnimatedDiv>
+          <div
+            className="email-registration text-center pt-[2rem] pb-[2rem] "
+            ref={emailRef}
+            id="registerEmail"
+          >
+            <h2
+              className={`text-2xl font-semibold mb-[1.5rem] ${styles.color1} font-bolder xl:min-h-[3rem]`}
+            >
+             Get the Updates from Xbattery
+            </h2>
+            <form
+              onSubmit={handleSubmit}
+              className="flex justify-center items-center mb-4]"
+            >
+              <input
+                type="email"
+                placeholder="Enter your email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                required
+                className="px-4 py-2 border border-gray-300 rounded-l-md focus:outline-none focus:ring-2 focus:border-[#bbbbbb] w-auto sm:w-[300px] bg-[#0f0f0f] text-white "
+              />
+              <button
+                type="submit"
+                className="px-6 py-2 border border-gray-300 text-white rounded-r-md hover:bg-[#181818] focus:outline-none focus:ring-2"
+              >
+                Get Notified
+              </button>
+            </form>
+            {message && <p className="text-gray-400 mt-4">{message}</p>}
+          </div>
         </AnimatedDiv>
       </div>
     </div>

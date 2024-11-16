@@ -2,13 +2,14 @@ import React, { useRef, useState } from "react";
 import classes from "./styles.module.css";
 import Link from "next/link";
 import Image from "next/image";
-import { Button } from "@chakra-ui/react";
+import { Button, UnorderedList } from "@chakra-ui/react";
 import { useRouter } from "next/router";
 import { IoArrowBack } from "react-icons/io5";
 import { motion } from "framer-motion";
 import AnimatedDiv from "@/components/ui/Animate";
 import NavLink from "@/components/ui/NavLink";
 import Head from "next/head";
+import { Box, Text, List, ListItem, VStack } from '@chakra-ui/react';
 
 const About = () => {
   const router = useRouter();
@@ -621,8 +622,8 @@ const About = () => {
                 </div>
               </div>
             </AnimatedDiv>
-           
-            <AnimatedDiv>
+
+            {/* <AnimatedDiv>
               <div className=" bg-[#242323]  ">
                 <div className="w-[93%] md:w-[90%] xl:w-[80%] 2xl:w-[1450px] mx-auto p-[1rem] pb-[2rem] bg-[#242323] flex flex-col justify-center items-center gap-[2rem] md:gap-[0.5rem]">
                   <div class="flex flex-wrap items-center text-center gap-5 mb-4 w-[100%] md:w-[75%] lg:w-[65%] 2xl:w-[60%] justify-center md:justify-start" >
@@ -667,6 +668,121 @@ const About = () => {
                   </p>
                 </div>
               </div>
+            </AnimatedDiv> */}
+
+            <AnimatedDiv>
+              <Box className="bg-[#242323]">
+                <Box className="w-[93%] md:w-[90%] xl:w-[80%] 2xl:w-[1450px] mx-auto p-[1rem] pb-[2rem] bg-[#242323] flex flex-col justify-center items-center gap-[2rem] md:gap-[0.5rem]">
+                  <Box className="flex flex-wrap items-center text-center gap-5 mb-[-0.5rem] md:mb-4 w-[100%] md:w-[75%] lg:w-[65%] 2xl:w-[60%] justify-start">
+                    <Image
+                      src="/images/about/teams/shortimages/1.png"
+                      alt="Founder Image"
+                      height={100}
+                      width={100}
+                      className="w-20 h-20 rounded-full"
+                    />
+                    <Box className="text-left">
+                      <Text className="text-white text-xl font-bold">
+                        Satish Reddy
+                      </Text>
+                      <Text className="text-gray-400 text-md">
+                        Founder & CEO
+                      </Text>
+                    </Box>
+                  </Box>
+
+                  <VStack
+                    align="start"
+                    spacing={4}
+                    className="w-[100%] md:w-[75%] lg:w-[65%] 2xl:w-[60%]"
+                    mx="auto"
+                  >
+                    <Text className="text-gray-300 text-lg text-left">
+                      Let's be honest - power cuts in India are frustrating. The
+                      constant hum of generators, the disrupted meetings, the
+                      midnight outages - we've all been there. That's why we
+                      started XBattery.
+                    </Text>
+
+                    <Text className="text-white text-lg text-left font-bold">
+                      Here's what we're tackling:
+                    </Text>
+                    <UnorderedList spacing={2} className=" text-gray-300">
+                      <ListItem>
+                        {" "}
+                        India's targeting 500GW of renewable energy by 2030
+                      </ListItem>
+                      <ListItem>
+                        {" "}
+                        Our power grid struggles with reliability
+                      </ListItem>
+                      <ListItem>
+                        {" "}
+                        Solar and wind are great, but storage is the missing
+                        piece
+                      </ListItem>
+                    </UnorderedList>
+
+                    <Text className="text-gray-300 text-lg text-left">
+                      We're a team of engineers who got tired of waiting for
+                      someone else to solve this. So we built something
+                      ourselves.
+                    </Text>
+
+                    <Text className="text-white text-lg font-bold">
+                      What sets our battery packs apart?
+                    </Text>
+                    <Text className="text-gray-300 text-lg text-left">
+                      We have designed them specifically for Indian conditions -
+                      from homes to factories. No fancy promises, just reliable
+                      power when you need it. Our battery packs work with your
+                      existing setup, whether you're running a small business or
+                      a large facility.
+                    </Text>
+
+                    <Text className="text-white text-lg font-bold">
+                      The Tech
+                    </Text>
+                    <UnorderedList spacing={2} className=" text-gray-300">
+                      <ListItem>
+                        {" "}
+                        Custom-built battery management systems
+                      </ListItem>
+                      <ListItem>
+                        {" "}
+                        Smart monitoring that prevents issues before they happen
+                      </ListItem>
+                      <ListItem>
+                        {" "}
+                        Made right here in India, including our own hardware
+                      </ListItem>
+                      <ListItem> Actually affordable (yes, really)</ListItem>
+                    </UnorderedList>
+
+                    <Text className="text-gray-300 text-lg text-left">
+                      Want to see it in action? We're launching our first major
+                      product for homes and commercial buildings. We are
+                      currently working with select businesses in Hyderabad. If
+                      you'd like to learn more or see how it could work for you,
+                      reach out at{" "}
+                      <Text as="span" color="teal.300">
+                        <a
+                          href="mailto:support@xbattery.energy"
+                          target="_blank"
+                          rel="noreferrer"
+                        >
+                          support@xbattery.energy
+                        </a>
+                      </Text>
+                    </Text>
+
+                    <Text className="text-gray-300 text-lg text-left">
+                      No more "imagine if" - let's talk about real solutions for
+                      India's power needs.
+                    </Text>
+                  </VStack>
+                </Box>
+              </Box>
             </AnimatedDiv>
           </section>
         </div>
