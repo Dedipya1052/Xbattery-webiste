@@ -83,9 +83,9 @@ export default function Blogs({ blogs }) {
           <div className={`text-[2.22rem] md:text-[2.8rem] text-center font-semibold ${styles.head1}`}>
           Synthetic data use cases
           </div>
-          <div className={`${styles.head1}  text-[1.05rem] md:text-[1.28rem] text-center  font-semibold`}>
+          {/* <div className={`${styles.head1}  text-[1.05rem] md:text-[1.28rem] text-center  font-semibold`}>
           Investing basics—in plain English.
-          </div>
+          </div> */}
           
         </div>
       </div>

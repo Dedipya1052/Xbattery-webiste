@@ -114,7 +114,7 @@ const BharatBMS = () => {
                 alt="Battery System Image 1"
                 className="rounded-lg shadow-lg"
                 width={400}
-                height={300}
+                height={400}
                 style={{ objectFit: "cover" }}
               />
             </div>
@@ -124,7 +124,7 @@ const BharatBMS = () => {
                 alt="Battery System Image 2"
                 className="rounded-lg shadow-lg"
                 width={400}
-                height={300}
+                height={400}
                 style={{ objectFit: "cover" }}
               />
             </div>
@@ -132,10 +132,10 @@ const BharatBMS = () => {
               <Image
                 src="/images/bharatbms/3.png"
                 alt="Battery System Image 3"
-                className="rounded-lg shadow-lg"
+                className="rounded-lg shadow-lg h-[200px]"
                 width={400}
-                height={300}
-                style={{ objectFit: "cover" }}
+                height={400}
+                style={{ objectFit: "cover", }}
               />
             </div>
           </div>

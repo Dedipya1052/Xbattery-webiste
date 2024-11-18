@@ -4,6 +4,7 @@
     position: relative;
    
   }
+  
   @media (min-width: 500px) and (max-width: 1024px) {
     .container {
       width: 80%;

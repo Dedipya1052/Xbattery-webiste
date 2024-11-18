@@ -517,9 +517,9 @@ const LearnComp= () => {
         </div>
       </div> */}
 
-        <div className="bg-black h-[0.7px] w-[100%] mx-auto mt-[6rem] mb-[6rem]"></div>
+        <div className=" mt-[4rem] mb-[4rem]"></div>
 
-        <div className="flex flex-col gap-[1rem] w-[90%]  md:w-[60%] mx-auto mb-[3rem]">
+        {/* <div className="flex flex-col gap-[1rem] w-[90%]  md:w-[60%] mx-auto mb-[3rem]">
           <div className="text-black opacity-[70%] text-center md:text-left text-[1.15rem]">
             Content is provided for informational purposes only, does not
             constitute tax or investment advice, and is not a recommendation for
@@ -539,7 +539,7 @@ const LearnComp= () => {
             documentation for any claims, if applicable, will be furnished upon
             request.
           </div>
-        </div>
+        </div> */}
 
         {/* <CompleteSolarCalculator/> */}
 

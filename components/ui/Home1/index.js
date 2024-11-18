@@ -151,7 +151,7 @@ const Example = ({ media }) => {
   const batteryFeatures = [
     {
       heading: "Reliable Backup",
-      content: "Powers your home for up to 5 days during outages.",
+      content: "Powers your home for up to a day during outages.",
     },
     {
       heading: "Solar Safeguard",
@@ -543,11 +543,11 @@ const Example = ({ media }) => {
           </div>
         </LayoutEffect>
 
-        {/* Energy Customized to Your Needs */}
+        {/* Capacity As Per Your Needs */}
         <div className="mx-auto w-[94%] md:w-[90%] lg:w-[85%] xl:w-[80%] 2xl:w-[1450px] mt-[4rem] mb-[5rem]">
           <AnimatedDiv>
             <div className={`${styles.block3Head} text-center`}>
-              Energy Customized to Your Needs
+            Capacity As Per Your Needs
             </div>
           </AnimatedDiv>
           <AnimatedDiv>
@@ -929,7 +929,7 @@ const Example = ({ media }) => {
                   <div className="w-full md:w-[50%] text-white opacity-[50%]">
                     When a power outage occurs, the 5kWh Xbattery instantly
                     switches to backup mode, keeping your home powered for up to
-                    5 days without interruption.
+                    a day without interruption.
                   </div>
                   <div className="flex flex-col gap-[0rem] mt-3 md:mt-0">
                     <div className="text-white text-[1.3rem] md:text-[2rem] font-bold">
@@ -1025,7 +1025,7 @@ const Example = ({ media }) => {
             <AnimatedDiv>
               <div className="w-full h-full flex justify-center items-center">
                 <video
-                  className="w-full h-[65vh] md:h-[65vh] lg:h-[85vh] object-cover"
+                  className="w-full h-[65vh] md:h-[65vh] lg:h-[70vh] 2xl:h-[600px] object-cover"
                   autoPlay
                   muted
                   playsInline
@@ -1041,7 +1041,7 @@ const Example = ({ media }) => {
 
           {/* Text Section */}
           <div
-            className="w-full lg:w-[45%] mt-6 md:mt-0 px-4 md:px-0"
+            className="w-full lg:w-[50%] mt-6 md:mt-0 px-4 md:px-0"
             ref={reference}
           >
             <motion.div
@@ -1395,7 +1395,7 @@ const Example = ({ media }) => {
               <div className="w-[94%] md:w-[90%] lg:w-[85%] xl:w-[80%] 2xl:w-[1450px] h-full mx-auto relative flex items-center justify-center p-6 text-center">
                 <div className="text-white w-[90%] md:w-[70%] lg:w-[60%]">
                   <h1 className="text-2xl md:text-3xl font-bold mb-4">
-                    Learn About Energy Innovations
+                  Learn Energy Storage, Batteries and more
                   </h1>
                   <p className="text-base md:text-lg mb-6">
                     Get insights into energy, energy storage, and how they work.
