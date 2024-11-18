@@ -418,7 +418,7 @@ const batteries = [
                 <div className="text-[1.2rem] pb-[0.8rem] pl-[0.8rem] pt-[1rem] border-b-[0.8px] border-black font-semibold">
                  Xbattery
                 </div>
-                <div className="text-[0.9rem] pl-[0.8rem] pr-[0.8rem]">
+                <div className="text-[1rem] pl-[0.8rem] pr-[0.8rem]">
                   Xbattery is building energy storage infrastructure in India,
                   including electronics and software, to help businesses and
                   grids store energy affordably and access it on demand

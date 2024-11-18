@@ -86,7 +86,7 @@ const Example = ({ media }) => {
         transition: "Seamless backup transition",
       },
       size: "37 kgs",
-      scalable: "5 MW continuous",
+      scalable: "15 kWh",
       certifications: {
         one: "UL 1973",
         two: "IEEE 154",
@@ -102,7 +102,7 @@ const Example = ({ media }) => {
         transition: "Seamless backup transition",
       },
       size: "37 kgs",
-      scalable: "5 MW continuous",
+      scalable: "15 kWh",
       certifications: {
         one: "UL 1973",
         two: "IEEE 154",
@@ -122,7 +122,7 @@ const Example = ({ media }) => {
         transition: "Seamless backup transition",
       },
       size: "370 kgs",
-      scalable: "50 MW continuous",
+      scalable: "150 kWh",
       certifications: {
         one: "UL 1973",
         two: "IEEE 154",
@@ -138,7 +138,7 @@ const Example = ({ media }) => {
         transition: "Seamless backup transition",
       },
       size: "370 kgs",
-      scalable: "50 MW continuous",
+      scalable: "150 kWh",
       certifications: {
         one: "UL 1973",
         two: "IEEE 154",
@@ -344,8 +344,9 @@ const Example = ({ media }) => {
       });
     }
   };
+   
+  const currentPath = router.pathname;
   
-
   return (
     <div className={styles.head1}>
       <nav
@@ -353,131 +354,97 @@ const Example = ({ media }) => {
           isScrolled ? "bg-black" : "bg-transparent"
         }`}
       >
-        <div className="w-[95%] mx-auto flex items-center justify-between">
-          <Link href="/">
-            <Image
-              src="/images/logo1.png"
-              width={160}
-              height={160}
-              alt="logo"
-              className="opacity-100"
-            />
-          </Link>
-
-          <div className="hidden lg:flex gap-7 items-center">
+       <div className="w-[95%] mx-auto flex items-center justify-between">
             <Link href="/">
-              <button className="text-[#cacaca] text-lg font-medium hover:text-white">
-              Energy Storage
-              </button>
+              <Image
+                src="/images/logo1.png"
+                width={160}
+                height={160}
+                alt="logo"
+                className="opacity-100"
+              />
             </Link>
 
-            <Link href="/bharat-bms">
-              <button className="text-[#cacaca] text-lg font-medium hover:text-white">
-                BharatBMS
-              </button>
-            </Link>
+            <div className="hidden lg:flex gap-7 items-center">
+              {[
+                { href: "/", label: "Energy Storage" },
+                { href: "/bharat-bms", label: "BharatBMS" },
+                { href: "/about", label: "About" },
+                { href: "/blog", label: "Blog" },
+                { href: "/whitepapers", label: "Whitepapers" },
+              ].map((item) => (
+                <Link href={item.href} key={item.href}>
+                  <button
+                    className={`text-lg font-medium transition-colors duration-300 ${
+                      currentPath === item.href
+                        ? "text-white"
+                        : "text-[#cacaca] hover:text-[#e6e6e6]"
+                    }`}
+                  >
+                    {item.label}
+                  </button>
+                </Link>
+              ))}
+            </div>
 
-            <Link href="/about">
-              <button className="text-[#cacaca] text-lg font-medium hover:text-white">
-                About
-              </button>
-            </Link>
+            <button className="text-white bg-transparent border border-white px-4 py-2 rounded-full hover:bg-white hover:text-black transition-colors duration-300 hidden lg:block">
+              <Link href="/#registerEmail">Get Notified</Link>
+            </button>
 
-            <Link href="/blog">
-              <button className="text-[#cacaca] text-lg font-medium hover:text-white">
-                Blog
-              </button>
-            </Link>
-
-            <Link href="/whitepapers">
-              <button className="text-[#cacaca] text-lg font-medium hover:text-white">
-                Whitepapers
-              </button>
-            </Link>
-          </div>
-
-          <button className="text-white bg-transparent border border-white px-4 py-2 rounded-full hover:bg-white hover:text-black transition-colors duration-300 hidden lg:block">
-            <Link href="/#registerEmail">Get Notified</Link>
-          </button>
-
-          <button
-            className="lg:hidden flex items-center text-white"
-            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-          >
-            <svg
-              className="w-6 h-6"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-              xmlns="http://www.w3.org/2000/svg"
+            <button
+              className="lg:hidden flex items-center text-white"
+              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="2"
-                d="M4 6h16M4 12h16M4 18h16"
-              ></path>
-            </svg>
-          </button>
-        </div>
-
-        {mobileMenuOpen && (
-          <div className="lg:hidden absolute top-16 left-0 right-0 bg-black text-white flex flex-col items-center p-4 space-y-4">
-            <Link href="/">
-              <button
-                className="text-lg font-medium"
-                onClick={handleMenuItemClick}
+              <svg
+                className="w-6 h-6"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
               >
-                 Energy Storage
-              </button>
-            </Link>
-
-            <Link href="/bharat-bms">
-              <button
-                className="text-lg font-medium"
-                onClick={handleMenuItemClick}
-              >
-                 BharatBMS
-              </button>
-            </Link>
-
-            <Link href="/about">
-              <button
-                className="text-lg font-medium"
-                onClick={handleMenuItemClick}
-              >
-                About
-              </button>
-            </Link>
-
-            <Link href="/blog">
-              <button
-                className="text-lg font-medium"
-                onClick={handleMenuItemClick}
-              >
-                Blog
-              </button>
-            </Link>
-
-            <Link href="/whitepapers">
-              <button
-                className="text-lg font-medium"
-                onClick={handleMenuItemClick}
-              >
-                Whitepapers
-              </button>
-            </Link>
-
-            <Link href="/#registerEmail">
-              <button
-                className="text-white bg-transparent border border-white px-4 py-2 rounded-full hover:bg-white hover:text-black transition-colors duration-300"
-                onClick={handleMenuItemClick}
-              >
-                Get Notified
-              </button>
-            </Link>
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
+                  d="M4 6h16M4 12h16M4 18h16"
+                ></path>
+              </svg>
+            </button>
           </div>
-        )}
+
+          {mobileMenuOpen && (
+            <div className="lg:hidden absolute top-16 left-0 right-0 bg-black text-white flex flex-col items-center p-4 space-y-4">
+              {[
+                { href: "/", label: "Energy Storage" },
+                { href: "/bharat-bms", label: "BharatBMS" },
+                { href: "/about", label: "About" },
+                { href: "/blog", label: "Blog" },
+                { href: "/whitepapers", label: "Whitepapers" },
+              ].map((item) => (
+                <Link href={item.href} key={item.href}>
+                  <button
+                    className={`text-lg font-medium transition-colors duration-300 ${
+                      currentPath === item.href
+                        ? "text-white"
+                        : "text-[#cacaca] hover:text-[#e6e6e6]"
+                    }`}
+                    onClick={handleMenuItemClick}
+                  >
+                    {item.label}
+                  </button>
+                </Link>
+              ))}
+              <Link href="/#registerEmail">
+                <button
+                  className="text-white bg-transparent border border-white px-4 py-2 rounded-full hover:bg-white hover:text-black transition-colors duration-300"
+                  onClick={handleMenuItemClick}
+                >
+                  Get Notified
+                </button>
+              </Link>
+            </div>
+          )}
+
       </nav>
 
       <div>
@@ -1420,7 +1387,7 @@ const Example = ({ media }) => {
             id="registerEmail"
           >
             <h2
-              className={`text-2xl font-semibold mb-[1.5rem] ${styles.color1} font-bolder xl:min-h-[3rem]`}
+              className={`text-2xl font-semibold mb-[1.5rem] ${styles.color1} font-bolder xl:min-h-[3rem] leading-10`}
             >
               Get the Updates from Xbattery
             </h2>
