@@ -6,7 +6,8 @@ import { useRouter } from "next/router";
 
 const Layout = ({ children }) => {
   const router = useRouter();
-  const isHomePage = router.pathname === "/" || router.pathname === "/terms" || router.pathname === "/about" || router.pathname === "/privacy" || router.pathname.includes("about") || router.pathname.includes("careers") ||  router.pathname.includes("bharat-bms");
+  const isHomePageMain= router.pathname === "/" 
+  //const isHomePage =  router.pathname === "/terms" || router.pathname === "/about" || router.pathname === "/privacy" || router.pathname.includes("about") || router.pathname.includes("careers") ||  router.pathname.includes("bharat-bms");
   return (
     <div className="flex flex-col min-h-screen">
       <Head>
@@ -18,7 +19,7 @@ const Layout = ({ children }) => {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      {!isHomePage && <Navbar />}
+      { !isHomePageMain && <Navbar />}
       <main className="flex-grow mt-[4rem]">{children}</main>
        <Footer />
     </div>

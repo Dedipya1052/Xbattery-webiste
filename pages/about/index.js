@@ -72,123 +72,6 @@ const About = () => {
       </Head>
 
       <div className={`${classes.head1} bg-black`}>
-        <nav
-          className={`fixed top-0 left-0 w-full mx-auto flex items-center justify-between p-4 z-50 transition-colors duration-300 bg-black`}
-        >
-          <div className="w-[95%] mx-auto flex items-center justify-between">
-            <div>
-              <Link href="/">
-                <Image
-                  src="/images/logo1.png"
-                  width={160}
-                  height={160}
-                  alt="logo"
-                  className="opacity-100"
-                />
-              </Link>
-            </div>
-
-            <div className="hidden md:flex gap-7 items-center">
-              <Link href="/">
-                <button className="text-[#cacaca] text-lg font-medium hover:text-white transition-colors duration-300">
-                  Product
-                </button>
-              </Link>
-
-              <Link href="/about">
-                <button className="text-[#cacaca] text-lg font-medium hover:text-white transition-colors duration-300">
-                  About
-                </button>
-              </Link>
-
-              <Link href="/blog">
-                <button className="text-[#cacaca] text-lg font-medium hover:text-white transition-colors duration-300">
-                  Blog
-                </button>
-              </Link>
-
-              <Link href="/whitepapers">
-                <button className="text-[#cacaca] text-lg font-medium hover:text-white transition-colors duration-300">
-                  Whitepapers
-                </button>
-              </Link>
-            </div>
-
-            <button className="text-white bg-transparent border border-white px-4 py-2 rounded-full hover:bg-white hover:text-black transition-colors duration-300 hidden md:block">
-              <Link href="/#registerEmail">Get Notified</Link>
-            </button>
-
-            <button
-              className="md:hidden flex items-center text-white"
-              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            >
-              <svg
-                className="w-6 h-6"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  d="M4 6h16M4 12h16M4 18h16"
-                ></path>
-              </svg>
-            </button>
-          </div>
-
-          {mobileMenuOpen && (
-            <div className="md:hidden absolute top-16 left-0 right-0 bg-black text-white flex flex-col items-center p-4 space-y-4">
-              <Link href="/">
-                <button
-                  className="text-lg font-medium"
-                  onClick={handleMenuItemClick}
-                >
-                  Product
-                </button>
-              </Link>
-
-              <Link href="/about">
-                <button
-                  className="text-lg font-medium"
-                  onClick={handleMenuItemClick}
-                >
-                  About
-                </button>
-              </Link>
-
-              <Link href="/blog">
-                <button
-                  className="text-lg font-medium"
-                  onClick={handleMenuItemClick}
-                >
-                  Blog
-                </button>
-              </Link>
-
-              <Link href="/whitepapers">
-                <button
-                  className="text-lg font-medium"
-                  onClick={handleMenuItemClick}
-                >
-                  Whitepapers
-                </button>
-              </Link>
-
-              <Link href="/#registerEmail">
-                <button
-                  className="text-white bg-transparent border border-white px-4 py-2 rounded-full hover:bg-white hover:text-black transition-colors duration-300"
-                  onClick={handleMenuItemClick}
-                >
-                  Get Notified
-                </button>
-              </Link>
-            </div>
-          )}
-        </nav>
-
         {/* banner */}
         <div className="w-full  h-[550px] md:h-[650px] 2xl:h-[80vh] relative overflow-hidden">
           {/* <Image
@@ -243,17 +126,10 @@ const About = () => {
           <section className="bg-black py-12 mt-[3rem] ">
             <AnimatedDiv>
               <div className="text-center mb-12 text-white w-[90%] mx-auto">
-                <h2 className={`${classes.block3Head}`}>
-                  Xbattery: Powering the Future
-                </h2>
-                <p className="text-lg mt-[2rem] ">
-                  Xbattery brings long-lasting, reliable, and sustainable energy
-                  solutions, pushing the boundaries of what's possible in
-                  portable power technology.
-                </p>
-                <p className="text-lg">
-                  Join us in revolutionizing energy consumption with powerful,
-                  eco-friendly batteries that last longer and perform better.
+                <h2 className={`${classes.block3Head}`}>Xbattery</h2>
+                <p className="text-xl mt-[2rem] ">
+                  Xbattery builds large battery packs that help businesses and
+                  grids store energy affordably and access it on demand.
                 </p>
               </div>
             </AnimatedDiv>
@@ -323,7 +199,7 @@ const About = () => {
                       </defs>
                     </svg>
                   </div>
-                  <h3 className="text-xl font-semibold">Power Efficiency</h3>
+                  <h3 className="text-md font-semibold">Scientific Rigor with Human Touch</h3>
                 </div>
 
                 <div className="text-center text-white">
@@ -428,7 +304,7 @@ const About = () => {
                       </defs>
                     </svg>
                   </div>
-                  <h3 className="text-xl font-semibold">Sustainability</h3>
+                  <h3 className="text-md font-semibold">Sustainability & Clearn Energy Focus</h3>
                 </div>
 
                 <div className="text-center text-white">
@@ -497,7 +373,7 @@ const About = () => {
                       </defs>
                     </svg>
                   </div>
-                  <h3 className="text-xl font-semibold">Innovation</h3>
+                  <h3 className="text-md font-semibold">Economic Sustainability</h3>
                 </div>
               </div>
             </AnimatedDiv>
@@ -865,13 +741,10 @@ const About = () => {
                 <h2
                   className={`${classes.block5Head}  mb-6 text-center md:text-center  text-3xl`}
                 >
-                  Xbattery’s team is driving sustainable energy for India
+                 Building India's Clean Energy Backbone
                 </h2>
-                <p className="text-md opacity-[80%] text-center md:text-center mb-3">
-                  The Xbattery team is dedicated to revolutionizing energy
-                  storage with advanced BMS, IoT, Digital Twins, and AI. We’re
-                  committed to optimizing clean energy solutions, working
-                  together to build a more sustainable future for India.{" "}
+                <p className="text-md opacity-[80%] text-center md:text-center mb-3 mt-[-2px]">
+                Engineered in India for India
                 </p>
               </div>
               {/* Image Section */}

@@ -101,20 +101,25 @@ const batteries = [
 
               <div className={styles.footerElementDesktop}>
                 <div className={styles.footerDescription}>
-                Xbattery builds large battery packs that help businesses and grids store energy affordably and access it on demand.
+                  Xbattery is building energy storage infrastructure in India,
+                  including electronics and software, to help businesses and
+                  grids store energy affordably and access it on demand.
                   <br />
                 </div>
 
                 <div className={styles.Footer_navigation__GbeEa}>
                   <h3 className={styles.footerSubheading}>Products</h3>
                   <Link href="/#xbattery5kwh" className={styles.footerElements}>
-                  Xbattery 5kwh
+                    Xbattery 5kwh
                   </Link>
-                  <Link href="/#xbattery50kwh" className={styles.footerElements}>
-                  Xbattery 50kwh
+                  <Link
+                    href="/#xbattery50kwh"
+                    className={styles.footerElements}
+                  >
+                    Xbattery 50kwh
                   </Link>
                   <Link href="/bharat-bms" className={styles.footerElements}>
-                   BharatBMS
+                    BharatBMS
                   </Link>
                 </div>
                 <div className={styles.Footer_navigation__GbeEa}>
@@ -122,7 +127,7 @@ const batteries = [
                   <Link href="/blog" className={styles.footerElements}>
                     Blog
                   </Link>
-                 
+
                   <Link href="/whitepapers" className={styles.footerElements}>
                     Whitepapers
                   </Link>
@@ -147,13 +152,14 @@ const batteries = [
                       <Link href="/privacy" className={styles.footerElements}>
                         Privacy
                       </Link> */}
-                     
                     </div>
                   </div>
                 </div>
               </div>
               <div className={styles.footerDescription1}>
-              Xbattery builds large battery packs that help businesses and grids store energy affordably and access it on demand.
+                Xbattery is building energy storage infrastructure in India,
+                including electronics and software, to help businesses and grids
+                store energy affordably and access it on demand.
                 <br />
               </div>
               <div className={styles.linksFot2}>
@@ -195,7 +201,16 @@ const batteries = [
               }}
             >
               © {new Date().getFullYear()} Xbattery Energy Private Limited. All
-              rights reserved. <span><Link href={"/terms"} className=" hover:underline ">Terms</Link> and <Link  href={"/privacy"} className=" hover:underline ">Privacy.</Link></span>
+              rights reserved.{" "}
+              <span>
+                <Link href={"/terms"} className=" hover:underline ">
+                  Terms
+                </Link>{" "}
+                and{" "}
+                <Link href={"/privacy"} className=" hover:underline ">
+                  Privacy.
+                </Link>
+              </span>
             </p>
           </div>
         </div>
@@ -401,17 +416,12 @@ const batteries = [
             <div className="w-full xl:w-[35%] flex flex-col gap-[2rem]">
               <div className="flex flex-col gap-[1.5rem]">
                 <div className="text-[1.2rem] pb-[0.8rem] pl-[0.8rem] pt-[1rem] border-b-[0.8px] border-black font-semibold">
-                  Company
+                 Xbattery
                 </div>
                 <div className="text-[0.9rem] pl-[0.8rem] pr-[0.8rem]">
-                  This information is educational, and is not an offer to sell
-                  or a solicitation of an offer to buy any security. This
-                  information is not a recommendation to buy, hold, or sell an
-                  investment or financial product, or take any action. This
-                  information is neither individualized nor a research report,
-                  and must not serve as the basis for any investment decision.
-                  All investments involve risk, including the possible loss of
-                  capital.
+                  Xbattery is building energy storage infrastructure in India,
+                  including electronics and software, to help businesses and
+                  grids store energy affordably and access it on demand
                 </div>
               </div>
               <div className="flex flex-col gap-[1.5rem]">

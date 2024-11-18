@@ -364,10 +364,16 @@ const Example = ({ media }) => {
             />
           </Link>
 
-          <div className="hidden md:flex gap-7 items-center">
+          <div className="hidden lg:flex gap-7 items-center">
             <Link href="/">
               <button className="text-[#cacaca] text-lg font-medium hover:text-white">
-                Product
+              Energy Storage
+              </button>
+            </Link>
+
+            <Link href="/bharat-bms">
+              <button className="text-[#cacaca] text-lg font-medium hover:text-white">
+                BharatBMS
               </button>
             </Link>
 
@@ -390,12 +396,12 @@ const Example = ({ media }) => {
             </Link>
           </div>
 
-          <button className="text-white bg-transparent border border-white px-4 py-2 rounded-full hover:bg-white hover:text-black transition-colors duration-300 hidden md:block">
+          <button className="text-white bg-transparent border border-white px-4 py-2 rounded-full hover:bg-white hover:text-black transition-colors duration-300 hidden lg:block">
             <Link href="/#registerEmail">Get Notified</Link>
           </button>
 
           <button
-            className="md:hidden flex items-center text-white"
+            className="lg:hidden flex items-center text-white"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
           >
             <svg
@@ -416,13 +422,22 @@ const Example = ({ media }) => {
         </div>
 
         {mobileMenuOpen && (
-          <div className="md:hidden absolute top-16 left-0 right-0 bg-black text-white flex flex-col items-center p-4 space-y-4">
+          <div className="lg:hidden absolute top-16 left-0 right-0 bg-black text-white flex flex-col items-center p-4 space-y-4">
             <Link href="/">
               <button
                 className="text-lg font-medium"
                 onClick={handleMenuItemClick}
               >
-                Product
+                 Energy Storage
+              </button>
+            </Link>
+
+            <Link href="/bharat-bms">
+              <button
+                className="text-lg font-medium"
+                onClick={handleMenuItemClick}
+              >
+                 BharatBMS
               </button>
             </Link>
 
@@ -538,7 +553,7 @@ const Example = ({ media }) => {
           <AnimatedDiv>
             <div className="text-white text-[1.3rem] text-center mt-3">
               Xbattery’s 5kWh system is designed to grow with your needs. Simply
-              add more modules to expand capacity and keep up with your power
+              add more batteries to expand capacity and keep up with your power
               demands.
             </div>
           </AnimatedDiv>
@@ -553,9 +568,9 @@ const Example = ({ media }) => {
                         {`${5 * batteryCount}kWh`}
                       </div>
                     </div>
-                    <div className="text-white text-[1.3rem] font-light opacity-[60%] text-center">
+                    {/* <div className="text-white text-[1.3rem] font-light opacity-[60%] text-center">
                       {`${batteryCount} Power Module + ${batteryCount} Battery Module`}
-                    </div>
+                    </div> */}
                   </div>
                 </div>
                 <div className="flex mt-[4rem] justify-center ">
@@ -1035,15 +1050,11 @@ const Example = ({ media }) => {
               transition={{ duration: 0.8, ease: "easeInOut" }}
               className="text-center lg:text-left"
             >
-              <div className={`${styles.block3Head}`}>
-                Xbattery <br /> 50kWh
-              </div>
+              <div className={`${styles.block3Head}`}>Xbattery 50kWh</div>
               <div className="text-white text-[1.2rem] sm:text-[1.3rem] mt-3">
-                {/* Xbattery 50kWh is a powerful energy solution for businesses, UPS
-                systems, and LEO operations, giving reliable and scalable power
-                to ensure the critical systems that you depend on will run
-                smoothly and efficiently. */}
-                Xbattery 50kWh is a powerful energy solution for businesses and UPS systems, giving reliable and scalable power to ensure the critical systems that you depend on will run smoothly and efficiently.
+                Xbattery 50kWh is a powerful energy solution for businesses and
+                commercial establishments. It ensures the critical systems that
+                you depend on will run smoothly and efficiently.
               </div>
             </motion.div>
           </div>
@@ -1384,10 +1395,12 @@ const Example = ({ media }) => {
               <div className="w-[94%] md:w-[90%] lg:w-[85%] xl:w-[80%] 2xl:w-[1450px] h-full mx-auto relative flex items-center justify-center p-6 text-center">
                 <div className="text-white w-[90%] md:w-[70%] lg:w-[60%]">
                   <h1 className="text-2xl md:text-3xl font-bold mb-4">
-                  Learn About Energy Innovations
+                    Learn About Energy Innovations
                   </h1>
                   <p className="text-base md:text-lg mb-6">
-                  Get insights into energy, energy storage, and how they work. Our learning hub simplifies these concepts to help you understand and make the most of sustainable energy.
+                    Get insights into energy, energy storage, and how they work.
+                    Our learning hub simplifies these concepts to help you
+                    understand and make the most of sustainable energy.
                   </p>
                   <button
                     className={`px-6 py-3 rounded-lg font-bold text-white bg-transparent border-[2px] ${styles.gradientBorder}`}
@@ -1409,7 +1422,7 @@ const Example = ({ media }) => {
             <h2
               className={`text-2xl font-semibold mb-[1.5rem] ${styles.color1} font-bolder xl:min-h-[3rem]`}
             >
-             Get the Updates from Xbattery
+              Get the Updates from Xbattery
             </h2>
             <form
               onSubmit={handleSubmit}
