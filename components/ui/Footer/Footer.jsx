@@ -130,13 +130,13 @@ const Footer = () => {
                 <div className={styles.Footer_navigation__GbeEa}>
                   <h3 className={styles.footerSubheading}>Products</h3>
                   <Link href="/#xbattery5kwh" className={styles.footerElements}>
-                    Xbattery 5kwh
+                    Xbattery 5kWh
                   </Link>
                   <Link
                     href="/#xbattery50kwh"
                     className={styles.footerElements}
                   >
-                    Xbattery 50kwh
+                    Xbattery 50kWh
                   </Link>
                   <Link href="/bharat-bms" className={styles.footerElements}>
                     BharatBMS

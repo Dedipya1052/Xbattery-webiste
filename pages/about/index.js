@@ -67,7 +67,7 @@ const About = () => {
 
         <meta
           name="description"
-          content="Learn more about XBattery and our mission to transform energy storage in India using advanced BMS, IoT, Digital Twins, and AI."
+          content="Learn more about Xbattery and our mission to transform energy storage in India using advanced BMS, IoT, Digital Twins, and AI."
         />
       </Head>
 
@@ -577,7 +577,7 @@ const About = () => {
                       Let's be honest - power cuts in India are frustrating. The
                       constant hum of generators, the disrupted meetings, the
                       midnight outages - we've all been there. That's why we
-                      started XBattery.
+                      started Xbattery.
                     </Text>
 
                     <Text className="text-white text-lg text-left font-bold">
@@ -689,7 +689,7 @@ const About = () => {
                   Satish Reddy, CEO of Xbattery
                 </div>
                 <div className=" opacity-[80%] text-lg text-center md:text-left">
-                  Satish Reddy leads XBattery as founder and CEO. He spent 15
+                  Satish Reddy leads Xbattery as founder and CEO. He spent 15
                   years in tech, working at Microsoft before starting his own
                   company. His first venture, Pascalcase, grew to 35 people and
                   hit $500K in annual revenue within 5 years. Now he's switched
@@ -716,7 +716,7 @@ const About = () => {
                   Sonu Mishra, CTO of Xbattery
                 </div>
                 <div className=" opacity-[80%] text-lg">
-                  Sonu Mishra brings hands-on battery expertise to XBattery as
+                  Sonu Mishra brings hands-on battery expertise to Xbattery as
                   co-founder and CTO. After getting his Master's in Embedded
                   Systems from Stuttgart, he spent 5 years at Bosch Germany
                   working on energy systems and battery management. Now back in
@@ -739,7 +739,7 @@ const About = () => {
               {/* Text Section */}
               <div className="w-[90%] mx-auto px-4 md:px-8 text-center mt-[1rem]">
                 <h2
-                  className={`${classes.block5Head}  mb-6 text-center md:text-center  text-3xl`}
+                  className={`${classes.block5Head}  mb-6 text-center md:text-center  text-3xl leading-[45px] md:leading-[52px]`}
                 >
                  Building India's Clean Energy Backbone
                 </h2>

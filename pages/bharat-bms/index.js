@@ -31,9 +31,9 @@ const BharatBMS = () => {
         />
       </Head>
 
-      <div className="bg-[#1f1f1f] text-white w-full">
+      {/* <div className="bg-[#1f1f1f] text-white w-full 2xl:h-[40vh]">
         <div className="mx-auto w-[95%] md:w-[90%] xl:w-[95%] 2xl:w-[1500px] py-16 px-6 flex flex-col lg:flex-row items-center justify-center">
-          {/* Left Content (Title and Subtitle) */}
+          
           <div className="text-center lg:text-left p-4 mb-6 lg:mb-0">
             <h1
               className={`text-4xl md:text-5xl font-bold  mb-6 ${classes.color} leading-[45px]`}
@@ -45,14 +45,39 @@ const BharatBMS = () => {
             </p>
           </div>
 
-          {/* Right Image */}
+         
           <div className="md:w-1/2 flex justify-center">
             <Image
               height={600}
               width={600}
-              src="/images/bharatbms/hero.png" // Add the correct path to your image
+              src="/images/bharatbms/hero.png" 
               alt="Hero Image"
               className="rounded-lg shadow-lg w-full max-w-lg object-cover"
+            />
+          </div>
+        </div>
+      </div> */}
+
+      <div className="bg-[#1f1f1f] text-white w-full 2xl:h-[35vh]">
+        <div className="mx-auto w-[95%] md:w-[90%] xl:w-[95%] 2xl:w-[1500px] py-16 px-6 flex flex-col lg:flex-row items-center justify-center h-full">
+          <div className="text-center lg:text-left p-4 mb-6 lg:mb-0">
+            <h1
+              className={`text-4xl md:text-5xl font-bold mb-6 ${classes.color} leading-[45px] 2xl:text-6xl md:leading-[60px] xl:leading-[60px] 2xl:leading-[70px]`}
+            >
+              Introducing BharatBMS
+            </h1>
+            <p className="text-lg md:text-xl leading-relaxed max-w-xl mx-auto md:mx-0 text-[#e9e9e9] pl-[1.5px] 2xl:text-2xl">
+              India's first scalable Battery Management System.
+            </p>
+          </div>
+
+          <div className="md:w-1/2 flex justify-center">
+            <Image
+              height={750} // Increased the height
+              width={750} // Increased the width
+              src="/images/bharatbms/hero.png"
+              alt="Hero Image"
+              className="rounded-lg shadow-lg w-full max-w-lg object-cover 2xl:w-[80%] 2xl:h-[80%]" // Adjusted image size for larger screens
             />
           </div>
         </div>
@@ -64,10 +89,10 @@ const BharatBMS = () => {
           <AnimatedDiv>
             <p className="text-md md:text-lg max-w-4xl mx-auto leading-relaxed mb-10 text-left">
               BharatBMS is India's first universal Battery Management System for
-              energy storage and EVs that scales from home to
-              industrial applications. Imagine a flexible system that works just
-              as efficiently for a 5kWh home backup as it does for
-              megawatt-scale battery packs.
+              energy storage and EVs that scales from home to industrial
+              applications. Imagine a flexible system that works just as
+              efficiently for a 5kWh home backup as it does for megawatt-scale
+              battery packs.
             </p>
           </AnimatedDiv>
           <AnimatedDiv>
@@ -129,10 +154,10 @@ const BharatBMS = () => {
               <p className="leading-relaxed">
                 We are excited to announce that we are opening partnerships with
                 OEMs across India. Starting January 2025, we will be working
-                with energy storage and EV manufacturers to integrate BharatBMS into
-                their products. This collaboration will help standardize battery
-                management across the industry while allowing OEMs to focus on
-                their core strengths in battery and system development.
+                with energy storage and EV manufacturers to integrate BharatBMS
+                into their products. This collaboration will help standardize
+                battery management across the industry while allowing OEMs to
+                focus on their core strengths in battery and system development.
               </p>
             </section>
           </AnimatedDiv>

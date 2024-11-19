@@ -1387,7 +1387,7 @@ const Example = ({ media }) => {
             id="registerEmail"
           >
             <h2
-              className={`text-2xl font-semibold mb-[1.5rem] ${styles.color1} font-bolder xl:min-h-[3rem] leading-10`}
+              className={`text-2xl font-semibold mb-[1.5rem] ${styles.color1} font-bolder xl:min-h-[3rem] leading-[45px] md:leading-[60px]`}
             >
               Get the Updates from Xbattery
             </h2>
