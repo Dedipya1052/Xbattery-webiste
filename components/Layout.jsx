@@ -14,14 +14,16 @@ const Layout = ({ children }) => {
         <title>Xbattery</title>
         <meta
           name="description"
-          content="Xbattery is building energy storage infrastructure in India, including electronics and software, to help businesses and grids store energy affordably and access it on demand."
+          content="Xbattery is building lithium battery packs in India,
+                  including electronics and software, to help businesses, EVs
+                  and grids store energy affordably and access it on demand."
         />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="icon" type="image/webp"  href="/favicon.webp" />
+        <link rel="icon" type="image/webp" href="/favicon.webp" />
       </Head>
-      { !isHomePageMain && <Navbar />}
+      {!isHomePageMain && <Navbar />}
       <main className="flex-grow mt-[4rem]">{children}</main>
-       <Footer />
+      <Footer />
     </div>
   );
 };
