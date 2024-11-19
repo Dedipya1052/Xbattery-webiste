@@ -14,10 +14,10 @@ const Layout = ({ children }) => {
         <title>Xbattery</title>
         <meta
           name="description"
-          content="Xbattery is building giant batteries to transform energy storage in India using advanced BMS, IoT, Digital Twins, and AI."
+          content="Xbattery is building energy storage infrastructure in India, including electronics and software, to help businesses and grids store energy affordably and access it on demand."
         />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" type="image/webp"  href="/favicon.webp" />
       </Head>
       { !isHomePageMain && <Navbar />}
       <main className="flex-grow mt-[4rem]">{children}</main>

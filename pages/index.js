@@ -48,7 +48,7 @@ export default function Home({ media }) {
         <title>Xbattery</title>
         <meta
           name="description"
-          content="XBattery is building giant batteries to transform energy storage in India using advanced BMS, IoT, Digital Twins, and AI."
+          content="Xbattery is building energy storage infrastructure in India, including electronics and software, to help businesses and grids store energy affordably and access it on demand."
         />
 
         <meta property="og:type" content="website" />

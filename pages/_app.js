@@ -3,6 +3,7 @@ import { ChakraProvider } from "@chakra-ui/react";
 import "@/styles/globals.css";
 import { useRouter } from "next/router";
 import { MathJaxContext } from "better-react-mathjax";
+import Head from "next/head";
 
 export default function App({ Component, pageProps }) {
   const router = useRouter();
@@ -16,6 +17,9 @@ export default function App({ Component, pageProps }) {
     router.pathname.includes("bharat-bms"); 
   return (
     <div className={isHomePage ? "bg-[black] " : "bg-white text-black"}>
+    <Head>
+    <link rel="icon" type="image/webp"  href="/favicon.webp" />
+    </Head>
       <Layout>
         <MathJaxContext>
           <ChakraProvider>
