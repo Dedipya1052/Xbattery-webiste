@@ -416,7 +416,7 @@ const batteries = [
             <div className="w-full xl:w-[35%] flex flex-col gap-[2rem]">
               <div className="flex flex-col gap-[1.5rem]">
                 <div className="text-[1.2rem] pb-[0.8rem] pl-[0.8rem] pt-[1rem] border-b-[0.8px] border-black font-semibold">
-                 Xbattery
+                 Xbattery 
                 </div>
                 <div className="text-[1rem] pl-[0.8rem] pr-[0.8rem]">
                   Xbattery is building energy storage infrastructure in India,
