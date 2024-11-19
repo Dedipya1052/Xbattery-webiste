@@ -58,7 +58,7 @@ const BharatBMS = () => {
         </div>
       </div> */}
 
-      <div className="bg-[#1f1f1f] text-white w-full 2xl:h-[35vh]">
+      <div className="bg-[#1f1f1f] text-white w-full  2xl:h-[37vh]">
         <div className="mx-auto w-[95%] md:w-[90%] xl:w-[95%] 2xl:w-[1500px] py-16 px-6 flex flex-col lg:flex-row items-center justify-center h-full">
           <div className="text-center lg:text-left p-4 mb-6 lg:mb-0">
             <h1
