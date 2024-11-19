@@ -55,8 +55,9 @@ export default function Home({ media }) {
         <meta property="og:title" content="XBattery" />
         <meta
           property="og:description"
-          content="XBattery is building giant batteries to transform energy storage in India using advanced BMS, IoT, Digital Twins, and AI."
+          content="Xbattery is building energy storage infrastructure in India, including electronics and software, to help businesses and grids store energy affordably and access it on demand."
         />
+        <link rel="icon" type="image/webp"  href="/favicon.webp" />
         <meta
           property="og:image"
           content="/favicon.webp"
@@ -68,7 +69,7 @@ export default function Home({ media }) {
         <meta name="twitter:title" content="XBattery" />
         <meta
           name="twitter:description"
-          content="XBattery is building giant batteries to transform energy storage in India using advanced BMS, IoT, Digital Twins, and AI."
+          content="Xbattery is building energy storage infrastructure in India, including electronics and software, to help businesses and grids store energy affordably and access it on demand."
         />
         <meta
           name="twitter:image"
