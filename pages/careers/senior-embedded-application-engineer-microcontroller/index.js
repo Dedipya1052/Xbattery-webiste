@@ -211,16 +211,29 @@ const Job1 = () => {
           </p>
         </div> */}
 
-          <div className="mt-[2rem] w-[95%] mx-auto">
-            <iframe
-              src="https://app.youform.com/forms/euzhliaa"
-              loading="lazy"
-              width="100%"
-              height="550"
-              frameborder="0"
-              marginheight="0"
-              marginwidth="0"
-            ></iframe>
+        <div className="mt-[2rem] w-[95%] mx-auto">
+            <div>
+              <iframe
+                src="https://app.youform.com/forms/jfh1jwb6"
+                loading="lazy"
+                width="100%"
+                height="700"
+                frameborder="0"
+                marginheight="0"
+                marginwidth="0"
+              ></iframe>
+              <p className=" text-[#c5c5c5] text-sm mt-1 text-center">
+                Having trouble?&nbsp;
+                <a
+                  href="https://app.youform.com/forms/jfh1jwb6"
+                  target="_blank"
+                  className=" hover:underline"
+                >
+                 Click here to open the form
+                </a>
+                .
+              </p>
+            </div>
           </div>
           {/* <div className={classes.affiliateholder}>
           <Button
