@@ -222,6 +222,7 @@ const Job2 = () => {
                 <a
                   href="https://app.youform.com/forms/jfh1jwb6"
                   target="_blank"
+                  rel="noreferrer"
                   className=" hover:underline"
                 >
                  Click here to open the form
