@@ -83,6 +83,13 @@ export default function Home({ media }) {
         />
 
         <link rel="canonical" href={currentURL} />
+         {/* hreflang links  */}
+         <link
+          rel="alternate"
+          hreflang="en-in"
+          href="https://xbattery.energy/"
+        />
+        <link rel="alternate" hreflang="en" href="https://xbattery.energy/" />
       </Head>
 
       <Example media={media} />

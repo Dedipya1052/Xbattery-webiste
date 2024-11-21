@@ -192,7 +192,7 @@ const Footer = () => {
                   <MdEmail size={"30.5px"} />
                 </a>
                 <a
-                  href="https://twitter.com/getalterai"
+                  href="https://x.com/Xbattery_"
                   target="_blank"
                   rel="noreferrer"
                   className={styles.footerElements}

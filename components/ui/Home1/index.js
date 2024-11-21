@@ -361,6 +361,7 @@ const Example = ({ media }) => {
                 width={160}
                 height={160}
                 alt="logo"
+                title="logo"
                 className="opacity-100"
               />
             </Link>
@@ -487,9 +488,9 @@ const Example = ({ media }) => {
               {/* <div className="text-white text-3xl lg:text-4xl font-medium mb-4">
                 Xbattery
               </div> */}
-              <div className="text-white text-4xl lg:text-6xl text-center md:text-left font-bold">
+              <h1 className="text-white text-4xl lg:text-6xl text-center md:text-left font-bold">
                 Power Your Home 24/7
-              </div>
+              </h1>
               <div className="text-white text-lg lg:text-2xl text-center md:text-left font-light pt-5 pl-1">
                 High-performance lithium battery packs designed for India
               </div>
@@ -565,6 +566,7 @@ const Example = ({ media }) => {
                         <Image
                           src="/images/batteryApp/xbattery.png"
                           alt="Battery"
+                          title="Battery"
                           width={"1000"}
                           height={"1000"}
                           className="mx-auto w-[100px] md:w-[150px]"
@@ -595,6 +597,7 @@ const Example = ({ media }) => {
                     width={"1000"}
                     height={"1000"}
                     alt="battery"
+                    title="Appliances"
                   />
                 </div>
               </div>
@@ -952,9 +955,9 @@ const Example = ({ media }) => {
         <AnimatedDiv>
           <div className="relative w-full mb-2 mt-[9rem] sm:mt-[8rem]">
             <div className="block md:hidden text-[white] text-center px-4 mt-[-1rem] mb-7 w-[90%] mx-auto">
-              <h1 className={`${styles.textColor} font-bold`}>
+              <h2 className={`${styles.textColor} font-bold`}>
                 Reliable Energy Storage for Your Home
-              </h1>
+              </h2>
               <p className="mt-4">
                 Xbattery fits easily into your home, saving space while
                 providing reliable energy storage. It helps reduce electricity
@@ -969,11 +972,12 @@ const Example = ({ media }) => {
               height={1000}
               alt="image"
               className="w-full h-auto"
+              title="houseXbattery"
             />
             <div className="md:block hidden absolute top-4 xl:top-10 left-1/2 transform -translate-x-1/2 text-black text-center">
-              <h1 className="text-2xl font-bold">
+              <h2 className="text-2xl font-bold">
                 Reliable Energy Storage for Your Home
-              </h1>
+              </h2>
               <p className="mt-4">
                 Xbattery blends seamlessly into your home, occupying minimal
                 space while providing reliable energy storage. It helps manage
@@ -1361,9 +1365,9 @@ const Example = ({ media }) => {
 
               <div className="w-[94%] md:w-[90%] lg:w-[85%] xl:w-[80%] 2xl:w-[1450px] h-full mx-auto relative flex items-center justify-center p-6 text-center">
                 <div className="text-white w-[90%] md:w-[70%] lg:w-[60%]">
-                  <h1 className="text-2xl md:text-3xl font-bold mb-4">
+                  <h2 className="text-2xl md:text-3xl font-bold mb-4">
                   Learn Energy Storage, Batteries and more
-                  </h1>
+                  </h2>
                   <p className="text-base md:text-lg mb-6">
                     Get insights into energy, energy storage, and how they work.
                     Our learning hub simplifies these concepts to help you

@@ -20,6 +20,7 @@ const Layout = ({ children }) => {
         />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" type="image/webp" href="/favicon.webp" />
+        <meta name="robots" content="index, follow" />
       </Head>
       {!isHomePageMain && <Navbar />}
       <main className="flex-grow mt-[4rem]">{children}</main>
