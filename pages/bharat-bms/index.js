@@ -58,8 +58,8 @@ const BharatBMS = () => {
         </div>
       </div> */}
 
-      <div className="bg-[#1f1f1f] text-white w-full  2xl:h-[37vh]">
-        <div className="mx-auto w-[95%] md:w-[90%] xl:w-[95%] 2xl:w-[1500px] py-16 px-6 flex flex-col lg:flex-row items-center justify-center h-full">
+      <div className="bg-[#1f1f1f] text-white w-full  2xl:h-[37vh]"> 
+        <div className="mx-auto w-[95%] md:w-[90%] xl:w-[95%] 2xl:w-[1500px] py-8 pb-[3rem]  md:py-16 px-6 flex flex-col lg:flex-row items-center justify-center h-full">
           <div className="text-center lg:text-left p-4 mb-6 lg:mb-0">
             <h1
               className={`text-4xl md:text-5xl font-bold mb-6 ${classes.color} leading-[45px] 2xl:text-6xl md:leading-[60px] xl:leading-[60px] 2xl:leading-[70px]`}
@@ -75,9 +75,9 @@ const BharatBMS = () => {
             <Image
               height={750} // Increased the height
               width={750} // Increased the width
-              src="/images/bharatbms/hero.png"
+              src="/images/bharatbms/hero1.png" 
               alt="Hero Image"
-              className="rounded-lg shadow-lg w-full max-w-lg object-cover 2xl:w-[80%] 2xl:h-[80%]" // Adjusted image size for larger screens
+              className="rounded-lg shadow-lg w-full max-w-lg object-cover 2xl:w-[80%] 2xl:h-[80%] scale-[1.3] lg:scale-[0.9] opacity-[90%]" // Adjusted image size for larger screens
             />
           </div>
         </div>

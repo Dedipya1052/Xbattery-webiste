@@ -11,7 +11,7 @@ const Layout = ({ children }) => {
   return (
     <div className="flex flex-col min-h-screen">
       <Head>
-        <title>Xbattery</title>
+        <title>Large-Scale Battery Storage Systems in India | Xbattery</title>
         <meta
           name="description"
           content="Xbattery is building lithium battery packs in India,

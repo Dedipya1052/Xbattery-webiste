@@ -45,7 +45,7 @@ export default function Home({ media }) {
           name="keywords"
           content="XBattery, Giant Batteries, Energy Storage, BMS, IoT, Digital Twins, AI, Energy Transformation, Advanced BMS, Battery Management, Smart Batteries, Indian Energy, Renewable Energy"
         />
-        <title>Xbattery</title>
+        <title>Large-Scale Battery Storage Systems in India | Xbattery</title>
         <meta
           name="description"
           content="Xbattery is building lithium battery packs in India,
