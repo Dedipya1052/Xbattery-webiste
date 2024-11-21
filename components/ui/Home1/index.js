@@ -354,98 +354,97 @@ const Example = ({ media }) => {
           isScrolled ? "bg-black" : "bg-transparent"
         }`}
       >
-       <div className="w-[95%] mx-auto flex items-center justify-between">
-            <Link href="/">
-              <Image
-                src="/images/logo1.png"
-                width={160}
-                height={160}
-                alt="logo"
-                title="logo"
-                className="opacity-100"
-              />
-            </Link>
+        <div className="w-[95%] mx-auto flex items-center justify-between">
+          <Link href="/">
+            <Image
+              src="/images/logo1.png"
+              width={160}
+              height={160}
+              alt="logo"
+              title="logo"
+              className="opacity-100"
+            />
+          </Link>
 
-            <div className="hidden lg:flex gap-7 items-center">
-              {[
-                { href: "/", label: "Energy Storage" },
-                { href: "/bharat-bms", label: "BharatBMS" },
-                { href: "/about", label: "About" },
-                { href: "/blog", label: "Blog" },
-                { href: "/whitepapers", label: "Whitepapers" },
-              ].map((item) => (
-                <Link href={item.href} key={item.href}>
-                  <button
-                    className={`text-lg font-medium transition-colors duration-300 ${
-                      currentPath === item.href
-                        ? "text-white"
-                        : "text-[#cacaca] hover:text-[#e6e6e6]"
-                    }`}
-                  >
-                    {item.label}
-                  </button>
-                </Link>
-              ))}
-            </div>
-
-            <button className="text-white bg-transparent border border-white px-4 py-2 rounded-full hover:bg-white hover:text-black transition-colors duration-300 hidden lg:block">
-              <Link href="/#registerEmail">Get Notified</Link>
-            </button>
-
-            <button
-              className="lg:hidden flex items-center text-white"
-              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            >
-              <svg
-                className="w-6 h-6"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  d="M4 6h16M4 12h16M4 18h16"
-                ></path>
-              </svg>
-            </button>
-          </div>
-
-          {mobileMenuOpen && (
-            <div className="lg:hidden absolute top-16 left-0 right-0 bg-black text-white flex flex-col items-center p-4 space-y-4">
-              {[
-                { href: "/", label: "Energy Storage" },
-                { href: "/bharat-bms", label: "BharatBMS" },
-                { href: "/about", label: "About" },
-                { href: "/blog", label: "Blog" },
-                { href: "/whitepapers", label: "Whitepapers" },
-              ].map((item) => (
-                <Link href={item.href} key={item.href}>
-                  <button
-                    className={`text-lg font-medium transition-colors duration-300 ${
-                      currentPath === item.href
-                        ? "text-white"
-                        : "text-[#cacaca] hover:text-[#e6e6e6]"
-                    }`}
-                    onClick={handleMenuItemClick}
-                  >
-                    {item.label}
-                  </button>
-                </Link>
-              ))}
-              <Link href="/#registerEmail">
+          <div className="hidden lg:flex gap-7 items-center">
+            {[
+              { href: "/", label: "Energy Storage" },
+              { href: "/bharat-bms", label: "BharatBMS" },
+              { href: "/about", label: "About" },
+              { href: "/blog", label: "Blog" },
+              { href: "/whitepapers", label: "Whitepapers" },
+            ].map((item) => (
+              <Link href={item.href} key={item.href}>
                 <button
-                  className="text-white bg-transparent border border-white px-4 py-2 rounded-full hover:bg-white hover:text-black transition-colors duration-300"
-                  onClick={handleMenuItemClick}
+                  className={`text-lg font-medium transition-colors duration-300 ${
+                    currentPath === item.href
+                      ? "text-white"
+                      : "text-[#cacaca] hover:text-[#e6e6e6]"
+                  }`}
                 >
-                  Get Notified
+                  {item.label}
                 </button>
               </Link>
-            </div>
-          )}
+            ))}
+          </div>
 
+          <button className="text-white bg-transparent border border-white px-4 py-2 rounded-full hover:bg-white hover:text-black transition-colors duration-300 hidden lg:block">
+            <Link href="/#registerEmail">Get Notified</Link>
+          </button>
+
+          <button
+            className="lg:hidden flex items-center text-white"
+            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+          >
+            <svg
+              className="w-6 h-6"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
+                d="M4 6h16M4 12h16M4 18h16"
+              ></path>
+            </svg>
+          </button>
+        </div>
+
+        {mobileMenuOpen && (
+          <div className="lg:hidden absolute top-16 left-0 right-0 bg-black text-white flex flex-col items-center p-4 space-y-4">
+            {[
+              { href: "/", label: "Energy Storage" },
+              { href: "/bharat-bms", label: "BharatBMS" },
+              { href: "/about", label: "About" },
+              { href: "/blog", label: "Blog" },
+              { href: "/whitepapers", label: "Whitepapers" },
+            ].map((item) => (
+              <Link href={item.href} key={item.href}>
+                <button
+                  className={`text-lg font-medium transition-colors duration-300 ${
+                    currentPath === item.href
+                      ? "text-white"
+                      : "text-[#cacaca] hover:text-[#e6e6e6]"
+                  }`}
+                  onClick={handleMenuItemClick}
+                >
+                  {item.label}
+                </button>
+              </Link>
+            ))}
+            <Link href="/#registerEmail">
+              <button
+                className="text-white bg-transparent border border-white px-4 py-2 rounded-full hover:bg-white hover:text-black transition-colors duration-300"
+                onClick={handleMenuItemClick}
+              >
+                Get Notified
+              </button>
+            </Link>
+          </div>
+        )}
       </nav>
 
       <div>
@@ -515,7 +514,7 @@ const Example = ({ media }) => {
         <div className="mx-auto w-[94%] md:w-[90%] lg:w-[85%] xl:w-[80%] 2xl:w-[1450px] mt-[4rem] mb-[5rem]">
           <AnimatedDiv>
             <div className={`${styles.block3Head} text-center`}>
-            Capacity As Per Your Needs
+              Capacity As Per Your Needs
             </div>
           </AnimatedDiv>
           <AnimatedDiv>
@@ -1310,42 +1309,53 @@ const Example = ({ media }) => {
 
         {/* Learn redirect */}
 
-        {/* <AnimatedDiv>
-        <div className="w-full bg-[#1f1f1f]">
-          <div
-            className="mt-[7rem] mb-[0rem] pt-[3rem] pb-[4rem] w-[94%] md:w-[90%] lg:w-[85%] xl:w-[80%] 2xl:w-[1450px] mx-auto cursor-pointer"
-            onClick={handleRedirect}
-          >
-            <div className="flex flex-col lg:flex-row items-center justify-center gap-[5%] p-6">
-              <div className="w-full lg:w-[45%] mb-6 lg:mb-0">
-                <Image
-                  src="/images/hero/learn.png" // Replace with your image path
-                  alt="Energy Innovation"
-                  width={500} // Adjust width as needed
-                  height={300} // Adjust height as needed
-                  className="rounded-lg w-full"
-                />
-              </div>
-              <div className="w-full lg:w-[50%] ">
-                <h1
-                  className={`text-2xl md:text-3xl font-bold mb-4 ${styles.color}`}
-                >
-                  Explore Topics in Energy Innovation
-                </h1>
-                <p className="text-base md:text-lg mb-6 text-white">
-                  Dive deep into energy solutions, advanced BMS, IoT, Digital
-                  Twins, AI, and the future of energy storage in India.
-                </p>
-                <button
-                  className={`px-6 py-3 rounded-lg font-bold text-white bg-transparent border-[2px] ${styles.gradientBorder}`}
-                >
-                  Learn More → 
-                </button>
+        <AnimatedDiv>
+          <div className="w-full bg-[#181818]">
+            <div
+              className="mt-[7rem] mb-[0rem] pt-[3rem] pb-[4rem] w-[94%] md:w-[90%] lg:w-[85%] xl:w-[80%] 2xl:w-[1450px] mx-auto "
+              // onClick={handleRedirect}
+            >
+              <div className="flex flex-col lg:flex-row items-center justify-center gap-[5%] p-6">
+                <div className="w-full lg:w-[45%] mb-6 lg:mb-0">
+                  {/* <Image
+                    src="/images/hero/bharat/hero.png" // Replace with your image path
+                    alt="Energy Innovation"
+                    width={500} // Adjust width as needed
+                    height={300} // Adjust height as needed
+                    className="rounded-lg w-[90%] mx-auto opacity-[85%]"
+                  /> */}
+                   <Image
+                    src="/images/hero/bharat/hero2.png" // Replace with your image path
+                    alt="Energy Innovation"
+                    width={500} // Adjust width as needed
+                    height={300} // Adjust height as needed
+                    className="rounded-lg w-full mx-auto xl:scale-[1.2] 2xl:scale-[1.0]"
+                  />
+                  
+                </div>
+                <div className="w-full lg:w-[50%] text-center lg:text-left">
+                  <h1
+                    className={`text-2xl md:text-3xl font-bold mb-4 ${styles.color} `}
+                  >
+                    Introducing BharatBMS
+                  </h1>
+                  <p className="text-base md:text-lg mb-6 text-white">
+                    India’s first universal Battery Management System, scalable
+                    from home backups to megawatt-scale applications. Built for
+                    Indian conditions and proudly made in India.
+                  </p>
+                  <Link href={"/bharat-bms"}>
+                    <button
+                      className={`px-6 py-3 rounded-lg font-bold text-white bg-transparent border-[2px] ${styles.gradientBorder}`}
+                    >
+                     Know More →
+                    </button>
+                  </Link>
+                </div>
               </div>
             </div>
           </div>
-        </div>
-        </AnimatedDiv> */}
+        </AnimatedDiv>
 
         <AnimatedDiv>
           <div className="w-full h-[400px] flex items-center justify-center">
@@ -1366,7 +1376,7 @@ const Example = ({ media }) => {
               <div className="w-[94%] md:w-[90%] lg:w-[85%] xl:w-[80%] 2xl:w-[1450px] h-full mx-auto relative flex items-center justify-center p-6 text-center">
                 <div className="text-white w-[90%] md:w-[70%] lg:w-[60%]">
                   <h2 className="text-2xl md:text-3xl font-bold mb-4">
-                  Learn Energy Storage, Batteries and more
+                    Learn Energy Storage, Batteries and more
                   </h2>
                   <p className="text-base md:text-lg mb-6">
                     Get insights into energy, energy storage, and how they work.
