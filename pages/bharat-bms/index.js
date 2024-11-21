@@ -77,7 +77,7 @@ const BharatBMS = () => {
               width={750} // Increased the width
               src="/images/bharatbms/hero.png" 
               alt="Hero Image"
-              className="rounded-lg shadow-lg w-full max-w-lg object-cover 2xl:w-[80%] 2xl:h-[80%] scale-[1.3] lg:scale-[0.9] opacity-[90%] 2xl:pt-[2rem] 2xl:pb-[2rem]" // Adjusted image size for larger screens
+              className="rounded-lg shadow-lg w-[100%] max-w-lg object-cover 2xl:w-[80%] 2xl:h-[80%] scale-[1.0] lg:scale-[0.9] opacity-[90%] 2xl:pt-[2rem] 2xl:pb-[2rem]" // Adjusted image size for larger screens
             />
           </div>
         </div>
