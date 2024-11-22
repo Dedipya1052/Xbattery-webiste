@@ -33,8 +33,6 @@ export async function getStaticProps() {
 }
 
 export default function Home({ media }) {
-  const router = useRouter();
-   const currentURL = `https://xbattery.energy${router.pathname}`
 
   return (
     <>
@@ -81,8 +79,6 @@ export default function Home({ media }) {
           name="twitter:image"
           content="https://xbattery.energy/images/og-image.jpg"
         />
-
-        <link rel="canonical" href={currentURL} />
          {/* hreflang links  */}
          <link
           rel="alternate"

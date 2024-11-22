@@ -15,11 +15,15 @@ export default function App({ Component, pageProps }) {
     router.pathname.includes("about") ||
     router.pathname.includes("careers") ||
     router.pathname.includes("bharat-bms"); 
+    const currentURL = `https://xbattery.energy${router.pathname}`;
+    const display = router.pathname.includes("learn/") || router.pathname.includes("blog/") || router.pathname.includes("whitepapers/") ;
+   
   return (
     <div className={isHomePage ? "bg-[black] " : "bg-white text-black"}>
-    <Head>
-    <link rel="icon" type="image/webp"  href="/favicon.webp" />
-    </Head>
+      <Head>
+        <link rel="icon" type="image/webp" href="/favicon.webp" />
+        {!display && <link rel="canonical" href={currentURL} />}
+      </Head>
       <Layout>
         <MathJaxContext>
           <ChakraProvider>
