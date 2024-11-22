@@ -1324,14 +1324,13 @@ const Example = ({ media }) => {
                     height={300} // Adjust height as needed
                     className="rounded-lg w-[90%] mx-auto opacity-[85%]"
                   /> */}
-                   <Image
-                    src="/images/hero/bharat/hero2.png" // Replace with your image path
+                  <Image
+                    src="/images/hero/bharat/chip1.png" // Replace with your image path
                     alt="Energy Innovation"
                     width={500} // Adjust width as needed
                     height={300} // Adjust height as needed
-                    className="rounded-lg w-full mx-auto xl:scale-[1.2] 2xl:scale-[1.0]"
+                    className="rounded-lg w-full mx-auto xl:scale-[1.2] 2xl:scale-[1.0] opacity-[75%]"
                   />
-                  
                 </div>
                 <div className="w-full lg:w-[50%] text-center lg:text-left">
                   <h1
@@ -1340,15 +1339,20 @@ const Example = ({ media }) => {
                     Introducing BharatBMS
                   </h1>
                   <p className="text-base md:text-lg mb-6 text-white">
-                    India’s first universal Battery Management System, scalable
-                    from home backups to megawatt-scale applications. Built for
-                    Indian conditions and proudly made in India.
+                    India’s first universal Battery Management System scales
+                    from 5kWh setups to megawatt applications, offering modular
+                    upgrades and reliable performance in tough power conditions.
+                  </p>
+                  <p className="text-base md:text-lg mb-6 text-white">
+                    Made in India with local components, it ensures fast support
+                    and customization while driving innovation in energy storage
+                    and EV products.
                   </p>
                   <Link href={"/bharat-bms"}>
                     <button
                       className={`px-6 py-3 rounded-lg font-bold text-white bg-transparent border-[2px] ${styles.gradientBorder}`}
                     >
-                     Know More →
+                      Know More →
                     </button>
                   </Link>
                 </div>
