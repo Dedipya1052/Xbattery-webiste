@@ -14,9 +14,7 @@ const Layout = ({ children }) => {
         <title>Large-Scale Battery Storage Systems in India | Xbattery</title>
         <meta
           name="description"
-          content="Xbattery is building lithium battery packs in India,
-                  including electronics and software, to help businesses, EVs
-                  and grids store energy affordably and access it on demand."
+          content="Xbattery builds lithium battery packs in India, integrating electronics and software to help businesses, EVs, and grids store and access energy affordably."
         />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" type="image/webp" href="/favicon.webp" />

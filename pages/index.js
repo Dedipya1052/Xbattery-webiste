@@ -46,18 +46,14 @@ export default function Home({ media }) {
         <title>Large-Scale Battery Storage Systems in India | Xbattery</title>
         <meta
           name="description"
-          content="Xbattery is building lithium battery packs in India,
-                  including electronics and software, to help businesses, EVs
-                  and grids store energy affordably and access it on demand."
+          content="Xbattery builds lithium battery packs in India, integrating electronics and software to help businesses, EVs, and grids store and access energy affordably."
         />
 
         <meta property="og:type" content="website" />
         <meta property="og:title" content="XBattery" />
         <meta
           property="og:description"
-          content="Xbattery is building lithium battery packs in India,
-                  including electronics and software, to help businesses, EVs
-                  and grids store energy affordably and access it on demand."
+          content="Xbattery builds lithium battery packs in India, integrating electronics and software to help businesses, EVs, and grids store and access energy affordably."
         />
         <link rel="icon" type="image/webp"  href="/favicon.webp" />
         <meta
