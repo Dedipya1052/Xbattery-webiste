@@ -93,7 +93,8 @@ const LearnComp= () => {
   return (
     <>
       <Head>
-        <title>Learn | Xbattery</title>
+        <title>XBattery™ Learn BMS, Energy Storage & Battery Tech Guides</title>
+        <meta name="description" content="Discover expert guides on BMS, energy storage, and battery tech. Learn from XBattery™'s resources to stay ahead in the world of energy solutions."/>
         <meta property="og:image" content="/favicon.webp" />
       </Head>
 

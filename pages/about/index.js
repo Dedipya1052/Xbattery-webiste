@@ -57,7 +57,7 @@ const About = () => {
   return (
     <>
       <Head>
-        <title>About Us | Xbattery</title>
+        <title>Building India's Energy Storage Future | About XBattery™</title>
 
         <meta property="og:image" content="/favicon.webp" />
         <meta property="og:site_name" content="Xbattery" />
@@ -100,11 +100,11 @@ const About = () => {
             transition={{ duration: 0.75, delay: 0 }}
             className={`absolute md:top-0 md:left-0  md:right-0 top-[-2rem] w-full md:w-[90%]  mx-auto h-full flex flex-col items-center md:items-start justify-center p-4 md:p-16 space-y-2 text-left ${classes.color}`}
           >
-            <div className="text-[white] text-4xl lg:text-4xl font-medium mb-4">
+            {/* <div className="text-[white] text-4xl lg:text-4xl font-medium mb-4">
               About us
-            </div>
-            <div className="text-white text-4xl lg:text-4xl text-center md:text-left font-bold">
-              Innovating Today, Empowering Tomorrow
+            </div> */}
+            <div className="text-white text-3xl lg:text-3xl text-center md:text-left font-bold">
+            Coding for 10,000+ Lithium Cells. Zero Errors. One Platform.
             </div>
             <div className="pt-8 flex gap-7 pl-2">
               <Button
@@ -115,7 +115,7 @@ const About = () => {
                 _hover={{ bg: "transparent" }}
                 onClick={handleScroll1}
               >
-                Learn More About Us
+                Our message
               </Button>
             </div>
           </motion.div>
@@ -645,6 +645,7 @@ const About = () => {
                         <a
                           href="mailto:support@xbattery.energy"
                           target="_blank"
+                          aria-label="Xbattery support email"
                           rel="noreferrer"
                         >
                           support@xbattery.energy

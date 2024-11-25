@@ -78,6 +78,7 @@ const Navbar = () => {
             </button>
 
             <button
+              aria-label="menu"
               className="lg:hidden flex items-center text-white"
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             >
@@ -222,6 +223,7 @@ const Navbar = () => {
             {/* Mobile menu toggle */}
             <div className="lg:hidden flex items-center ml-auto relative">
               <button
+                aria-label="menu"
                 onClick={toggleMenu}
                 className="text-black focus:outline-none rounded-full p-2 transition-all duration-300"
               >

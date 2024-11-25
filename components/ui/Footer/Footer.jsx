@@ -92,6 +92,7 @@ const Footer = () => {
                       <a
                         href="mailto:support@xbattery.energy"
                         target="_blank"
+                        aria-label="Xbattery support email"
                         className={styles.footerElements}
                         rel="noreferrer"
                       >
@@ -99,6 +100,7 @@ const Footer = () => {
                       </a>
                       <a
                         href="https://x.com/Xbattery_"
+                        aria-label="Xbattery twitter"
                         target="_blank"
                         rel="noreferrer"
                         className={styles.footerElements}
@@ -108,6 +110,7 @@ const Footer = () => {
 
                       <a
                         href="https://www.linkedin.com/company/xbattery/"
+                        aria-label="Xbattery Linkedin"
                         className={styles.footerElements}
                         target="_blank"
                         rel="noreferrer"
@@ -121,9 +124,9 @@ const Footer = () => {
 
               <div className={styles.footerElementDesktop}>
                 <div className={styles.footerDescription}>
-                Xbattery is building lithium battery packs in India,
-                  including electronics and software, to help businesses, EVs
-                  and grids store energy affordably and access it on demand.
+                  Xbattery is building lithium battery packs in India, including
+                  electronics and software, to help businesses, EVs and grids
+                  store energy affordably and access it on demand.
                   <br />
                 </div>
 
@@ -177,14 +180,15 @@ const Footer = () => {
                 </div>
               </div>
               <div className={styles.footerDescription1}>
-              Xbattery is building lithium battery packs in India,
-                  including electronics and software, to help businesses, EVs
-                  and grids store energy affordably and access it on demand.
+                Xbattery is building lithium battery packs in India, including
+                electronics and software, to help businesses, EVs and grids
+                store energy affordably and access it on demand.
                 <br />
               </div>
               <div className={styles.linksFot2}>
                 <a
                   href="mailto:support@xbattery.energy"
+                  aria-label="Xbattery support email"
                   target="_blank"
                   className={styles.footerElements}
                   rel="noreferrer"
@@ -193,6 +197,7 @@ const Footer = () => {
                 </a>
                 <a
                   href="https://x.com/Xbattery_"
+                  aria-label="Xbattery twitter"
                   target="_blank"
                   rel="noreferrer"
                   className={styles.footerElements}
@@ -202,6 +207,7 @@ const Footer = () => {
 
                 <a
                   href="https://www.linkedin.com/company/xbattery/"
+                  aria-label="Xbattery Linkedin"
                   className={styles.footerElements}
                   target="_blank"
                   rel="noreferrer"
@@ -211,7 +217,7 @@ const Footer = () => {
               </div>
             </div>
 
-            <p
+            {/* <p
               style={{
                 fontSize: "12px",
                 opacity: "45%",
@@ -231,7 +237,31 @@ const Footer = () => {
                   Privacy.
                 </Link>
               </span>
+            </p> */}
+
+            <div className="w-[95%] mx-auto"> 
+            <p
+              style={{
+                fontSize: "12px",
+                color: "#6c757d", // Sufficient contrast color for the entire text
+                marginBottom: "7px",
+                marginTop: "25px",
+                textAlign: "center",
+              }}
+            >
+              © {new Date().getFullYear()} Xbattery Energy Private Limited. All
+              rights reserved.{" "}
+              <span>
+                <Link href={"/terms"} className="hover:underline">
+                  Terms
+                </Link>{" "}
+                and{" "}
+                <Link href={"/privacy"} className="hover:underline">
+                  Privacy.
+                </Link>
+              </span>
             </p>
+            </div>
           </div>
         </div>
       ) : (
@@ -439,9 +469,9 @@ const Footer = () => {
                   Xbattery
                 </div>
                 <div className="text-[1rem] pl-[0.8rem] pr-[0.8rem]">
-                Xbattery is building lithium battery packs in India,
-                  including electronics and software, to help businesses, EVs
-                  and grids store energy affordably and access it on demand.
+                  Xbattery is building lithium battery packs in India, including
+                  electronics and software, to help businesses, EVs and grids
+                  store energy affordably and access it on demand.
                 </div>
               </div>
               <div className="flex flex-col gap-[1.5rem]">
@@ -452,6 +482,7 @@ const Footer = () => {
                   <a
                     href=" https://x.com/Xbattery_"
                     target="_blank"
+                    aria-label="Xbattery twitter"
                     rel="noreferrer"
                   >
                     <BsTwitterX
@@ -464,6 +495,7 @@ const Footer = () => {
                     href="https://www.linkedin.com/company/xbattery/"
                     target="_blank"
                     rel="noreferrer"
+                    aria-label="Xbattery Linkedin"
                   >
                     <FaLinkedin
                       size={"1.4rem"}
@@ -472,9 +504,9 @@ const Footer = () => {
                   </a>
                   <a
                     href="mailto:support@XBattery.energy"
+                    aria-label="Xbattery support email"
                     target="_blank"
                     rel="noreferrer"
-                    aria-label="email"
                   >
                     <MdEmail
                       size={"1.4rem"}

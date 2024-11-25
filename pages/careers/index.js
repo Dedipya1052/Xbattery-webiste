@@ -37,7 +37,7 @@ const Careers = () => {
   return (
     <>
       <Head>
-        <title>Careers | Xbattery</title>
+        <title>Battery Packs, BMS & Energy Storage Jobs | XBattery™ Careers</title>
 
         <meta property="og:image" content="/images/favicon.webp" />
         <meta property="og:site_name" content="Xbattery" />

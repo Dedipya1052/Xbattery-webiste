@@ -17,7 +17,7 @@ const BharatBMS = () => {
   return (
     <>
       <Head>
-        <title>BharatBMS | Xbattery</title>
+        <title>BharatBMS - India's First Unified Battery Management System | XBattery™</title>
 
         <meta property="og:image" content="/favicon.webp" />
         <meta property="og:site_name" content="Xbattery" />

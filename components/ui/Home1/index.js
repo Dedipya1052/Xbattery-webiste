@@ -393,6 +393,7 @@ const Example = ({ media }) => {
           </button>
 
           <button
+            aria-label="menu"
             className="lg:hidden flex items-center text-white"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
           >

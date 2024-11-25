@@ -68,8 +68,10 @@ export default function Blogs({ blogs }) {
     <>
       <Head>
         <title>
-          Blog | Xbattery
+        Battery Packs, BMS, Energy Storage Updates | XBattery™ Blog
         </title>
+        <meta name="description" content="Stay updated with the latest news on battery packs, BMS, energy storage, and cutting-edge tech. Explore insightful blogs on XBattery™ Blog."/>
+
         <meta property="og:image" content="/favicon.webp" />
       </Head>
       <div className={styles.head1}>
@@ -81,7 +83,7 @@ export default function Blogs({ blogs }) {
         </div> */}
         <div className=" mt-[2.5rem] mb-[2.3rem] flex flex-col justify-center items-center gap-[1rem]">
           <div className={`text-[2.22rem] md:text-[2.8rem] text-center font-semibold ${styles.head1}`}>
-          Engineering blogs
+          Engineering blog
           </div>
           {/* <div className={`${styles.head1}  text-[1.05rem] md:text-[1.28rem] text-center  font-semibold`}>
           Investing basics—in plain English.
