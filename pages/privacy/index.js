@@ -35,7 +35,7 @@ const Privacy = () => {
 
         <div
           className={classes.affiliatewrapper}
-          style={{ position: "relative" }}
+          style={{ position: "relative" }} 
         >
           {/* <Button
           className={classes.affBackButton}
