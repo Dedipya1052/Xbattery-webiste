@@ -12,7 +12,8 @@ import { IoArrowBack } from "react-icons/io5";
 import { useRouter } from "next/router";
 import Card from "@/components/ui/BlogCard/BlogCard";
 import TopBlogs from "@/components/ui/TopBlogs";
-import { MathJax } from 'better-react-mathjax';
+import { MathJax, MathJaxContext } from 'better-react-mathjax';
+
 
 
 
@@ -253,6 +254,8 @@ export default function BlogPage({ blog,blogs}) {
           mainEntity={faqs}
       />
       } */}
+
+      <MathJaxContext>
       
       <div className={styles.container}>
      <div className={styles.affBackButton} onClick={()=>router.push("/blog")}> <IoArrowBack /> <p>Back</p></div>
@@ -285,6 +288,8 @@ export default function BlogPage({ blog,blogs}) {
         </div>
       </div>
       <div className="bg-black h-[0.7px] w-[90%] mx-auto mt-[5rem] mb-[6rem]"></div>
+
+      </MathJaxContext>
      
       <TopBlogs blogs={blogs} slug={slug}/>
     </>

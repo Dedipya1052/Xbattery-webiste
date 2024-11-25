@@ -11,16 +11,11 @@ import Link from "next/link";
 import AnimatedDiv from "../Animate";
 import { motion } from "framer-motion";
 // import { Typewriter } from "react-simple-typewriter";
-import { gsap } from "gsap";
 import { useRouter } from "next/router";
 
 // * fetch blogs from contentful CMS
 
 const Example = ({ media }) => {
-
-  const Xbattery5Ref= useRef(null);
-  const Xbattery50Ref= useRef(null);
-  
 
   const videoUrl1 = media?.video1?.fields?.file?.url;
 
@@ -360,8 +355,9 @@ const Example = ({ media }) => {
               src="/images/logo1.png"
               width={160}
               height={160}
-              alt="logo"
               title="logo"
+              priority
+              alt="XBattery Company Logo"
               className="opacity-100"
             />
           </Link>
@@ -1371,7 +1367,7 @@ const Example = ({ media }) => {
               <div
                 className="absolute inset-0"
                 style={{
-                  backgroundImage: `url('/images/hero/learn.png')`,
+                  backgroundImage: `url('/images/hero/learn.webp')`,
                   backgroundSize: "cover",
                   backgroundPosition: "center",
                   opacity: 0.2,

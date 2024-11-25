@@ -2,8 +2,8 @@ import Layout from "@/components/Layout";
 import { ChakraProvider } from "@chakra-ui/react";
 import "@/styles/globals.css";
 import { useRouter } from "next/router";
-import { MathJaxContext } from "better-react-mathjax";
 import Head from "next/head";
+import Script from "next/script";
 
 export default function App({ Component, pageProps }) {
   const router = useRouter();
@@ -25,6 +25,7 @@ export default function App({ Component, pageProps }) {
          {/* Google Tag (gtag.js) */}
          <script
           async
+          defer
           src="https://www.googletagmanager.com/gtag/js?id=G-Y419512V0Q"
         ></script>
         <script
@@ -38,16 +39,15 @@ export default function App({ Component, pageProps }) {
           }}
           defer
         ></script>
+        
 
         <link rel="icon" type="image/webp" href="/favicon.webp" />
         {!display && <link rel="canonical" href={currentURL} />}
       </Head>
       <Layout>
-        <MathJaxContext>
           <ChakraProvider>
             <Component {...pageProps} />
           </ChakraProvider>
-        </MathJaxContext>
       </Layout>
     </div>
   );
