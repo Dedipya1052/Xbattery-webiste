@@ -47,6 +47,8 @@ const Navbar = () => {
                 width={160}
                 height={160}
                 alt="logo"
+                title="logo"
+                priority
                 className="opacity-100"
               />
             </Link>

@@ -358,7 +358,6 @@ const Example = ({ media }) => {
               title="logo"
               priority
               alt="XBattery Company Logo"
-              className="opacity-100"
             />
           </Link>
 
