@@ -10,6 +10,7 @@ import AnimatedDiv from "@/components/ui/Animate";
 import NavLink from "@/components/ui/NavLink";
 import Head from "next/head";
 import { Box, Text, List, ListItem, VStack } from '@chakra-ui/react';
+import { FaLinkedin } from "react-icons/fa";
 
 const About = () => {
   const router = useRouter();
@@ -125,11 +126,12 @@ const About = () => {
         <div className="w-[100%] mx-auto overflow-hidden mt-[-2rem] md:mt-[2rem]">
           <section className="bg-black py-12 mt-[3rem] ">
             <AnimatedDiv>
-              <div className="text-center mb-12 text-white w-[90%] mx-auto">
+              <div className="text-center mb-12 text-white w-[90%] sm:w-[85%] mx-auto">
                 <h2 className={`${classes.block3Head}`}>Xbattery</h2>
                 <p className="text-xl mt-[2rem] ">
-                  Xbattery builds large battery packs that help businesses and
-                  grids store energy affordably and access it on demand.
+                  {/* Xbattery builds large battery packs that help businesses and
+                  grids store energy affordably and access it on demand. */}
+                  Xbattery is building lithium battery packs in India, including electronics and software, to help businesses, EVs and grids store energy affordably and access it on demand.
                 </p>
               </div>
             </AnimatedDiv>
@@ -686,8 +688,15 @@ const About = () => {
                 className="w-full md:w-[30%] h-[350px] object-cover rounded-md"
               />
               <div className="text-white  w-full md:w-[65%] flex flex-col gap-[1rem] text-center md:text-left">
-                <div className=" text-2xl font-semibold">
-                  Satish Reddy, CEO of Xbattery
+                <div className=" text-2xl font-semibold flex flex-row justify-between md:justify-start items-start sm:items-center gap-[0.5rem] text-left">
+                  Satish Reddy, CEO of Xbattery <span className=" mt-1 sm:mt-0"> <a
+                        href="https://www.linkedin.com/in/satishreddyv/"
+                        aria-label="Xbattery Linkedin"
+                        target="_blank"
+                        rel="noreferrer"
+                      >
+                        <FaLinkedin size={"26px"} />
+                      </a></span>
                 </div>
                 <div className=" opacity-[80%] text-lg text-center md:text-left">
                   Satish Reddy leads Xbattery as founder and CEO. He spent 15
@@ -713,8 +722,16 @@ const About = () => {
                 className="w-full md:w-[30%] h-[350px] object-cover rounded-md"
               />
               <div className="text-white  w-full md:w-[65%] flex flex-col gap-[1rem] text-center md:text-left">
-                <div className=" text-2xl font-semibold">
-                  Sonu Mishra, CTO of Xbattery
+               
+                <div className=" text-2xl font-semibold flex flex-row justify-between md:justify-start items-start sm:items-center gap-[0.5rem] text-left">
+                Sonu Mishra, CTO of Xbattery <span className=" mt-1 sm:mt-0"> <a
+                        href="https://www.linkedin.com/in/sonumishra662/"
+                        aria-label="Xbattery Linkedin"
+                        target="_blank"
+                        rel="noreferrer"
+                      >
+                        <FaLinkedin size={"26px"} />
+                      </a></span>
                 </div>
                 <div className=" opacity-[80%] text-lg">
                   Sonu Mishra brings hands-on battery expertise to Xbattery as

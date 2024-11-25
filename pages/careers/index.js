@@ -72,7 +72,7 @@ const Careers = () => {
               Careers
             </div>
             <div className="text-white text-4xl lg:text-5xl text-center md:text-left font-bold">
-              Shape Tomorrow, Today
+            BMS & Energy Storage Jobs
             </div>
             <div className="pt-8 flex gap-7 pl-2">
               <Button
