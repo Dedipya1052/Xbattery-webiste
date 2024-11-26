@@ -82,7 +82,6 @@ export default function Home({ media }) {
           href="https://xbattery.energy/"
         />
         <link rel="alternate" hreflang="en" href="https://xbattery.energy/" />
-        <link rel="preload" href="/images/logo1.png" as="image" />
       </Head>
 
       <Example media={media} />

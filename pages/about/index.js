@@ -778,7 +778,7 @@ const About = () => {
 
               {/* <div className=" absolute top-20 right-[-6rem] xl:overflow-hidden">
                 <Image
-                  src={"/images/logo1.png"}
+                  src={"/images/logo1.webp"}
                   alt="logo"
                   height={650}
                   width={650}

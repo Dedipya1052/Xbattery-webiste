@@ -4,6 +4,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { useRouter } from "next/router";
 import styles from "./styles.module.css"
+import Head from "next/head";
 
 const Navbar = () => {
   const router = useRouter();
@@ -35,6 +36,9 @@ const Navbar = () => {
 
   return (
     <>
+       <Head>
+        <link rel="preload" href="/images/logo1.webp" as="image" />
+      </Head>
       {isHomePage ? (
         <div className={styles.head1}>
         <nav
@@ -43,7 +47,7 @@ const Navbar = () => {
           <div className="w-[95%] mx-auto flex items-center justify-between">
             <Link href="/">
               <Image
-                src="/images/logo1.png"
+                src="/images/logo1.webp"
                 width={160}
                 height={160}
                 alt="logo"
@@ -75,7 +79,7 @@ const Navbar = () => {
               ))}
             </div>
 
-            <button className="text-white bg-transparent border border-white px-4 py-2 rounded-full hover:bg-white hover:text-black transition-colors duration-300 hidden lg:block">
+            <button className="text-white bg-transparent border border-white px-4 py-2 rounded-full hover:bg-white hover:text-black transition-colors duration-300 hidden lg:block min-h-[48px] min-w-[48px]">
               <Link href="/#registerEmail">Get Notified</Link>
             </button>
 
@@ -125,7 +129,7 @@ const Navbar = () => {
               ))}
               <Link href="/#registerEmail">
                 <button
-                  className="text-white bg-transparent border border-white px-4 py-2 rounded-full hover:bg-white hover:text-black transition-colors duration-300"
+                  className="text-white bg-transparent border border-white px-4 py-2 rounded-full hover:bg-white hover:text-black transition-colors duration-300 min-h-[48px] min-w-[48px]"
                   onClick={handleMenuItemClick}
                 >
                   Get Notified
@@ -217,7 +221,7 @@ const Navbar = () => {
             <div className="hidden lg:flex items-center">
               <NavLink
                 href="/#registerEmail"
-                className="flex items-center justify-center gap-x-1 text-sm text-black font-bold custom-btn-bg border border-gray-500 active:bg-gray-900"
+                className="flex items-center justify-center gap-x-1 text-sm text-black font-bold custom-btn-bg border border-gray-500 active:bg-gray-900 min-h-[48px] min-w-[48px]"
               >
                 Get Notified
               </NavLink>
@@ -327,7 +331,7 @@ const Navbar = () => {
                 </Link>
                 <NavLink
                   href="/#registerEmail"
-                  className="flex items-center justify-center gap-x-1 text-sm text-black font-bold custom-btn-bg border border-gray-500 active:bg-gray-900 mt-5"
+                  className="flex items-center justify-center gap-x-1 text-sm text-black font-bold custom-btn-bg border border-gray-500 active:bg-gray-900 mt-5 min-h-[48px] min-w-[48px]"
                   onClick={closeMenu}
                 >
                   Get Notified

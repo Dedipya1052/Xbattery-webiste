@@ -81,7 +81,7 @@ const Footer = () => {
                 <div className={styles.footerLogo} aria-label="Go to homepage">
                   <Link href={"/"}>
                     <Image
-                      src="/images/logo1.png"
+                      src="/images/logo1.webp"
                       width="160"
                       height={"160"}
                       alt="logo"
