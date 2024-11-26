@@ -356,12 +356,12 @@ const Example = ({ media }) => {
         >
           <div className="w-[95%] mx-auto flex items-center justify-between">
             <Link href="/">
-              <Image
+              <img
                 src="/images/logo1.webp"
                 width={160}
                 height={160}
                 title="logo"
-                priority
+                priority="true"
                 alt="XBattery Company Logo"
               />
             </Link>
