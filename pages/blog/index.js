@@ -68,9 +68,9 @@ export default function Blogs({ blogs }) {
     <>
       <Head>
         <title>
-        Battery Packs, BMS, Energy Storage Updates | XBattery™ Blog
+        Battery Packs, BMS, Energy Storage Updates | Xbattery™ Blog
         </title>
-        <meta name="description" content="Stay updated with the latest news on battery packs, BMS, energy storage, and cutting-edge tech. Explore insightful blogs on XBattery™ Blog."/>
+        <meta name="description" content="Stay updated with the latest news on battery packs, BMS, energy storage, and cutting-edge tech. Explore insightful blogs on Xbattery™ Blog."/>
 
         <meta property="og:image" content="/favicon.webp" />
       </Head>

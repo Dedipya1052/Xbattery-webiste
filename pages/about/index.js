@@ -58,7 +58,7 @@ const About = () => {
   return (
     <>
       <Head>
-        <title>Building India's Energy Storage Future | About XBattery™</title>
+        <title>Building India's Energy Storage Future | About Xbattery™</title>
 
         <meta property="og:image" content="/favicon.webp" />
         <meta property="og:site_name" content="Xbattery" />

@@ -21,55 +21,42 @@ const Footer = () => {
     router.pathname.includes("careers") ||
     router.pathname.includes("bharat-bms");
 
-  const energyStorage = [
-    {
-      name: "Battery Energy Storage System",
-      link: "/learn/battery-energy-storage-systems",
-    },
-    //{ name: "Types of Energy Storage Systems", link: "/learn/types-of-energy-storage-systems" },
-    {
-      name: "Energy Storage Applications",
-      link: "/learn/understanding-energy-storage-applications",
-    },
-  ];
+  
+const energyStorage = [
+  { name: "Battery Energy Storage System", link: "/learn/battery-energy-storage-systems" },
+  //{ name: "Types of Energy Storage Systems", link: "/learn/types-of-energy-storage-systems" },
+  { name: "Emerging LDES Technologies", link: "/learn/emerging-ldes-technologies" }
+];
 
-  const renewableEnergy = [
-    { name: "Solar Energy", link: "/learn/solar-energy" },
-    { name: "Wind Energy", link: "/learn/wind-energy" },
-    // { name: "Geothermal Energy", link: "/learn/geothermal-energy" },
-    // { name: "Biomass Energy", link: "/learn/biomass-energy" }
-  ];
+const renewableEnergy = [
+  { name: "Solar Energy", link: "/learn/solar-energy" },
+  { name: "Wind Energy", link: "/learn/wind-energy" }, 
+  // { name: "Geothermal Energy", link: "/learn/geothermal-energy" },
+  // { name: "Biomass Energy", link: "/learn/biomass-energy" }
+];
 
-  const electricVehicles = [
-    { name: "EV vs ICE Costs", link: "/learn/ev-vs-ice-costs" },
-    {
-      name: "Charging Infrastructure",
-      link: "/learn/ev-charging-infrastructure",
-    },
-    // { name: "Economics of EV Ownership", link: "/learn/economics-of-ev-ownership" }
-  ];
+const electricVehicles = [
+  { name: "EV vs ICE Costs", link: "/learn/ev-vs-ice-costs" },
+  { name: "EV Charging", link: "/learn/ev-charging" },
+  // { name: "Economics of EV Ownership", link: "/learn/economics-of-ev-ownership" }
+];
 
-  const electricity = [
-    {
-      name: "India’s Electricity Sector",
-      link: "/learn/indias-electricity-sector",
-    },
-    { name: "Tariffs and PPA’s", link: "/learn/tariffs-ppas" },
-    // { name: "Electric Utilities", link: "/learn/electric-utilities" }
-  ];
+const electricity = [
+  { name: "India’s Electricity Sector", link: "/learn/indias-electricity-sector" },
+  { name: "Power Purchase Agreement", link: "/learn/power-purchase-agreement" },
+  // { name: "Electric Utilities", link: "/learn/electric-utilities" }
+];
 
-  const grid = [
-    { name: "Renewable Integration", link: "/learn/renewable-integration" },
-    { name: "Smart Grid", link: "/learn/smart-grid" },
-  ];
+const grid = [
+  { name: "Renewable Integration", link: "/learn/renewable-integration" }, 
+  { name: "Smart Grid", link: "/learn/smart-grid" }
+];
 
-  const batteries = [
-    { name: "Understanding Lithium", link: "/learn/understanding-lithium" },
-    {
-      name: "Emerging Battery Technologies",
-      link: "/learn/emerging-battery-technologies",
-    },
-  ];
+const batteries = [
+  { name: "Understanding Lithium", link: "/learn/understanding-lithium" }, 
+  { name: "Emerging Battery Technologies", link: "/learn/emerging-battery-technologies" }
+];
+
 
   return (
     <>
@@ -124,7 +111,7 @@ const Footer = () => {
 
               <div className={styles.footerElementDesktop}>
                 <div className={styles.footerDescription}>
-                  Xbattery is building lithium battery packs in India, including
+                Xbattery™ is building lithium battery packs in India, including
                   electronics and software, to help businesses, EVs and grids
                   store energy affordably and access it on demand.
                   <br />
@@ -180,7 +167,7 @@ const Footer = () => {
                 </div>
               </div>
               <div className={styles.footerDescription1}>
-                Xbattery is building lithium battery packs in India, including
+              Xbattery™ is building lithium battery packs in India, including
                 electronics and software, to help businesses, EVs and grids
                 store energy affordably and access it on demand.
                 <br />
@@ -466,10 +453,10 @@ const Footer = () => {
             <div className="w-full xl:w-[35%] flex flex-col gap-[2rem]">
               <div className="flex flex-col gap-[1.5rem]">
                 <div className="text-[1.2rem] pb-[0.8rem] pl-[0.8rem] pt-[1rem] border-b-[0.8px] border-black font-semibold">
-                  Xbattery
+                Xbattery™
                 </div>
                 <div className="text-[1rem] pl-[0.8rem] pr-[0.8rem]">
-                  Xbattery is building lithium battery packs in India, including
+                Xbattery is building lithium battery packs in India, including
                   electronics and software, to help businesses, EVs and grids
                   store energy affordably and access it on demand.
                 </div>

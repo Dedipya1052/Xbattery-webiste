@@ -1,3 +1,7 @@
+.head1 {
+  font-family: 'Open Sans', sans-serif;
+}
+
 .container {
     width: 50%;
     margin: 6rem auto;

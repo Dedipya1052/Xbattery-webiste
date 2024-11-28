@@ -1,7 +1,12 @@
+.head1 {
+  font-family: 'Open Sans', sans-serif;
+}
+
 .container {
   width: 50%;
   margin: 6rem auto;
   position: relative;
+  font-family: 'Open Sans', sans-serif;
 }
 
 @media (min-width: 500px) and (max-width: 1024px) {
@@ -400,7 +405,7 @@
   margin: 10px;
   /* background-color: #ededed; */
   color: #2a2a2a;
-  font-size: 16px;
+  font-size: 17px;
   /* padding: 1rem; */
   padding-left: 29px;
   border-radius: 5px;
@@ -411,6 +416,8 @@
   white-space: pre-wrap;        
   overflow: auto;           /* Hide overflow content */
   text-overflow: ellipsis; 
+  font-family: 'Open Sans', sans-serif;
+  
 }
 
 @media (max-width: 500px) {

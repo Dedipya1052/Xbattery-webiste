@@ -291,7 +291,7 @@ export default function BlogPage({ blog, blogs }) {
   // const seconds = dateObject.getSeconds();
 
   return (
-    <>
+    <div className={styles.head1}>
       <Head>
         <title>{`${title} | Whitepapers | Xbattery`}</title>
         <meta
@@ -449,6 +449,6 @@ export default function BlogPage({ blog, blogs }) {
       {/* <div className="bg-black h-[0.7px] w-[90%] mx-auto mt-[5rem] mb-[6rem]"></div> */}
 
       {/* <TopBlogs blogs={blogs} slug={slug}/> */}
-    </>
+    </div>
   );
 }

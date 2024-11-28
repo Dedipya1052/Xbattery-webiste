@@ -10,53 +10,10 @@ import Head from "next/head";
 
 
 
-// const energyStorage=[
-//   {name:"ES Systems",link:"/learn/what-are-energy-storage-systems"},
-//   {name:"ES Technologies",link:"/learn/what-are-energy-storage-technologies"},
-//   {name:"Digital twin for ES",link:"/learn/digital-twin-technology-for-energy-storage"},
-//   {name:"Battery Management System",link:"/learn/what-are-battery-management-systems"},
-//   {name:"Future Trends",link:"/learn/future-trends-in-energy-storage"}
-// ]
-// const renewableEnergy=[
-//   {name:"Hydro and tidal power",link:"/learn/what-are-energy-storage-systems"},
-//   {name:"Fuel cells",link:"/learn/what-are-energy-storage-technologies"},
-//   {name:"Biomass power",link:"/learn/digital-twin-technology-for-energy-storage"},
-//   {name:"Carbon Footprint",link:"/learn/what-are-battery-management-systems"},
-//   {name:"Biodiversity",link:"/learn/future-trends-in-energy-storage"}
-// ]
-// const electricity=[
-//   {name:"Power systems",link:"/learn/what-are-energy-storage-systems"},
-//   {name:"Power consumption",link:"/learn/what-are-energy-storage-technologies"},
-//   {name:"Renewable Electricity",link:"/learn/digital-twin-technology-for-energy-storage"},
-//   {name:"Electricity in Everyday Life",link:"/learn/what-are-battery-management-systems"},
-//   {name:"Load Balancing in Power Grids",link:"/learn/future-trends-in-energy-storage"}
-// ]
-// const electricVehicles=[
-//   {name:"Charging Infrastructure",link:"/learn/what-are-energy-storage-systems"},
-//   {name:"EV Maintenance",link:"/learn/what-are-energy-storage-technologies"},
-//   {name:"EV Market and Trends",link:"/learn/digital-twin-technology-for-energy-storage"},
-//   {name:"EV Lifetime Costs",link:"/learn/what-are-battery-management-systems"},
-//   {name:"Battery Swapping Technology",link:"/learn/future-trends-in-energy-storage"}
-// ]
-// const batteries=[
-//   {name:"Battery economics",link:"/learn/what-are-energy-storage-systems"},
-//   {name:"Battery Applications",link:"/learn/what-are-energy-storage-technologies"},
-//   {name:"Battery charge and discharge",link:"/learn/digital-twin-technology-for-energy-storage"},
-//   {name:"Battery Software & Analytics",link:"/learn/what-are-battery-management-systems"},
-//   {name:"Battery & IoT",link:"/learn/future-trends-in-energy-storage"}
-// ]
-// const grid=[
-//   {name:"Grid Technologies",link:"/learn/what-are-energy-storage-systems"},
-//   {name:"Grid balancing",link:"/learn/what-are-energy-storage-technologies"},
-//   {name:"Smart Meters",link:"/learn/digital-twin-technology-for-energy-storage"},
-//   {name:"Sensors and Automation",link:"/learn/what-are-battery-management-systems"},
-//   {name:"Grid EMS",link:"/learn/future-trends-in-energy-storage"}
-// ]
-
 const energyStorage = [
   { name: "Battery Energy Storage System", link: "/learn/battery-energy-storage-systems" },
   //{ name: "Types of Energy Storage Systems", link: "/learn/types-of-energy-storage-systems" },
-  { name: "Energy Storage Applications", link: "/learn/understanding-energy-storage-applications" }
+  { name: "Emerging LDES Technologies", link: "/learn/emerging-ldes-technologies" }
 ];
 
 const renewableEnergy = [
@@ -68,13 +25,13 @@ const renewableEnergy = [
 
 const electricVehicles = [
   { name: "EV vs ICE Costs", link: "/learn/ev-vs-ice-costs" },
-  { name: "Charging Infrastructure", link: "/learn/ev-charging-infrastructure" },
+  { name: "EV Charging", link: "/learn/ev-charging" },
   // { name: "Economics of EV Ownership", link: "/learn/economics-of-ev-ownership" }
 ];
 
 const electricity = [
   { name: "India’s Electricity Sector", link: "/learn/indias-electricity-sector" },
-  { name: "Tariffs and PPA’s", link: "/learn/tariffs-ppas" },
+  { name: "Power Purchase Agreement", link: "/learn/power-purchase-agreement" },
   // { name: "Electric Utilities", link: "/learn/electric-utilities" }
 ];
 
@@ -88,13 +45,12 @@ const batteries = [
   { name: "Emerging Battery Technologies", link: "/learn/emerging-battery-technologies" }
 ];
 
-
 const LearnComp= () => {
   return (
     <>
       <Head>
-        <title>XBattery™ Learn BMS, Energy Storage & Battery Tech Guides</title>
-        <meta name="description" content="Discover expert guides on BMS, energy storage, and battery tech. Learn from XBattery™'s resources to stay ahead in the world of energy solutions."/>
+        <title>Xbattery™ Learn BMS, Energy Storage & Battery Tech Guides</title>
+        <meta name="description" content="Discover expert guides on BMS, energy storage, and battery tech. Learn from Xbattery™'s resources to stay ahead in the world of energy solutions."/>
         <meta property="og:image" content="/favicon.webp" />
       </Head>
 

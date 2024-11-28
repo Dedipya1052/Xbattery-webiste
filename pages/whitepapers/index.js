@@ -68,9 +68,9 @@ export default function Blogs({ blogs }) {
     <>
       <Head>
         <title>
-        Energy Storage Industry Research | XBattery™ White Papers
+        Energy Storage Industry Research | Xbattery™ White Papers
         </title>
-        <meta name="description" content="Access in-depth research and white papers on energy storage, battery tech, and industry trends. Stay informed with XBattery™'s expert insights."/>
+        <meta name="description" content="Access in-depth research and white papers on energy storage, battery tech, and industry trends. Stay informed with Xbattery™'s expert insights."/>
 
         <meta property="og:image" content="/favicon.webp" />
       </Head>

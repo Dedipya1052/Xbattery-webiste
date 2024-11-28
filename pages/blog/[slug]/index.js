@@ -233,7 +233,7 @@ export default function BlogPage({ blog,blogs}) {
   // const seconds = dateObject.getSeconds();
 
   return (
-    <>
+    <div className={styles.head1}>
       <Head>
         <title>{`${title} | Blog | Xbattery`}</title>
         <meta name="description" content={description} />
@@ -292,6 +292,6 @@ export default function BlogPage({ blog,blogs}) {
       </MathJaxContext>
      
       <TopBlogs blogs={blogs} slug={slug}/>
-    </>
+    </div>
   );
 }
