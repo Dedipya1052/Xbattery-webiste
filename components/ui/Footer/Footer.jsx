@@ -151,7 +151,7 @@ const batteries = [
                     <h3 className={styles.footerSubheading}>Company</h3>
                     <div className={styles.linksFot}>
                       <Link href="/about" className={styles.footerElements}>
-                        About us
+                        About
                       </Link>
                       <Link href="/careers" className={styles.footerElements}>
                         Careers

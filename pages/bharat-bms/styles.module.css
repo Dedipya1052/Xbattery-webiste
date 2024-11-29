@@ -10,3 +10,41 @@
     -webkit-background-clip: text;
     background-clip: text;
   }
+
+  
+  
+  /* .iconGradient {
+    font-size: 3rem; 
+    background-image: linear-gradient(90deg, #25f1fc, #5bb2ff, #b15dfb); 
+    -webkit-mask-image: linear-gradient(90deg, #25f1fc, #5bb2ff, #b15dfb); 
+    mask-image: linear-gradient(90deg, #25f1fc, #5bb2ff, #b15dfb); 
+    -webkit-mask-size: 100% 100%;
+    mask-size: 100% 100%;
+    color: white;
+    display: inline-block; 
+  } */
+  
+  
+
+ /* IconWithGradient.module.css */
+/* .gradientIcon svg {
+    fill: url(#customGradient);  
+    width: 100%;
+    height: 100%;
+  }
+   */
+
+   .iconGradient {
+    font-size: 50px; /* Adjust the size of the icons */
+    background-image: linear-gradient(90deg, #25f1fc, #5bb2ff, #b15dfb);
+    -webkit-background-clip: text; /* Clip the background to the text (icon in this case) */
+    color: transparent; /* Make the text transparent so that the gradient is visible */
+  }
+  
+  .head {
+    color: transparent;
+    background-image: linear-gradient(90deg, #25f1fc, #5bb2ff, #b15dfb);
+    -webkit-background-clip: text;
+    background-clip: text;
+  }
+  

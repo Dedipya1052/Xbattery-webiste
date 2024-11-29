@@ -53,14 +53,15 @@ const CompleteSolarCalculator = () => {
 
     setResults({
       panels: panelCount,
-      totalPower: Math.round(totalPower),
-      electricityPerDay: Math.round(electricityPerDay),
-      electricityPerMonth: Math.round(electricityPerMonth),
-      dailySavings: Math.round(dailySavings),
-      areaCovered: Math.round(areaCovered),
-      co2Reduced: Math.round(co2Reduced),
-      yearlySavings: Math.round(yearlySavings),
+      totalPower: totalPower.toFixed(2), // Rounds to 2 decimal places
+      electricityPerDay: electricityPerDay.toFixed(2), // Rounds to 2 decimal places
+      electricityPerMonth: electricityPerMonth.toFixed(2), // Rounds to 2 decimal places
+      dailySavings: dailySavings.toFixed(2), // Rounds to 2 decimal places
+      areaCovered: areaCovered.toFixed(2), // Rounds to 2 decimal places
+      co2Reduced: co2Reduced.toFixed(2), // Rounds to 2 decimal places
+      yearlySavings: yearlySavings.toFixed(2), // Rounds to 2 decimal places
     });
+    
   }, [panelCount]);
 
   const handleAddPanel = () => {
@@ -80,128 +81,14 @@ const CompleteSolarCalculator = () => {
   };
 
   return (
-    // <div className="p-3 max-w-md md:max-w-[450px] mx-auto bg-gray-800 rounded-xl shadow-lg text-white  overflow-y-auto mb-[-2rem]">
-    //   <h2 className="text-lg font-bold mb-2 text-center">
-    //     Indian Solar Calculator
-    //   </h2>
-
-    //   <div
-    //     className="mb-3 rounded relative"
-    //     style={{ height: "250px", overflow: "hidden" }}
-    //   >
-    //     <img
-    //       src="/images/solar.jpg"
-    //       alt="House with solar panels"
-    //       className="absolute inset-0 w-full h-full object-cover scale-[1.3]"
-    //     />
-    //     <svg
-    //       width="100%"
-    //       height="100%"
-    //       viewBox="0 0 400 200"
-    //       style={{ position: "absolute", top: 43, right: 25 }}
-    //     >
-    //       {[...Array(panelCount)].map((_, index) => (
-    //         <SolarPanelIcon
-    //           key={index}
-    //           x={100 + (index % 20) * 12} // 20 panels per row
-    //           y={40 + Math.floor(index / 20) * 8} // Move to the next row after 20 panels
-    //         />
-    //       ))}
-    //     </svg>
-    //   </div>
-
-    //   <div className="flex justify-between items-center mb-3 bg-gray-700 p-1 rounded">
-    //     <button
-    //       className="bg-green-500 text-white rounded-full w-7 h-7 flex items-center justify-center shadow-lg hover:bg-green-600 transition-colors"
-    //       onClick={handleAddPanel}
-    //       disabled={panelCount >= MAX_PANELS}
-    //     >
-    //       <Plus size={16} />
-    //     </button>
-    //     <div className="text-lg font-bold flex items-center">
-    //       <Sun className="text-yellow-400 mr-1" size={20} />
-    //       {panelCount} Panels
-    //     </div>
-    //     <button
-    //       className="bg-red-500 text-white rounded-full w-7 h-7 flex items-center justify-center shadow-lg hover:bg-red-600 transition-colors"
-    //       onClick={handleRemovePanel}
-    //       disabled={panelCount <= 0}
-    //     >
-    //       <Minus size={16} />
-    //     </button>
-    //   </div>
-
-    //   <div className="space-y-1">
-    //     <StatItem
-    //       icon={Sun}
-    //       label="Solar Panels"
-    //       value={results.panels}
-    //       unit="units"
-    //     />
-    //     <StatItem
-    //       icon={Battery}
-    //       label="Total Power"
-    //       value={results.totalPower}
-    //       unit="kW"
-    //     />
-    //     <StatItem
-    //       icon={Zap}
-    //       label="Electricity Generated per Day"
-    //       value={results.electricityPerDay}
-    //       unit="kWh"
-    //     />
-    //     <StatItem
-    //       icon={Calendar}
-    //       label="Electricity Generated per Month"
-    //       value={results.electricityPerMonth}
-    //       unit="kWh"
-    //     />
-    //     <StatItem
-    //       icon={IndianRupee}
-    //       label="Daily Savings"
-    //       value={formatRupees(results.dailySavings)}
-    //       unit="/day"
-    //     />
-    //     <StatItem
-    //       icon={IndianRupee}
-    //       label="Yearly Savings"
-    //       value={formatRupees(results.yearlySavings)}
-    //       unit="/year"
-    //     />
-    //     <StatItem
-    //       icon={Home}
-    //       label="Area Covered"
-    //       value={results.areaCovered}
-    //       unit="m²"
-    //     />
-    //     <StatItem
-    //       icon={Thermometer}
-    //       label="CO₂ Reduced per Day"
-    //       value={results.co2Reduced}
-    //       unit="kg"
-    //     />
-    //   </div>
-
-    //   <div className="mt-3 p-2 bg-slate-600 rounded-lg text-xs">
-    //     <h3 className="font-bold mb-1">Assumptions:</h3>
-    //     <ol className="list-decimal list-inside space-y-1">
-    //       <li>
-    //         The panel wattage is set to <strong>540W</strong>.
-    //       </li>
-    //       <li>
-    //         We assume <strong>₹8/kWh</strong> and{" "}
-    //         <strong>5 hours</strong> of average peak sunlight per day.
-    //       </li>
-    //     </ol>
-    //   </div>
-    // </div>
+   
 
     <div className="p-3  mx-auto rounded-xl  text-black  overflow-y-auto mb-[-2rem]">
       <div
         className="mb-3 relative mx-auto w-[100%] md:w-[90%] overflow-hidden border border-gray-200 shadow-lg rounded-lg"
         style={{ height: "300px" }}
       >
-        {/* Image Section with Overlay */}
+        
         <div className="relative h-full">
           <Image
             src="/images/solar.jpg"
@@ -212,12 +99,13 @@ const CompleteSolarCalculator = () => {
           />
         </div>
 
-        {/* Solar Panel Icons */}
+       
         <svg
           width="100%"
           height="100%"
           viewBox="0 0 400 200"
-          style={{ position: "absolute", top: 63, right: 37 }}
+          className=' absolute top-[35px] right-[30px] sm:top-[60px] sm:right-[33px] md:top-[65px] md:right-[30px] lg:top-[63px] lg:right-[37px]'
+          //style={{ position: "absolute", top: 63, right: 37 }}
         >
           {[...Array(panelCount)].map((_, index) => (
             <SolarPanelIcon
@@ -234,11 +122,11 @@ const CompleteSolarCalculator = () => {
 
       <div className="flex justify-between items-center mb-4 bg-white p-3 rounded-lg shadow-sm w-[90%] mx-auto border border-gray-200 transition-shadow ">
         <button
-          className="bg-green-500 text-white rounded-full w-9 h-9 flex items-center justify-center shadow-md hover:bg-green-600 transition-transform transform hover:scale-[1.02] disabled:bg-gray-300"
-          onClick={handleAddPanel}
-          disabled={panelCount >= MAX_PANELS}
+          className="bg-red-500 text-white rounded-full w-9 h-9 flex items-center justify-center shadow-md hover:bg-red-600 transition-transform transform hover:scale-[1.02] disabled:bg-gray-300"
+          onClick={handleRemovePanel}
+          disabled={panelCount <= 0}
         >
-          <Plus size={18} />
+          <Minus size={18} />
         </button>
 
         <div className="text-lg font-semibold flex items-center space-x-2">
@@ -247,11 +135,11 @@ const CompleteSolarCalculator = () => {
         </div>
 
         <button
-          className="bg-red-500 text-white rounded-full w-9 h-9 flex items-center justify-center shadow-md hover:bg-red-600 transition-transform transform hover:scale-[1.02] disabled:bg-gray-300"
-          onClick={handleRemovePanel}
-          disabled={panelCount <= 0}
+          className="bg-green-500 text-white rounded-full w-9 h-9 flex items-center justify-center shadow-md hover:bg-green-600 transition-transform transform hover:scale-[1.02] disabled:bg-gray-300"
+          onClick={handleAddPanel}
+          disabled={panelCount >= MAX_PANELS}
         >
-          <Minus size={18} />
+          <Plus size={18} />
         </button>
       </div>
 
@@ -261,7 +149,7 @@ const CompleteSolarCalculator = () => {
             label: "Solar Panels",
             icon: Sun,
             value: results.panels,
-            unit: "units",
+            unit: "panels",
           },
           {
             label: "Total Power",

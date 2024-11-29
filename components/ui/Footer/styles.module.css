@@ -153,11 +153,13 @@
     line-height: 27px;
     margin-bottom: 50px;
     font-size: 14px;
+    color: rgb(192, 192, 192);
   }
   .footerDescription1 {
     display: none;
     margin-bottom: 20px;
     font-size: small;
+    color: rgb(192, 192, 192);
   }
   .footerElementDesktop {
     display: flex;

@@ -1,0 +1,7 @@
+/* IconWithGradient.module.css */
+.gradientIcon svg {
+    fill: url(#customGradient);  /* Apply the custom gradient */
+    width: 100%;
+    height: 100%;
+  }
+  

@@ -285,36 +285,72 @@ const Example = ({ media }) => {
   const [email, setEmail] = useState('');
   const [message, setMessage] = useState('');
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
+  // const handleSubmit = async (e) => {
+  //   e.preventDefault();
 
+  //   // Simple email validation
+  //   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  //   if (!emailRegex.test(email)) {
+  //     setMessage('Please enter a valid email address.');
+  //     return;
+  //   }
+
+  //   // Placeholder for API request
+  //   try {
+  //     const res = await fetch('/api/email', {
+  //       method: 'POST',
+  //       headers: {
+  //         'Content-Type': 'application/json',
+  //       },
+  //       body: JSON.stringify({ email }),
+  //     });
+
+
+  //     if (res.ok) {
+  //       setMessage('Thank you for registering!');
+  //     } else {
+  //       setMessage('Oops! Something went wrong.');
+  //     }
+  //   } catch (error) {
+  //     setMessage('Error while submitting. Please try again.');
+  //   }
+  // };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault(); // Prevent the form from reloading the page
+  
     // Simple email validation
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+
     if (!emailRegex.test(email)) {
       setMessage('Please enter a valid email address.');
       return;
     }
-
-    // Placeholder for API request
+  
     try {
-      const res = await fetch('/api/email', {
+      // Send the email in JSON format to the API endpoint
+      const res = await fetch('https://prod-24.centralindia.logic.azure.com:443/workflows/1a93b798d5c24a6c95c84e48b6eb9962/triggers/manual/paths/invoke?api-version=2016-06-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=Qpb9Rx187awSjEbySPJ4VwhAF3XtKElgKTas49gSVxM', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ email }),
+        body: JSON.stringify({ email }), // Send email as JSON
       });
-
-
+  
       if (res.ok) {
+        // Handle success
         setMessage('Thank you for registering!');
       } else {
-        setMessage('Oops! Something went wrong.');
+        // Handle API errors
+        const errorData = await res.json();
+        setMessage(errorData.message || 'Oops! Something went wrong.');
       }
     } catch (error) {
+      // Handle network or other unexpected errors
       setMessage('Error while submitting. Please try again.');
     }
   };
+  
 
   //console.log({message});
 
@@ -1399,7 +1435,7 @@ const Example = ({ media }) => {
                     <button
                       className={`px-6 py-3 rounded-lg font-bold text-white bg-transparent border-[2px] ${styles.gradientBorder}`}
                     >
-                      Learn More →
+                     Xbattery Learn Hub →
                     </button>
                   </div>
                 </div>
@@ -1416,7 +1452,7 @@ const Example = ({ media }) => {
               <h2
                 className={`text-2xl font-semibold mb-[1.5rem] ${styles.color1} font-bolder xl:min-h-[3rem] leading-[45px] md:leading-[60px]`}
               >
-                Get the Updates from Xbattery
+                Get the updates from Xbattery
               </h2>
               <form
                 onSubmit={handleSubmit}
