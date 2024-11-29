@@ -268,9 +268,8 @@ const BharatBMS = () => {
                     "Real-time data visualization and lifecycle analytics for better battery management.",
                 },
               ].map((feature, index) => (
-                <AnimatedDiv>
+                <AnimatedDiv key={index}>
                   <div
-                    key={index}
                     className="flex flex-col items-center text-center bg-[#1c1c1c] p-8 rounded-lg shadow-md hover:shadow-lg transition-shadow h-full"
                   >
                     <IconWithGradient size={25}>
