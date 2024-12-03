@@ -416,7 +416,7 @@ const BharatBMS = () => {
             },
           ].map((section, index) => (
             <AnimatedDiv key={index}>
-              <section className="bg-[#1c1c1c] rounded-lg p-8 mb-8 w-[95%] lg:w-[80%] mx-auto">
+              <section className="bg-[#1c1c1c] rounded-lg p-8 mb-8 w-[98%] lg:w-[80%] mx-auto">
                 <h2
                   className={`text-xl md:text-2xl font-semibold mb-6 ${classes.color}`}
                 >
