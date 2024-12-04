@@ -478,13 +478,13 @@ const resources = [
                 <div className="text-[1.2rem] pb-[0.8rem] pl-[0.8rem] pt-[1rem] border-b-[0.8px] border-black font-semibold">
                   Xbattery™
                 </div>
-                <div className="text-[1rem] pl-[0.8rem] pr-[0.8rem]">
+                <div className="text-[1rem] pl-[0.8rem] pr-[0.8rem] text-[#4d4d4d] opacity-[85%]">
                   Xbattery is building lithium battery packs in India, including
                   electronics and software, to help businesses, EVs and grids
                   store energy affordably and access it on demand.
                 </div>
               </div>
-              <div className="flex justify-between">
+              <div className="flex justify-between md:w-[60%] xl:w-full">
                
               <div className="flex flex-col items-start mt-[-1rem] pl-[0.8rem] ">
                   <div className="p-0.5 rounded-md text-left">
@@ -503,7 +503,7 @@ const resources = [
                         >
                           <Link
                             href={item.link}
-                            className="hover:text-[#27b633] opacity-[70%]"
+                            className="hover:text-[#27b633] opacity-[70%] text-[#4d4d4d]"
                           >
                             {item.name}
                           </Link>
@@ -530,7 +530,7 @@ const resources = [
                         >
                           <Link
                             href={item.link}
-                            className="hover:text-[#27b633] opacity-[70%]"
+                            className="hover:text-[#27b633] opacity-[70%] text-[#4d4d4d]"
                           >
                             {item.name}
                           </Link>
@@ -557,7 +557,7 @@ const resources = [
                         >
                           <Link
                             href={item.link}
-                            className="hover:text-[#27b633] opacity-[70%]"
+                            className="hover:text-[#27b633] opacity-[70%] text-[#4d4d4d]"
                           >
                             {item.name}
                           </Link>
