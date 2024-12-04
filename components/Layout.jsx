@@ -2,16 +2,46 @@ import Head from "next/head";
 import Footer from "./ui/Footer";
 import Navbar from "./ui/Navbar";
 import { useRouter } from "next/router";
-
+import { useEffect, useState } from "react";
+import Loading from "./ui/Loading";
 
 const Layout = ({ children }) => {
   const router = useRouter();
-  const isHomePageMain= router.pathname === "/" 
-  //const isHomePage =  router.pathname === "/terms" || router.pathname === "/about" || router.pathname === "/privacy" || router.pathname.includes("about") || router.pathname.includes("careers") ||  router.pathname.includes("bharat-bms");
+  const isHomePageMain = router.pathname === "/";
+  const [isLoading, setIsLoading] = useState(true); 
+
+  useEffect(() => {
+   
+    const timer = setTimeout(() => setIsLoading(false), 200); 
+
+    return () => clearTimeout(timer);
+  }, []);
+
+  // useEffect(() => {
+  //   setIsLoading(false); 
+  // }, []);
+  
+
+  useEffect(() => {
+    const handleStart = () => setIsLoading(true);
+    const handleComplete = () => setIsLoading(false);
+
+    // Listen to route change events
+    router.events.on("routeChangeStart", handleStart);
+    router.events.on("routeChangeComplete", handleComplete);
+    router.events.on("routeChangeError", handleComplete);
+
+    return () => {
+      router.events.off("routeChangeStart", handleStart);
+      router.events.off("routeChangeComplete", handleComplete);
+      router.events.off("routeChangeError", handleComplete);
+    };
+  }, [router]);
+
   return (
     <div className="flex flex-col min-h-screen">
       <Head>
-        <title>Large-Scale Battery Storage Systems in India | Xbattery</title>
+        <title>Xbattery™ - India's first unified BMS for Energy Storage & EVs | Advanced Battery Packs </title>
         <meta
           name="description"
           content="Xbattery builds lithium battery packs in India, integrating electronics and software to help businesses, EVs, and grids store and access energy affordably."
@@ -20,8 +50,13 @@ const Layout = ({ children }) => {
         <link rel="icon" type="image/webp" href="/favicon.webp" />
         <meta name="robots" content="index, follow" />
       </Head>
-      {!isHomePageMain && <Navbar />}
-      <main className="flex-grow mt-[4rem]">{children}</main>
+     
+     {!isHomePageMain && <Navbar />}
+     
+      <main className={`flex-grow ${isLoading ? "flex justify-center items-center" : "mt-[4rem]"}`}>
+        {isLoading ? <Loading /> : children}
+      </main>
+      
       <Footer />
     </div>
   );

@@ -10,14 +10,12 @@ import { useRef } from "react";
 import Link from "next/link";
 import AnimatedDiv from "../Animate";
 import { motion } from "framer-motion";
-// import { Typewriter } from "react-simple-typewriter";
 import { useRouter } from "next/router";
 import Head from "next/head";
 
-// * fetch blogs from contentful CMS
+
 
 const Example = ({ media }) => {
-
   const videoUrl1 = media?.video1?.fields?.file?.url;
 
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -70,7 +68,7 @@ const Example = ({ media }) => {
     }
   }, [controls, isInView1]);
 
-  const [activeBattery, setActiveBattery] = useState("XBattery1"); 
+  const [activeBattery, setActiveBattery] = useState("XBattery1");
 
   const batteryData = {
     XBattery1: {
@@ -105,7 +103,6 @@ const Example = ({ media }) => {
         three: "IEC 62477-1",
       },
     },
-   
   };
 
   const batteryData50 = {
@@ -141,7 +138,6 @@ const Example = ({ media }) => {
         three: "IEC 62477-1",
       },
     },
-   
   };
 
   const batteryFeatures = [
@@ -166,11 +162,13 @@ const Example = ({ media }) => {
   const batteryFeatures2 = [
     {
       heading: "Reliable Backup",
-      content: "Keeps your business running during power outages, minimizing downtime.",
+      content:
+        "Keeps your business running during power outages, minimizing downtime.",
     },
     {
       heading: "Solar Safeguard",
-      content: "Stops charging when the battery is full, optimizing efficiency.",
+      content:
+        "Stops charging when the battery is full, optimizing efficiency.",
     },
     {
       heading: "Intelligent Modes",
@@ -181,7 +179,6 @@ const Example = ({ media }) => {
       content: "Grows with your energy needs, ideal for large operations.",
     },
   ];
-  
 
   const handleBatteryChange = (battery) => {
     setActiveBattery(battery);
@@ -235,25 +232,24 @@ const Example = ({ media }) => {
         }
       });
     };
-  
+
     const observer = new IntersectionObserver(handlePlayVideo, {
       threshold: 0.5, // Adjust this value as needed
     });
-  
+
     // Copy the current ref values into local variables
     const currentVideoRef1 = videoRef1.current;
     const currentVideoRef2 = videoRef2.current;
-  
+
     if (currentVideoRef1) observer.observe(currentVideoRef1);
     if (currentVideoRef2) observer.observe(currentVideoRef2);
-  
+
     return () => {
       // Use the copied ref values for cleanup
       if (currentVideoRef1) observer.unobserve(currentVideoRef1);
       if (currentVideoRef2) observer.unobserve(currentVideoRef2);
     };
   }, []);
-  
 
   const handleVideoChange = (index) => {
     setSelectedIndex(index);
@@ -274,68 +270,63 @@ const Example = ({ media }) => {
     }
   }, []);
 
-  const router= useRouter();
+  const router = useRouter();
   const handleRedirect = () => {
-    router.push('/learn'); // Adjust the path if needed
+    router.push("/learn"); // Adjust the path if needed
   };
-
 
   // last email
 
-  const [email, setEmail] = useState('');
-  const [message, setMessage] = useState('');
-
- 
+  const [email, setEmail] = useState("");
+  const [message, setMessage] = useState("");
 
   const handleSubmit = async (e) => {
     e.preventDefault(); // Prevent the form from reloading the page
-  
+
     // Simple email validation
     const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
 
     if (!emailRegex.test(email)) {
-      setMessage('Please enter a valid email address.');
+      setMessage("Please enter a valid email address.");
       return;
     }
-  
+
     try {
       // Send the email in JSON format to the API endpoint
-      const res = await fetch('https://prod-24.centralindia.logic.azure.com:443/workflows/1a93b798d5c24a6c95c84e48b6eb9962/triggers/manual/paths/invoke?api-version=2016-06-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=Qpb9Rx187awSjEbySPJ4VwhAF3XtKElgKTas49gSVxM', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ email }), // Send email as JSON
-      });
-  
+      const res = await fetch(
+        "https://prod-24.centralindia.logic.azure.com:443/workflows/1a93b798d5c24a6c95c84e48b6eb9962/triggers/manual/paths/invoke?api-version=2016-06-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=Qpb9Rx187awSjEbySPJ4VwhAF3XtKElgKTas49gSVxM",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ email }), // Send email as JSON
+        }
+      );
+
       if (res.ok) {
         // Handle success
-        setMessage('Thank you for registering!');
+        setMessage("Thank you for registering!");
       } else {
         // Handle API errors
         const errorData = await res.json();
-        setMessage(errorData.message || 'Oops! Something went wrong.');
+        setMessage(errorData.message || "Oops! Something went wrong.");
       }
     } catch (error) {
       // Handle network or other unexpected errors
-      setMessage('Error while submitting. Please try again.');
+      setMessage("Error while submitting. Please try again.");
     }
   };
 
-
-
-
-  // redirect to email 
+  // redirect to email
 
   const emailRef = useRef(null);
-
 
   const scrollToEmail = (event) => {
     event.preventDefault(); // Prevent the default link behavior
     if (emailRef.current) {
       const headerOffset = 80; // Adjust this value to match your header height
-      const elementPosition =
-      emailRef.current.getBoundingClientRect().top;
+      const elementPosition = emailRef.current.getBoundingClientRect().top;
       const offsetPosition =
         elementPosition + window.pageYOffset - headerOffset;
 
@@ -345,14 +336,20 @@ const Example = ({ media }) => {
       });
     }
   };
-   
+
   const currentPath = router.pathname;
-  
+
   return (
     <>
       <Head>
-        <link rel="preload" href="/images/logo1.webp" as="image" />
+        <link
+          rel="preload"
+          href="/images/logo1.webp"
+          as="image"
+          type="image/webp"
+        />
       </Head>
+
       <div className={styles.head1}>
         <nav
           className={`fixed top-0 left-0 w-[100%] md:w-full mx-auto flex items-center justify-between p-4 z-50 transition-colors duration-300 ${
@@ -575,6 +572,7 @@ const Example = ({ media }) => {
                             title="Battery"
                             width={"1000"}
                             height={"1000"}
+                            loading="lazy"
                             className="mx-auto w-[100px] md:w-[150px]"
                           />
                           {index === batteryCount - 1 && batteryCount < 3 && (
@@ -604,6 +602,7 @@ const Example = ({ media }) => {
                       height={"1000"}
                       alt="battery"
                       title="Appliances"
+                      loading="lazy"
                     />
                   </div>
                 </div>
@@ -811,78 +810,6 @@ const Example = ({ media }) => {
                 </div>
               </AnimatedDiv>
 
-              {/* <AnimatedDiv>
-              {selectedIndex === 0 && (
-                <div className="w-[90%] mx-auto flex flex-col md:flex-row justify-between mt-[2rem]">
-                  <div className="w-full md:w-[50%] text-white opacity-[50%]">
-                    X1 activates Storm Guard mode automatically when the
-                    National Weather Service issues a warning. Your battery will
-                    be fully charged in case an outage occurs.
-                  </div>
-                  <div className="flex flex-col gap-[0rem] mt-3 md:mt-0">
-                    <div className="text-white text-[1.3rem] md:text-[2rem] font-bold">
-                      Storm Guard Mode
-                    </div>
-                    <div className="text-white opacity-[50%]">
-                      Automatically detects and prepares for outages.
-                    </div>
-                  </div>
-                </div>
-              )}
-
-              {selectedIndex === 1 && (
-                <div className="w-[90%] mx-auto flex flex-col md:flex-row justify-between mt-[2rem]">
-                  <div className="w-full md:w-[50%] text-white opacity-[50%]">
-                    In less than 20ms, your power switches over to X1, so you
-                    can run appliances without interruption.
-                  </div>
-                  <div className="flex flex-col gap-[0rem] mt-3 md:mt-0">
-                    <div className="text-white text-[1.3rem] md:text-[2rem] font-bold">
-                      Under 20ms
-                    </div>
-                    <div className="text-white opacity-[50%]">
-                      Enjoy seamless backup transition.
-                    </div>
-                  </div>
-                </div>
-              )}
-
-              {selectedIndex === 2 && (
-                <div className="w-[90%] mx-auto flex flex-col md:flex-row justify-between mt-[2rem]">
-                  <div className="w-full md:w-[50%] text-white opacity-[50%]">
-                    Power with confidence thanks to the 1.1X rated power output.
-                    It's more than enough to run high-wattage home appliances at
-                    the same time.
-                  </div>
-                  <div className="flex flex-col gap-[0rem] mt-3 md:mt-0">
-                    <div className="text-white text-[1.3rem] md:text-[2rem] font-bold">
-                      1.1X Rated Power Output
-                    </div>
-                    <div className="text-white opacity-[50%]">
-                      With InfiniPower™, you always have electricity.
-                    </div>
-                  </div>
-                </div>
-              )}
-
-              {selectedIndex === 3 && (
-                <div className="w-[90%] mx-auto flex flex-col md:flex-row justify-between mt-[2rem]">
-                  <div className="w-full md:w-[50%] text-white opacity-[50%]">
-                    Normally, blackouts disrupt solar systems, too. Not with X1.
-                    You'll have a constant power supply.
-                  </div>
-                  <div className="flex flex-col gap-[0rem] mt-3 md:mt-0">
-                    <div className="text-white text-[1.3rem] md:text-[2rem] font-bold">
-                      24/7 Solar Power
-                    </div>
-                    <div className="text-white opacity-[50%]">
-                      Keep life smooth, even during lengthy outages.
-                    </div>
-                  </div>
-                </div>
-              )}
-            </AnimatedDiv> */}
-
               <AnimatedDiv>
                 {selectedIndex === 0 && (
                   <div className="w-[90%] mx-auto flex flex-col md:flex-row justify-between mt-[2rem]">
@@ -981,6 +908,7 @@ const Example = ({ media }) => {
                 alt="image"
                 className="w-full h-auto"
                 title="houseXbattery"
+                loading="lazy"
               />
               <div className="md:block hidden absolute top-4 xl:top-10 left-1/2 transform -translate-x-1/2 text-black text-center">
                 <h2 className="text-2xl font-bold">
@@ -1039,156 +967,7 @@ const Example = ({ media }) => {
             </div>
           </div>
 
-          {/* specifications 2 */}
-          {/* <div className="mt-[7rem] mb-[5rem] w-[94%] md:w-[90%] lg:w-[85%] xl:w-[80%] 2xl:w-[1450px] mx-auto">
-          <AnimatedDiv>
-            <div className="flex flex-col gap-6 md:gap-0 md:flex-row justify-between items-center relative ">
-              <div
-                className={`${styles.block2Head} text-center md:text-left w-full md:w-[45%]`}
-              >
-                50 kwh Powerhouse Specifications
-              </div>
-
-              <div className="w-full md:w-[55%] flex flex-row md:flex-row gap-[2rem] md:gap-[1rem] justify-evenly relative">
-                
-                <div
-                  className="absolute bottom-[-15px] h-[2px] bg-white transition-all duration-300 ease-in-out"
-                  style={{
-                    width: "30%",
-                    left:
-                      activeBattery === "XBattery1"
-                        ? "0%"
-                        : activeBattery === "XBattery2"
-                        ? "35%"
-                        : "70%",
-                  }}
-                />
-
-                
-                <div
-                  onClick={() => handleBatteryChange("XBattery1")}
-                  className={`cursor-pointer flex-1 text-center relative ${
-                    activeBattery === "XBattery1"
-                      ? "text-white"
-                      : "text-[#b5b5b5]"
-                  }`}
-                >
-                  Xbattery1
-                </div>
-
-                <div
-                  onClick={() => handleBatteryChange("XBattery2")}
-                  className={`cursor-pointer flex-1 text-center relative ${
-                    activeBattery === "XBattery2"
-                      ? "text-white"
-                      : "text-[#b5b5b5]"
-                  }`}
-                >
-                  Xbattery2
-                </div>
-
-                <div
-                  onClick={() => handleBatteryChange("XBattery3")}
-                  className={`cursor-pointer flex-1 text-center relative ${
-                    activeBattery === "XBattery3"
-                      ? "text-white"
-                      : "text-[#b5b5b5]"
-                  }`}
-                >
-                  Xbattery3
-                </div>
-              </div>
-            </div>
-          </AnimatedDiv>
-
-          <AnimatedDiv>
-            <div className="mt-[4rem] flex flex-col gap-[1rem] pb-[4rem] border-b-[1px] border-[#2e2e2e]">
-              <div className="text-white font-bold text-xl text-center sm:text-left mb-3 md:mb-0">
-                Power
-              </div>
-              <div className="w-[85%] mx-auto md:w-full flex flex-row flex-wrap md:flex-nowrap justify-between md:justify-start sm:flex-row gap-[2rem]  sm:gap-[10%]">
-                <div className="flex flex-col gap-2">
-                  <div className="text-[#979797] text-sm">Energy Capacity</div>
-                  <div id="value">
-                    <div className="text-white text-sm">
-                      {currentBattery1.energyCapacity}
-                    </div>
-                  </div>
-                </div>
-
-                <div className="flex flex-col gap-2">
-                  <div className="text-[#979797] text-sm">On-Grid Power</div>
-                  <div id="value">
-                    <div className="text-white text-sm">
-                      {currentBattery1.onGridPower}
-                    </div>
-                  </div>
-                </div>
-
-                <div className="flex flex-col gap-2">
-                  <div className="text-[#979797] text-sm">Backup Power</div>
-                  <div id="value">
-                    <div className="text-white text-sm">
-                      {currentBattery1.backupPower.peak}
-                    </div>
-                    <div className="text-white text-sm">
-                      {currentBattery1.backupPower.motorStart}
-                    </div>
-                    <div className="text-white text-sm">
-                      {currentBattery1.backupPower.transition}
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </AnimatedDiv>
-
-          <AnimatedDiv>
-            <div className="mt-[2rem] flex flex-col gap-[1rem] pb-[4rem] border-b-[1px] border-[#2e2e2e]">
-              <div className="text-white font-bold text-xl text-center sm:text-left mb-3 md:mb-0">
-                Features
-              </div>
-              <div className="w-[85%] mx-auto md:w-full flex flex-row flex-wrap md:flex-nowrap justify-between   md:justify-start sm:flex-row gap-[2rem] sm:gap-[10%]">
-                <div className="flex flex-col gap-2">
-                  <div className="text-[#979797] text-sm text-left">
-                    Size and Weight
-                  </div>
-                  <div id="value">
-                    <div className="text-white text-sm">
-                      {currentBattery1.size}
-                    </div>
-                  </div>
-                </div>
-
-                <div className="flex flex-col gap-2">
-                  <div className="text-[#979797] text-sm">Scalable</div>
-                  <div id="value">
-                    <div className="text-white text-sm">
-                      {currentBattery1.scalable}
-                    </div>
-                  </div>
-                </div>
-
-             
-
-                <div className="flex flex-col gap-2">
-                  <div className="text-[#979797] text-sm">Certification</div>
-                  <div id="value">
-                    <div className="text-white text-sm">
-                      {currentBattery1.certifications.one}
-                    </div>
-                    <div className="text-white text-sm">
-                      {currentBattery1.certifications.two}
-                    </div>
-                    <div className="text-white text-sm">
-                      {currentBattery1.certifications.three}
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </AnimatedDiv>
-        </div> */}
+         {/* specifications 50kwh */}
 
           <div className="mt-[7rem] mb-[3rem] sm:mb-[5rem] w-[94%] md:w-[90%] lg:w-[85%] xl:w-[80%] 2xl:w-[1450px] mx-auto">
             <AnimatedDiv>
@@ -1328,18 +1107,13 @@ const Example = ({ media }) => {
               >
                 <div className="flex flex-col lg:flex-row items-center justify-center gap-[5%] p-6">
                   <div className="w-full lg:w-[45%] mb-6 lg:mb-0">
-                    {/* <Image
-                    src="/images/hero/bharat/hero.png" // Replace with your image path
-                    alt="Energy Innovation"
-                    width={500} // Adjust width as needed
-                    height={300} // Adjust height as needed
-                    className="rounded-lg w-[90%] mx-auto opacity-[85%]"
-                  /> */}
+                   
                     <Image
                       src="/images/hero/bharat/chip1.png" // Replace with your image path
                       alt="Energy Innovation"
                       width={500} // Adjust width as needed
                       height={300} // Adjust height as needed
+                      loading="lazy"
                       className="rounded-lg w-full mx-auto xl:scale-[1.2] 2xl:scale-[1.0] opacity-[75%]"
                     />
                   </div>
@@ -1379,13 +1153,14 @@ const Example = ({ media }) => {
                 className="w-full h-full mx-auto cursor-pointer relative overflow-hidden"
                 onClick={handleRedirect}
               >
-                {/* Replace backgroundImage with Next.js Image */}
+               
                 <Image
                   src="/images/hero/learn.webp"
                   alt="Learn Energy Storage, Batteries and more"
                   layout="fill" // Ensures it spans the full div dimensions
                   objectFit="cover"
                   objectPosition="center"
+                  loading="lazy"
                   priority={false} // Let Next.js handle lazy loading
                   quality={75} // Adjust image quality if needed
                   className="absolute inset-0 opacity-20"
@@ -1404,7 +1179,7 @@ const Example = ({ media }) => {
                     <button
                       className={`px-6 py-3 rounded-lg font-bold text-white bg-transparent border-[2px] ${styles.gradientBorder}`}
                     >
-                     Xbattery Learn Hub →
+                      Xbattery Learn Hub →
                     </button>
                   </div>
                 </div>
