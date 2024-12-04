@@ -15,6 +15,7 @@ const Navbar = () => {
     router.pathname === "/privacy" ||
     router.pathname === "/careers" ||
     router.pathname.includes("careers") ||
+    router.pathname.includes("contact") ||
     router.pathname.includes("bharat-bms");
 
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);

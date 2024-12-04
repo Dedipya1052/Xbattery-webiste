@@ -285,36 +285,7 @@ const Example = ({ media }) => {
   const [email, setEmail] = useState('');
   const [message, setMessage] = useState('');
 
-  // const handleSubmit = async (e) => {
-  //   e.preventDefault();
-
-  //   // Simple email validation
-  //   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-  //   if (!emailRegex.test(email)) {
-  //     setMessage('Please enter a valid email address.');
-  //     return;
-  //   }
-
-  //   // Placeholder for API request
-  //   try {
-  //     const res = await fetch('/api/email', {
-  //       method: 'POST',
-  //       headers: {
-  //         'Content-Type': 'application/json',
-  //       },
-  //       body: JSON.stringify({ email }),
-  //     });
-
-
-  //     if (res.ok) {
-  //       setMessage('Thank you for registering!');
-  //     } else {
-  //       setMessage('Oops! Something went wrong.');
-  //     }
-  //   } catch (error) {
-  //     setMessage('Error while submitting. Please try again.');
-  //   }
-  // };
+ 
 
   const handleSubmit = async (e) => {
     e.preventDefault(); // Prevent the form from reloading the page
@@ -350,9 +321,7 @@ const Example = ({ media }) => {
       setMessage('Error while submitting. Please try again.');
     }
   };
-  
 
-  //console.log({message});
 
 
 

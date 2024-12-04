@@ -19,6 +19,7 @@ const Footer = () => {
     router.pathname === "/privacy" ||
     router.pathname === "/careers" ||
     router.pathname.includes("careers") ||
+    router.pathname.includes("contact") ||
     router.pathname.includes("bharat-bms");
 
   
@@ -55,6 +56,25 @@ const grid = [
 const batteries = [
   { name: "Understanding Lithium", link: "/learn/understanding-lithium" }, 
   { name: "Emerging Battery Technologies", link: "/learn/emerging-battery-technologies" }
+];
+
+const products = [
+  { name: "Xbattery 5kWh", link: "/#xbattery5kwh" },
+  { name: "Xbattery 50kWh", link: "/#xbattery50kwh" },
+  { name: "BharatBMS", link: "/bharat-bms" }, 
+];
+
+
+const company = [
+  { name: "About", link: "/about" },
+  { name: "Careers", link: "/careers" },
+  { name: "Contact", link: "/contact" }, 
+];
+
+const resources = [
+  { name: "Blog", link: "/blog" },
+  { name: "Whitepapers", link: "/whitepapers" },
+  { name: "Learn", link: "/learn" }, 
 ];
 
 
@@ -111,9 +131,9 @@ const batteries = [
 
               <div className={styles.footerElementDesktop}>
                 <div className={styles.footerDescription}>
-                Xbattery™ is building lithium battery packs in India, including
-                  electronics and software, to help businesses, EVs and grids
-                  store energy affordably and access it on demand.
+                  Xbattery™ is building lithium battery packs in India,
+                  including electronics and software, to help businesses, EVs
+                  and grids store energy affordably and access it on demand.
                   <br />
                 </div>
 
@@ -156,6 +176,9 @@ const batteries = [
                       <Link href="/careers" className={styles.footerElements}>
                         Careers
                       </Link>
+                      <Link href="/contact" className={styles.footerElements}>
+                        Contact
+                      </Link>
                       {/* <Link href="/terms" className={styles.footerElements}>
                         Terms
                       </Link>
@@ -167,7 +190,7 @@ const batteries = [
                 </div>
               </div>
               <div className={styles.footerDescription1}>
-              Xbattery™ is building lithium battery packs in India, including
+                Xbattery™ is building lithium battery packs in India, including
                 electronics and software, to help businesses, EVs and grids
                 store energy affordably and access it on demand.
                 <br />
@@ -226,28 +249,28 @@ const batteries = [
               </span>
             </p> */}
 
-            <div className="w-[95%] mx-auto"> 
-            <p
-              style={{
-                fontSize: "12px",
-                color: "#6c757d", // Sufficient contrast color for the entire text
-                marginBottom: "7px",
-                marginTop: "25px",
-                textAlign: "center",
-              }}
-            >
-              © {new Date().getFullYear()} Xbattery Energy Private Limited. All
-              rights reserved.{" "}
-              <span>
-                <Link href={"/terms"} className="hover:underline">
-                  Terms
-                </Link>{" "}
-                and{" "}
-                <Link href={"/privacy"} className="hover:underline">
-                  Privacy.
-                </Link>
-              </span>
-            </p>
+            <div className="w-[95%] mx-auto">
+              <p
+                style={{
+                  fontSize: "12px",
+                  color: "#6c757d", // Sufficient contrast color for the entire text
+                  marginBottom: "7px",
+                  marginTop: "25px",
+                  textAlign: "center",
+                }}
+              >
+                © {new Date().getFullYear()} Xbattery Energy Private Limited.
+                All rights reserved.{" "}
+                <span>
+                  <Link href={"/terms"} className="hover:underline">
+                    Terms
+                  </Link>{" "}
+                  and{" "}
+                  <Link href={"/privacy"} className="hover:underline">
+                    Privacy.
+                  </Link>
+                </span>
+              </p>
             </div>
           </div>
         </div>
@@ -453,18 +476,102 @@ const batteries = [
             <div className="w-full xl:w-[35%] flex flex-col gap-[2rem]">
               <div className="flex flex-col gap-[1.5rem]">
                 <div className="text-[1.2rem] pb-[0.8rem] pl-[0.8rem] pt-[1rem] border-b-[0.8px] border-black font-semibold">
-                Xbattery™
+                  Xbattery™
                 </div>
                 <div className="text-[1rem] pl-[0.8rem] pr-[0.8rem]">
-                Xbattery is building lithium battery packs in India, including
+                  Xbattery is building lithium battery packs in India, including
                   electronics and software, to help businesses, EVs and grids
                   store energy affordably and access it on demand.
                 </div>
               </div>
-              <div className="flex flex-col gap-[1.5rem]">
-                <div className="text-[1.2rem] pb-[0.8rem] pl-[0.8rem] border-b-[0.8px] border-t-[0.8px] pt-3 border-black font-semibold">
-                  Join us
+              <div className="flex justify-between">
+               
+              <div className="flex flex-col items-start mt-[-1rem] pl-[0.8rem] ">
+                  <div className="p-0.5 rounded-md text-left">
+                    <h2
+                      className={`text-[1rem] font-semibold mb-2 ${styles.head1} leading-[45px] `}
+                    >
+                     Products
+                    </h2>
+                  </div>
+                  <div className="flex flex-col justify-start mt-[-0.7rem]">
+                    <ul className="pl-[0.4rem] flex flex-col gap-1">
+                      {products.map((item, index) => (
+                        <li
+                          key={index}
+                          className={`cursor-pointer text-[0.9rem] font-semibold ${styles.head1}`}
+                        >
+                          <Link
+                            href={item.link}
+                            className="hover:text-[#27b633] opacity-[70%]"
+                          >
+                            {item.name}
+                          </Link>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
                 </div>
+
+                <div className="flex flex-col items-start mt-[-1rem] ">
+                  <div className="p-0.5 rounded-md text-left">
+                    <h2
+                      className={`text-[1rem] font-semibold mb-2 ${styles.head1} leading-[45px] ]`}
+                    >
+                      Resources
+                    </h2>
+                  </div>
+                  <div className="flex flex-col justify-start mt-[-0.7rem] pl-[0.4rem]">
+                    <ul className="pl-[0.4rem] flex flex-col gap-1">
+                      {resources.map((item, index) => (
+                        <li
+                          key={index}
+                          className={`cursor-pointer text-[0.9rem] font-semibold ${styles.head1}`}
+                        >
+                          <Link
+                            href={item.link}
+                            className="hover:text-[#27b633] opacity-[70%]"
+                          >
+                            {item.name}
+                          </Link>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
+
+                <div className="flex flex-col items-start mt-[-1rem] pr-[0.7rem] ">
+                  <div className="p-0.5 rounded-md text-left">
+                    <h2
+                      className={`text-[1rem] font-semibold mb-2 ${styles.head1} leading-[45px] ]`}
+                    >
+                      Company
+                    </h2>
+                  </div>
+                  <div className="flex flex-col justify-start mt-[-0.7rem]">
+                    <ul className="pl-[0.4rem] flex flex-col gap-1">
+                      {company.map((item, index) => (
+                        <li
+                          key={index}
+                          className={`cursor-pointer text-[0.9rem] font-semibold ${styles.head1}`}
+                        >
+                          <Link
+                            href={item.link}
+                            className="hover:text-[#27b633] opacity-[70%]"
+                          >
+                            {item.name}
+                          </Link>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+              <div className="flex flex-col gap-[1.5rem] pl-2 mb-[-1rem]">
+                {/* <div className="text-[1.2rem] pb-[0.8rem] pl-[0.8rem] border-b-[0.8px] border-t-[0.8px] pt-3 border-black font-semibold">
+                  Join us
+                </div> */}
                 <div className="flex items-center gap-[1.5rem] pl-[0.8rem]">
                   <a
                     href=" https://x.com/Xbattery_"
@@ -503,7 +610,7 @@ const batteries = [
                 </div>
               </div>
               <div>
-                <p className="text-gray-400 text-left font-sans pl-[0.8rem] mt-1 text-[0.75rem]">
+                <p className="text-gray-400 text-left font-sans pl-[0.8rem] mt-1 mb-1 text-[0.75rem]">
                   © {new Date().getFullYear()} Xbattery Energy Private Limited.
                   All rights reserved.
                 </p>

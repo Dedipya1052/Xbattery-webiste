@@ -172,6 +172,26 @@ const Careers = () => {
                 </div>
               </div>
               </Link>
+
+                {/* Box 4 */}
+                <Link href={"/careers/senior-pcb-design-engineer"}>
+              <div className="bg-[#212020] rounded-lg shadow-lg p-1  hover:cursor-pointer hover:bg-[#282828] transition-all duration-400">
+                <Image
+                  src="/images/careers/card4.webp"
+                  width={600}
+                  height={600}
+                  alt="Software Engineer III"
+                  className="w-full h-48 object-cover rounded-t-lg"
+                />
+                <div className="p-2 pb-6 px-4">
+                  <h2 className="text-xl font-semibold mt-4">
+                  Senior PCB Design Engineer (BMS & Power Electronics)
+                  </h2>
+                  <p className="text-sm mt-2">Hyderabad, Telangana, India</p>
+                 
+                </div>
+              </div>
+              </Link>
             </div>
           </AnimatedDiv>
         </div>
