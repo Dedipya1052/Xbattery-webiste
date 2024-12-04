@@ -64,6 +64,54 @@ const Job1 = () => {
           </div>
 
           <div className={classes.affiliateholder}>
+            <h3 className={classes.h3inaffiliate}>Job Details:</h3>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-4">
+              <div
+                className={`${classes.infoCard} p-4 bg-[#202020] rounded-lg shadow-md flex items-center`}
+              >
+                <FaLocationDot
+                  fontSize={"13px"}
+                  className="text-yellow-400 mr-2"
+                />
+                <span className={classes.affiliateInfo}>
+                  {" "}
+                  <span className="text-white">
+                    Hyderabad, Telangana, India
+                  </span>
+                </span>
+              </div>
+
+              <div
+                className={`${classes.infoCard} p-4 bg-[#202020] rounded-lg shadow-md flex items-center`}
+              >
+                <HiOfficeBuilding
+                  fontSize={"14px"}
+                  className=" text-yellow-400 mr-2"
+                />
+                <span className={classes.affiliateInfo}>
+                  {" "}
+                  <span className="text-white">
+                    Xbattery Energy Private Ltd.
+                  </span>
+                </span>
+              </div>
+
+              <div
+                className={`${classes.infoCard} p-4 bg-[#202020] rounded-lg shadow-md flex items-center`}
+              >
+                <MdOutlineWork
+                  fontSize={"14px"}
+                  className=" text-yellow-400 mr-2"
+                />
+                <span className={classes.affiliateInfo}>
+                  {" "}
+                  <span className="text-white">Full-time</span>
+                </span>
+              </div>
+            </div>
+          </div>
+
+          <div className={classes.affiliateholder}>
             <h3 className={classes.h3inaffiliate}>Job Overview:</h3>
             <p className={classes.affPara}>
               We are seeking a talented Senior PCB Design Engineer with
