@@ -191,7 +191,7 @@ export default function BlogPage({ blog, blogs }) {
 
   async function sendDataToAPI(name, email) {
     try {
-      const response = await fetch("/api/userDetails", {
+      const response = await fetch("https://prod-28.centralindia.logic.azure.com:443/workflows/8eba286f82014c60bf52c465771cee58/triggers/manual/paths/invoke?api-version=2016-06-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=AYGySzWH5W8ipOTa8W6SbAusHUrUT0p0leXMEKx75V0", {
         method: "POST", // Use POST method
         headers: {
           "Content-Type": "application/json", // Send JSON data
