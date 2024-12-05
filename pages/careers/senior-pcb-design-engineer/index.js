@@ -17,7 +17,7 @@ const Job1 = () => {
   const handleMenuItemClick = () => {
     setMobileMenuOpen(false);
   };
- 
+
   return (
     <>
       <Head>
@@ -114,12 +114,12 @@ const Job1 = () => {
           <div className={classes.affiliateholder}>
             <h3 className={classes.h3inaffiliate}>Job Overview:</h3>
             <p className={classes.affPara}>
-              We are seeking a talented Senior PCB Design Engineer with
-              expertise in Battery Management Systems (BMS) and Power
-              Electronics. The ideal candidate will lead the design of
-              high-performance, high-voltage PCBs for energy storage solutions,
-              ensuring compliance with safety standards and delivering
-              innovative, reliable designs.
+              We are seeking a talented <span className=" font-bold">Senior PCB Design Engineer</span> with at least{" "}
+              <span className=" font-bold">5 years</span> of experience in
+              Battery Management Systems (BMS) and Power Electronics. The ideal
+              candidate will lead the design of high-performance, high-voltage
+              PCBs for energy storage solutions, ensuring compliance with safety
+              standards and delivering innovative, reliable designs.
             </p>
           </div>
 
@@ -127,9 +127,9 @@ const Job1 = () => {
             <h3 className={classes.h3inaffiliate}>Responsibilities:</h3>
             <UnorderedList spacing={3}>
               {[
-                "Design and develop complex multi-layer PCB layouts for BMS and power conversion systems.",
+                "Design and develop complex multi-layer PCB layouts for BMS and power conversion systems, requiring at least 5 years of experience in PCB design.",
                 "Lead PCB design efforts for high-current, high-voltage applications with emphasis on safety and reliability.",
-                "Implement protection circuits and isolation requirements for battery systems.",
+                "Implement protection circuits and isolation requirements for battery systems, with a minimum of 5 years of experience in high-power systems.",
                 "Experience with battery safety standards.",
                 "Integration of temperature monitoring systems.",
                 "Design of communication interfaces (CAN, I2C, SPI).",
@@ -146,7 +146,6 @@ const Job1 = () => {
                 "Validate PCB designs for high voltage (up to 800V) and high-power applications.",
                 "Create design documentation, including schematics, BOMs, and assembly drawings.",
                 "Collaborate with firmware and software engineers to ensure seamless integration.",
-              
               ].map((item, index) => (
                 <ListItem
                   key={index}
@@ -157,8 +156,6 @@ const Job1 = () => {
               ))}
             </UnorderedList>
           </div>
-
-         
 
           <div className={classes.affiliateholder}>
             <h3 className={classes.h3inaffiliate}>Why Xbattery Energy?</h3>

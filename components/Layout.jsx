@@ -12,7 +12,7 @@ const Layout = ({ children }) => {
 
   useEffect(() => {
    
-    const timer = setTimeout(() => setIsLoading(false), 200); 
+    const timer = setTimeout(() => setIsLoading(false), 300); 
 
     return () => clearTimeout(timer);
   }, []);
