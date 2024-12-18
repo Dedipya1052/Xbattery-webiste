@@ -391,7 +391,12 @@ const Example = ({ media }) => {
             </div>
 
             <button className="text-white bg-transparent border border-white px-4 py-2 rounded-full hover:bg-white hover:text-black transition-colors duration-300 hidden lg:block min-h-[48px] min-w-[48px]">
-              <Link href="/#registerEmail">Get Notified</Link>
+              <Link
+                href="https://customerappdev.xbattery.energy/"
+                target="_blank"
+              >
+                Customer Portal
+              </Link>
             </button>
 
             <button
@@ -438,12 +443,15 @@ const Example = ({ media }) => {
                   </button>
                 </Link>
               ))}
-              <Link href="/#registerEmail">
+              <Link
+                href="https://customerappdev.xbattery.energy/"
+                target="_blank"
+              >
                 <button
                   className="text-white bg-transparent border border-white px-4 py-2 rounded-full hover:bg-white hover:text-black transition-colors duration-300"
                   onClick={handleMenuItemClick}
                 >
-                  Get Notified
+                  Customer Portal
                 </button>
               </Link>
             </div>
@@ -967,7 +975,7 @@ const Example = ({ media }) => {
             </div>
           </div>
 
-         {/* specifications 50kwh */}
+          {/* specifications 50kwh */}
 
           <div className="mt-[7rem] mb-[3rem] sm:mb-[5rem] w-[94%] md:w-[90%] lg:w-[85%] xl:w-[80%] 2xl:w-[1450px] mx-auto">
             <AnimatedDiv>
@@ -1107,7 +1115,6 @@ const Example = ({ media }) => {
               >
                 <div className="flex flex-col lg:flex-row items-center justify-center gap-[5%] p-6">
                   <div className="w-full lg:w-[45%] mb-6 lg:mb-0">
-                   
                     <Image
                       src="/images/hero/bharat/chip1.png" // Replace with your image path
                       alt="Energy Innovation"
@@ -1153,7 +1160,6 @@ const Example = ({ media }) => {
                 className="w-full h-full mx-auto cursor-pointer relative overflow-hidden"
                 onClick={handleRedirect}
               >
-               
                 <Image
                   src="/images/hero/learn.webp"
                   alt="Learn Energy Storage, Batteries and more"
