@@ -101,8 +101,7 @@ export default function Home({ media }) {
         <meta property="og:site_name" content="XBattery" />
         <meta property="article:author" content="XBattery Team" />
 
-        {/* Canonical Tag */}
-        <link rel="canonical" href="https://xbattery.energy" />
+       
       </Head>
 
       <Example media={media} />
