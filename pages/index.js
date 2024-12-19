@@ -67,7 +67,7 @@ export default function Home({ media }) {
         <meta property="og:url" content="https://xbattery.energy" />
         <meta
           property="og:image"
-          content="https://xbattery.energy/favicon.png"
+          content="https://xbattery.energy/images/og-image.png"
         />
         <meta property="og:image:type" content="image/png" />
         <meta property="og:image:width" content="1200" />
@@ -87,7 +87,7 @@ export default function Home({ media }) {
         />
         <meta
           name="twitter:image"
-          content="https://xbattery.energy/favicon.png"
+          content="https://xbattery.energy/images/og-image.png"
         />
 
         {/* Hreflang Links */}
