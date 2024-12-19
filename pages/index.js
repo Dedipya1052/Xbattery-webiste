@@ -43,45 +43,53 @@ export default function Home({ media }) {
           name="keywords"
           content="XBattery, Giant Batteries, Energy Storage, BMS, IoT, Digital Twins, AI, Energy Transformation, Advanced BMS, Battery Management, Smart Batteries, Indian Energy, Renewable Energy"
         />
-        <title>Xbattery™ - India's First Unified BMS for Energy Storage & EVs | Advanced Battery Packs</title>
+        <title>
+          Xbattery™ - India's First Unified BMS for Energy Storage & EVs |
+          Advanced Battery Packs
+        </title>
         <meta
           name="description"
           content="Xbattery builds lithium battery packs in India, integrating electronics and software to help businesses, EVs, and grids store and access energy affordably."
         />
 
+        {/* <!-- Open Graph Meta Tags --> */}
         <meta property="og:type" content="website" />
-        <meta property="og:title" content="XBattery" />
+        <meta
+          property="og:title"
+          content="XBattery™ - India's First Unified BMS for Energy Storage & EVs"
+        />
         <meta
           property="og:description"
           content="Xbattery builds lithium battery packs in India, integrating electronics and software to help businesses, EVs, and grids store and access energy affordably."
         />
-        <link rel="icon" type="image/webp"  href="/favicon.webp" />
+        <meta property="og:url" content="https://xbattery.energy" />
         <meta
           property="og:image"
-          content="/favicon.webp"
+          content="https://xbattery.energy/favicon.png"
         />
-        <meta property="og:url" content="https://xbattery.energy/" />
 
+        {/* <!-- Twitter Meta Tags --> */}
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:site" content="https://x.com/Xbattery_" />
-        <meta name="twitter:title" content="XBattery" />
+        <meta
+          name="twitter:title"
+          content="XBattery™ - India's First Unified BMS for Energy Storage & EVs"
+        />
         <meta
           name="twitter:description"
-          content="Xbattery is building lithium battery packs in India,
-                  including electronics and software, to help businesses, EVs
-                  and grids store energy affordably and access it on demand."
+          content="Xbattery is building lithium battery packs in India, including electronics and software, to help businesses, EVs, and grids store energy affordably and access it on demand."
         />
         <meta
           name="twitter:image"
-          content="https://xbattery.energy/images/og-image.jpg"
+          content="https://xbattery.energy/favicon.png"
         />
-         {/* hreflang links  */}
-         <link
-          rel="alternate"
-          hreflang="en-in"
-          href="https://xbattery.energy/"
-        />
-        <link rel="alternate" hreflang="en" href="https://xbattery.energy/" />
+
+        {/* <!-- Hreflang Links --> */}
+        <link rel="alternate" hreflang="en-in" href="https://xbattery.energy" />
+        <link rel="alternate" hreflang="en" href="https://xbattery.energy" />
+
+        {/* <!-- Favicon --> */}
+        <link rel="icon" type="image/webp" href="/favicon.webp" />
       </Head>
 
       <Example media={media} />
