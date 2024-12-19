@@ -37,8 +37,10 @@ export default function Home({ media }) {
   return (
     <>
       <Head>
+        {/* Viewport Meta Tag */}
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+        {/* Basic SEO Meta Tags */}
         <meta
           name="keywords"
           content="XBattery, Giant Batteries, Energy Storage, BMS, IoT, Digital Twins, AI, Energy Transformation, Advanced BMS, Battery Management, Smart Batteries, Indian Energy, Renewable Energy"
@@ -52,7 +54,7 @@ export default function Home({ media }) {
           content="Xbattery builds lithium battery packs in India, integrating electronics and software to help businesses, EVs, and grids store and access energy affordably."
         />
 
-        {/* <!-- Open Graph Meta Tags --> */}
+        {/* Open Graph Meta Tags for Facebook and LinkedIn */}
         <meta property="og:type" content="website" />
         <meta
           property="og:title"
@@ -67,8 +69,12 @@ export default function Home({ media }) {
           property="og:image"
           content="https://xbattery.energy/favicon.png"
         />
+        <meta property="og:image:type" content="image/png" />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+        <meta property="og:locale" content="en_IN" />
 
-        {/* <!-- Twitter Meta Tags --> */}
+        {/* Twitter Meta Tags */}
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:site" content="https://x.com/Xbattery_" />
         <meta
@@ -84,12 +90,19 @@ export default function Home({ media }) {
           content="https://xbattery.energy/favicon.png"
         />
 
-        {/* <!-- Hreflang Links --> */}
+        {/* Hreflang Links */}
         <link rel="alternate" hreflang="en-in" href="https://xbattery.energy" />
         <link rel="alternate" hreflang="en" href="https://xbattery.energy" />
 
-        {/* <!-- Favicon --> */}
+        {/* Favicon */}
         <link rel="icon" type="image/webp" href="/favicon.webp" />
+
+        {/* Additional Open Graph Tags */}
+        <meta property="og:site_name" content="XBattery" />
+        <meta property="article:author" content="XBattery Team" />
+
+        {/* Canonical Tag */}
+        <link rel="canonical" href="https://xbattery.energy" />
       </Head>
 
       <Example media={media} />
