@@ -71,7 +71,7 @@ export default function Home({ media }) {
         />
         <meta property="og:image:type" content="image/png" />
         <meta property="og:image:width" content="1200" />
-        <meta property="og:image:height" content="630" />
+        <meta property="og:image:height" content="627" />
         <meta property="og:locale" content="en_IN" />
 
         {/* Twitter Meta Tags */}
