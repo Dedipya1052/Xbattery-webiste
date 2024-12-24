@@ -52,6 +52,16 @@ const Example = ({ media }) => {
   const controls = useAnimation();
   const [objectPosition, setObjectPosition] = useState("object-center");
 
+  const [objectPosition1, setObjectPosition1] = useState("object-right");
+
+  const handlePlay = () => {
+    setObjectPosition1("object-right"); // Reset to object-right initially
+    setTimeout(() => {
+      setObjectPosition1("object-center"); // Switch to object-center after 2 seconds
+    }, 2670);
+  };
+  
+
   useEffect(() => {
     const timer = setTimeout(() => {
       setObjectPosition("object-right"); // After 6 seconds, change to 'object-right'
@@ -220,6 +230,7 @@ const Example = ({ media }) => {
   const [selectedIndex, setSelectedIndex] = useState(0);
   const videoRef1 = useRef(null);
   const videoRef2 = useRef(null);
+  const videoRef3 = useRef(null);
 
   useEffect(() => {
     const handlePlayVideo = (entries) => {
@@ -240,14 +251,17 @@ const Example = ({ media }) => {
     // Copy the current ref values into local variables
     const currentVideoRef1 = videoRef1.current;
     const currentVideoRef2 = videoRef2.current;
+    const currentVideoRef3 = videoRef3.current;
 
     if (currentVideoRef1) observer.observe(currentVideoRef1);
     if (currentVideoRef2) observer.observe(currentVideoRef2);
+    if (currentVideoRef3) observer.observe(currentVideoRef3);
 
     return () => {
       // Use the copied ref values for cleanup
       if (currentVideoRef1) observer.unobserve(currentVideoRef1);
       if (currentVideoRef2) observer.unobserve(currentVideoRef2);
+      if (currentVideoRef3) observer.unobserve(currentVideoRef3);
     };
   }, []);
 
@@ -1104,6 +1118,24 @@ const Example = ({ media }) => {
               </AnimatedDiv>
             )}
           </div>
+
+          <AnimatedDiv>
+            <div className="w-full">
+              <video
+                className={`w-auto h-[85vh] md:w-full md:h-auto object-cover ${objectPosition1}`}
+                autoPlay
+                muted
+                // loop
+                playsInline
+                preload="none"
+                ref={videoRef3}
+                onPlay={handlePlay}
+              >
+                <source src={"/videos/50kwh/1080p.mp4"} type="video/mp4" />
+                Your browser does not support the video tag.
+              </video>
+            </div>
+          </AnimatedDiv>
 
           {/* Learn redirect */}
 
