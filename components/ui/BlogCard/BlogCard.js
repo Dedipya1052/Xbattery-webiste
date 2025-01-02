@@ -42,7 +42,7 @@ export default function Card({ blog }) {
           />
           <div className={`flex flex-col gap-[1.1rem] ${styles.head1} border-b-[1px] pb-[2rem] border-black`}>
           <div className="mt-[1rem] flex flex-col gap-[2px]">
-          <div className=" text-sm text-gray-700 font-[500]">{`Published ${monthName[month]} ${day}, ${year}`}</div>
+          <div className=" text-sm text-gray-700 font-[500]">{`Published ${monthName[month]} ${day}, ${year}`}</div> 
           <div className=" text-sm text-gray-700 font-[500]">{author}</div>
           </div>
           <div className="text-[1.5rem] font-semibold">{subtitle}</div>
