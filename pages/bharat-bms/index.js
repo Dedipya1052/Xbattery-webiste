@@ -160,7 +160,7 @@ const BharatBMS = () => {
               Introducing BharatBMS
             </h1>
             <p className="text-lg md:text-xl leading-relaxed max-w-xl mx-auto md:mx-0 text-[#e9e9e9] pl-[1.5px] 2xl:text-2xl">
-              India's first scalable Battery Management System.
+              India's first scalable Battery Management System
             </p>
           </div>
 

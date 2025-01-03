@@ -80,7 +80,7 @@ const Navbar = () => {
                 ))}
               </div>
 
-              <button className="text-white bg-transparent border border-white px-4 py-2 rounded-full hover:bg-white hover:text-black transition-colors duration-300 hidden lg:block min-h-[48px] min-w-[48px]">
+              <button className="text-white text-sm bg-transparent border border-white px-[15px] py-[9px] rounded-full hover:bg-white hover:text-black transition-colors duration-300 hidden lg:block ">
                 <Link
                   href="https://customerappdev.xbattery.energy/"
                   target="_blank"
@@ -139,7 +139,7 @@ const Navbar = () => {
                   target="_blank"
                 >
                   <button
-                    className="text-white bg-transparent border border-white px-4 py-2 rounded-full hover:bg-white hover:text-black transition-colors duration-300 min-h-[48px] min-w-[48px]"
+                    className="text-white bg-transparent border border-white px-4 py-2 rounded-full hover:bg-white hover:text-black transition-colors duration-300 "
                     onClick={handleMenuItemClick}
                   >
                      Customer Portal
@@ -232,7 +232,7 @@ const Navbar = () => {
                 <NavLink
                   href="https://customerappdev.xbattery.energy/"
                   target="_blank"
-                  className="flex items-center justify-center gap-x-1 text-sm text-black font-bold custom-btn-bg border border-gray-500 active:bg-gray-100 min-h-[48px] min-w-[48px]"
+                  className="flex items-center justify-center gap-x-1 text-sm text-black  custom-btn-bg border border-gray-500 active:bg-gray-100 px-[15px] py-[9px] font-semibold"
                 >
                   Customer Portal
                 </NavLink>
@@ -343,7 +343,7 @@ const Navbar = () => {
                   <NavLink
                     href="https://customerappdev.xbattery.energy/"
                     target="_blank"
-                    className="flex items-center justify-center gap-x-1 text-sm text-black font-bold custom-btn-bg border border-gray-500 active:bg-gray-100 mt-5 min-h-[48px] min-w-[48px]"
+                    className="flex items-center justify-center gap-x-1 text-sm text-black px-[15px] py-[9px] custom-btn-bg border border-gray-500 active:bg-gray-100 mt-5 font-semibold"
                     onClick={closeMenu}
                   >
                    Customer Portal

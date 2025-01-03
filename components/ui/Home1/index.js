@@ -404,7 +404,7 @@ const Example = ({ media }) => {
               ))}
             </div>
 
-            <button className="text-white bg-transparent border border-white px-4 py-2 rounded-full hover:bg-white hover:text-black transition-colors duration-300 hidden lg:block min-h-[48px] min-w-[48px]">
+            <button className="text-white text-sm bg-transparent border border-white px-[15px] py-[9px] rounded-full hover:bg-white hover:text-black transition-colors duration-300 hidden lg:block">
               <Link
                 href="https://customerappdev.xbattery.energy/"
                 target="_blank"
@@ -911,7 +911,7 @@ const Example = ({ media }) => {
           {/* last Image */}
           <AnimatedDiv>
             <div className="relative w-full mb-2 mt-[9rem] sm:mt-[8rem]">
-              <div className="block md:hidden text-[white] text-center px-4 mt-[-1rem] mb-7 w-[90%] mx-auto">
+              <div className="block lg:hidden text-[white] text-center px-4 mt-[-1rem] mb-7 w-[90%] mx-auto">
                 <h2 className={`${styles.textColor} font-bold`}>
                   Reliable Energy Storage for Your Home
                 </h2>
@@ -932,11 +932,11 @@ const Example = ({ media }) => {
                 title="houseXbattery"
                 loading="lazy"
               />
-              <div className="md:block hidden absolute top-4 xl:top-10 left-1/2 transform -translate-x-1/2 text-black text-center">
-                <h2 className="text-2xl font-bold">
+              <div className="lg:block hidden absolute top-4 xl:top-10 w-[60%] 2xl:w-[50%] mx-auto left-0 right-0 text-black text-center">
+                <h2 className="text-2xl 2xl:text-3xl font-bold">
                   Reliable Energy Storage for Your Home
                 </h2>
-                <p className="mt-4">
+                <p className="mt-4 text-[19.5px] 2xl:text-xl">
                   Xbattery blends seamlessly into your home, occupying minimal
                   space while providing reliable energy storage. It helps manage
                   energy efficiently, lowers electricity bills, and ensures

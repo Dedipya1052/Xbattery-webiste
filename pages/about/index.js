@@ -28,31 +28,30 @@ const About = () => {
     e.preventDefault();
 
     // Navigate to the about page, then smooth scroll
-    await router.push('/about'); // This navigates to /about page
-    const teamsSection = document.querySelector('#teams');
+    await router.push('/about#teams'); // This navigates to /about page
+    // const teamsSection = document.querySelector('#teams');
 
-    if (teamsSection) {
-      // Smoothly scrolls to the section and stops exactly at it
-      teamsSection.scrollIntoView({
-        behavior: 'smooth',
-        block: 'start', // 'start' to align to the top of the viewport, 'center' for middle
-      });
-    }
+    // if (teamsSection) {
+    //   // Smoothly scrolls to the section and stops exactly at it
+    //   teamsSection.scrollIntoView({
+    //     behavior: 'smooth',
+    //     block: 'start', // 'start' to align to the top of the viewport, 'center' for middle
+    //   });
+    // }
   };
   const handleScroll1 = async (e) => {
     e.preventDefault();
 
-    // Navigate to the about page, then smooth scroll
-    await router.push('/about'); // This navigates to /about page
-    const teamsSection = document.querySelector('#story');
+    await router.push('/about#story'); 
+    // const teamsSection = document.querySelector('#story');
 
-    if (teamsSection) {
-      // Smoothly scrolls to the section and stops exactly at it
-      teamsSection.scrollIntoView({
-        behavior: 'smooth',
-        block: 'start', // 'start' to align to the top of the viewport, 'center' for middle
-      });
-    }
+    // if (teamsSection) {
+    //   // Smoothly scrolls to the section and stops exactly at it
+    //   teamsSection.scrollIntoView({
+    //     behavior: 'smooth',
+    //     block: 'start', // 'start' to align to the top of the viewport, 'center' for middle
+    //   });
+    // }
   };
 
   return (
@@ -105,7 +104,7 @@ const About = () => {
               About us
             </div> */}
             <div className="text-white text-3xl lg:text-3xl text-center md:text-left font-bold">
-            Coding for 10,000+ Lithium Cells. Zero Errors. One Platform.
+            Where energy meets intelligence and innovation
             </div>
             <div className="pt-8 flex gap-7 pl-2">
               <Button
@@ -131,7 +130,9 @@ const About = () => {
                 <p className="text-xl mt-[2rem] ">
                   {/* Xbattery builds large battery packs that help businesses and
                   grids store energy affordably and access it on demand. */}
-                  Xbattery is building lithium battery packs in India, including electronics and software, to help businesses, EVs and grids store energy affordably and access it on demand.
+                  Xbattery is building lithium battery packs in India, including
+                  electronics and software, to help businesses, EVs and grids
+                  store energy affordably and access it on demand.
                 </p>
               </div>
             </AnimatedDiv>
@@ -201,7 +202,9 @@ const About = () => {
                       </defs>
                     </svg>
                   </div>
-                  <h3 className="text-md font-semibold">Scientific Rigor with Human Touch</h3>
+                  <h3 className="text-md font-semibold">
+                    Scientific Rigor with Human Touch
+                  </h3>
                 </div>
 
                 <div className="text-center text-white">
@@ -306,7 +309,9 @@ const About = () => {
                       </defs>
                     </svg>
                   </div>
-                  <h3 className="text-md font-semibold">Sustainability & Clearn Energy Focus</h3>
+                  <h3 className="text-md font-semibold">
+                    Sustainability & Clearn Energy Focus
+                  </h3>
                 </div>
 
                 <div className="text-center text-white">
@@ -375,7 +380,9 @@ const About = () => {
                       </defs>
                     </svg>
                   </div>
-                  <h3 className="text-md font-semibold">Economic Sustainability</h3>
+                  <h3 className="text-md font-semibold">
+                    Economic Sustainability
+                  </h3>
                 </div>
               </div>
             </AnimatedDiv>
@@ -575,74 +582,59 @@ const About = () => {
                     className="w-[100%] md:w-[75%] lg:w-[65%] 2xl:w-[60%]"
                     mx="auto"
                   >
-                    <Text className="text-gray-300 text-lg text-left">
-                      Let's be honest - power cuts in India are frustrating. The
-                      constant hum of generators, the disrupted meetings, the
-                      midnight outages - we've all been there. That's why we
-                      started Xbattery.
+                    <Text className="text-white text-lg font-bold">
+                      We pick up from where the energy leaves
                     </Text>
 
-                    <Text className="text-white text-lg text-left font-bold">
-                      Here's what we're tackling:
+                    <Text className="text-gray-300 text-lg text-left">
+                      Why does the power in India go out at the worst possible
+                      time? Mid-movie, mid-meeting, or worse-right in the middle
+                      of a wedding! Welcome to India, where electricity still
+                      plays hide-and-seek with us every now and then. Even as
+                      India aims for ambitious renewable energy goals, our homes
+                      and businesses remain at the mercy of the grid. It’s not
+                      just frustrating; it’s outdated.
                     </Text>
-                    <UnorderedList spacing={2} className=" text-gray-300">
+
+                    <Text className="text-gray-300 text-lg text-left">
+                      Xbattery was born out of this frustration. We saw a gap in
+                      India’s energy infrastructure, a gap where reliability,
+                      efficiency, and scalability didn’t meet. So, we created a
+                      solution that would.
+                    </Text>
+
+                    <Text className="text-gray-300 text-lg text-left">
+                      Our battery packs are designed to thrive in the toughest
+                      conditions, whether it’s your busy home or a factory in
+                      the middle of nowhere.
+                    </Text>
+
+                    <Text className="text-white text-lg font-bold">
+                      What is the X Factor? Glad you asked.
+                    </Text>
+                    <UnorderedList spacing={2} className="text-gray-300">
                       <ListItem>
-                        {" "}
-                        India's targeting 500GW of renewable energy by 2030
+                        <strong>Brainpower:</strong> Our battery management
+                        system is smart enough to handle everything YOUR way.
                       </ListItem>
                       <ListItem>
-                        {" "}
-                        Our power grid struggles with reliability
+                        <strong>Smart sensors:</strong> They see trouble even
+                        before it walks in.
                       </ListItem>
                       <ListItem>
-                        {" "}
-                        Solar and wind are great, but storage is the missing
-                        piece
+                        <strong>Made in India:</strong> Innovation doesn’t need
+                        an import tag.
+                      </ListItem>
+                      <ListItem>
+                        <strong>Affordable:</strong> Worth your every paisa.
                       </ListItem>
                     </UnorderedList>
 
                     <Text className="text-gray-300 text-lg text-left">
-                      We're a team of engineers who got tired of waiting for
-                      someone else to solve this. So we built something
-                      ourselves.
-                    </Text>
-
-                    <Text className="text-white text-lg font-bold">
-                      What sets our battery packs apart?
-                    </Text>
-                    <Text className="text-gray-300 text-lg text-left">
-                      We have designed them specifically for Indian conditions -
-                      from homes to factories. No fancy promises, just reliable
-                      power when you need it. Our battery packs work with your
-                      existing setup, whether you're running a small business or
-                      a large facility.
-                    </Text>
-
-                    <Text className="text-white text-lg font-bold">
-                      The Tech
-                    </Text>
-                    <UnorderedList spacing={2} className=" text-gray-300">
-                      <ListItem>
-                        {" "}
-                        Custom-built battery management systems
-                      </ListItem>
-                      <ListItem>
-                        {" "}
-                        Smart monitoring that prevents issues before they happen
-                      </ListItem>
-                      <ListItem>
-                        {" "}
-                        Made right here in India, including our own hardware
-                      </ListItem>
-                      <ListItem> Actually affordable (yes, really)</ListItem>
-                    </UnorderedList>
-
-                    <Text className="text-gray-300 text-lg text-left">
-                      Want to see it in action? We're launching our first major
-                      product for homes and commercial buildings. We are
-                      currently working with select businesses in Hyderabad. If
-                      you'd like to learn more or see how it could work for you,
-                      reach out at{" "}
+                      We are launching our first product for homes and
+                      businesses, with a few smart partners in Hyderabad already
+                      on board. If you want to know how we can change your
+                      relationship with energy, give us a shout at{" "}
                       <Text as="span" color="teal.300">
                         <a
                           href="mailto:support@xbattery.energy"
@@ -653,11 +645,7 @@ const About = () => {
                           support@xbattery.energy
                         </a>
                       </Text>
-                    </Text>
-
-                    <Text className="text-gray-300 text-lg text-left">
-                      No more "imagine if" - let's talk about real solutions for
-                      India's power needs.
+                      .
                     </Text>
                   </VStack>
                 </Box>
@@ -689,14 +677,18 @@ const About = () => {
               />
               <div className="text-white  w-full md:w-[65%] flex flex-col gap-[1rem] text-center md:text-left">
                 <div className=" text-2xl font-semibold flex flex-row justify-between md:justify-start items-start sm:items-center gap-[0.5rem] text-left">
-                  Satish Reddy, CEO of Xbattery <span className=" mt-1 sm:mt-0"> <a
-                        href="https://www.linkedin.com/in/satishreddyv/"
-                        aria-label="Xbattery Linkedin"
-                        target="_blank"
-                        rel="noreferrer"
-                      >
-                        <FaLinkedin size={"26px"} />
-                      </a></span>
+                  Satish Reddy, CEO of Xbattery{" "}
+                  <span className=" mt-1 sm:mt-0">
+                    {" "}
+                    <a
+                      href="https://www.linkedin.com/in/satishreddyv/"
+                      aria-label="Xbattery Linkedin"
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      <FaLinkedin size={"26px"} />
+                    </a>
+                  </span>
                 </div>
                 <div className=" opacity-[80%] text-lg text-center md:text-left">
                   Satish Reddy leads Xbattery as founder and CEO. He spent 15
@@ -722,16 +714,19 @@ const About = () => {
                 className="w-full md:w-[30%] h-[350px] object-cover rounded-md"
               />
               <div className="text-white  w-full md:w-[65%] flex flex-col gap-[1rem] text-center md:text-left">
-               
                 <div className=" text-2xl font-semibold flex flex-row justify-between md:justify-start items-start sm:items-center gap-[0.5rem] text-left">
-                Sonu Mishra, CTO of Xbattery <span className=" mt-1 sm:mt-0"> <a
-                        href="https://www.linkedin.com/in/sonumishra662/"
-                        aria-label="Xbattery Linkedin"
-                        target="_blank"
-                        rel="noreferrer"
-                      >
-                        <FaLinkedin size={"26px"} />
-                      </a></span>
+                  Sonu Mishra, CTO of Xbattery{" "}
+                  <span className=" mt-1 sm:mt-0">
+                    {" "}
+                    <a
+                      href="https://www.linkedin.com/in/sonumishra662/"
+                      aria-label="Xbattery Linkedin"
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      <FaLinkedin size={"26px"} />
+                    </a>
+                  </span>
                 </div>
                 <div className=" opacity-[80%] text-lg">
                   Sonu Mishra brings hands-on battery expertise to Xbattery as
@@ -759,10 +754,10 @@ const About = () => {
                 <h2
                   className={`${classes.block5Head}  mb-6 text-center md:text-center  text-3xl leading-[45px] md:leading-[52px]`}
                 >
-                 Building India's Clean Energy Backbone
+                  Building India's Clean Energy Backbone
                 </h2>
                 <p className="text-md opacity-[80%] text-center md:text-center mb-3 mt-[-2px]">
-                Engineered in India for India
+                  Engineered in India for India
                 </p>
               </div>
               {/* Image Section */}
