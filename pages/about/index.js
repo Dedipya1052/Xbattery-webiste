@@ -104,7 +104,7 @@ const About = () => {
               About us
             </div> */}
             <div className="text-white text-3xl lg:text-3xl text-center md:text-left font-bold">
-            Where energy meets intelligence and innovation
+              Where energy meets intelligence and innovation
             </div>
             <div className="pt-8 flex gap-7 pl-2">
               <Button
@@ -486,6 +486,41 @@ const About = () => {
                 </div>
               </div>
             </AnimatedDiv>
+
+            <AnimatedDiv>
+          <section className="bg-[#1e1d1d] py-8 mb-[12rem] mt-[-10rem]">
+            <div className="w-[90%] sm:w-[90%] lg:w-[80%] 2xl:w-[1450px] mx-auto flex flex-col lg:flex-row items-center md:gap-[2%]">
+              <div className="md:w-[68%] w-full text-center md:text-left">
+                <h1 className={`${classes.block4Head} mb-4`}>Our Vision</h1>
+                <p className="text-[#e6e6e6] text-[18px] leading-7 mb-4">
+                  A flick of a switch, and the bulb is on. Welcome to
+                  Edison&apos;s world. But - bam! - a power cut. If you were living in the 1800s, you would have
+                  to wait for the lights to come back on. But it is 2024, and
+                  you have got Xbattery.
+                </p>
+                <p className="text-[#e6e6e6] text-[18px] leading-7 mb-4">
+                  At Xbattery, we continue the work of the greats. Our vision is
+                  to make smart energy storage as intuitive as switching on a
+                  light, making sure it is always there when you need it,
+                  whether for your business, vehicles, or home.
+                </p>
+                {/* <p className="text-[#e6e6e6] text-[18px] leading-7">
+                  Edison would have been proud. Or maybe a little bit jealous.
+                </p> */}
+              </div>
+              <div className="md:w-[30%] w-full flex justify-center md:justify-end mt-6 md:mt-0">
+                <Image
+                  src="/images/logo1.png"
+                  alt="A professional person"
+                  width={230}
+                  height={230}
+                  className="rounded-lg shadow-lg object-contain w-auto lg:w-[100%] h-auto lg:h-[300px] "
+                />
+              </div>
+            </div>
+          </section>
+        </AnimatedDiv>
+
             <div id="story"></div>
             <AnimatedDiv>
               <div className="relative bg-[#242323] min-h-[7rem] xs:min-h-[12rem] sm:min-h-[14rem] md:min-h-[16rem] lg:min-h-[15rem]  xl:min-h-[21rem]">

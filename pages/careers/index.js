@@ -37,7 +37,9 @@ const Careers = () => {
   return (
     <>
       <Head>
-        <title>Battery Packs, BMS & Energy Storage Jobs | Xbattery™ Careers</title>
+        <title>
+          Battery Packs, BMS & Energy Storage Jobs | Xbattery™ Careers
+        </title>
 
         <meta property="og:image" content="/images/favicon.webp" />
         <meta property="og:site_name" content="Xbattery" />
@@ -51,8 +53,7 @@ const Careers = () => {
         />
       </Head>
 
-      <div className={`${classes.head1} bg-black`}>      
-       
+      <div className={`${classes.head1} bg-black`}>
         <div className="w-full h-[450px] md:h-[450px] xl:h-[550px] 2xl:h-[55vh] relative overflow-hidden">
           <Image
             src="/images/careers/hero.png" // Ensure the correct path to your image
@@ -72,7 +73,7 @@ const Careers = () => {
               Careers
             </div>
             <div className="text-white text-4xl lg:text-5xl text-center md:text-left font-bold">
-            BMS & Energy Storage Jobs
+              BMS & Energy Storage Jobs
             </div>
             <div className="pt-8 flex gap-7 pl-2">
               <Button
@@ -99,11 +100,11 @@ const Careers = () => {
               Opportunities
             </div>
           </AnimatedDiv>
-          <AnimatedDiv>
+          {/* <AnimatedDiv>
             <div className=" grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 p-6 bg-black text-white">
               
-                {/* Box 4 */}
-                <Link href={"/careers/senior-pcb-design-engineer"}>
+               
+              <Link href={"/careers/senior-pcb-design-engineer"}>
               <div className="bg-[#212020] rounded-lg shadow-lg p-1  hover:cursor-pointer hover:bg-[#282828] transition-all duration-400">
                 <Image
                   src="/images/careers/card4.webp"
@@ -122,7 +123,7 @@ const Careers = () => {
               </div>
               </Link>
               
-              {/* Box 1 */}
+             
               <Link
                 href={
                   "/careers/senior-embedded-application-engineer-microcontroller"
@@ -141,14 +142,12 @@ const Careers = () => {
                       Senior Embedded Application Engineer- Microcontroller
                     </h2>
                     <p className="text-sm mt-2">Hyderabad, Telangana, India</p>
-                    {/* <p className="mt-4 text-gray-400">
-            Google Pay provides secure solutions for easy digital transactions.
-          </p> */}
+                    
                   </div>
                 </div>
               </Link>
 
-              {/* Box 2 */}
+              
               <Link href="/careers/junior-embedded-application-engineer-microcontroller">
                 <div className="bg-[#212020] rounded-lg shadow-lg p-1 hover:cursor-pointer hover:bg-[#282828] transition-all duration-400">
                   <Image
@@ -163,15 +162,12 @@ const Careers = () => {
                       Junior Embedded Application Engineer - Microcontroller
                     </h2>
                     <p className="text-sm mt-2">Hyderabad, Telangana, India</p>
-                    {/* <p className="mt-4 text-gray-400">
-            Search for roles focused on innovation in machine learning and AI at
-            Google.
-          </p> */}
+                    
                   </div>
                 </div>
               </Link>
 
-              {/* Box 3 */}
+              
               <Link href={"/careers/software-engineer-full-stack-core"}>
               <div className="bg-[#212020] rounded-lg shadow-lg p-1  hover:cursor-pointer hover:bg-[#282828] transition-all duration-400">
                 <Image
@@ -186,17 +182,68 @@ const Careers = () => {
                     Software Engineer, Full Stack - Core
                   </h2>
                   <p className="text-sm mt-2">Hyderabad, Telangana, India</p>
-                  {/* <p className="mt-4 text-gray-400">
-            Work on Google Ads to create user-centered digital advertising
-            experiences.
-          </p> */}
+                  
                 </div>
               </div>
               </Link>
 
               
             </div>
+          </AnimatedDiv> */}
+
+          <AnimatedDiv>
+            <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 p-6 bg-black text-white">
+              <Link href={"/careers/senior-pcb-design-engineer"}>
+                <div className="bg-[#212020] rounded-lg shadow-lg p-6 hover:cursor-pointer hover:bg-[#282828] transition-all duration-400 h-full w-full">
+                  <div className="h-full flex flex-col justify-between">
+                    <h2 className="text-xl font-semibold mt-4">
+                      Senior PCB Design Engineer (BMS & Power Electronics)
+                    </h2>
+                    <p className="text-sm mt-2">Hyderabad, Telangana, India</p>
+                  </div>
+                </div>
+              </Link>
+
+              <Link
+                href={
+                  "/careers/senior-embedded-application-engineer-microcontroller"
+                }
+              >
+                <div className="bg-[#212020] rounded-lg shadow-lg p-6 hover:cursor-pointer hover:bg-[#282828] transition-all duration-400 h-full w-full">
+                  <div className="h-full flex flex-col justify-between">
+                    <h2 className="text-xl font-semibold mt-4">
+                      Senior Embedded Application Engineer - Microcontroller
+                    </h2>
+                    <p className="text-sm mt-2">Hyderabad, Telangana, India</p>
+                  </div>
+                </div>
+              </Link>
+
+              <Link href="/careers/junior-embedded-application-engineer-microcontroller">
+                <div className="bg-[#212020] rounded-lg shadow-lg p-6 hover:cursor-pointer hover:bg-[#282828] transition-all duration-400 h-full w-full">
+                  <div className="h-full flex flex-col justify-between">
+                    <h2 className="text-xl font-semibold mt-4">
+                      Junior Embedded Application Engineer - Microcontroller
+                    </h2>
+                    <p className="text-sm mt-2">Hyderabad, Telangana, India</p>
+                  </div>
+                </div>
+              </Link>
+
+              <Link href={"/careers/software-engineer-full-stack-core"}>
+                <div className="bg-[#212020] rounded-lg shadow-lg p-6 hover:cursor-pointer hover:bg-[#282828] transition-all duration-400 h-full w-full">
+                  <div className="h-full flex flex-col justify-between">
+                    <h2 className="text-xl font-semibold mt-4">
+                      Software Engineer, Full Stack - Core
+                    </h2>
+                    <p className="text-sm mt-2">Hyderabad, Telangana, India</p>
+                  </div>
+                </div>
+              </Link>
+            </div>
           </AnimatedDiv>
+
+          
         </div>
       </div>
     </>

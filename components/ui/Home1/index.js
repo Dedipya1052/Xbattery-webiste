@@ -785,7 +785,7 @@ const Example = ({ media }) => {
               <AnimatedDiv>
                 <video
                   ref={videoRef1}
-                  className="w-full min-h-[400px] md:min-h-[650px] object-cover object-right md:object-center"
+                  className="w-full xl:w-[90%] mx-auto min-h-[400px] md:min-h-[600px] object-cover object-right md:object-center"
                   autoPlay
                   muted
                   playsInline
@@ -810,7 +810,7 @@ const Example = ({ media }) => {
                   Your browser does not support the video tag.
                 </video>
 
-                <div className={styles.switchBox}>
+                <div className={`${styles.switchBox} w-full xl:w-[90%] mx-auto`}>
                   {[
                     "Normal Operation",
                     "During Power Outages",
