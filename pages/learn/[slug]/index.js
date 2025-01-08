@@ -31,6 +31,7 @@ const energyStorage = [
 const renewableEnergy = [
   { name: "Solar Energy", link: "/learn/solar-energy" },
   { name: "Wind Energy", link: "/learn/wind-energy" }, 
+  { name: "Geothermal Energy", link: "/learn/geothermal-energy" },
   // { name: "Geothermal Energy", link: "/learn/geothermal-energy" },
   // { name: "Biomass Energy", link: "/learn/biomass-energy" }
 ];
@@ -54,7 +55,8 @@ const grid = [
 
 const batteries = [
   { name: "Understanding Lithium", link: "/learn/understanding-lithium" }, 
-  { name: "Emerging Battery Technologies", link: "/learn/emerging-battery-technologies" }
+  { name: "Emerging Battery Technologies", link: "/learn/emerging-battery-technologies" },
+  { name:"Understanding LFP Batteries", link:"/learn/understanding-lfp-batteries"}
 ];
 
 const allBlogs = [
