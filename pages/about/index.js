@@ -104,7 +104,7 @@ const About = () => {
               About us
             </div> */}
             <div className="text-white text-3xl lg:text-3xl text-center md:text-left font-bold">
-            Coding for 10,000+ Lithium Cells. Zero Errors. One Platform.
+              Coding for 10,000+ Lithium Cells. Zero Errors. One Platform.
             </div>
             <div className="pt-8 flex gap-7 pl-2">
               <Button
@@ -487,8 +487,6 @@ const About = () => {
               </div>
             </AnimatedDiv>
 
-            
-
             <div id="story"></div>
             <AnimatedDiv>
               <div className="relative bg-[#242323] min-h-[7rem] xs:min-h-[12rem] sm:min-h-[14rem] md:min-h-[16rem] lg:min-h-[15rem]  xl:min-h-[21rem]">
@@ -512,53 +510,6 @@ const About = () => {
             </AnimatedDiv>
 
             {/* <AnimatedDiv>
-              <div className=" bg-[#242323]  ">
-                <div className="w-[93%] md:w-[90%] xl:w-[80%] 2xl:w-[1450px] mx-auto p-[1rem] pb-[2rem] bg-[#242323] flex flex-col justify-center items-center gap-[2rem] md:gap-[0.5rem]">
-                  <div class="flex flex-wrap items-center text-center gap-5 mb-4 w-[100%] md:w-[75%] lg:w-[65%] 2xl:w-[60%] justify-center md:justify-start" >
-                    <Image
-                      src="/images/about/teams/shortimages/1.png"
-                      alt="Founder Image"
-                      height={100}
-                      width={100}
-                      class="w-20 h-20 rounded-full "
-                    />
-                    <div className="text-left">
-                    <h2 class="text-white text-xl font-bold">Satish Reddy</h2>
-                    <p class="text-gray-400 text-md">Founder & CEO</p>
-                    </div>
-                  </div>
-                  <p className="text-white text-lg w-[100%] md:w-[75%] lg:w-[65%] 2xl:w-[60%] text-center  md:text-left mx-auto">
-                    Xbattery was founded with the vision of revolutionizing the
-                    way energy is stored and consumed. Our story began when a
-                    group of engineers and innovators came together to solve one
-                    of the most pressing issues of modern times: sustainable
-                    energy storage. With the rise of renewable energy sources
-                    like solar and wind, it became evident that a solution was
-                    needed to store excess energy efficiently. Our team worked
-                    tirelessly, experimenting with different materials, battery
-                    chemistries, and technologies to create a product that not
-                    only stored energy but did so in a way that was both
-                    cost-effective and scalable.
-                  </p>
-                  <p className="text-white text-lg w-[100%] md:w-[75%] lg:w-[65%] 2xl:w-[60%] text-center  md:text-left mx-auto">
-                    After years of research and development, Xbattery was born.
-                    Our batteries are designed to cater to a wide range of
-                    applications, from powering homes to supporting heavy
-                    industrial use. We believe in a future where energy is not
-                    only renewable but also reliable, where power outages and
-                    energy shortages are a thing of the past. With xBattery,
-                    we're not just providing a product; we're offering a
-                    solution that empowers individuals, businesses, and
-                    communities to take control of their energy needs. Our
-                    journey is just beginning, and we’re excited to continue
-                    pushing the boundaries of what’s possible in the energy
-                    storage space.
-                  </p>
-                </div>
-              </div>
-            </AnimatedDiv> */}
-
-            <AnimatedDiv>
               <Box className="bg-[#242323]">
                 <Box className="w-[93%] md:w-[90%] xl:w-[80%] 2xl:w-[1450px] mx-auto p-[1rem] pb-[2rem] bg-[#242323] flex flex-col justify-center items-center gap-[2rem] md:gap-[0.5rem]">
                   <Box className="flex flex-wrap items-center text-center gap-5 mb-[-0.5rem] md:mb-4 w-[100%] md:w-[75%] lg:w-[65%] 2xl:w-[60%] justify-start">
@@ -639,6 +590,91 @@ const About = () => {
                       on board. If you want to know how we can change your
                       relationship with energy, give us a shout at{" "}
                       <Text as="span" color="teal.300">
+                        <a
+                          href="mailto:support@xbattery.energy"
+                          target="_blank"
+                          aria-label="Xbattery support email"
+                          rel="noreferrer"
+                        >
+                          support@xbattery.energy
+                        </a>
+                      </Text>
+                      .
+                    </Text>
+                  </VStack>
+                </Box>
+              </Box>
+            </AnimatedDiv> */}
+
+            <AnimatedDiv>
+              <Box className="bg-[#242323]">
+                <Box className="w-[93%] md:w-[90%] xl:w-[80%] 2xl:w-[1450px] mx-auto p-[1rem] pb-[2rem] bg-[#242323] flex flex-col justify-center items-center gap-[2rem] md:gap-[0.5rem]">
+                  <Box className="flex flex-wrap items-center text-center gap-5 mb-[-0.5rem] md:mb-4 w-[100%] md:w-[75%] lg:w-[65%] 2xl:w-[60%] justify-start">
+                    <Image
+                      src="/images/about/teams/shortimages/1.png"
+                      alt="Founder Image"
+                      height={100}
+                      width={100}
+                      className="w-20 h-20 rounded-full"
+                    />
+                    <Box className="text-left">
+                      <Text className="text-white text-xl font-bold">
+                        Satish Reddy
+                      </Text>
+                      <Text className="text-gray-400 text-md">
+                        Founder & CEO
+                      </Text>
+                    </Box>
+                  </Box>
+
+                  <VStack
+                    align="start"
+                    spacing={4}
+                    className="w-[100%] md:w-[75%] lg:w-[65%] 2xl:w-[60%]"
+                    mx="auto"
+                  >
+                    <Text className="text-gray-300 text-lg text-left">
+                      Climate change is one of the existential risks for
+                      humanity. I believe technology plays major role in
+                      fighting the crisis. How we generate and consume energy
+                      plays a big part in this. India has set an ambitious goal
+                      of generating 50% of its energy from renewable sources by
+                      2030. To achieve this, we need to have the supporting
+                      technology in place. Of course, we made great progress in
+                      renewable energy generation, and we are on the right path.
+                      But there is a crucial piece missing: energy storage which
+                      makes renewable energy more efficient.
+                    </Text>
+
+                    <Text className="text-gray-300 text-lg text-left">
+                      India needs to create advanced battery technology to
+                      support this. Producing battery cells and BMS locally is
+                      critical. With these advancements, building large-scale
+                      battery packs is not just possible—it's within reach.
+                    </Text>
+
+                    <Text className="text-gray-300 text-lg text-left">
+                      The vision of Xbattery is clear: to make India
+                      self-reliant in battery technology. One of the key
+                      products of this vision is BharatBMS, our state-of-the-art
+                      BMS that can be used to build battery packs of any size
+                      and works with wide battery chemistries. Creating such a
+                      unified BMS is no easy task, and we are fully aware of the
+                      challenges.
+                    </Text>
+
+                    <Text className="text-gray-300 text-lg text-left">
+                      To achieve this, I believe perseverance must remain our
+                      core value. We have already developed key technologies
+                      like BharatBMS and secured initial partnerships, but this
+                      is a tough journey, and we are committed to take on.
+                    </Text>
+
+                    <Text className="text-gray-300 text-lg text-left">
+                      We are excited to launch our first energy storage product
+                      for homes and businesses, featuring the BharatBM. If you
+                      want early access, send an email to&nbsp;
+                      <Text as="span" color="teal.300"> 
                         <a
                           href="mailto:support@xbattery.energy"
                           target="_blank"
@@ -747,7 +783,6 @@ const About = () => {
           </AnimatedDiv>
         </div>
 
-
         {/* vision */}
         <AnimatedDiv>
           <section className="bg-[#191818] py-8 mb-[0.2rem] mt-[4rem]">
@@ -756,9 +791,9 @@ const About = () => {
                 <h1 className={`${classes.block4Head} mb-4`}>Our Vision</h1>
                 <p className="text-[#e6e6e6] text-[18px] leading-7 mb-4">
                   A flick of a switch, and the bulb is on. Welcome to
-                  Edison&apos;s world. But - bam! - a power cut. If you were living in the 1800s, you would have
-                  to wait for the lights to come back on. But it is 2024, and
-                  you have got Xbattery.
+                  Edison&apos;s world. But - bam! - a power cut. If you were
+                  living in the 1800s, you would have to wait for the lights to
+                  come back on. But it is 2024, and you have got Xbattery.
                 </p>
                 <p className="text-[#e6e6e6] text-[18px] leading-7 mb-4">
                   At Xbattery, we continue the work of the greats. Our vision is
