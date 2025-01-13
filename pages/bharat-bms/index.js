@@ -430,20 +430,19 @@ const BharatBMS = () => {
           ))}
 
           <AnimatedDiv>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 mt-10 w-[90%] md:w-[80%] mx-auto">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-7 mt-10 w-[90%] lg:w-[60%] xl:w-[55%] mx-auto">
               {[
-                "/images/bharatbms/1.png",
-                "/images/bharatbms/2.png",
+                "/images/bharatbms/4.png",             
                 "/images/bharatbms/3.png",
               ].map((src, index) => (
-                <div key={index} className="flex justify-center">
+                <div key={index} className="flex justify-center ">
                   <Image
                     src={src}
                     alt={`Battery System Image ${index + 1}`}
                     className="rounded-lg shadow-lg"
                     width={400}
                     height={400}
-                    style={{ objectFit: "cover", height: "180px" }}
+                    style={{ objectFit: "cover", height: "180px",width:"300px" }}
                   />
                 </div>
               ))}

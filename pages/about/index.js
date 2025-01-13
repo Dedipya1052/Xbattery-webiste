@@ -104,7 +104,7 @@ const About = () => {
               About us
             </div> */}
             <div className="text-white text-3xl lg:text-3xl text-center md:text-left font-bold">
-              Coding for 10,000+ Lithium Cells. Zero Errors. One Platform.
+              Coding for 10,000+ Lithium Cells. One Platform.
             </div>
             <div className="pt-8 flex gap-7 pl-2">
               <Button
@@ -687,7 +687,7 @@ const About = () => {
         </div>
 
         {/* vision */}
-        <AnimatedDiv>
+        {/* <AnimatedDiv>
           <section className="bg-[#191818] py-8 mb-[0.2rem] mt-[4rem]">
             <div className="w-[90%] sm:w-[90%] lg:w-[80%] 2xl:w-[1450px] mx-auto flex flex-col lg:flex-row items-center md:gap-[2%]">
               <div className="md:w-[68%] w-full text-center md:text-left">
@@ -704,9 +704,7 @@ const About = () => {
                   light, making sure it is always there when you need it,
                   whether for your business, vehicles, or home.
                 </p>
-                {/* <p className="text-[#e6e6e6] text-[18px] leading-7">
-                  Edison would have been proud. Or maybe a little bit jealous.
-                </p> */}
+                
               </div>
               <div className="md:w-[30%] w-full flex justify-center md:justify-end mt-6 md:mt-0">
                 <Image
@@ -719,7 +717,7 @@ const About = () => {
               </div>
             </div>
           </section>
-        </AnimatedDiv>
+        </AnimatedDiv> */}
 
         {/* last thing */}
 
