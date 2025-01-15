@@ -785,7 +785,7 @@ const Example = ({ media }) => {
               <AnimatedDiv>
                 <video
                   ref={videoRef1}
-                  className="w-full xl:w-[90%] mx-auto min-h-[400px] md:min-h-[600px] object-cover object-right md:object-center"
+                  className="w-full xl:w-[90%] mx-auto min-h-[400px] md:min-h-[470px] 2xl:min-h-[480px] object-cover object-right"
                   autoPlay
                   muted
                   playsInline
