@@ -765,7 +765,7 @@ const Example = ({ media }) => {
           </div>
 
           {/* modes */}
-          <div className="mx-auto w-[95%] md:w-[75%] xl:w-[80%] 2xl:w-[1450px] mt-[9rem]">
+          <div className="mx-auto w-[95%] md:w-[80%] xl:w-[72%] 2xl:w-[1450px] mt-[9rem]">
             <AnimatedDiv>
               <div
                 className={`${styles.block3Head} text-center text-[1.5rem] md:text-[2rem]`}
@@ -774,7 +774,7 @@ const Example = ({ media }) => {
               </div>
             </AnimatedDiv>
             <AnimatedDiv>
-              <div className="text-white text-[1.2rem] md:text-[1.5rem] text-center mt-3">
+              <div className="text-white text-[1.2rem] md:text-[1.5rem] text-center mt-3  2xl:w-[90%] mx-auto">
                 You’re covered at every stage of an outage. Its intelligent
                 modes kick in before the power goes out, ensuring your stays
                 powered through any disruption.
@@ -785,7 +785,7 @@ const Example = ({ media }) => {
               <AnimatedDiv>
                 <video
                   ref={videoRef1}
-                  className="w-full xl:w-[90%] mx-auto min-h-[400px] md:min-h-[470px] 2xl:min-h-[480px] object-cover object-right"
+                  className="w-full xl:w-[90%] 2xl:w-[80%] mx-auto min-h-[400px] md:min-h-[auto] 2xl:min-h-[480px] object-cover object-right"
                   autoPlay
                   muted
                   playsInline
@@ -810,7 +810,7 @@ const Example = ({ media }) => {
                   Your browser does not support the video tag.
                 </video>
 
-                <div className={`${styles.switchBox} w-full xl:w-[90%] mx-auto`}>
+                <div className={`${styles.switchBox} w-full xl:w-[90%]  2xl:w-[80%] mx-auto`}>
                   {[
                     "Normal Operation",
                     "During Power Outages",
@@ -834,7 +834,7 @@ const Example = ({ media }) => {
 
               <AnimatedDiv>
                 {selectedIndex === 0 && (
-                  <div className="w-[90%] mx-auto flex flex-col md:flex-row justify-between mt-[2rem]">
+                  <div className="w-[full] xl:w-[90%]  2xl:w-[80%] mx-auto flex flex-col md:flex-row justify-between mt-[2rem] ">
                     <div className="w-full md:w-[50%] text-white opacity-[50%]">
                       In Normal Mode, the 5kWh Xbattery provides reliable power
                       for your home, ensuring daily activities run smoothly

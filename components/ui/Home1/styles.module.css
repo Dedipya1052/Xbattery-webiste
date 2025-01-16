@@ -180,13 +180,19 @@
   padding: 10px;
   margin: 5px 0;
   text-align: center;
+  font-size: large;
   font-weight: bold;
   color:rgba(178, 178, 178, 0.443);
   position: relative; /* Added to allow absolute positioning of the border */
 }
 @media (max-width:500px) {
   .textBox {
-    font-size: small;
+    font-size: x-small;
+  }
+}
+@media (min-width:1500px) {
+  .textBox {
+    font-size: x-large;
   }
 }
 
