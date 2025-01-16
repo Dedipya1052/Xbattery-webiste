@@ -785,7 +785,7 @@ const Example = ({ media }) => {
               <AnimatedDiv>
                 <video
                   ref={videoRef1}
-                  className="w-full xl:w-[90%] 2xl:w-[80%] mx-auto min-h-[400px] md:min-h-[auto] 2xl:min-h-[480px] object-cover object-right"
+                  className="w-full xl:w-[90%] 2xl:w-[80%] mx-auto min-h-[350px] md:min-h-[auto] 2xl:min-h-[480px] object-cover object-right"
                   autoPlay
                   muted
                   playsInline
@@ -834,8 +834,8 @@ const Example = ({ media }) => {
 
               <AnimatedDiv>
                 {selectedIndex === 0 && (
-                  <div className="w-[full] xl:w-[90%]  2xl:w-[80%] mx-auto flex flex-col md:flex-row justify-between mt-[2rem] ">
-                    <div className="w-full md:w-[50%] text-white opacity-[50%]">
+                  <div className="w-[full] xl:w-[90%]  2xl:w-[80%] mx-auto flex flex-col md:flex-row justify-between mt-3 md:mt-[2rem] ">
+                    <div className="w-full md:w-[50%] text-white opacity-[50%] text-sm md:text-lg">
                       In Normal Mode, the 5kWh Xbattery provides reliable power
                       for your home, ensuring daily activities run smoothly
                       without any interruptions.
