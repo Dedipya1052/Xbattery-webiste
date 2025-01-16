@@ -834,8 +834,8 @@ const Example = ({ media }) => {
 
               <AnimatedDiv>
                 {selectedIndex === 0 && (
-                  <div className="w-[full] xl:w-[90%]  2xl:w-[80%] mx-auto flex flex-col md:flex-row justify-between mt-3 md:mt-[2rem] ">
-                    <div className="w-full md:w-[50%] text-white opacity-[50%] text-sm md:text-lg">
+                  <div className="w-[full] xl:w-[90%]  2xl:w-[80%] mx-auto flex flex-col md:flex-row justify-between mt-4 md:mt-[2rem] ">
+                    <div className="w-full md:w-[50%] text-white opacity-[50%]">
                       In Normal Mode, the 5kWh Xbattery provides reliable power
                       for your home, ensuring daily activities run smoothly
                       without any interruptions.
@@ -852,14 +852,14 @@ const Example = ({ media }) => {
                 )}
 
                 {selectedIndex === 1 && (
-                  <div className="w-[90%] mx-auto flex flex-col md:flex-row justify-between mt-[2rem]">
+                  <div className="w-[full] xl:w-[90%]  2xl:w-[80%] mx-auto flex flex-col md:flex-row justify-between mt-4 md:mt-[2rem]">
                     <div className="w-full md:w-[50%] text-white opacity-[50%]">
                       When a power outage occurs, the 5kWh Xbattery instantly
                       switches to backup mode, keeping your home powered for up
                       to a day without interruption.
                     </div>
                     <div className="flex flex-col gap-[0rem] mt-3 md:mt-0">
-                      <div className="text-white text-[1.3rem] md:text-[2rem] font-bold">
+                      <div className="text-white text-[1.22rem] md:text-[2rem] font-bold">
                         Backup Power
                       </div>
                       <div className="text-white opacity-[50%]">
@@ -870,7 +870,7 @@ const Example = ({ media }) => {
                 )}
 
                 {selectedIndex === 2 && (
-                  <div className="w-[90%] mx-auto flex flex-col md:flex-row justify-between mt-[2rem]">
+                  <div className="w-[full] xl:w-[90%]  2xl:w-[80%] mx-auto flex flex-col md:flex-row justify-between mt-4 md:mt-[2rem]">
                     <div className="w-full md:w-[50%] text-white opacity-[50%]">
                       Once the grid power is restored, the 5kWh Xbattery
                       automatically switches back to normal mode, ensuring a
@@ -888,7 +888,7 @@ const Example = ({ media }) => {
                 )}
 
                 {selectedIndex === 3 && (
-                  <div className="w-[90%] mx-auto flex flex-col md:flex-row justify-between mt-[2rem]">
+                  <div className="w-[full] xl:w-[90%]  2xl:w-[80%] mx-auto flex flex-col md:flex-row justify-between mt-4 md:mt-[2rem]">
                     <div className="w-full md:w-[50%] text-white opacity-[50%]">
                       The 5kWh Xbattery works seamlessly with your solar system,
                       managing energy usage and maximizing storage to reduce
