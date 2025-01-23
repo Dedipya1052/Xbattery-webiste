@@ -12,7 +12,6 @@ import Head from "next/head";
 
 const energyStorage = [
   { name: "Battery Energy Storage System", link: "/learn/battery-energy-storage-systems" },
-  //{ name: "Types of Energy Storage Systems", link: "/learn/types-of-energy-storage-systems" },
   { name: "Emerging LDES Technologies", link: "/learn/emerging-ldes-technologies" }
 ];
 
@@ -20,25 +19,23 @@ const renewableEnergy = [
   { name: "Solar Energy", link: "/learn/solar-energy" },
   { name: "Wind Energy", link: "/learn/wind-energy" }, 
   { name: "Geothermal Energy", link: "/learn/geothermal-energy" },
-  // { name: "Geothermal Energy", link: "/learn/geothermal-energy" },
-  // { name: "Biomass Energy", link: "/learn/biomass-energy" }
 ];
 
 const electricVehicles = [
   { name: "EV vs ICE Costs", link: "/learn/ev-vs-ice-costs" },
   { name: "EV Charging", link: "/learn/ev-charging" },
-  // { name: "Economics of EV Ownership", link: "/learn/economics-of-ev-ownership" }
+  { name: "Indian EV Market", link: "/learn/indian-ev-market" },
 ];
 
 const electricity = [
   { name: "India’s Electricity Sector", link: "/learn/indias-electricity-sector" },
   { name: "Power Purchase Agreement", link: "/learn/power-purchase-agreement" },
-  // { name: "Electric Utilities", link: "/learn/electric-utilities" }
 ];
 
 const grid = [
   { name: "Renewable Integration", link: "/learn/renewable-integration" }, 
-  { name: "Smart Grid", link: "/learn/smart-grid" }
+  { name: "Smart Grid", link: "/learn/smart-grid" },
+  { name:"Understanding Smart Meters", link: "/learn/understanding-smart-meters"  }
 ];
 
 const batteries = [
