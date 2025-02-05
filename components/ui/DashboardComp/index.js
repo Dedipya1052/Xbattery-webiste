@@ -20,6 +20,43 @@ import Head from "next/head";
 
 
 const energyData = {
+  december: {
+    data: [
+      {
+        name: "Thermal",
+        barName: "Thermal",
+        value: 244377,
+        percentage: 52.9,
+        color: "#4A545D",
+        hoverColor: "#2F353D",
+      },
+      {
+        name: "Solar, Wind & Other",
+        barName: "Solar, Wind & Oth",
+        value: 162324,
+        percentage: 35.1,
+        color: "#4B9C5E",
+        hoverColor: "#3B7A4D",
+      },
+      {
+        name: "Hydro",
+        barName: "Hydro",
+        value: 46968,
+        percentage: 10.2,
+        color: "#5B9BD5",
+        hoverColor: "#4388B6",
+      },
+      {
+        name: "Nuclear",
+        barName: "Nuclear",
+        value: 8180,
+        percentage: 1.8,
+        color: "#7B5C9E",
+        hoverColor: "#5E4B7D",
+      }
+    ],
+    total: 462002
+  },
   november: {
     data: [
       {
@@ -211,6 +248,7 @@ const EnergyContributionDashboard1 = ({month}) => {
     august: "August",
     september: "September",
     november: "November",
+    december: "December",
   };
 
   const CustomTooltip = ({ active, payload }) => {
@@ -338,6 +376,11 @@ const EnergyContributionDashboard1 = ({month}) => {
                 {
                   month: "november",
                   displayName: "November",
+                  link: "learn/indian-energy-mix-november-2024",
+                },
+                {
+                  month: "december",
+                  displayName: "December",
                   link: "learn/indian-energy-mix",
                 },
               ].map(({ month, displayName, link }) => (
