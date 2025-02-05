@@ -121,7 +121,7 @@ export default function Blogs({ blogs }) {
               <Card key={index} blog={blog} />
             ))}
           </AnimatePresence>
-        </motion.div>
+        </motion.div> 
       </div>
       </div>
     </>
