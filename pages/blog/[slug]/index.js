@@ -178,7 +178,8 @@ export async function getStaticProps({ params }) {
         author,
         blogContent,
         slug,
-        faqs : faqs?faqs:null 
+        faqs : faqs?faqs:null ,
+        modifiedOn
       },
       blogs:filteredBlogs,
     },
@@ -200,7 +201,8 @@ export default function BlogPage({ blog,blogs}) {
     author,
     blogContent,
     slug,
-    faqs
+    faqs,
+    modifiedOn
   } = blog;
 
   // console.log("blog deatils : ",blog);
@@ -246,7 +248,7 @@ export default function BlogPage({ blog,blogs}) {
         <meta property="og:type" content="article" />
         <meta property="og:url" content={`https://xbattery.energy/blog/${slug}`} />
         <meta property="article:published_time" content={date} />
-        {/* <meta property="article:modified_time" content={modifiedOn} /> */}
+        <meta property="article:modified_time" content={modifiedOn} />
         <link rel="canonical" href={`https://xbattery.energy/blog/${slug}`} />
       </Head>
       {/* { faqs.length>0 &&

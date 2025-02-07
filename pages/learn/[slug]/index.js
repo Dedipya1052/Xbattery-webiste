@@ -214,6 +214,7 @@ export async function getStaticProps({ params }) {
         slug,
         animation: animation ? animation : null,
         faqs: faqs ? faqs : null,
+        modifiedOn
       },
       // blogs:filteredBlogs,
     },
@@ -237,6 +238,7 @@ export default function BlogPage({ blog }) {
     slug,
     animation,
     faqs,
+    modifiedOn
   } = blog;
 
   const [isMounted, setIsMounted] = useState(false);
@@ -320,7 +322,7 @@ export default function BlogPage({ blog }) {
         <meta property="og:type" content="article" />
         <meta property="og:url" content={`https://xbattery.energy/learn/${slug}`} />
         <meta property="article:published_time" content={date} />
-        {/* <meta property="article:modified_time" content={modifiedOn} /> */}
+        <meta property="article:modified_time" content={modifiedOn} />
         <link rel="canonical" href={`https://xbattery.energy/learn/${slug}`} />
       </Head>
       {/* { faqs.length>0 &&
