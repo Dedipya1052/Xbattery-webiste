@@ -11,7 +11,8 @@ const Loading = () => {
     router.pathname.includes("about") ||
     router.pathname.includes("careers") ||
     router.pathname.includes("contact") ||
-    router.pathname.includes("bharat-bms");
+    router.pathname.includes("bharat-bms") ||
+    router.pathname.includes("docs");
 
   return (
     <Flex

@@ -20,7 +20,8 @@ const Footer = () => {
     router.pathname === "/careers" ||
     router.pathname.includes("careers") ||
     router.pathname.includes("contact") ||
-    router.pathname.includes("bharat-bms");
+    router.pathname.includes("bharat-bms") ||
+    router.pathname.includes("docs");
 
 
 
@@ -76,6 +77,7 @@ const resources = [
   { name: "Blog", link: "/blog" },
   { name: "Whitepapers", link: "/whitepapers" },
   { name: "Learn", link: "/learn" }, 
+  { name: "API", link: "/docs/api" },
 ];
 
 
@@ -165,6 +167,9 @@ const resources = [
                   <Link href="/learn" className={styles.footerElements}>
                     Learn
                   </Link>
+                  <Link href="/docs/api" className={styles.footerElements}>
+                    API
+                  </Link>
                 </div>
 
                 <div className={styles.contactAndComp}>
@@ -180,6 +185,7 @@ const resources = [
                       <Link href="/contact" className={styles.footerElements}>
                         Contact
                       </Link>
+                     
                       {/* <Link href="/terms" className={styles.footerElements}>
                         Terms
                       </Link>
