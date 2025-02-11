@@ -148,6 +148,7 @@ print(data.decode("utf-8"))`
                       <a
                         href="https://customerappdev.xbattery.energy"
                         target="_blank"
+                        rel="noreferrer"
                         className=" hover:underline"
                       >
                         customer portal
