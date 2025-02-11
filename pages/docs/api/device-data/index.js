@@ -75,7 +75,7 @@ print(data.decode("utf-8"))`
   return (
     <div className="min-h-screen bg-gray-950 p-2 sm:p-4 md:p-6">
       <h1 className="text-xl sm:text-2xl font-bold mb-4 sm:mb-0 text-white px-2 sm:px-4 md:px-8">
-        BESS API Documentation
+       Device API Documentation
       </h1>
 
       <div className="space-y-4 sm:space-y-3 md:space-y-4">

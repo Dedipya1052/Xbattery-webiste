@@ -10,7 +10,7 @@ const docsMenuItems = [
     key: "apis",
     subsections: [
       {
-        title: "Device Data API",
+        title: "Device API",
         key: "device-data-api",
         href: "/docs/api/device-data",
         subsections: [
