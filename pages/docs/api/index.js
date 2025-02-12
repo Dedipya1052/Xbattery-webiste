@@ -48,7 +48,7 @@ const ApiHomePage = () => {
                     <div className="flex-1">
                       <div className="flex justify-between items-start">
                         <h3 className="text-xl font-semibold text-white mb-2 group-hover:text-blue-400 transition-colors">
-                          Device Data API
+                          Device API
                         </h3>
                         <span className="px-2 py-1 text-xs font-medium text-blue-400 bg-blue-500/10 rounded-full">
                           Latest
