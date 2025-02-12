@@ -89,7 +89,7 @@ print(data.decode("utf-8"))`
               </h2>
               <div className="text-sm sm:text-base text-gray-300 space-y-4">
                 <p>
-                  All API requests should be made to our secure xBattery API
+                  All API requests should be made to our secure Xbattery API
                   endpoint:
                 </p>
                 <code className="text-blue-400 block text-sm break-all">
