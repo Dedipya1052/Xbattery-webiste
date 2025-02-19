@@ -36,7 +36,7 @@ const ApiHomePage = () => {
             
             <div className="grid gap-4 mt-4">
               <Link
-                href="/docs/api/device-data"
+                href="/docs/api/device/base-url"
                 className="block rounded-lg bg-gradient-to-br from-gray-800 via-gray-900 to-gray-800 border border-gray-800 
                 hover:border-blue-500/50 transition-all duration-300 shadow-lg hover:shadow-blue-500/10 group"
               >
@@ -57,6 +57,35 @@ const ApiHomePage = () => {
                       <p className="text-gray-300 mb-4 leading-relaxed">
                         Monitor your battery systems in real-time. Access telemetry data including voltage, current, and state of charge.
                       </p>
+                      <div className="flex items-center text-blue-400 hover:text-blue-300 font-medium group/link">
+                        View Documentation
+                        <ArrowRight className="w-4 h-4 ml-2 transition-transform group-hover/link:translate-x-1" />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </Link>
+              <Link
+                href="/docs/api/user/base-url"
+                className="block rounded-lg bg-gradient-to-br from-gray-800 via-gray-900 to-gray-800 border border-gray-800 
+                hover:border-blue-500/50 transition-all duration-300 shadow-lg hover:shadow-blue-500/10 group"
+              >
+                <div className="p-6">
+                  <div className="flex items-start gap-6">
+                    <div className="rounded-lg p-3 bg-blue-500/10 group-hover:bg-blue-500/20 transition-colors">
+                      <Database className="w-6 h-6 text-blue-400" />
+                    </div>
+                    <div className="flex-1">
+                      <div className="flex justify-between items-start">
+                        <h3 className="text-xl font-semibold text-white mb-2 group-hover:text-blue-400 transition-colors">
+                         User API
+                        </h3>
+                        <span className="px-2 py-1 text-xs font-medium text-blue-400 bg-blue-500/10 rounded-full">
+                          Latest
+                        </span>
+                      </div>
+                      <p className="text-gray-300 mb-4 leading-relaxed">
+                      Retrieve users from specific organizations with detailed access control.                      </p>
                       <div className="flex items-center text-blue-400 hover:text-blue-300 font-medium group/link">
                         View Documentation
                         <ArrowRight className="w-4 h-4 ml-2 transition-transform group-hover/link:translate-x-1" />

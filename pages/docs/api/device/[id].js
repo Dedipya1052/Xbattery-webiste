@@ -1,41 +1,100 @@
-import React, { useState } from 'react';
-import { Copy } from 'lucide-react';
-import { useToast } from '@chakra-ui/react';
-import DocsLayout from '@/components/ui/DocsLayout';
-
-
+import React, { useEffect, useState } from "react";
+import { Copy } from "lucide-react";
+import { useToast } from "@chakra-ui/react";
+import DocsLayout from "@/components/ui/DocsLayout";
+import { useRouter } from "next/router";
 
 const ApiDeviceDataDocs = () => {
   const toast = useToast();
-  const [selectedLang, setSelectedLang] = useState('curl');
+  const [selectedLang, setSelectedLang] = useState("curl");
+  const router = useRouter();
+  const { id } = router.query;
+
+  useEffect(() => {
+    if (id) {
+      const section = document.getElementById(id);
+      if (section) {
+        section.scrollIntoView({ behavior: "smooth" });
+      }
+    }
+  }, [id]);
+
+  useEffect(() => {
+    const updateUrlWithoutRerender = (sectionId) => {
+      if (sectionId && window.location.pathname.includes("/docs/api/device")) {
+        // Construct the new URL
+        const newUrl = `/docs/api/device/${sectionId}`;
+
+        // Update the URL without triggering a page reload or re-render
+        window.history.replaceState(
+          { ...window.history.state, as: newUrl, url: newUrl },
+          "",
+          newUrl
+        );
+      }
+    };
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const viewportHeight = window.innerHeight;
+            const elementTop = entry.boundingClientRect.top;
+
+            if (
+              elementTop > viewportHeight * 0.15 &&
+              elementTop < viewportHeight * 0.4
+            ) {
+              const sectionId = entry.target.id;
+              if (sectionId) {
+                updateUrlWithoutRerender(sectionId);
+              }
+            }
+          }
+        });
+      },
+      {
+        threshold: [0, 0.25, 0.5],
+        rootMargin: "-18% 0px -60% 0px",
+      }
+    );
+
+    // Observe section divs
+    const sections = document.querySelectorAll(
+      '[id="base-url"], [id="authentication"], [id="parameters"], [id="response"], [id="error-response"]'
+    );
+    sections.forEach((section) => observer.observe(section));
+
+    return () => observer.disconnect();
+  }, []);
 
   const handleCopy = async (text) => {
     try {
       await navigator.clipboard.writeText(text);
       toast({
         description: "Copied to clipboard",
-        status: 'success',
+        status: "success",
         duration: 3000,
         isClosable: true,
-        position: 'bottom-right',
-        variant: 'solid',
+        position: "bottom-right",
+        variant: "solid",
       });
     } catch (err) {
       toast({
         description: "Failed to copy text",
-        status: 'error',
+        status: "error",
         duration: 3000,
         isClosable: true,
-        position: 'bottom-right',
-        variant: 'solid',
+        position: "bottom-right",
+        variant: "solid",
       });
-      console.error('Failed to copy text:', err);
+      console.error("Failed to copy text:", err);
     }
   };
 
   const CopyButton = ({ text }) => (
-    <Copy 
-      className="h-4 w-4 text-gray-400 hover:text-white cursor-pointer transition-colors duration-200" 
+    <Copy
+      className="h-4 w-4 text-gray-400 hover:text-white cursor-pointer transition-colors duration-200"
       onClick={() => handleCopy(text)}
     />
   );
@@ -69,13 +128,13 @@ headers = {
 conn.request("GET", "/v1/organizations/{organizationId}/devices/{deviceId}/telemetry/latest", payload, headers)
 res = conn.getresponse()
 data = res.read()
-print(data.decode("utf-8"))`
+print(data.decode("utf-8"))`,
   };
 
   return (
     <div className="min-h-screen bg-gray-950 p-2 sm:p-4 md:p-6">
       <h1 className="text-xl sm:text-2xl font-bold mb-4 sm:mb-0 text-white px-2 sm:px-4 md:px-8">
-       Device API Documentation
+        Device API Documentation
       </h1>
 
       <div className="space-y-4 sm:space-y-3 md:space-y-4">
@@ -134,7 +193,7 @@ print(data.decode("utf-8"))`
                 <div className="bg-gray-800 p-3 sm:p-4 rounded-md">
                   <h3 className="font-semibold mb-2">API Key Format:</h3>
                   <code className="text-blue-400 text-sm break-all">
-                  f76d******************d2a
+                    f76d******************d2a
                   </code>
                   <p className="mt-2">
                     For security, the key is partially masked when displayed.
@@ -390,7 +449,7 @@ print(data.decode("utf-8"))`
         </div>
 
         {/* Error Responses Section */}
-        <div className="h-[2rem]" id="errorResponse"></div>
+        <div className="h-[2rem]" id="error-response"></div>
         <div className="flex flex-col lg:flex-row gap-4 lg:gap-6 px-2 sm:px-4 md:px-8 mb-8">
           <div className="flex-1">
             <div className="bg-gray-900/50 rounded-lg p-4 sm:p-6 h-full">
@@ -463,8 +522,6 @@ print(data.decode("utf-8"))`
     </div>
   );
 };
-
-
 
 const DeviceDataPage = () => {
   return (

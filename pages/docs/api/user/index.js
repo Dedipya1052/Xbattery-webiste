@@ -1,11 +1,24 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Copy } from 'lucide-react';
 import { useToast } from '@chakra-ui/react';
 import DocsLayout from '@/components/ui/DocsLayout';
+import { useRouter } from 'next/router';
 
 const ApiUserDocs = () => {
   const toast = useToast();
   const [selectedLang, setSelectedLang] = useState('curl');
+
+  const router = useRouter();
+  const { id } = router.query;
+
+  useEffect(() => {
+      if (id) {
+          const section = document.getElementById(id);
+          if (section) {
+              section.scrollIntoView({ behavior: 'smooth' });
+          }
+      }
+  }, [id]);
 
   const handleCopy = async (text) => {
     try {
