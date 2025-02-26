@@ -78,45 +78,47 @@ const Contact = () => {
         </div>
 
         <AnimatedDiv>
-          <div className="flex justify-center items-center flex-wrap gap-[2rem] max-w-[80%] mx-auto mt-[2rem] mb-[2rem]">
-            {/* Email Block */}
-            <div className="bg-[#222222] p-6 rounded-lg flex flex-col items-center text-center w-[320px]">
-              <div className="text-3xl mb-4">
-                <IconWithGradient size={30}>
-                  <FaRegEnvelope />
-                </IconWithGradient>
-              </div>
-              <h3 className="text-xl font-semibold text-white">Email</h3>
-              <p className="text-gray-400 mb-4">We’re here to help you.</p>
-              <a
-                href="mailto:support@xbattery.energy"
-                className="text-[white] hover:underline cursor-pointer"
-              >
-                support@xbattery.energy
-              </a>
-            </div>
+        <div className="flex justify-center items-center flex-wrap gap-6 max-w-4xl mx-auto my-8">
+      {/* Email Block */}
+      <div className="bg-gray-900 p-6 rounded-lg flex flex-col items-center text-center w-80 shadow-lg hover:shadow-xl transition-shadow duration-300 h-64">
+        <div className="text-3xl mb-4">
+          <IconWithGradient size={32}>
+            <FaRegEnvelope />
+          </IconWithGradient>
+        </div>
+        <h3 className="text-xl font-semibold text-white mb-2">Contact Us</h3>
+        <p className="text-gray-400 mb-4">Our support team is here to help with any inquiries or<br/> assistance.</p>
+        <a
+          href="mailto:support@xbattery.energy"
+          className="text-blue-400 hover:text-blue-300 hover:underline transition-colors duration-300 mt-auto font-medium"
+        >
+          support@xbattery.energy
+        </a>
+      </div>
 
-            {/* Location Block */}
-            <div className="bg-[#222222] p-6 rounded-lg flex flex-col items-center text-center w-[320px]">
-              <div className="text-3xl mb-4">
-                <IconWithGradient size={30}>
-                  <FaMapMarkerAlt />
-                </IconWithGradient>
-              </div>
-              <h3 className="text-xl font-semibold text-white">Location</h3>
-              <p className="text-gray-400 mb-4 cursor-pointer">
-                Find us at our HQ.
-              </p>
-              <a
-                href="https://maps.app.goo.gl/2kEz9eMYyhVQ91E69"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-[white] hover:underline cursor-pointer"
-              >
-                View on Google Maps
-              </a>
-            </div>
-          </div>
+      {/* Location Block */}
+      <div className="bg-gray-900 p-6 rounded-lg flex flex-col items-center text-center w-80 shadow-lg hover:shadow-xl transition-shadow duration-300 h-64">
+        <div className="text-3xl mb-4">
+          <IconWithGradient size={32}>
+            <FaMapMarkerAlt />
+          </IconWithGradient>
+        </div>
+        <h3 className="text-xl font-semibold text-white mb-2">Location</h3>
+        <div className="text-gray-400 mb-4 overflow-hidden max-h-24">
+          <p className="line-clamp-3">
+            T-Works, Survey No. 83/1, Plot 1/D, 1/E, 1/F, Silpa Gram Craft Village, Rai Durg, Hyderabad, Telangana 500081, India
+          </p>
+        </div>
+        <a
+          href="https://maps.app.goo.gl/8P7uRGhyjK7dwp7a7"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-blue-400 hover:text-blue-300 hover:underline transition-colors duration-300 mt-auto font-medium"
+        >
+          View on Google Maps
+        </a>
+      </div>
+    </div>
         </AnimatedDiv>
 
         <AnimatedDiv>

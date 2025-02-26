@@ -21,11 +21,8 @@ const ApiHomePage = () => {
           {/* Introduction Section */}
           <div className="space-y-4 max-w-3xl mx-auto text-center">
             <p className="text-gray-300 leading-relaxed">
-              Here you'll find comprehensive guides and documentation to help you start working with our APIs as quickly as possible. Our documentation is designed to be easy to read and understand, with clear examples and detailed explanations of all available endpoints.
-            </p>
-            <p className="text-gray-300 leading-relaxed">
-              Each API section provides detailed information about the endpoints, including request/response formats, authentication requirements, and example usage. Whether you're an experienced developer or just getting started, you'll find everything you need to successfully integrate with our services.
-            </p>
+            Our guides and documentation help you get started with our APIs quickly. Each section covers endpoints, request/response formats, authentication, and examples. Whether you're a beginner or an experienced developer, you'll find the essentials for seamless integration.            </p>
+            
           </div>
 
           {/* Available APIs Section */}

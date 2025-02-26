@@ -20,11 +20,8 @@ const DocIntroPage = () => {
         {/* Introduction Section */}
         <div className="space-y-4 max-w-3xl mx-auto text-center">
           <p className="text-gray-300 leading-relaxed">
-            Here you'll find comprehensive guides and resources to help you get started with our platform quickly and efficiently. Our documentation is designed to be easy to read and understand, with clear examples and detailed explanations.
-          </p>
-          <p className="text-gray-300 leading-relaxed">
-            Each section provides in-depth information about our APIs, including request/response formats, authentication requirements, and example usage. Whether you're an experienced developer or just getting started, you'll find everything you need to successfully integrate with our services.
-          </p>
+          Our guides and resources help you get started with our platform quickly. The documentation is clear and concise, covering API details like request/response formats, authentication, and usage examples. Whether you're new or experienced, you'll find what you need for seamless integration.          </p>
+         
         </div>
 
         {/* Documentation Section */}
