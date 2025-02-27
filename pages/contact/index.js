@@ -106,7 +106,7 @@ const Contact = () => {
         <h3 className="text-xl font-semibold text-white mb-2">Location</h3>
         <div className="text-gray-400 mb-4 overflow-hidden max-h-24">
           <p className="line-clamp-3">
-            T-Works, Survey No. 83/1, Plot 1/D, 1/E, 1/F, Silpa Gram Craft Village, Rai Durg, Hyderabad, Telangana 500081, India
+            T-Works, Silpa Gram Craft Village, Rai Durg, Hyderabad, Telangana 500081, India
           </p>
         </div>
         <a
