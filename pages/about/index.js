@@ -575,7 +575,7 @@ const About = () => {
 
                     <Text className="text-gray-300 text-lg text-left">
                       We are excited to launch our first energy storage product
-                      for homes and businesses, featuring the BharatBM. If you
+                      for homes and businesses, featuring the BharatBMS. If you
                       want early access, send an email to&nbsp;
                       <Text as="span" color="teal.300"> 
                         <a
