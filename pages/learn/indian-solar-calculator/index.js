@@ -41,7 +41,7 @@ const SolarCalculator = () => {
           {" "}
           <IoArrowBack /> <p>Back</p>
         </div> */}
-          <h2 className={styles.title}>Indian Solar Calculator</h2>
+          <h1 className={styles.title}>Indian Solar Calculator</h1>
           <div className=" text-lg text-center mt-[2rem] mb-[2rem]">
             The Indian Solar Calculator estimates solar panel energy generation,
             savings, and CO₂ reduction based on panel count, sunlight hours, and

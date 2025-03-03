@@ -515,9 +515,9 @@ const Example = ({ media }) => {
                 <h1 className="text-white text-4xl lg:text-6xl text-center md:text-left font-bold">
                   Power Your Home 24/7
                 </h1>
-                <div className="text-white text-lg lg:text-2xl text-center md:text-left font-light pt-5 pl-1">
+                <h2 className="text-white text-lg lg:text-2xl text-center md:text-left font-light pt-5 pl-1">
                   High-performance lithium battery packs designed for India
-                </div>
+                </h2>
                 <div className=" pt-8 flex gap-7 pl-2">
                   {/* <div className={styles.gradientButton}>Watch Video</div> */}
                   <Button

@@ -67,9 +67,9 @@ const Contact = () => {
             transition={{ duration: 0.75, delay: 0 }}
             className="absolute md:top-0 md:left-0  md:right-0 top-[-0.5rem] w-full md:w-[90%] mx-auto h-full flex flex-col items-center md:items-start justify-center p-4 md:p-16 space-y-2 text-left"
           >
-            <div className="text-white text-4xl lg:text-5xl  mb-4 font-bold">
+            <h1 className="text-white text-4xl lg:text-5xl  mb-4 font-bold">
               Contact our team
-            </div>
+            </h1>
             <div className="text-white text-xl lg:text-2xl text-center md:text-left lg:ml-[0.3rem]">
               Let us know how we can help 
             </div>

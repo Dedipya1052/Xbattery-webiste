@@ -326,14 +326,14 @@ const HomeEnergyCalculator = () => {
   return (
     <>
       <Head>
-        <title>Energy Consumption Calculator | Xbattery</title>
-        <meta name="description" content="Estimate your monthly energy use and cost with this calculator." />
+        <title>Energy Consumption Calculator: Estimate Your Power Usage & Costs | Xbattery</title>
+        <meta name="description" content="Use our Energy Consumption Calculator to estimate your electricity usage and costs. Learn how different appliances impact your energy bill and find ways to save power." />
       </Head>
       <div className="min-h-screen bg-gray-50 py-10 px-4 sm:px-6 lg:px-8">
         <div className="max-w-5xl mx-auto">
-          <h2 className="text-3xl font-semibold text-gray-800 text-center mb-6">
+          <h1 className="text-3xl font-semibold text-gray-800 text-center mb-6">
             Energy Consumption Calculator
-          </h2>
+          </h1>
           <p className="text-center text-lg text-gray-600 mb-10">
             Estimate your monthly energy consumption in kWh and cost.
           </p>

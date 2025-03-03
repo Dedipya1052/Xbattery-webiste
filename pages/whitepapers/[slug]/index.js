@@ -321,7 +321,7 @@ export default function BlogPage({ blog, blogs }) {
         {/* <div className={styles.affBackButton} onClick={()=>router.push("/whitepapers")}> <IoArrowBack /> <p>Back</p></div> */}
         <div className={styles.mainDiv}>
          <div className={styles.mainDiv1}>
-          <h2 className={`${styles.title} font-semibold`}>{title}</h2>
+          <h1 className={`${styles.title} font-semibold`}>{title}</h1>
           <Image
             src={"https:" + coverImage.fields.file.url}
             alt={coverImage.fields.title}

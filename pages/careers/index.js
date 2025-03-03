@@ -69,9 +69,9 @@ const Careers = () => {
             transition={{ duration: 0.75, delay: 0 }}
             className="absolute md:top-0 md:left-0  md:right-0 top-[-4rem] w-full md:w-[90%] mx-auto h-full flex flex-col items-center md:items-start justify-center p-4 md:p-16 space-y-2 text-left"
           >
-            <div className="text-white text-4xl lg:text-4xl font-medium mb-4">
+            <h1 className="text-white text-4xl lg:text-4xl font-medium mb-4">
               Careers
-            </div>
+            </h1>
             <div className="text-white text-4xl lg:text-5xl text-center md:text-left font-bold">
               BMS & Energy Storage Jobs
             </div>

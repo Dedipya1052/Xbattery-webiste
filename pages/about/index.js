@@ -103,9 +103,9 @@ const About = () => {
             {/* <div className="text-[white] text-4xl lg:text-4xl font-medium mb-4">
               About us
             </div> */}
-            <div className="text-white text-3xl lg:text-3xl text-center md:text-left font-bold">
+            <h1 className="text-white text-3xl lg:text-3xl text-center md:text-left font-bold">
               Coding for 10,000+ Lithium Cells. One Platform.
-            </div>
+            </h1>
             <div className="pt-8 flex gap-7 pl-2">
               <Button
                 bg="transparent"

@@ -406,9 +406,9 @@ const EnergyContributionDashboard1 = ({month}) => {
         </div>
 
         <div className={styles.container}>
-          <h2 className={styles.title}>
+          <h1 className={styles.title}>
             Indian Energy Mix - {monthLabels[selectedMonth]} 2024
-          </h2>
+          </h1>
           <div className="text-lg text-center mt-[2rem] mb-[2rem]">
             India's renewable energy mix is steadily growing, with Solar, Wind &
             Other contributing {energyData[selectedMonth].data[1].percentage}%.

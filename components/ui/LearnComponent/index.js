@@ -84,11 +84,11 @@ const LearnComp= () => {
           </div>
         </div> */}
           <div className=" mt-[2.5rem] mb-[2rem] flex flex-col justify-center items-center gap-[1rem] w-[100%]">
-            <div
+            <h1
               className={`text-[2.22rem] md:text-[2.8rem] text-center font-semibold ${styles.head1}`}
             >
               Explore the topics
-            </div>
+            </h1>
             {/* <div
             className={`${styles.head1} text-[1.05rem] md:text-[1.28rem] text-center font-semibold p-2`}
           >

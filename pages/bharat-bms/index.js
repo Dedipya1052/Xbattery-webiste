@@ -120,7 +120,7 @@ const BharatBMS = () => {
 
         <meta
           name="description"
-          content="Advanced Battery Management System by XBattery"
+          content="Bharat BMS optimizes LFP battery performance and efficiency, supporting India’s power sector with advanced battery management technology."
         />
       </Head>
 
@@ -159,9 +159,9 @@ const BharatBMS = () => {
             >
               Introducing BharatBMS
             </h1>
-            <p className="text-lg md:text-xl leading-relaxed max-w-xl mx-auto md:mx-0 text-[#e9e9e9] pl-[1.5px] 2xl:text-2xl">
+            <h2 className="text-lg md:text-xl leading-relaxed max-w-xl mx-auto md:mx-0 text-[#e9e9e9] pl-[1.5px] 2xl:text-2xl">
               India's first scalable Battery Management System
-            </p>
+            </h2>
           </div>
 
           <div className="md:w-1/2 flex justify-center">

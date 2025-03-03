@@ -261,7 +261,7 @@ export default function BlogPage({ blog,blogs}) {
       
       <div className={styles.container}>
      <div className={styles.affBackButton} onClick={()=>router.push("/blog")}> <IoArrowBack /> <p>Back</p></div>
-        <h2 className={styles.title}>{title}</h2>
+        <h1 className={styles.title}>{title}</h1>
         <div className={styles.adDiv}>
           <div className={styles.author}>{`By ${author}`}</div>
           <div
