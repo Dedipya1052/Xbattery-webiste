@@ -513,7 +513,7 @@ const Example = ({ media }) => {
                 Xbattery
               </div> */}
                 <h1 className="text-white text-4xl lg:text-6xl text-center md:text-left font-bold">
-                  Power Your Home 24/7
+                  Power Your Home 24/7 
                 </h1>
                 <h2 className="text-white text-lg lg:text-2xl text-center md:text-left font-light pt-5 pl-1">
                   High-performance lithium battery packs designed for India
