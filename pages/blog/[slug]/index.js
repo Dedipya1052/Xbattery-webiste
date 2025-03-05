@@ -107,26 +107,13 @@ const renderOption = {
   },
 };
 
-const client = createClient({
-  space: process.env.CONTENTFUL_SPACE,
-  accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
-});
+// const client = createClient({
+//   space: process.env.CONTENTFUL_SPACE,
+//   accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
+// });
 
-export async function getStaticPaths() {
-  const res = await client.getEntries({ content_type: "blog" });
 
-  // construct paths to build individual blog pages at build time
-  const paths = res.items.map((blog) => ({
-    params: { slug: blog.fields.slug },
-  }));
-
-  return {
-    paths,
-    fallback: false,
-  };
-}
-
-export async function getStaticProps({ params }) {
+export async function getServerSideProps({ params }) {
   const client = createClient({
     space: process.env.CONTENTFUL_SPACE,
     accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
