@@ -110,19 +110,7 @@ const renderOptions = {
 };
 
 
-export async function getStaticPaths() {
-  const res = await client.getEntries({ content_type: "questions" });
-  const paths = res.items.map((item) => ({
-    params: { slug: item.fields.slug },
-  }));
-
-  return {
-    paths,
-    fallback: false,
-  };
-}
-
-export async function getStaticProps({ params }) {
+export async function getServerSideProps({ params }) {
   const res = await client.getEntries({
     content_type: "questions",
     "fields.slug": params.slug,
@@ -175,7 +163,6 @@ export async function getStaticProps({ params }) {
       },
       uniqueCategories 
     },
-    revalidate: 60,
   };
 }
 

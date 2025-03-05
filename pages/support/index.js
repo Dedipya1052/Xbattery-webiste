@@ -45,7 +45,7 @@ const SearchSuggestions = ({ suggestions, onSelect, visible }) => {
   );
 };
 
-export async function getStaticProps() {
+export async function getServerSideProps() {
   const articles = await client.getEntries({
     content_type: "questions",
     order: '-fields.date',
@@ -71,7 +71,7 @@ export async function getStaticProps() {
       articles: transformedArticles,
       popularArticles,
     },
-    revalidate: 60,
+  
   };
 }
 

@@ -18,7 +18,7 @@ async function fetchBlogs() {
   return res.items;
 }
 
-export async function getStaticProps() {
+export async function getServerSideProps() {
   let blogs = await fetchBlogs();
   blogs = blogs.map((blog) => ({
     title: blog.fields.title,
@@ -36,7 +36,6 @@ export async function getStaticProps() {
     props: {
       blogs,
     },
-    revalidate: 60,
   };
 }
 
