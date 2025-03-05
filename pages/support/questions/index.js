@@ -105,13 +105,22 @@ const QuestionCard = ({ question, index }) => {
 };
 
 export default function QuestionsHome({ blogs }) {
+  const router = useRouter();
+  const { category } = router.query; // Get the category from query params
+
   const [selectedCategory, setSelectedCategory] = useState("all");
+
+  useEffect(() => {
+    if (category) {
+      setSelectedCategory(category);
+    }
+  }, [category]);
   const [searchQuery, setSearchQuery] = useState("");
   const [filteredBlogs, setFilteredBlogs] = useState([]);
   const [suggestions, setSuggestions] = useState([]);
   const [showSuggestions, setShowSuggestions] = useState(false);
   const searchRef = useRef(null);
-  const router = useRouter();
+  
 
   // Get unique categories from blogs with safeguards
   const getAllCategories = () => {
@@ -270,7 +279,7 @@ export default function QuestionsHome({ blogs }) {
         />
         <meta property="og:image" content="/favicon.webp" />
       </Head>
-      <SupportLayout>
+      <SupportLayout categories={categories}>
         <div className="min-h-screen bg-gray-950">
           <div className="max-w-6xl mx-auto px-4 py-8">
             {/* Header Section */}

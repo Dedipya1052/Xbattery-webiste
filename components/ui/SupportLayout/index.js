@@ -1,137 +1,77 @@
+
 import React, { useState, useEffect, useRef } from "react";
 import { ChevronDown, ChevronRight } from "lucide-react";
 import Link from "next/link";
+import { createClient } from "contentful";
 
-
-// const docsMenuItems = [
-//   {
-//     title: "Questions",
-//     href: "/support/questions",
-//     key: "apis",
-//     subsections: [
-//       {
-//         title: "Password reset",
-//         key: "device-data-api",
-//         href: "/docs/questions/password-reset",
-//         // subsections: [
-//         //   {
-//         //     title: "Base URL",
-//         //     key: "base-url",
-//         //     href: "/docs/api/device#base-url"
-//         //   },
-//         //   {
-//         //     title: "Authentication",
-//         //     key: "authentication",
-//         //     href: "/docs/api/device#authentication"
-//         //   },
-//         //   {
-//         //     title: "Query Parameters",
-//         //     key: "parameters",
-//         //     href: "/docs/api/device#parameters"
-//         //   },
-//         //   {
-//         //     title: "Response Format",
-//         //     key: "response",
-//         //     href: "/docs/api/device#response"
-//         //   },
-//         //   {
-//         //     title: "Error Responses",
-//         //     key: "response",
-//         //     href: "/docs/api/device#error-response"
-//         //   }
-//         // ]
-//       },
-//       // {
-//       //   title: "User API",
-//       //   key: "user-api",
-//       //   href: "/docs/api/user",
-//       //   subsections: [
-//       //       {
-//       //         title: "Base URL",
-//       //         key: "base-url",
-//       //         href: "/docs/api/user#base-url"
-//       //       },
-//       //       {
-//       //         title: "Authentication",
-//       //         key: "authentication",
-//       //         href: "/docs/api/user#authentication"
-//       //       },
-//       //       {
-//       //         title: "Available Endpoints",
-//       //         key: "parameters",
-//       //         href: "/docs/api/user#endpoints"
-//       //       },
-//       //       {
-//       //         title: "Response Format",
-//       //         key: "response",
-//       //         href: "/docs/api/user#response"
-//       //       }
-//       //     ]
-           
-//       // }
-//     ]
-//   },
-//   // {
-//   //   title: "Getting Started",
-//   //   key: "getting-started",
-//   //   href: "/docs/getting-started",
-//   //   subsections: [
-//   //     {
-//   //       title: "Quick Start",
-//   //       key: "quick-start",
-//   //       href: "/docs/getting-started/quick-start"
-//   //     },
-//   //     {
-//   //       title: "Installation",
-//   //       key: "installation",
-//   //       href: "/docs/getting-started/installation"
-//   //     }
-//   //   ]
-//   // }
-// ];
-
-const docsMenuItems = [
-    {
-      title: "Questions",
-      href: "/support/questions",
-      key: "apis",
-      subsections: [
-        
-        {
-          title: "New user portal login",
-          key: "New-user-portal-login",
-          href: "/support/questions/how-do-i-access-the-customer-portal-for-the-first-time",
-        },
-        {
-          title: "Add device after login",
-          key: "add-device-after-login",
-          href: "/support/questions/how-to-add-a-device-after-first-login",
-        },
-        {
-          title: "Generate and use API keys",
-          key: "generate-and-use-api-keys",
-          href: "/support/questions/how-do-i-generate-and-use-api-keys-for-accessing-my-battery-data",
-        },
-        {
-          title: "Invite new member ",
-          key: "invite-new-member ",
-          href: "/support/questions/how-do-i-invite-a-new-member-to-my-organization",
-        }
-      ]
-    }
-  ];
-
-
-const SupportLayout = ({ children }) => {
-  const [openSections, setOpenSections] = useState({
-    apis: true,
-    "device-data-api": true,
-    "user-api": false
+// Contentful client setup
+async function fetchCategories() {
+  const client = createClient({
+    space: process.env.CONTENTFUL_SPACE,
+    accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
   });
+
+  const res = await client.getEntries({ content_type: "questions" });
+  
+  // Extract and deduplicate categories
+  const categories = res.items
+    .filter(item => item.fields.categories && Array.isArray(item.fields.categories))
+    .flatMap(item => item.fields.categories);
+  
+  // Remove duplicates 
+  const uniqueCategories = Array.from(new Set(categories));
+  
+  // Log to verify categories are correctly loaded
+  console.log('Loaded categories:', uniqueCategories);
+  
+  return uniqueCategories;
+}
+
+export async function getStaticProps() {
+  let categories = await fetchCategories();
+  
+  return {
+    props: {
+      categories,
+    },
+    revalidate: 60,
+  };
+}
+
+const SupportLayout = ({ children, categories = [] }) => {
+  const [docsMenuItems, setDocsMenuItems] = useState([]);
+  const [openSections, setOpenSections] = useState({});
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
   const [startX, setStartX] = useState(null);
   const [isMobileView, setIsMobileView] = useState(false);
   const drawerRef = useRef(null);
+
+  // Prepare menu items based on categories
+  useEffect(() => {
+    if (categories && categories.length > 0) {
+      const menuItems = [{
+        title: "Questions",
+        href: "/support/questions",
+        key: "questions",
+        subsections: categories.map(category => ({
+          title: category.charAt(0).toUpperCase() + category.slice(1),
+          key: category,
+          href: `/support/questions?category=${encodeURIComponent(category)}`
+        }))
+      }];
+
+      setDocsMenuItems(menuItems);
+      
+      // Initialize open sections
+      const initialOpenSections = {
+        questions: true,
+        ...Object.fromEntries(
+          categories.map(category => [category, false])
+        )
+      };
+      setOpenSections(initialOpenSections);
+    }
+  }, [categories]);
 
   useEffect(() => {
     const handleResize = () => {
@@ -144,26 +84,6 @@ const SupportLayout = ({ children }) => {
     handleResize();
     window.addEventListener('resize', handleResize);
     return () => window.removeEventListener('resize', handleResize);
-  }, []);
-
-  useEffect(() => {
-    const currentPath = window.location.pathname;
-    
-    // Close all sections first
-    const newOpenSections = {
-      apis: true, // Keep APIs section always open
-    };
-
-    // Open the relevant section based on path
-    if (currentPath.includes('/device')) {
-      newOpenSections['device-data-api'] = true;
-      newOpenSections['user-api'] = false;
-    } else if (currentPath.includes('/user')) {
-      newOpenSections['user-api'] = true;
-      newOpenSections['device-data-api'] = false;
-    }
-
-    setOpenSections(newOpenSections);
   }, []);
 
   const handleTouchStart = (e) => {
@@ -238,22 +158,10 @@ const SupportLayout = ({ children }) => {
                   section={section}
                   openSections={openSections}
                   toggleSection={(key) => {
-                    setOpenSections(prev => {
-                      // If clicking on a main section that has subsections
-                      if (key === 'device-data-api' || key === 'user-api') {
-                        // Close other sections when opening one
-                        return {
-                          ...prev,
-                          'device-data-api': key === 'device-data-api' ? !prev[key] : false,
-                          'user-api': key === 'user-api' ? !prev[key] : false,
-                        };
-                      }
-                      // For other sections, just toggle
-                      return {
-                        ...prev,
-                        [key]: !prev[key],
-                      };
-                    });
+                    setOpenSections(prev => ({
+                      ...prev,
+                      [key]: !prev[key],
+                    }));
                   }}
                   onLinkClick={() => isMobileView && setIsDrawerOpen(false)}
                 />
@@ -292,28 +200,36 @@ const MenuSection = ({ section, openSections, toggleSection, level = 0, onLinkCl
   };
 
   const [isCurrentPath, setIsCurrentPath] = useState(false);
+  const [isCurrentCategory, setIsCurrentCategory] = useState(false);
   
   useEffect(() => {
     const currentPath = window.location.pathname;
     const currentHash = window.location.hash;
+    const currentSearch = window.location.search;
     
     const isMatch = section.href === currentPath || 
                    section.href === currentPath + currentHash;
     
+    // Check if the current category matches
+    const isCategory = section.href && 
+      currentPath === '/support/questions' && 
+      currentSearch.includes(`category=${encodeURIComponent(section.key)}`);
+    
     setIsCurrentPath(isMatch);
-  }, [section.href]);
+    setIsCurrentCategory(isCategory);
+  }, [section.href, section.key]);
 
   return (
     <div className="space-y-1">
       <div
         className={`flex items-center justify-between cursor-pointer rounded px-2 py-1 ${getPaddingClass(level)} 
-        ${isCurrentPath ? 'bg-blue-500/10 text-blue-400' : 'hover:bg-gray-800 text-gray-300'}`}
+        ${(isCurrentPath || isCurrentCategory) ? 'bg-blue-500/10 text-blue-400' : 'hover:bg-gray-800 text-gray-300'}`}
         onClick={() => toggleSection(section.key)}
       >
         {section.href ? (
           <Link 
             href={section.href} 
-            className={`text-sm flex-grow ${isCurrentPath ? 'text-blue-400' : 'text-gray-300 hover:text-white'}`}
+            className={`text-sm flex-grow ${(isCurrentPath || isCurrentCategory) ? 'text-blue-400' : 'text-gray-300 hover:text-white'}`}
             onClick={(e) => {
               e.stopPropagation();
               onLinkClick?.();
@@ -325,7 +241,7 @@ const MenuSection = ({ section, openSections, toggleSection, level = 0, onLinkCl
           <span className="text-sm">{section.title}</span>
         )}
         {section.subsections && (
-          <div className={isCurrentPath ? 'text-blue-400' : 'text-gray-400'}>
+          <div className={isCurrentPath || isCurrentCategory ? 'text-blue-400' : 'text-gray-400'}>
             {openSections[section.key] ? (
               <ChevronDown className="h-4 w-4" />
             ) : (
@@ -351,7 +267,9 @@ const MenuSection = ({ section, openSections, toggleSection, level = 0, onLinkCl
                 <Link
                   href={subsection.href}
                   className={`block text-sm rounded px-2 py-1 ${getPaddingClass(level + 1)}
-                  ${subsection.href === window.location.pathname + window.location.hash 
+                  ${(subsection.href === window.location.pathname + window.location.hash) ||
+                    (window.location.pathname === '/support/questions' && 
+                     window.location.search === `?category=${encodeURIComponent(subsection.key)}`)
                     ? 'bg-blue-500/10 text-blue-400' 
                     : 'text-gray-400 hover:text-white hover:bg-gray-800'}`}
                   onClick={onLinkClick}
@@ -368,6 +286,4 @@ const MenuSection = ({ section, openSections, toggleSection, level = 0, onLinkCl
 };
 
 export default SupportLayout;
-
-
-
+export { fetchCategories };

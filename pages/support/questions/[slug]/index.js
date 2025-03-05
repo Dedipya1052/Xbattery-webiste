@@ -109,6 +109,7 @@ const renderOptions = {
   },
 };
 
+
 export async function getStaticPaths() {
   const res = await client.getEntries({ content_type: "questions" });
   const paths = res.items.map((item) => ({
@@ -126,12 +127,33 @@ export async function getStaticProps({ params }) {
     content_type: "questions",
     "fields.slug": params.slug,
   });
+  const res1 = await client.getEntries({
+    content_type: "questions",
+  });
 
   if (!res.items.length) {
     return {
       notFound: true,
     };
   }
+  if (!res1.items.length) {
+    return {
+      notFound: true,
+    };
+  }
+
+
+  let blogs = res1.items;
+  blogs = blogs.map((blog) => ({
+    categories: blog.fields.categories,
+  }));
+
+  const allCategories = blogs
+    .filter((blog) => blog.categories && Array.isArray(blog.categories))
+    .flatMap((blog) => blog.categories);
+
+  const uniqueCategories = Array.from(new Set(allCategories));
+
 
   const question = res.items[0].fields;
   const entryId = res.items[0].sys.id;
@@ -151,13 +173,14 @@ export async function getStaticProps({ params }) {
         downvote: question.downvote || 0,
         id: entryId
       },
+      uniqueCategories 
     },
     revalidate: 60,
   };
 }
 
 
-export default function QuestionPage({ question }) {
+export default function QuestionPage({ question , uniqueCategories}) {
   const router = useRouter();
   const [voted, setVoted] = useState(null);
   const [isVoting, setIsVoting] = useState(false);
@@ -166,6 +189,10 @@ export default function QuestionPage({ question }) {
     downvote: question.downvote || 0
   });
   const [toast, setToast] = useState(null);
+
+  const allCategories= ["all",...uniqueCategories];
+  //console.log({allCategories});
+  
 
   const {
     title,
@@ -267,7 +294,7 @@ export default function QuestionPage({ question }) {
   };
 
   return (
-    <SupportLayout>
+    <SupportLayout categories={allCategories}>
       <Head>
         <title>{`${title} | Questions | Support`}</title>
         <meta name="description" content={description} />

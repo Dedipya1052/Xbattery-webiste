@@ -93,7 +93,8 @@ export default function SupportHome({ articles, popularArticles }) {
     return Array.from(new Set(allCategoriesWithDuplicates));
   };
   
-  const categories = getAllCategories();
+  const semicategories = getAllCategories();
+  const categories =["all",...semicategories]
   
   // For debugging
   useEffect(() => {
@@ -185,11 +186,7 @@ export default function SupportHome({ articles, popularArticles }) {
     return () => document.removeEventListener('mousedown', handleClickOutside);
   }, []);
 
-  const quickLinks = [
-    { title: "System Status", icon: Activity, link: "/status" },
-    { title: "Contact Support", icon: MessageCircle, link: "/contact" },
-    { title: "Report Issue", icon: AlertCircle, link: "/report" }
-  ];
+ 
 
   const handleArticleClick = (slug) => {
     router.push(`/support/questions/${slug}`);
@@ -212,7 +209,7 @@ export default function SupportHome({ articles, popularArticles }) {
   });
 
   return (
-    <SupportLayout>
+    <SupportLayout categories={categories}>
       <Head>
         <title>Support Center | Xbattery™</title>
         <meta

@@ -21,7 +21,8 @@ async function fetchBlogs() {
 //todo : getserversideprops or static ??
 export async function getStaticProps() {
   let blogs = await fetchBlogs();
-  blogs = blogs.map((blog) => ({
+  blogs = blogs.sort((a, b) => new Date(b.fields.date) - new Date(a.fields.date))
+  .map((blog) => ({
     title: blog.fields.title,
     thumbnail: blog.fields.thumbnail,
     categories: blog.fields.categories,
