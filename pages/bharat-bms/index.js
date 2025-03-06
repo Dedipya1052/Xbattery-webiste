@@ -430,9 +430,10 @@ const BharatBMS = () => {
           ))}
 
           <AnimatedDiv>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-7 mt-10 w-[90%] lg:w-[60%] xl:w-[55%] mx-auto">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-7 mt-10 w-[90%] lg:w-[60%] xl:w-[70%] 2xl:w-[1200px] mx-auto">
               {[
-                "/images/bharatbms/4.png",             
+                "/images/bharatbms/1.png",
+                "/images/bharatbms/2.png",             
                 "/images/bharatbms/3.png",
               ].map((src, index) => (
                 <div key={index} className="flex justify-center ">
@@ -442,7 +443,7 @@ const BharatBMS = () => {
                     className="rounded-lg shadow-lg"
                     width={400}
                     height={400}
-                    style={{ objectFit: "cover", height: "180px",width:"300px" }}
+                    style={{ objectFit: "cover", height: {xs:"180px","2xl":"220px"},width:"300px",filter: "grayscale(90%)" }}
                   />
                 </div>
               ))}
