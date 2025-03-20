@@ -388,8 +388,8 @@ const About = () => {
             </AnimatedDiv>
 
             <AnimatedDiv>
-              <div className="relative bg-[#1f1e1e] py-16 mt-[5rem] mb-[30rem] pb-[20rem] ">
-                <div className="flex flex-col gap-[3rem] md:gap-0 md:flex-row justify-around relative z-10 w-[93%] md:w-[90%] xl:w-[90%] 2xl:w-[1450px] mx-auto">
+              <div className="relative bg-[#1f1e1e] py-16 mt-[5rem] mb-[13rem]  ">
+                <div className="flex flex-col gap-[3rem] md:gap-0 md:flex-row justify-around relative z-10 w-[93%] md:w-[90%] xl:w-[90%] 2xl:w-[1450px] mx-auto pb-2">
                   <div className="text-center text-white">
                     <div className="flex gap-[0.4rem] justify-center items-center mb-[1rem]">
                       <Image
@@ -452,8 +452,8 @@ const About = () => {
                   </div>
                 </div>
 
-                <div className="absolute bottom-[-12rem] left-0 right-0 w-[95%] md:w-[90%] xl:w-[95%] 2xl:w-[1450px] mx-auto flex justify-evenly flex-wrap md:flex-nowrap">
-                  {/* Image wrapper that hides all but one image on mobile */}
+                {/* <div className="absolute bottom-[-12rem] left-0 right-0 w-[95%] md:w-[90%] xl:w-[95%] 2xl:w-[1450px] mx-auto flex justify-evenly flex-wrap md:flex-nowrap">
+                
                   <div className="w-[90%] md:w-[45%] lg:w-[30%] h-[450px] object-cover rounded-md">
                     <Image
                       src="/images/about/people/2.png"
@@ -464,7 +464,7 @@ const About = () => {
                     />
                   </div>
 
-                  {/* Display the rest of the images only on medium screens and above */}
+                
                   <div className="hidden md:block md:w-[45%] lg:w-[30%] h-[450px] object-cover rounded-md">
                     <Image
                       src="/images/about/people/1.png"
@@ -483,7 +483,7 @@ const About = () => {
                       className="object-cover rounded-md w-full h-full object-center "
                     />
                   </div>
-                </div>
+                </div> */}
               </div>
             </AnimatedDiv>
 
