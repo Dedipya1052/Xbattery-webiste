@@ -160,7 +160,7 @@ const BharatBMS = () => {
               Introducing BharatBMS
             </h1>
             <h2 className="text-lg md:text-xl leading-relaxed max-w-xl mx-auto md:mx-0 text-[#e9e9e9] pl-[1.5px] 2xl:text-2xl">
-              India's first scalable Battery Management System
+            India's first scalable high-voltage Battery Management System up to 800 volts for EVs and energy storage
             </h2>
           </div>
 
@@ -188,9 +188,9 @@ const BharatBMS = () => {
           <AnimatedDiv>
             <div className="w-[95%] lg:w-[80%] mx-auto text-center md:text-center">
               <p className="text-lg md:text-xl leading-relaxed mb-2">
-                BharatBMS is India's first universal Battery Management System (BMS architecture)
-                for energy storage and EVs that scales effortlessly from home
-                applications to industrial installations. It's as effective in a
+              BharatBMS is India's first universal high-voltage Battery Management System (BMS architecture) up to 800 volts for EVs and energy storage that scales effortlessly from home applications to industrial installations and EVs. 
+
+It's as effective in a
                 5kWh home backup system as it is in megawatt-scale battery
                 packs.
               </p>
