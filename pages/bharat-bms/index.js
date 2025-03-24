@@ -160,7 +160,8 @@ const BharatBMS = () => {
               Introducing BharatBMS
             </h1>
             <h2 className="text-lg md:text-xl leading-relaxed max-w-xl mx-auto md:mx-0 text-[#e9e9e9] pl-[1.5px] 2xl:text-2xl">
-            India's first scalable high-voltage Battery Management System up to 800 volts for EVs and energy storage
+              India's first scalable high-voltage Battery Management System up
+              to 800 volts for EVs and energy storage
             </h2>
           </div>
 
@@ -188,11 +189,11 @@ const BharatBMS = () => {
           <AnimatedDiv>
             <div className="w-[95%] lg:w-[80%] mx-auto text-center md:text-center">
               <p className="text-lg md:text-xl leading-relaxed mb-2">
-              BharatBMS is India's first universal high-voltage Battery Management System (BMS architecture) up to 800 volts for EVs and energy storage that scales effortlessly from home applications to industrial installations and EVs. 
-
-It's as effective in a
-                5kWh home backup system as it is in megawatt-scale battery
-                packs.
+                BharatBMS is India's first universal high-voltage Battery
+                Management System (BMS architecture) up to 800 volts for EVs and
+                energy storage that scales effortlessly from home applications
+                to industrial installations and EVs. It's as effective in a 5kWh
+                home backup system as it is in megawatt-scale battery packs.
               </p>
             </div>
           </AnimatedDiv>
@@ -269,9 +270,7 @@ It's as effective in a
                 },
               ].map((feature, index) => (
                 <AnimatedDiv key={index}>
-                  <div
-                    className="flex flex-col items-center text-center bg-[#1c1c1c] p-8 rounded-lg shadow-md hover:shadow-lg transition-shadow h-full"
-                  >
+                  <div className="flex flex-col items-center text-center bg-[#1c1c1c] p-8 rounded-lg shadow-md hover:shadow-lg transition-shadow h-full">
                     <IconWithGradient size={25}>
                       {feature.icon}
                     </IconWithGradient>
@@ -333,8 +332,6 @@ It's as effective in a
               ))}
             </div>
           </div>
-
-       
 
           {/* <div className="mb-16 w-[95%] mx-auto">
            
@@ -433,7 +430,7 @@ It's as effective in a
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-7 mt-10 w-[90%] lg:w-[60%] xl:w-[70%] 2xl:w-[1200px] mx-auto">
               {[
                 "/images/bharatbms/1.png",
-                "/images/bharatbms/2.png",             
+                "/images/bharatbms/2.png",
                 "/images/bharatbms/3.png",
               ].map((src, index) => (
                 <div key={index} className="flex justify-center ">
@@ -443,7 +440,12 @@ It's as effective in a
                     className="rounded-lg shadow-lg"
                     width={400}
                     height={400}
-                    style={{ objectFit: "cover", height: {xs:"180px","2xl":"220px"},width:"300px",filter: "grayscale(90%)" }}
+                    style={{
+                      objectFit: "cover",
+                      height: { xs: "180px", "2xl": "220px" },
+                      width: "300px",
+                      filter: "grayscale(90%)",
+                    }}
                   />
                 </div>
               ))}

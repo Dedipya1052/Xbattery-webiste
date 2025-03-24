@@ -72,6 +72,7 @@ const company = [
   { name: "About", link: "/about" },
   { name: "Careers", link: "/careers" },
   { name: "Contact", link: "/contact" }, 
+  { name: "Media", link: "/media" }, 
   { name: "Support", link: "/support" }, 
 ];
 
@@ -186,6 +187,9 @@ const resources = [
                       </Link>
                       <Link href="/contact" className={styles.footerElements}>
                         Contact
+                      </Link>
+                      <Link href="/media" className={styles.footerElements}>
+                        Media
                       </Link>
                       <Link href="/support" className={styles.footerElements}>
                         Support

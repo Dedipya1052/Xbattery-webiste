@@ -1,0 +1,448 @@
+.mediaContainer {
+  width: 100%;
+  max-width: 1500px;
+  margin: 0 auto;
+  font-family: 'Open Sans', sans-serif;
+  overflow-x: hidden;
+}
+
+/* Header Styles */
+.mediaHeader {
+  width: 100%;
+  background: linear-gradient(to right, #0c2340, #1a478a);
+  color: white;
+  padding: 4rem 2rem;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.headerContent {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.mediaTitle {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.mediaSubtitle {
+  font-size: 1.2rem;
+  font-weight: 400;
+  opacity: 0.9;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* Featured Media Section */
+.featuredSection {
+  width: 90%;
+  margin: 0 auto 3rem;
+}
+
+.featuredMedia {
+  width: 100%;
+  height: 500px;
+  position: relative;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.featuredThumbnail {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.featuredImage {
+  object-fit: cover;
+}
+
+.featuredOverlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0) 60%);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 2rem;
+  transition: all 0.3s ease;
+}
+
+.featuredContent {
+  max-width: 700px;
+}
+
+.featuredCategory {
+  display: inline-block;
+  background-color: #fab482;
+  color: white;
+  padding: 0.3rem 1rem;
+  border-radius: 2rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+}
+
+.featuredTitle {
+  font-size: 2.5rem;
+  color: white;
+  margin-bottom: 1rem;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.featuredDescription {
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 1.1rem;
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+}
+
+.featuredInfo {
+  display: flex;
+  gap: 1.5rem;
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 0.9rem;
+}
+
+.featuredLink {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+  height: 100%;
+}
+
+/* Filter Section */
+.filterContainer {
+  width: 90%;
+  margin: 0 auto 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.categoryTabs {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.categoryTab {
+  background: none;
+  border: none;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  cursor: pointer;
+  border-radius: 2rem;
+  transition: all 0.2s ease;
+  color: #555;
+  font-weight: 500;
+}
+
+.categoryTab:hover {
+  background-color: #f0f0f0;
+}
+
+.activeTab {
+  background-color: #0c2340;
+  color: white;
+  font-weight: 600;
+}
+
+.searchContainer {
+  position: relative;
+}
+
+.searchWrapper {
+  display: flex;
+  align-items: center;
+  border: 1px solid #ddd;
+  border-radius: 2rem;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  background-color: white;
+}
+
+.searchActive {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.searchInput {
+  padding: 0.7rem 1rem;
+  border: none;
+  outline: none;
+  font-size: 1rem;
+  width: 200px;
+  transition: all 0.3s ease;
+}
+
+.searchButton {
+  background: none;
+  border: none;
+  padding: 0.7rem 1rem;
+  cursor: pointer;
+  color: #555;
+  font-size: 1rem;
+}
+
+/* Media Grid */
+.mediaGrid {
+  width: 90%;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  padding-bottom: 3rem;
+}
+
+.mediaCard {
+  border-radius: 0.5rem;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+  background-color: white;
+  height: 100%;
+}
+
+.mediaCard:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.cardLink {
+  text-decoration: none;
+  color: inherit;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.mediaThumbnail {
+  position: relative;
+  height: 220px;
+  width: 100%;
+}
+
+.thumbnail {
+  object-fit: cover;
+}
+
+.categoryBadge {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  background-color: #fb8530;
+  color: white;
+  padding: 0.3rem 0.8rem;
+  border-radius: 2rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.mediaContent {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.mediaInfo {
+  display: flex;
+  justify-content: space-between;
+  color: #777;
+  font-size: 0.85rem;
+  margin-bottom: 0.8rem;
+}
+
+.mediaTitle {
+  font-size: 1.4rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  line-height: 1.3;
+  color: #0c2340;
+}
+
+.mediaDescription {
+  color: #555;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+  flex-grow: 1;
+}
+
+.readMoreLink {
+  color: #2a2a2a;
+  font-weight: 600;
+  font-size: 0.95rem;
+  position: relative;
+  display: inline-block;
+}
+
+.readMoreLink:after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: #d6d6d6;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s ease;
+}
+
+.mediaCard:hover .readMoreLink:after {
+  transform: scaleX(1);
+}
+
+/* Newsletter Subscription */
+.subscribeSection {
+  background-color: #f5f7fa;
+  padding: 4rem 2rem;
+  margin-bottom: 3rem;
+}
+
+.subscribeContent {
+  max-width: 700px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.subscribeContent h2 {
+  font-size: 2.2rem;
+  color: #0c2340;
+  margin-bottom: 1rem;
+  font-weight: 700;
+}
+
+.subscribeContent p {
+  font-size: 1.1rem;
+  color: #555;
+  margin-bottom: 2rem;
+  line-height: 1.6;
+}
+
+.subscribeForm {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.emailInput {
+  padding: 1rem 1.5rem;
+  border: 1px solid #ddd;
+  border-radius: 0.25rem;
+  font-size: 1rem;
+  width: 300px;
+  outline: none;
+  transition: all 0.2s ease;
+}
+
+.emailInput:focus {
+  border-color: #1a478a;
+  box-shadow: 0 0 0 2px rgba(26, 71, 138, 0.2);
+}
+
+.subscribeButton {
+  background-color: #ff6b00;
+  color: white;
+  padding: 1rem 2rem;
+  border: none;
+  border-radius: 0.25rem;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.subscribeButton:hover {
+  background-color: #e25f00;
+}
+
+/* Responsive Styles */
+@media (max-width: 1200px) {
+  .mediaGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .featuredTitle {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .mediaHeader {
+    padding: 3rem 1.5rem;
+  }
+  
+  .mediaTitle {
+    font-size: 1.5rem;
+  }
+  
+  .featuredMedia {
+    height: 400px;
+  }
+  
+  .featuredTitle {
+    font-size: 1.8rem;
+  }
+  
+  .featuredDescription {
+    font-size: 1rem;
+  }
+  
+  .filterContainer {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  
+  .categoryTabs {
+    overflow-x: auto;
+    padding-bottom: 0.5rem;
+    justify-content: flex-start;
+  }
+  
+  .searchWrapper {
+    width: 100%;
+  }
+  
+  .searchInput {
+    width: 100%;
+  }
+}
+
+@media (max-width: 640px) {
+  .mediaGrid {
+    grid-template-columns: 1fr;
+  }
+  
+  .featuredMedia {
+    height: 350px;
+  }
+  
+  .mediaTitle {
+    font-size: 1.2rem;
+  }
+  
+  .subscribeForm {
+    flex-direction: column;
+    width: 100%;
+    max-width: 300px;
+    margin: 0 auto;
+  }
+  
+  .emailInput {
+    width: 100%;
+  }
+}
+
