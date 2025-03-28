@@ -20,6 +20,81 @@ import Head from "next/head";
 
 
 const energyData = {
+
+  february: {
+   data: [
+      {
+        name: "Thermal",
+        barName: "Thermal",
+        value: 242997,
+        percentage: 52.6,
+        color: "#4A545D",
+        hoverColor: "#2F353D",
+      },
+      {
+        name: "Solar, Wind & Other",
+        barName: "Solar, Wind & Oth",
+        value: 164703,
+        percentage: 35.6,
+        color: "#4B9C5E",
+        hoverColor: "#3B7A4D",
+      },
+      {
+        name: "Hydro",
+        barName: "Hydro",
+        value: 46715,
+        percentage: 10.1,
+        color: "#5B9BD5",
+        hoverColor: "#4388B6",
+      },
+      {
+        name: "Nuclear",
+        barName: "Nuclear",
+        value: 7900,
+        percentage: 1.7,
+        color: "#7B5C9E",
+        hoverColor: "#5E4B7D",
+      }
+    ],
+    total: 462315
+  },
+  january: {
+    "data": [
+      {
+        "name": "Thermal",
+        "barName": "Thermal",
+        "value": 243687,
+        "percentage": 52.75,
+        "color": "#4A545D",
+        "hoverColor": "#2F353D"
+      },
+      {
+        "name": "Solar, Wind & Other",
+        "barName": "Solar, Wind & Oth",
+        "value": 163514,
+        "percentage": 35.35,
+        "color": "#4B9C5E",
+        "hoverColor": "#3B7A4D"
+      },
+      {
+        "name": "Hydro",
+        "barName": "Hydro",
+        "value": 46842,
+        "percentage": 10.15,
+        "color": "#5B9BD5",
+        "hoverColor": "#4388B6"
+      },
+      {
+        "name": "Nuclear",
+        "barName": "Nuclear",
+        "value": 8040,
+        "percentage": 1.75,
+        "color": "#7B5C9E",
+        "hoverColor": "#5E4B7D"
+      }
+    ],
+    "total": 462083
+  },
   december: {
     data: [
       {
@@ -237,10 +312,16 @@ const renderCustomLabel = ({ cx, cy, midAngle, outerRadius, percent }) => {
   );
 };
 
+const determineYear = (month) => {
+  const monthsIn2024 = ['july', 'august', 'september', 'november', 'december'];
+  return monthsIn2024.includes(month) ? 2024 : 2025;
+};
+
 
 const EnergyContributionDashboard1 = ({month}) => {
   const [activeIndex, setActiveIndex] = useState(null);
   const [selectedMonth, setSelectedMonth] = useState(month);
+  const currentYear = determineYear(selectedMonth);
   const currentEnergyData = energyData[selectedMonth].data;
 
   const monthLabels = {
@@ -249,6 +330,8 @@ const EnergyContributionDashboard1 = ({month}) => {
     september: "September",
     november: "November",
     december: "December",
+    january:"January",
+    february:"February"
   };
 
   const CustomTooltip = ({ active, payload }) => {
@@ -311,11 +394,11 @@ const EnergyContributionDashboard1 = ({month}) => {
     <>
       <Head>
         <title>
-          Indian Energy Mix - {monthLabels[selectedMonth]} 2024 | XBattery
+          Indian Energy Mix - {monthLabels[selectedMonth]} {currentYear} | XBattery
         </title>
         <meta
           name="description"
-          content={`Discover India's energy mix for ${monthLabels[selectedMonth]} 2024. Explore the contributions of renewable, thermal, nuclear, and hydro energy sources in India's power generation.`}
+          content={`Discover India's energy mix for ${monthLabels[selectedMonth]} ${currentYear}. Explore the contributions of renewable, thermal, nuclear, and hydro energy sources in India's power generation.`}
         />
         <meta
           name="keywords"
@@ -324,17 +407,17 @@ const EnergyContributionDashboard1 = ({month}) => {
         <meta name="author" content="XBattery" />
         <meta
           property="og:title"
-          content={`Indian Energy Mix - ${monthLabels[selectedMonth]} 2024 | XBattery`}
+          content={`Indian Energy Mix - ${monthLabels[selectedMonth]} ${currentYear} | XBattery`}
         />
         <meta
           property="og:description"
-          content={`Explore India's energy contributions for ${monthLabels[selectedMonth]} 2024. Learn about thermal, renewable, hydro, and nuclear energy sources.`}
+          content={`Explore India's energy contributions for ${monthLabels[selectedMonth]} ${currentYear}. Learn about thermal, renewable, hydro, and nuclear energy sources.`}
         />
         <meta property="og:type" content="website" />
         {selectedMonth !== "november" && (
           <meta
             property="og:url"
-            content={`https://xbattery.energy/learn/indian-energy-mix-${selectedMonth}-2024`}
+            content={`https://xbattery.energy/learn/indian-energy-mix-${selectedMonth}-${currentYear}`}
           />
         )}
         <meta
@@ -347,7 +430,7 @@ const EnergyContributionDashboard1 = ({month}) => {
         {selectedMonth !== "november" && (
           <link
             rel="canonical"
-            href={`https://xbattery.energy/learn/indian-energy-mix-${selectedMonth}-2024`}
+            href={`https://xbattery.energy/learn/indian-energy-mix-${selectedMonth}-${currentYear}`}
           />
         )}
       </Head>
@@ -355,7 +438,45 @@ const EnergyContributionDashboard1 = ({month}) => {
       <div className={`${styles.head1} relative `}>
         <div className="fixed top-32 left-2 w-[120px] hidden lg:block">
           <div className="bg-gray-100 p-2 rounded-md shadow-md">
-            <h3 className="text-sm font-semibold text-center mb-2">2024</h3>
+            <h3 className="text-sm font-semibold text-center mb-2">2025</h3>
+            <ul className="space-y-1">
+              {[
+                {
+                  month: "january",
+
+                  displayName: "January",
+
+                  link: "learn/indian-energy-mix-january-2025",
+                },
+                {
+                  month: "february",
+
+                  displayName: "February",
+
+                  link: "learn/indian-energy-mix",
+                },
+              ].map(({ month, displayName, link }) => (
+                <li key={month}>
+                  <a
+                    href={`/${link}`}
+                    // onClick={(e) => {
+                    //   e.preventDefault();
+                    //   setSelectedMonth(month);
+                    // }}
+                    className={`block text-sm px-2 py-1 rounded-md text-center cursor-pointer ${
+                      month === selectedMonth
+                        ? "bg-[#777575] text-white font-semibold"
+                        : "bg-gray-200 text-gray-600"
+                    }`}
+                  >
+                    {displayName}
+                  </a>
+                </li>
+              ))}
+            </ul>
+            <h3 className="text-sm font-semibold text-center mb-2 mt-3">
+              2024
+            </h3>
             <ul className="space-y-1">
               {[
                 {
@@ -381,7 +502,7 @@ const EnergyContributionDashboard1 = ({month}) => {
                 {
                   month: "december",
                   displayName: "December",
-                  link: "learn/indian-energy-mix",
+                  link: "learn/indian-energy-mix-december-2024",
                 },
               ].map(({ month, displayName, link }) => (
                 <li key={month}>
@@ -407,7 +528,7 @@ const EnergyContributionDashboard1 = ({month}) => {
 
         <div className={styles.container}>
           <h1 className={styles.title}>
-            Indian Energy Mix - {monthLabels[selectedMonth]} 2024
+            Indian Energy Mix - {monthLabels[selectedMonth]} {currentYear}
           </h1>
           <div className="text-lg text-center mt-[2rem] mb-[2rem]">
             India's renewable energy mix is steadily growing, with Solar, Wind &
@@ -417,16 +538,8 @@ const EnergyContributionDashboard1 = ({month}) => {
             Nuclear account for {energyData[selectedMonth].data[2].percentage}%
             and {energyData[selectedMonth].data[3].percentage}%, respectively,
             reflecting a diverse energy mix as of {monthLabels[selectedMonth]}{" "}
-            2024.
+            {currentYear}.
           </div>
-          {/* <div className="text-lg text-center mt-[2rem] mb-[2rem]">
-            As of {monthLabels[selectedMonth]} 2024, India's energy mix includes{" "}
-            {energyData[selectedMonth].data[1].percentage}% from renewable
-            sources like solar and wind. Thermal power is the largest
-            contributor at {energyData[selectedMonth].data[0].percentage}%,
-            followed by Hydro at {energyData[selectedMonth].data[2].percentage}%
-            and Nuclear at {energyData[selectedMonth].data[3].percentage}%.
-          </div> */}
 
           <div className="mt-[3rem]">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
@@ -436,7 +549,6 @@ const EnergyContributionDashboard1 = ({month}) => {
                 </h2>
 
                 <ResponsiveContainer width="100%" height={300}>
-                 
                   <PieChart>
                     <Pie
                       data={currentEnergyData}
@@ -609,7 +721,8 @@ const EnergyContributionDashboard1 = ({month}) => {
 
             <div className="bg-gray-100 p-6 rounded-xl shadow-xl w-full lg:w-[85%] mx-auto">
               <h2 className="text-2xl font-bold mb-4">
-                Energy Distribution ({monthLabels[selectedMonth]} 2024)
+                Energy Distribution ({monthLabels[selectedMonth]} {currentYear}{" "}
+                )
               </h2>
               <DataTable />
             </div>
@@ -621,6 +734,41 @@ const EnergyContributionDashboard1 = ({month}) => {
 
           <div className=" w-[120px] mx-auto ">
             <div className="bg-gray-100 p-2 rounded-md shadow-md">
+              <h3 className="text-sm font-semibold text-center mb-2">2025</h3>
+              <ul className="space-y-1">
+                {[
+                  {
+                    month: "january",
+                    displayName: "January",
+                    link: "learn/indian-energy-mix-january-2025",
+                  },
+                  {
+                    month: "february",
+
+                    displayName: "February",
+
+                    link: "learn/indian-energy-mix",
+                  },
+                ].map(({ month, displayName, link }) => (
+                  <li key={month}>
+                    <a
+                      href={`/${link}`}
+                      // onClick={(e) => {
+                      //   e.preventDefault();
+                      //   setSelectedMonth(month);
+                      //   window.scrollTo({ top: 0, behavior: "smooth" });
+                      // }}
+                      className={`block text-sm px-2 py-1 rounded-md text-center ${
+                        month === selectedMonth
+                          ? "bg-[#777575] text-white font-semibold"
+                          : "bg-gray-200 text-gray-600"
+                      }`}
+                    >
+                      {displayName}
+                    </a>
+                  </li>
+                ))}
+              </ul>
               <h3 className="text-sm font-semibold text-center mb-2">2024</h3>
               <ul className="space-y-1">
                 {[
@@ -642,7 +790,12 @@ const EnergyContributionDashboard1 = ({month}) => {
                   {
                     month: "november",
                     displayName: "November",
-                    link: "learn/indian-energy-mix",
+                    link: "learn/indian-energy-mix-november-2024",
+                  },
+                  {
+                    month: "december",
+                    displayName: "December",
+                    link: "learn/indian-energy-mix-december-2024",
                   },
                 ].map(({ month, displayName, link }) => (
                   <li key={month}>
