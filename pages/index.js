@@ -3,37 +3,67 @@ import { createClient } from "contentful";
 import { useRouter } from "next/router";
 import Head from "next/head";
 
+// Fetch home content
+async function fetchHomeContent() {
+  const client = createClient({
+    space: process.env.CONTENTFUL_SPACE,
+    accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
+  });
+  
+  const res = await client.getEntries({ content_type: "home" });
+  return res.items;
+}
+
+// Fetch blogs from contentful CMS
 async function fetchBlogs() {
   const client = createClient({
     space: process.env.CONTENTFUL_SPACE,
     accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
   });
-  console.log("Function called");
-  const res = await client.getEntries({ content_type: "home" });
-  console.log({ res });
+
+  const res = await client.getEntries({ content_type: "blog" });
   return res.items;
 }
 
-// Get only the first blog
-export async function getStaticProps() {
-  let blogs = await fetchBlogs();
-  const firstBlog = blogs[0]; // Get the first blog
 
-  // Map the fields to a cleaner format
-  const media = {
+export async function getServerSideProps() {
+  // Fetch home content for video
+  let homeContent = await fetchHomeContent();
+  const firstBlog = homeContent[0]; // Get the first blog
+  
+  // Map the fields to a cleaner format for video
+  const homeMedia = {
     video1: firstBlog.fields.video1,
   };
-  // console.log(media);
+  // Fetch blogs
+  let blogs = await fetchBlogs();
+  
+  // Sort blogs by date (newest first) and take the top 3
+  const recentBlogs = blogs
+    .sort((a, b) => new Date(b.fields.date) - new Date(a.fields.date))
+    .slice(0, 3)
+    .map((blog) => ({
+      title: blog.fields.title,
+      thumbnail: blog.fields.thumbnail,
+      categories: blog.fields.categories,
+      slug: blog.fields.slug,
+      date: blog.fields.date,
+      description: blog.fields.description,
+      author: blog.fields.author,
+      subtitle: blog.fields.subtitle
+    }));
+
+  
 
   return {
     props: {
-      media, // Return only the first blog
+      media: homeMedia,
+      recentBlogs,
     },
   };
 }
 
-export default function Home({ media }) {
-
+export default function Home({ media, recentBlogs }) {
   return (
     <>
       <Head>
@@ -100,11 +130,9 @@ export default function Home({ media }) {
         {/* Additional Open Graph Tags */}
         <meta property="og:site_name" content="XBattery" />
         <meta property="article:author" content="XBattery Team" />
-
-       
       </Head>
 
-      <Example media={media} />
+      <Example media={media} recentBlogs={recentBlogs} />
     </>
   );
 }

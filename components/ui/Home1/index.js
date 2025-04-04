@@ -15,7 +15,7 @@ import Head from "next/head";
 
 
 
-const Example = ({ media }) => {
+const Example = ({ media, recentBlogs }) => {
   const videoUrl1 = media?.video1?.fields?.file?.url;
 
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -545,7 +545,7 @@ const Example = ({ media }) => {
             </AnimatedDiv>
             <AnimatedDiv>
               <div className="text-white text-[1.3rem] text-center mt-3">
-                Xbattery’s 5kWh system is designed to grow with your needs.
+                Xbattery's 5kWh system is designed to grow with your needs.
                 Simply add more batteries to expand capacity and keep up with
                 your power demands.
               </div>
@@ -775,7 +775,7 @@ const Example = ({ media }) => {
             </AnimatedDiv>
             <AnimatedDiv>
               <div className="text-white text-[1.2rem] md:text-[1.5rem] text-center mt-3  2xl:w-[90%] mx-auto">
-                You’re covered at every stage of an outage. Its intelligent
+                You're covered at every stage of an outage. Its intelligent
                 modes kick in before the power goes out, ensuring your stays
                 powered through any disruption.
               </div>
@@ -1163,7 +1163,7 @@ const Example = ({ media }) => {
                       Introducing BharatBMS
                     </h1>
                     <p className="text-base md:text-lg mb-6 text-white">
-                      India’s first universal Battery Management System scales
+                      India's first universal Battery Management System scales
                       from 5kWh setups to megawatt applications, offering
                       modular upgrades and reliable performance in tough power
                       conditions.
@@ -1225,6 +1225,72 @@ const Example = ({ media }) => {
             </div>
           </AnimatedDiv>
 
+          {/* Blog Section */}
+          {recentBlogs && recentBlogs.length > 0 && (
+            <AnimatedDiv>
+              <div className="w-[94%] md:w-[90%] lg:w-[85%] xl:w-[80%] 2xl:w-[1450px] mx-auto py-[4rem]">
+                <h2 className={`${styles.color1} text-center mb-8 text-[1.5rem] md:text-[1.4rem]`}>Latest Blogs</h2>
+                
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                  {recentBlogs.map((blog, index) => (
+                    <Link href={`/blog/${blog.slug}`} key={index} className="cursor-pointer">
+                      <div className="bg-[#181818] rounded-lg overflow-hidden cursor-pointer transition-transform duration-300 hover:scale-[1.01] h-full flex flex-col">
+                        <div className="relative h-48 md:h-52 lg:h-50 xl:h-55 2xl:h-60 overflow-hidden">
+                          {blog.thumbnail && blog.thumbnail.fields && blog.thumbnail.fields.file && (
+                            <Image
+                              src={`https:${blog.thumbnail.fields.file.url}`}
+                              alt={blog.title}
+                              layout="fill"
+                              objectFit="cover"
+                              className="transition-transform duration-500 hover:scale-[1.02]"
+                            />
+                          )}
+                        </div>
+                        <div className="p-5 flex flex-col flex-grow">
+                          <div className="flex justify-between items-center mb-3">
+                            <div className="text-sm text-gray-400">
+                              {new Date(blog.date).toLocaleDateString('en-US', {
+                                year: 'numeric',
+                                month: 'short',
+                                day: 'numeric'
+                              })}
+                            </div>
+                            {blog.categories && blog.categories.length > 0 && (
+                              <div className="bg-[#333] text-white text-xs px-2 py-1 rounded">
+                                {blog.categories[0]}
+                              </div>
+                            )}
+                          </div>
+                          <h3 className="text-xl font-bold text-white mb-2">{blog.subtitle}</h3>
+                          {/* {blog.subtitle && (
+                            <p className="text-gray-300 text-sm mb-3">{blog.subtitle}</p>
+                          )} */}
+                          <p className="text-gray-400 text-sm mb-4 line-clamp-2">
+                            {blog.description}
+                          </p>
+                          <div className="mt-auto">
+                            <span className={`text-md text-[#d8d8d8] hover:text-[white] transition-all duration-150`}>
+                              Read More →
+                            </span>
+                          </div>
+                        </div>
+                      </div>
+                    </Link>
+                  ))}
+                </div>
+                
+                <div className="text-center mt-8">
+                  <Link href="/blog">
+                    <button className={`px-5 py-2 rounded-lg font-medium text-white bg-transparent border-[1px] ${styles.gradientBorder} text-sm`}>
+                      View All Blogs →
+                    </button>
+                  </Link>
+                </div>
+              </div>
+            </AnimatedDiv>
+          )}
+           
+
           <AnimatedDiv>
             <div
               className="email-registration text-center pt-[2rem] pb-[2rem] "
@@ -1258,6 +1324,8 @@ const Example = ({ media }) => {
               {message && <p className="text-gray-400 mt-4">{message}</p>}
             </div>
           </AnimatedDiv>
+
+
         </div>
       </div>
     </>
