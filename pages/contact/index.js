@@ -89,10 +89,10 @@ const Contact = () => {
         <h3 className="text-xl font-semibold text-white mb-2">Contact Us</h3>
         <p className="text-gray-400 mb-4">Our support team is here to help with any inquiries or<br/> assistance.</p>
         <a
-          href="mailto:support@xbattery.energy"
+          href="mailto:sales@xbattery.energy"
           className="text-blue-400 hover:text-blue-300 hover:underline transition-colors duration-300 mt-auto font-medium"
         >
-          support@xbattery.energy
+         sales@xbattery.energy
         </a>
       </div>
 
