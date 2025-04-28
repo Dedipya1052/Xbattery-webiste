@@ -195,11 +195,11 @@ const Careers = () => {
             <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 p-6 bg-black text-white">
             
 
-            <Link href={"/careers/marketing-associate"}>
+            <Link href={"/careers/sales-and-marketing-specialist"}>
                 <div className="bg-[#212020] rounded-lg shadow-lg p-6 hover:cursor-pointer hover:bg-[#282828] transition-all duration-400 h-full w-full">
                   <div className="h-full flex flex-col justify-between">
                     <h2 className="text-xl font-semibold mt-4">
-                    Marketing Associate
+                    Sales and Marketing Specialist
                     </h2>
                     <p className="text-sm mt-2">Hyderabad, Telangana, India</p>
                   </div>
