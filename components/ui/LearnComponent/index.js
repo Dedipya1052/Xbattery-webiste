@@ -12,7 +12,9 @@ import Head from "next/head";
 
 const energyStorage = [
   { name: "Battery Energy Storage System", link: "/learn/battery-energy-storage-systems" },
-  { name: "Emerging LDES Technologies", link: "/learn/emerging-ldes-technologies" }
+  { name: "Emerging LDES Technologies", link: "/learn/emerging-ldes-technologies" },
+  { name: "Understanding BMS in ESS", link: "/learn/understanding-the-brain-of-an-energy-storage-systems-the-bms" },
+  { name: "Economics of Energy Storage", link: "/learn/understanding-the-economics-of-energy-storage-for-homes-and-businesses" }
 ];
 
 const renewableEnergy = [
@@ -30,6 +32,7 @@ const electricVehicles = [
 const electricity = [
   { name: "India’s Electricity Sector", link: "/learn/indias-electricity-sector" },
   { name: "Power Purchase Agreement", link: "/learn/power-purchase-agreement" },
+  { name: "Indian Electricity Terminologies", link: "/learn/understanding-the-terminologies-in-the-indian-electricity-sector" }
 ];
 
 const grid = [
@@ -41,7 +44,8 @@ const grid = [
 const batteries = [
   { name: "Understanding Lithium", link: "/learn/understanding-lithium" }, 
   { name: "Emerging Battery Technologies", link: "/learn/emerging-battery-technologies" },
-  { name:"Understanding LFP Batteries", link:"/learn/understanding-lfp-batteries"}
+  { name:"Understanding LFP Batteries", link:"/learn/understanding-lfp-batteries"},
+  { name: "Future of Lithium UPS", link: "/learn/how-lithium-ups-challenges-traditional-ups-as-power-backup-of-the-future" }
 ];
 
 const LearnComp= () => {
