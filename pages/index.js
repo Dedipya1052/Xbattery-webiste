@@ -81,7 +81,7 @@ export default function Home({ media, recentBlogs }) {
         </title>
         <meta
           name="description"
-          content="Xbattery builds lithium battery packs in India, integrating electronics and software to help businesses, EVs, and grids store and access energy affordably."
+          content="Xbattery builds lithium battery packs and energy storage solutions in India, integrating electronics and software to help businesses, EVs, and grids store and access energy affordably."
         />
 
         {/* Open Graph Meta Tags for Facebook and LinkedIn */}

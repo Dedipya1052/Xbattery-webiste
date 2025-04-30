@@ -211,7 +211,7 @@ const Job1 = () => {
           </p>
         </div> */}
 
-        <div className="mt-[2rem] w-[95%] mx-auto">
+        {/* <div className="mt-[2rem] w-[95%] mx-auto">
             <div>
               <iframe
                 src="https://app.youform.com/forms/jfh1jwb6"
@@ -235,6 +235,25 @@ const Job1 = () => {
                 .
               </p>
             </div>
+          </div> */}
+
+          <div className="mt-[2rem] w-[95%] mx-auto">
+            <div className="bg-[#202020] border-[0.8px] border-yellow-400 rounded-lg p-8 text-center">
+              <h3 className="text-white text-2xl font-bold mb-4">
+                Applications Closed
+              </h3>
+
+              <p className="text-[#c5c5c5] text-sm mt-6">
+                Please check back later or explore other opportunities on our{" "}
+                <Link
+                  href="/careers"
+                  className="hover:underline text-[#c5c5c5]"
+                >
+                  Careers
+                </Link>
+                .
+              </p>
+            </div>
           </div>
           {/* <div className={classes.affiliateholder}>
           <Button
@@ -253,3 +272,7 @@ const Job1 = () => {
 };
 
 export default Job1;
+
+
+
+

@@ -70,7 +70,7 @@ export default function Blogs({ blogs }) {
         <title>
         Energy Storage Industry Research | Xbattery™ White Papers
         </title>
-        <meta name="description" content="Access in-depth research and white papers on energy storage, battery tech, and industry trends. Stay informed with Xbattery™'s expert insights."/>
+        <meta name="description" content="Explore cutting-edge insights into the rapidly evolving Energy Storage industry with Xbattery™ White Papers. Our in-depth research covers the latest trends, technologies, and innovations shaping the future of energy storage solutions."/>
 
         <meta property="og:image" content="/favicon.webp" />
       </Head>

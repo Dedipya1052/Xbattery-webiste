@@ -114,12 +114,14 @@ const Job1 = () => {
           <div className={classes.affiliateholder}>
             <h3 className={classes.h3inaffiliate}>Job Overview:</h3>
             <p className={classes.affPara}>
-              We are seeking a talented <span className=" font-bold">Senior PCB Design Engineer</span> with at least{" "}
-              <span className=" font-bold">5 years</span> of experience in
-              Battery Management Systems (BMS) and Power Electronics. The ideal
-              candidate will lead the design of high-performance, high-voltage
-              PCBs for energy storage solutions, ensuring compliance with safety
-              standards and delivering innovative, reliable designs.
+              We are seeking a talented{" "}
+              <span className=" font-bold">Senior PCB Design Engineer</span>{" "}
+              with at least <span className=" font-bold">5 years</span> of
+              experience in Battery Management Systems (BMS) and Power
+              Electronics. The ideal candidate will lead the design of
+              high-performance, high-voltage PCBs for energy storage solutions,
+              ensuring compliance with safety standards and delivering
+              innovative, reliable designs.
             </p>
           </div>
 
@@ -175,7 +177,7 @@ const Job1 = () => {
             </UnorderedList>
           </div>
 
-          <div className="mt-[2rem] w-[95%] mx-auto">
+          {/* <div className="mt-[2rem] w-[95%] mx-auto">
             <div>
               <iframe
                 src="https://app.youform.com/forms/jfh1jwb6"
@@ -196,6 +198,24 @@ const Job1 = () => {
                 >
                   Click here to open the form
                 </a>
+                .
+              </p>
+            </div>
+          </div> */}
+          <div className="mt-[2rem] w-[95%] mx-auto">
+            <div className="bg-[#202020] border-[0.8px] border-yellow-400 rounded-lg p-8 text-center">
+              <h3 className="text-white text-2xl font-bold mb-4">
+                Applications Closed
+              </h3>
+
+              <p className="text-[#c5c5c5] text-sm mt-6">
+                Please check back later or explore other opportunities on our{" "}
+                <Link
+                  href="/careers"
+                  className="hover:underline text-[#c5c5c5]"
+                >
+                  Careers
+                </Link>
                 .
               </p>
             </div>
