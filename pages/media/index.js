@@ -50,9 +50,17 @@ export default function Media({ blogs = [] }) {
   // Create static featured blogs with today's date
   const featuredStaticBlogs = [
     {
+      title: "India Must Step Up R&D Funding and Policy Push for Battery Storage: Interview",
+      description: "India added over 28 GW of renewable energy capacity in 2024, bringing the total to around 210 GW. However, to reach its 2030 target of 500 GW of non-fossil fuel energy and ensure a smoother energy transition, battery energy storage systems must complement renewables by addressing their intermittency.",
+      date: "2025-05-20T00:00:00.000Z",
+      categories: ["Featured"],
+      slug: "india-must-step-up-rd-funding",
+      externalLink: "https://www.mercomindia.com/india-must-step-up-rd-funding-and-policy-push-for-battery-storage-interview"
+    },
+    {
       title: "Xbattery Launches BharatBMS",
       description: "Xbattery, an energy storage solutions innovator based at T-Hub, Hyderabad, announced the official launch of BharatBMS, a high-voltage Battery Management System (BMS).",
-      date: today.toISOString(),
+      date: "2025-04-20T00:00:00.000Z",
       categories: ["Featured"],
       slug: "xbattery-launches-bharatbms",
       externalLink: "https://www.constructionworld.in/energy-infrastructure/power-and-renewable-energy/xbattery-launches-bharatbms/70706"
@@ -60,7 +68,7 @@ export default function Media({ blogs = [] }) {
     {
       title: "Powering India's Green Future, Xbattery Launches BharatBMS, A Homegrown Battery Management System To Supercharge Clean Energy Transition",
       description: "Powering India's Green Future, Xbattery Launches BharatBMS, A Homegrown Battery Management System To Supercharge Clean Energy Transition",
-      date: today.toISOString(),
+      date: "2025-04-18T00:00:00.000Z",
       categories: ["Featured"],
       slug: "powering-indias-green-future",
       externalLink: "https://solarquarter.com/2025/03/21/powering-indias-green-future-xbattery-launches-bharatbms-a-homegrown-battery-management-system-to-supercharge-clean-energy-transition/"
@@ -68,7 +76,7 @@ export default function Media({ blogs = [] }) {
     {
       title: "Xbattery's New BharatBMS Promises 15% Extra Battery Life",
       description: "Hyderabad-based Xbattery, an energy storage solutions innovator based at T-Hub, has launched BharatBMS, a high-voltage Battery Management System (BMS).",
-      date: today.toISOString(),
+      date: "2025-04-18T00:00:00.000Z",
       categories: ["Featured"],
       slug: "xbatterys-new-bharatbms-promises-15-extra-battery-life",
       externalLink: "https://www.saurenergy.com/ev-storage/xbatterys-new-bharatbms-promises-15-extra-battery-life"
@@ -76,15 +84,15 @@ export default function Media({ blogs = [] }) {
     {
       title: "Hyderabad Startup Unveils Indigenous Battery Tech Promising Longer Life and Efficiency",
       description: "Xbattery, an energy storage solutions innovator based at T-Hub in Hyderabad, has launched BharatBMS, a high-voltage Battery Management System (BMS) designed for homes, factories, EV fleets, and solar installations.",
-      date: today.toISOString(),
+      date: "2025-04-17T00:00:00.000Z",
       categories: ["Featured"],
       slug: "hyderabad-startup-unveils-bharatbms",
       externalLink: "https://www.manufacturingtodayindia.com/hyderabad-startup-unveils-indigenous-battery-tech"
     },
     {
-      title: "Xbattery Introduces BharatBMS: India’s First Homegrown Battery Management System to Boost Clean Energy Shift",
+      title: "Xbattery Introduces BharatBMS: India's First Homegrown Battery Management System to Boost Clean Energy Shift",
       description: "Xbattery, a leader in energy storage technology based in T-Hub, Hyderabad, has officially launched BharatBMS, a high-voltage Battery Management System (BMS) designed to address energy storage challenges across homes, factories, electric vehicles.",
-      date: today.toISOString(),
+      date: "2025-04-17T00:00:00.000Z",
       categories: ["Featured"],
       slug: "xbattery-introduces-bharatbms",
       externalLink: "https://themachinemaker.com/news/xbattery-introduces-bharatbms-indias-first-homegrown-battery-management-system-to-boost-clean-energy-shift/"
@@ -98,15 +106,11 @@ export default function Media({ blogs = [] }) {
     const contentfulBlogs = Array.isArray(blogs) ? blogs : [];
     const combinedBlogs = [...contentfulBlogs, ...featuredStaticBlogs];
     
-    // Sort each group by date (most recent first), but keep Contentful blogs on top
-    const sortedContentfulBlogs = [...contentfulBlogs].sort((a, b) => new Date(b.date) - new Date(a.date));
-    const sortedStaticBlogs = [...featuredStaticBlogs].sort((a, b) => new Date(b.date) - new Date(a.date));
+    // Sort all blogs by date (most recent first)
+    const sortedBlogs = combinedBlogs.sort((a, b) => new Date(b.date) - new Date(a.date));
     
-    // Combine the two sorted arrays with Contentful blogs first
-    const finalSortedBlogs = [...sortedContentfulBlogs, ...sortedStaticBlogs];
-    
-    setAllBlogs(finalSortedBlogs);
-    setFilteredBlogs(finalSortedBlogs); // Initial filtered state is all blogs
+    setAllBlogs(sortedBlogs);
+    setFilteredBlogs(sortedBlogs); // Initial filtered state is all blogs
   }, [blogs]);
 
   // Extract unique categories from all blogs
