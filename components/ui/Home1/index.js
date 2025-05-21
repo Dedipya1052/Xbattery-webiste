@@ -92,9 +92,9 @@ const Example = ({ media, recentBlogs }) => {
       size: "37 kgs",
       scalable: "15 kWh",
       certifications: {
-        one: "UL 1973",
-        two: "IEEE 154",
-        three: "IEC 62477-1",
+        one: "IS 17387",
+        two: "IEC 61000 Series",
+        three: "ROHS/UL 94V0",
       },
     },
     XBattery2: {
@@ -108,9 +108,9 @@ const Example = ({ media, recentBlogs }) => {
       size: "37 kgs",
       scalable: "15 kWh",
       certifications: {
-        one: "UL 1973",
-        two: "IEEE 154",
-        three: "IEC 62477-1",
+        one: "IS 17387",
+        two: "IEC 61000 Series",
+        three: "ROHS/UL 94V0",
       },
     },
   };
@@ -127,9 +127,9 @@ const Example = ({ media, recentBlogs }) => {
       size: "370 kgs",
       scalable: "150 kWh",
       certifications: {
-        one: "UL 1973",
-        two: "IEEE 154",
-        three: "IEC 62477-1",
+       one: "IS 17387",
+        two: "IEC 61000 Series",
+        three: "ROHS/UL 94V0",
       },
     },
     XBattery2: {
@@ -143,9 +143,9 @@ const Example = ({ media, recentBlogs }) => {
       size: "370 kgs",
       scalable: "150 kWh",
       certifications: {
-        one: "UL 1973",
-        two: "IEEE 154",
-        three: "IEC 62477-1",
+        one: "IS 17387",
+        two: "IEC 61000 Series",
+        three: "ROHS/UL 94V0",
       },
     },
   };
