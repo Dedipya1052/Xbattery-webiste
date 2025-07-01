@@ -25,7 +25,7 @@ const Contact = () => {
     try {
       // Send the email in JSON format to the API endpoint
       const res = await fetch(
-        "https://prod-24.centralindia.logic.azure.com:443/workflows/1a93b798d5c24a6c95c84e48b6eb9962/triggers/manual/paths/invoke?api-version=2016-06-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=Qpb9Rx187awSjEbySPJ4VwhAF3XtKElgKTas49gSVxM",
+        "https://a70b67b1955ee7fba12198dd1cf2e2.db.environment.api.powerplatform.com:443/powerautomate/automations/direct/workflows/3fcf5123d0a54bd28b0f50caba32ac9e/triggers/manual/paths/invoke/?api-version=1&tenantId=tId&environmentName=a70b67b1-955e-e7fb-a121-98dd1cf2e2db&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=bGUX_Lth_qV_26pM9x5AVZyisP0-TKA-A-mor-c05eQ",
         {
           method: "POST",
           headers: {
@@ -34,6 +34,7 @@ const Contact = () => {
           body: JSON.stringify({ email }), // Send email as JSON
         }
       );
+      //console.log(res);
 
       if (res.ok) {
         // Handle success

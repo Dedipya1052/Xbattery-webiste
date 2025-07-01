@@ -191,7 +191,7 @@ export default function BlogPage({ blog, blogs }) {
 
   async function sendDataToAPI(name, email) {
     try {
-      const response = await fetch("https://prod-28.centralindia.logic.azure.com:443/workflows/8eba286f82014c60bf52c465771cee58/triggers/manual/paths/invoke?api-version=2016-06-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=AYGySzWH5W8ipOTa8W6SbAusHUrUT0p0leXMEKx75V0", {
+      const response = await fetch("https://a70b67b1955ee7fba12198dd1cf2e2.db.environment.api.powerplatform.com:443/powerautomate/automations/direct/workflows/63109b2b69a04bda85ee3ea595bc36e4/triggers/manual/paths/invoke/?api-version=1&tenantId=tId&environmentName=a70b67b1-955e-e7fb-a121-98dd1cf2e2db&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=EtL1xsjVb5Udu_WFzB-fvdlhHY2P42MyEctq1aM_ehI", {
         method: "POST", // Use POST method
         headers: {
           "Content-Type": "application/json", // Send JSON data
@@ -203,8 +203,11 @@ export default function BlogPage({ blog, blogs }) {
         throw new Error(`Error: ${response.statusText}`);
       }
 
-      const data = await response.json();
-      console.log("Document inserted successfully:", data);
+      console.log(response);
+      
+
+      // const data = await response.json();
+      // console.log("Document inserted successfully:", data);
     } catch (error) {
       console.error("Error inserting document:", error);
     }
