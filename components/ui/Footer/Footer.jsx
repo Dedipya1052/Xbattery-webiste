@@ -33,16 +33,18 @@ const Footer = () => {
     ];
     
     const renewableEnergy = [
-      { name: "Solar Energy", link: "/learn/solar-energy" },
-      { name: "Wind Energy", link: "/learn/wind-energy" }, 
-      { name: "Geothermal Energy", link: "/learn/geothermal-energy" },
-    ];
-    
-    const electricVehicles = [
-      { name: "EV vs ICE Costs", link: "/learn/ev-vs-ice-costs" },
-      { name: "EV Charging", link: "/learn/ev-charging" },
-      { name: "Indian EV Market", link: "/learn/indian-ev-market" },
-    ];
+  { name: "Solar Energy", link: "/learn/solar-energy" },
+  { name: "Wind Energy", link: "/learn/wind-energy" }, 
+  { name: "Geothermal Energy", link: "/learn/geothermal-energy" },
+  { name: "Environmental Impact", link: "/learn/environmental-impact-of-renewable-energy-projects" },
+];
+
+const electricVehicles = [
+  { name: "EV vs ICE Costs", link: "/learn/ev-vs-ice-costs" },
+  { name: "EV Charging", link: "/learn/ev-charging" },
+  { name: "Indian EV Market", link: "/learn/indian-ev-market" },
+  { name: "EVs and the Environment", link: "/learn/understanding-the-impact-of-electric-vehicles-on-the-environment" }
+];
     
     const electricity = [
       { name: "India’s Electricity Sector", link: "/learn/indias-electricity-sector" },

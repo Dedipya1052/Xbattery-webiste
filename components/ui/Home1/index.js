@@ -317,7 +317,7 @@ const Example = ({ media, recentBlogs }) => {
           body: JSON.stringify({ email }), // Send email as JSON
         }
       );
-       console.log(res);
+       //console.log(res);
 
       if (res.ok) {
         // Handle success

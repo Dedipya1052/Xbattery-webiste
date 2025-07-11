@@ -203,7 +203,7 @@ export default function BlogPage({ blog, blogs }) {
         throw new Error(`Error: ${response.statusText}`);
       }
 
-      console.log(response);
+      //console.log(response);
       
 
       // const data = await response.json();
