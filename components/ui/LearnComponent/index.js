@@ -40,7 +40,8 @@ const electricity = [
 const grid = [
   { name: "Renewable Integration", link: "/learn/renewable-integration" }, 
   { name: "Smart Grid", link: "/learn/smart-grid" },
-  { name:"Understanding Smart Meters", link: "/learn/understanding-smart-meters"  }
+  { name:"Understanding Smart Meters", link: "/learn/understanding-smart-meters"  },
+  { name:"On-Grid vs Off-Grid", link: "/learn/understanding-the-differences-between-on-grid-and-off-grid-systems"  }
 ];
 
 const batteries = [
