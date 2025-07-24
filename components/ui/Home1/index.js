@@ -231,20 +231,35 @@ const Example = ({ media, recentBlogs }) => {
   const videoRef1 = useRef(null);
   const videoRef2 = useRef(null);
   const videoRef3 = useRef(null);
+  const videoRefHero2 = useRef(null);
+  const hasPlayedHero2 = useRef(false);
+  const [showHero2Text, setShowHero2Text] = useState(false);
 
   useEffect(() => {
     const handlePlayVideo = (entries) => {
       entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.currentTime = 0;
-          entry.target.play();
+        // For hero block 2: only play once
+        if (entry.target === videoRefHero2.current) {
+          if (entry.isIntersecting && !hasPlayedHero2.current) {
+            entry.target.currentTime = 0;
+            entry.target.play();
+            hasPlayedHero2.current = true;
+            setShowHero2Text(true); // Show text immediately
+          }
+          // Do NOT pause when not intersecting for hero2
         } else {
-          entry.target.pause();
+          // Default behavior for other videos
+          if (entry.isIntersecting) {
+            entry.target.currentTime = 0;
+            entry.target.play();
+          } else {
+            entry.target.pause();
+          }
         }
       });
     };
 
-    const observer = new IntersectionObserver(handlePlayVideo, {
+    const observer = new window.IntersectionObserver(handlePlayVideo, {
       threshold: 0.5, // Adjust this value as needed
     });
 
@@ -252,16 +267,18 @@ const Example = ({ media, recentBlogs }) => {
     const currentVideoRef1 = videoRef1.current;
     const currentVideoRef2 = videoRef2.current;
     const currentVideoRef3 = videoRef3.current;
+    const currentVideoRefHero2 = videoRefHero2.current;
 
     if (currentVideoRef1) observer.observe(currentVideoRef1);
     if (currentVideoRef2) observer.observe(currentVideoRef2);
     if (currentVideoRef3) observer.observe(currentVideoRef3);
+    if (currentVideoRefHero2) observer.observe(currentVideoRefHero2);
 
     return () => {
-      // Use the copied ref values for cleanup
       if (currentVideoRef1) observer.unobserve(currentVideoRef1);
       if (currentVideoRef2) observer.unobserve(currentVideoRef2);
       if (currentVideoRef3) observer.unobserve(currentVideoRef3);
+      if (currentVideoRefHero2) observer.unobserve(currentVideoRefHero2);
     };
   }, []);
 
@@ -474,7 +491,7 @@ const Example = ({ media, recentBlogs }) => {
         </nav>
 
         <div>
-          {/* hero block */}
+          {/* hero block 1*/}
           <LayoutEffect
             className="duration-1000 delay-300"
             isInviewState={{
@@ -484,7 +501,8 @@ const Example = ({ media, recentBlogs }) => {
           >
             <div className="relative w-full top-[-4rem] " id="xbattery5kwh">
               <video
-                className={`w-auto h-[85vh] md:w-full md:h-auto object-cover ${objectPosition}`}
+                ref={videoRef1} // add reference for this video
+                className={`w-auto h-[85vh] md:w-full md:h-auto object-cover object-center`}
                 autoPlay
                 muted
                 playsInline
@@ -499,41 +517,101 @@ const Example = ({ media, recentBlogs }) => {
                   }
                 }}
               >
-                <source src={`https:${videoUrl1}`} type="video/mp4" />
+                <source src="/videos/Xbattery-Hd.mp4" type="video/mp4" />
                 Your browser does not support the video tag.
               </video>
               <motion.div
                 ref={ref}
-                initial={{ x: "-100%" }}
-                animate={{ x: isInView ? 0 : "-100%" }}
-                transition={{ duration: 1, delay: 6 }}
-                // className="absolute top-8 left-0 w-full h-full flex flex-col items-start justify-center p-16 space-y-2"
-                className="absolute top-0 md:top-0 left-0 right-0 w-full h-full flex flex-col items-center md:items-start justify-center p-4 md:p-16 space-y-2 text-left"
+                initial={{ y: "-100%" }}
+                animate={{ y: isInView ? 0 : "-100%" }}
+                transition={{ duration: 1, delay: 7.55 }}
+                className="absolute top-0 left-0 right-0 w-full h-full flex flex-col items-center justify-center p-4 md:p-16 space-y-2 text-center"
               >
                 {/* <div className="text-white text-3xl lg:text-4xl font-medium mb-4">
                 Xbattery
               </div> */}
-                <h1 className="text-white text-4xl lg:text-6xl text-center md:text-left font-bold">
-                  Power Your Home 24/7 
+              <div className="mt-[-7.3rem] text-center flex flex-col items-center justify-center">
+                <h1 className="text-white text-4xl lg:text-5xl font-bold">
+                Introducing BharatBMS
                 </h1>
-                <h2 className="text-white text-lg lg:text-2xl text-center md:text-left font-light pt-5 pl-1">
-                  High-performance lithium battery packs designed for India
+                <h2 className="text-white text-lg lg:text-xl font-semilight pt-5 pl-1">
+                Scalable up to 800V for EVs, home backup, and energy storage
                 </h2>
-                <div className=" pt-8 flex gap-7 pl-2">
+                <div className="pt-8 flex gap-7 pl-2">
                   {/* <div className={styles.gradientButton}>Watch Video</div> */}
-                  <Button
-                    bg="transparent"
-                    border="1px"
-                    borderColor="white"
-                    color="white"
-                    _hover={{ bg: "transparent" }}
-                    onClick={scrollToEmail}
-                    className="min-h-[48px] min-w-[48px]"
-                  >
-                    Get Notified
-                  </Button>
+                  <Link href="/bharat-bms">
+                    <Button
+                      bg="transparent"
+                      border="1px"
+                      borderColor="white"
+                      color="white"
+                      _hover={{ bg: "transparent" }}
+                      className="min-h-[48px] min-w-[48px]"
+                    >
+                      Know More
+                    </Button>
+                  </Link>
+                </div>
                 </div>
               </motion.div>
+            </div>
+          </LayoutEffect>
+
+          {/* hero block 2*/}
+           <LayoutEffect
+            className="duration-1000 delay-300"
+            isInviewState={{
+              trueState: "opacity-1",
+              falseState: "opacity-0",
+            }}
+          >
+            <div className="relative w-full top-[-4rem] " id="xbattery5kwh">
+              <video
+                ref={videoRefHero2}
+                className={`w-auto h-[85vh] md:w-full md:h-auto object-cover ${objectPosition}`}
+                muted
+                playsInline
+                preload="none" // Load only metadata for better performance
+                onLoadedData={(e) => {
+                  if (e.target.readyState >= 3) {
+                    e.target.play().catch((error) => {
+                      // Autoplay will be handled by IntersectionObserver
+                    });
+                  }
+                }}
+              >
+                <source src={`https:${videoUrl1}`} type="video/mp4" />
+                Your browser does not support the video tag.
+              </video>
+              {showHero2Text && (
+                <motion.div
+                  ref={ref}
+                  initial={{ x: "-100%" }}
+                  animate={{ x: isInView ? 0 : "-100%" }}
+                  transition={{ duration: 1, delay: 6 }}
+                  className="absolute top-0 md:top-0 left-0 right-0 w-full h-full flex flex-col items-center md:items-start justify-center p-4 md:p-16 space-y-2 text-left"
+                >
+                  <h1 className="text-white text-4xl lg:text-6xl text-center md:text-left font-bold">
+                    Power Your Home 24/7 
+                  </h1>
+                  <h2 className="text-white text-lg lg:text-2xl text-center md:text-left font-light pt-5 pl-1">
+                    High-performance lithium battery packs designed for India
+                  </h2>
+                  <div className=" pt-8 flex gap-7 pl-2">
+                    <Button
+                      bg="transparent"
+                      border="1px"
+                      borderColor="white"
+                      color="white"
+                      _hover={{ bg: "transparent" }}
+                      onClick={scrollToEmail}
+                      className="min-h-[48px] min-w-[48px]"
+                    >
+                      Get Notified
+                    </Button>
+                  </div>
+                </motion.div>
+              )}
             </div>
           </LayoutEffect>
 
@@ -956,7 +1034,6 @@ const Example = ({ media, recentBlogs }) => {
                 <div className="w-full h-full flex justify-center items-center">
                   <video
                     className="w-full h-[65vh] md:h-[65vh] lg:h-[70vh] 2xl:h-[600px] object-cover"
-                    autoPlay
                     muted
                     playsInline
                     preload="none"
