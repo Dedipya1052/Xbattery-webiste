@@ -1,9 +1,31 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { ArrowRight, Database, Mail } from 'lucide-react';
 import Link from 'next/link';
 import DocsLayout from '@/components/ui/DocsLayout';
+import { useRouter } from 'next/router';
 
 const ApiHomePage = () => {
+  const router = useRouter();
+
+  // Ensure page scrolls to top when navigating from footer
+  useEffect(() => {
+    // Check if we're coming from a different page (not from internal navigation)
+    if (typeof window !== 'undefined') {
+      // Scroll to top when the page loads
+      window.scrollTo(0, 0);
+      
+      // Also handle route changes to ensure we're at the top
+      const handleRouteChange = () => {
+        window.scrollTo(0, 0);
+      };
+      
+      router.events.on('routeChangeComplete', handleRouteChange);
+      
+      return () => {
+        router.events.off('routeChangeComplete', handleRouteChange);
+      };
+    }
+  }, [router]);
   return (
     <DocsLayout>
       <div className="min-h-screen bg-gray-950">

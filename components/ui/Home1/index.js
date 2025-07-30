@@ -16,6 +16,7 @@ import Head from "next/head";
 
 
 const Example = ({ media, recentBlogs }) => {
+  const router = useRouter();
   const videoUrl1 = media?.video1?.fields?.file?.url;
 
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -25,6 +26,52 @@ const Example = ({ media, recentBlogs }) => {
   const handleMenuItemClick = () => {
     setMobileMenuOpen(false);
   };
+
+  // Enhanced anchor link handling for footer navigation
+  useEffect(() => {
+    const scrollToSection = (hash) => {
+      if (typeof window !== 'undefined' && hash) {
+        console.log('Looking for element with hash:', hash);
+        const element = document.getElementById(hash);
+        if (element) {
+          console.log('Found element:', element);
+          console.log('Element text content:', element.textContent?.substring(0, 100));
+          // Reduced header offset to prevent over-scrolling
+          const headerOffset = 60;
+          const elementPosition = element.getBoundingClientRect().top;
+          const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+          console.log('Scrolling to position:', offsetPosition);
+          window.scrollTo({
+            top: offsetPosition,
+            behavior: 'smooth'
+          });
+        } else {
+          console.log('Element not found for hash:', hash);
+        }
+      }
+    };
+
+    // Handle initial page load with hash
+    if (typeof window !== 'undefined' && window.location.hash) {
+      const hash = window.location.hash.substring(1);
+      setTimeout(() => scrollToSection(hash), 300);
+    }
+
+    // Handle route changes (when navigating from other pages)
+    const handleRouteChange = () => {
+      if (typeof window !== 'undefined' && window.location.hash) {
+        const hash = window.location.hash.substring(1);
+        setTimeout(() => scrollToSection(hash), 500);
+      }
+    };
+
+    router.events.on('routeChangeComplete', handleRouteChange);
+
+    return () => {
+      router.events.off('routeChangeComplete', handleRouteChange);
+    };
+  }, [router]);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -301,7 +348,6 @@ const Example = ({ media, recentBlogs }) => {
     }
   }, []);
 
-  const router = useRouter();
   const handleRedirect = () => {
     router.push("/learn"); // Adjust the path if needed
   };
@@ -499,7 +545,7 @@ const Example = ({ media, recentBlogs }) => {
               falseState: "opacity-0",
             }}
           >
-            <div className="relative w-full top-[-4rem] " id="xbattery5kwh">
+            <div className="relative w-full top-[-4rem] ">
               <video
                 ref={videoRef1} // add reference for this video
                 className={`w-auto h-[85vh] md:w-full md:h-auto object-cover object-center`}
@@ -1026,8 +1072,8 @@ const Example = ({ media, recentBlogs }) => {
           </AnimatedDiv>
 
           {/* 50 kWh Powerhouse */}
-          <div id="xbattery50kwh" className="mb-[8rem]"></div>
-          <div className="w-[95%] md:w-[75%] 2xl:w-[1450px] mx-auto  flex flex-col-reverse lg:flex-row justify-center items-center gap-[1rem] overflow-hidden">
+          <div className="mb-[8rem]"></div>
+          <div id="xbattery50kwh" className="w-[95%] md:w-[75%] 2xl:w-[1450px] mx-auto  flex flex-col-reverse lg:flex-row justify-center items-center gap-[1rem] overflow-hidden">
             {/* Video Section */}
             <div className="w-full lg:w-[55%] flex justify-center">
               <AnimatedDiv>
@@ -1197,6 +1243,7 @@ const Example = ({ media, recentBlogs }) => {
             )}
           </div>
 
+          {/* 50kwh video */}
           <AnimatedDiv>
             <div className="w-full">
               <video
