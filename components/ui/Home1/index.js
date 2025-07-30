@@ -576,15 +576,15 @@ const Example = ({ media, recentBlogs }) => {
                 {/* <div className="text-white text-3xl lg:text-4xl font-medium mb-4">
                 Xbattery
               </div> */}
-              <div className="mt-[-7.3rem] text-center flex flex-col items-center justify-center">
+              <div className="mt-[-12.3rem] text-center flex flex-col items-center justify-center">
                 <h1 className="text-white text-4xl lg:text-5xl font-bold">
                 Introducing BharatBMS
                 </h1>
                 <h2 className="text-white text-lg lg:text-xl font-semilight pt-5 pl-1">
                 Scalable up to 800V for EVs, home backup, and energy storage
                 </h2>
-                <div className="pt-8 flex gap-7 pl-2">
-                  {/* <div className={styles.gradientButton}>Watch Video</div> */}
+                {/* <div className="pt-8 flex gap-7 pl-2">
+                 
                   <Link href="/bharat-bms">
                     <Button
                       bg="transparent"
@@ -597,11 +597,59 @@ const Example = ({ media, recentBlogs }) => {
                       Know More
                     </Button>
                   </Link>
-                </div>
+                </div> */}
                 </div>
               </motion.div>
             </div>
           </LayoutEffect>
+
+
+          <AnimatedDiv>
+            <div className="w-full bg-[#181818] mt-[-11rem]">
+              <div
+                className="mt-[7rem] mb-[0rem] pt-[3rem] pb-[8rem] w-[94%] md:w-[90%] lg:w-[85%] xl:w-[80%] 2xl:w-[1450px] mx-auto "
+                // onClick={handleRedirect}
+              >
+                <div className="flex flex-col lg:flex-row items-center justify-center gap-[5%] p-6">
+                  <div className="w-full lg:w-[45%] mb-6 lg:mb-0">
+                    <Image
+                      src="/images/hero/bharat/chip1.png" // Replace with your image path
+                      alt="Energy Innovation"
+                      width={500} // Adjust width as needed
+                      height={300} // Adjust height as needed
+                      loading="lazy"
+                      className="rounded-lg w-full mx-auto xl:scale-[1.2] 2xl:scale-[1.0] opacity-[75%]"
+                    />
+                  </div>
+                  <div className="w-full lg:w-[50%] text-center lg:text-left">
+                    <h1
+                      className={`text-2xl md:text-3xl font-bold mb-4 ${styles.color} `}
+                    >
+                      BharatBMS
+                    </h1>
+                    <p className="text-base md:text-lg mb-6 text-white">
+                      India's first universal Battery Management System scales
+                      from 5kWh setups to megawatt applications, offering
+                      modular upgrades and reliable performance in tough power
+                      conditions.
+                    </p>
+                    <p className="text-base md:text-lg mb-6 text-white">
+                      Made in India with local components, it ensures fast
+                      support and customization while driving innovation in
+                      energy storage and EV products.
+                    </p>
+                    <Link href={"/bharat-bms"}>
+                      <button
+                        className={`px-6 py-3 rounded-lg font-bold text-white bg-transparent border-[2px] ${styles.gradientBorder}`}
+                      >
+                        Know More →
+                      </button>
+                    </Link>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </AnimatedDiv>
 
           {/* hero block 2*/}
            <LayoutEffect
@@ -1264,52 +1312,7 @@ const Example = ({ media, recentBlogs }) => {
 
           {/* Learn redirect */}
 
-          <AnimatedDiv>
-            <div className="w-full bg-[#181818]">
-              <div
-                className="mt-[7rem] mb-[0rem] pt-[3rem] pb-[4rem] w-[94%] md:w-[90%] lg:w-[85%] xl:w-[80%] 2xl:w-[1450px] mx-auto "
-                // onClick={handleRedirect}
-              >
-                <div className="flex flex-col lg:flex-row items-center justify-center gap-[5%] p-6">
-                  <div className="w-full lg:w-[45%] mb-6 lg:mb-0">
-                    <Image
-                      src="/images/hero/bharat/chip1.png" // Replace with your image path
-                      alt="Energy Innovation"
-                      width={500} // Adjust width as needed
-                      height={300} // Adjust height as needed
-                      loading="lazy"
-                      className="rounded-lg w-full mx-auto xl:scale-[1.2] 2xl:scale-[1.0] opacity-[75%]"
-                    />
-                  </div>
-                  <div className="w-full lg:w-[50%] text-center lg:text-left">
-                    <h1
-                      className={`text-2xl md:text-3xl font-bold mb-4 ${styles.color} `}
-                    >
-                      Introducing BharatBMS
-                    </h1>
-                    <p className="text-base md:text-lg mb-6 text-white">
-                      India's first universal Battery Management System scales
-                      from 5kWh setups to megawatt applications, offering
-                      modular upgrades and reliable performance in tough power
-                      conditions.
-                    </p>
-                    <p className="text-base md:text-lg mb-6 text-white">
-                      Made in India with local components, it ensures fast
-                      support and customization while driving innovation in
-                      energy storage and EV products.
-                    </p>
-                    <Link href={"/bharat-bms"}>
-                      <button
-                        className={`px-6 py-3 rounded-lg font-bold text-white bg-transparent border-[2px] ${styles.gradientBorder}`}
-                      >
-                        Know More →
-                      </button>
-                    </Link>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </AnimatedDiv>
+         
 
           <AnimatedDiv>
             <div className="w-full h-[400px] flex items-center justify-center">
