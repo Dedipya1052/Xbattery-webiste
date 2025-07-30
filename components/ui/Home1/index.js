@@ -575,7 +575,7 @@ const Example = ({ media, recentBlogs }) => {
               >
                 {/* <div className="text-white text-3xl lg:text-4xl font-medium mb-4">
                 Xbattery
-              </div> */}
+              </div> */} 
               <div className="mt-[-12.3rem] text-center flex flex-col items-center justify-center">
                 <h1 className="text-white text-4xl lg:text-5xl font-bold">
                 Introducing BharatBMS
