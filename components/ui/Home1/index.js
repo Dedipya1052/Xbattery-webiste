@@ -22,6 +22,12 @@ const Example = ({ media, recentBlogs }) => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const [isScrolled, setIsScrolled] = useState(false);
+  const [isEnergyStorageInView, setIsEnergyStorageInView] = useState(false);
+
+  const ref = useRef(null);
+  const ref1 = useRef(null);
+  const reference = useRef(null);
+  const energyStorageRef = useRef(null);
 
   const handleMenuItemClick = () => {
     setMobileMenuOpen(false);
@@ -80,6 +86,26 @@ const Example = ({ media, recentBlogs }) => {
       } else {
         setIsScrolled(false);
       }
+
+      // Check if energy storage section is in view
+      if (energyStorageRef.current) {
+        const rect = energyStorageRef.current.getBoundingClientRect();
+        const windowHeight = window.innerHeight;
+        const headerOffset = 300; // Increased from 100 to 300 to highlight earlier
+        
+        // Check if the section is in the viewport (when top is near the top of viewport)
+        const isInView = rect.top <= headerOffset;
+        
+        console.log('Energy Storage section:', {
+          top: rect.top,
+          bottom: rect.bottom,
+          isInView: isInView,
+          scrollY: window.scrollY
+        });
+        
+        setIsEnergyStorageInView(isInView);
+        console.log('Setting isEnergyStorageInView to:', isInView);
+      }
     };
 
     window.addEventListener("scroll", handleScroll);
@@ -89,9 +115,11 @@ const Example = ({ media, recentBlogs }) => {
     };
   }, []);
 
-  const ref = useRef(null);
-  const ref1 = useRef(null);
-  const reference = useRef(null);
+  // Debug useEffect to log state changes
+  useEffect(() => {
+    console.log('isEnergyStorageInView changed to:', isEnergyStorageInView);
+  }, [isEnergyStorageInView]);
+
   const isView = useInView(reference, { once: false });
   const isInView = useInView(ref, { once: true });
   const isInView1 = useInView(ref1, { triggerOnce: false });
@@ -447,8 +475,29 @@ const Example = ({ media, recentBlogs }) => {
             </Link>
 
             <div className="hidden lg:flex gap-7 items-center">
+              <button
+                onClick={(e) => {
+                  e.preventDefault();
+                  const element = document.getElementById("energystorage");
+                  if (element) {
+                    const headerOffset = 80;
+                    const elementPosition = element.getBoundingClientRect().top;
+                    const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+                    window.scrollTo({
+                      top: offsetPosition,
+                      behavior: "smooth",
+                    });
+                  }
+                }}
+                className={`text-lg font-medium transition-colors duration-300 ${
+                  isEnergyStorageInView
+                    ? "text-white"
+                    : "text-[#cacaca] hover:text-[#e6e6e6]"
+                }`}
+              >
+                Energy Storage
+              </button>
               {[
-                { href: "/", label: "Energy Storage" },
                 { href: "/bharat-bms", label: "BharatBMS" },
                 { href: "/about", label: "About" },
                 { href: "/blog", label: "Blog" },
@@ -501,8 +550,30 @@ const Example = ({ media, recentBlogs }) => {
 
           {mobileMenuOpen && (
             <div className="lg:hidden absolute top-16 left-0 right-0 bg-black text-white flex flex-col items-center p-4 space-y-4">
+              <button
+                onClick={(e) => {
+                  e.preventDefault();
+                  const element = document.getElementById("energystorage");
+                  if (element) {
+                    const headerOffset = 80;
+                    const elementPosition = element.getBoundingClientRect().top;
+                    const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+                    window.scrollTo({
+                      top: offsetPosition,
+                      behavior: "smooth",
+                    });
+                  }
+                  handleMenuItemClick();
+                }}
+                className={`text-lg font-medium transition-colors duration-300 ${
+                  isEnergyStorageInView
+                    ? "text-white"
+                    : "text-[#cacaca] hover:text-[#e6e6e6]"
+                }`}
+              >
+                Energy Storage
+              </button>
               {[
-                { href: "/", label: "Energy Storage" },
                 { href: "/bharat-bms", label: "BharatBMS" },
                 { href: "/about", label: "About" },
                 { href: "/blog", label: "Blog" },
@@ -652,6 +723,7 @@ const Example = ({ media, recentBlogs }) => {
           </AnimatedDiv>
 
           {/* hero block 2*/}
+          <div id="energystorage" ref={energyStorageRef}></div>
            <LayoutEffect
             className="duration-1000 delay-300"
             isInviewState={{
@@ -1121,8 +1193,8 @@ const Example = ({ media, recentBlogs }) => {
 
           {/* 50 kWh Powerhouse */}
           <div className="mb-[8rem]"></div>
-          <div id="xbattery50kwh" className="w-[95%] md:w-[75%] 2xl:w-[1450px] mx-auto  flex flex-col-reverse lg:flex-row justify-center items-center gap-[1rem] overflow-hidden">
-            {/* Video Section */}
+          {/* <div id="xbattery50kwh" className="w-[95%] md:w-[75%] 2xl:w-[1450px] mx-auto  flex flex-col-reverse lg:flex-row justify-center items-center gap-[1rem] overflow-hidden">
+           
             <div className="w-full lg:w-[55%] flex justify-center">
               <AnimatedDiv>
                 <div className="w-full h-full flex justify-center items-center">
@@ -1140,7 +1212,7 @@ const Example = ({ media, recentBlogs }) => {
               </AnimatedDiv>
             </div>
 
-            {/* Text Section */}
+           
             <div
               className="w-full lg:w-[50%] mt-6 md:mt-0 px-4 md:px-0"
               ref={reference}
@@ -1159,11 +1231,11 @@ const Example = ({ media, recentBlogs }) => {
                 </div>
               </motion.div>
             </div>
-          </div>
+          </div> */}
 
           {/* specifications 50kwh */}
 
-          <div className="mt-[7rem] mb-[3rem] sm:mb-[5rem] w-[94%] md:w-[90%] lg:w-[85%] xl:w-[80%] 2xl:w-[1450px] mx-auto">
+          {/* <div className="mt-[7rem] mb-[3rem] sm:mb-[5rem] w-[94%] md:w-[90%] lg:w-[85%] xl:w-[80%] 2xl:w-[1450px] mx-auto">
             <AnimatedDiv>
               <div className="flex flex-col gap-6 md:gap-0 md:flex-row justify-between items-center relative ">
                 <div
@@ -1173,7 +1245,7 @@ const Example = ({ media, recentBlogs }) => {
                 </div>
 
                 <div className="w-full md:w-[42%] flex flex-row gap-[2rem] md:gap-[1rem] justify-evenly relative">
-                  {/* Active border element */}
+                  
                   <div
                     className="absolute bottom-[-15px] h-[2px] bg-white transition-all duration-300 ease-in-out"
                     style={{
@@ -1182,7 +1254,7 @@ const Example = ({ media, recentBlogs }) => {
                     }}
                   />
 
-                  {/* Battery options */}
+                  
                   <div
                     onClick={() => handleBatteryChange("XBattery2")}
                     className={`cursor-pointer flex-1 text-center relative ${
@@ -1208,7 +1280,7 @@ const Example = ({ media, recentBlogs }) => {
               </div>
             </AnimatedDiv>
 
-            {/* Specifications for Xbattery1 */}
+           
             {activeBattery === "XBattery2" && (
               <AnimatedDiv>
                 <div className="mt-[4rem] flex flex-col gap-[1rem] pb-[4rem] border-b-[1px] border-[#2e2e2e]">
@@ -1233,7 +1305,7 @@ const Example = ({ media, recentBlogs }) => {
               </AnimatedDiv>
             )}
 
-            {/* Features for Xbattery2 */}
+           
             {activeBattery === "XBattery1" && (
               <AnimatedDiv>
                 <div className="mt-[4rem] flex flex-col gap-[1rem] pb-[4rem] border-b-[1px] border-[#2e2e2e]">
@@ -1289,10 +1361,10 @@ const Example = ({ media, recentBlogs }) => {
                 </div>
               </AnimatedDiv>
             )}
-          </div>
+          </div> */}
 
           {/* 50kwh video */}
-          <AnimatedDiv>
+          {/* <AnimatedDiv>
             <div className="w-full">
               <video
                 className={`w-auto h-[85vh] md:w-full md:h-auto object-cover ${objectPosition1}`}
@@ -1308,7 +1380,7 @@ const Example = ({ media, recentBlogs }) => {
                 Your browser does not support the video tag.
               </video>
             </div>
-          </AnimatedDiv>
+          </AnimatedDiv> */}
 
           {/* Learn redirect */}
 

@@ -70,7 +70,6 @@ const electricVehicles = [
 
 const products = [
   { name: "Xbattery 5kWh", link: "/#xbattery5kwh" },
-  { name: "Xbattery 50kWh", link: "/#xbattery50kwh" },
   { name: "BharatBMS", link: "/bharat-bms" }, 
 ];
 
@@ -154,12 +153,6 @@ const resources = [
                   <h3 className={styles.footerSubheading}>Products</h3>
                   <Link href="/#xbattery5kwh" className={styles.footerElements}>
                     Xbattery 5kWh
-                  </Link>
-                  <Link
-                    href="/#xbattery50kwh"
-                    className={styles.footerElements}
-                  >
-                    Xbattery 50kWh
                   </Link>
                   <Link href="/bharat-bms" className={styles.footerElements}>
                     BharatBMS

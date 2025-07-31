@@ -36,6 +36,69 @@ const Navbar = () => {
     setIsMenuOpen(false);
   };
 
+  // Handle hash navigation on page load
+  useEffect(() => {
+    const scrollToSection = (hash) => {
+      if (typeof window !== 'undefined' && hash) {
+        const element = document.getElementById(hash);
+        if (element) {
+          const headerOffset = 80;
+          const elementPosition = element.getBoundingClientRect().top;
+          const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+          window.scrollTo({
+            top: offsetPosition,
+            behavior: 'smooth'
+          });
+        }
+      }
+    };
+
+    // Handle initial page load with hash
+    if (typeof window !== 'undefined' && window.location.hash) {
+      const hash = window.location.hash.substring(1);
+      setTimeout(() => scrollToSection(hash), 300);
+    }
+
+    // Handle route changes (when navigating from other pages)
+    const handleRouteChange = () => {
+      if (typeof window !== 'undefined' && window.location.hash) {
+        const hash = window.location.hash.substring(1);
+        setTimeout(() => scrollToSection(hash), 500);
+      }
+    };
+
+    router.events.on('routeChangeComplete', handleRouteChange);
+
+    return () => {
+      router.events.off('routeChangeComplete', handleRouteChange);
+    };
+  }, [router]);
+
+  // Function to handle scroll to energy storage section
+  const scrollToEnergyStorage = (event) => {
+    event.preventDefault();
+    
+    // If we're not on the home page, navigate to home page first
+    if (router.pathname !== "/") {
+      router.push("/#energystorage");
+      return;
+    }
+    
+    // If we're already on the home page, scroll to the section
+    const element = document.getElementById("energystorage");
+    if (element) {
+      const headerOffset = 80; // Adjust this value to match your header height
+      const elementPosition = element.getBoundingClientRect().top;
+      const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: "smooth",
+      });
+    }
+  };
+
   return (
     <>
       <Head>
@@ -60,8 +123,17 @@ const Navbar = () => {
               </Link>
 
               <div className="hidden lg:flex gap-7 items-center">
+                <button
+                  onClick={scrollToEnergyStorage}
+                  className={`text-lg font-medium transition-colors duration-300 ${
+                    currentPath === "/"
+                      ? "text-white"
+                      : "text-[#cacaca] hover:text-[#e6e6e6]"
+                  }`}
+                >
+                  Energy Storage
+                </button>
                 {[
-                  { href: "/", label: "Energy Storage" },
                   { href: "/bharat-bms", label: "BharatBMS" },
                   { href: "/about", label: "About" },
                   { href: "/blog", label: "Blog" },
@@ -114,8 +186,20 @@ const Navbar = () => {
 
             {mobileMenuOpen && (
               <div className="lg:hidden absolute top-16 left-0 right-0 bg-black text-white flex flex-col items-center p-4 space-y-4">
+                <button
+                  onClick={(e) => {
+                    scrollToEnergyStorage(e);
+                    handleMenuItemClick();
+                  }}
+                  className={`text-lg font-medium transition-colors duration-300 ${
+                    currentPath === "/"
+                      ? "text-white"
+                      : "text-[#cacaca] hover:text-[#e6e6e6]"
+                  }`}
+                >
+                  Energy Storage
+                </button>
                 {[
-                  { href: "/", label: "Energy Storage" },
                   { href: "/bharat-bms", label: "BharatBMS" },
                   { href: "/about", label: "About" },
                   { href: "/blog", label: "Blog" },
@@ -168,14 +252,15 @@ const Navbar = () => {
                 </div>
                 <div className="hidden lg:flex flex-col md:flex-row gap-[1rem] md:gap-[2rem] text-center md:text-left">
                   <div
-                    className={`text-[1rem] md:text-[1.2rem] transition-all duration-200 
+                    className={`text-[1rem] md:text-[1.2rem] transition-all duration-200 cursor-pointer
                 ${
                   currentPath === "/"
                     ? "text-[#2faf2f]"
                     : "hover:text-[#45c945]"
                 }`}
+                    onClick={scrollToEnergyStorage}
                   >
-                    <Link href="/">Energy Storage</Link>
+                    Energy Storage
                   </div>
                   <div
                     className={`text-[1rem] md:text-[1.2rem] transition-all duration-200 
@@ -269,18 +354,20 @@ const Navbar = () => {
                       : "translate-y-[-20px] opacity-0"
                   }`}
                 >
-                  <Link
-                    href="/"
-                    className={`block text-[1rem] transition-all duration-200 mb-2 
+                  <div
+                    className={`block text-[1rem] transition-all duration-200 mb-2 cursor-pointer
                 ${
                   currentPath === "/"
                     ? "text-[#2faf2f]"
                     : "hover:text-[#45c945]"
                 }`}
-                    onClick={closeMenu}
+                    onClick={(e) => {
+                      scrollToEnergyStorage(e);
+                      closeMenu();
+                    }}
                   >
                     Energy Storage
-                  </Link>
+                  </div>
                   <Link
                     href="/bharat-bms"
                     className={`block text-[1rem] transition-all duration-200 mb-2 
