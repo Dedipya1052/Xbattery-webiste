@@ -49,7 +49,8 @@ const electricVehicles = [
     const electricity = [
       { name: "India’s Electricity Sector", link: "/learn/indias-electricity-sector" },
       { name: "Power Purchase Agreement", link: "/learn/power-purchase-agreement" },
-      { name: "Indian Electricity Terminologies", link: "/learn/understanding-the-terminologies-in-the-indian-electricity-sector" }
+      { name: "Indian Electricity Terminologies", link: "/learn/understanding-the-terminologies-in-the-indian-electricity-sector" },
+      { name: "Why Our Power Goes Out", link: "/learn/why-our-power-goes-out" }
     ];
     
     const grid = [

@@ -50,6 +50,14 @@ export default function Media({ blogs = [] }) {
   // Create static featured blogs with today's date
   const featuredStaticBlogs = [
     {
+      title: "Xbattery's Indigenous BMS That's Chemical Agnostic?",
+      description: "Hyderabad-based deep tech startup Xbattery is developing intelligent, secure BMS solutions to power india's clean energy & electric mobility shift.",
+      date: "2025-08-04T00:00:00.000Z",
+      categories: ["Featured"],
+      slug: "xbatterys-indigenous-bms-chemical-agnostic",
+      externalLink: "https://online.fliphtml5.com/oxomv/kfyc/#p=54"
+    },
+    {
       title: "India Must Step Up R&D Funding and Policy Push for Battery Storage: Interview",
       description: "India added over 28 GW of renewable energy capacity in 2024, bringing the total to around 210 GW. However, to reach its 2030 target of 500 GW of non-fossil fuel energy and ensure a smoother energy transition, battery energy storage systems must complement renewables by addressing their intermittency.",
       date: "2025-05-20T00:00:00.000Z",

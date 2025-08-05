@@ -1,11 +1,11 @@
 import EnergyContributionDashboard1 from "@/components/ui/DashboardComp";
 import React from "react";
 
-const DashBoardJune = () => {
+const DashBoardFebruary = () => {
   return (
     <div>
-      <EnergyContributionDashboard1 month={"june"} />
+      <EnergyContributionDashboard1 month={"february"} />
     </div>
   );
 };
-export default DashBoardJune;
+export default DashBoardFebruary; 

@@ -21,6 +21,154 @@ import Head from "next/head";
 
 const energyData = {
 
+  june: {
+    data: [
+      {
+        name: "Thermal",
+        barName: "Thermal",
+        value: 243009.41,
+        percentage: 50.00,
+        color: "#4A545D",
+        hoverColor: "#2F353D",
+      },
+      {
+        name: "Solar, Wind & Other",
+        barName: "Solar, Wind & Oth",
+        value: 184638.15,
+        percentage: 37.99,
+        color: "#4B9C5E",
+        hoverColor: "#3B7A4D",
+      },
+      {
+        name: "Hydro",
+        barName: "Hydro",
+        value: 49622.04,
+        percentage: 10.21,
+        color: "#5B9BD5",
+        hoverColor: "#4388B6",
+      },
+      {
+        name: "Nuclear",
+        barName: "Nuclear",
+        value: 8749.22,
+        percentage: 1.81,
+        color: "#7B5C9E",
+        hoverColor: "#5E4B7D",
+      }
+    ],
+    total: 486018.82
+  },
+  may: {
+    data: [
+      {
+        name: "Thermal",
+        barName: "Thermal",
+        value: 240077.84,
+        percentage: 50.48,
+        color: "#4A545D",
+        hoverColor: "#2F353D",
+      },
+      {
+        name: "Solar, Wind & Other",
+        barName: "Solar, Wind & Oth",
+        value: 178821.84,
+        percentage: 37.60,
+        color: "#4B9C5E",
+        hoverColor: "#3B7A4D",
+      },
+      {
+        name: "Hydro",
+        barName: "Hydro",
+        value: 47939.47,
+        percentage: 10.08,
+        color: "#5B9BD5",
+        hoverColor: "#4388B6",
+      },
+      {
+        name: "Nuclear",
+        barName: "Nuclear",
+        value: 8751.85,
+        percentage: 1.85,
+        color: "#7B5C9E",
+        hoverColor: "#5E4B7D",
+      }
+    ],
+    total: 475590
+  },
+  april: {
+    data: [
+      {
+        name: "Thermal",
+        barName: "Thermal",
+        value: 249844.64,
+        percentage: 51.42,
+        color: "#4A545D",
+        hoverColor: "#2F353D",
+      },
+      {
+        name: "Solar, Wind & Other",
+        barName: "Solar, Wind & Oth",
+        value: 180089.17,
+        percentage: 37.08,
+        color: "#4B9C5E",
+        hoverColor: "#3B7A4D",
+      },
+      {
+        name: "Hydro",
+        barName: "Hydro",
+        value: 46888.59,
+        percentage: 9.65,
+        color: "#5B9BD5",
+        hoverColor: "#4388B6",
+      },
+      {
+        name: "Nuclear",
+        barName: "Nuclear",
+        value: 9067.60,
+        percentage: 1.85,
+        color: "#7B5C9E",
+        hoverColor: "#5E4B7D",
+      }
+    ],
+    total: 485890
+  },
+  march: {
+    data: [
+      {
+        name: "Thermal",
+        barName: "Thermal",
+        value: 250247.67,
+        percentage: 52.15,
+        color: "#4A545D",
+        hoverColor: "#2F353D",
+      },
+      {
+        name: "Solar, Wind & Other",
+        barName: "Solar, Wind & Oth",
+        value: 173992.76,
+        percentage: 36.23,
+        color: "#4B9C5E",
+        hoverColor: "#3B7A4D",
+      },
+      {
+        name: "Hydro",
+        barName: "Hydro",
+        value: 47400.18,
+        percentage: 9.87,
+        color: "#5B9BD5",
+        hoverColor: "#4388B6",
+      },
+      {
+        name: "Nuclear",
+        barName: "Nuclear",
+        value: 8604.39,
+        percentage: 1.75,
+        color: "#7B5C9E",
+        hoverColor: "#5E4B7D",
+      }
+    ],
+    total: 480245
+  },
   february: {
    data: [
       {
@@ -331,7 +479,11 @@ const EnergyContributionDashboard1 = ({month}) => {
     november: "November",
     december: "December",
     january:"January",
-    february:"February"
+    february:"February",
+    march: "March",
+    april: "April",
+    may: "May",
+    june: "June"
   };
 
   const CustomTooltip = ({ active, payload }) => {
@@ -362,7 +514,7 @@ const EnergyContributionDashboard1 = ({month}) => {
               <td className="border border-gray-300 px-4 py-2">{item.name}</td>
               <td className="border border-gray-300 px-4 py-2 text-center">
                 <div className="text-right w-[60px]">
-                  {item.percentage}%
+                  {item.percentage.toFixed(2)}%
                 </div>
               </td>
             </tr>
@@ -414,7 +566,12 @@ const EnergyContributionDashboard1 = ({month}) => {
           content={`Explore India's energy contributions for ${monthLabels[selectedMonth]} ${currentYear}. Learn about thermal, renewable, hydro, and nuclear energy sources.`}
         />
         <meta property="og:type" content="website" />
-        {selectedMonth !== "november" && (
+        {selectedMonth === "june" ? (
+          <meta
+            property="og:url"
+            content="https://xbattery.energy/learn/indian-energy-mix"
+          />
+        ) : selectedMonth !== "november" && (
           <meta
             property="og:url"
             content={`https://xbattery.energy/learn/indian-energy-mix-${selectedMonth}-${currentYear}`}
@@ -427,7 +584,12 @@ const EnergyContributionDashboard1 = ({month}) => {
 
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta charSet="UTF-8" />
-        {selectedMonth !== "november" && (
+        {selectedMonth === "june" ? (
+          <link
+            rel="canonical"
+            href="https://xbattery.energy/learn/indian-energy-mix"
+          />
+        ) : selectedMonth !== "november" && (
           <link
             rel="canonical"
             href={`https://xbattery.energy/learn/indian-energy-mix-${selectedMonth}-${currentYear}`}
@@ -437,22 +599,38 @@ const EnergyContributionDashboard1 = ({month}) => {
 
       <div className={`${styles.head1} relative `}>
         <div className="fixed top-32 left-2 w-[120px] hidden lg:block">
-          <div className="bg-gray-100 p-2 rounded-md shadow-md">
-            <h3 className="text-sm font-semibold text-center mb-2">2025</h3>
+          <div className="bg-gray-100 p-2 rounded-md shadow-md max-h-[300px] overflow-y-auto pb-4">
+            <h3 className="text-sm font-semibold text-center mb-2 sticky top-0 bg-gray-100 z-10">2025</h3>
             <ul className="space-y-1">
               {[
                 {
                   month: "january",
-
                   displayName: "January",
-
                   link: "learn/indian-energy-mix-january-2025",
                 },
                 {
                   month: "february",
-
                   displayName: "February",
-
+                  link: "learn/indian-energy-mix-february-2025",
+                },
+                {
+                  month: "march",
+                  displayName: "March",
+                  link: "learn/indian-energy-mix-march-2025",
+                },
+                {
+                  month: "april",
+                  displayName: "April",
+                  link: "learn/indian-energy-mix-april-2025",
+                },
+                {
+                  month: "may",
+                  displayName: "May",
+                  link: "learn/indian-energy-mix-may-2025",
+                },
+                {
+                  month: "june",
+                  displayName: "June",
                   link: "learn/indian-energy-mix",
                 },
               ].map(({ month, displayName, link }) => (
@@ -474,7 +652,7 @@ const EnergyContributionDashboard1 = ({month}) => {
                 </li>
               ))}
             </ul>
-            <h3 className="text-sm font-semibold text-center mb-2 mt-3">
+            <h3 className="text-sm font-semibold text-center mb-2 mt-3 sticky top-0 bg-gray-100 z-10">
               2024
             </h3>
             <ul className="space-y-1">
@@ -531,14 +709,29 @@ const EnergyContributionDashboard1 = ({month}) => {
             Indian Energy Mix - {monthLabels[selectedMonth]} {currentYear}
           </h1>
           <div className="text-lg text-center mt-[2rem] mb-[2rem]">
-            India's renewable energy mix is steadily growing, with Solar, Wind &
-            Other contributing {energyData[selectedMonth].data[1].percentage}%.
-            Thermal power remains the largest source at{" "}
-            {energyData[selectedMonth].data[0].percentage}%, while Hydro and
-            Nuclear account for {energyData[selectedMonth].data[2].percentage}%
-            and {energyData[selectedMonth].data[3].percentage}%, respectively,
-            reflecting a diverse energy mix as of {monthLabels[selectedMonth]}{" "}
-            {currentYear}.
+            {energyData[selectedMonth].data[1].percentage > 0 ? (
+              <>
+                India's renewable energy mix is steadily growing, with Solar, Wind &
+                Other contributing {energyData[selectedMonth].data[1].percentage}%.
+                Thermal power remains the largest source at{" "}
+                {energyData[selectedMonth].data[0].percentage}%, while Hydro and
+                Nuclear account for {energyData[selectedMonth].data[2].percentage}%
+                and {energyData[selectedMonth].data[3].percentage}%, respectively,
+                reflecting a diverse energy mix as of {monthLabels[selectedMonth]}{" "}
+                {currentYear}.
+              </>
+            ) : (
+              <>
+                India's energy mix shows Thermal power as the dominant source at{" "}
+                {energyData[selectedMonth].data[0].percentage}%, with Hydro and
+                Nuclear contributing {energyData[selectedMonth].data[2].percentage}%
+                and {energyData[selectedMonth].data[3].percentage}%, respectively.
+                Solar, Wind & Other sources show minimal contribution at{" "}
+                {energyData[selectedMonth].data[1].percentage}%, reflecting the
+                seasonal energy patterns as of {monthLabels[selectedMonth]}{" "}
+                {currentYear}.
+              </>
+            )}
           </div>
 
           <div className="mt-[3rem]">
@@ -744,9 +937,27 @@ const EnergyContributionDashboard1 = ({month}) => {
                   },
                   {
                     month: "february",
-
                     displayName: "February",
-
+                    link: "learn/indian-energy-mix-february-2025",
+                  },
+                  {
+                    month: "march",
+                    displayName: "March",
+                    link: "learn/indian-energy-mix-march-2025",
+                  },
+                  {
+                    month: "april",
+                    displayName: "April",
+                    link: "learn/indian-energy-mix-april-2025",
+                  },
+                  {
+                    month: "may",
+                    displayName: "May",
+                    link: "learn/indian-energy-mix-may-2025",
+                  },
+                  {
+                    month: "june",
+                    displayName: "June",
                     link: "learn/indian-energy-mix",
                   },
                 ].map(({ month, displayName, link }) => (
