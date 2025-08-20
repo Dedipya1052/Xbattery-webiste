@@ -4,7 +4,7 @@ import React from "react";
 const DashBoardApril = () => {
   return (
     <div>
-      <EnergyContributionDashboard1 month={"april"} />
+      <EnergyContributionDashboard1 monthKey={"april"} />
     </div>
   );
 };

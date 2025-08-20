@@ -76,19 +76,18 @@ export default function Home({ media, recentBlogs }) {
           content="XBattery, Giant Batteries, Energy Storage, BMS, IoT, Digital Twins, AI, Energy Transformation, Advanced BMS, Battery Management, Smart Batteries, Indian Energy, Renewable Energy"
         />
         <title>
-          Xbattery™ - India's First Unified BMS for Energy Storage & EVs |
-          Advanced Battery Packs
+         Xbattery™ | Unified Battery Management System (BMS) & Advanced Energy Storage Solutions in India
         </title>
         <meta
           name="description"
-          content="Xbattery builds lithium battery packs and energy storage solutions in India, integrating electronics and software to help businesses, EVs, and grids store and access energy affordably."
+          content="Xbattery™ provides advanced battery packs, energy storage systems, and India’s first unified BMS for EVs, renewable energy, and smart grid integration."
         />
 
         {/* Open Graph Meta Tags for Facebook and LinkedIn */}
         <meta property="og:type" content="website" />
         <meta
           property="og:title"
-          content="XBattery™ - India's First Unified BMS for Energy Storage & EVs"
+          content="Xbattery™ | Unified Battery Management System (BMS) & Advanced Energy Storage Solutions in India"
         />
         <meta
           property="og:description"

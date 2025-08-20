@@ -21,6 +21,43 @@ import Head from "next/head";
 
 const energyData = {
 
+  july: {
+    data: [
+      {
+        name: "Thermal",
+        barName: "Thermal",
+        value: 243560.32,
+        percentage: 49.70,
+        color: "#4A545D",
+        hoverColor: "#2F353D",
+      },
+      {
+        name: "Solar, Wind & Other",
+        barName: "Solar, Wind & Oth",
+        value: 187693.37,
+        percentage: 38.30,
+        color: "#4B9C5E",
+        hoverColor: "#3B7A4D",
+      },
+      {
+        name: "Hydro",
+        barName: "Hydro",
+        value: 49496.16,
+        percentage: 10.10,
+        color: "#5B9BD5",
+        hoverColor: "#4388B6",
+      },
+      {
+        name: "Nuclear",
+        barName: "Nuclear",
+        value: 8811.10,
+        percentage: 1.80,
+        color: "#7B5C9E",
+        hoverColor: "#5E4B7D",
+      }
+    ],
+    total: 490061
+  },
   june: {
     data: [
       {
@@ -317,7 +354,7 @@ const energyData = {
     ],
     total: 456757
   },
-  july: {
+  july2024: {
     data: [
       {
         name: "Thermal",
@@ -461,14 +498,14 @@ const renderCustomLabel = ({ cx, cy, midAngle, outerRadius, percent }) => {
 };
 
 const determineYear = (month) => {
-  const monthsIn2024 = ['july', 'august', 'september', 'november', 'december'];
+  const monthsIn2024 = ['july2024', 'august', 'september', 'november', 'december'];
   return monthsIn2024.includes(month) ? 2024 : 2025;
 };
 
 
-const EnergyContributionDashboard1 = ({month}) => {
+const EnergyContributionDashboard1 = ({monthKey}) => {
   const [activeIndex, setActiveIndex] = useState(null);
-  const [selectedMonth, setSelectedMonth] = useState(month);
+  const [selectedMonth, setSelectedMonth] = useState(monthKey);
   const currentYear = determineYear(selectedMonth);
   const currentEnergyData = energyData[selectedMonth].data;
 
@@ -566,12 +603,12 @@ const EnergyContributionDashboard1 = ({month}) => {
           content={`Explore India's energy contributions for ${monthLabels[selectedMonth]} ${currentYear}. Learn about thermal, renewable, hydro, and nuclear energy sources.`}
         />
         <meta property="og:type" content="website" />
-        {selectedMonth === "june" ? (
+        {selectedMonth === "july" ? (
           <meta
             property="og:url"
             content="https://xbattery.energy/learn/indian-energy-mix"
           />
-        ) : selectedMonth !== "november" && (
+        ) : selectedMonth !== "november" && selectedMonth !== "july2024" && (
           <meta
             property="og:url"
             content={`https://xbattery.energy/learn/indian-energy-mix-${selectedMonth}-${currentYear}`}
@@ -584,12 +621,12 @@ const EnergyContributionDashboard1 = ({month}) => {
 
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta charSet="UTF-8" />
-        {selectedMonth === "june" ? (
+        {selectedMonth === "july" ? (
           <link
             rel="canonical"
             href="https://xbattery.energy/learn/indian-energy-mix"
           />
-        ) : selectedMonth !== "november" && (
+        ) : selectedMonth !== "november" && selectedMonth !== "july2024" && (
           <link
             rel="canonical"
             href={`https://xbattery.energy/learn/indian-energy-mix-${selectedMonth}-${currentYear}`}
@@ -605,35 +642,47 @@ const EnergyContributionDashboard1 = ({month}) => {
               {[
                 {
                   month: "january",
+                  monthKey: "january",
                   displayName: "January",
                   link: "learn/indian-energy-mix-january-2025",
                 },
                 {
                   month: "february",
+                  monthKey: "february",
                   displayName: "February",
                   link: "learn/indian-energy-mix-february-2025",
                 },
                 {
                   month: "march",
+                  monthKey: "march",
                   displayName: "March",
                   link: "learn/indian-energy-mix-march-2025",
                 },
                 {
                   month: "april",
+                  monthKey: "april",
                   displayName: "April",
                   link: "learn/indian-energy-mix-april-2025",
                 },
                 {
                   month: "may",
+                  monthKey: "may",
                   displayName: "May",
                   link: "learn/indian-energy-mix-may-2025",
                 },
                 {
                   month: "june",
+                  monthKey: "june",
                   displayName: "June",
+                  link: "learn/indian-energy-mix-june-2025",
+                },
+                {
+                  month: "july",
+                  monthKey: "july",
+                  displayName: "July",
                   link: "learn/indian-energy-mix",
                 },
-              ].map(({ month, displayName, link }) => (
+              ].map(({ month, monthKey, displayName, link }) => (
                 <li key={month}>
                   <a
                     href={`/${link}`}
@@ -642,7 +691,7 @@ const EnergyContributionDashboard1 = ({month}) => {
                     //   setSelectedMonth(month);
                     // }}
                     className={`block text-sm px-2 py-1 rounded-md text-center cursor-pointer ${
-                      month === selectedMonth
+                      (monthKey === selectedMonth && currentYear === 2025)
                         ? "bg-[#777575] text-white font-semibold"
                         : "bg-gray-200 text-gray-600"
                     }`}
@@ -659,30 +708,35 @@ const EnergyContributionDashboard1 = ({month}) => {
               {[
                 {
                   month: "july",
+                  monthKey: "july2024",
                   displayName: "July",
                   link: "learn/indian-energy-mix-july-2024",
                 },
                 {
                   month: "august",
+                  monthKey: "august",
                   displayName: "August",
                   link: "learn/indian-energy-mix-august-2024",
                 },
                 {
                   month: "september",
+                  monthKey: "september",
                   displayName: "September",
                   link: "learn/indian-energy-mix-september-2024",
                 },
                 {
                   month: "november",
+                  monthKey: "november",
                   displayName: "November",
                   link: "learn/indian-energy-mix-november-2024",
                 },
                 {
                   month: "december",
+                  monthKey: "december",
                   displayName: "December",
                   link: "learn/indian-energy-mix-december-2024",
                 },
-              ].map(({ month, displayName, link }) => (
+              ].map(({ month, monthKey, displayName, link }) => (
                 <li key={month}>
                   <a
                     href={`/${link}`}
@@ -691,7 +745,7 @@ const EnergyContributionDashboard1 = ({month}) => {
                     //   setSelectedMonth(month);
                     // }}
                     className={`block text-sm px-2 py-1 rounded-md text-center cursor-pointer ${
-                      month === selectedMonth
+                      (monthKey === selectedMonth && currentYear === 2024)
                         ? "bg-[#777575] text-white font-semibold"
                         : "bg-gray-200 text-gray-600"
                     }`}
@@ -932,35 +986,47 @@ const EnergyContributionDashboard1 = ({month}) => {
                 {[
                   {
                     month: "january",
+                    monthKey: "january",
                     displayName: "January",
                     link: "learn/indian-energy-mix-january-2025",
                   },
                   {
                     month: "february",
+                    monthKey: "february",
                     displayName: "February",
                     link: "learn/indian-energy-mix-february-2025",
                   },
                   {
                     month: "march",
+                    monthKey: "march",
                     displayName: "March",
                     link: "learn/indian-energy-mix-march-2025",
                   },
                   {
                     month: "april",
+                    monthKey: "april",
                     displayName: "April",
                     link: "learn/indian-energy-mix-april-2025",
                   },
                   {
                     month: "may",
+                    monthKey: "may",
                     displayName: "May",
                     link: "learn/indian-energy-mix-may-2025",
                   },
                   {
                     month: "june",
+                    monthKey: "june",
                     displayName: "June",
+                    link: "learn/indian-energy-mix-june-2025",
+                  },
+                  {
+                    month: "july",
+                    monthKey: "july",
+                    displayName: "July",
                     link: "learn/indian-energy-mix",
                   },
-                ].map(({ month, displayName, link }) => (
+                ].map(({ month, monthKey, displayName, link }) => (
                   <li key={month}>
                     <a
                       href={`/${link}`}
@@ -970,7 +1036,7 @@ const EnergyContributionDashboard1 = ({month}) => {
                       //   window.scrollTo({ top: 0, behavior: "smooth" });
                       // }}
                       className={`block text-sm px-2 py-1 rounded-md text-center ${
-                        month === selectedMonth
+                        (monthKey === selectedMonth && currentYear === 2025)
                           ? "bg-[#777575] text-white font-semibold"
                           : "bg-gray-200 text-gray-600"
                       }`}
@@ -985,30 +1051,35 @@ const EnergyContributionDashboard1 = ({month}) => {
                 {[
                   {
                     month: "july",
+                    monthKey: "july2024",
                     displayName: "July",
                     link: "learn/indian-energy-mix-july-2024",
                   },
                   {
                     month: "august",
+                    monthKey: "august",
                     displayName: "August",
                     link: "learn/indian-energy-mix-august-2024",
                   },
                   {
                     month: "september",
+                    monthKey: "september",
                     displayName: "September",
                     link: "learn/indian-energy-mix-september-2024",
                   },
                   {
                     month: "november",
+                    monthKey: "november",
                     displayName: "November",
                     link: "learn/indian-energy-mix-november-2024",
                   },
                   {
                     month: "december",
+                    monthKey: "december",
                     displayName: "December",
                     link: "learn/indian-energy-mix-december-2024",
                   },
-                ].map(({ month, displayName, link }) => (
+                ].map(({ month, monthKey, displayName, link }) => (
                   <li key={month}>
                     <a
                       href={`/${link}`}
@@ -1018,7 +1089,7 @@ const EnergyContributionDashboard1 = ({month}) => {
                       //   window.scrollTo({ top: 0, behavior: "smooth" });
                       // }}
                       className={`block text-sm px-2 py-1 rounded-md text-center ${
-                        month === selectedMonth
+                        (monthKey === selectedMonth && currentYear === 2024)
                           ? "bg-[#777575] text-white font-semibold"
                           : "bg-gray-200 text-gray-600"
                       }`}
