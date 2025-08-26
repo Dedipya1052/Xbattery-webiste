@@ -652,7 +652,7 @@ const Example = ({ media, recentBlogs }) => {
                 Introducing BharatBMS
                 </h1>
                 <h2 className="text-white text-lg lg:text-xl font-semilight pt-5 pl-1">
-                Scalable up to 800V for EVs, home backup, and energy storage
+                Scalable BMS up to 800V for EVs & stationary energy storage
                 </h2>
                 {/* <div className="pt-8 flex gap-7 pl-2">
                  
