@@ -474,7 +474,7 @@ const Example = ({ media, recentBlogs }) => {
               />
             </Link>
 
-            <div className="hidden lg:flex gap-7 items-center">
+            <div className="hidden lg:flex gap-7 items-center ml-auto mr-8">
               <button
                 onClick={(e) => {
                   e.preventDefault();

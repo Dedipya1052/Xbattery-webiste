@@ -122,7 +122,7 @@ const Navbar = () => {
                 />
               </Link>
 
-              <div className="hidden lg:flex gap-7 items-center">
+              <div className="hidden lg:flex gap-7 items-center ml-auto mr-8">
                 <button
                   onClick={scrollToEnergyStorage}
                   className={`text-lg font-medium transition-colors duration-300 ${
