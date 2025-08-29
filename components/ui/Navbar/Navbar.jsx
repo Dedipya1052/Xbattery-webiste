@@ -125,7 +125,7 @@ const Navbar = () => {
               <div className="hidden lg:flex gap-7 items-center ml-auto mr-8">
                 <button
                   onClick={scrollToEnergyStorage}
-                  className={`text-lg font-medium transition-colors duration-300 ${
+                  className={`text-lg font-medium transition-colors duration-300 space-grotesk-medium ${
                     currentPath === "/"
                       ? "text-white"
                       : "text-[#cacaca] hover:text-[#e6e6e6]"
@@ -141,7 +141,7 @@ const Navbar = () => {
                 ].map((item) => (
                   <Link href={item.href} key={item.href}>
                     <button
-                      className={`text-lg font-medium transition-colors duration-300 ${
+                      className={`text-lg font-medium transition-colors duration-300 space-grotesk-medium ${
                         currentPath === item.href
                           ? "text-white"
                           : "text-[#cacaca] hover:text-[#e6e6e6]"
@@ -153,7 +153,7 @@ const Navbar = () => {
                 ))}
               </div>
 
-              <button className="text-white text-sm bg-transparent border border-white px-[15px] py-[9px] rounded-full hover:bg-white hover:text-black transition-colors duration-300 hidden lg:block ">
+              <button className="text-white text-sm bg-transparent border border-white px-[15px] py-[9px] rounded-full hover:bg-white hover:text-black transition-colors duration-300 hidden lg:block space-grotesk-medium">
                 <Link
                   href="https://customerappdev.xbattery.energy/"
                   target="_blank"
@@ -191,7 +191,7 @@ const Navbar = () => {
                     scrollToEnergyStorage(e);
                     handleMenuItemClick();
                   }}
-                  className={`text-lg font-medium transition-colors duration-300 ${
+                  className={`text-lg font-medium transition-colors duration-300 space-grotesk-medium ${
                     currentPath === "/"
                       ? "text-white"
                       : "text-[#cacaca] hover:text-[#e6e6e6]"
@@ -207,7 +207,7 @@ const Navbar = () => {
                 ].map((item) => (
                   <Link href={item.href} key={item.href}>
                     <button
-                      className={`text-lg font-medium transition-colors duration-300 ${
+                      className={`text-lg font-medium transition-colors duration-300 space-grotesk-medium ${
                         currentPath === item.href
                           ? "text-white"
                           : "text-[#cacaca] hover:text-[#e6e6e6]"
@@ -224,7 +224,7 @@ const Navbar = () => {
                   target="_blank"
                 >
                   <button
-                    className="text-white bg-transparent border border-white px-4 py-2 rounded-full hover:bg-white hover:text-black transition-colors duration-300 "
+                    className="text-white bg-transparent border border-white px-4 py-2 rounded-full hover:bg-white hover:text-black transition-colors duration-300 space-grotesk-medium"
                     onClick={handleMenuItemClick}
                   >
                      Customer Portal
@@ -252,7 +252,7 @@ const Navbar = () => {
                 </div>
                 <div className="hidden lg:flex flex-col md:flex-row gap-[1rem] md:gap-[2rem] text-center md:text-left">
                   <div
-                    className={`text-[1rem] md:text-[1.2rem] transition-all duration-200 cursor-pointer
+                    className={`text-[1rem] md:text-[1.2rem] transition-all duration-200 cursor-pointer space-grotesk-medium
                 ${
                   currentPath === "/"
                     ? "text-[#2faf2f]"
@@ -263,7 +263,7 @@ const Navbar = () => {
                     Energy Storage
                   </div>
                   <div
-                    className={`text-[1rem] md:text-[1.2rem] transition-all duration-200 
+                    className={`text-[1rem] md:text-[1.2rem] transition-all duration-200 space-grotesk-medium
                 ${
                   currentPath === "/bharat-bms"
                     ? "text-[#2faf2f]"
@@ -273,7 +273,7 @@ const Navbar = () => {
                     <Link href="/bharat-bms">BharatBMS</Link>
                   </div>
                   <div
-                    className={`text-[1rem] md:text-[1.2rem] transition-all duration-200 
+                    className={`text-[1rem] md:text-[1.2rem] transition-all duration-200 space-grotesk-medium
                 ${
                   currentPath === "/about"
                     ? "text-[#2faf2f]"
@@ -283,7 +283,7 @@ const Navbar = () => {
                     <Link href="/about">About</Link>
                   </div>
                   <div
-                    className={`text-[1rem] md:text-[1.2rem] transition-all duration-200 
+                    className={`text-[1rem] md:text-[1.2rem] transition-all duration-200 space-grotesk-medium
                 ${
                   currentPath === "/blog"
                     ? "text-[#2faf2f]"
@@ -293,7 +293,7 @@ const Navbar = () => {
                     <Link href="/blog">Blog</Link>
                   </div>
                   <div
-                    className={`text-[1rem] md:text-[1.2rem] transition-all duration-200 
+                    className={`text-[1rem] md:text-[1.2rem] transition-all duration-200 space-grotesk-medium
                 ${
                   currentPath === "/learn"
                     ? "text-[#2faf2f]"
@@ -303,7 +303,7 @@ const Navbar = () => {
                     <Link href="/learn">Learn</Link>
                   </div>
                   <div
-                    className={`text-[1rem] md:text-[1.2rem] transition-all duration-200 
+                    className={`text-[1rem] md:text-[1.2rem] transition-all duration-200 space-grotesk-medium
                 ${
                   currentPath === "/whitepapers"
                     ? "text-[#2faf2f]"
@@ -318,7 +318,7 @@ const Navbar = () => {
                 <NavLink
                   href="https://customerappdev.xbattery.energy/"
                   target="_blank"
-                  className="flex items-center justify-center gap-x-1 text-sm text-black  custom-btn-bg border border-gray-500 active:bg-gray-100 px-[15px] py-[9px] font-semibold"
+                  className="flex items-center justify-center gap-x-1 text-sm text-black  custom-btn-bg border border-gray-500 active:bg-gray-100 px-[15px] py-[9px] font-semibold space-grotesk-semibold"
                 >
                   Customer Portal
                 </NavLink>
@@ -355,7 +355,7 @@ const Navbar = () => {
                   }`}
                 >
                   <div
-                    className={`block text-[1rem] transition-all duration-200 mb-2 cursor-pointer
+                    className={`block text-[1rem] transition-all duration-200 mb-2 cursor-pointer space-grotesk-medium
                 ${
                   currentPath === "/"
                     ? "text-[#2faf2f]"
@@ -370,7 +370,7 @@ const Navbar = () => {
                   </div>
                   <Link
                     href="/bharat-bms"
-                    className={`block text-[1rem] transition-all duration-200 mb-2 
+                    className={`block text-[1rem] transition-all duration-200 mb-2 space-grotesk-medium
                 ${
                   currentPath === "/bharat-bms"
                     ? "text-[#2faf2f]"
@@ -382,7 +382,7 @@ const Navbar = () => {
                   </Link>
                   <Link
                     href="/about"
-                    className={`block text-[1rem] transition-all duration-200 mb-2 
+                    className={`block text-[1rem] transition-all duration-200 mb-2 space-grotesk-medium
                 ${
                   currentPath === "/about"
                     ? "text-[#2faf2f]"
@@ -394,7 +394,7 @@ const Navbar = () => {
                   </Link>
                   <Link
                     href="/blog"
-                    className={`block text-[1rem] transition-all duration-200 mb-2 
+                    className={`block text-[1rem] transition-all duration-200 mb-2 space-grotesk-medium
                 ${
                   currentPath === "/blog"
                     ? "text-[#2faf2f]"
@@ -406,7 +406,7 @@ const Navbar = () => {
                   </Link>
                   <Link
                     href="/learn"
-                    className={`block text-[1rem] transition-all duration-200 mb-2 
+                    className={`block text-[1rem] transition-all duration-200 mb-2 space-grotesk-medium
                 ${
                   currentPath === "/learn"
                     ? "text-[#2faf2f]"
@@ -418,7 +418,7 @@ const Navbar = () => {
                   </Link>
                   <Link
                     href="/whitepapers"
-                    className={`block text-[1rem] transition-all duration-200 mb-2 
+                    className={`block text-[1rem] transition-all duration-200 mb-2 space-grotesk-medium
                 ${
                   currentPath === "/whitepapers"
                     ? "text-[#2faf2f]"
@@ -431,7 +431,7 @@ const Navbar = () => {
                   <NavLink
                     href="https://customerappdev.xbattery.energy/"
                     target="_blank"
-                    className="flex items-center justify-center gap-x-1 text-sm text-black px-[15px] py-[9px] custom-btn-bg border border-gray-500 active:bg-gray-100 mt-5 font-semibold"
+                    className="flex items-center justify-center gap-x-1 text-sm text-black px-[15px] py-[9px] custom-btn-bg border border-gray-500 active:bg-gray-100 mt-5 font-semibold space-grotesk-semibold"
                     onClick={closeMenu}
                   >
                    Customer Portal

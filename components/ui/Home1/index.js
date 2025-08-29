@@ -489,7 +489,7 @@ const Example = ({ media, recentBlogs }) => {
                     });
                   }
                 }}
-                className={`text-lg font-medium transition-colors duration-300 ${
+                className={`text-lg font-medium transition-colors duration-300 space-grotesk-medium ${
                   isEnergyStorageInView
                     ? "text-white"
                     : "text-[#cacaca] hover:text-[#e6e6e6]"
@@ -505,7 +505,7 @@ const Example = ({ media, recentBlogs }) => {
               ].map((item) => (
                 <Link href={item.href} key={item.href}>
                   <button
-                    className={`text-lg font-medium transition-colors duration-300 ${
+                    className={`text-lg font-medium transition-colors duration-300 space-grotesk-medium ${
                       currentPath === item.href
                         ? "text-white"
                         : "text-[#cacaca] hover:text-[#e6e6e6]"
@@ -517,7 +517,7 @@ const Example = ({ media, recentBlogs }) => {
               ))}
             </div>
 
-            <button className="text-white text-sm bg-transparent border border-white px-[15px] py-[9px] rounded-full hover:bg-white hover:text-black transition-colors duration-300 hidden lg:block">
+            <button className="text-white text-sm bg-transparent border border-white px-[15px] py-[9px] rounded-full hover:bg-white hover:text-black transition-colors duration-300 hidden lg:block space-grotesk-medium">
               <Link
                 href="https://customerappdev.xbattery.energy/"
                 target="_blank"
@@ -565,7 +565,7 @@ const Example = ({ media, recentBlogs }) => {
                   }
                   handleMenuItemClick();
                 }}
-                className={`text-lg font-medium transition-colors duration-300 ${
+                className={`text-lg font-medium transition-colors duration-300 space-grotesk-medium ${
                   isEnergyStorageInView
                     ? "text-white"
                     : "text-[#cacaca] hover:text-[#e6e6e6]"
@@ -580,16 +580,16 @@ const Example = ({ media, recentBlogs }) => {
                 { href: "/whitepapers", label: "Whitepapers" },
               ].map((item) => (
                 <Link href={item.href} key={item.href}>
-                  <button
-                    className={`text-lg font-medium transition-colors duration-300 ${
-                      currentPath === item.href
-                        ? "text-white"
-                        : "text-[#cacaca] hover:text-[#e6e6e6]"
-                    }`}
-                    onClick={handleMenuItemClick}
-                  >
-                    {item.label}
-                  </button>
+                                      <button
+                      className={`text-lg font-medium transition-colors duration-300 space-grotesk-medium ${
+                        currentPath === item.href
+                          ? "text-white"
+                          : "text-[#cacaca] hover:text-[#e6e6e6]"
+                      }`}
+                      onClick={handleMenuItemClick}
+                    >
+                      {item.label}
+                    </button>
                 </Link>
               ))}
               <Link
@@ -597,7 +597,7 @@ const Example = ({ media, recentBlogs }) => {
                 target="_blank"
               >
                 <button
-                  className="text-white bg-transparent border border-white px-4 py-2 rounded-full hover:bg-white hover:text-black transition-colors duration-300"
+                  className="text-white bg-transparent border border-white px-4 py-2 rounded-full hover:bg-white hover:text-black transition-colors duration-300 space-grotesk-medium"
                   onClick={handleMenuItemClick}
                 >
                   Customer Portal
