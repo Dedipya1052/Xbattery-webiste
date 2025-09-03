@@ -690,11 +690,12 @@ const EnergyContributionDashboard1 = ({monthKey}) => {
                     //   e.preventDefault();
                     //   setSelectedMonth(month);
                     // }}
-                    className={`block text-sm px-2 py-1 rounded-md text-center cursor-pointer ${
+                    className={`block text-sm px-2 py-1 rounded-md text-center cursor-pointer whitespace-nowrap ${
                       (monthKey === selectedMonth && currentYear === 2025)
                         ? "bg-[#777575] text-white font-semibold"
                         : "bg-gray-200 text-gray-600"
                     }`}
+                    title={displayName}
                   >
                     {displayName}
                   </a>
@@ -1035,11 +1036,12 @@ const EnergyContributionDashboard1 = ({monthKey}) => {
                       //   setSelectedMonth(month);
                       //   window.scrollTo({ top: 0, behavior: "smooth" });
                       // }}
-                      className={`block text-sm px-2 py-1 rounded-md text-center ${
+                      className={`block text-sm px-2 py-1 rounded-md text-center whitespace-nowrap ${
                         (monthKey === selectedMonth && currentYear === 2025)
                           ? "bg-[#777575] text-white font-semibold"
                           : "bg-gray-200 text-gray-600"
                       }`}
+                      title={displayName}
                     >
                       {displayName}
                     </a>
@@ -1088,11 +1090,12 @@ const EnergyContributionDashboard1 = ({monthKey}) => {
                       //   setSelectedMonth(month);
                       //   window.scrollTo({ top: 0, behavior: "smooth" });
                       // }}
-                      className={`block text-sm px-2 py-1 rounded-md text-center ${
+                      className={`block text-sm px-2 py-1 rounded-md text-center whitespace-nowrap ${
                         (monthKey === selectedMonth && currentYear === 2024)
                           ? "bg-[#777575] text-white font-semibold"
                           : "bg-gray-200 text-gray-600"
                       }`}
+                      title={displayName}
                     >
                       {displayName}
                     </a>
