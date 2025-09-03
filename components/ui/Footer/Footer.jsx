@@ -43,7 +43,8 @@ const electricVehicles = [
   { name: "EV vs ICE Costs", link: "/learn/ev-vs-ice-costs" },
   { name: "EV Charging", link: "/learn/ev-charging" },
   { name: "Indian EV Market", link: "/learn/indian-ev-market" },
-  { name: "EVs and the Environment", link: "/learn/understanding-the-impact-of-electric-vehicles-on-the-environment" }
+  { name: "EVs and the Environment", link: "/learn/understanding-the-impact-of-electric-vehicles-on-the-environment" },
+  { name: "Hydrogen vs Electric Cars", link: "/learn/hydrogen-vs-electric-cars-the-future-of-sustainable-mobility" }
 ];
     
     const electricity = [
