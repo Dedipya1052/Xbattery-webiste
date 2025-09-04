@@ -12,6 +12,7 @@ export default function App({ Component, pageProps }) {
     router.pathname === "/terms" ||
     router.pathname === "/about" ||
     router.pathname === "/privacy" ||
+    router.pathname === "/cookies" ||
     router.pathname.includes("about") ||
     router.pathname.includes("careers") ||
     router.pathname.includes("contact") ||

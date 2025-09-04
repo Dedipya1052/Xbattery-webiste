@@ -13,6 +13,7 @@ const Navbar = () => {
     router.pathname === "/terms" ||
     router.pathname === "/about" ||
     router.pathname === "/privacy" ||
+    router.pathname === "/cookies" ||
     router.pathname === "/careers" ||
     router.pathname.includes("careers") ||
     router.pathname.includes("contact") ||
