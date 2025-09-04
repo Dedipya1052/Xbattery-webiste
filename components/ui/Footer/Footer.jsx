@@ -111,7 +111,7 @@ const resources = [
 
               <div className={styles.footerElementDesktop}>
                 <div className={styles.footerDescription}>
-                Xbattery™ is a Battery Management System for EVs and energy storage devices, including both electronics and software.
+                Xbattery™ builds Battery Management Systems for EVs and energy storage devices, combining both electronics and software.
                   <br />
                 </div>
 
@@ -171,7 +171,7 @@ const resources = [
                 </div>
               </div>
               <div className={styles.footerDescription1}>
-              Xbattery™ is a Battery Management System for EVs and energy storage devices, including both electronics and software.
+              Xbattery™ builds Battery Management Systems for EVs and energy storage devices, combining both electronics and software.
                 <br />
               </div>
               <div className={styles.linksFot2}>
@@ -463,7 +463,7 @@ const resources = [
                   Xbattery™
                 </div>
                 <div className="text-[1rem] pl-[0.8rem] pr-[0.8rem] text-[#4d4d4d] opacity-[85%]">
-                Xbattery™ is a Battery Management System for EVs and energy storage devices, including both electronics and software.
+                Xbattery™ builds Battery Management Systems for EVs and energy storage devices, combining both electronics and software.
                 </div>
               </div>
               <div className="flex justify-between md:w-[60%] xl:w-full">
