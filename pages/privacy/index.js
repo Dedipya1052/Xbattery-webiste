@@ -83,33 +83,39 @@ const Privacy = () => {
                 We collect information to provide, improve, and personalize our Products and services. The types of information we may collect include:
               </p>
               <p className="font-bold" style={{ fontSize: "18px", marginBottom: "15px" }}>Personal Information</p>
-              <p style={{ marginLeft: "20px", marginBottom: "0px" }}>
-                • <span className="font-bold" style={{ fontSize: "16px" }}>Contact Details:</span> Name, email address, phone number, company name, and address provided during inquiries, registrations, or purchases.
+              <p style={{ marginLeft: "20px", marginBottom: "0px", textIndent: "-20px", paddingLeft: "20px" }}>
+                • <span className="font-bold" style={{ fontSize: "16px" }}>Contact Details:</span> Name, email address, phone number, company name, and address<br />
+                <span style={{ marginLeft: "20px" }}>provided during inquiries, registrations, or purchases.</span>
               </p>
-              <p style={{ marginLeft: "20px", marginBottom: "0px" }}>
+              <p style={{ marginLeft: "20px", marginBottom: "0px", textIndent: "-20px", paddingLeft: "20px" }}>
                 • <span className="font-bold" style={{ fontSize: "16px" }}>Account Information:</span> Username, password, and preferences if you create an account on our website or App.
               </p>
-              <p style={{ marginLeft: "20px", marginBottom: "20px" }}>
+              <p style={{ marginLeft: "20px", marginBottom: "20px", textIndent: "-20px", paddingLeft: "20px" }}>
                 • <span className="font-bold" style={{ fontSize: "16px" }}>Transaction Information:</span> Payment details, billing information, and purchase history related to our Products.
               </p>
               <p className="font-bold" style={{ fontSize: "18px", marginBottom: "15px" }}>Telematics and Device Data</p>
-              <p style={{ marginLeft: "20px", marginBottom: "0px" }}>
-                • <span className="font-bold" style={{ fontSize: "16px" }}>Product Usage Data:</span> Information from our battery management systems, such as battery performance, charge cycles, usage patterns, and diagnostic data, which may include identifiers like serial numbers.
+              <p style={{ marginLeft: "20px", marginBottom: "0px", textIndent: "-20px", paddingLeft: "20px" }}>
+                • <span className="font-bold" style={{ fontSize: "16px" }}>Product Usage Data:</span> Information from our battery management systems, such as battery<br />
+                performance, charge cycles, usage patterns, and diagnostic data, which may include<br />
+                identifiers like serial numbers.
               </p>
-              <p style={{ marginLeft: "20px", marginBottom: "20px" }}>
-                • <span className="font-bold" style={{ fontSize: "16px" }}>Location Data:</span> If you use location-based features in our App (e.g., for service requests), we may collect GPS coordinates or addresses with your consent.
+              <p style={{ marginLeft: "20px", marginBottom: "20px", textIndent: "-20px", paddingLeft: "20px" }}>
+                • <span className="font-bold" style={{ fontSize: "16px" }}>Location Data:</span> If you use location-based features in our App (e.g., for service<br />
+                requests), we may collect GPS coordinates or addresses with your consent.
               </p>
               <p className="font-bold" style={{ fontSize: "18px", marginBottom: "15px" }}>Usage and Technical Data</p>
-              <p style={{ marginLeft: "20px", marginBottom: "20px" }}>
-                • Information about your interaction with our website or App, such as IP address, browser type, device type, operating system, and pages visited. For more details, see our{" "}
+              <p style={{ marginLeft: "20px", marginBottom: "20px", textIndent: "-20px", paddingLeft: "20px" }}>
+                • Information about your interaction with our website or App, such as IP address,<br />
+                browser type, device type, operating system, and pages visited. For more details, see our{" "}
                 <Link href="/cookies" className="font-bold hover:opacity-80">
                   Cookie Policy
                 </Link>
                 .
               </p>
               <p className="font-bold" style={{ fontSize: "18px", marginBottom: "15px" }}>Information from Other Sources</p>
-              <p style={{ marginLeft: "20px", marginBottom: "20px" }}>
-                • Data from affiliates, subsidiaries, or third parties (e.g., service partners) when you interact with us through their platforms or during service appointments.
+              <p style={{ marginLeft: "20px", marginBottom: "20px", textIndent: "-20px", paddingLeft: "20px" }}>
+                • Data from affiliates, subsidiaries, or third parties (e.g., service partners) when you<br />
+                interact with us through their platforms or during service appointments.
               </p>
             </ul>
           </div>
@@ -132,11 +138,7 @@ const Privacy = () => {
             <h3 className={classes.h3inaffiliate}>3. How We Use Your Information</h3>
             <ul className={classes.ulholder}>
               <p style={{ marginBottom: "20px" }}>
-                We use your information to: -{" "}
-                <span className="font-bold">Service Providers:</span> With trusted third parties (e.g., hosting providers, analytics services, or payment processors) under strict confidentiality agreements. -{" "}
-                <span className="font-bold">Affiliates and Subsidiaries:</span> With Xbattery-related entities for business purposes, such as product development or customer service. -{" "}
-                <span className="font-bold">Legal Requirements:</span> When required by law, court order, or government authority, or to protect our rights, resolve disputes, or investigate fraud. -{" "}
-                <span className="font-bold">Business Transfers:</span> In connection with a merger, acquisition, or sale of assets, with appropriate safeguards for your data.
+                We use your information to: - Provide, maintain, and improve our Products and services, including troubleshooting and diagnostics. - Process transactions and deliver customer support. - Send communications, such as order confirmations, service updates, or marketing messages (with your consent). - Analyze usage patterns to enhance website, App, and Product performance. - Ensure the security of our systems and prevent fraud. - Comply with legal obligations or protect our legitimate interests.
               </p>
             </ul>
           </div>
@@ -182,10 +184,10 @@ const Privacy = () => {
           <div className={classes.affiliateholder}>
             <h3 className={classes.h3inaffiliate}>6. Data Retention and Security</h3>
             <ul className={classes.ulholder}>
-              <p style={{ marginLeft: "20px", marginBottom: "0px" }}>
+              <p style={{ marginLeft: "20px", marginBottom: "0px", textIndent: "-20px", paddingLeft: "20px" }}>
                 • <span className="font-bold" style={{ fontSize: "16px" }}>Retention:</span> We retain personal information only as long as necessary for the purposes outlined in this policy or as required by law (e.g., tax or regulatory obligations). Telematics data is retained for product improvement and diagnostics, typically for up to 3 years, unless otherwise required.
               </p>
-              <p style={{ marginLeft: "20px", marginBottom: "20px" }}>
+              <p style={{ marginLeft: "20px", marginBottom: "20px", textIndent: "-20px", paddingLeft: "20px" }}>
                 • <span className="font-bold" style={{ fontSize: "16px" }}>Security:</span> We use industry-standard measures, such as AES-256 encryption, secure servers, and access controls, to protect your data. However, no system is entirely secure, and we cannot guarantee absolute security.
               </p>
             </ul>
