@@ -108,26 +108,26 @@ const Terms = () => {
                 We stand behind the quality of our Products, including our Battery Management Systems (BMS) and energy storage devices. The following warranties apply:
               </p>
               <p className="font-bold" style={{ fontSize: "18px", marginBottom: "15px" }}>BMS Electronic Boards (PCB)</p>
-              <p style={{ marginLeft: "20px", marginBottom: "0px", textIndent: "-20px", paddingLeft: "20px" }}>
+              <p className={classes.bulletPoint}>
                 • <span className="font-bold" style={{ fontSize: "16px" }}>Warranty Period:</span> 5 years from the date of installation or delivery, whichever occurs first.
               </p>
-              <p style={{ marginLeft: "20px", marginBottom: "0px", textIndent: "-20px", paddingLeft: "20px" }}>
+              <p className={classes.bulletPoint}>
                 • <span className="font-bold" style={{ fontSize: "16px" }}>Coverage:</span> Defects in materials and workmanship under normal use.
               </p>
-              <p style={{ marginLeft: "20px", marginBottom: "20px", textIndent: "-20px", paddingLeft: "20px" }}>
+              <p className={classes.bulletPoint} style={{ marginBottom: "20px" }}>
                 • <span className="font-bold" style={{ fontSize: "16px" }}>Exclusions:</span> Damage due to misuse, improper installation, unauthorized repairs, or external factors (e.g., power surges).
               </p>
               <p className="font-bold" style={{ fontSize: "18px", marginBottom: "15px" }}>Energy Storage Devices (Battery Packs)</p>
-              <p style={{ marginLeft: "20px", marginBottom: "0px", textIndent: "-20px", paddingLeft: "20px" }}>
+              <p className={classes.bulletPoint}>
                 • <span className="font-bold" style={{ fontSize: "16px" }}>Warranty Period:</span> 10 years from the date of installation or delivery, whichever occurs first.
               </p>
-              <p style={{ marginLeft: "20px", marginBottom: "0px", textIndent: "-20px", paddingLeft: "20px" }}>
+              <p className={classes.bulletPoint}>
                 • <span className="font-bold" style={{ fontSize: "16px" }}>Performance Commitment:</span> Guaranteed retention of at least 80% of nominal capacity after 3,000 charge-discharge cycles under normal operating conditions.
               </p>
-              <p style={{ marginLeft: "20px", marginBottom: "0px", textIndent: "-20px", paddingLeft: "20px" }}>
+              <p className={classes.bulletPoint}>
                 • <span className="font-bold" style={{ fontSize: "16px" }}>Coverage:</span> Defects in materials and workmanship under normal use.
               </p>
-              <p style={{ marginLeft: "20px", marginBottom: "20px", textIndent: "-20px", paddingLeft: "20px" }}>
+              <p className={classes.bulletPoint} style={{ marginBottom: "20px" }}>
                 • <span className="font-bold" style={{ fontSize: "16px" }}>Exclusions:</span> Damage due to misuse, improper maintenance, accidents, or non-compliance with our usage guidelines.
               </p>
               <p className="font-bold" style={{ fontSize: "18px", marginBottom: "15px" }}>Warranty Claims</p>
@@ -174,16 +174,7 @@ const Terms = () => {
                 To the fullest extent permitted by law, Xbattery, its affiliates, officers, directors, and employees shall not be liable for any indirect, incidental, consequential, special, or punitive damages arising from your use of our website, App, or Products, including but not limited to loss of data, profits, or business opportunities. Our total liability for any claim, whether in contract, tort, or otherwise, shall not exceed INR 10,000.
               </p>
               <p style={{ marginBottom: "20px" }}>
-                We are not responsible for damages caused by:
-              </p>
-              <p style={{ marginLeft: "20px", marginBottom: "0px", textIndent: "-20px", paddingLeft: "20px" }}>
-                • Misuse or improper installation of Products.
-              </p>
-              <p style={{ marginLeft: "20px", marginBottom: "0px", textIndent: "-20px", paddingLeft: "20px" }}>
-                • Unauthorized modifications or repairs.
-              </p>
-              <p style={{ marginLeft: "20px", marginBottom: "20px", textIndent: "-20px", paddingLeft: "20px" }}>
-                • External factors, such as natural disasters or power failures.
+                We are not responsible for damages caused by: - Misuse or improper installation of Products. - Unauthorized modifications or repairs. - External factors, such as natural disasters or power failures.
               </p>
             </ul>
           </div>
@@ -210,22 +201,7 @@ const Terms = () => {
             <h3 className={classes.h3inaffiliate}>6. Regulatory Compliance</h3>
             <ul className={classes.ulholder}>
               <p style={{ marginBottom: "20px" }}>
-                Xbattery complies with applicable laws and regulations, including:
-              </p>
-              <p style={{ marginLeft: "20px", marginBottom: "0px", textIndent: "-20px", paddingLeft: "20px" }}>
-                • <span className="font-bold">Information Technology Act, 2000</span> and its rules for data protection.
-              </p>
-              <p style={{ marginLeft: "20px", marginBottom: "0px", textIndent: "-20px", paddingLeft: "20px" }}>
-                • <span className="font-bold">Consumer Protection Act, 2019</span> for consumer rights and warranties.
-              </p>
-              <p style={{ marginLeft: "20px", marginBottom: "0px", textIndent: "-20px", paddingLeft: "20px" }}>
-                • <span className="font-bold">Bureau of Indian Standards (BIS)</span> requirements for battery management systems and lithium battery packs.
-              </p>
-              <p style={{ marginLeft: "20px", marginBottom: "0px", textIndent: "-20px", paddingLeft: "20px" }}>
-                • <span className="font-bold">Battery Management and Handling Rules, 2001</span> for safe disposal and recycling of batteries.
-              </p>
-              <p style={{ marginLeft: "20px", marginBottom: "20px", textIndent: "-20px", paddingLeft: "20px" }}>
-                • <span className="font-bold">Foreign Trade Policy</span> and international export regulations for battery systems.
+                Xbattery complies with applicable laws and regulations, including: - <span className="font-bold">Information Technology Act, 2000</span> and its rules for data protection. - <span className="font-bold">Consumer Protection Act, 2019</span> for consumer rights and warranties. - <span className="font-bold">Bureau of Indian Standards (BIS)</span> requirements for battery management systems and lithium battery packs. - <span className="font-bold">Battery Management and Handling Rules, 2001</span> for safe disposal and recycling of batteries. - <span className="font-bold">Foreign Trade Policy</span> and international export regulations for battery systems.
               </p>
               <p style={{ marginBottom: "20px" }}>
                 We maintain certifications and conduct regular audits to ensure compliance with safety, environmental, and energy standards.
@@ -237,19 +213,7 @@ const Terms = () => {
             <h3 className={classes.h3inaffiliate}>7. User Obligations</h3>
             <ul className={classes.ulholder}>
               <p style={{ marginBottom: "20px" }}>
-                You agree to:
-              </p>
-              <p style={{ marginLeft: "20px", marginBottom: "0px", textIndent: "-20px", paddingLeft: "20px" }}>
-                • Use our website, App, and Products in compliance with these Terms and applicable laws.
-              </p>
-              <p style={{ marginLeft: "20px", marginBottom: "0px", textIndent: "-20px", paddingLeft: "20px" }}>
-                • Not engage in activities that may harm our systems, such as hacking, data scraping, or distributing malware.
-              </p>
-              <p style={{ marginLeft: "20px", marginBottom: "0px", textIndent: "-20px", paddingLeft: "20px" }}>
-                • Provide accurate information and promptly notify us of any issues with your account or Products.
-              </p>
-              <p style={{ marginLeft: "20px", marginBottom: "20px", textIndent: "-20px", paddingLeft: "20px" }}>
-                • Follow our Product usage and maintenance guidelines to ensure safety and performance.
+                You agree to: - Use our website, App, and Products in compliance with these Terms and applicable laws. - Not engage in activities that may harm our systems, such as hacking, data scraping, or distributing malware. - Provide accurate information and promptly notify us of any issues with your account or Products. - Follow our Product usage and maintenance guidelines to ensure safety and performance.
               </p>
             </ul>
           </div>

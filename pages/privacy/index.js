@@ -83,28 +83,27 @@ const Privacy = () => {
                 We collect information to provide, improve, and personalize our Products and services. The types of information we may collect include:
               </p>
               <p className="font-bold" style={{ fontSize: "18px", marginBottom: "15px" }}>Personal Information</p>
-              <p style={{ marginLeft: "20px", marginBottom: "0px", textIndent: "-20px", paddingLeft: "20px" }}>
-                • <span className="font-bold" style={{ fontSize: "16px" }}>Contact Details:</span> Name, email address, phone number, company name, and address<br />
-                <span style={{ marginLeft: "20px" }}>provided during inquiries, registrations, or purchases.</span>
+              <p className={classes.bulletPoint}>
+                • <span className="font-bold" style={{ fontSize: "16px" }}>Contact Details:</span> Name, email address, phone number, company name, and address provided during inquiries, registrations, or purchases.
               </p>
-              <p style={{ marginLeft: "20px", marginBottom: "0px", textIndent: "-20px", paddingLeft: "20px" }}>
+              <p className={classes.bulletPoint}>
                 • <span className="font-bold" style={{ fontSize: "16px" }}>Account Information:</span> Username, password, and preferences if you create an account on our website or App.
               </p>
-              <p style={{ marginLeft: "20px", marginBottom: "20px", textIndent: "-20px", paddingLeft: "20px" }}>
+              <p className={classes.bulletPoint} style={{ marginBottom: "20px" }}>
                 • <span className="font-bold" style={{ fontSize: "16px" }}>Transaction Information:</span> Payment details, billing information, and purchase history related to our Products.
               </p>
               <p className="font-bold" style={{ fontSize: "18px", marginBottom: "15px" }}>Telematics and Device Data</p>
-              <p style={{ marginLeft: "20px", marginBottom: "0px", textIndent: "-20px", paddingLeft: "20px" }}>
-                • <span className="font-bold" style={{ fontSize: "16px" }}>Product Usage Data:</span> Information from our battery management systems, such as battery<br />
-                performance, charge cycles, usage patterns, and diagnostic data, which may include<br />
+              <p className={classes.bulletPoint}>
+                • <span className="font-bold" style={{ fontSize: "16px" }}>Product Usage Data:</span> Information from our battery management systems, such as battery
+                performance, charge cycles, usage patterns, and diagnostic data, which may include
                 identifiers like serial numbers.
               </p>
-              <p style={{ marginLeft: "20px", marginBottom: "20px", textIndent: "-20px", paddingLeft: "20px" }}>
+              <p className={classes.bulletPoint} style={{ marginBottom: "20px" }}>
                 • <span className="font-bold" style={{ fontSize: "16px" }}>Location Data:</span> If you use location-based features in our App (e.g., for service<br />
                 requests), we may collect GPS coordinates or addresses with your consent.
               </p>
               <p className="font-bold" style={{ fontSize: "18px", marginBottom: "15px" }}>Usage and Technical Data</p>
-              <p style={{ marginLeft: "20px", marginBottom: "20px", textIndent: "-20px", paddingLeft: "20px" }}>
+              <p className={classes.bulletPoint} style={{ marginBottom: "20px" }}>
                 • Information about your interaction with our website or App, such as IP address,<br />
                 browser type, device type, operating system, and pages visited. For more details, see our{" "}
                 <Link href="/cookies" className="font-bold hover:opacity-80">
@@ -113,7 +112,7 @@ const Privacy = () => {
                 .
               </p>
               <p className="font-bold" style={{ fontSize: "18px", marginBottom: "15px" }}>Information from Other Sources</p>
-              <p style={{ marginLeft: "20px", marginBottom: "20px", textIndent: "-20px", paddingLeft: "20px" }}>
+              <p className={classes.bulletPoint} style={{ marginBottom: "20px" }}>
                 • Data from affiliates, subsidiaries, or third parties (e.g., service partners) when you<br />
                 interact with us through their platforms or during service appointments.
               </p>
@@ -184,10 +183,10 @@ const Privacy = () => {
           <div className={classes.affiliateholder}>
             <h3 className={classes.h3inaffiliate}>6. Data Retention and Security</h3>
             <ul className={classes.ulholder}>
-              <p style={{ marginLeft: "20px", marginBottom: "0px", textIndent: "-20px", paddingLeft: "20px" }}>
+              <p className={classes.bulletPoint}>
                 • <span className="font-bold" style={{ fontSize: "16px" }}>Retention:</span> We retain personal information only as long as necessary for the purposes outlined in this policy or as required by law (e.g., tax or regulatory obligations). Telematics data is retained for product improvement and diagnostics, typically for up to 3 years, unless otherwise required.
               </p>
-              <p style={{ marginLeft: "20px", marginBottom: "20px", textIndent: "-20px", paddingLeft: "20px" }}>
+              <p className={classes.bulletPoint} style={{ marginBottom: "20px" }}>
                 • <span className="font-bold" style={{ fontSize: "16px" }}>Security:</span> We use industry-standard measures, such as AES-256 encryption, secure servers, and access controls, to protect your data. However, no system is entirely secure, and we cannot guarantee absolute security.
               </p>
             </ul>
@@ -274,7 +273,7 @@ const Privacy = () => {
                   support@xbattery.energy
                 </a>
                 {" "}-{" "}
-                <span className="font-bold">Address:</span> Villa No AE-140, Mantri Euphoria, Gandipet, Rajendra Nagar, K.V. Rangareddy, Telangana, India, 500075
+                <span className="font-bold">Address:</span> Villa No AE-140, Mantri Euphoria, Gandipet, Rajendra Nagar, K.V. Rangareddy, Telangana, India, 500075.
               </p>
               <p style={{ marginBottom: "20px" }}>
                 We will address your query within 30 days, as required by the{" "}
@@ -302,7 +301,7 @@ const Privacy = () => {
                   privacy@xbattery.energy
                 </a>
                 {" "}-{" "}
-                <span className="font-bold">Address:</span> Villa No AE-140, Mantri Euphoria, Gandipet, Rajendra Nagar, K.V. Rangareddy, Telangana, India, 500075
+                <span className="font-bold">Address:</span> Villa No AE-140, Mantri Euphoria, Gandipet, Rajendra Nagar, K.V. Rangareddy, Telangana, India, 500075.
               </p>
             </ul>
           </div>
