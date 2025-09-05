@@ -125,6 +125,14 @@ width: 1em;
 margin-right: 5px;
 }
 
+/* Hanging indent for bullet points */
+.bulletPoint {
+  margin-left: 30px;
+  text-indent: -12px;
+  padding-left: 0;
+  margin-bottom: 0;
+}
+
 /* Responsive styles */
 @media (max-width: 768px) {
 .affiliatewrapper {
