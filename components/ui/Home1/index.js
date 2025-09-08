@@ -371,7 +371,10 @@ const Example = ({ media, recentBlogs }) => {
     if (videoElement) {
       videoElement.muted = true;
       videoElement.play().catch((error) => {
-        console.error("Autoplay failed: ", error);
+        // Silently handle autoplay failures on mobile
+        if (error.name !== 'AbortError') {
+          console.warn("Autoplay failed: ", error);
+        }
       });
     }
   }, []);
@@ -616,10 +619,10 @@ const Example = ({ media, recentBlogs }) => {
               falseState: "opacity-0",
             }}
           >
-            <div className="relative w-full top-[-4rem] ">
+            <div className="relative w-full top-[-1rem] md:top-[-4rem] ">
               <video
                 ref={videoRef1} // add reference for this video
-                className={`w-auto h-[85vh] md:w-full md:h-auto object-cover object-center`}
+                className={`w-full h-[50vh] md:w-full md:h-auto object-contain object-center`}
                 autoPlay
                 muted
                 playsInline
@@ -629,7 +632,10 @@ const Example = ({ media, recentBlogs }) => {
                   if (e.target.readyState >= 3) {
                     // Check if video can be played
                     e.target.play().catch((error) => {
-                      console.error("Autoplay failed:", error);
+                      // Silently handle autoplay failures on mobile
+                      if (error.name !== 'AbortError') {
+                        console.warn("Autoplay failed:", error);
+                      }
                     });
                   }
                 }}
@@ -642,16 +648,16 @@ const Example = ({ media, recentBlogs }) => {
                 initial={{ y: "-100%" }}
                 animate={{ y: isInView ? 0 : "-100%" }}
                 transition={{ duration: 1, delay: 7.55 }}
-                className="absolute top-0 left-0 right-0 w-full h-full flex flex-col items-center justify-center p-4 md:p-16 space-y-2 text-center"
+                className="absolute top-0 left-0 right-0 w-full h-full flex flex-col items-center justify-start md:justify-center p-4 md:p-16 space-y-2 text-center"
               >
                 {/* <div className="text-white text-3xl lg:text-4xl font-medium mb-4">
                 Xbattery
               </div> */}
-              <div className="mt-[-12.3rem] text-center flex flex-col items-center justify-center">
-                <h1 className="text-white text-4xl lg:text-5xl font-bold">
+                             <div className="mt-8 sm:mt-12 md:mt-[-10rem] text-center flex flex-col items-center justify-center px-4">
+                <h1 className="text-white text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold">
                 Introducing BharatBMS
                 </h1>
-                <h2 className="text-white text-lg lg:text-xl font-semilight pt-5 pl-1">
+                <h2 className="text-white text-base sm:text-base md:text-lg lg:text-xl font-light md:font-semilight pt-3 sm:pt-4 md:pt-5">
                 Scalable BMS up to 800V for EVs & stationary energy storage
                 </h2>
                 {/* <div className="pt-8 flex gap-7 pl-2">
@@ -676,10 +682,9 @@ const Example = ({ media, recentBlogs }) => {
 
 
           <AnimatedDiv>
-            <div className="w-full bg-[#181818] mt-[-11rem]">
+          <div className="w-full bg-[#181818] mt-[-10rem] md:mt-[-11rem]">
               <div
-                className="mt-[7rem] mb-[0rem] pt-[3rem] pb-[8rem] w-[94%] md:w-[90%] lg:w-[85%] xl:w-[80%] 2xl:w-[1450px] mx-auto "
-                // onClick={handleRedirect}
+                className="mt-[7rem] mb-[0rem] pt-[3rem] pb-[8rem] w-[94%] md:w-[90%] lg:w-[85%] xl:w-[80%] 2xl:w-[1450px] mx-auto "                // onClick={handleRedirect}
               >
                 <div className="flex flex-col lg:flex-row items-center justify-center gap-[5%] p-6">
                   <div className="w-full lg:w-[45%] mb-6 lg:mb-0">
@@ -741,7 +746,10 @@ const Example = ({ media, recentBlogs }) => {
                 onLoadedData={(e) => {
                   if (e.target.readyState >= 3) {
                     e.target.play().catch((error) => {
-                      // Autoplay will be handled by IntersectionObserver
+                      // Silently handle autoplay failures on mobile
+                      if (error.name !== 'AbortError') {
+                        console.warn("Autoplay failed:", error);
+                      }
                     });
                   }
                 }}
@@ -1533,3 +1541,5 @@ const Example = ({ media, recentBlogs }) => {
 };
 
 export default Example;
+
+
