@@ -653,11 +653,11 @@ const Example = ({ media, recentBlogs }) => {
                 {/* <div className="text-white text-3xl lg:text-4xl font-medium mb-4">
                 Xbattery
               </div> */}
-                             <div className="mt-14 md:mt-[-4rem] text-center flex flex-col items-center justify-center">
-                <h1 className="text-white text-4xl lg:text-5xl font-bold">
+                             <div className="mt-8 sm:mt-12 md:mt-[-10rem] text-center flex flex-col items-center justify-center px-4">
+                <h1 className="text-white text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold">
                 Introducing BharatBMS
                 </h1>
-                <h2 className="text-white text-lg lg:text-xl font-semilight pt-5 pl-1">
+                <h2 className="text-white text-base sm:text-base md:text-lg lg:text-xl font-light md:font-semilight pt-3 sm:pt-4 md:pt-5">
                 Scalable BMS up to 800V for EVs & stationary energy storage
                 </h2>
                 {/* <div className="pt-8 flex gap-7 pl-2">
