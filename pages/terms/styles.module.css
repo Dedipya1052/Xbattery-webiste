@@ -129,7 +129,7 @@
 }
 
 .bulletLabel {
-  font-size: 0.875rem; /* 14px - Bullet Point Labels */
+  font-size: 1rem; /* Match body text size for labels */
   font-weight: 600;
   color: #ffffff;
 }

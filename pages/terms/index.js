@@ -58,14 +58,14 @@ const Terms = () => {
           <div className={classes.affiliateholder}>
             <ul className={classes.ulholder}>
               <p className={classes.lastUpdated} style={{ fontWeight: "bold" }}>Last Updated: September 4, 2025</p>
-              <p className={classes.bodyText} style={{ textAlign: "justify" }}>
+              <p className={classes.bodyText} style={{ textAlign: "left" }}>
                 Welcome to Xbattery Energy Private Limited ("Xbattery," "we," "us," or "our"), located at Villa No AE-140, Mantri Euphoria, Gandipet, Rajendra Nagar, K.V. Rangareddy, Telangana, India, 500075. These Terms of Use ("Terms") govern your access to and use of our website ({""}
                 <a href="https://xbattery.energy" className="font-bold hover:opacity-80" target="_blank" rel="noopener noreferrer">
                   https://xbattery.energy
                 </a>
                 ), mobile application ("App"), and our battery management systems and energy storage products ("Products"). By accessing or using our website, App, or Products, you ("you," "your," or "User") agree to be bound by these Terms. If you do not agree, please refrain from using our services.
               </p>
-              <p className={classes.bodyText} style={{ textAlign: "justify" }}>
+              <p className={classes.bodyText} style={{ textAlign: "left" }}>
                 For information on how we handle personal data, please review our{" "}
                 <Link href="/privacy" className="font-bold hover:opacity-80">
                   Privacy Policy
@@ -83,11 +83,11 @@ const Terms = () => {
             <h3 className={classes.h3inaffiliate}>1. Use of Our Services</h3>
             <ul className={classes.ulholder}>
               <p className={classes.subsectionHeading}>Eligibility</p>
-              <p className={classes.bodyText} style={{ textAlign: "justify" }}>
+              <p className={classes.bodyText} style={{ textAlign: "left" }}>
                 You must be at least 18 years old or the age of majority in your jurisdiction to use our website, App, or Products. By using our services, you represent that you meet these eligibility requirements.
               </p>
               <p className={classes.subsectionHeading}>Permitted Use</p>
-              <p className={classes.bodyText} style={{ textAlign: "justify" }}>
+              <p className={classes.bodyText} style={{ textAlign: "left" }}>
                 You may use our website, App, and Products for lawful, personal, or commercial purposes (as applicable) in accordance with these Terms. You agree not to:
               </p>
               <p className={classes.bulletPoint} style={{ marginBottom: "0px" }}>
@@ -100,7 +100,7 @@ const Terms = () => {
                 • Engage in data scraping, hacking, or other activities that may harm our infrastructure.
               </p>
               <p className={classes.subsectionHeading}>Account Responsibilities</p>
-              <p className={classes.bodyText} style={{ textAlign: "justify" }}>
+              <p className={classes.bodyText} style={{ textAlign: "left" }}>
                 If you create an account on our website or App, you are responsible for:
               </p>
               <p className={classes.bulletPoint} style={{ marginBottom: "0px" }}>
@@ -122,7 +122,7 @@ const Terms = () => {
           <div className={classes.affiliateholder}>
             <h3 className={classes.h3inaffiliate}>2. Product Warranties</h3>
             <ul className={classes.ulholder}>
-              <p className={classes.bodyText} style={{ textAlign: "justify" }}>
+              <p className={classes.bodyText} style={{ textAlign: "left" }}>
                 We stand behind the quality of our Products, including our Battery Management Systems (BMS) and energy storage devices. The following warranties apply:
               </p>
               <p className={classes.subsectionHeading}>BMS Electronic Boards (PCB)</p>
@@ -149,7 +149,7 @@ const Terms = () => {
                 • <span className={classes.bulletLabel}>Exclusions:</span> Damage due to misuse, improper maintenance, accidents, or non-compliance with our usage guidelines.
               </p>
               <p className={classes.subsectionHeading}>Warranty Claims</p>
-              <p className={classes.bodyText} style={{ textAlign: "justify" }}>
+              <p className={classes.bodyText} style={{ textAlign: "left" }}>
                 To make a warranty claim, contact us at {" "}
                 <a href="mailto:support@xbattery.energy" className="font-bold hover:opacity-80">
                   support@xbattery.energy
@@ -157,7 +157,7 @@ const Terms = () => {
                 {" "}with proof of purchase and details of the issue. We may repair, replace, or refund the Product at our discretion, subject to inspection. This warranty is non-transferable and applies only to the original purchaser.
               </p>
               <p className={classes.subsectionHeading}>Disclaimer</p>
-              <p className={classes.bodyText} style={{ textAlign: "justify" }}>
+              <p className={classes.bodyText} style={{ textAlign: "left" }}>
                 Except as expressly stated above, our Products are provided "as is" without warranties, express or implied, including warranties of merchantability or fitness for a particular purpose. We do not guarantee that Products will be error-free or meet specific performance expectations beyond the stated commitments.
               </p>
             </ul>
@@ -167,19 +167,19 @@ const Terms = () => {
             <h3 className={classes.h3inaffiliate}>3. Intellectual Property</h3>
             <ul className={classes.ulholder}>
               <p className={classes.subsectionHeading}>Ownership</p>
-              <p className={classes.bodyText} style={{ textAlign: "justify" }}>
+              <p className={classes.bodyText} style={{ textAlign: "left" }}>
                 All content on our website and App, including text, images, logos, software, and technical documentation, is owned by Xbattery Energy Private Limited or its licensors and is protected by Indian and international copyright, trademark, and intellectual property laws. The "Xbattery" and "BharatBMS" names and logos are registered trademarks of Xbattery.
               </p>
               <p className={classes.subsectionHeading}>Permitted Use</p>
-              <p className={classes.bodyText} style={{ textAlign: "justify" }}>
+              <p className={classes.bodyText} style={{ textAlign: "left" }}>
                 You may view, download, or print content for personal, non-commercial use, provided you retain all copyright and proprietary notices. Any other use, including reproduction, modification, distribution, or republication, requires prior written consent from Xbattery.
               </p>
               <p className={classes.subsectionHeading}>User-Generated Content</p>
-              <p className={classes.bodyText} style={{ textAlign: "justify" }}>
+              <p className={classes.bodyText} style={{ textAlign: "left" }}>
                 If you submit content (e.g., reviews, feedback, or inquiries) to our website or App, you grant Xbattery a non-exclusive, royalty-free, worldwide license to use, modify, and display such content for business purposes. You warrant that your content is lawful, non-infringing, and complies with these Terms.
               </p>
               <p className={classes.subsectionHeading}>Third-Party Materials</p>
-              <p className={classes.bodyText} style={{ textAlign: "justify" }}>
+              <p className={classes.bodyText} style={{ textAlign: "left" }}>
                 Our services may include third-party content (e.g., links or embedded media) used with permission. Such content is subject to the respective third-party's terms and conditions.
               </p>
             </ul>
@@ -188,10 +188,10 @@ const Terms = () => {
           <div className={classes.affiliateholder}>
             <h3 className={classes.h3inaffiliate}>4. Limitation of Liability</h3>
             <ul className={classes.ulholder}>
-              <p className={classes.bodyText} style={{ textAlign: "justify" }}>
+              <p className={classes.bodyText} style={{ textAlign: "left" }}>
                 To the fullest extent permitted by law, Xbattery, its affiliates, officers, directors, and employees shall not be liable for any indirect, incidental, consequential, special, or punitive damages arising from your use of our website, App, or Products, including but not limited to loss of data, profits, or business opportunities. Our total liability for any claim, whether in contract, tort, or otherwise, shall not exceed INR 10,000.
               </p>
-              <p className={classes.bodyText} style={{ textAlign: "justify" }}>
+              <p className={classes.bodyText} style={{ textAlign: "left" }}>
                 We are not responsible for damages caused by:
               </p>
               <p className={classes.bulletPoint} style={{ marginBottom: "0px" }}>
@@ -210,15 +210,15 @@ const Terms = () => {
             <h3 className={classes.h3inaffiliate}>5. Dispute Resolution</h3>
             <ul className={classes.ulholder}>
               <p className={classes.subsectionHeading}>Governing Law</p>
-              <p className={classes.bodyText} style={{ textAlign: "justify" }}>
+              <p className={classes.bodyText} style={{ textAlign: "left" }}>
                 These Terms and any disputes arising from your use of our website, App, or Products shall be governed by the laws of Telangana, India, without regard to conflict of law principles.
               </p>
               <p className={classes.subsectionHeading}>Arbitration</p>
-              <p className={classes.bodyText} style={{ textAlign: "justify" }}>
+              <p className={classes.bodyText} style={{ textAlign: "left" }}>
                 Any disputes shall be resolved through binding arbitration in Hyderabad, India, conducted by a single arbitrator under the Arbitration and Conciliation Act, 1996. The arbitration shall be conducted in English, and the decision shall be final and binding. You waive the right to participate in class action lawsuits or class-wide arbitration.
               </p>
               <p className={classes.subsectionHeading}>Jurisdiction</p>
-              <p className={classes.bodyText} style={{ textAlign: "justify" }}>
+              <p className={classes.bodyText} style={{ textAlign: "left" }}>
                 If arbitration is not applicable, disputes shall be subject to the exclusive jurisdiction of the courts in Hyderabad, India.
               </p>
             </ul>
@@ -227,25 +227,25 @@ const Terms = () => {
           <div className={classes.affiliateholder}>
             <h3 className={classes.h3inaffiliate}>6. Regulatory Compliance</h3>
             <ul className={classes.ulholder}>
-              <p className={classes.bodyText} style={{ textAlign: "justify" }}>
+              <p className={classes.bodyText} style={{ textAlign: "left" }}>
                 Xbattery complies with applicable laws and regulations, including:
               </p>
               <p className={classes.bulletPoint} style={{ marginBottom: "0px" }}>
-                • <span className="font-bold">Information Technology Act, 2000</span> and its rules for data protection.
+                • <span className={classes.bulletLabel}>Information Technology Act, 2000</span> and its rules for data protection.
               </p>
               <p className={classes.bulletPoint} style={{ marginBottom: "0px" }}>
-                • <span className="font-bold">Consumer Protection Act, 2019</span> for consumer rights and warranties.
+                • <span className={classes.bulletLabel}>Consumer Protection Act, 2019</span> for consumer rights and warranties.
               </p>
               <p className={classes.bulletPoint} style={{ marginBottom: "0px" }}>
-                • <span className="font-bold">Bureau of Indian Standards (BIS)</span> requirements for battery management systems and lithium battery packs.
+                • <span className={classes.bulletLabel}>Bureau of Indian Standards (BIS)</span> requirements for battery management systems and lithium battery packs.
               </p>
               <p className={classes.bulletPoint} style={{ marginBottom: "0px" }}>
-                • <span className="font-bold">Battery Management and Handling Rules, 2001</span> for safe disposal and recycling of batteries.
+                • <span className={classes.bulletLabel}>Battery Management and Handling Rules, 2001</span> for safe disposal and recycling of batteries.
               </p>
               <p className={classes.bulletPoint} style={{ marginBottom: "20px" }}>
-                • <span className="font-bold">Foreign Trade Policy</span> and international export regulations for battery systems.
+                • <span className={classes.bulletLabel}>Foreign Trade Policy</span> and international export regulations for battery systems.
               </p>
-              <p className={classes.bodyText} style={{ textAlign: "justify" }}>
+              <p className={classes.bodyText} style={{ textAlign: "left" }}>
                 We maintain certifications and conduct regular audits to ensure compliance with safety, environmental, and energy standards.
               </p>
             </ul>
@@ -254,7 +254,7 @@ const Terms = () => {
           <div className={classes.affiliateholder}>
             <h3 className={classes.h3inaffiliate}>7. User Obligations</h3>
             <ul className={classes.ulholder}>
-              <p className={classes.bodyText} style={{ textAlign: "justify" }}>
+              <p className={classes.bodyText} style={{ textAlign: "left" }}>
                 You agree to:
               </p>
               <p className={classes.bulletPoint} style={{ marginBottom: "0px" }}>
@@ -275,7 +275,7 @@ const Terms = () => {
           <div className={classes.affiliateholder}>
             <h3 className={classes.h3inaffiliate}>8. Termination</h3>
             <ul className={classes.ulholder}>
-              <p className={classes.bodyText} style={{ textAlign: "justify" }}>
+              <p className={classes.bodyText} style={{ textAlign: "left" }}>
                 We may suspend or terminate your access to our website, App, or Products if you violate these Terms, engage in unlawful activities, or cause harm to our systems or other users. Termination does not affect your obligations under these Terms or any warranty claims, subject to the stated conditions.
               </p>
             </ul>
@@ -284,10 +284,10 @@ const Terms = () => {
           <div className={classes.affiliateholder}>
             <h3 className={classes.h3inaffiliate}>9. Grievance Redressal</h3>
             <ul className={classes.ulholder}>
-              <p className={classes.bodyText} style={{ textAlign: "justify" }}>
+              <p className={classes.bodyText} style={{ textAlign: "left" }}>
                 For concerns or complaints about our services or these Terms, contact our Grievance Officer:
               </p>
-              <p className={classes.bodyText} style={{ textAlign: "justify" }}>
+              <p className={classes.bodyText} style={{ textAlign: "left" }}>
                 <span className="font-bold">Email:</span>{" "}
                 <a href="mailto:support@xbattery.energy" className="font-bold hover:opacity-80">
                   support@xbattery.energy
@@ -295,7 +295,7 @@ const Terms = () => {
                 <br />
                 <span className="font-bold">Address:</span> Villa No AE-140, Mantri Euphoria, Gandipet, Rajendra Nagar, K.V. Rangareddy, Telangana, India, 500075.
               </p>
-              <p className={classes.bodyText} style={{ textAlign: "justify" }}>
+              <p className={classes.bodyText} style={{ textAlign: "left" }}>
                 We will respond within 30 days, as required by the <span className="font-bold">Information Technology Act, 2000</span>.
               </p>
             </ul>
@@ -304,7 +304,7 @@ const Terms = () => {
           <div className={classes.affiliateholder}>
             <h3 className={classes.h3inaffiliate}>10. Changes to These Terms</h3>
             <ul className={classes.ulholder}>
-              <p className={classes.bodyText} style={{ textAlign: "justify" }}>
+              <p className={classes.bodyText} style={{ textAlign: "left" }}>
                 We may update these Terms to reflect changes in our practices or legal requirements. We will notify you of material changes by posting the updated Terms on our website with a revised "Last Updated" date. Your continued use of our services constitutes acceptance of the updated Terms.
               </p>
             </ul>
@@ -313,10 +313,10 @@ const Terms = () => {
           <div className={classes.affiliateholder}>
             <h3 className={classes.h3inaffiliate}>11. Contact Us</h3>
             <ul className={classes.ulholder}>
-              <p className={classes.bodyText} style={{ textAlign: "justify" }}>
+              <p className={classes.bodyText} style={{ textAlign: "left" }}>
                 For questions about these Terms, our services, or warranty claims, contact us at:
               </p>
-              <p className={classes.bodyText} style={{ textAlign: "justify" }}>
+              <p className={classes.bodyText} style={{ textAlign: "left" }}>
                 <span className="font-bold">Email:</span>{" "}
                 <a href="mailto:support@xbattery.energy" className="font-bold hover:opacity-80">
                   support@xbattery.energy
@@ -329,7 +329,7 @@ const Terms = () => {
 
           <div className={classes.affiliateholder}>
             <ul className={classes.ulholder}>
-              <p className={classes.bodyText} style={{ textAlign: "justify" }}>
+              <p className={classes.bodyText} style={{ textAlign: "left" }}>
                 For information on data handling, see our{" "}
                 <Link href="/privacy" className="font-bold hover:opacity-80">
                   Privacy Policy
@@ -340,7 +340,7 @@ const Terms = () => {
                 </Link>
                 .
               </p>
-              <p className={classes.bodyText} style={{ textAlign: "justify" }}>
+              <p className={classes.bodyText} style={{ textAlign: "left" }}>
                 © 2025 Xbattery Energy Private Limited. All rights reserved.
               </p>
             </ul>

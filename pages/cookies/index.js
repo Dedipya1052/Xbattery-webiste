@@ -48,7 +48,7 @@ const Cookies = () => {
           <div className={classes.affiliateholder}>
             <ul className={classes.ulholder}>
               <p className={classes.lastUpdated}><strong>Last Updated: September 4, 2025</strong></p>
-              <p className={classes.bodyText} style={{ textAlign: "justify" }}>
+              <p className={classes.bodyText} style={{ textAlign: "left" }}>
                 Xbattery Energy Private Limited ("Xbattery," "we," "us," or "our") uses cookies and similar tracking technologies on our website ({""}
                 <a href="https://xbattery.energy" className="font-bold hover:opacity-80" target="_blank" rel="noopener noreferrer">
                   https://xbattery.energy
@@ -69,7 +69,7 @@ const Cookies = () => {
           <div className={classes.affiliateholder}>
             <h3 className={classes.h3inaffiliate}>1. What Are Cookies?</h3>
             <ul className={classes.ulholder}>
-              <p className={classes.bodyText} style={{ textAlign: "justify" }}>
+              <p className={classes.bodyText} style={{ textAlign: "left" }}>
                 Cookies are small text files placed on your device (computer, smartphone, or tablet) when you visit our website or interact with our portals. These files store information to help us recognize your device, remember preferences, and improve functionality. We also use similar technologies, such as web beacons, pixels, and local storage, for comparable purposes.
               </p>
             </ul>
@@ -78,7 +78,7 @@ const Cookies = () => {
           <div className={classes.affiliateholder}>
             <h3 className={classes.h3inaffiliate}>2. Types of Cookies We Use</h3>
             <ul className={classes.ulholder}>
-              <p className={classes.bodyText} style={{ textAlign: "justify" }}>
+              <p className={classes.bodyText} style={{ textAlign: "left" }}>
                 We use the following categories of cookies:
               </p>
               <p className={classes.subsectionHeading}>Essential Cookies</p>
@@ -146,7 +146,7 @@ const Cookies = () => {
           <div className={classes.affiliateholder}>
             <h3 className={classes.h3inaffiliate}>4. User Data Management in Databases and Portals</h3>
             <ul className={classes.ulholder}>
-              <p className={classes.bodyText} style={{ textAlign: "justify" }}>
+              <p className={classes.bodyText} style={{ textAlign: "left" }}>
                 We collect and manage data from cookies to provide seamless experiences across our website and portals (e.g., customer support portal, product configurator, or partner dashboards). Below is how we handle this data:
               </p>
               <p className={classes.subsectionHeading}>Data Collection</p>
@@ -208,7 +208,7 @@ const Cookies = () => {
           <div className={classes.affiliateholder}>
             <h3 className={classes.h3inaffiliate}>5. Third-Party Cookies</h3>
             <ul className={classes.ulholder}>
-              <p className={classes.bodyText} style={{ textAlign: "justify" }}>
+              <p className={classes.bodyText} style={{ textAlign: "left" }}>
                 We may use third-party services that set their own cookies, such as:
               </p>
               <p className={classes.bulletPoint} style={{ marginBottom: "0px" }}>
@@ -220,7 +220,7 @@ const Cookies = () => {
               <p className={classes.bulletPoint} style={{ marginBottom: "20px" }}>
                 • <span className={classes.bulletLabel}>Cloudflare:</span> Enhances website security and performance.
               </p>
-              <p className={classes.bodyText} style={{ textAlign: "justify" }}>
+              <p className={classes.bodyText} style={{ textAlign: "left" }}>
                 These third parties are responsible for their cookie practices, and we encourage you to review their privacy policies. We ensure all third-party providers comply with applicable data protection laws.
               </p>
             </ul>
@@ -229,7 +229,7 @@ const Cookies = () => {
           <div className={classes.affiliateholder}>
             <h3 className={classes.h3inaffiliate}>6. Managing Cookies and Your Choices</h3>
             <ul className={classes.ulholder}>
-              <p className={classes.bodyText} style={{ textAlign: "justify" }}>
+              <p className={classes.bodyText} style={{ textAlign: "left" }}>
                 You can control cookies in the following ways:
               </p>
               <p className={classes.bulletPoint} style={{ marginBottom: "0px" }}>
@@ -244,7 +244,7 @@ const Cookies = () => {
               <p className={classes.bulletPoint} style={{ marginBottom: "20px" }}>
                 • <span className={classes.bulletLabel}>Portal Settings:</span> If you have a portal account, you can manage cookie preferences specific to your account via the portal dashboard.
               </p>
-              <p className={classes.bodyText} style={{ textAlign: "justify" }}>
+              <p className={classes.bodyText} style={{ textAlign: "left" }}>
                 To opt out of specific third-party cookies:
               </p>
               <p className={classes.bulletPoint} style={{ marginBottom: "0px" }}>
@@ -267,7 +267,7 @@ const Cookies = () => {
           <div className={classes.affiliateholder}>
             <h3 className={classes.h3inaffiliate}>7. Regulatory Compliance</h3>
             <ul className={classes.ulholder}>
-              <p className={classes.bodyText} style={{ textAlign: "justify" }}>
+              <p className={classes.bodyText} style={{ textAlign: "left" }}>
                 Our cookie practices comply with:
               </p>
               <p className={classes.bulletPoint} style={{ marginBottom: "0px" }}>
@@ -276,7 +276,7 @@ const Cookies = () => {
               <p className={classes.bulletPoint} style={{ marginBottom: "20px" }}>
                 • <span className={classes.bulletLabel}>Digital Personal Data Protection Act, 2023</span> (if applicable, based on implementation status as of September 2025).
               </p>
-              <p className={classes.bodyText} style={{ textAlign: "justify" }}>
+              <p className={classes.bodyText} style={{ textAlign: "left" }}>
                 We regularly review our cookie and data management practices to ensure compliance with Indian and international data protection standards.
               </p>
             </ul>
@@ -285,8 +285,9 @@ const Cookies = () => {
           <div className={classes.affiliateholder}>
             <h3 className={classes.h3inaffiliate}>8. Contact Us</h3>
             <ul className={classes.ulholder}>
-              <p className={classes.bodyText} style={{ textAlign: "justify" }}>
-                For questions about this Cookie Policy, our data practices, or to exercise your rights, contact us at:{" "}
+              <p className={classes.bodyText} style={{ textAlign: "left" }}>
+                For questions about this Cookie Policy, our data practices, or to exercise your rights, contact us at:
+                <br />
                 <span className="font-bold">Email:</span>{" "}
                 <a href="mailto:privacy@xbattery.energy" className="font-bold hover:opacity-80">
                   privacy@xbattery.energy
@@ -300,7 +301,7 @@ const Cookies = () => {
           <div className={classes.affiliateholder}>
             <h3 className={classes.h3inaffiliate}>9. Changes to This Policy</h3>
             <ul className={classes.ulholder}>
-              <p className={classes.bodyText} style={{ textAlign: "justify" }}>
+              <p className={classes.bodyText} style={{ textAlign: "left" }}>
                 We may update this Cookie Policy to reflect changes in our practices, technologies, or legal requirements. We will notify you of material changes by posting the updated policy on our website with a revised "Last Updated" date. Your continued use of our website or portals constitutes acceptance of the updated policy.
               </p>
             </ul>
@@ -308,7 +309,7 @@ const Cookies = () => {
 
           <div className={classes.affiliateholder}>
             <ul className={classes.ulholder}>
-              <p className={classes.bodyText} style={{ textAlign: "justify" }}>
+              <p className={classes.bodyText} style={{ textAlign: "left" }}>
                 For additional details, please review our{" "}
                 <Link href="/privacy" className="font-bold hover:opacity-80">
                   Privacy Policy
@@ -319,7 +320,7 @@ const Cookies = () => {
                 </Link>
                 .
               </p>
-              <p className={classes.bodyText} style={{ textAlign: "justify" }}>
+              <p className={classes.bodyText} style={{ textAlign: "left" }}>
                 © 2025 Xbattery Energy Private Limited. All rights reserved.
               </p>
             </ul>
