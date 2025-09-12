@@ -131,7 +131,7 @@ export default function Home({ media, recentBlogs }) {
         <meta property="article:author" content="XBattery Team" />
       </Head>
 
-      <Example media={media} recentBlogs={recentBlogs} />
+      <Example media={media} recentBlogs={recentBlogs} /> 
     </>
   );
 }
