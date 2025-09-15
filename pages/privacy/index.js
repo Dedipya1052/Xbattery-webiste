@@ -218,8 +218,8 @@ const Privacy = () => {
               </p>
               <p className={classes.bodyText} style={{ textAlign: "left" }}>
                 To exercise these rights, contact our Data Protection Officer at{" "}
-                <a href="mailto:privacy@xbattery.energy" className="font-bold hover:opacity-80">
-                  privacy@xbattery.energy
+                <a href="mailto:support@xbattery.energy" className="font-bold hover:opacity-80">
+                  support@xbattery.energy
                 </a>
                 . We will verify your identity and respond within 30 days, except in exceptional circumstances. A nominal fee may apply to cover administrative costs, which we will communicate in advance.
               </p>
@@ -364,8 +364,8 @@ const Privacy = () => {
                 For questions about this Privacy Policy or to exercise your rights, contact our Data Protection Officer:
                 <br />
                 <span className={classes.bulletLabel}>Email:</span>{" "}
-                <a href="mailto:privacy@xbattery.energy" className="font-bold hover:opacity-80">
-                  privacy@xbattery.energy
+                <a href="mailto:support@xbattery.energy" className="font-bold hover:opacity-80">
+                  support@xbattery.energy
                 </a>
                 <br />
                 <span className={classes.bulletLabel}>Address:</span> Villa No AE-140, Mantri Euphoria, Gandipet, Rajendra Nagar, K.V. Rangareddy, Telangana, India, 500075.

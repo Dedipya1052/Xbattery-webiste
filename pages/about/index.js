@@ -130,9 +130,7 @@ const About = () => {
                 <p className="text-xl mt-[2rem] ">
                   {/* Xbattery builds large battery packs that help businesses and
                   grids store energy affordably and access it on demand. */}
-                  Xbattery is building lithium battery packs in India, including
-                  electronics and software, to help businesses, EVs and grids
-                  store energy affordably and access it on demand.
+                  Xbattery is manufacturing BMS electronics for EVs and energy storage
                 </p>
               </div>
             </AnimatedDiv>
@@ -574,20 +572,7 @@ const About = () => {
                     </Text>
 
                     <Text className="text-gray-300 text-lg text-left">
-                      We are excited to launch our first energy storage product
-                      for homes and businesses, featuring the BharatBMS. If you
-                      want early access, send an email to&nbsp;
-                      <Text as="span" color="teal.300"> 
-                        <a
-                          href="mailto:support@xbattery.energy"
-                          target="_blank"
-                          aria-label="Xbattery support email"
-                          rel="noreferrer"
-                        >
-                          support@xbattery.energy
-                        </a>
-                      </Text>
-                      .
+                      Visit <Link href="/bharat-bms" className="font-bold hover:opacity-80">BharatBMS</Link> to explore India’s first scalable high-voltage Battery Management System and learn more about our product
                     </Text>
                   </VStack>
                 </Box>
@@ -601,9 +586,6 @@ const About = () => {
         <div id="teams" className="mb-[4rem]"></div>
         <div className=" w-[93%] md:w-[90%] xl:w-[80%] 2xl:w-[1450px] mx-auto  mb-[5rem]">
           <AnimatedDiv>
-            <h2 className="text-lg text-white text-center font-semibold mb-[-0.3rem]">
-              Meet Our Leaders
-            </h2>
             <h2 className={`${classes.block3Head} text-center`}>
               The Xbattery Leadership Team
             </h2>
@@ -633,15 +615,7 @@ const About = () => {
                   </span>
                 </div>
                 <div className=" opacity-[80%] text-lg text-center md:text-left">
-                  Satish Reddy leads Xbattery as founder and CEO. He spent 15
-                  years in tech, working at Microsoft before starting his own
-                  company. His first venture, Pascalcase, grew to 35 people and
-                  hit $500K in annual revenue within 5 years. Now he's switched
-                  gears completely. Instead of building software, he's tackling
-                  something bigger: India's power backup problems. His
-                  experience scaling companies and building solid teams comes in
-                  handy when you're trying to change how energy storage works in
-                  India.
+                  Satish Reddy leads Xbattery as founder and CEO. He spent 15 years in tech, working at Microsoft before starting his own company. His first venture, Pascalcase, grew to 35 people and hit $500K in annual revenue within 5 years. Later, he founded Xbattery with the ambition of positioning India as a leading hub for battery electronics, thereby contributing to clean energy transition.
                 </div>
               </div>
             </div>

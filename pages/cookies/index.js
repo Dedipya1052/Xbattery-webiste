@@ -135,8 +135,8 @@ const Cookies = () => {
               </p>
               <p className={classes.bulletPoint} style={{ marginBottom: "20px" }}>
                 • <span className={classes.bulletLabel}>Withdrawing Consent:</span> To withdraw consent, adjust your preferences in the cookie settings or contact us at{" "}
-                <a href="mailto:privacy@xbattery.energy" className="font-bold hover:opacity-80">
-                  privacy@xbattery.energy
+                <a href="mailto:support@xbattery.energy" className="font-bold hover:opacity-80">
+                  support@xbattery.energy
                 </a>
                 . Withdrawing consent will not affect the lawfulness of prior data processing.
               </p>
@@ -289,8 +289,8 @@ const Cookies = () => {
                 For questions about this Cookie Policy, our data practices, or to exercise your rights, contact us at:
                 <br />
                 <span className="font-bold">Email:</span>{" "}
-                <a href="mailto:privacy@xbattery.energy" className="font-bold hover:opacity-80">
-                  privacy@xbattery.energy
+                <a href="mailto:support@xbattery.energy" className="font-bold hover:opacity-80">
+                  support@xbattery.energy
                 </a>
                 <br />
                 <span className="font-bold">Address:</span> Villa No AE-140, Mantri Euphoria, Gandipet, Rajendra Nagar, K.V. Rangareddy, Telangana, India, 500075.
