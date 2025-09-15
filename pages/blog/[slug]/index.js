@@ -284,3 +284,5 @@ export default function BlogPage({ blog,blogs}) {
     </div>
   );
 }
+
+/* updated learn page article->DIY Lithium Batteries: Everything You Need to Know  */
