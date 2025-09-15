@@ -44,6 +44,7 @@ export const batteries = [
   { name: "Understanding LFP Batteries", link: "/learn/understanding-lfp-batteries" },
   { name: "Future of Lithium UPS", link: "/learn/how-lithium-ups-challenges-traditional-ups-as-power-backup-of-the-future" },
   { name: "DIY Lithium Batteries: Everything You Need to Know", link: "/learn/diy-lithium-batteries-everything-you-need-to-know" },
+
 ];
 
 // Section headers with category landing links, followed by items
