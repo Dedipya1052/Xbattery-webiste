@@ -572,7 +572,7 @@ const About = () => {
                     </Text>
 
                     <Text className="text-gray-300 text-lg text-left">
-                      Visit <Link href="/bharat-bms" className="font-bold hover:opacity-80">BharatBMS</Link> to explore India’s first scalable high-voltage Battery Management System and learn more about our product
+                      Visit <Link href="/bharat-bms" className="font-bold hover:opacity-80">BharatBMS</Link> to explore India’s first scalable high-voltage Battery Management System and learn more about our product.
                     </Text>
                   </VStack>
                 </Box>
