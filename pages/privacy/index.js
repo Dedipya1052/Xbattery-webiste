@@ -387,7 +387,7 @@ const Privacy = () => {
                 .
               </p>
               <p className={classes.bodyText} style={{ textAlign: "left" }}>
-                © 2025 Xbattery Energy Private Limited. All rights reserved.
+                
               </p>
             </ul>
           </div>
