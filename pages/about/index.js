@@ -597,7 +597,8 @@ const About = () => {
                 alt="photo"
                 width={"600"}
                 height={"600"}
-                className="w-full md:w-[30%] h-[350px] object-cover rounded-md"
+                className="w-full md:w-[30%] h-[350px] object-cover rounded-lg"
+                style={{ borderRadius: '12px !important', overflow: 'hidden' }}
               />
               <div className="text-white  w-full md:w-[65%] flex flex-col gap-[1rem] text-center md:text-left">
                 <div className=" text-2xl font-semibold flex flex-row justify-between md:justify-start items-start sm:items-center gap-[0.5rem] text-left">
@@ -627,7 +628,8 @@ const About = () => {
                 alt="photo"
                 width={"600"}
                 height={"600"}
-                className="w-full md:w-[30%] h-[350px] object-cover rounded-md"
+                className="w-full md:w-[30%] h-[350px] object-cover rounded-lg"
+                style={{ borderRadius: '12px !important', overflow: 'hidden' }}
               />
               <div className="text-white  w-full md:w-[65%] flex flex-col gap-[1rem] text-center md:text-left">
                 <div className=" text-2xl font-semibold flex flex-row justify-between md:justify-start items-start sm:items-center gap-[0.5rem] text-left">
@@ -654,6 +656,37 @@ const About = () => {
                   battery systems for one of Germany's biggest tech companies is
                   pretty useful when you're building power backup solutions for
                   Indian conditions.
+                </div>
+              </div>
+            </div>
+          </AnimatedDiv>
+          <AnimatedDiv>
+            <div className="mt-[3rem] flex flex-col md:flex-row gap-[2rem] md:gap-[5%] items-center">
+              <Image
+                src={"/images/about/leaders/3.png"}
+                alt="photo"
+                width={"600"}
+                height={"600"}
+                className="w-full md:w-[30%] h-[350px] object-cover rounded-lg"
+                style={{ borderRadius: '12px !important', overflow: 'hidden' }}
+              />
+              <div className="text-white  w-full md:w-[65%] flex flex-col gap-[1rem] text-center md:text-left">
+                <div className=" text-2xl font-semibold flex flex-row justify-between md:justify-start items-start sm:items-center gap-[0.5rem] text-left">
+                  Varshith Veeramaneni, Co-founder of Xbattery{" "}
+                  <span className=" mt-1 sm:mt-0">
+                    {" "}
+                    <a
+                      href="https://www.linkedin.com/in/raovarshith/"
+                      aria-label="Xbattery Linkedin"
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      <FaLinkedin size={"26px"} />
+                    </a>
+                  </span>
+                </div>
+                <div className=" opacity-[80%] text-lg">
+                  Varshith Veeramaneni studied Computer Science at Manipal University. He was a core AI research team member at QuillBot, bringing over 6 years of experience specialising in AI applications for energy management and predictive analysis. He co-founded Xbattery because he saw the potential to build something that could actually impact India's power challenges.
                 </div>
               </div>
             </div>
