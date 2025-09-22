@@ -103,21 +103,7 @@ const About = () => {
             {/* <div className="text-[white] text-4xl lg:text-4xl font-medium mb-4">
               About us
             </div> */}
-            <h1 className="text-white text-3xl lg:text-3xl text-center md:text-left font-bold">
-              Coding for 10,000+ Lithium Cells. One Platform.
-            </h1>
-            <div className="pt-8 flex gap-7 pl-2">
-              <Button
-                bg="transparent"
-                border="1px"
-                borderColor="white"
-                color="white"
-                _hover={{ bg: "transparent" }}
-                onClick={handleScroll1}
-              >
-                Our message
-              </Button>
-            </div>
+            
           </motion.div>
         </div>
 
@@ -584,7 +570,7 @@ const About = () => {
         {/* teams */}
 
         <div id="teams" className="mb-[4rem]"></div>
-        <div className=" w-[93%] md:w-[90%] xl:w-[80%] 2xl:w-[1450px] mx-auto  mb-[5rem]">
+        <div className=" w-[93%] md:w-[90%] xl:w-[72%] 2xl:w-[1450px] mx-auto  mb-[5rem]">
           <AnimatedDiv>
             <h2 className={`${classes.block3Head} text-center`}>
               The Xbattery Leadership Team
@@ -597,10 +583,12 @@ const About = () => {
                 alt="photo"
                 width={"600"}
                 height={"600"}
-                className="w-full md:w-[30%] xl:w-[300px] h-[350px] object-cover rounded-lg"
+
+                className="w-full md:w-[30%] xl:w-[305px] h-[350px] object-cover rounded-lg"
+
                 style={{ borderRadius: '12px !important', overflow: 'hidden' }}
               />
-              <div className="text-white  w-full md:w-[65%] flex flex-col gap-[1rem] text-center md:text-left">
+              <div className="text-white w-full md:w-[65%] flex flex-col gap-[1rem] text-center md:text-left md:pl-4">
                 <div className=" text-2xl font-semibold flex flex-row justify-between md:justify-start items-start sm:items-center gap-[0.5rem] text-left">
                   Satish Reddy, CEO of Xbattery{" "}
                   <span className=" mt-1 sm:mt-0">
@@ -628,10 +616,12 @@ const About = () => {
                 alt="photo"
                 width={"600"}
                 height={"600"}
-                className="w-full md:w-[30%] xl:w-[300px] h-[350px] object-cover rounded-lg"
+
+                className="w-full md:w-[30%] xl:w-[305px] h-[350px] object-cover rounded-lg"
+
                 style={{ borderRadius: '12px !important', overflow: 'hidden' }}
               />
-              <div className="text-white  w-full md:w-[65%] flex flex-col gap-[1rem] text-center md:text-left">
+              <div className="text-white w-full md:w-[65%] flex flex-col gap-[1rem] text-center md:text-left md:pr-4">
                 <div className=" text-2xl font-semibold flex flex-row justify-between md:justify-start items-start sm:items-center gap-[0.5rem] text-left">
                   Sonu Mishra, CTO of Xbattery{" "}
                   <span className=" mt-1 sm:mt-0">
@@ -667,12 +657,14 @@ const About = () => {
                 alt="photo"
                 width={"600"}
                 height={"600"}
-                className="w-full md:w-[30%] xl:w-[300px] h-[350px] object-cover rounded-lg"
+
+                className="w-full md:w-[30%] xl:w-[305px] h-[350px] object-cover rounded-lg"
+
                 style={{ borderRadius: '12px !important', overflow: 'hidden' }}
               />
-              <div className="text-white  w-full md:w-[65%] flex flex-col gap-[1rem] text-center md:text-left">
+              <div className="text-white w-full md:w-[65%] flex flex-col gap-[1rem] text-center md:text-left md:pl-4">
                 <div className=" text-2xl font-semibold flex flex-row justify-between md:justify-start items-start sm:items-center gap-[0.5rem] text-left">
-                  Varshith Veeramaneni, Co-founder of Xbattery{" "}
+                  Varshith Veeramaneni, CMO of Xbattery{" "}
                   <span className=" mt-1 sm:mt-0">
                     {" "}
                     <a
@@ -745,7 +737,7 @@ const About = () => {
               {/* Image Section */}
               <div className="w-full flex justify-center mx-auto ">
                 <Image
-                  src="/images/about/group2.png" // Replace with your actual image path
+                  src="/images/about/image.png" // Replace with your actual image path
                   alt="Group photo"
                   width={900}
                   height={600}
