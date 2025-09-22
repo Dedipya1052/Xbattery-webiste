@@ -597,7 +597,7 @@ const About = () => {
                 alt="photo"
                 width={"600"}
                 height={"600"}
-                className="w-full md:w-[30%] h-[350px] object-cover rounded-lg"
+                className="w-full md:w-[30%] xl:w-[300px] h-[350px] object-cover rounded-lg"
                 style={{ borderRadius: '12px !important', overflow: 'hidden' }}
               />
               <div className="text-white  w-full md:w-[65%] flex flex-col gap-[1rem] text-center md:text-left">
@@ -628,7 +628,7 @@ const About = () => {
                 alt="photo"
                 width={"600"}
                 height={"600"}
-                className="w-full md:w-[30%] h-[350px] object-cover rounded-lg"
+                className="w-full md:w-[30%] xl:w-[300px] h-[350px] object-cover rounded-lg"
                 style={{ borderRadius: '12px !important', overflow: 'hidden' }}
               />
               <div className="text-white  w-full md:w-[65%] flex flex-col gap-[1rem] text-center md:text-left">
@@ -667,7 +667,7 @@ const About = () => {
                 alt="photo"
                 width={"600"}
                 height={"600"}
-                className="w-full md:w-[30%] h-[350px] object-cover rounded-lg"
+                className="w-full md:w-[30%] xl:w-[300px] h-[350px] object-cover rounded-lg"
                 style={{ borderRadius: '12px !important', overflow: 'hidden' }}
               />
               <div className="text-white  w-full md:w-[65%] flex flex-col gap-[1rem] text-center md:text-left">
