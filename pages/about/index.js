@@ -294,7 +294,7 @@ const About = () => {
                     </svg>
                   </div>
                   <h3 className="text-md font-semibold">
-                    Sustainability & Clearn Energy Focus
+                    Sustainability & Clean Energy Focus
                   </h3>
                 </div>
 
@@ -377,25 +377,32 @@ const About = () => {
                   <div className="text-center text-white">
                     <div className="flex gap-[0.4rem] justify-center items-center mb-[1rem]">
                       <Image
-                        src="/images/about/teams/shortimages/1.png"
+                        src="/images/about/teams/shortimages/xbattery-100-Edit.jpg"
                         alt="photo"
-                        height="50"
-                        width="50"
-                        className="rounded-full"
+                        height={128}
+                        width={128}
+                        sizes="50px"
+                        quality={100}
+                        className="w-[50px] h-[50px] rounded-full object-cover"
                       />
                       <Image
-                        src="/images/about/teams/shortimages/2.png"
+                        src="/images/about/teams/shortimages/small-image130.jpg"
                         alt="photo"
-                        height="50"
-                        width="50"
-                        className="rounded-full"
+                        height={128}
+                        width={128}
+                        sizes="50px"
+                        quality={100}
+                        className="w-[50px] h-[50px] rounded-full object-cover"
                       />
                       <Image
-                        src="/images/about/teams/shortimages/3.png"
+                        src="/images/about/teams/shortimages/xbattery-070-Edit.jpg"
                         alt="photo"
-                        height="50"
-                        width="50"
-                        className="rounded-full"
+                        height={128}
+                        width={128}
+                        sizes="50px"
+                        quality={100}
+                        className="w-[50px] h-[50px] rounded-full object-cover"
+                        style={{ objectPosition: '50% 0%' }}
                       />
                     </div>
                     <h3 className="text-2xl font-bold">
@@ -537,7 +544,7 @@ const About = () => {
                       India needs to create advanced battery technology to
                       support this. Producing battery cells and BMS locally is
                       critical. With these advancements, building large-scale
-                      battery packs is not just possible—it's within reach.
+                      battery packs is not just possible it's within reach.
                     </Text>
 
                     <Text className="text-gray-300 text-lg text-left">
@@ -612,7 +619,7 @@ const About = () => {
           <AnimatedDiv>
             <div className="mt-[3rem] flex flex-col gap-[2rem]  md:flex-row-reverse md:gap-[5%] items-center">
               <Image
-                src={"/images/about/leaders/2.png"}
+                src={"/images/about/leaders/xbattery-130.jpg"}
                 alt="photo"
                 width={"600"}
                 height={"600"}
@@ -737,11 +744,11 @@ const About = () => {
               {/* Image Section */}
               <div className="w-full flex justify-center mx-auto ">
                 <Image
-                  src="/images/about/image.png" // Replace with your actual image path
+                  src="/images/about/image3.jpg" // Replace with your actual image path
                   alt="Group photo"
                   width={900}
                   height={600}
-                  className="rounded-md mx-auto z-10"
+                  className="rounded-md mx-auto z-10 w-full"
                 />
               </div>
 
