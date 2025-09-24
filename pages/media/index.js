@@ -45,7 +45,7 @@ export default function Media({ blogs = [] }) {
   const [allBlogs, setAllBlogs] = useState([]);
   
   // Today's date
-  const today = new Date(); 
+  const today = new Date();
   
   // Create static featured blogs with today's date
   const featuredStaticBlogs = [
