@@ -464,6 +464,43 @@ const energyData = {
       }
     ],
     total: 452695
+  },
+  october: {
+    data: [
+      {
+        name: "Thermal",
+        barName: "Thermal",
+        value: 244000,
+        percentage: 53.60,
+        color: "#4A545D",
+        hoverColor: "#2F353D",
+      },
+      {
+        name: "Solar, Wind & Other",
+        barName: "Solar, Wind & Oth",
+        value: 156000,
+        percentage: 34.20,
+        color: "#4B9C5E",
+        hoverColor: "#3B7A4D",
+      },
+      {
+        name: "Hydro",
+        barName: "Hydro",
+        value: 47400,
+        percentage: 10.40,
+        color: "#5B9BD5",
+        hoverColor: "#4388B6",
+      },
+      {
+        name: "Nuclear",
+        barName: "Nuclear",
+        value: 8200,
+        percentage: 1.80,
+        color: "#7B5C9E",
+        hoverColor: "#5E4B7D",
+      }
+    ],
+    total: 456000
   }
 };
 
@@ -498,7 +535,7 @@ const renderCustomLabel = ({ cx, cy, midAngle, outerRadius, percent }) => {
 };
 
 const determineYear = (month) => {
-  const monthsIn2024 = ['july2024', 'august', 'september', 'november', 'december'];
+  const monthsIn2024 = ['july2024', 'august', 'september', 'october', 'november', 'december'];
   return monthsIn2024.includes(month) ? 2024 : 2025;
 };
 
@@ -516,6 +553,7 @@ const EnergyContributionDashboard1 = ({monthKey}) => {
     july: "July",
     august: "August",
     september: "September",
+    october: "October",
     november: "November",
     december: "December",
     january:"January",
@@ -767,6 +805,12 @@ const EnergyContributionDashboard1 = ({monthKey}) => {
                   monthKey: "september",
                   displayName: "September",
                   link: "learn/indian-energy-mix-september-2024",
+                },
+                {
+                  month: "october",
+                  monthKey: "october",
+                  displayName: "October",
+                  link: "learn/indian-energy-mix-october-2024",
                 },
                 {
                   month: "november",
@@ -1112,6 +1156,12 @@ const EnergyContributionDashboard1 = ({monthKey}) => {
                     monthKey: "september",
                     displayName: "September",
                     link: "learn/indian-energy-mix-september-2024",
+                  },
+                  {
+                    month: "october",
+                    monthKey: "october",
+                    displayName: "October",
+                    link: "learn/indian-energy-mix-october-2024",
                   },
                   {
                     month: "november",
