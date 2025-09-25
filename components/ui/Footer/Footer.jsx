@@ -61,7 +61,7 @@ const resources = [
   return (
     <>
       {isHomePage ? (
-        <div className={styles.head1}>
+        <div className={styles.head1} id="site-footer">
           <div className={styles.Footer_root__HZhgG}>
             <div className={styles.Footer_content__4wtov}>
               <div className={`${styles.footerHeader} ${styles.footerHeader1}`}>
@@ -261,6 +261,7 @@ const resources = [
       ) : (
         <>
           <div
+            id="site-footer"
             className={`w-full mt-[3rem] mx-auto ${styles.head1} flex flex-col xl:flex-row justify-between border-t-[0.8px] border-b-[0.8px] border-black`}
           >
             <div className="w-full xl:w-[65%] border-b-[0.8px] xl:border-r-[0.8px] border-black">
