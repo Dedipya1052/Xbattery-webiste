@@ -1,6 +1,6 @@
 
 
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import {
   PieChart,
   Pie,
@@ -508,6 +508,9 @@ const EnergyContributionDashboard1 = ({monthKey}) => {
   const [selectedMonth, setSelectedMonth] = useState(monthKey);
   const currentYear = determineYear(selectedMonth);
   const currentEnergyData = energyData[selectedMonth].data;
+  const selectedItemRef = useRef(null);
+  const sidebarRef = useRef(null);
+  const [sidebarOffset, setSidebarOffset] = useState(0);
 
   const monthLabels = {
     july: "July",
@@ -579,6 +582,40 @@ const EnergyContributionDashboard1 = ({monthKey}) => {
 
 
 
+  useEffect(() => {
+    if (selectedItemRef.current) {
+      try {
+        selectedItemRef.current.scrollIntoView({ block: "center", behavior: "instant" });
+      } catch (_) {
+        selectedItemRef.current.scrollIntoView({ block: "center" });
+      }
+    }
+  }, []);
+
+  // Prevent overlap with footer for fixed sidebar via translateY lift
+  useEffect(() => {
+    const footerEl = document.getElementById("site-footer");
+    const sidebarEl = sidebarRef.current;
+    if (!footerEl || !sidebarEl) return;
+
+    const computeOffset = () => {
+      const sidebarRect = sidebarEl.getBoundingClientRect();
+      const footerRect = footerEl.getBoundingClientRect();
+      const gap = 16; // px gap above footer
+      const overlap = sidebarRect.bottom + gap - footerRect.top;
+      const next = overlap > 0 ? overlap : 0;
+      setSidebarOffset((prev) => (prev !== next ? next : prev));
+    };
+
+    computeOffset();
+    window.addEventListener("scroll", computeOffset, { passive: true });
+    window.addEventListener("resize", computeOffset);
+    return () => {
+      window.removeEventListener("scroll", computeOffset);
+      window.removeEventListener("resize", computeOffset);
+    };
+  }, []);
+
   return (
     <>
       <Head>
@@ -634,8 +671,13 @@ const EnergyContributionDashboard1 = ({monthKey}) => {
         )}
       </Head>
 
-      <div className={`${styles.head1} relative `}>
-        <div className="fixed top-32 left-2 w-[120px] hidden lg:block">
+      <div className={`${styles.head1} relative lg:flex lg:items-start lg:gap-6`}>
+        <div
+          ref={sidebarRef}
+          className="fixed left-2 w-[120px] hidden lg:block"
+          style={{ top: "6rem", transform: `translateY(-${sidebarOffset}px)`, transition: "transform 200ms ease" }}
+          id="month-sidebar"
+        >
           <div className="bg-gray-100 p-2 rounded-md shadow-md max-h-[300px] overflow-y-auto pb-4">
             <h3 className="text-sm font-semibold text-center mb-2 sticky top-0 bg-gray-100 z-10">2025</h3>
             <ul className="space-y-1">
@@ -690,6 +732,7 @@ const EnergyContributionDashboard1 = ({monthKey}) => {
                     //   e.preventDefault();
                     //   setSelectedMonth(month);
                     // }}
+                    ref={monthKey === selectedMonth ? selectedItemRef : null}
                     className={`block text-sm px-2 py-1 rounded-md text-center cursor-pointer whitespace-nowrap ${
                       (monthKey === selectedMonth && currentYear === 2025)
                         ? "bg-[#777575] text-white font-semibold"
@@ -745,6 +788,7 @@ const EnergyContributionDashboard1 = ({monthKey}) => {
                     //   e.preventDefault();
                     //   setSelectedMonth(month);
                     // }}
+                    ref={monthKey === selectedMonth ? selectedItemRef : null}
                     className={`block text-sm px-2 py-1 rounded-md text-center cursor-pointer ${
                       (monthKey === selectedMonth && currentYear === 2024)
                         ? "bg-[#777575] text-white font-semibold"
