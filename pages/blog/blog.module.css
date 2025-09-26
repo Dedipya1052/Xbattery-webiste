@@ -139,5 +139,14 @@ scale: 1.01;
   max-width: 1500px;
   margin: 0 auto;
 }
+
+/* Thin black border for all images within blog pages */
+.wrapper img,
+.card_grid img,
+.blogContent img,
+.postContent img {
+  border: 1px solid #000000; /* subtle thin black border */
+  border-radius: 4px;
+}
 }
 
