@@ -82,45 +82,31 @@ export default function ThinBanner({ topClass = "top-20", theme = "media", withS
           } border-b border-gray-200 shadow-md`}
         >
           <div className={`max-w-7xl mx-auto px-4 py-0 ${theme === "home" ? "my-2" : ""}`}>
-            <div className={`flex items-center justify-between h-4 ${theme === "home" ? "rounded-xl px-3" : ""}`}>
-              <div 
-                className={`flex items-center h-full space-x-2 flex-1 cursor-pointer transition-all duration-200 rounded px-1 py-0 -mx-1 -my-0 -mt-1 border border-transparent ${
-                  theme === "home" ? "hover:bg-gray-50" : "hover:bg-gray-100 hover:border-gray-200"
-                } ${theme === "home" ? "justify-center" : ""}`}
-                onClick={handleBannerClick}
-              >
-                <div className="flex-shrink-0 self-center">
-                  <div className={`w-1.5 h-1.5 rounded-full animate-pulse shadow-sm ${theme === "home" ? "bg-gray-700" : "bg-blue-500"}`}></div>
-                </div>
-                <div className="flex-1">
-                  <div className={`flex items-center space-x-3 ${theme === "home" ? "justify-center" : ""}`}>
-                    <div className="flex items-center space-x-2">
-                      <span className={`text-[10px] leading-none font-bold uppercase tracking-wide px-1 py-0 rounded-full ${
-                        theme === "home" ? "bg-gray-100 text-gray-800" : "bg-blue-50 text-blue-600"
-                      }`}>Xbattery Media</span>
-                      <span className={`text-[10px] leading-none font-medium ${theme === "home" ? "text-gray-700" : "text-gray-500"}`}>24 September 2025</span>
-                    </div>
-                    <div className="flex-1">
-                      <p className={`text-xs leading-none font-semibold line-clamp-1 ${theme === "home" ? "text-gray-900 text-center" : "text-gray-800"}`}>
-                        <span className={`font-bold ${theme === "home" ? "text-gray-900" : "text-gray-900"}`}>Xbattery Raises $2.3M in Seed Round</span> from Bipin Patel Family Office with participation from Jhaveri Credits, to build Battery Electronics
-                      </p>
-                    </div>
-                    <div className={`flex-shrink-0 flex items-center space-x-1 px-1 py-0 rounded-full transition-colors ${
-                      theme === "home" ? "bg-gray-100 text-gray-900 hover:bg-gray-200" : "bg-gray-100 text-gray-700 hover:bg-gray-200"
-                    }`}>
-                      <span className="text-[10px] leading-none font-semibold">Read More</span>
-                      <ExternalLink size={9} />
-                    </div>
-                  </div>
-                </div>
+            <div className={`flex items-center justify-center h-4 ${theme === "home" ? "rounded-xl px-3" : ""} relative`}>
+              <div className="flex items-center space-x-2">
+                <div className="w-1.5 h-1.5 bg-black rounded-full animate-pulse"></div>
+                <p className={`text-xs leading-none font-semibold text-center ${theme === "home" ? "text-gray-900" : "text-gray-800"}`}>
+                  <span className={`font-bold ${theme === "home" ? "text-gray-900" : "text-gray-900"}`}>Xbattery Raises $2.3M in Seed Round</span>
+                </p>
               </div>
-              <button
-                onClick={handleClose}
-                className={`ml-2 flex-shrink-0 p-0 rounded-full transition-colors ${theme === "home" ? "hover:bg-gray-100" : "hover:bg-gray-200"}`}
-                aria-label="Close banner"
-              >
-                <X size={10} className={`${theme === "home" ? "text-gray-700" : "text-gray-700"}`} />
-              </button>
+              <div className="absolute right-0 flex items-center space-x-2">
+                <div 
+                  className={`flex items-center space-x-1 px-2 py-1 rounded-full transition-colors cursor-pointer ${
+                    theme === "home" ? "bg-gray-100 text-gray-900 hover:bg-gray-200" : "bg-gray-100 text-gray-700 hover:bg-gray-200"
+                  }`}
+                  onClick={handleBannerClick}
+                >
+                  <span className="text-xs font-semibold">Read More</span>
+                  <ExternalLink size={12} />
+                </div>
+                <button
+                  onClick={handleClose}
+                  className="flex-shrink-0 p-1 rounded-full transition-colors hover:bg-gray-100"
+                  aria-label="Close banner"
+                >
+                  <X size={14} className={`${theme === "home" ? "text-gray-700" : "text-gray-700"}`} />
+                </button>
+              </div>
             </div>
           </div>
         </motion.div>
