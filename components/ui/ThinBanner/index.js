@@ -39,7 +39,7 @@ export default function ThinBanner({ topClass = "top-20", theme = "media", withS
   // Push navbar down while banner is visible on home page (top-0)
   useEffect(() => {
     if (theme !== "home" || topClass !== "top-0") return;
-    const offset = "24px";
+    const offset = "32px";
     const navEls = Array.from(document.querySelectorAll('nav'));
     if (isVisible) {
       navEls.forEach((el) => {
@@ -81,15 +81,12 @@ export default function ThinBanner({ topClass = "top-20", theme = "media", withS
               : "bg-gradient-to-r from-gray-50 to-white text-gray-800"
           } border-b border-gray-200 shadow-md`}
         >
-          <div className={`max-w-7xl mx-auto px-4 py-0 ${theme === "home" ? "my-2" : ""}`}>
-            <div className={`flex items-center justify-center h-4 ${theme === "home" ? "rounded-xl px-3" : ""} relative`}>
+          <div className={`max-w-7xl mx-auto px-4 py-0`}>
+            <div className={`flex items-center justify-center h-8 ${theme === "home" ? "rounded-xl px-3" : ""}`}>
               <div className="flex items-center space-x-2">
-                <div className="w-1.5 h-1.5 bg-black rounded-full animate-pulse"></div>
-                <p className={`text-xs leading-none font-semibold text-center ${theme === "home" ? "text-gray-900" : "text-gray-800"}`}>
+                <p className={`text-sm leading-none font-semibold text-center ${theme === "home" ? "text-gray-900" : "text-gray-800"}`}>
                   <span className={`font-bold ${theme === "home" ? "text-gray-900" : "text-gray-900"}`}>Xbattery Raises $2.3M in Seed Round</span>
                 </p>
-              </div>
-              <div className="absolute right-0 flex items-center space-x-2">
                 <div 
                   className={`flex items-center space-x-1 px-2 py-1 rounded-full transition-colors cursor-pointer ${
                     theme === "home" ? "bg-gray-100 text-gray-900 hover:bg-gray-200" : "bg-gray-100 text-gray-700 hover:bg-gray-200"
@@ -101,7 +98,7 @@ export default function ThinBanner({ topClass = "top-20", theme = "media", withS
                 </div>
                 <button
                   onClick={handleClose}
-                  className="flex-shrink-0 p-1 rounded-full transition-colors hover:bg-gray-100"
+                  className="flex-shrink-0 p-0 rounded-full transition-colors hover:bg-gray-100"
                   aria-label="Close banner"
                 >
                   <X size={14} className={`${theme === "home" ? "text-gray-700" : "text-gray-700"}`} />
@@ -114,7 +111,7 @@ export default function ThinBanner({ topClass = "top-20", theme = "media", withS
           <div
             aria-hidden="true"
             className="w-full"
-            style={{ height: "24px" }}
+            style={{ height: "32px" }}
           />
         )}
         </>
