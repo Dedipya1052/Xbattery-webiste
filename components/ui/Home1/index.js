@@ -746,9 +746,16 @@ const Example = ({ media, recentBlogs }) => {
                           <ul className="text-sm text-[#cfe3ea] list-disc pl-4 space-y-1 marker:text-[#00e5ff]">
                             <li>Supported Cell Chemistry: LFP/NMC</li>
                             <li>Cell Count Range: 13S to 17S</li>
-                            <li>Max Pack Voltage: ~58.4V</li>
+                            <li className="list-item">
+                              <div className="flex items-center justify-between">
+                                <span>Max Pack Voltage: ~58.4V</span>
+                                <span className="inline-flex items-center gap-1 rounded-lg border border-[#12313a] group-hover:border-[#00e5ff] px-3 py-1 text-[#00e5ff] text-xs transition-colors">
+                                  Read More <span className="text-base md:text-lg">›</span>
+                                </span>
+                              </div>
+                            </li>
                           </ul>
-                          <div className="mt-6 border-t border-[#1d2a30]"></div>
+                      <div className="mt-4 border-t border-[#1d2a30]"></div>
                         </div>
                       </div>
                     </Link>
@@ -769,9 +776,16 @@ const Example = ({ media, recentBlogs }) => {
                           <ul className="text-sm text-[#cfe3ea] list-disc pl-4 space-y-1 marker:text-[#00e5ff]">
                             <li>Supported Cell Chemistry: LFP/NMC</li>
                             <li>Cell Count Range: 32S to 36S</li>
-                            <li>Max Pack Voltage: 135V</li>
+                            <li className="list-item">
+                              <div className="flex items-center justify-between">
+                                <span>Max Pack Voltage: 135V</span>
+                                <span className="inline-flex items-center gap-1 rounded-lg border border-[#12313a] group-hover:border-[#00e5ff] px-3 py-1 text-[#00e5ff] text-xs transition-colors">
+                                  Read More <span className="text-base md:text-lg">›</span>
+                                </span>
+                              </div>
+                            </li>
                           </ul>
-                          <div className="mt-6 border-t border-[#1d2a30]"></div>
+                      <div className="mt-4 border-t border-[#1d2a30]"></div>
                         </div>
                       </div>
                     </Link>
@@ -792,9 +806,16 @@ const Example = ({ media, recentBlogs }) => {
                           <ul className="text-sm text-[#cfe3ea] list-disc pl-4 space-y-1 marker:text-[#00e5ff]">
                             <li>Supported Cell Chemistry: LFP/NMC</li>
                             <li>Cell Count Range: 136S</li>
-                            <li>Max Pack Voltage: 496V</li>
+                            <li className="list-item">
+                              <div className="flex items-center justify-between">
+                                <span>Max Pack Voltage: 496V</span>
+                                <span className="inline-flex items-center gap-1 rounded-lg border border-[#12313a] group-hover:border-[#00e5ff] px-3 py-1 text-[#00e5ff] text-xs transition-colors">
+                                  Read More <span className="text-base md:text-lg">›</span>
+                                </span>
+                              </div>
+                            </li>
                           </ul>
-                          <div className="mt-6 border-t border-[#1d2a30]"></div>
+                      <div className="mt-4 border-t border-[#1d2a30]"></div>
                         </div>
                       </div>
                     </Link>

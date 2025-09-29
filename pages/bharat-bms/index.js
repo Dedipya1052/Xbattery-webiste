@@ -324,8 +324,8 @@ const BharatBMS = () => {
               {/* XB-X 16S */}
               <AnimatedDiv>
                 <Link href="/bms/telecom-bms" className="group focus:outline-none">
-                  <div className="rounded-2xl bg-[#151a1d] border border-[#1e2a31] p-6 h-full min-h-[560px] md:min-h-[600px] lg:min-h-[620px] flex flex-col transition-all duration-200 hover:bg-[#10151a] hover:border-[#1e2a31] hover:outline-none hover:shadow-[0_0_0_0.5px_rgba(0,229,255,0.55)]">
-                    <div className="relative w-full h-[240px] md:h-[260px] rounded-xl overflow-hidden mb-4">
+                  <div className="rounded-2xl bg-[#1c1c1c] border border-transparent p-6 h-full min-h-[420px] md:min-h-[440px] lg:min-h-[460px] flex flex-col transition-colors duration-200 hover:bg-[#222222] hover:border-[rgba(0,229,255,0.45)] hover:outline-none hover:shadow-[0_0_0_0.5px_rgba(0,229,255,0.3)]">
+                    <div className="relative w-full h-[220px] md:h-[240px] rounded-xl overflow-hidden mb-4">
                       <Image src="/images/telecom_good_looking-Photoroom.png" alt="XB-X 16S" fill className="object-contain transition-transform duration-500 ease-out group-hover:scale-[1.28]" />
                     </div>
                     <h4 className={`text-lg md:text-xl font-semibold mb-2 text-[#00e5ff]`}>XB-X 16S</h4>
@@ -336,9 +336,14 @@ const BharatBMS = () => {
                       <ul className="text-sm text-[#cfe3ea] list-disc pl-4 space-y-1 marker:text-[#00e5ff]">
                         <li>Supported Cell Chemistry: LFP/NMC</li>
                         <li>Cell Count Range: 13S to 17S</li>
-                        <li>Max Pack Voltage: ~58.4V</li>
+                        <li className="list-item">
+                          <div className="flex items-center justify-between">
+                            <span>Max Pack Voltage: ~58.4V</span>
+                            <span className="inline-flex items-center gap-1 whitespace-nowrap rounded-lg border border-[#2e2e2e] group-hover:border-[#00e5ff] px-1 py-1 text-[#00e5ff] text-xs transition-colors">Read More<span className="text-base md:text-lg">›</span></span>
+                          </div>
+                        </li>
                       </ul>
-                      <div className="mt-6 border-t border-[#1d2a30]"></div>
+                      <div className="mt-4 border-t border-[#1d2a30]"></div>
                     </div>
                     {/* Read More button removed to match home page cards */}
                   </div>
@@ -348,8 +353,8 @@ const BharatBMS = () => {
               {/* XB-X 36S */}
               <AnimatedDiv>
                 <Link href="/bms/lv-bms" className="group focus:outline-none">
-                  <div className="rounded-2xl bg-[#151a1d] border border-[#1e2a31] p-6 h-full min-h-[560px] md:min-h-[600px] lg:min-h-[620px] flex flex-col transition-all duration-200 hover:bg-[#10151a] hover:border-[#1e2a31] hover:outline-none hover:shadow-[0_0_0_0.5px_rgba(0,229,255,0.55)]">
-                    <div className="relative w-full h-[240px] md:h-[260px] rounded-xl overflow-hidden mb-4">
+                  <div className="rounded-2xl bg-[#1c1c1c] border border-transparent p-6 h-full min-h-[420px] md:min-h-[440px] lg:min-h-[460px] flex flex-col transition-colors duration-200 hover:bg-[#222222] hover:border-[rgba(0,229,255,0.45)] hover:outline-none hover:shadow-[0_0_0_0.5px_rgba(0,229,255,0.3)]">
+                    <div className="relative w-full h-[220px] md:h-[240px] rounded-xl overflow-hidden mb-4">
                       <Image src="/images/lv_good_looking-Photoroom.png" alt="XB-X 32S" fill className="object-contain transition-transform duration-500 ease-out group-hover:scale-[1.28]" />
                     </div>
                     <h4 className={`text-lg md:text-xl font-semibold mb-2 text-[#00e5ff]`}>XB-X 36S</h4>
@@ -360,9 +365,14 @@ const BharatBMS = () => {
                       <ul className="text-sm text-[#cfe3ea] list-disc pl-4 space-y-1 marker:text-[#00e5ff]">
                         <li>Supported Cell Chemistry: LFP/NMC</li>
                         <li>Cell Count Range: 32S to 36S</li>
-                        <li>Max Pack Voltage: 135V</li>
+                        <li className="list-item">
+                          <div className="flex items-center justify-between">
+                            <span>Max Pack Voltage: 135V</span>
+                            <span className="inline-flex items-center gap-1 whitespace-nowrap rounded-lg border border-[#2e2e2e] group-hover:border-[#00e5ff] px-1 py-1 text-[#00e5ff] text-xs transition-colors">Read More<span className="text-base md:text-lg">›</span></span>
+                          </div>
+                        </li>
                       </ul>
-                      <div className="mt-6 border-t border-[#1d2a30]"></div>
+                      <div className="mt-4 border-t border-[#1d2a30]"></div>
                     </div>
                     {/* Read More button removed to match home page cards */}
                   </div>
@@ -372,8 +382,8 @@ const BharatBMS = () => {
               {/* XB-X 136S */}
               <AnimatedDiv>
                 <Link href="/bms/ev-bms" className="group focus:outline-none">
-                  <div className="rounded-2xl bg-[#151a1d] border border-[#1e2a31] p-6 h-full min-h-[560px] md:min-h-[600px] lg:min-h-[620px] flex flex-col transition-all duration-200 hover:bg-[#10151a] hover:border-[#1e2a31] hover:outline-none hover:shadow-[0_0_0_0.5px_rgba(0,229,255,0.55)]">
-                    <div className="relative w-full h-[240px] md:h-[260px] rounded-xl overflow-hidden mb-4">
+                  <div className="rounded-2xl bg-[#1c1c1c] border border-transparent p-6 h-full min-h-[420px] md:min-h-[440px] lg:min-h-[460px] flex flex-col transition-colors duration-200 hover:bg-[#222222] hover:border-[rgba(0,229,255,0.45)] hover:outline-none hover:shadow-[0_0_0_0.5px_rgba(0,229,255,0.3)]">
+                        <div className="relative w-full h-[220px] md:h-[240px] rounded-xl overflow-hidden mb-4">
                       <Image src="/images/ev_good_looking-Photoroom.png" alt="XB-X 136S" fill className="object-contain transition-transform duration-500 ease-out group-hover:scale-[1.18]" />
                     </div>
                     <h4 className={`text-lg md:text-xl font-semibold mb-2 text-[#00e5ff]`}>XB-X 136S</h4>
@@ -384,11 +394,15 @@ const BharatBMS = () => {
                       <ul className="text-sm text-[#cfe3ea] list-disc pl-4 space-y-1 marker:text-[#00e5ff]">
                         <li>Supported Cell Chemistry: LFP/NMC</li>
                         <li>Cell Count Range: 136S</li>
-                        <li>Max Pack Voltage: 496V</li>
+                        <li className="list-item">
+                          <div className="flex items-center justify-between">
+                            <span>Max Pack Voltage: 496V</span>
+                            <span className="inline-flex items-center gap-1 whitespace-nowrap rounded-lg border border-[#2e2e2e] group-hover:border-[#00e5ff] px-1 py-1 text-[#00e5ff] text-xs transition-colors">Read More<span className="text-base md:text-lg">›</span></span>
+                          </div>
+                        </li>
                       </ul>
-                      <div className="mt-6 border-t border-[#1d2a30]"></div>
+                      <div className="mt-4 border-t border-[#1d2a30]"></div>
                     </div>
-                    {/* Read More button removed to match home page cards */}
                 </div>
                 </Link>
               </AnimatedDiv>
