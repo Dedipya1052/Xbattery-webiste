@@ -1,4 +1,5 @@
 import Example from "@/components/ui/Home1";
+import ThinBanner from "@/components/ui/ThinBanner";
 import { createClient } from "contentful";
 import { useRouter } from "next/router";
 import Head from "next/head";
@@ -130,7 +131,8 @@ export default function Home({ media, recentBlogs }) {
         <meta property="og:site_name" content="XBattery" />
         <meta property="article:author" content="XBattery Team" />
       </Head>
-
+      {/* Site-wide notification banner above navbar (home theme, above nav) */}
+      <ThinBanner topClass="top-0" theme="home" withSpacer />
       <Example media={media} recentBlogs={recentBlogs} /> 
     </>
   );

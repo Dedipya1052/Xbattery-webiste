@@ -5,6 +5,7 @@ import Head from "next/head";
 import Image from "next/image";
 import { createClient } from "contentful";
 import { Search, X } from "lucide-react";
+import ThinBanner from "../../components/ui/ThinBanner";
 
 // Fetch blogs from contentful CMS
 async function fetchBlogs() {
@@ -168,8 +169,10 @@ export default function Media({ blogs = [] }) {
         <meta property="og:image" content="/favicon.webp" />
       </Head>
       
+      <ThinBanner />
+      
       <div className={styles.mediaContainer}>
-        <div className="mt-[2.5rem] mb-[4.3rem] flex flex-col justify-center items-center gap-[1rem]">
+        <div className="mt-[4rem] mb-[4.3rem] flex flex-col justify-center items-center gap-[1rem]">
           <h1 className={`text-[2.22rem] md:text-[2.8rem] text-center font-semibold ${styles.head1}`}>
             Media
           </h1>
@@ -369,6 +372,15 @@ const MediaCard = ({ blog }) => {
     >
       <a href={linkHref} className={styles.cardLink} target={externalLink ? "_blank" : "_self"} rel={externalLink ? "noopener noreferrer" : ""}>
         <div className={`${styles.mediaContent} rounded-md border border-gray-200 shadow-sm hover:shadow-md transition-shadow p-4 bg-white h-full flex flex-col relative`}>
+          {slug === 'xbattery-raises-2-3m-seed-funding-battery-electronics' && (
+            <div className={styles.cornerBadgeRight}>
+              <div className={styles.cornerBadgeText}>
+                Seed
+                <br />
+                $2.3M
+              </div>
+            </div>
+          )}
           {/* External Link Icon */}
           {externalLink && (
             <div className="absolute top-4 right-4 text-gray-500">
