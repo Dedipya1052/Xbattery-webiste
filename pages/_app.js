@@ -17,6 +17,7 @@ export default function App({ Component, pageProps }) {
     router.pathname.includes("careers") ||
     router.pathname.includes("contact") ||
     router.pathname.includes("bharat-bms") ||
+    router.pathname.includes("/bms") ||
     router.pathname.includes("/docs");
 
     const currentURL = `https://xbattery.energy${router.pathname}`;

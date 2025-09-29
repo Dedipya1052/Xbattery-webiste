@@ -120,36 +120,9 @@ const BharatBMS = () => {
 
         <meta
           name="description"
-          content="Bharat BMS optimizes LFP battery performance and efficiency, supporting India’s power sector with advanced battery management technology."
+          content="Bharat BMS optimizes LFP battery performance and efficiency, supporting India's power sector with advanced battery management technology."
         />
       </Head>
-
-      {/* <div className="bg-[#1f1f1f] text-white w-full 2xl:h-[40vh]">
-        <div className="mx-auto w-[95%] md:w-[90%] xl:w-[95%] 2xl:w-[1500px] py-16 px-6 flex flex-col lg:flex-row items-center justify-center">
-          
-          <div className="text-center lg:text-left p-4 mb-6 lg:mb-0">
-            <h1
-              className={`text-4xl md:text-5xl font-bold  mb-6 ${classes.color} leading-[45px]`}
-            >
-              Introducing BharatBMS
-            </h1>
-            <p className="text-lg md:text-xl leading-relaxed max-w-xl mx-auto md:mx-0  text-[#e9e9e9] pl-[1.5px] ">
-              India's first scalable Battery Management System.
-            </p>
-          </div>
-
-         
-          <div className="md:w-1/2 flex justify-center">
-            <Image
-              height={600}
-              width={600}
-              src="/images/bharatbms/hero.png" 
-              alt="Hero Image"
-              className="rounded-lg shadow-lg w-full max-w-lg object-cover"
-            />
-          </div>
-        </div>
-      </div> */}
 
       <div className="bg-[#1f1f1f] text-white w-full  2xl:h-[37vh]">
         <div className="mx-auto w-[95%] md:w-[90%] xl:w-[95%] 2xl:w-[1500px] py-8 pb-[3rem]  md:py-16 px-6 flex flex-col lg:flex-row items-center justify-center h-full">
@@ -180,12 +153,6 @@ const BharatBMS = () => {
       {/* Existing Content Below Hero Section */}
       <div className={classes.head1}>
         <div className="bg-black text-white py-16 px-6 mx-auto w-[90%] xl:w-[80%] 2xl:w-[1500px]">
-          {/* <AnimatedDiv>
-      <p className="text-lg md:text-xl mx-auto leading-relaxed mb-12 text-left w-[95%] lg:w-[80%]">
-        BharatBMS is India's first universal Battery Management System for energy storage and EVs that scales from home to industrial applications. Imagine a flexible system that works just as efficiently for a 5kWh home backup as it does for megawatt-scale battery packs.
-      </p>
-    </AnimatedDiv> */}
-
           <AnimatedDiv>
             <div className="w-[95%] lg:w-[80%] mx-auto text-center md:text-center">
               <p className="text-lg md:text-xl leading-relaxed mb-2">
@@ -198,29 +165,7 @@ const BharatBMS = () => {
             </div>
           </AnimatedDiv>
 
-          {/* <AnimatedDiv>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 mt-12 w-[90%] md:w-[80%] mx-auto mb-10">
-              {[
-                "/images/bharatbms/1.png",
-                "/images/bharatbms/2.png",
-                "/images/bharatbms/3.png",
-              ].map((src, index) => (
-                <div
-                  key={index}
-                  className="flex justify-center bg-[#1c1c1c] rounded-lg p-4 shadow-lg hover:shadow-xl transition-shadow"
-                >
-                  <Image
-                    src={src}
-                    alt={`Battery System Image ${index + 1}`}
-                    className="rounded-lg shadow-md hover:shadow-lg transition-shadow"
-                    width={400}
-                    height={400}
-                    style={{ objectFit: "cover" }}
-                  />
-                </div>
-              ))}
-            </div>
-          </AnimatedDiv> */}
+          {/* OUR BMS OFFERINGS - removed as per request */}
 
           <div className=" py-9 px-6 rounded-lg mb-1">
             <AnimatedDiv>
@@ -333,63 +278,6 @@ const BharatBMS = () => {
             </div>
           </div>
 
-          {/* <div className="mb-16 w-[95%] mx-auto">
-           
-            <div className="flex flex-col gap-6 md:gap-0 md:flex-row justify-between items-center relative">
-              <div
-                className={`${classes.color} text-2xl font-bold text-center md:text-left w-full md:w-[45%]`}
-              >
-                Bharat BMS
-              </div>
-
-              <div className="w-full md:w-[42%] flex flex-row gap-[2rem] md:gap-[1rem] justify-evenly relative">
-               
-                <div
-                  className="absolute bottom-[-15px] h-[2px] bg-white transition-all duration-300 ease-in-out"
-                  style={{
-                    width: `${100 / tabs.length}%`, // Dynamically adjust width based on number of tabs
-                    left: `${(tabs.indexOf(activeTab) * 100) / tabs.length}%`, // Dynamically adjust the position based on active tab index
-                  }}
-                />
-                {tabs.map((tab, index) => (
-                  <div
-                    key={index}
-                    onClick={() => handleTabChange(tab)}
-                    className={`cursor-pointer flex-1 text-center relative ${
-                      activeTab === tab ? "text-white" : "text-[#b5b5b5]"
-                    }`}
-                  >
-                    {tab}
-                  </div>
-                ))}
-              </div>
-            </div>
-
-           
-            <div className="py-9 px-6 rounded-lg">
-             
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 max-w-[1200px] mx-auto mt-[1rem]">
-                {tabContent[activeTab].map((feature, index) => (
-                  <div
-                    key={index}
-                    className="flex flex-col items-center text-center bg-[#1c1c1c] p-8 rounded-lg shadow-md hover:shadow-lg transition-shadow"
-                  >
-                    
-                    <IconWithGradient size={25} className="mb-4">
-                      {feature.icon}
-                    </IconWithGradient>
-                    <h3 className="text-lg font-semibold mt-4 mb-2 text-white">
-                      {feature.title}
-                    </h3>
-                    <p className="text-sm text-gray-300">
-                      {feature.description}
-                    </p>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div> */}
-
           {[
             {
               title: "Smart, Simple, Scalable",
@@ -413,7 +301,7 @@ const BharatBMS = () => {
             },
           ].map((section, index) => (
             <AnimatedDiv key={index}>
-              <section className="bg-[#1c1c1c] rounded-lg p-8 mb-8 w-[98%] lg:w-[80%] mx-auto">
+              <section className={`bg-[#1c1c1c] rounded-lg p-8 ${index === 3 ? "mb-6" : "mb-8"} w-[98%] lg:w-[80%] mx-auto`}>
                 <h2
                   className={`text-xl md:text-2xl font-semibold mb-6 ${classes.color}`}
                 >
@@ -427,28 +315,83 @@ const BharatBMS = () => {
           ))}
 
           <AnimatedDiv>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-7 mt-10 w-[90%] lg:w-[60%] xl:w-[70%] 2xl:w-[1200px] mx-auto">
-              {[
-                "/images/bharatbms/1.png",
-                "/images/bharatbms/2.png",
-                "/images/bharatbms/3.png",
-              ].map((src, index) => (
-                <div key={index} className="flex justify-center ">
-                  <Image
-                    src={src}
-                    alt={`Battery System Image ${index + 1}`}
-                    className="rounded-lg shadow-lg"
-                    width={400}
-                    height={400}
-                    style={{
-                      objectFit: "cover",
-                      height: { xs: "180px", "2xl": "220px" },
-                      width: "300px",
-                      filter: "grayscale(90%)",
-                    }}
-                  />
+            <div className="py-6 px-6 rounded-lg mb-1">
+              <AnimatedDiv>
+                <h2 className={`text-2xl md:text-3xl font-semibold mb-[-0.5rem] text-center ${classes.color}`}>OUR BMS OFFERINGS</h2>
+              </AnimatedDiv>
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 w-[94%] md:w-[90%] lg:w-[85%] xl:w-[80%] 2xl:w-[1450px] mx-auto pt-6 pb-16">
+              {/* XB-X 16S */}
+              <AnimatedDiv>
+                <Link href="/bms/telecom-bms" className="group focus:outline-none">
+                  <div className="rounded-2xl bg-[#151a1d] border border-[#1e2a31] p-6 h-full min-h-[560px] md:min-h-[600px] lg:min-h-[620px] flex flex-col transition-all duration-200 hover:bg-[#10151a] hover:border-[#1e2a31] hover:outline-none hover:shadow-[0_0_0_0.5px_rgba(0,229,255,0.55)]">
+                    <div className="relative w-full h-[240px] md:h-[260px] rounded-xl overflow-hidden mb-4">
+                      <Image src="/images/telecom_good_looking-Photoroom.png" alt="XB-X 16S" fill className="object-contain transition-transform duration-500 ease-out group-hover:scale-[1.28]" />
+                    </div>
+                    <h4 className={`text-lg md:text-xl font-semibold mb-2 text-[#00e5ff]`}>XB-X 16S</h4>
+                    <div className="w-16 h-[3px] bg-[#00e5ff] rounded-full mb-4"></div>
+                    <p className="text-sm text-[#cfe3ea] mb-4">The XB-X 16S is a versatile 48V BMS designed for modular energy storage systems with support for both LFP and NMC chemistries across 13-17 series configurations.</p>
+                    <div className="mt-auto">
+                      <div className="text-sm text-[#64efff] tracking-wide mb-2">KEY FEATURES</div>
+                      <ul className="text-sm text-[#cfe3ea] list-disc pl-4 space-y-1 marker:text-[#00e5ff]">
+                        <li>Supported Cell Chemistry: LFP/NMC</li>
+                        <li>Cell Count Range: 13S to 17S</li>
+                        <li>Max Pack Voltage: ~58.4V</li>
+                      </ul>
+                      <div className="mt-6 border-t border-[#1d2a30]"></div>
+                    </div>
+                    {/* Read More button removed to match home page cards */}
+                  </div>
+                </Link>
+              </AnimatedDiv>
+
+              {/* XB-X 36S */}
+              <AnimatedDiv>
+                <Link href="/bms/lv-bms" className="group focus:outline-none">
+                  <div className="rounded-2xl bg-[#151a1d] border border-[#1e2a31] p-6 h-full min-h-[560px] md:min-h-[600px] lg:min-h-[620px] flex flex-col transition-all duration-200 hover:bg-[#10151a] hover:border-[#1e2a31] hover:outline-none hover:shadow-[0_0_0_0.5px_rgba(0,229,255,0.55)]">
+                    <div className="relative w-full h-[240px] md:h-[260px] rounded-xl overflow-hidden mb-4">
+                      <Image src="/images/lv_good_looking-Photoroom.png" alt="XB-X 32S" fill className="object-contain transition-transform duration-500 ease-out group-hover:scale-[1.28]" />
+                    </div>
+                    <h4 className={`text-lg md:text-xl font-semibold mb-2 text-[#00e5ff]`}>XB-X 36S</h4>
+                    <div className="w-16 h-[3px] bg-[#00e5ff] rounded-full mb-4"></div>
+                    <p className="text-sm text-[#cfe3ea] mb-4">The XB-X 32S is a robust low-voltage energy storage system BMS operating at 110V nominal with LFP chemistry support for 32-36 series configurations.</p>
+                    <div className="mt-auto">
+                      <div className="text-sm text-[#64efff] tracking-wide mb-2">KEY FEATURES</div>
+                      <ul className="text-sm text-[#cfe3ea] list-disc pl-4 space-y-1 marker:text-[#00e5ff]">
+                        <li>Supported Cell Chemistry: LFP/NMC</li>
+                        <li>Cell Count Range: 32S to 36S</li>
+                        <li>Max Pack Voltage: 135V</li>
+                      </ul>
+                      <div className="mt-6 border-t border-[#1d2a30]"></div>
+                    </div>
+                    {/* Read More button removed to match home page cards */}
+                  </div>
+                </Link>
+              </AnimatedDiv>
+
+              {/* XB-X 136S */}
+              <AnimatedDiv>
+                <Link href="/bms/ev-bms" className="group focus:outline-none">
+                  <div className="rounded-2xl bg-[#151a1d] border border-[#1e2a31] p-6 h-full min-h-[560px] md:min-h-[600px] lg:min-h-[620px] flex flex-col transition-all duration-200 hover:bg-[#10151a] hover:border-[#1e2a31] hover:outline-none hover:shadow-[0_0_0_0.5px_rgba(0,229,255,0.55)]">
+                    <div className="relative w-full h-[240px] md:h-[260px] rounded-xl overflow-hidden mb-4">
+                      <Image src="/images/ev_good_looking-Photoroom.png" alt="XB-X 136S" fill className="object-contain transition-transform duration-500 ease-out group-hover:scale-[1.18]" />
+                    </div>
+                    <h4 className={`text-lg md:text-xl font-semibold mb-2 text-[#00e5ff]`}>XB-X 136S</h4>
+                    <div className="w-16 h-[3px] bg-[#00e5ff] rounded-full mb-4"></div>
+                    <p className="text-sm text-[#cfe3ea] mb-4">The XB-X 136S is a high-performance 435V BMS specifically engineered for electric vehicles including cars, trucks, and buses with 136-series LFP cell configurations.</p>
+                    <div className="mt-auto">
+                      <div className="text-sm text-[#64efff] tracking-wide mb-2">KEY FEATURES</div>
+                      <ul className="text-sm text-[#cfe3ea] list-disc pl-4 space-y-1 marker:text-[#00e5ff]">
+                        <li>Supported Cell Chemistry: LFP/NMC</li>
+                        <li>Cell Count Range: 136S</li>
+                        <li>Max Pack Voltage: 496V</li>
+                      </ul>
+                      <div className="mt-6 border-t border-[#1d2a30]"></div>
+                    </div>
+                    {/* Read More button removed to match home page cards */}
                 </div>
-              ))}
+                </Link>
+              </AnimatedDiv>
             </div>
           </AnimatedDiv>
         </div>

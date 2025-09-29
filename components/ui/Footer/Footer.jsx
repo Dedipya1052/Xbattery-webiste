@@ -23,6 +23,7 @@ const Footer = () => {
     router.pathname.includes("careers") ||
     router.pathname.includes("contact") ||
     router.pathname.includes("bharat-bms") ||
+    router.pathname.includes("/bms") ||
     router.pathname.includes("docs");
     
 

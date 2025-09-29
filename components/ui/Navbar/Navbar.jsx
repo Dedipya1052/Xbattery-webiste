@@ -18,6 +18,7 @@ const Navbar = () => {
     router.pathname.includes("careers") ||
     router.pathname.includes("contact") ||
     router.pathname.includes("bharat-bms") ||
+    router.pathname.includes("/bms") ||
     router.pathname.includes("docs")  ;
 
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -126,7 +127,8 @@ const Navbar = () => {
               <div className="hidden lg:flex gap-7 items-center ml-auto mr-8">
                 <button
                   onClick={scrollToEnergyStorage}
-                  className={`text-lg font-medium transition-colors duration-300 space-grotesk-medium ${
+                  // unusual box and blue line for energy storage
+                  className={`text-lg font-medium space-grotesk-medium ${
                     currentPath === "/"
                       ? "text-white"
                       : "text-[#cacaca] hover:text-[#e6e6e6]"
@@ -154,7 +156,7 @@ const Navbar = () => {
                 ))}
               </div>
 
-              <button className="text-white text-sm bg-transparent border border-white px-[15px] py-[9px] rounded-full hover:bg-white hover:text-black transition-colors duration-300 hidden lg:block space-grotesk-medium">
+              <button className={`text-white text-sm bg-transparent border-[2px] ${styles.gradientBorder} px-[15px] py-[9px] rounded-full hover:bg-white hover:text-black transition-colors duration-300 hidden lg:block space-grotesk-medium focus:outline-none focus-visible:ring-2 focus-visible:ring-cyan-300/40`}>
                 <Link
                   href="https://customerappdev.xbattery.energy/"
                   target="_blank"

@@ -653,6 +653,7 @@ const Example = ({ media, recentBlogs }) => {
                 {/* <div className="text-white text-3xl lg:text-4xl font-medium mb-4">
                 Xbattery
               </div> */}
+
                              <div className="mt-8 sm:mt-12 md:mt-[-10rem] text-center flex flex-col items-center justify-center px-4">
                 <h1 className="text-white text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold">
                 Introducing BharatBMS
@@ -677,14 +678,17 @@ const Example = ({ media, recentBlogs }) => {
                 </div> */}
                 </div>
               </motion.div>
+
             </div>
           </LayoutEffect>
 
 
           <AnimatedDiv>
+
           <div className="w-full bg-[#181818] mt-[-10rem] md:mt-[-11rem]">
               <div
                 className="mt-[7rem] mb-[0rem] pt-[3rem] pb-[8rem] w-[94%] md:w-[90%] lg:w-[85%] xl:w-[80%] 2xl:w-[1450px] mx-auto "                // onClick={handleRedirect}
+
               >
                 <div className="flex flex-col lg:flex-row items-center justify-center gap-[5%] p-6">
                   <div className="w-full lg:w-[45%] mb-6 lg:mb-0">
@@ -723,6 +727,80 @@ const Example = ({ media, recentBlogs }) => {
                     </Link>
                   </div>
                 </div>
+              {/* BMS cards directly below BharatBMS text in the same section */}
+              <div className="mt-6">
+                <h3 className={`${styles.color} text-center text-2xl md:text-3xl font-bold mb-6`}>OUR BMS OFFERINGS</h3>
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                  {/* XB-X 16S */}
+                  <AnimatedDiv>
+                    <Link href="/bms/telecom-bms" className="group focus:outline-none">
+                      <div className="rounded-2xl bg-[#151a1d] border border-[#1e2a31] p-6 h-full min-h-[560px] md:min-h-[600px] lg:min-h-[620px] flex flex-col transition-all duration-200 hover:bg-[#10151a] hover:border-[#1e2a31] hover:outline-none hover:shadow-[0_0_0_0.5px_rgba(0,229,255,0.55)]">
+                        <div className="relative w-full h-[240px] md:h-[260px] rounded-xl overflow-hidden mb-4">
+                          <Image src="/images/telecom_good_looking-Photoroom.png" alt="XB-X 16S" fill className="object-contain transition-transform duration-500 ease-out group-hover:scale-[1.28]" />
+                        </div>
+                        <h4 className={`text-lg md:text-xl font-semibold mb-2 text-[#00e5ff]`}>XB-X 16S</h4>
+                        <div className="w-16 h-[3px] bg-[#00e5ff] rounded-full mb-4"></div>
+                        <p className="text-sm text-[#cfe3ea] mb-4">The XB-X 16S is a versatile 48V BMS designed for modular energy storage systems with support for both LFP and NMC chemistries across 13-17 series configurations.</p>
+                        <div className="mt-auto">
+                          <div className="text-sm text-[#64efff] tracking-wide mb-2">KEY FEATURES</div>
+                          <ul className="text-sm text-[#cfe3ea] list-disc pl-4 space-y-1 marker:text-[#00e5ff]">
+                            <li>Supported Cell Chemistry: LFP/NMC</li>
+                            <li>Cell Count Range: 13S to 17S</li>
+                            <li>Max Pack Voltage: ~58.4V</li>
+                          </ul>
+                          <div className="mt-6 border-t border-[#1d2a30]"></div>
+                        </div>
+                      </div>
+                    </Link>
+                  </AnimatedDiv>
+
+                  {/* XB-X 36S */}
+                  <AnimatedDiv>
+                    <Link href="/bms/lv-bms" className="group focus:outline-none">
+                      <div className="rounded-2xl bg-[#151a1d] border border-[#1e2a31] p-6 h-full min-h-[560px] md:min-h-[600px] lg:min-h-[620px] flex flex-col transition-all duration-200 hover:bg-[#10151a] hover:border-[#1e2a31] hover:outline-none hover:shadow-[0_0_0_0.5px_rgba(0,229,255,0.55)]">
+                        <div className="relative w-full h-[240px] md:h-[260px] rounded-xl overflow-hidden mb-4">
+                          <Image src="/images/lv_good_looking-Photoroom.png" alt="XB-X 32S" fill className="object-contain transition-transform duration-500 ease-out group-hover:scale-[1.48]" />
+                        </div>
+                        <h4 className={`text-lg md:text-xl font-semibold mb-2 text-[#00e5ff]`}>XB-X 36S</h4>
+                        <div className="w-16 h-[3px] bg-[#00e5ff] rounded-full mb-4"></div>
+                        <p className="text-sm text-[#cfe3ea] mb-4">The XB-X 32S is a robust low-voltage energy storage system BMS operating at 110V nominal with LFP chemistry support for 32-36 series configurations.</p>
+                        <div className="mt-auto">
+                          <div className="text-sm text-[#64efff] tracking-wide mb-2">KEY FEATURES</div>
+                          <ul className="text-sm text-[#cfe3ea] list-disc pl-4 space-y-1 marker:text-[#00e5ff]">
+                            <li>Supported Cell Chemistry: LFP/NMC</li>
+                            <li>Cell Count Range: 32S to 36S</li>
+                            <li>Max Pack Voltage: 135V</li>
+                          </ul>
+                          <div className="mt-6 border-t border-[#1d2a30]"></div>
+                        </div>
+                      </div>
+                    </Link>
+                  </AnimatedDiv>
+
+                  {/* XB-X 136S */}
+                  <AnimatedDiv>
+                    <Link href="/bms/ev-bms" className="group focus:outline-none">
+                      <div className="rounded-2xl bg-[#151a1d] border border-[#1e2a31] p-6 h-full min-h-[560px] md:min-h-[600px] lg:min-h-[620px] flex flex-col transition-all duration-200 hover:bg-[#10151a] hover:border-[#1e2a31] hover:outline-none hover:shadow-[0_0_0_0.5px_rgba(0,229,255,0.55)]">
+                        <div className="relative w-full h-[240px] md:h-[260px] rounded-xl overflow-hidden mb-4">
+                          <Image src="/images/ev_good_looking-Photoroom.png" alt="XB-X 136S" fill className="object-contain transition-transform duration-500 ease-out group-hover:scale-[1.18]" />
+                        </div>
+                        <h4 className={`text-lg md:text-xl font-semibold mb-2 text-[#00e5ff]`}>XB-X 136S</h4>
+                        <div className="w-16 h-[3px] bg-[#00e5ff] rounded-full mb-4"></div>
+                        <p className="text-sm text-[#cfe3ea] mb-4">The XB-X 136S is a high-performance 435V BMS specifically engineered for electric vehicles including cars, trucks, and buses with 136-series LFP cell configurations.</p>
+                        <div className="mt-auto">
+                          <div className="text-sm text-[#64efff] tracking-wide mb-2">KEY FEATURES</div>
+                          <ul className="text-sm text-[#cfe3ea] list-disc pl-4 space-y-1 marker:text-[#00e5ff]">
+                            <li>Supported Cell Chemistry: LFP/NMC</li>
+                            <li>Cell Count Range: 136S</li>
+                            <li>Max Pack Voltage: 496V</li>
+                          </ul>
+                          <div className="mt-6 border-t border-[#1d2a30]"></div>
+                        </div>
+                      </div>
+                    </Link>
+                  </AnimatedDiv>
+                </div>
+              </div>
               </div>
             </div>
           </AnimatedDiv>
