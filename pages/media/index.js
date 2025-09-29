@@ -5,7 +5,6 @@ import Head from "next/head";
 import Image from "next/image";
 import { createClient } from "contentful";
 import { Search, X } from "lucide-react";
-import ThinBanner from "../../components/ui/ThinBanner";
 
 // Fetch blogs from contentful CMS
 async function fetchBlogs() {
@@ -169,7 +168,6 @@ export default function Media({ blogs = [] }) {
         <meta property="og:image" content="/favicon.webp" />
       </Head>
       
-      <ThinBanner />
       
       <div className={styles.mediaContainer}>
         <div className="mt-[4rem] mb-[4.3rem] flex flex-col justify-center items-center gap-[1rem]">
