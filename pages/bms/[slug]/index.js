@@ -202,7 +202,7 @@ export default function BmsOfferingPage({ slug }) {
                       {feature.icon}
                     </IconWithGradient>
                   </div>
-                  <div className="flex-1 px-6 py-5 md:px-8 md:py-6 flex flex-col items-center justify-center text-center">
+                  <div className="flex-1 h-full px-6 py-5 md:px-8 md:py-6 flex flex-col items-center justify-center text-center">
                     <h3 className="text-base md:text-lg font-semibold text-white">{feature.title}</h3>
                     <p className="text-sm text-gray-300 mt-1">{feature.description}</p>
                   </div>
@@ -272,7 +272,7 @@ export default function BmsOfferingPage({ slug }) {
           </div>
           <div className="w-full flex justify-center mt-2">
             <div className="w-full max-w-[1200px] bg-[#1b1b1b] rounded-2xl px-6 py-6 md:px-8 md:py-7 flex flex-col items-center gap-3">
-              <p className="text-base md:text-lg text-gray-300 whitespace-nowrap text-center">
+              <p className="text-sm md:text-base text-gray-300 whitespace-nowrap text-center font-medium">
                 Download our brochure now to see how our Battery Management Systems and Energy Storage Solutions can transform your business.
               </p>
               <Link href="/api/download-brochure" className="inline-flex items-center justify-center text-sm font-medium text-white border border-white/30 rounded-md px-4 py-2 hover:bg-white hover:text-black transition-colors">
