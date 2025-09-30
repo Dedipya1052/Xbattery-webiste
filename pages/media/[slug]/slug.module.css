@@ -7,6 +7,7 @@
   margin: 6rem auto;
   position: relative;
   font-family: 'Open Sans', sans-serif;
+  max-width: 900px; /* cap width so after ~1800px viewport it stops growing */
 }
 
 @media (min-width: 500px) and (max-width: 1024px) {
@@ -128,6 +129,7 @@
   margin: 2rem auto;
   position: relative;
   font-family: 'Open Sans', sans-serif;
+  max-width: 900px; /* cap width so after ~1800px viewport it stops growing */
 }
 @media (min-width: 1500px) {
   .container1 {
@@ -527,6 +529,17 @@
     align-items: center;
     gap: 4px;
     margin-top: -10px;
+  }
+}
+
+/* Cap hero/embedded image size on large screens (>=1800px width) */
+@media (min-width:1800px) {
+  .container1 .coverImage {
+    max-width: 900px; /* prevent overly wide images on desktops */
+  }
+  .container .embeddedImage,
+  .container .coverImage {
+    max-width: 900px;
   }
 }
 

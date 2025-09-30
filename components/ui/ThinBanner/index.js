@@ -82,7 +82,33 @@ export default function ThinBanner({ topClass = "top-20", theme = "media", withS
           } border-b border-gray-200 shadow-md`}
         >
           <div className={`max-w-7xl mx-auto px-4 py-0`}>
-            <div className={`flex items-center justify-center h-8 ${theme === "home" ? "rounded-xl px-3" : ""}`}>
+            {/* Mobile layout: text centered, actions right-aligned */}
+            <div className={`flex md:hidden items-center justify-between h-8 ${theme === "home" ? "rounded-xl px-3" : ""}`}>
+              <p className={`flex-1 text-xs leading-none font-semibold text-center truncate ${theme === "home" ? "text-gray-900" : "text-gray-800"}`}>
+                <span className={`font-bold ${theme === "home" ? "text-gray-900" : "text-gray-900"}`}>Xbattery Raises $2.3M in Seed Round</span>
+              </p>
+              <div className="flex items-center gap-1 ml-2 flex-shrink-0">
+                <div 
+                  className={`flex items-center space-x-1 px-2 py-1 rounded-full transition-colors cursor-pointer ${
+                    theme === "home" ? "bg-gray-100 text-gray-900 hover:bg-gray-200" : "bg-gray-100 text-gray-700 hover:bg-gray-200"
+                  }`}
+                  onClick={handleBannerClick}
+                >
+                  <span className="text-[10px] font-semibold">Read More</span>
+                  <ExternalLink size={11} />
+                </div>
+                <button
+                  onClick={handleClose}
+                  className="flex-shrink-0 p-0 rounded-full transition-colors hover:bg-gray-100"
+                  aria-label="Close banner"
+                >
+                  <X size={12} className={`${theme === "home" ? "text-gray-700" : "text-gray-700"}`} />
+                </button>
+              </div>
+            </div>
+
+            {/* Desktop/tablet layout: original centered arrangement */}
+            <div className={`hidden md:flex items-center justify-center h-8 ${theme === "home" ? "rounded-xl px-3" : ""}`}>
               <div className="flex items-center space-x-2">
                 <p className={`text-sm leading-none font-semibold text-center ${theme === "home" ? "text-gray-900" : "text-gray-800"}`}>
                   <span className={`font-bold ${theme === "home" ? "text-gray-900" : "text-gray-900"}`}>Xbattery Raises $2.3M in Seed Round</span>
