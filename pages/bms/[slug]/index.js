@@ -9,26 +9,27 @@ import { useRouter } from "next/router";
 import { 
   FaFlask, FaLayerGroup, FaBolt, FaTachometerAlt, FaPlug, FaMicrochip,
   FaThermometerHalf, FaShieldAlt, FaChartLine, FaNetworkWired, FaBroadcastTower,
-  FaBatteryFull, FaBatteryHalf, FaBatteryQuarter, FaCogs, FaCode, FaChartPie, FaSitemap, FaChartBar
+  FaBatteryFull, FaBatteryHalf, FaBatteryQuarter, FaCogs, FaCode, FaChartPie, FaSitemap, FaChartBar, FaDownload, FaCar
 } from "react-icons/fa";
+ 
 import classes from "../../bharat-bms/styles.module.css";
 
 // BMS Products array for navigation
 const BMS_PRODUCTS = [
   {
     slug: "telecom-bms",
-    title: "XB-X 16S",
-    link: "/bms/telecom-bms"
+    title: "Xbattery BharatBMS-ESS-48V",
+      link: "/bms/BharatBMS-ESS-48V"
   },
   {
     slug: "lv-bms", 
-    title: "XB-X 36S",
-    link: "/bms/lv-bms"
+    title: "Xbattery BharatBMS-ESS-72V",
+      link: "/bms/BharatBMS-ESS-72V"
   },
   {
     slug: "ev-bms",
-    title: "XB-X 136S", 
-    link: "/bms/ev-bms"
+    title: "Xbattery BharatBMS-EV-400V", 
+      link: "/bms/BharatBMS-EV-400V"
   }
 ];
 
@@ -39,21 +40,21 @@ const findBMSIndex = (slug) => {
 
 const CONTENT = {
   "telecom-bms": {
-    title: "XB-X 16S",
+    title: "Xbattery BharatBMS-ESS-48V",
     description:
       "The XB-X 16S is a versatile 48V BMS designed for modular energy storage systems with support for both LFP and NMC chemistries across 13-17 series configurations. Its stackable architecture and 100A continuous current handling make it ideal for scalable residential and commercial energy storage applications.",
     imageAlt: "EV-BMS Image",
     image: "/images/telecom_good_looking-Photoroom.png",
   },
   "lv-bms": {
-    title: "XB-X 36S",
+    title: "Xbattery BharatBMS-ESS-72V",
     description:
       "The XB-X 32S is a robust low-voltage energy storage system BMS operating at 110V nominal with LFP chemistry support for 32-36 series configurations. Engineered for reliable energy storage applications, it delivers 100A continuous current with advanced thermal management and comprehensive safety protections.",
     imageAlt: "Telecom BMS Image",
     image: "/images/lv_good_looking-Photoroom.png",
   },
   "ev-bms": {
-    title: "XB-X 136S",
+    title: "Xbattery BharatBMS-EV-400V",
     description:
       "The XB-X 136S is a high-performance 435V BMS specifically engineered for electric vehicles including cars, trucks, and buses with 136-series LFP cell configurations. Built to automotive standards with ISO 26262 ASIL-C compliance, it supports up to 600A peak discharge currents and features advanced diagnostics for demanding EV applications.",
     imageAlt: "LV-BMS Image",
@@ -63,10 +64,18 @@ const CONTENT = {
 
 export default function BmsOfferingPage({ slug }) {
   const router = useRouter();
-  const data = CONTENT[slug] || CONTENT["telecom-bms"];
+  // Backward-compatible slug aliases
+  const SLUG_ALIAS = {
+    "BharatBMS-ESS-48V": "telecom-bms",
+    "BharatBMS-ESS-72V": "lv-bms",
+    "BharatBMS-EV-400V": "ev-bms",
+  };
+
+  const normalizedSlug = CONTENT[slug] ? slug : (SLUG_ALIAS[slug] || slug);
+  const data = CONTENT[normalizedSlug] || CONTENT["telecom-bms"];
 
   // Navigation logic
-  const currentBMSIndex = findBMSIndex(slug);
+  const currentBMSIndex = findBMSIndex(normalizedSlug);
   const prevBMS = currentBMSIndex > 0 ? BMS_PRODUCTS[currentBMSIndex - 1] : null;
   const nextBMS = currentBMSIndex < BMS_PRODUCTS.length - 1 ? BMS_PRODUCTS[currentBMSIndex + 1] : null;
 
@@ -111,10 +120,16 @@ export default function BmsOfferingPage({ slug }) {
         <title>{data.title} | Xbattery</title>
       </Head>
       <div className={classes.head1}>
-      <div className="bg-[#1c1c1c] text-white w-full">
+      <div className="bg-[#1c1c1c] text-white w-full relative">
+        {/* Page header icon badge (top-right) */}
+        <div className="absolute top-6 right-4 w-12 h-12 rounded-xl bg-[#0c0c0c] border border-[#2a2a2a] flex items-center justify-center">
+          <IconWithGradient size={24}>
+            {normalizedSlug === 'telecom-bms' ? <FaBatteryFull /> : normalizedSlug === 'lv-bms' ? <FaPlug /> : <FaCar />}
+          </IconWithGradient>
+        </div>
         <div className="mx-auto w-[95%] md:w-[90%] xl:w-[95%] 2xl:w-[1500px] py-8 md:py-16 px-6 flex flex-col lg:flex-row items-center justify-center h-full min-h-[420px]">
           <div className="text-center lg:text-left p-4 mb-6 lg:mb-0">
-            <h1 className={`text-4xl md:text-5xl font-bold mb-6 ${classes.color} leading-[45px] md:leading-[60px]`}>
+            <h1 className={`text-4xl md:text-5xl font-bold mb-6 ${classes.color} leading-[45px] md:leading-[60px] whitespace-nowrap`}>
               {data.title}
             </h1>
             <h2 className="text-lg md:text-xl leading-relaxed max-w-xl mx-auto md:mx-0 text-[#e9e9e9] pl-[1.5px]">
@@ -122,12 +137,12 @@ export default function BmsOfferingPage({ slug }) {
             </h2>
           </div>
           <div className="md:w-1/2 flex justify-center">
-            <div className="w-[100%] max-w-lg rounded-lg bg-[#1c1c1c] h-[260px] md:h-[320px] overflow-hidden flex items-center justify-center">
+            <div className="w-[100%] max-w-2xl rounded-lg bg-[#1c1c1c] h-[320px] md:h-[420px] overflow-hidden flex items-center justify-center">
               <Image 
                 src={data.image} 
                 alt={data.imageAlt} 
-                width={640} 
-                height={360} 
+                width={800} 
+                height={450} 
                 className="object-contain w-full h-full" 
               />
             </div>
@@ -152,49 +167,45 @@ export default function BmsOfferingPage({ slug }) {
               Key Specifications
             </h2>
           </AnimatedDiv>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 max-w-[1200px] mx-auto">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-10 max-w-[1200px] mx-auto items-stretch">
             {(
               {
                 "telecom-bms": [
                   { icon: <FaFlask />, title: "Supported Cell Chemistry", description: "LFP/NMC" },
                   { icon: <FaLayerGroup />, title: "Cell Count Range", description: "13S-17S" },
                   { icon: <FaBolt />, title: "Nominal Pack Voltage", description: "42.9V to 56.1V" },
-                  { icon: <FaTachometerAlt />, title: "Max Pack Voltage", description: "~58.4V" },
-                  { icon: <FaPlug />, title: "Input Power", description: "9V–60V" },
                   { icon: <FaMicrochip />, title: "Communications", description: "CAN-powered or separate DC" }
                 ],
                 "lv-bms": [
                   { icon: <FaFlask />, title: "Supported Cell Chemistry", description: "LFP/NMP" },
                   { icon: <FaLayerGroup />, title: "Cell Count Range", description: "32S-36S" },
                   { icon: <FaBolt />, title: "Nominal Pack Voltage", description: "110V" },
-                  { icon: <FaTachometerAlt />, title: "Max Pack Voltage", description: "135V" },
-                  { icon: <FaPlug />, title: "Input Power", description: "110V" },
                   { icon: <FaMicrochip />, title: "Communications", description: "CAN 2.0B, UART, BLE" }
                 ],
                 "ev-bms": [
                   { icon: <FaFlask />, title: "Supported Cell Chemistry", description: "LFP/NMC" },
                   { icon: <FaLayerGroup />, title: "Cell Count Range", description: "136S" },
                   { icon: <FaBolt />, title: "Nominal Pack Voltage", description: "435V" },
-                  { icon: <FaTachometerAlt />, title: "Max Pack Voltage", description: "496V" },
-                  { icon: <FaPlug />, title: "Input Power", description: "435V–496V" },
                   { icon: <FaMicrochip />, title: "Communications", description: "CAN Bus, RS-485, UART" }
                 ]
-              }[slug] || [
+              }[normalizedSlug] || [
                 { icon: <FaFlask />, title: "Supported Cell Chemistry", description: "LFP/NMC" },
                 { icon: <FaLayerGroup />, title: "Cell Count Range", description: "13S-17S" },
                 { icon: <FaBolt />, title: "Nominal Pack Voltage", description: "42.9V to 56.1V" },
-                { icon: <FaTachometerAlt />, title: "Max Pack Voltage", description: "~58.4V" },
-                { icon: <FaPlug />, title: "Input Power", description: "9V–60V" },
                 { icon: <FaMicrochip />, title: "Communications", description: "CAN-powered or separate DC" }
               ]
             ).map((feature, index) => (
               <AnimatedDiv key={index}>
-                <div className="flex flex-col items-center text-center bg-[#1c1c1c] p-8 rounded-lg shadow-md hover:shadow-lg transition-shadow h-full">
-                  <IconWithGradient size={28}>
-                    {feature.icon}
-                  </IconWithGradient>
-                  <h3 className="text-lg font-semibold mt-4 mb-2">{feature.title}</h3>
-                  <p className="text-sm text-gray-300">{feature.description}</p>
+                <div className="flex w-full rounded-2xl overflow-hidden bg-[#1b1b1b] min-h-[120px]">
+                  <div className="w-[96px] md:w-[110px] shrink-0 bg-[#141414] flex items-center justify-center">
+                    <IconWithGradient size={28}>
+                      {feature.icon}
+                    </IconWithGradient>
+                  </div>
+                  <div className="flex-1 px-6 py-5 md:px-8 md:py-6 flex flex-col items-center justify-center text-center">
+                    <h3 className="text-base md:text-lg font-semibold text-white">{feature.title}</h3>
+                    <p className="text-sm text-gray-300 mt-1">{feature.description}</p>
+                  </div>
                 </div>
               </AnimatedDiv>
             ))}
@@ -208,7 +219,7 @@ export default function BmsOfferingPage({ slug }) {
               Features
             </h2>
           </AnimatedDiv>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 max-w-[1200px] mx-auto py-16">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 max-w-[1200px] mx-auto py-16">
             {[
               { title: "Cell Monitoring & Balancing", description: "Supports up to 18 series cells with passive balancing for equalization. Voltage accuracy: ±2mV." },
               { title: "Communication & Control", description: "CAN FD, UART, SPI, and Ethernet for real-time processing and remote monitoring." },
@@ -218,12 +229,14 @@ export default function BmsOfferingPage({ slug }) {
               { title: "Diagnostics and Monitoring", description: "Real-time data visualization and lifecycle analytics for better battery management." },
             ].map((item, index) => (
               <AnimatedDiv key={index}>
-                <div className="flex flex-col items-center text-center bg-[#1c1c1c] p-8 rounded-lg shadow-md hover:shadow-lg transition-shadow h-full">
-                  <IconWithGradient size={30}>
-                    {React.createElement(featureIconSets[slug][index])}
-                  </IconWithGradient>
-                  <h3 className="text-xl font-semibold mt-4 mb-3 text-white">{item.title}</h3>
-                  <p className="text-sm text-gray-300 flex-grow">{item.description}</p>
+                <div className="relative bg-[#1b1b1b] rounded-2xl p-8 h-full">
+                  <div className="absolute -top-3 left-4 w-9 h-9 rounded-xl bg-[#0c0c0c] flex items-center justify-center">
+                    <IconWithGradient size={20}>
+                      {React.createElement(featureIconSets[normalizedSlug][index])}
+                    </IconWithGradient>
+                  </div>
+                  <h3 className="text-xl font-semibold mb-3 text-white mt-3">{item.title}</h3>
+                  <p className="text-sm text-gray-300">{item.description}</p>
                 </div>
               </AnimatedDiv>
             ))}
@@ -237,40 +250,36 @@ export default function BmsOfferingPage({ slug }) {
               Software
             </h2>
           </AnimatedDiv>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 max-w-[1200px] mx-auto py-16">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 max-w-[1200px] mx-auto py-16">
             {[
               { title: "SOC/SOH Estimation", description: "Accurate algorithms for State-of-Charge and State-of-Health, ensuring reliable reporting." },
               { title: "Software Framework", description: "Optimized for efficiency and real-time performance suitable for demanding use-cases." },
               { title: "Customizable API", description: "Open interfaces for seamless OEM integration and configurability." }
             ].map((item, index) => (
               <AnimatedDiv key={index}>
-                <div className="flex flex-col items-center text-center bg-[#1c1c1c] p-8 rounded-lg shadow-md hover:shadow-lg transition-shadow h-full">
-                  <IconWithGradient size={30}>
-                    {React.createElement(softwareIconSets[slug][index])}
-                  </IconWithGradient>
-                  <h3 className="text-xl font-semibold mt-4 mb-3 text-white">{item.title}</h3>
-                  <p className="text-sm text-gray-300 flex-grow">{item.description}</p>
+                <div className="relative bg-[#1b1b1b] rounded-2xl p-8 h-full">
+                  <div className="absolute -top-3 left-4 w-9 h-9 rounded-xl bg-[#0c0c0c] flex items-center justify-center">
+                    <IconWithGradient size={20}>
+                      {React.createElement(softwareIconSets[normalizedSlug][index])}
+                    </IconWithGradient>
+                  </div>
+                  <h3 className="text-xl font-semibold mb-3 text-white mt-3">{item.title}</h3>
+                  <p className="text-sm text-gray-300">{item.description}</p>
+                  
                 </div>
               </AnimatedDiv>
             ))}
           </div>
           <div className="w-full flex justify-center mt-2">
-            <button
-              onClick={() => window.print()}
-              className="text-white border border-white rounded-md px-5 py-2 text-sm font-medium hover:text-transparent transition-all duration-300"
-              style={{
-                backgroundColor: '#151a1d',
-                backgroundImage: 'linear-gradient(90deg, #25f1fc, #5bb2ff, #b15dfb)',
-                WebkitBackgroundClip: 'text',
-                backgroundClip: 'text',
-                color: 'white',
-                borderColor: 'white'
-              }}
-              onMouseEnter={(e) => { e.target.style.color = 'transparent'; }}
-              onMouseLeave={(e) => { e.target.style.color = 'white'; }}
-            >
-              Download Brochure (PDF)
-            </button>
+            <div className="w-full max-w-[1200px] bg-[#1b1b1b] rounded-2xl px-6 py-6 md:px-8 md:py-7 flex flex-col items-center gap-3">
+              <p className="text-base md:text-lg text-gray-300 whitespace-nowrap text-center">
+                Download our brochure now to see how our Battery Management Systems and Energy Storage Solutions can transform your business.
+              </p>
+              <Link href="/api/download-brochure" className="inline-flex items-center justify-center text-sm font-medium text-white border border-white/30 rounded-md px-4 py-2 hover:bg-white hover:text-black transition-colors">
+                <FaDownload className="mr-2" />
+                <span>Download Brochure (PDF)</span>
+              </Link>
+            </div>
           </div>
         </div>
 
