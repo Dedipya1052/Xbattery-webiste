@@ -127,12 +127,12 @@ export default function BmsOfferingPage({ slug }) {
             {normalizedSlug === 'telecom-bms' ? <FaBatteryFull /> : normalizedSlug === 'lv-bms' ? <FaPlug /> : <FaCar />}
           </IconWithGradient>
         </div>
-        <div className="mx-auto w-[95%] md:w-[90%] xl:w-[95%] 2xl:w-[1500px] py-8 md:py-16 px-6 flex flex-col lg:flex-row items-center justify-center h-full min-h-[420px]">
-          <div className="text-center lg:text-left p-4 mb-6 lg:mb-0">
-            <h1 className={`text-4xl md:text-5xl font-bold mb-6 ${classes.color} leading-[45px] md:leading-[60px] whitespace-nowrap`}>
+        <div className="mx-auto w-[95%] md:w-[90%] xl:w-[95%] 2xl:w-[1500px] py-8 md:py-16 px-3 md:px-6 flex flex-col lg:flex-row items-center justify-center h-full min-h-[420px]">
+          <div className="text-center lg:text-left p-2 md:p-4 mb-6 lg:mb-0 w-full">
+            <h1 className={`text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-6 ${classes.color} leading-[35px] sm:leading-[40px] md:leading-[50px] lg:leading-[60px] lg:whitespace-nowrap`}>
               {data.title}
             </h1>
-            <h2 className="text-lg md:text-xl leading-relaxed max-w-xl mx-auto md:mx-0 text-[#e9e9e9] pl-[1.5px]">
+            <h2 className="text-sm sm:text-base md:text-xl leading-relaxed max-w-xl mx-auto md:mx-0 text-[#e9e9e9] px-1 md:pl-[1.5px]">
               {data.description}
             </h2>
           </div>
@@ -150,18 +150,18 @@ export default function BmsOfferingPage({ slug }) {
         </div>
       </div>
 
-      <div className="bg-black text-white py-16 px-6 mx-auto w-[90%] xl:w-[80%] 2xl:w-[1500px]">
+      <div className="bg-black text-white py-16 px-3 md:px-6 mx-auto w-[95%] md:w-[90%] xl:w-[80%] 2xl:w-[1500px]">
         {/* Intro paragraph (same placement as BharatBMS) */}
         <AnimatedDiv>
-          <div className="w-[95%] lg:w-[80%] mx-auto text-center md:text-center">
-            <p className="text-lg md:text-xl leading-relaxed mb-2">
+          <div className="w-[95%] lg:w-[80%] mx-auto text-center md:text-center px-2">
+            <p className="text-sm sm:text-base md:text-xl leading-relaxed mb-2">
               {data.title} is engineered on the BharatBMS architecture: a universal high-voltage Battery Management System that scales from home energy storage to industrial and EV applications, emphasizing reliability, safety, and ease of integration.
             </p>
           </div>
         </AnimatedDiv>
 
         {/* Key Specifications section (mirroring BharatBMS style) */}
-        <div className=" py-9 px-6 rounded-lg mb-1">
+        <div className=" py-9 px-4 md:px-6 rounded-lg mb-1">
           <AnimatedDiv>
             <h2 className={`text-2xl md:text-3xl font-semibold mb-12 text-center ${classes.color}`}>
               Key Specifications
@@ -213,7 +213,7 @@ export default function BmsOfferingPage({ slug }) {
         </div>
 
         {/* Features section (mirroring BharatBMS content) */}
-        <div className="py-6 px-6 rounded-lg mb-1">
+        <div className="py-6 px-4 md:px-6 rounded-lg mb-1">
           <AnimatedDiv>
             <h2 className={`text-2xl md:text-3xl font-semibold mb-[-0.5rem] text-center ${classes.color}`}>
               Features
@@ -244,7 +244,7 @@ export default function BmsOfferingPage({ slug }) {
         </div>
 
         {/* Software section (mirroring BharatBMS style) */}
-        <div className="py-6 px-6 rounded-lg mb-1">
+        <div className="py-6 px-4 md:px-6 rounded-lg mb-1">
           <AnimatedDiv>
             <h2 className={`text-2xl md:text-3xl font-semibold mb-[-0.5rem] text-center ${classes.color}`}>
               Software
@@ -271,8 +271,8 @@ export default function BmsOfferingPage({ slug }) {
             ))}
           </div>
           <div className="w-full flex justify-center mt-2">
-            <div className="w-full max-w-[1200px] bg-[#1b1b1b] rounded-2xl px-6 py-6 md:px-8 md:py-7 flex flex-col items-center gap-3">
-              <p className="text-sm md:text-base text-gray-300 whitespace-nowrap text-center font-medium">
+            <div className="w-full max-w-[1200px] bg-[#1b1b1b] rounded-2xl px-4 py-6 md:px-8 md:py-7 flex flex-col items-center gap-3">
+              <p className="text-sm md:text-base text-gray-300 text-center font-medium px-2">
                 Download our brochure now to see how our Battery Management Systems and Energy Storage Solutions can transform your business.
               </p>
               <Link href="/api/download-brochure" className="inline-flex items-center justify-center text-sm font-medium text-white border border-white/30 rounded-md px-4 py-2 hover:bg-white hover:text-black transition-colors">
@@ -344,3 +344,4 @@ export async function getServerSideProps(context) {
   const { slug } = context.params || {};
   return { props: { slug } };
 }
+                                    
