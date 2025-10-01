@@ -10,7 +10,8 @@ import { useRef } from "react";
 import Link from "next/link";
 import AnimatedDiv from "../Animate";
 import IconWithGradient from "../IconGradient";
-import { FaCar, FaBatteryFull, FaPlug, FaBroadcastTower, FaIndustry, FaTruck, FaWifi, FaServer, FaBolt, FaMicrochip, FaCogs, FaBatteryThreeQuarters } from "react-icons/fa";
+import { FaCar, FaHome } from "react-icons/fa";
+import FactoryIcon from "@/components/Icons/FactoryIcon";
 import { motion } from "framer-motion";
 import { useRouter } from "next/router";
 import Head from "next/head";
@@ -738,8 +739,8 @@ const Example = ({ media, recentBlogs }) => {
                     <Link href="/bms/BharatBMS-ESS-48V" className="group focus:outline-none">
                       <div className="relative rounded-2xl bg-[#151a1d] border border-[#1e2a31] p-6 h-full min-h-[560px] md:min-h-[600px] lg:min-h-[620px] flex flex-col transition-all duration-200 hover:bg-[#10151a] hover:border-[#1e2a31] hover:outline-none hover:shadow-[0_0_0_0.5px_rgba(0,229,255,0.55)]">
                         <div className="absolute top-3 left-4 w-11 h-11 rounded-xl bg-[#0c0c0c] flex items-center justify-center">
-                          <IconWithGradient size={20}>
-                            <FaMicrochip />
+                          <IconWithGradient size={24}>
+                            <FaHome />
                           </IconWithGradient>
                         </div>
                         <div className="relative w-full h-[240px] md:h-[260px] rounded-xl overflow-hidden mb-4">
@@ -778,8 +779,8 @@ const Example = ({ media, recentBlogs }) => {
                     <Link href="/bms/BharatBMS-ESS-72V" className="group focus:outline-none">
                       <div className="relative rounded-2xl bg-[#151a1d] border border-[#1e2a31] p-6 h-full min-h-[560px] md:min-h-[600px] lg:min-h-[620px] flex flex-col transition-all duration-200 hover:bg-[#10151a] hover:border-[#1e2a31] hover:outline-none hover:shadow-[0_0_0_0.5px_rgba(0,229,255,0.55)]">
                         <div className="absolute top-3 left-4 w-11 h-11 rounded-xl bg-[#0c0c0c] flex items-center justify-center">
-                          <IconWithGradient size={20}>
-                            <FaCogs />
+                          <IconWithGradient size={24}>
+                            <FactoryIcon size={24} />
                           </IconWithGradient>
                         </div>
                         <div className="relative w-full h-[240px] md:h-[260px] rounded-xl overflow-hidden mb-4">
@@ -817,8 +818,8 @@ const Example = ({ media, recentBlogs }) => {
                     <Link href="/bms/BharatBMS-EV-400V" className="group focus:outline-none">
                       <div className="relative rounded-2xl bg-[#151a1d] border border-[#1e2a31] p-6 h-full min-h-[560px] md:min-h-[600px] lg:min-h-[620px] flex flex-col transition-all duration-200 hover:bg-[#10151a] hover:border-[#1e2a31] hover:outline-none hover:shadow-[0_0_0_0.5px_rgba(0,229,255,0.55)]">
                         <div className="absolute top-3 left-4 w-11 h-11 rounded-xl bg-[#0c0c0c] flex items-center justify-center">
-                          <IconWithGradient size={20}>
-                            <FaBatteryThreeQuarters />
+                          <IconWithGradient size={24}>
+                            <FaCar />
                           </IconWithGradient>
                         </div>
                         <div className="relative w-full h-[240px] md:h-[260px] rounded-xl overflow-hidden mb-4">

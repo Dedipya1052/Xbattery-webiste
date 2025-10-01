@@ -10,8 +10,9 @@ import {
   FaFlask, FaLayerGroup, FaBolt, FaTachometerAlt, FaPlug, FaMicrochip,
   FaThermometerHalf, FaShieldAlt, FaChartLine, FaNetworkWired, FaBroadcastTower,
   FaBatteryFull, FaBatteryHalf, FaBatteryQuarter, FaCogs, FaCode, FaChartPie, FaSitemap, FaChartBar, FaDownload, FaCar,
-  FaCog, FaWifi, FaServer, FaIndustry, FaHome, FaTruck, FaCubes, FaBatteryEmpty, FaBatteryThreeQuarters
+  FaCog, FaWifi, FaServer, FaHome, FaTruck, FaCubes, FaBatteryEmpty, FaBatteryThreeQuarters
 } from "react-icons/fa";
+import FactoryIcon from "@/components/Icons/FactoryIcon";
  
 import classes from "../../bharat-bms/styles.module.css";
 
@@ -95,7 +96,7 @@ export default function BmsOfferingPage({ slug }) {
       FaNetworkWired,         // Communication & Control
       FaShieldAlt,            // Safety Features
       FaThermometerHalf,      // Thermal Management
-      FaIndustry,             // Scalability
+      FactoryIcon,            // Scalability (custom detailed factory icon)
       FaChartBar              // Diagnostics and Monitoring
     ],
     "ev-bms": [
@@ -124,8 +125,8 @@ export default function BmsOfferingPage({ slug }) {
       <div className="bg-[#1c1c1c] text-white w-full relative">
         {/* Page header icon badge (top-right) */}
         <div className="absolute top-6 right-4 w-12 h-12 rounded-xl bg-[#0c0c0c] border border-[#2a2a2a] flex items-center justify-center">
-          <IconWithGradient size={24}>
-            {normalizedSlug === 'telecom-bms' ? <FaBatteryFull /> : normalizedSlug === 'lv-bms' ? <FaPlug /> : <FaCar />}
+          <IconWithGradient size={28}>
+            {normalizedSlug === 'telecom-bms' ? <FaHome /> : normalizedSlug === 'lv-bms' ? <FactoryIcon /> : <FaCar />}
           </IconWithGradient>
         </div>
         <div className="mx-auto w-[95%] md:w-[90%] xl:w-[95%] 2xl:w-[1500px] py-8 md:py-16 px-3 md:px-6 flex flex-col lg:flex-row items-center justify-center h-full min-h-[420px]">
@@ -195,7 +196,7 @@ export default function BmsOfferingPage({ slug }) {
               <AnimatedDiv key={index}>
                 <div className="flex w-full rounded-2xl overflow-hidden bg-[#1b1b1b] min-h-[120px]">
                   <div className="w-[96px] md:w-[110px] shrink-0 bg-[#141414] flex items-center justify-center">
-                    <IconWithGradient size={28}>
+                    <IconWithGradient size={32}>
                       {feature.icon}
                     </IconWithGradient>
                   </div>
@@ -227,7 +228,7 @@ export default function BmsOfferingPage({ slug }) {
             ].map((feature, index) => (
               <AnimatedDiv key={index}>
                 <div className="flex flex-col items-center text-center bg-[#1c1c1c] p-8 rounded-lg shadow-md hover:shadow-lg transition-shadow h-full">
-                  <IconWithGradient size={25}>
+                  <IconWithGradient size={28}>
                     {React.createElement(featureIconSets[normalizedSlug][index])}
                   </IconWithGradient>
                   <h3 className="text-lg font-semibold mt-4 mb-2">
@@ -270,7 +271,7 @@ export default function BmsOfferingPage({ slug }) {
             ].map((feature, index) => (
               <AnimatedDiv key={index}>
                 <div className="flex flex-col items-center text-center bg-gradient-to-b bg-[#1c1c1c] p-8 rounded-lg shadow-md hover:shadow-lg transition-shadow h-full">
-                  <IconWithGradient size={30}>
+                  <IconWithGradient size={34}>
                     {feature.icon}
                   </IconWithGradient>
                   <h3 className="text-xl font-semibold mt-4 mb-3 text-white">

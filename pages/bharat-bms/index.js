@@ -9,6 +9,8 @@ import Head from "next/head";
 import AnimatedDiv from "@/components/ui/Animate";
 import { FaCar } from "react-icons/fa";
 import { FaPlug } from "react-icons/fa";
+import { FaHome } from "react-icons/fa";
+import FactoryIcon from "@/components/Icons/FactoryIcon";
 import {
   FaBatteryFull,
   FaMicrochip,
@@ -328,7 +330,9 @@ const BharatBMS = () => {
                 <Link href="/bms/BharatBMS-ESS-48V" className="group focus:outline-none">
                   <div className="relative rounded-2xl bg-[#1c1c1c] border border-transparent p-6 h-full min-h-[560px] md:min-h-[600px] lg:min-h-[620px] flex flex-col transition-colors duration-200 hover:bg-[#222222] hover:border-[rgba(0,229,255,0.45)] hover:outline-none hover:shadow-[0_0_0_0.5px_rgba(0,229,255,0.3)]">
                     <div className="absolute top-3 left-4 w-11 h-11 rounded-xl bg-[#0c0c0c] flex items-center justify-center">
-                      <FaBatteryFull className="text-white" size={20} />
+                      <IconWithGradient size={24}>
+                        <FaHome />
+                      </IconWithGradient>
                     </div>
                     <div className="relative w-full h-[240px] md:h-[260px] rounded-xl overflow-hidden mb-4">
                       <Image src="/images/telecom_good_looking-Photoroom.png" alt="Xbattery BharatBMS-ESS-48V" fill className="object-contain transition-transform duration-500 ease-out group-hover:scale-[1.28]" />
@@ -364,7 +368,9 @@ const BharatBMS = () => {
                 <Link href="/bms/BharatBMS-ESS-72V" className="group focus:outline-none">
                   <div className="relative rounded-2xl bg-[#1c1c1c] border border-transparent p-6 h-full min-h-[560px] md:min-h-[600px] lg:min-h-[620px] flex flex-col transition-colors duration-200 hover:bg-[#222222] hover:border-[rgba(0,229,255,0.45)] hover:outline-none hover:shadow-[0_0_0_0.5px_rgba(0,229,255,0.3)]">
                     <div className="absolute top-3 left-4 w-11 h-11 rounded-xl bg-[#0c0c0c] flex items-center justify-center">
-                      <FaPlug className="text-white" size={20} />
+                      <IconWithGradient size={24}>
+                        <FactoryIcon size={24} />
+                      </IconWithGradient>
                     </div>
                     <div className="relative w-full h-[240px] md:h-[260px] rounded-xl overflow-hidden mb-4">
                       <Image src="/images/lv_good_looking-Photoroom.png" alt="XB-X 32S" fill className="object-contain transition-transform duration-500 ease-out group-hover:scale-[1.28]" />
@@ -400,7 +406,9 @@ const BharatBMS = () => {
                 <Link href="/bms/BharatBMS-EV-400V" className="group focus:outline-none">
                   <div className="relative rounded-2xl bg-[#1c1c1c] border border-transparent p-6 h-full min-h-[560px] md:min-h-[600px] lg:min-h-[620px] flex flex-col transition-colors duration-200 hover:bg-[#222222] hover:border_[rgba(0,229,255,0.45)] hover:outline-none hover:shadow-[0_0_0_0.5px_rgba(0,229,255,0.3)]">
                     <div className="absolute top-3 left-4 w-11 h-11 rounded-xl bg-[#0c0c0c] flex items-center justify-center">
-                      <FaCar className="text-white" size={20} />
+                      <IconWithGradient size={24}>
+                        <FaCar />
+                      </IconWithGradient>
                     </div>
                         <div className="relative w-full h-[240px] md:h-[260px] rounded-xl overflow-hidden mb-4">
                       <Image src="/images/ev_good_looking-Photoroom.png" alt="Xbattery BharatBMS-EV-400V" fill className="object-contain transition-transform duration-500 ease-out group-hover:scale-[1.18]" />
