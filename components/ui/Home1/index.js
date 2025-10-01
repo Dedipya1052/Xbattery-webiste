@@ -9,7 +9,8 @@ import { useAnimation, useInView } from "framer-motion";
 import { useRef } from "react";
 import Link from "next/link";
 import AnimatedDiv from "../Animate";
-import { FaCar, FaBatteryFull, FaPlug } from "react-icons/fa";
+import IconWithGradient from "../IconGradient";
+import { FaCar, FaBatteryFull, FaPlug, FaBroadcastTower, FaIndustry, FaTruck, FaWifi, FaServer, FaBolt, FaMicrochip, FaCogs, FaBatteryThreeQuarters } from "react-icons/fa";
 import { motion } from "framer-motion";
 import { useRouter } from "next/router";
 import Head from "next/head";
@@ -737,7 +738,9 @@ const Example = ({ media, recentBlogs }) => {
                     <Link href="/bms/BharatBMS-ESS-48V" className="group focus:outline-none">
                       <div className="relative rounded-2xl bg-[#151a1d] border border-[#1e2a31] p-6 h-full min-h-[560px] md:min-h-[600px] lg:min-h-[620px] flex flex-col transition-all duration-200 hover:bg-[#10151a] hover:border-[#1e2a31] hover:outline-none hover:shadow-[0_0_0_0.5px_rgba(0,229,255,0.55)]">
                         <div className="absolute top-3 left-4 w-11 h-11 rounded-xl bg-[#0c0c0c] flex items-center justify-center">
-                          <FaBatteryFull className="text-white" size={20} />
+                          <IconWithGradient size={20}>
+                            <FaMicrochip />
+                          </IconWithGradient>
                         </div>
                         <div className="relative w-full h-[240px] md:h-[260px] rounded-xl overflow-hidden mb-4">
                           <Image src="/images/telecom_good_looking-Photoroom.png" alt="Xbattery BharatBMS-ESS-48V" fill className="object-contain transition-transform duration-500 ease-out group-hover:scale-[1.28]" />
@@ -775,7 +778,9 @@ const Example = ({ media, recentBlogs }) => {
                     <Link href="/bms/BharatBMS-ESS-72V" className="group focus:outline-none">
                       <div className="relative rounded-2xl bg-[#151a1d] border border-[#1e2a31] p-6 h-full min-h-[560px] md:min-h-[600px] lg:min-h-[620px] flex flex-col transition-all duration-200 hover:bg-[#10151a] hover:border-[#1e2a31] hover:outline-none hover:shadow-[0_0_0_0.5px_rgba(0,229,255,0.55)]">
                         <div className="absolute top-3 left-4 w-11 h-11 rounded-xl bg-[#0c0c0c] flex items-center justify-center">
-                          <FaPlug className="text-white" size={20} />
+                          <IconWithGradient size={20}>
+                            <FaCogs />
+                          </IconWithGradient>
                         </div>
                         <div className="relative w-full h-[240px] md:h-[260px] rounded-xl overflow-hidden mb-4">
                           <Image src="/images/lv_good_looking-Photoroom.png" alt="XB-X 32S" fill className="object-contain transition-transform duration-500 ease-out group-hover:scale-[1.48]" />
@@ -812,7 +817,9 @@ const Example = ({ media, recentBlogs }) => {
                     <Link href="/bms/BharatBMS-EV-400V" className="group focus:outline-none">
                       <div className="relative rounded-2xl bg-[#151a1d] border border-[#1e2a31] p-6 h-full min-h-[560px] md:min-h-[600px] lg:min-h-[620px] flex flex-col transition-all duration-200 hover:bg-[#10151a] hover:border-[#1e2a31] hover:outline-none hover:shadow-[0_0_0_0.5px_rgba(0,229,255,0.55)]">
                         <div className="absolute top-3 left-4 w-11 h-11 rounded-xl bg-[#0c0c0c] flex items-center justify-center">
-                          <FaCar className="text-white" size={20} />
+                          <IconWithGradient size={20}>
+                            <FaBatteryThreeQuarters />
+                          </IconWithGradient>
                         </div>
                         <div className="relative w-full h-[240px] md:h-[260px] rounded-xl overflow-hidden mb-4">
                           <Image src="/images/ev_good_looking-Photoroom.png" alt="Xbattery BharatBMS-EV-400V" fill className="object-contain transition-transform duration-500 ease-out group-hover:scale-[1.18]" />

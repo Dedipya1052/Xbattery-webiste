@@ -9,7 +9,8 @@ import { useRouter } from "next/router";
 import { 
   FaFlask, FaLayerGroup, FaBolt, FaTachometerAlt, FaPlug, FaMicrochip,
   FaThermometerHalf, FaShieldAlt, FaChartLine, FaNetworkWired, FaBroadcastTower,
-  FaBatteryFull, FaBatteryHalf, FaBatteryQuarter, FaCogs, FaCode, FaChartPie, FaSitemap, FaChartBar, FaDownload, FaCar
+  FaBatteryFull, FaBatteryHalf, FaBatteryQuarter, FaCogs, FaCode, FaChartPie, FaSitemap, FaChartBar, FaDownload, FaCar,
+  FaCog, FaWifi, FaServer, FaIndustry, FaHome, FaTruck, FaCubes, FaBatteryEmpty, FaBatteryThreeQuarters
 } from "react-icons/fa";
  
 import classes from "../../bharat-bms/styles.module.css";
@@ -83,35 +84,35 @@ export default function BmsOfferingPage({ slug }) {
   const featureIconSets = {
     "telecom-bms": [
       FaBatteryFull,        // Cell Monitoring & Balancing
-      FaNetworkWired,       // Communication & Control
+      FaWifi,               // Communication & Control
       FaShieldAlt,          // Safety Features
       FaThermometerHalf,    // Thermal Management
-      FaLayerGroup,         // Scalability
+      FaServer,             // Scalability
       FaChartLine           // Diagnostics and Monitoring
     ],
     "lv-bms": [
-      FaBatteryHalf,
-      FaBroadcastTower,
-      FaShieldAlt,
-      FaThermometerHalf,
-      FaSitemap,
-      FaChartBar
+      FaBatteryThreeQuarters, // Cell Monitoring & Balancing
+      FaNetworkWired,         // Communication & Control
+      FaShieldAlt,            // Safety Features
+      FaThermometerHalf,      // Thermal Management
+      FaIndustry,             // Scalability
+      FaChartBar              // Diagnostics and Monitoring
     ],
     "ev-bms": [
-      FaBatteryQuarter,
-      FaNetworkWired,
-      FaShieldAlt,
-      FaThermometerHalf,
-      FaLayerGroup,
-      FaChartPie
+      FaBatteryEmpty,         // Cell Monitoring & Balancing
+      FaCar,                  // Communication & Control
+      FaShieldAlt,            // Safety Features
+      FaThermometerHalf,      // Thermal Management
+      FaTruck,                // Scalability
+      FaChartPie              // Diagnostics and Monitoring
     ]
   };
 
   // Icon sets per BMS type for Software
   const softwareIconSets = {
-    "telecom-bms": [FaChartPie, FaCogs, FaCode],
-    "lv-bms": [FaChartBar, FaCogs, FaCode],
-    "ev-bms": [FaChartLine, FaCogs, FaCode]
+    "telecom-bms": [FaChartLine, FaCog, FaCode],
+    "lv-bms": [FaChartBar, FaCog, FaCode],
+    "ev-bms": [FaChartPie, FaCog, FaCode]
   };
 
   return (
@@ -167,32 +168,28 @@ export default function BmsOfferingPage({ slug }) {
               Key Specifications
             </h2>
           </AnimatedDiv>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-10 max-w-[1200px] mx-auto items-stretch">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 max-w-[1200px] mx-auto items-stretch">
             {(
               {
                 "telecom-bms": [
                   { icon: <FaFlask />, title: "Supported Cell Chemistry", description: "LFP/NMC" },
-                  { icon: <FaLayerGroup />, title: "Cell Count Range", description: "13S-17S" },
-                  { icon: <FaBolt />, title: "Nominal Pack Voltage", description: "42.9V to 56.1V" },
-                  { icon: <FaMicrochip />, title: "Communications", description: "CAN-powered or separate DC" }
+                  { icon: <FaCubes />, title: "Cell Count Range", description: "13S-17S" },
+                  { icon: <FaBolt />, title: "Nominal Pack Voltage", description: "42.9V to 56.1V" }
                 ],
                 "lv-bms": [
-                  { icon: <FaFlask />, title: "Supported Cell Chemistry", description: "LFP/NMP" },
-                  { icon: <FaLayerGroup />, title: "Cell Count Range", description: "32S-36S" },
-                  { icon: <FaBolt />, title: "Nominal Pack Voltage", description: "110V" },
-                  { icon: <FaMicrochip />, title: "Communications", description: "CAN 2.0B, UART, BLE" }
+                  { icon: <FaFlask />, title: "Supported Cell Chemistry", description: "LFP/NMC" },
+                  { icon: <FaCubes />, title: "Cell Count Range", description: "32S-36S" },
+                  { icon: <FaBolt />, title: "Nominal Pack Voltage", description: "110V" }
                 ],
                 "ev-bms": [
                   { icon: <FaFlask />, title: "Supported Cell Chemistry", description: "LFP/NMC" },
-                  { icon: <FaLayerGroup />, title: "Cell Count Range", description: "136S" },
-                  { icon: <FaBolt />, title: "Nominal Pack Voltage", description: "435V" },
-                  { icon: <FaMicrochip />, title: "Communications", description: "CAN Bus, RS-485, UART" }
+                  { icon: <FaCubes />, title: "Cell Count Range", description: "136S" },
+                  { icon: <FaBolt />, title: "Nominal Pack Voltage", description: "435V" }
                 ]
               }[normalizedSlug] || [
                 { icon: <FaFlask />, title: "Supported Cell Chemistry", description: "LFP/NMC" },
-                { icon: <FaLayerGroup />, title: "Cell Count Range", description: "13S-17S" },
-                { icon: <FaBolt />, title: "Nominal Pack Voltage", description: "42.9V to 56.1V" },
-                { icon: <FaMicrochip />, title: "Communications", description: "CAN-powered or separate DC" }
+                { icon: <FaCubes />, title: "Cell Count Range", description: "13S-17S" },
+                { icon: <FaBolt />, title: "Nominal Pack Voltage", description: "42.9V to 56.1V" }
               ]
             ).map((feature, index) => (
               <AnimatedDiv key={index}>
@@ -213,13 +210,13 @@ export default function BmsOfferingPage({ slug }) {
         </div>
 
         {/* Features section (mirroring BharatBMS content) */}
-        <div className="py-6 px-4 md:px-6 rounded-lg mb-1">
+        <div className=" py-9 px-4 md:px-6 rounded-lg mb-1">
           <AnimatedDiv>
-            <h2 className={`text-2xl md:text-3xl font-semibold mb-[-0.5rem] text-center ${classes.color}`}>
+            <h2 className={`text-2xl md:text-3xl font-semibold mb-12 text-center ${classes.color}`}>
               Features
             </h2>
           </AnimatedDiv>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 max-w-[1200px] mx-auto py-16">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 max-w-[1200px] mx-auto">
             {[
               { title: "Cell Monitoring & Balancing", description: "Supports up to 18 series cells with passive balancing for equalization. Voltage accuracy: ±2mV." },
               { title: "Communication & Control", description: "CAN FD, UART, SPI, and Ethernet for real-time processing and remote monitoring." },
@@ -227,16 +224,18 @@ export default function BmsOfferingPage({ slug }) {
               { title: "Thermal Management", description: "Real-time temperature sensing and thermal runaway detection for high-temperature control." },
               { title: "Scalability", description: "Modular architecture supports series and parallel setups for larger energy storage needs." },
               { title: "Diagnostics and Monitoring", description: "Real-time data visualization and lifecycle analytics for better battery management." },
-            ].map((item, index) => (
+            ].map((feature, index) => (
               <AnimatedDiv key={index}>
-                <div className="relative bg-[#1b1b1b] rounded-2xl p-8 h-full">
-                  <div className="absolute -top-3 left-4 w-9 h-9 rounded-xl bg-[#0c0c0c] flex items-center justify-center">
-                    <IconWithGradient size={20}>
-                      {React.createElement(featureIconSets[normalizedSlug][index])}
-                    </IconWithGradient>
-                  </div>
-                  <h3 className="text-xl font-semibold mb-3 text-white mt-3">{item.title}</h3>
-                  <p className="text-sm text-gray-300">{item.description}</p>
+                <div className="flex flex-col items-center text-center bg-[#1c1c1c] p-8 rounded-lg shadow-md hover:shadow-lg transition-shadow h-full">
+                  <IconWithGradient size={25}>
+                    {React.createElement(featureIconSets[normalizedSlug][index])}
+                  </IconWithGradient>
+                  <h3 className="text-lg font-semibold mt-4 mb-2">
+                    {feature.title}
+                  </h3>
+                  <p className="text-sm text-gray-300">
+                    {feature.description}
+                  </p>
                 </div>
               </AnimatedDiv>
             ))}
@@ -250,22 +249,36 @@ export default function BmsOfferingPage({ slug }) {
               Software
             </h2>
           </AnimatedDiv>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 max-w-[1200px] mx-auto py-16">
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 max-w-[1200px] mx-auto py-16">
             {[
-              { title: "SOC/SOH Estimation", description: "Accurate algorithms for State-of-Charge and State-of-Health, ensuring reliable reporting." },
-              { title: "Software Framework", description: "Optimized for efficiency and real-time performance suitable for demanding use-cases." },
-              { title: "Customizable API", description: "Open interfaces for seamless OEM integration and configurability." }
-            ].map((item, index) => (
+              {
+                title: "SOC/SOH Estimation",
+                description: "Accurate algorithms for State-of-Charge and State-of-Health calculation, ensuring reliable battery status reporting.",
+                icon: <FaChartLine />,
+              },
+              {
+                title: "Software Framework",
+                description: "Optimized in C for high efficiency and real-time performance, suitable for demanding applications.",
+                icon: <FaCode />,
+              },
+              {
+                title: "Customizable API",
+                description: "Open API for seamless integration and tailoring system behavior to specific applications.",
+                icon: <FaCogs />,
+              },
+            ].map((feature, index) => (
               <AnimatedDiv key={index}>
-                <div className="relative bg-[#1b1b1b] rounded-2xl p-8 h-full">
-                  <div className="absolute -top-3 left-4 w-9 h-9 rounded-xl bg-[#0c0c0c] flex items-center justify-center">
-                    <IconWithGradient size={20}>
-                      {React.createElement(softwareIconSets[normalizedSlug][index])}
-                    </IconWithGradient>
-                  </div>
-                  <h3 className="text-xl font-semibold mb-3 text-white mt-3">{item.title}</h3>
-                  <p className="text-sm text-gray-300">{item.description}</p>
-                  
+                <div className="flex flex-col items-center text-center bg-gradient-to-b bg-[#1c1c1c] p-8 rounded-lg shadow-md hover:shadow-lg transition-shadow h-full">
+                  <IconWithGradient size={30}>
+                    {feature.icon}
+                  </IconWithGradient>
+                  <h3 className="text-xl font-semibold mt-4 mb-3 text-white">
+                    {feature.title}
+                  </h3>
+                  <p className="text-sm text-gray-300 flex-grow">
+                    {feature.description}
+                  </p>
                 </div>
               </AnimatedDiv>
             ))}
