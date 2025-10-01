@@ -284,15 +284,30 @@ export default function BmsOfferingPage({ slug }) {
               </AnimatedDiv>
             ))}
           </div>
-          <div className="w-full flex justify-center mt-2">
-            <div className="w-full max-w-[1200px] bg-[#1b1b1b] rounded-2xl px-4 py-6 md:px-8 md:py-7 flex flex-col items-center gap-3">
-              <p className="text-sm md:text-base text-gray-300 text-center font-medium px-2">
-                Download our brochure now to see how our Battery Management Systems and Energy Storage Solutions can transform your business.
-              </p>
-              <Link href="/api/download-brochure" className="inline-flex items-center justify-center text-sm font-medium text-white border border-white/30 rounded-md px-4 py-2 hover:bg-white hover:text-black transition-colors">
-                <FaDownload className="mr-2" />
-                <span>Download Brochure (PDF)</span>
+          <div className="w-full flex justify-end mt-2">
+            <div className="flex flex-col items-center gap-2 mr-2">
+              <Link
+                href="/api/download-brochure"
+                aria-label="Download brochure PDF"
+                className="inline-flex items-center justify-center w-12 h-12 rounded-xl bg-white border border-gray-200 shadow-[0_2px_8px_rgba(0,0,0,0.08)] hover:shadow-[0_4px_12px_rgba(0,0,0,0.12)] transition"
+              >
+                {/* Custom download icon with dual-color gradient stroke; button size unchanged */}
+                <svg
+                  width="28"
+                  height="28"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path d="M12 3v10" stroke="#1e40af" strokeWidth="2.2" strokeLinecap="round"/>
+                  <path d="M8.5 10.5L12 14l3.5-3.5" stroke="#1e40af" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round"/>
+                  <path d="M4 17h16" stroke="#1e40af" strokeWidth="2.2" strokeLinecap="round"/>
+                </svg>
               </Link>
+              <div className="text-center leading-4">
+                <div className="text-[11px] sm:text-xs tracking-[0.1em] font-extrabold text-white">PRODUCT FLYER BOLOGNA</div>
+                <div className="text-[11px] sm:text-xs tracking-[0.1em] font-extrabold text-white">BATTERY MANAGEMENT UNIT</div>
+              </div>
             </div>
           </div>
         </div>

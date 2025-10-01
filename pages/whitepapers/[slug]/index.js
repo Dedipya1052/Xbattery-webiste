@@ -67,8 +67,16 @@ const renderOption = {
               width="100%"
               height="500px"
             ></iframe>
-            <a href={pdfUrl} target="_blank" rel="noopener noreferrer" download>
-              Download PDF
+            <a
+              href={pdfUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              download
+              aria-label="Download whitepaper PDF"
+              className={styles.iconDownload}
+            >
+              {/* icon-only download button; styled via CSS module */}
+              ⬇
             </a>
           </div>
         );
@@ -365,13 +373,14 @@ export default function BlogPage({ blog, blogs }) {
                   target="_blank"
                   rel="noopener noreferrer"
                   download
+                  aria-label="View whitepaper PDF"
+                  className={styles.iconDownload}
                 >
-                  View whitepaper
+                  ⬇
                 </a>
               ) : (
-                <div className={styles.paperButton} onClick={onOpen}>
-                  {" "}
-                  Download
+                <div className={styles.iconDownload} onClick={onOpen} aria-label="Open download form">
+                  ⬇
                 </div>
               )}
             </div>  
@@ -429,20 +438,8 @@ export default function BlogPage({ blog, blogs }) {
             {" "}
             <div className="flex justify-center">
               {" "}
-              <Button
-                colorScheme="blue"
-                mr={3}
-                onClick={handleSubmit}
-                isDisabled={!isFormComplete}
-              >
-                <a
-                  href={pdf.fields.file.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  download
-                >
-                  Download
-                </a>
+              <Button colorScheme="blue" mr={3} onClick={handleSubmit} isDisabled={!isFormComplete} p={0} minW="0" h="48px" w="48px" borderRadius="12px" aria-label="Download whitepaper">
+                <a href={pdf.fields.file.url} target="_blank" rel="noopener noreferrer" download style={{ width: "100%", height: "100%", display: "flex", alignItems: "center", justifyContent: "center" }}>⬇</a>
               </Button>
             </div>
           </ModalFooter>
