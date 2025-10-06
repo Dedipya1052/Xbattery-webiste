@@ -4,6 +4,7 @@ import Link from "next/link";
 import Image from "next/image";
 import AnimatedDiv from "@/components/ui/Animate";
 import IconWithGradient from "@/components/ui/IconGradient";
+import ESSCabinetIcon from "@/components/Icons/ESSCabinetIcon";
 import { Button } from "@chakra-ui/react";
 import { useRouter } from "next/router";
 import { 
@@ -121,15 +122,43 @@ export default function BmsOfferingPage({ slug }) {
       <Head>
         <title>{data.title} | Xbattery</title>
       </Head>
+      {/* When user navigates back from this page, send them to home cards section */}
+      <script
+        dangerouslySetInnerHTML={{
+          __html: `
+            (function(){
+              if (typeof window === 'undefined') return;
+              // Push a state so that first Back goes to home cards
+              var pushed = false;
+              try { if ('scrollRestoration' in history) { history.scrollRestoration = 'manual'; } } catch(e) {}
+              try { sessionStorage.setItem('scrollToOfferings','1'); } catch(e) {}
+              function ensureState(){
+                if (!pushed) {
+                  try {
+                    // Ensure the previous entry is the home cards anchor
+                    var current = window.location.href;
+                    history.replaceState({}, document.title, '/#bms-offerings');
+                    history.pushState({fromBms:true}, document.title, current);
+                  } catch(e) {}
+                  pushed = true;
+                }
+              }
+              ensureState();
+              window.addEventListener('popstate', function(){
+                // Force navigate to the Home "OUR BMS OFFERINGS" section
+                window.location.assign('/#bms-offerings');
+              });
+            })();
+          `,
+        }}
+      />
       <div className={classes.head1}>
       <div className="bg-[#1c1c1c] text-white w-full relative">
         {/* Page header icon badge (top-right) */}
-        <div className="absolute top-6 right-4 w-12 h-12 rounded-xl bg-[#0c0c0c] border border-[#2a2a2a] flex items-center justify-center">
-          <IconWithGradient size={28}>
-            {normalizedSlug === 'telecom-bms' ? <FaHome /> : normalizedSlug === 'lv-bms' ? <FactoryIcon /> : <FaCar />}
-          </IconWithGradient>
+        <div className="absolute top-6 right-4 w-12 h-12 rounded-xl bg-[#0c0c0c] border border-[#2a2a2a] flex items-center justify-center text-white">
+          {normalizedSlug === 'ev-bms' ? <FaCar size={24} /> : <ESSCabinetIcon size={28} />}
         </div>
-        <div className="mx-auto w-[95%] md:w-[90%] xl:w-[95%] 2xl:w-[1500px] py-8 md:py-16 px-3 md:px-6 flex flex-col lg:flex-row items-center justify-center h-full min-h-[420px]">
+        <div className="mx-auto w-[95%] md:w-[90%] xl:w-[95%] 2xl:w-[1500px] py-8 md:py-16 px-3 md:px-6 flex flex-col lg:flex-row items-center justify-center h-full min-h-[460px]">
           <div className="text-center lg:text-left p-2 md:p-4 mb-6 lg:mb-0 w-full">
             <h1 className={`text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-6 ${classes.color} leading-[35px] sm:leading-[40px] md:leading-[50px] lg:leading-[60px] lg:whitespace-nowrap`}>
               {data.title}
@@ -139,13 +168,13 @@ export default function BmsOfferingPage({ slug }) {
             </h2>
           </div>
           <div className="md:w-1/2 flex justify-center">
-            <div className="w-[100%] max-w-2xl rounded-lg bg-[#1c1c1c] h-[320px] md:h-[420px] overflow-hidden flex items-center justify-center">
+            <div className="w-[100%] max-w-2xl rounded-lg bg-[#1c1c1c] h=[360px] md:h-[480px] overflow-hidden flex items-center justify-center">
               <Image 
                 src={data.image} 
                 alt={data.imageAlt} 
-                width={800} 
-                height={450} 
-                className="object-contain w-full h-full" 
+                width={1000} 
+                height={600} 
+                className="object-contain w-full h-full scale-[1.18] md:scale-[1.25]" 
               />
             </div>
           </div>
@@ -200,9 +229,9 @@ export default function BmsOfferingPage({ slug }) {
                       {feature.icon}
                     </IconWithGradient>
                   </div>
-                  <div className="flex-1 h-full px-6 py-5 md:px-8 md:py-6 flex flex-col items-center justify-center text-center">
-                    <h3 className="text-base md:text-lg font-semibold text-white">{feature.title}</h3>
-                    <p className="text-sm text-gray-300 mt-1">{feature.description}</p>
+                  <div className="flex-1 min-h-[120px] px-0 py-5 md:px-0 md:py-6 flex flex-col items-center justify-center text-center">
+                    <h3 className="text-sm md:text-base font-semibold text-white whitespace-nowrap">{feature.title}</h3>
+                    <p className="text-sm text-gray-300 mt-1 text-center">{feature.description}</p>
                   </div>
                 </div>
               </AnimatedDiv>
@@ -286,8 +315,10 @@ export default function BmsOfferingPage({ slug }) {
           </div>
           <div className="w-full flex justify-end mt-2">
             <div className="flex flex-col items-center gap-2 mr-2">
-              <Link
+              <a
                 href="/api/download-brochure"
+                target="_blank"
+                rel="noopener noreferrer"
                 aria-label="Download brochure PDF"
                 className="inline-flex items-center justify-center w-12 h-12 rounded-xl bg-white border border-gray-200 shadow-[0_2px_8px_rgba(0,0,0,0.08)] hover:shadow-[0_4px_12px_rgba(0,0,0,0.12)] transition"
               >
@@ -303,10 +334,10 @@ export default function BmsOfferingPage({ slug }) {
                   <path d="M8.5 10.5L12 14l3.5-3.5" stroke="#1e40af" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round"/>
                   <path d="M4 17h16" stroke="#1e40af" strokeWidth="2.2" strokeLinecap="round"/>
                 </svg>
-              </Link>
+              </a>
               <div className="text-center leading-4">
-                <div className="text-[11px] sm:text-xs tracking-[0.1em] font-extrabold text-white">PRODUCT FLYER BOLOGNA</div>
-                <div className="text-[11px] sm:text-xs tracking-[0.1em] font-extrabold text-white">BATTERY MANAGEMENT UNIT</div>
+                <div className="text-[11px] sm:text-xs tracking-[0.1em] font-extrabold text-white">PRODUCT FLYER XBATTERY</div>
+                <div className="text-[11px] sm:text-xs tracking-[0.1em] font-extrabold text-white">BHARATBMS-ESS-48V</div>
               </div>
             </div>
           </div>

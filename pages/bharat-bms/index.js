@@ -24,6 +24,7 @@ import {
   FaCogs,
 } from "react-icons/fa";
 import IconWithGradient from "@/components/ui/IconGradient";
+import ESSCabinetIcon from "@/components/Icons/ESSCabinetIcon";
 
 const BharatBMS = () => {
   const router = useRouter();
@@ -156,7 +157,7 @@ const BharatBMS = () => {
 
       {/* Existing Content Below Hero Section */}
       <div className={classes.head1}>
-        <div className="bg-black text-white py-16 px-6 mx-auto w-[90%] xl:w-[80%] 2xl:w-[1500px]">
+        <div className="bg-black text-white pt-8 pb-16 px-6 mx-auto w-[90%] xl:w-[80%] 2xl:w-[1500px]">
           <AnimatedDiv>
             <div className="w-[95%] lg:w-[80%] mx-auto text-center md:text-center">
               <p className="text-lg md:text-xl leading-relaxed mb-2">
@@ -318,21 +319,16 @@ const BharatBMS = () => {
             </AnimatedDiv>
           ))}
 
-          <AnimatedDiv>
-            <div className="py-6 px-6 rounded-lg mb-1">
-              <AnimatedDiv>
-                <h2 className={`text-2xl md:text-3xl font-semibold mb-[-0.5rem] text-center ${classes.color}`}>OUR BMS OFFERINGS</h2>
-              </AnimatedDiv>
-            </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 w-[94%] md:w-[90%] lg:w-[85%] xl:w-[80%] 2xl:w-[1450px] mx-auto pt-6 pb-16">
+          {/* OUR BMS OFFERINGS (copied from home page) */}
+          <div className="pt-12 pb-6 px-6 rounded-lg" id="bms-offerings">
+            <h3 className={`${classes.color} text-center text-2xl md:text-3xl font-semibold mb-[3.8rem]`}>OUR BMS OFFERINGS</h3>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {/* Xbattery BharatBMS-ESS-48V */}
               <AnimatedDiv>
-                <Link href="/bms/BharatBMS-ESS-48V" className="group focus:outline-none">
-                  <div className="relative rounded-2xl bg-[#1c1c1c] border border-transparent p-6 h-full min-h-[560px] md:min-h-[600px] lg:min-h-[620px] flex flex-col transition-colors duration-200 hover:bg-[#222222] hover:border-[rgba(0,229,255,0.45)] hover:outline-none hover:shadow-[0_0_0_0.5px_rgba(0,229,255,0.3)]">
+                <Link href="/bms/BharatBMS-ESS-48V" className="group focus:outline-none focus-visible:outline-none">
+                  <div className="relative rounded-2xl bg-[#1c1c1c] border-none p-6 h-full min-h-[560px] md:min-h-[600px] lg:min-h-[620px] flex flex-col transition-all duration-200 hover:bg-[#191919] outline-none hover:outline-none focus:outline-none focus-visible:outline-none ring-0 focus:ring-0 hover:shadow-[0_0_0_0.5px_rgba(0,229,255,0.55)]">
                     <div className="absolute top-3 left-4 w-11 h-11 rounded-xl bg-[#0c0c0c] flex items-center justify-center">
-                      <IconWithGradient size={24}>
-                        <FaHome />
-                      </IconWithGradient>
+                      <ESSCabinetIcon size={32} />
                     </div>
                     <div className="relative w-full h-[240px] md:h-[260px] rounded-xl overflow-hidden mb-4">
                       <Image src="/images/telecom_good_looking-Photoroom.png" alt="Xbattery BharatBMS-ESS-48V" fill className="object-contain transition-transform duration-500 ease-out group-hover:scale-[1.28]" />
@@ -347,9 +343,8 @@ const BharatBMS = () => {
                       <ul className="text-sm text-[#cfe3ea] list-disc pl-4 space-y-1 marker:text-[#00e5ff]">
                         <li>Supported Cell Chemistry: <span className="font-semibold">LFP/NMC</span></li>
                         <li>Cell Count Range: 13S to 17S</li>
-                        <li>Max Pack Voltage: ~58.4V</li>
+                        <li>Nominal Pack Voltage: 42.9V to 56.1V</li>
                       </ul>
-                      
                       <div className="mt-3 flex justify-end">
                         <svg width="36" height="36" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="text-white transition-transform duration-700 ease-out group-hover:text-[#00e5ff] group-hover:translate-x-2">
                           <path d="M4 12H20" stroke="currentColor" strokeOpacity="0.95" strokeWidth="1.2" strokeLinecap="round"/>
@@ -358,22 +353,19 @@ const BharatBMS = () => {
                       </div>
                       <div className="mt-3 border-t border-[#1d2a30]"></div>
                     </div>
-                    {/* Read More button removed to match home page cards */}
                   </div>
                 </Link>
               </AnimatedDiv>
 
               {/* Xbattery BharatBMS-ESS-72V */}
               <AnimatedDiv>
-                <Link href="/bms/BharatBMS-ESS-72V" className="group focus:outline-none">
-                  <div className="relative rounded-2xl bg-[#1c1c1c] border border-transparent p-6 h-full min-h-[560px] md:min-h-[600px] lg:min-h-[620px] flex flex-col transition-colors duration-200 hover:bg-[#222222] hover:border-[rgba(0,229,255,0.45)] hover:outline-none hover:shadow-[0_0_0_0.5px_rgba(0,229,255,0.3)]">
+                <Link href="/bms/BharatBMS-ESS-72V" className="group focus:outline-none focus-visible:outline-none">
+                  <div className="relative rounded-2xl bg-[#1c1c1c] border-none p-6 h-full min-h-[560px] md:min-h-[600px] lg:min-h-[620px] flex flex-col transition-all duration-200 hover:bg-[#191919] outline-none hover:outline-none focus:outline-none focus-visible:outline-none ring-0 focus:ring-0 hover:shadow-[0_0_0_0.5px_rgba(0,229,255,0.55)]">
                     <div className="absolute top-3 left-4 w-11 h-11 rounded-xl bg-[#0c0c0c] flex items-center justify-center">
-                      <IconWithGradient size={24}>
-                        <FactoryIcon size={24} />
-                      </IconWithGradient>
+                      <ESSCabinetIcon size={32} />
                     </div>
                     <div className="relative w-full h-[240px] md:h-[260px] rounded-xl overflow-hidden mb-4">
-                      <Image src="/images/lv_good_looking-Photoroom.png" alt="XB-X 32S" fill className="object-contain transition-transform duration-500 ease-out group-hover:scale-[1.28]" />
+                      <Image src="/images/lv_good_looking-Photoroom.png" alt="XB-X 32S" fill className="object-contain transition-transform duration-500 ease-out group-hover:scale-[1.48]" />
                     </div>
                     <h4 className={`text-lg md:text-xl font-semibold mb-2 text-[#00e5ff]`}>
                       <span>Xbattery BharatBMS-ESS-72V</span>
@@ -387,7 +379,6 @@ const BharatBMS = () => {
                         <li>Cell Count Range: 32S to 36S</li>
                         <li>Nominal Pack Voltage: 42.9V to 56.1V</li>
                       </ul>
-                      
                       <div className="mt-3 flex justify-end">
                         <svg width="36" height="36" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="text-white transition-transform duration-700 ease-out group-hover:text-[#00e5ff] group-hover:translate-x-2">
                           <path d="M4 12H20" stroke="currentColor" strokeOpacity="0.95" strokeWidth="1.2" strokeLinecap="round"/>
@@ -396,21 +387,18 @@ const BharatBMS = () => {
                       </div>
                       <div className="mt-3 border-t border-[#1d2a30]"></div>
                     </div>
-                    {/* Read More button removed to match home page cards */}
                   </div>
                 </Link>
               </AnimatedDiv>
 
               {/* Xbattery BharatBMS-EV-400V */}
               <AnimatedDiv>
-                <Link href="/bms/BharatBMS-EV-400V" className="group focus:outline-none">
-                  <div className="relative rounded-2xl bg-[#1c1c1c] border border-transparent p-6 h-full min-h-[560px] md:min-h-[600px] lg:min-h-[620px] flex flex-col transition-colors duration-200 hover:bg-[#222222] hover:border_[rgba(0,229,255,0.45)] hover:outline-none hover:shadow-[0_0_0_0.5px_rgba(0,229,255,0.3)]">
-                    <div className="absolute top-3 left-4 w-11 h-11 rounded-xl bg-[#0c0c0c] flex items-center justify-center">
-                      <IconWithGradient size={24}>
-                        <FaCar />
-                      </IconWithGradient>
+                <Link href="/bms/BharatBMS-EV-400V" className="group focus:outline-none focus-visible:outline-none">
+                  <div className="relative rounded-2xl bg-[#1c1c1c] border-none p-6 h-full min-h-[560px] md:min-h-[600px] lg:min-h-[620px] flex flex-col transition-all duration-200 hover:bg-[#191919] outline-none hover:outline-none focus:outline-none focus-visible:outline-none ring-0 focus:ring-0 hover:shadow-[0_0_0_0.5px_rgba(0,229,255,0.55)]">
+                    <div className="absolute top-3 left-4 w-11 h-11 rounded-xl bg-[#0c0c0c] flex items-center justify-center text-white">
+                      <FaCar size={24} />
                     </div>
-                        <div className="relative w-full h-[240px] md:h-[260px] rounded-xl overflow-hidden mb-4">
+                    <div className="relative w-full h-[240px] md:h-[260px] rounded-xl overflow-hidden mb-4">
                       <Image src="/images/ev_good_looking-Photoroom.png" alt="Xbattery BharatBMS-EV-400V" fill className="object-contain transition-transform duration-500 ease-out group-hover:scale-[1.18]" />
                     </div>
                     <h4 className={`text-lg md:text-xl font-semibold mb-2 text-[#00e5ff]`}>
@@ -425,7 +413,6 @@ const BharatBMS = () => {
                         <li>Cell Count Range: 136S</li>
                         <li>Nominal Pack Voltage: 42.9V to 56.1V</li>
                       </ul>
-                      
                       <div className="mt-3 flex justify-end">
                         <svg width="36" height="36" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="text-white transition-transform duration-700 ease-out group-hover:text-[#00e5ff] group-hover:translate-x-2">
                           <path d="M4 12H20" stroke="currentColor" strokeOpacity="0.95" strokeWidth="1.2" strokeLinecap="round"/>
@@ -434,11 +421,11 @@ const BharatBMS = () => {
                       </div>
                       <div className="mt-3 border-t border-[#1d2a30]"></div>
                     </div>
-                </div>
+                  </div>
                 </Link>
               </AnimatedDiv>
             </div>
-          </AnimatedDiv>
+          </div>
         </div>
       </div>
     </div>

@@ -64,9 +64,18 @@ const Navbar = () => {
 
     // Handle route changes (when navigating from other pages)
     const handleRouteChange = () => {
-      if (typeof window !== 'undefined' && window.location.hash) {
-        const hash = window.location.hash.substring(1);
-        setTimeout(() => scrollToSection(hash), 500);
+      if (typeof window !== 'undefined') {
+        // Prefer scrolling to BMS offerings if we just came back from BMS page
+        const wantOfferings = sessionStorage.getItem('scrollToOfferings');
+        if (wantOfferings) {
+          sessionStorage.removeItem('scrollToOfferings');
+          setTimeout(() => scrollToBmsOfferings(), 200);
+          return;
+        }
+        if (window.location.hash) {
+          const hash = window.location.hash.substring(1);
+          setTimeout(() => scrollToSection(hash), 500);
+        }
       }
     };
 
@@ -99,6 +108,16 @@ const Navbar = () => {
         behavior: "smooth",
       });
     }
+  };
+
+  // Helper to scroll to BMS offerings anchor
+  const scrollToBmsOfferings = () => {
+    const el = document.getElementById('bms-offerings');
+    if (!el) return;
+    const headerOffset = 80;
+    const elementPosition = el.getBoundingClientRect().top;
+    const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+    window.scrollTo({ top: offsetPosition, behavior: 'smooth' });
   };
 
   return (

@@ -10,8 +10,8 @@ import { useRef } from "react";
 import Link from "next/link";
 import AnimatedDiv from "../Animate";
 import IconWithGradient from "../IconGradient";
-import { FaCar, FaHome } from "react-icons/fa";
-import FactoryIcon from "@/components/Icons/FactoryIcon";
+import { FaCar } from "react-icons/fa";
+import ESSCabinetIcon from "@/components/Icons/ESSCabinetIcon";
 import { motion } from "framer-motion";
 import { useRouter } from "next/router";
 import Head from "next/head";
@@ -36,7 +36,23 @@ const Example = ({ media, recentBlogs }) => {
     setMobileMenuOpen(false);
   };
 
-  // Enhanced anchor link handling for footer navigation
+  // If returning from a BMS page, scroll directly to the BMS offerings cards
+  useEffect(() => {
+    if (typeof window === 'undefined') return;
+    const shouldScroll = sessionStorage.getItem('scrollToOfferings');
+    if (shouldScroll) {
+      sessionStorage.removeItem('scrollToOfferings');
+      const el = document.getElementById('bms-offerings');
+      if (el) {
+        const headerOffset = 80;
+        const elementPosition = el.getBoundingClientRect().top;
+        const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+        window.scrollTo({ top: offsetPosition, behavior: 'instant' in window ? 'instant' : 'smooth' });
+      }
+    }
+  }, []);
+
+  // Enhanced anchor link handling for footer navigation and BMS offerings
   useEffect(() => {
     const scrollToSection = (hash) => {
       if (typeof window !== 'undefined' && hash) {
@@ -61,10 +77,14 @@ const Example = ({ media, recentBlogs }) => {
       }
     };
 
-    // Handle initial page load with hash
-    if (typeof window !== 'undefined' && window.location.hash) {
-      const hash = window.location.hash.substring(1);
-      setTimeout(() => scrollToSection(hash), 300);
+    // Handle initial page load with hash, prioritizing bms-offerings
+    if (typeof window !== 'undefined') {
+      const hash = (window.location.hash || '').substring(1);
+      if (hash === 'bms-offerings') {
+        setTimeout(() => scrollToSection('bms-offerings'), 200);
+      } else if (hash) {
+        setTimeout(() => scrollToSection(hash), 300);
+      }
     }
 
     // Handle route changes (when navigating from other pages)
@@ -732,17 +752,15 @@ const Example = ({ media, recentBlogs }) => {
                 </div>
               {/* BMS cards directly below BharatBMS text in the same section */}
               <div className="mt-6" id="bms-offerings">
-                <h3 className={`${styles.color} text-center text-2xl md:text-3xl font-bold mb-6`}>OUR BMS OFFERINGS</h3>
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <h3 className={`${styles.color} text-center text-2xl md:text-3xl font-bold mb-6 mt-10`}>OUR BMS OFFERINGS</h3>
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-10 mb-[2rem]">
                   {/* Xbattery BharatBMS-ESS-48V */}
                   <AnimatedDiv>
                     <Link href="/bms/BharatBMS-ESS-48V" className="group focus:outline-none">
                       <div className="relative rounded-2xl bg-[#151a1d] border border-[#1e2a31] p-6 h-full min-h-[560px] md:min-h-[600px] lg:min-h-[620px] flex flex-col transition-all duration-200 hover:bg-[#10151a] hover:border-[#1e2a31] hover:outline-none hover:shadow-[0_0_0_0.5px_rgba(0,229,255,0.55)]">
-                        <div className="absolute top-3 left-4 w-11 h-11 rounded-xl bg-[#0c0c0c] flex items-center justify-center">
-                          <IconWithGradient size={24}>
-                            <FaHome />
-                          </IconWithGradient>
-                        </div>
+            <div className="absolute top-3 left-4 w-11 h-11 rounded-xl bg-[#0c0c0c] flex items-center justify-center">
+              <ESSCabinetIcon size={32} />
+            </div>
                         <div className="relative w-full h-[240px] md:h-[260px] rounded-xl overflow-hidden mb-4">
                           <Image src="/images/telecom_good_looking-Photoroom.png" alt="Xbattery BharatBMS-ESS-48V" fill className="object-contain transition-transform duration-500 ease-out group-hover:scale-[1.28]" />
                         </div>
@@ -778,11 +796,9 @@ const Example = ({ media, recentBlogs }) => {
                   <AnimatedDiv>
                     <Link href="/bms/BharatBMS-ESS-72V" className="group focus:outline-none">
                       <div className="relative rounded-2xl bg-[#151a1d] border border-[#1e2a31] p-6 h-full min-h-[560px] md:min-h-[600px] lg:min-h-[620px] flex flex-col transition-all duration-200 hover:bg-[#10151a] hover:border-[#1e2a31] hover:outline-none hover:shadow-[0_0_0_0.5px_rgba(0,229,255,0.55)]">
-                        <div className="absolute top-3 left-4 w-11 h-11 rounded-xl bg-[#0c0c0c] flex items-center justify-center">
-                          <IconWithGradient size={24}>
-                            <FactoryIcon size={24} />
-                          </IconWithGradient>
-                        </div>
+            <div className="absolute top-3 left-4 w-11 h-11 rounded-xl bg-[#0c0c0c] flex items-center justify-center">
+              <ESSCabinetIcon size={32} />
+            </div>
                         <div className="relative w-full h-[240px] md:h-[260px] rounded-xl overflow-hidden mb-4">
                           <Image src="/images/lv_good_looking-Photoroom.png" alt="XB-X 32S" fill className="object-contain transition-transform duration-500 ease-out group-hover:scale-[1.48]" />
                         </div>
@@ -817,10 +833,8 @@ const Example = ({ media, recentBlogs }) => {
                   <AnimatedDiv>
                     <Link href="/bms/BharatBMS-EV-400V" className="group focus:outline-none">
                       <div className="relative rounded-2xl bg-[#151a1d] border border-[#1e2a31] p-6 h-full min-h-[560px] md:min-h-[600px] lg:min-h-[620px] flex flex-col transition-all duration-200 hover:bg-[#10151a] hover:border-[#1e2a31] hover:outline-none hover:shadow-[0_0_0_0.5px_rgba(0,229,255,0.55)]">
-                        <div className="absolute top-3 left-4 w-11 h-11 rounded-xl bg-[#0c0c0c] flex items-center justify-center">
-                          <IconWithGradient size={24}>
-                            <FaCar />
-                          </IconWithGradient>
+                        <div className="absolute top-3 left-4 w-11 h-11 rounded-xl bg-[#0c0c0c] flex items-center justify-center text-white">
+                          <FaCar size={24} />
                         </div>
                         <div className="relative w-full h-[240px] md:h-[260px] rounded-xl overflow-hidden mb-4">
                           <Image src="/images/ev_good_looking-Photoroom.png" alt="Xbattery BharatBMS-EV-400V" fill className="object-contain transition-transform duration-500 ease-out group-hover:scale-[1.18]" />

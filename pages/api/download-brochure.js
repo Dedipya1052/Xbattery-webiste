@@ -3,9 +3,9 @@ import path from "path";
 
 export default function handler(req, res) {
   try {
-    const publicPath = path.join(process.cwd(), "public", "Xbattery_BharatBMS_Specifications.pdf");
-    const rootPath = path.join(process.cwd(), "Xbattery_BharatBMS_Specifications.pdf");
-    const parentPath = path.join(process.cwd(), "..", "Xbattery_BharatBMS_Specifications.pdf");
+    const publicPath = path.join(process.cwd(), "public", "XBattery Brochure - bw.pdf");
+    const rootPath = path.join(process.cwd(), "XBattery Brochure - bw.pdf");
+    const parentPath = path.join(process.cwd(), "..", "XBattery Brochure - bw.pdf");
 
     const filePath = [publicPath, rootPath, parentPath].find((p) => fs.existsSync(p));
     if (!filePath) {
@@ -17,7 +17,7 @@ export default function handler(req, res) {
     res.setHeader("Content-Type", "application/pdf");
     res.setHeader(
       "Content-Disposition",
-      'attachment; filename="Xbattery_BharatBMS_Specifications.pdf"'
+      'attachment; filename="XBattery Brochure - bw.pdf"'
     );
     res.setHeader("Content-Length", stat.size);
 
