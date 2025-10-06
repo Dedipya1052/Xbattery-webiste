@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Head from "next/head";
 import Link from "next/link";
 import Image from "next/image";
@@ -67,6 +67,14 @@ const CONTENT = {
 
 export default function BmsOfferingPage({ slug }) {
   const router = useRouter();
+  // Ensure home page scrolls to BMS offerings when navigating back
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      try {
+        sessionStorage.setItem('scrollToOfferings', '1');
+      } catch {}
+    }
+  }, []);
   // Backward-compatible slug aliases
   const SLUG_ALIAS = {
     "BharatBMS-ESS-48V": "telecom-bms",
@@ -117,6 +125,9 @@ export default function BmsOfferingPage({ slug }) {
     "ev-bms": [FaChartPie, FaCog, FaCode]
   };
 
+  // Flyer label should show brand on first line and product name on second line
+  const flyerProductName = (data.title || "").replace(/^Xbattery\s+/i, "").toUpperCase();
+
   return (
     <>
       <Head>
@@ -156,7 +167,7 @@ export default function BmsOfferingPage({ slug }) {
       <div className="bg-[#1c1c1c] text-white w-full relative">
         {/* Page header icon badge (top-right) */}
         <div className="absolute top-6 right-4 w-12 h-12 rounded-xl bg-[#0c0c0c] border border-[#2a2a2a] flex items-center justify-center text-white">
-          {normalizedSlug === 'ev-bms' ? <FaCar size={24} /> : <ESSCabinetIcon size={28} />}
+          {normalizedSlug === 'ev-bms' ? <FaCar size={24} /> : <ESSCabinetIcon size={45} />}
         </div>
         <div className="mx-auto w-[95%] md:w-[90%] xl:w-[95%] 2xl:w-[1500px] py-8 md:py-16 px-3 md:px-6 flex flex-col lg:flex-row items-center justify-center h-full min-h-[460px]">
           <div className="text-center lg:text-left p-2 md:p-4 mb-6 lg:mb-0 w-full">
@@ -337,7 +348,7 @@ export default function BmsOfferingPage({ slug }) {
               </a>
               <div className="text-center leading-4">
                 <div className="text-[11px] sm:text-xs tracking-[0.1em] font-extrabold text-white">PRODUCT FLYER XBATTERY</div>
-                <div className="text-[11px] sm:text-xs tracking-[0.1em] font-extrabold text-white">BHARATBMS-ESS-48V</div>
+                <div className="text-[11px] sm:text-xs tracking-[0.1em] font-extrabold text-white">{flyerProductName}</div>
               </div>
             </div>
           </div>
