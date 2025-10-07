@@ -17,7 +17,32 @@
   text-align: center;
   position: relative;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
-  clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 85% 100%, 80% 110%, 75% 100%, 0% 100%);
+}
+
+
+/* Speech-bubble tail pointing toward the icon (on the right side) */
+.tooltipContent::before,
+.tooltipContent::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 0;
+  height: 0;
+  border-top: 7px solid transparent;
+  border-bottom: 7px solid transparent;
+}
+
+/* Border triangle */
+.tooltipContent::before {
+  right: -9px; /* 1px larger to mimic the border */
+  border-left: 9px solid #ffffff;
+}
+
+/* Inner fill triangle */
+.tooltipContent::after {
+  right: -8px;
+  border-left: 8px solid #000000;
 }
 
 
