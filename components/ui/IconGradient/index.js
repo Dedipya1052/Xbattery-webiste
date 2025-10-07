@@ -2,9 +2,9 @@
 import React from 'react';
 import styles from "./styles.module.css"; // Assuming you are using CSS modules
 
-const IconWithGradient = ({ children, size }) => {
+const IconWithGradient = ({ children, size, title }) => {
   return (
-    <div>
+    <div title={title}>
       {/* Define the custom gradient */}
       {/* <svg width="0" height="0">
         <defs>

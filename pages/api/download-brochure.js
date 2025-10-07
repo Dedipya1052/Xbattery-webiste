@@ -17,7 +17,7 @@ export default function handler(req, res) {
     res.setHeader("Content-Type", "application/pdf");
     res.setHeader(
       "Content-Disposition",
-      'attachment; filename="XBattery Brochure - bw.pdf"'
+      'inline; filename="XBattery Brochure - bw.pdf"'
     );
     res.setHeader("Content-Length", stat.size);
 
