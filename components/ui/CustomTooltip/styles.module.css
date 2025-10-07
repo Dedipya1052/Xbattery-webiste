@@ -1,80 +1,58 @@
 .tooltip {
   position: absolute;
   top: 50%;
-  right: 100%;
-  transform: translateY(-50%);
-  margin-right: 12px;
-  z-index: 1000;
-  animation: fadeIn 0.2s ease-in-out;
+  /* start slightly offset so we can animate right->left or left->right */
+  transform: translateY(-50%) translateX(var(--slideX, 8px));
+  z-index: 40;
+  pointer-events: none; /* allow hover to be captured by wrapper */
+  opacity: 0;
+  transition: opacity 200ms ease, transform 200ms ease;
+}
+
+.left { right: 100%; margin-right: 12px; }
+.right { left: 100%; margin-left: 12px; }
+
+.visible {
+  opacity: 1;
+  transform: translateY(-50%) translateX(0);
 }
 
 .tooltipContent {
-  background: linear-gradient(135deg, #0b5cff, #3aa0ff);
-  border: 1px solid rgba(255,255,255,0.9);
-  border-radius: 16px 16px 16px 6px;
+  background: linear-gradient(135deg, #0e1a20, #0f2630);
+  border: 1px solid rgba(0,229,255,0.35);
+  border-radius: 14px; /* smoother pill corners */
   padding: 8px 12px;
-  min-width: 110px;
+  min-width: 118px;
   text-align: center;
   position: relative;
-  box-shadow: 0 10px 24px rgba(11, 92, 255, 0.35), 0 2px 8px rgba(0, 0, 0, 0.35);
-  backdrop-filter: saturate(140%) brightness(105%);
+  /* Remove flashy glow; keep a subtle neutral shadow for depth */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.28);
+  backdrop-filter: saturate(130%) brightness(104%);
 }
 
 
 /* Speech-bubble tail pointing toward the icon (on the right side) */
-.tooltipContent::before,
-.tooltipContent::after {
-  content: "";
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 0;
-  height: 0;
-  border-top: 7px solid transparent;
-  border-bottom: 7px solid transparent;
-}
-
-/* Border triangle */
-.tooltipContent::before {
-  right: -10px; /* 1px larger to mimic the border */
-  border-left: 10px solid rgba(255,255,255,0.9);
-}
-
-/* Inner fill triangle */
-.tooltipContent::after {
-  right: -9px;
-  border-left: 9px solid #0b5cff;
-}
+/* No speech-bubble tail for a cleaner pill look */
 
 
 
 .tooltipText {
-  color: #ffffff;
-  font-size: 11px;
-  font-weight: 700;
-  text-transform: none;
+  color: #e9fbff;
+  font-size: 12px;
+  line-height: 1.15rem;
+  font-weight: 600;
   letter-spacing: 0.2px;
 }
 
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(-50%) translateX(4px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(-50%) translateX(0);
-  }
-}
 
 /* Responsive adjustments */
 @media (max-width: 768px) {
   .tooltipContent {
     padding: 6px 10px;
-    min-width: 90px;
+    min-width: 96px;
   }
   
   .tooltipText {
-    font-size: 10px;
+    font-size: 11px;
   }
 }

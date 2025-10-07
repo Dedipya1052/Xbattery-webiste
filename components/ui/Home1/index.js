@@ -758,9 +758,11 @@ const Example = ({ media, recentBlogs }) => {
                   <AnimatedDiv>
                     <Link href="/bms/BharatBMS-ESS-48V" className="group focus:outline-none">
                      <div className="relative rounded-2xl bg-[#151a1d] border border-[#1e2a31] p-6 h-full min-h-[560px] md:min-h-[600px] lg:min-h-[620px] flex flex-col transition-all duration-200 hover:bg-[#10151a] hover:border-[#1e2a31] hover:outline-none hover:shadow-[0_0_0_0.5px_rgba(0,229,255,0.55)]">
-          <div className="absolute top-3 left-4 w-11 h-11 rounded-xl bg-[#0c0c0c] flex items-center justify-center text-white">
-            <CustomTooltip text="Energy storage">
-              <Image src="/images/icons/rack-ess-white.svg" alt="Rack ESS icon" width={32} height={32} className="object-contain" />
+          <div className="absolute top-5 left-4 w-11 h-11 rounded-xl bg-[#0c0c0c] border border-white/20 flex items-center justify-center text-white z-20">
+            <CustomTooltip text="Energy storage" placement="right">
+              <div className="w-full h-full flex items-center justify-center">
+                <Image src="/images/icons/rack-ess-white.svg" alt="Rack ESS icon" width={32} height={32} className="object-contain" />
+              </div>
             </CustomTooltip>
           </div>
                         <div className="relative w-full h-[240px] md:h-[260px] rounded-xl overflow-hidden mb-4">
@@ -798,9 +800,13 @@ const Example = ({ media, recentBlogs }) => {
                   <AnimatedDiv>
                     <Link href="/bms/BharatBMS-ESS-72V" className="group focus:outline-none">
                      <div className="relative rounded-2xl bg-[#151a1d] border border-[#1e2a31] p-6 h-full min-h-[560px] md:min-h-[600px] lg:min-h-[620px] flex flex-col transition-all duration-200 hover:bg-[#10151a] hover:border-[#1e2a31] hover:outline-none hover:shadow-[0_0_0_0.5px_rgba(0,229,255,0.55)]">
-          <div className="absolute top-3 left-4 w-11 h-11 rounded-xl bg-[#0c0c0c] flex items-center justify-center text-white overflow-hidden">
-            <CustomTooltip text="Energy storage">
-              <Image src="/images/icons/download (29).png" alt="BMS icon" width={42} height={42} className="object-cover scale-[1.3]" />
+          <div className="absolute top-5 left-4 w-11 h-11 rounded-xl bg-[#0c0c0c] border border-white/20 flex items-center justify-center text-white overflow-visible z-20">
+            <CustomTooltip text="Energy storage" placement="right">
+              <div className="w-full h-full flex items-center justify-center">
+                <div className="w-10 h-10 rounded-xl overflow-hidden flex items-center justify-center">
+                  <Image src="/images/icons/download (29).png" alt="BMS icon" width={42} height={42} className="object-cover scale-[1.3]" />
+                </div>
+              </div>
             </CustomTooltip>
            </div>
                         <div className="relative w-full h-[240px] md:h-[260px] rounded-xl overflow-hidden mb-4">
@@ -837,8 +843,12 @@ const Example = ({ media, recentBlogs }) => {
                   <AnimatedDiv>
                     <Link href="/bms/BharatBMS-EV-400V" className="group focus:outline-none">
                       <div className="relative rounded-2xl bg-[#151a1d] border border-[#1e2a31] p-6 h-full min-h-[560px] md:min-h-[600px] lg:min-h-[620px] flex flex-col transition-all duration-200 hover:bg-[#10151a] hover:border-[#1e2a31] hover:outline-none hover:shadow-[0_0_0_0.5px_rgba(0,229,255,0.55)]">
-                        <div className="absolute top-3 left-4 w-11 h-11 rounded-xl bg-[#0c0c0c] flex items-center justify-center text-white">
-                          <FaCar size={24} />
+                        <div className="absolute top-5 left-4 w-11 h-11 rounded-xl bg-[#0c0c0c] border border-white/20 flex items-center justify-center text-white z-20">
+                          <CustomTooltip text="Energy storage" placement="right">
+                            <div className="w-full h-full flex items-center justify-center">
+                              <FaCar size={24} />
+                            </div>
+                          </CustomTooltip>
                         </div>
                         <div className="relative w-full h-[240px] md:h-[260px] rounded-xl overflow-hidden mb-4">
                           <Image src="/images/ev_good_looking-Photoroom.png" alt="Xbattery BharatBMS-EV-400V" fill className="object-contain transition-transform duration-500 ease-out group-hover:scale-[1.18]" />
