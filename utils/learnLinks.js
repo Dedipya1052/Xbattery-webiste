@@ -47,6 +47,45 @@ export const batteries = [
 
 ];
 
+// Battery Management System (BMS) - custom items
+export const bms = [
+  {
+    name: "Best BMS for Li-Ion Batteries",
+    link: "/learn/best-battery-management-system-for-lithium-ion-batteries",
+  },
+  {
+    name: "BMS Architecture Guide",
+    link: "/learn/the-complete-guide-to-bms-architecture-from-basic-to-advanced-topologies",
+  },
+  
+];
+
+// Energy Policy & Regulations - custom items
+export const policies = [
+  {
+    name: "BIS Battery Standards",
+    link: "/learn/navigating-bis-standards-for-battery-systems-a-compliance-checklist",
+  },
+  
+  {
+    name: "Grid Storage Requirements",
+    link: "/learn/grid-code-requirements-for-energy-storage-what-every-developer-must-know",
+  },
+];
+
+// Technology Integration - custom items
+export const technology = [
+  {
+    name: "AI Battery Prediction",
+    link: "/learn/how-ai-is-revolutionizing-battery-life-prediction-real-world-case-studies",
+  },
+  
+  {
+    name: "Battery Digital Twins",
+    link: "/learn/digital-twins-for-battery-management-from-concept-to-implementation",
+  },
+];
+
 // Section headers with category landing links, followed by items
 export const allLearnLinks = [
   { name: "Energy storage", link: "/learn/energy-storage" },
@@ -71,6 +110,9 @@ export const learnGroups = {
   electricVehicles,
   batteries,
   grid,
+  bms,
+  policies,
+  technology,
 };
 
 

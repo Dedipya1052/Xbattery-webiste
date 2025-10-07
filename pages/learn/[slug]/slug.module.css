@@ -102,6 +102,7 @@
     object-fit: contain;
     margin: 2rem auto;
     border-radius: 5px;
+    border: 0.8px solid black;
   }
   @media (max-width:550px) {
     .container .coverImage{
@@ -111,6 +112,7 @@
       object-fit: contain;
       margin: 1rem auto;
       border-radius: 5px;
+      border: 0.8px solid black;
     }
   }
   
