@@ -752,15 +752,15 @@ const Example = ({ media, recentBlogs }) => {
                 </div>
               {/* BMS cards directly below BharatBMS text in the same section */}
               <div className="mt-6" id="bms-offerings">
-                <h3 className={`${styles.color} text-center text-2xl md:text-3xl font-bold mb-6 mt-10`}>OUR BMS OFFERINGS</h3>
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-10 mb-[2rem]">
+                <h3 className={`${styles.color} text-center text-2xl md:text-3xl font-bold mb-6 mt-[6rem]`}>OUR BMS OFFERINGS</h3>
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-10 mb-[4rem]">
                   {/* Xbattery BharatBMS-ESS-48V */}
                   <AnimatedDiv>
                     <Link href="/bms/BharatBMS-ESS-48V" className="group focus:outline-none">
-                      <div className="relative rounded-2xl bg-[#151a1d] border border-[#1e2a31] p-6 h-full min-h-[560px] md:min-h-[600px] lg:min-h-[620px] flex flex-col transition-all duration-200 hover:bg-[#10151a] hover:border-[#1e2a31] hover:outline-none hover:shadow-[0_0_0_0.5px_rgba(0,229,255,0.55)]">
-             <div className="absolute top-2 left-4 w-11 h-11 rounded-xl bg-[#0c0c0c] flex items-center justify-center">
-              <ESSCabinetIcon size={45} />
-            </div>
+                     <div className="relative rounded-2xl bg-[#151a1d] border border-[#1e2a31] p-6 h-full min-h-[560px] md:min-h-[600px] lg:min-h-[620px] flex flex-col transition-all duration-200 hover:bg-[#10151a] hover:border-[#1e2a31] hover:outline-none hover:shadow-[0_0_0_0.5px_rgba(0,229,255,0.55)]">
+            <div className="absolute top-2 left-4 w-14 h-14 rounded-xl bg-[#0c0c0c] flex items-center justify-center">
+             <ESSCabinetIcon size={52} />
+           </div>
                         <div className="relative w-full h-[240px] md:h-[260px] rounded-xl overflow-hidden mb-4">
                           <Image src="/images/telecom_good_looking-Photoroom.png" alt="Xbattery BharatBMS-ESS-48V" fill className="object-contain transition-transform duration-500 ease-out group-hover:scale-[1.28]" />
                         </div>
@@ -795,10 +795,10 @@ const Example = ({ media, recentBlogs }) => {
                   {/* Xbattery BharatBMS-ESS-72V */}
                   <AnimatedDiv>
                     <Link href="/bms/BharatBMS-ESS-72V" className="group focus:outline-none">
-                      <div className="relative rounded-2xl bg-[#151a1d] border border-[#1e2a31] p-6 h-full min-h-[560px] md:min-h-[600px] lg:min-h-[620px] flex flex-col transition-all duration-200 hover:bg-[#10151a] hover:border-[#1e2a31] hover:outline-none hover:shadow-[0_0_0_0.5px_rgba(0,229,255,0.55)]">
-            <div className="absolute top-2 left-4 w-11 h-11 rounded-xl bg-[#0c0c0c] flex items-center justify-center">
-              <ESSCabinetIcon size={45} />
-            </div>
+                     <div className="relative rounded-2xl bg-[#151a1d] border border-[#1e2a31] p-6 h-full min-h-[560px] md:min-h-[600px] lg:min-h-[620px] flex flex-col transition-all duration-200 hover:bg-[#10151a] hover:border-[#1e2a31] hover:outline-none hover:shadow-[0_0_0_0.5px_rgba(0,229,255,0.55)]">
+           <div className="absolute top-2 left-4 w-14 h-14 rounded-xl bg-[#0c0c0c] flex items-center justify-center">
+             <ESSCabinetIcon size={52} />
+           </div>
                         <div className="relative w-full h-[240px] md:h-[260px] rounded-xl overflow-hidden mb-4">
                           <Image src="/images/lv_good_looking-Photoroom.png" alt="XB-X 32S" fill className="object-contain transition-transform duration-500 ease-out group-hover:scale-[1.48]" />
                         </div>
