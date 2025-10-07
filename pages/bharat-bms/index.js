@@ -7,6 +7,7 @@ import { useRouter } from "next/router";
 import { IoArrowBack } from "react-icons/io5";
 import Head from "next/head";
 import AnimatedDiv from "@/components/ui/Animate";
+import CustomTooltip from "@/components/ui/CustomTooltip";
 import { FaCar } from "react-icons/fa";
 import { FaPlug } from "react-icons/fa";
 import { FaHome } from "react-icons/fa";
@@ -328,7 +329,9 @@ const BharatBMS = () => {
                 <Link href="/bms/BharatBMS-ESS-48V" className="group focus:outline-none focus-visible:outline-none">
                   <div className="relative rounded-2xl bg-[#1c1c1c] border-none p-6 h-full min-h-[560px] md:min-h-[600px] lg:min-h-[620px] flex flex-col transition-all duration-200 hover:bg-[#191919] outline-none hover:outline-none focus:outline-none focus-visible:outline-none ring-0 focus:ring-0 hover:shadow-[0_0_0_0.5px_rgba(0,229,255,0.55)]">
                     <div className="absolute top-2 left-4 w-11 h-11 rounded-xl bg-[#0c0c0c] flex items-center justify-center">
-                      <ESSCabinetIcon size={45} />
+                      <CustomTooltip text="Energy storage">
+                        <Image src="/images/icons/rack-ess-white.svg" alt="Rack ESS icon" width={32} height={32} className="object-contain" />
+                      </CustomTooltip>
                     </div>
                     <div className="relative w-full h-[240px] md:h-[260px] rounded-xl overflow-hidden mb-4">
                       <Image src="/images/telecom_good_looking-Photoroom.png" alt="Xbattery BharatBMS-ESS-48V" fill className="object-contain transition-transform duration-500 ease-out group-hover:scale-[1.28]" />
@@ -361,8 +364,10 @@ const BharatBMS = () => {
               <AnimatedDiv>
                 <Link href="/bms/BharatBMS-ESS-72V" className="group focus:outline-none focus-visible:outline-none">
                   <div className="relative rounded-2xl bg-[#1c1c1c] border-none p-6 h-full min-h-[560px] md:min-h-[600px] lg:min-h-[620px] flex flex-col transition-all duration-200 hover:bg-[#191919] outline-none hover:outline-none focus:outline-none focus-visible:outline-none ring-0 focus:ring-0 hover:shadow-[0_0_0_0.5px_rgba(0,229,255,0.55)]">
-                    <div className="absolute top-2 left-4 w-11 h-11 rounded-xl bg-[#0c0c0c] flex items-center justify-center">
-                      <ESSCabinetIcon size={45} />
+                    <div className="absolute top-2 left-4 w-11 h-11 rounded-xl bg-[#0c0c0c] flex items-center justify-center overflow-hidden">
+                      <CustomTooltip text="Energy storage">
+                        <Image src="/images/icons/download (29).png" alt="BMS icon" width={42} height={42} className="object-cover scale-[1.3]" />
+                      </CustomTooltip>
                     </div>
                     <div className="relative w-full h-[240px] md:h-[260px] rounded-xl overflow-hidden mb-4">
                       <Image src="/images/lv_good_looking-Photoroom.png" alt="XB-X 32S" fill className="object-contain transition-transform duration-500 ease-out group-hover:scale-[1.48]" />

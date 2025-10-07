@@ -167,9 +167,15 @@ export default function BmsOfferingPage({ slug }) {
       <div className={classes.head1}>
       <div className="bg-[#1c1c1c] text-white w-full relative">
         {/* Page header icon badge (top-right) */}
-        <div className="absolute top-6 right-4 w-12 h-12 rounded-xl bg-[#0c0c0c] border border-[#2a2a2a] flex items-center justify-center text-white">
+        <div className="absolute top-6 right-4 w-12 h-12 rounded-xl bg-[#0c0c0c] border border-[#2a2a2a] flex items-center justify-center text-white overflow-hidden">
           <CustomTooltip text="Energy storage">
-            {normalizedSlug === 'ev-bms' ? <FaCar size={24} /> : <ESSCabinetIcon size={45} />}
+            {normalizedSlug === 'telecom-bms' && (
+              <Image src="/images/icons/rack-ess-white.svg" alt="Rack ESS icon" width={32} height={32} className="object-contain" />
+            )}
+            {normalizedSlug === 'lv-bms' && (
+              <Image src="/images/icons/download (29).png" alt="BMS icon" width={42} height={42} className="object-cover scale-[1.3]" />
+            )}
+            {normalizedSlug === 'ev-bms' && (<FaCar size={24} />)}
           </CustomTooltip>
         </div>
         <div className="mx-auto w-[95%] md:w-[90%] xl:w-[95%] 2xl:w-[1500px] py-8 md:py-16 px-3 md:px-6 flex flex-col lg:flex-row items-center justify-center h-full min-h-[460px]">

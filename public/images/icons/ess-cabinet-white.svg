@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 64 48" fill="none">
+  <!-- Exact-style isometric cabinet. All strokes white to render on dark chip. -->
+  <!-- Outer box -->
+  <path d="M4 14L28 6l32 12v20L36 46 4 34V14Z" stroke="white" stroke-width="2" stroke-linejoin="miter"/>
+  <!-- Front vertical edge -->
+  <path d="M28 6v28" stroke="white" stroke-width="2"/>
+
+  <!-- Left face dividers (three panels) -->
+  <path d="M16 18v14" stroke="white" stroke-width="2"/>
+  <path d="M22 20v14" stroke="white" stroke-width="2"/>
+
+  <!-- Left face vents and center bolt -->
+  <g stroke="white" stroke-width="2" stroke-linecap="round">
+    <!-- left vents -->
+    <path d="M8 21h6M8 25h6M8 29h6"/>
+    <!-- right vents on front face -->
+    <path d="M24 22h4M24 26h4M24 30h4"/>
+  </g>
+  <!-- center lightning bolt on front face -->
+  <path d="M19 21l-3 5h3l-2 5" stroke="white" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+
+  <!-- Right face vents: three short slits to suggest depth -->
+  <g stroke="white" stroke-width="2" stroke-linecap="round">
+    <path d="M40 22h6M40 26h6M40 30h6"/>
+  </g>
+
+  <!-- Lightning bolt on the right face -->
+  <path d="M54 21l-4 6h4l-4 6" stroke="white" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+
+  <!-- Top back edge for a crisp isometric look -->
+  <path d="M36 14L60 22" stroke="white" stroke-width="2"/>
+</svg>
+
