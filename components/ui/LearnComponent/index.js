@@ -262,10 +262,133 @@ const LearnComp= () => {
                 </div>
               </div>
             </div>
+
+
+{/* Battery management card */}
+<div className="relative inline-block border-[0.8px] border-black rounded-md xl:h-[220px] overflow-hidden">
+             <Image
+               alt="image"
+               src="/images/comp5/new_learn_bms4.png"
+               className="block rounded-md h-[220px] w-[100%] object-cover object-right-bottom"
+             />
+
+             <div className="absolute top-0 flex flex-col items-start justify-center p-4">
+               <div className="p-0.5 rounded-md text-left">
+                  <h2
+                   className={`text-[1.3rem] font-semibold mb-2 ${styles.head1} leading-[45px] hover:text-[#33c433]`}
+                 >
+                    <Link href="/learn/bms">
+                     {" "}
+                     <span className="hover:text-[#33c433] hover:no-underline">
+                       Battery Management System
+                     </span>
+                   </Link>
+                 </h2>
+               </div>
+               <div className=" flex flex-col justify-start mt-[-0.5rem]">
+                 <ul className=" pl-[0.5rem] flex flex-col gap-1">
+                    {learnGroups.bms.map((item, index) => (
+                     <li key={index} className="cursor-pointer text-md">
+                       <Link href={item.link} className="hover:text-[#33c433]">
+                         {item.name}
+                       </Link>
+                     </li>
+                   ))}
+                 </ul>
+               </div>
+             </div>
+           </div>
+
+
+           {/* policies card */}
+           <div className="relative inline-block border-[0.8px] border-black rounded-md xl:h-[220px] overflow-hidden">
+             <Image
+               alt="image"
+               src="/images/comp5/learn_policies.png"
+               className="block rounded-md h-[220px] w-[100%] object-cover object-right-bottom"
+             />
+
+             <div className="absolute top-0 flex flex-col items-start justify-center p-4">
+               <div className="p-0.5 rounded-md text-left">
+                  <h2
+                   className={`text-[1.3rem] font-semibold mb-2 ${styles.head1} leading-[45px] hover:text-[#33c433]`}
+                 >
+                    <Link href="/learn/policies">
+                     {" "}
+                     <span className="hover:text-[#33c433] hover:no-underline">
+                     Energy Policy & Regulations
+                     </span>
+                   </Link>
+                 </h2>
+               </div>
+               <div className=" flex flex-col justify-start mt-[-0.5rem]">
+                 <ul className=" pl-[0.5rem] flex flex-col gap-1">
+                    {learnGroups.policies.map((item, index) => (
+                     <li key={index} className="cursor-pointer text-md">
+                       <Link href={item.link} className="hover:text-[#33c433]">
+                         {item.name}
+                       </Link>
+                     </li>
+                   ))}
+                 </ul>
+               </div>
+             </div>
+           </div>
+
+           {/* technology card */}
+
+             <div className="relative inline-block border-[0.8px] border-black rounded-md xl:h-[220px] overflow-hidden">
+             <Image
+               alt="image"
+               src="/images/comp5/learn_technology.png"
+               className="block rounded-md h-[220px] w-[100%] object-cover object-right-bottom"
+             />
+
+             <div className="absolute top-0 flex flex-col items-start justify-center p-4">
+               <div className="p-0.5 rounded-md text-left">
+                  <h2
+                   className={`text-[1.3rem] font-semibold mb-2 ${styles.head1} leading-[45px] hover:text-[#33c433]`}
+                 >
+                    <Link href="/learn/technology">
+                     {" "}
+                     <span className="hover:text-[#33c433] hover:no-underline">
+                     Technology Integration
+                     </span>
+                   </Link>
+                 </h2>
+               </div>
+               <div className=" flex flex-col justify-start mt-[-0.5rem]">
+                 <ul className=" pl-[0.5rem] flex flex-col gap-1">
+                    {learnGroups.technology.map((item, index) => (
+                     <li key={index} className="cursor-pointer text-md">
+                       <Link href={item.link} className="hover:text-[#33c433]">
+                         {item.name}
+                       </Link>
+                     </li>
+                   ))}
+                 </ul>
+               </div>
+             </div>
+           </div> 
+
+
           </div>
         </div>
 
-        <div className="bg-black h-[0.7px] w-[90%] mx-auto mt-[7rem] mb-[6rem]"></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+          <div className="bg-black h-[0.7px] w-[90%] mx-auto mt-[7rem] mb-[6rem]"></div>
 
        
         {/* Options trading essentials */}

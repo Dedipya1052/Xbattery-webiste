@@ -81,79 +81,82 @@ const client = createClient({
 });
 
 export async function getStaticPaths() {
-  const res = await client.getEntries({ content_type: "articles" });
+  try {
+    const res = await client.getEntries({ content_type: "articles" });
 
-  // construct paths to build individual blog pages at build time
-  const paths = res.items.map((blog) => ({
-    params: { slug: blog.fields.slug },
-  }));
+    // construct paths to build individual blog pages at build time
+    const paths = res.items.map((blog) => ({
+      params: { slug: blog.fields.slug },
+    }));
 
-  return {
-    paths,
-    fallback: false,
-  };
+    return {
+      paths,
+      fallback: "blocking",
+    };
+  } catch (error) {
+    // On network/CMS error, allow on-demand generation without failing the build
+    return {
+      paths: [],
+      fallback: "blocking",
+    };
+  }
 }
 
 export async function getStaticProps({ params }) {
-  const client = createClient({
-    space: process.env.CONTENTFUL_SPACE,
-    accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
-  });
+  try {
+    const client = createClient({
+      space: process.env.CONTENTFUL_SPACE,
+      accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
+    });
 
-  //get individual blog
-  const res = await client.getEntries({
-    content_type: "articles",
-    "fields.slug": params.slug,
-  });
-  const currentBlog = res.items[0].fields;
+    // get individual blog
+    const res = await client.getEntries({
+      content_type: "articles",
+      "fields.slug": params.slug,
+    });
 
-  //console.log(currentBlog);
-  const {
-    title,
-    categories,
-    description,
-    coverImage,
-    date,
-    author,
-    blogContent,
-    slug,
-    modifiedOn,
-    animation,
-    faqs,
-  } = currentBlog;
-  // console.log({ blog: res.items });
-  // const blogs = await fetchBlogs();
-  //console.log("initial blogs :",blogs.length);
-  // let filteredBlogs = blogs.filter((blog) => {
-  //   return blog.fields.slug !== currentBlog.slug;
-  // });
-  // console.log("filtered blogs :",filteredBlogs.length);
-  // filteredBlogs = filteredBlogs.map((blog) => ({
-  //   title: blog.fields.title,
-  //   thumbnail: blog.fields.thumbnail,
-  //   categories: blog.fields.categories,
-  //   slug: blog.fields.slug,
-  // }));
+    if (!res.items || res.items.length === 0) {
+      return { notFound: true, revalidate: 60 };
+    }
 
-  //console.log({blogs});
-  return {
-    props: {
-      blog: {
-        title,
-        categories,
-        description,
-        coverImage,
-        date,
-        author,
-        blogContent,
-        slug,
-        animation: animation ? animation : null,
-        faqs: faqs ? faqs : null,
-        modifiedOn
+    const currentBlog = res.items[0].fields;
+
+    const {
+      title,
+      categories,
+      description,
+      coverImage,
+      date,
+      author,
+      blogContent,
+      slug,
+      modifiedOn,
+      animation,
+      faqs,
+    } = currentBlog;
+
+    return {
+      props: {
+        blog: {
+          title,
+          categories,
+          description,
+          coverImage,
+          date,
+          author,
+          blogContent,
+          slug,
+          animation: animation ? animation : null,
+          faqs: faqs ? faqs : null,
+          modifiedOn,
+        },
       },
-      // blogs:filteredBlogs,
-    },
-  };
+      revalidate: 300,
+    };
+  } catch (error) {
+    // On Contentful/network error, avoid crashing the page generation
+    return { notFound: true, revalidate: 60 };
+  }
 }
 
 export default function BlogPage({ blog }) {
