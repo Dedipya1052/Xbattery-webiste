@@ -21,11 +21,11 @@ const BMSToggle = ({ onToggle, initialValue = 'ELECTRIC VEHICLES' }) => {
           <span style={{ display: 'inline-flex', alignItems: 'center', gap: 8 }}>
             ENERGY STORAGE
             {activeTab === 'ENERGY STORAGE' ? (
-              // Active has black text → use black icon (36px)
-              <Image src="/images/icons/Screenshot 2025-10-08 153628-Photoroom.png" alt="Energy icon dark" width={36} height={36} />
+              // Active has black text → use black icon (32px)
+              <Image src="/images/icons/Screenshot 2025-10-08 153628-Photoroom.png" alt="Energy icon dark" width={30} height={30} />
             ) : (
-              // Inactive has white text → use white icon; bump to 48px for better visual parity
-              <Image src="/images/icons/download (29)-Photoroom.png" alt="Energy icon light" width={50} height={50} />
+              // Inactive has white text → use white icon (36px)
+              <Image src="/images/icons/download (29)-Photoroom.png" alt="Energy icon light" width={42} height={42} />
             )}
           </span>
         </button>

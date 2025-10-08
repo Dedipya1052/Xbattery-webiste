@@ -1550,13 +1550,13 @@ const Example = ({ media, recentBlogs }) => {
 
                       <AnimatedDiv>
 
-                        <Link href="/bms/BharatBMS-ESS-110V" className="group focus:outline-none">
+                        <Link href="/bms/BharatBMS-ESS-48V" className="group focus:outline-none">
 
-                         <div className="relative rounded-2xl bg-[#151a1d] border border-[#1e2a31] p-6 h-full min-h-[560px] md:min-h-[600px] lg:min-h-[620px] flex flex-col transition-all duration-200 hover:bg-[#10151a] hover:border-[#1e2a31] hover:outline-none hover:shadow-[0_0_0_0.5px_rgba(0,229,255,0.55)]">
+                         <div className="relative rounded-2xl bg-[#151a1d] border border-[#1e2a31] p-6 h-full min-h-[420px] md:min-h-[450px] lg:min-h-[480px] flex flex-col transition-all duration-200 hover:bg-[#10151a] hover:border-[#1e2a31] hover:outline-none hover:shadow-[0_0_0_0.5px_rgba(0,229,255,0.55)]">
 
               
 
-                            <div className="relative w-full h-[240px] md:h-[260px] rounded-xl overflow-hidden mb-4">
+                            <div className="relative w-full h-[180px] md:h-[200px] rounded-xl overflow-hidden mb-4">
 
                               <Image src="/images/telecom_good_looking-Photoroom.png" alt="Xbattery BharatBMS-ESS-48V" fill className="object-contain transition-transform duration-500 ease-out group-hover:scale-[1.28]" />
 
@@ -1584,11 +1584,11 @@ const Example = ({ media, recentBlogs }) => {
 
                             </li>
 
-                            <li>Cell Count Range: up to 28S</li>
+                            <li>Cell Count Range: Up to 28S</li>
 
                            
                            
-                            <li>Nominal Pack Voltage: 42.9V to 56.1V</li>
+                            <li>Nominal Pack Voltage: 48V</li>
 
 
 
@@ -1624,11 +1624,11 @@ const Example = ({ media, recentBlogs }) => {
 
                     <Link href="/bms/BharatBMS-ESS-72V" className="group focus:outline-none">
 
-                     <div className="relative rounded-2xl bg-[#151a1d] border border-[#1e2a31] p-6 h-full min-h-[560px] md:min-h-[600px] lg:min-h-[620px] flex flex-col transition-all duration-200 hover:bg-[#10151a] hover:border-[#1e2a31] hover:outline-none hover:shadow-[0_0_0_0.5px_rgba(0,229,255,0.55)]">
+                     <div className="relative rounded-2xl bg-[#151a1d] border border-[#1e2a31] p-6 h-full min-h-[420px] md:min-h-[450px] lg:min-h-[480px] flex flex-col transition-all duration-200 hover:bg-[#10151a] hover:border-[#1e2a31] hover:outline-none hover:shadow-[0_0_0_0.5px_rgba(0,229,255,0.55)]">
 
           
 
-                        <div className="relative w-full h-[240px] md:h-[260px] rounded-xl overflow-hidden mb-4">
+                        <div className="relative w-full h-[180px] md:h-[200px] rounded-xl overflow-hidden mb-4">
 
                           <Image src="/images/lv_good_looking-Photoroom.png" alt="XB-X 32S" fill className="object-contain transition-transform duration-500 ease-out group-hover:scale-[1.48]" />
 
@@ -1656,9 +1656,9 @@ const Example = ({ media, recentBlogs }) => {
 
                             </li>
 
-                            <li>Cell Count Range: 32S to 36S</li>
+                            <li>Cell Count Range: Up to 28S</li>
 
-                            <li>Nominal Pack Voltage: 42.9V to 56.1V</li>
+                            <li>Nominal Pack Voltage: 72V</li>
                             
                             
                             
@@ -1694,11 +1694,11 @@ const Example = ({ media, recentBlogs }) => {
 
                         <Link href="/bms/BharatBMS-ESS-110V" className="group focus:outline-none">
 
-                         <div className="relative rounded-2xl bg-[#151a1d] border border-[#1e2a31] p-6 h-full min-h-[560px] md:min-h-[600px] lg:min-h-[620px] flex flex-col transition-all duration-200 hover:bg-[#10151a] hover:border-[#1e2a31] hover:outline-none hover:shadow-[0_0_0_0.5px_rgba(0,229,255,0.55)]">
+                         <div className="relative rounded-2xl bg-[#151a1d] border border-[#1e2a31] p-6 h-full min-h-[420px] md:min-h-[450px] lg:min-h-[480px] flex flex-col transition-all duration-200 hover:bg-[#10151a] hover:border-[#1e2a31] hover:outline-none hover:shadow-[0_0_0_0.5px_rgba(0,229,255,0.55)]">
 
               
 
-                            <div className="relative w-full h-[240px] md:h-[260px] rounded-xl overflow-hidden mb-4">
+                            <div className="relative w-full h-[180px] md:h-[200px] rounded-xl overflow-hidden mb-4">
 
                               <Image src="/images/lv_good_looking-Photoroom.png" alt="Xbattery BharatBMS-ESS-110V" fill className="object-contain transition-transform duration-500 ease-out group-hover:scale-[1.28]" />
 
@@ -1712,7 +1712,7 @@ const Example = ({ media, recentBlogs }) => {
 
                             <div className="w-16 h-[3px] bg-[#00e5ff] rounded-full mb-4"></div>
 
-                            <p className="text-sm text-[#cfe3ea] mb-4">The XB-X 32S is a robust low-voltage energy storage system BMS operating at 110V nominal with LFP chemistry support for 32-36 series configurations. Engineered for reliable energy storage applications, it delivers 100A continuous current with advanced thermal management and comprehensive safety protections.</p>
+                            <p className="text-sm text-[#cfe3ea] mb-4">The XB-X 32S is a robust low-voltage energy storage system BMS operating at 110V nominal with LFP chemistry support for 32-36 series configurations.</p>
 
                             <div className="mt-auto">
 
@@ -1726,7 +1726,7 @@ const Example = ({ media, recentBlogs }) => {
 
                             </li>
 
-                            <li>Cell Count Range: 32S-36S</li>
+                            <li>Cell Count Range: Up to 42S</li>
 
                             <li>Nominal Pack Voltage: 110V</li>
 
@@ -1777,7 +1777,7 @@ const Example = ({ media, recentBlogs }) => {
                           onClick={goToPreviousCard}
                           disabled={currentEVCard === 0}
                           aria-label="Previous card"
-                          className={`absolute left-[-50px] top-1/2 transform -translate-y-1/2 z-10 w-12 h-12 rounded-full border-2 border-[#00e5ff] flex items-center justify-center transition-all duration-300 ${
+                          className={`absolute left-[-70px] top-1/2 transform -translate-y-1/2 z-10 w-12 h-12 rounded-full border-2 border-[#00e5ff] flex items-center justify-center transition-all duration-300 ${
                             currentEVCard === 0 
                               ? 'opacity-30 cursor-not-allowed' 
                               : 'hover:bg-[#00e5ff] hover:bg-opacity-10 cursor-pointer'
@@ -1794,8 +1794,8 @@ const Example = ({ media, recentBlogs }) => {
                             {/* Xbattery BharatBMS-EV-400V */}
                             <AnimatedDiv className="flex-shrink-0" style={{ width: 'calc((100% / 3) - 1.5rem)' }}>
                               <Link href="/bms/BharatBMS-EV-400V" className="group focus:outline-none">
-                                <div className="relative rounded-2xl bg-[#151a1d] border border-[#1e2a31] p-6 h-full min-h-[560px] md:min-h-[600px] lg:min-h-[620px] flex flex-col transition-all duration-200 hover:bg-[#10151a] hover:border-[#1e2a31] hover:outline-none hover:shadow-[0_0_0_0.5px_rgba(0,229,255,0.55)]">
-                                  <div className="relative w-full h-[240px] md:h-[260px] rounded-xl overflow-hidden mb-4">
+                                <div className="relative rounded-2xl bg-[#151a1d] border border-[#1e2a31] p-6 h-full min-h-[420px] md:min-h-[450px] lg:min-h-[480px] flex flex-col transition-all duration-200 hover:bg-[#10151a] hover:border-[#00e5ff]/30 hover:border-2 hover:outline-none">
+                                  <div className="relative w-full h-[180px] md:h-[200px] rounded-xl overflow-hidden mb-4">
                                     <Image src="/images/ev_good_looking-Photoroom.png" alt="Xbattery BharatBMS-EV-400V" fill className="object-contain transition-transform duration-500 ease-out group-hover:scale-[1.18]" />
                                   </div>
                                   <h4 className={`text-lg md:text-xl font-semibold mb-2 text-[#00e5ff]`}>
@@ -1807,8 +1807,8 @@ const Example = ({ media, recentBlogs }) => {
                                     <div className="text-sm text-[#64efff] tracking-wide mb-2">KEY FEATURES</div>
                                     <ul className="text-sm text-[#cfe3ea] list-disc pl-4 space-y-1 marker:text-[#00e5ff]">
                                       <li>Supported Cell Chemistry: <span className="font-semibold">LFP/NMC</span></li>
-                                      <li>Cell Count Range: 136S</li>
-                                      <li>Nominal Pack Voltage: 42.9V to 56.1V</li>
+                                      <li>Cell Count Range: 100S to 125S</li>
+                                      <li>Nominal Pack Voltage: 400V</li>
                                     </ul>
                                     <div className="mt-3 flex justify-end">
                                       <svg width="36" height="36" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="text-white transition-transform duration-700 ease-out group-hover:text-[#00e5ff] group-hover:translate-x-2">
@@ -1825,8 +1825,8 @@ const Example = ({ media, recentBlogs }) => {
                             {/* Xbattery BharatBMS-EV-110V */}
                             <AnimatedDiv className="flex-shrink-0" style={{ width: 'calc((100% / 3) - 1.5rem)' }}>
                               <Link href="/bms/BharatBMS-EV-110V" className="group focus:outline-none">
-                                <div className="relative rounded-2xl bg-[#151a1d] border border-[#1e2a31] p-6 h-full min-h-[560px] md:min-h-[600px] lg:min-h-[620px] flex flex-col transition-all duration-200 hover:bg-[#10151a] hover:border-[#1e2a31] hover:outline-none hover:shadow-[0_0_0_0.5px_rgba(0,229,255,0.55)]">
-                                  <div className="relative w-full h-[240px] md:h-[260px] rounded-xl overflow-hidden mb-4">
+                                <div className="relative rounded-2xl bg-[#151a1d] border border-[#1e2a31] p-6 h-full min-h-[420px] md:min-h-[450px] lg:min-h-[480px] flex flex-col transition-all duration-200 hover:bg-[#10151a] hover:border-[#00e5ff]/30 hover:border-2 hover:outline-none">
+                                  <div className="relative w-full h-[180px] md:h-[200px] rounded-xl overflow-hidden mb-4">
                                     <Image src="/images/ev_good_looking-Photoroom.png" alt="Xbattery BharatBMS-EV-110V" fill className="object-contain transition-transform duration-500 ease-out group-hover:scale-[1.18]" />
                                   </div>
                                   <h4 className={`text-lg md:text-xl font-semibold mb-2 text-[#00e5ff]`}>
@@ -1838,8 +1838,8 @@ const Example = ({ media, recentBlogs }) => {
                                     <div className="text-sm text-[#64efff] tracking-wide mb-2">KEY FEATURES</div>
                                     <ul className="text-sm text-[#cfe3ea] list-disc pl-4 space-y-1 marker:text-[#00e5ff]">
                                       <li>Supported Cell Chemistry: <span className="font-semibold">LFP/NMC</span></li>
-                                      <li>Cell Count Range: 120S-140S</li>
-                                      <li>Nominal Pack Voltage: 400V</li>
+                                      <li>Cell Count Range: 32S to 60S</li>
+                                      <li>Nominal Pack Voltage: 110V</li>
                                     </ul>
                                     <div className="mt-3 flex justify-end">
                                       <svg width="36" height="36" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="text-white transition-transform duration-700 ease-out group-hover:text-[#00e5ff] group-hover:translate-x-2">
@@ -1856,8 +1856,8 @@ const Example = ({ media, recentBlogs }) => {
                             {/* Xbattery BharatBMS-EV-500V */}
                             <AnimatedDiv className="flex-shrink-0" style={{ width: 'calc((100% / 3) - 1.5rem)' }}>
                               <Link href="/bms/BharatBMS-EV-500V" className="group focus:outline-none">
-                                <div className="relative rounded-2xl bg-[#151a1d] border border-[#1e2a31] p-6 h-full min-h-[560px] md:min-h-[600px] lg:min-h-[620px] flex flex-col transition-all duration-200 hover:bg-[#10151a] hover:border-[#1e2a31] hover:outline-none hover:shadow-[0_0_0_0.5px_rgba(0,229,255,0.55)]">
-                                  <div className="relative w-full h-[240px] md:h-[260px] rounded-xl overflow-hidden mb-4">
+                                <div className="relative rounded-2xl bg-[#151a1d] border border-[#1e2a31] p-6 h-full min-h-[420px] md:min-h-[450px] lg:min-h-[480px] flex flex-col transition-all duration-200 hover:bg-[#10151a] hover:border-[#00e5ff]/30 hover:border-2 hover:outline-none">
+                                  <div className="relative w-full h-[180px] md:h-[200px] rounded-xl overflow-hidden mb-4">
                                     <Image src="/images/ev_good_looking-Photoroom.png" alt="Xbattery BharatBMS-EV-500V" fill className="object-contain transition-transform duration-500 ease-out group-hover:scale-[1.18]" />
                                   </div>
                                   <h4 className={`text-lg md:text-xl font-semibold mb-2 text-[#00e5ff]`}>
@@ -1869,8 +1869,8 @@ const Example = ({ media, recentBlogs }) => {
                                     <div className="text-sm text-[#64efff] tracking-wide mb-2">KEY FEATURES</div>
                                     <ul className="text-sm text-[#cfe3ea] list-disc pl-4 space-y-1 marker:text-[#00e5ff]">
                                       <li>Supported Cell Chemistry: <span className="font-semibold">LFP/NMC</span></li>
-                                      <li>Cell Count Range: 120S-140S</li>
-                                      <li>Nominal Pack Voltage: 400V</li>
+                                      <li>Cell Count Range: 125S to 156S</li>
+                                      <li>Nominal Pack Voltage: 500V</li>
                                     </ul>
                                     <div className="mt-3 flex justify-end">
                                       <svg width="36" height="36" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="text-white transition-transform duration-700 ease-out group-hover:text-[#00e5ff] group-hover:translate-x-2">
@@ -1887,8 +1887,8 @@ const Example = ({ media, recentBlogs }) => {
                             {/* Xbattery BharatBMS-EV-800V */}
                             <AnimatedDiv className="flex-shrink-0" style={{ width: 'calc((100% / 3) - 1.5rem)' }}>
                               <Link href="/bms/BharatBMS-EV-800V" className="group focus:outline-none">
-                                <div className="relative rounded-2xl bg-[#151a1d] border border-[#1e2a31] p-6 h-full min-h-[560px] md:min-h-[600px] lg:min-h-[620px] flex flex-col transition-all duration-200 hover:bg-[#10151a] hover:border-[#1e2a31] hover:outline-none hover:shadow-[0_0_0_0.5px_rgba(0,229,255,0.55)]">
-                                  <div className="relative w-full h-[240px] md:h-[260px] rounded-xl overflow-hidden mb-4">
+                                <div className="relative rounded-2xl bg-[#151a1d] border border-[#1e2a31] p-6 h-full min-h-[420px] md:min-h-[450px] lg:min-h-[480px] flex flex-col transition-all duration-200 hover:bg-[#10151a] hover:border-[#00e5ff]/30 hover:border-2 hover:outline-none">
+                                  <div className="relative w-full h-[180px] md:h-[200px] rounded-xl overflow-hidden mb-4">
                                     <Image src="/images/ev_good_looking-Photoroom.png" alt="Xbattery BharatBMS-EV-800V" fill className="object-contain transition-transform duration-500 ease-out group-hover:scale-[1.18]" />
                                   </div>
                                   <h4 className={`text-lg md:text-xl font-semibold mb-2 text-[#00e5ff]`}>
@@ -1900,7 +1900,7 @@ const Example = ({ media, recentBlogs }) => {
                                     <div className="text-sm text-[#64efff] tracking-wide mb-2">KEY FEATURES</div>
                                     <ul className="text-sm text-[#cfe3ea] list-disc pl-4 space-y-1 marker:text-[#00e5ff]">
                                       <li>Supported Cell Chemistry: <span className="font-semibold">LFP/NMC</span></li>
-                                      <li>Cell Count Range: 200S-220S</li>
+                                      <li>Cell Count Range: 188S to 250S</li>
                                       <li>Nominal Pack Voltage: 800V</li>
                                     </ul>
                                     <div className="mt-3 flex justify-end">

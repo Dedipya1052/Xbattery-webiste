@@ -39,6 +39,11 @@ const BMS_PRODUCTS = [
     slug: "ev-bms",
     title: "Xbattery BharatBMS-EV-400V", 
       link: "/bms/BharatBMS-EV-400V"
+  },
+  {
+    slug: "ev-bms-110v",
+    title: "Xbattery BharatBMS-EV-110V", 
+      link: "/bms/BharatBMS-EV-110V"
   }
 ];
 
@@ -76,6 +81,13 @@ const CONTENT = {
     imageAlt: "LV-BMS Image",
     image: "/images/ev_good_looking-Photoroom.png",
   },
+  "ev-bms-110v": {
+    title: "Xbattery BharatBMS-EV-110V",
+    description:
+      "Advanced 400V BMS for electric passenger vehicles with enhanced safety protocols and intelligent thermal management systems. Designed for high-performance electric vehicles with robust protection systems and advanced diagnostics.",
+    imageAlt: "EV-BMS Image",
+    image: "/images/ev_good_looking-Photoroom.png",
+  },
 };
 
 export default function BmsOfferingPage({ slug }) {
@@ -94,7 +106,7 @@ export default function BmsOfferingPage({ slug }) {
     "BharatBMS-ESS-72V": "lv-bms",
     "BharatBMS-ESS-110V": "lv-bms-110v",
     "BharatBMS-EV-400V": "ev-bms",
-    "BharatBMS-EV-110V": "ev-bms",
+    "BharatBMS-EV-110V": "ev-bms-110v",
     "BharatBMS-EV-500V": "ev-bms",
     "BharatBMS-EV-800V": "ev-bms",
   };
@@ -106,6 +118,7 @@ export default function BmsOfferingPage({ slug }) {
   const currentBMSIndex = findBMSIndex(normalizedSlug);
   const prevBMS = currentBMSIndex > 0 ? BMS_PRODUCTS[currentBMSIndex - 1] : null;
   const nextBMS = currentBMSIndex < BMS_PRODUCTS.length - 1 ? BMS_PRODUCTS[currentBMSIndex + 1] : null;
+  
 
   // Icon sets per BMS type for Features
   const featureIconSets = {
@@ -140,6 +153,14 @@ export default function BmsOfferingPage({ slug }) {
       FaThermometerHalf,      // Thermal Management
       FaTruck,                // Scalability
       FaChartPie              // Diagnostics and Monitoring
+    ],
+    "ev-bms-110v": [
+      FaBatteryEmpty,         // Cell Monitoring & Balancing
+      FaCar,                  // Communication & Control
+      FaShieldAlt,            // Safety Features
+      FaThermometerHalf,      // Thermal Management
+      FaTruck,                // Scalability
+      FaChartPie              // Diagnostics and Monitoring
     ]
   };
 
@@ -147,7 +168,8 @@ export default function BmsOfferingPage({ slug }) {
   const softwareIconSets = {
     "telecom-bms": [FaChartLine, FaCog, FaCode],
     "lv-bms": [FaChartBar, FaCog, FaCode],
-    "ev-bms": [FaChartPie, FaCog, FaCode]
+    "ev-bms": [FaChartPie, FaCog, FaCode],
+    "ev-bms-110v": [FaChartPie, FaCog, FaCode]
   };
 
   // Flyer label should show brand on first line and product name on second line
@@ -209,6 +231,11 @@ export default function BmsOfferingPage({ slug }) {
               </div>
             )}
             {normalizedSlug === 'ev-bms' && (
+              <div className="w-10 h-10 rounded-xl overflow-hidden flex items-center justify-center">
+                <FaCar size={24} />
+              </div>
+            )}
+            {normalizedSlug === 'ev-bms-110v' && (
               <div className="w-10 h-10 rounded-xl overflow-hidden flex items-center justify-center">
                 <FaCar size={24} />
               </div>

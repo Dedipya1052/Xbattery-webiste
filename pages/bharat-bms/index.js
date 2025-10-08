@@ -121,8 +121,8 @@ const BharatBMS = () => {
         "The XB-X 16S is a versatile 48V BMS designed for modular energy storage systems with support for both LFP and NMC chemistries across 13-17 series configurations.",
       features: [
         "Supported Cell Chemistry: LFP/NMC",
-        "Cell Count Range: up to 28S",
-        "Nominal Pack Voltage: 42.9V to 56.1V",
+        "Cell Count Range: Up to 28S",
+        "Nominal Pack Voltage: 48V",
       ],
     },
     {
@@ -134,8 +134,8 @@ const BharatBMS = () => {
         "The XB-X 32S is a robust low-voltage energy storage system BMS operating at 110V nominal with LFP chemistry support for 32-36 series configurations.",
       features: [
         "Supported Cell Chemistry: LFP/NMC",
-        "Cell Count Range: 32S to 36S",
-        "Nominal Pack Voltage: 42.9V to 56.1V",
+        "Cell Count Range: Up to 28S",
+        "Nominal Pack Voltage: 72V",
       ],
     },
     {
@@ -160,8 +160,8 @@ const BharatBMS = () => {
         "High-performance 400V BMS for commercial electric vehicles with robust protection systems and advanced diagnostics.",
       features: [
         "Supported Cell Chemistry: LFP/NMC",
-        "Cell Count Range: 120S-140S",
-        "Nominal Pack Voltage: 400V",
+        "Cell Count Range: 125S to 156S",
+        "Nominal Pack Voltage: 500V",
       ],
     },
   ];
