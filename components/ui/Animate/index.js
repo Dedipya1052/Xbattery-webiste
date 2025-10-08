@@ -2,7 +2,7 @@ import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { useEffect } from 'react';
 
-const AnimatedDiv = ({ children }) => {
+const AnimatedDiv = ({ children, className, style, ...restProps }) => {
   const { ref, inView } = useInView({
     threshold: 0.1, // Adjust the threshold as needed
   });
@@ -21,7 +21,9 @@ const AnimatedDiv = ({ children }) => {
       initial={{ y: 100, opacity: 0 }}
       animate={{ y: inView ? 0 : 100, opacity: inView ? 1 : 0 }}
       transition={{ duration: 0.5 }}
-      //style={{ height: '200px', backgroundColor: 'lightblue', margin: '20px 0' }}
+      className={className}
+      style={style}
+      {...restProps}
     >
       {children}
     </motion.div>

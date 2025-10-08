@@ -58,14 +58,14 @@ const CONTENT = {
   "lv-bms": {
     title: "Xbattery BharatBMS-ESS-72V",
     description:
-      "The XB-X 32S is a robust low-voltage energy storage system BMS operating at 110V nominal with LFP chemistry support for 32-36 series configurations. Engineered for reliable energy storage applications, it delivers 100A continuous current with advanced thermal management and comprehensive safety protections.",
+      "The XB-X 32S is a robust low-voltage energy storage system BMS operating at 110V nominal with LFP chemistry support for 32-36 series configurations.",
     imageAlt: "Telecom BMS Image",
     image: "/images/lv_good_looking-Photoroom.png",
   },
   "lv-bms-110v": {
     title: "Xbattery BharatBMS-ESS-110V",
     description:
-      "The XB-X 32S is a robust low-voltage energy storage system BMS operating at 110V nominal with LFP chemistry support for 32-36 series configurations. Engineered for reliable energy storage applications, it delivers 100A continuous current with advanced thermal management and comprehensive safety protections.",
+      "The XB-X 32S is a robust low-voltage energy storage system BMS operating at 110V nominal with LFP chemistry support for 32-36 series configurations.",
     imageAlt: "LV-BMS Image",
     image: "/images/lv_good_looking-Photoroom.png",
   },
