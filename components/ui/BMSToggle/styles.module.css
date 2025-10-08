@@ -1,0 +1,115 @@
+.toggleContainer {
+  display: flex;
+  justify-content: center;
+  margin: 2rem 0 3rem 0;
+}
+
+.toggleWrapper {
+  display: flex;
+  background: #242424;
+  border-radius: 8px;
+  padding: 3px;
+  border: 1px solid #3a3a3a;
+  position: relative;
+  overflow: hidden;
+  width: fit-content;
+  margin: 0 auto;
+}
+
+.toggleWrapper::before {
+  content: '';
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  right: 3px;
+  bottom: 3px;
+  background: #00e5ff;
+  border-radius: 6px;
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: 1;
+  width: calc(50% - 3px);
+}
+
+.toggleWrapper[data-active="ENERGY STORAGE"]::before {
+  transform: translateX(0);
+}
+
+.toggleWrapper[data-active="ELECTRIC VEHICLES"]::before {
+  transform: translateX(100%);
+}
+
+.toggleButton {
+  padding: 14px 28px;
+  border: none;
+  background: transparent;
+  color: #ffffff;
+  font-weight: 600;
+  font-size: 16px;
+  letter-spacing: 0.3px;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  border-radius: 6px;
+  position: relative;
+  z-index: 2;
+  min-width: 140px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  white-space: nowrap;
+}
+
+.toggleButton:hover {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.toggleButton.active {
+  color: #000000;
+  font-weight: 700;
+}
+
+.toggleButton.active:hover {
+  color: #000000;
+}
+
+.toggleButton.inactive {
+  color: #A9A9A9;
+  font-weight: 600;
+}
+
+.toggleButton.inactive:hover {
+  color: #ffffff;
+}
+
+.carIcon {
+  margin-left: 10px;
+  font-size: 28px;
+  color: currentColor;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .toggleButton {
+    padding: 12px 20px;
+    font-size: 14px;
+    min-width: 120px;
+  }
+  
+  .carIcon {
+    font-size: 14px;
+    margin-left: 8px;
+  }
+  
+  .toggleWrapper {
+    padding: 3px;
+  }
+}
+
+@media (max-width: 480px) {
+  .toggleButton {
+    padding: 8px 20px;
+    font-size: 12px;
+    min-width: 60px;
+  }
+}

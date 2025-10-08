@@ -31,6 +31,11 @@ const BMS_PRODUCTS = [
       link: "/bms/BharatBMS-ESS-72V"
   },
   {
+    slug: "lv-bms-110v", 
+    title: "Xbattery BharatBMS-ESS-110V",
+      link: "/bms/BharatBMS-ESS-110V"
+  },
+  {
     slug: "ev-bms",
     title: "Xbattery BharatBMS-EV-400V", 
       link: "/bms/BharatBMS-EV-400V"
@@ -57,6 +62,13 @@ const CONTENT = {
     imageAlt: "Telecom BMS Image",
     image: "/images/lv_good_looking-Photoroom.png",
   },
+  "lv-bms-110v": {
+    title: "Xbattery BharatBMS-ESS-110V",
+    description:
+      "The XB-X 32S is a robust low-voltage energy storage system BMS operating at 110V nominal with LFP chemistry support for 32-36 series configurations. Engineered for reliable energy storage applications, it delivers 100A continuous current with advanced thermal management and comprehensive safety protections.",
+    imageAlt: "LV-BMS Image",
+    image: "/images/lv_good_looking-Photoroom.png",
+  },
   "ev-bms": {
     title: "Xbattery BharatBMS-EV-400V",
     description:
@@ -80,7 +92,11 @@ export default function BmsOfferingPage({ slug }) {
   const SLUG_ALIAS = {
     "BharatBMS-ESS-48V": "telecom-bms",
     "BharatBMS-ESS-72V": "lv-bms",
+    "BharatBMS-ESS-110V": "lv-bms-110v",
     "BharatBMS-EV-400V": "ev-bms",
+    "BharatBMS-EV-110V": "ev-bms",
+    "BharatBMS-EV-500V": "ev-bms",
+    "BharatBMS-EV-800V": "ev-bms",
   };
 
   const normalizedSlug = CONTENT[slug] ? slug : (SLUG_ALIAS[slug] || slug);
@@ -108,6 +124,14 @@ export default function BmsOfferingPage({ slug }) {
       FaThermometerHalf,      // Thermal Management
       FactoryIcon,            // Scalability (custom detailed factory icon)
       FaChartBar              // Diagnostics and Monitoring
+    ],
+    "lv-bms-110v": [
+      FaBatteryThreeQuarters, // same as lv-bms
+      FaNetworkWired,
+      FaShieldAlt,
+      FaThermometerHalf,
+      FactoryIcon,
+      FaChartBar
     ],
     "ev-bms": [
       FaBatteryEmpty,         // Cell Monitoring & Balancing
@@ -168,13 +192,18 @@ export default function BmsOfferingPage({ slug }) {
       <div className="bg-[#1c1c1c] text-white w-full relative">
         {/* Page header icon badge (top-right) */}
         <div className="absolute top-5 right-4 w-11 h-11 rounded-xl bg-[#0c0c0c] border border-white/20 flex items-center justify-center text-white overflow-visible z-50">
-          <CustomTooltip text="Energy storage">
+          <CustomTooltip text={normalizedSlug === 'ev-bms' ? 'Electric vehicles' : 'Energy storage'}>
             {normalizedSlug === 'telecom-bms' && (
               <div className="w-10 h-10 rounded-xl overflow-hidden flex items-center justify-center">
                 <Image src="/images/icons/rack-ess-white.svg" alt="Rack ESS icon" width={32} height={32} className="object-contain" />
               </div>
             )}
             {normalizedSlug === 'lv-bms' && (
+              <div className="w-10 h-10 rounded-xl overflow-hidden flex items-center justify-center">
+                <Image src="/images/icons/download (29).png" alt="BMS icon" width={42} height={42} className="object-cover scale-[1.3]" />
+              </div>
+            )}
+            {normalizedSlug === 'lv-bms-110v' && (
               <div className="w-10 h-10 rounded-xl overflow-hidden flex items-center justify-center">
                 <Image src="/images/icons/download (29).png" alt="BMS icon" width={42} height={42} className="object-cover scale-[1.3]" />
               </div>
@@ -227,8 +256,8 @@ export default function BmsOfferingPage({ slug }) {
             </h2>
           </AnimatedDiv>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 max-w-[1200px] mx-auto items-stretch">
-            {(
-              {
+            {(function() {
+              const specMap = {
                 "telecom-bms": [
                   { icon: <FaFlask />, title: "Supported Cell Chemistry", description: "LFP/NMC" },
                   { icon: <FaCubes />, title: "Cell Count Range", description: "13S-17S" },
@@ -239,17 +268,20 @@ export default function BmsOfferingPage({ slug }) {
                   { icon: <FaCubes />, title: "Cell Count Range", description: "32S-36S" },
                   { icon: <FaBolt />, title: "Nominal Pack Voltage", description: "110V" }
                 ],
+                "lv-bms-110v": [
+                  { icon: <FaFlask />, title: "Supported Cell Chemistry", description: "LFP/NMC" },
+                  { icon: <FaCubes />, title: "Cell Count Range", description: "32S-36S" },
+                  { icon: <FaBolt />, title: "Nominal Pack Voltage", description: "110V" }
+                ],
                 "ev-bms": [
                   { icon: <FaFlask />, title: "Supported Cell Chemistry", description: "LFP/NMC" },
                   { icon: <FaCubes />, title: "Cell Count Range", description: "136S" },
                   { icon: <FaBolt />, title: "Nominal Pack Voltage", description: "435V" }
                 ]
-              }[normalizedSlug] || [
-                { icon: <FaFlask />, title: "Supported Cell Chemistry", description: "LFP/NMC" },
-                { icon: <FaCubes />, title: "Cell Count Range", description: "13S-17S" },
-                { icon: <FaBolt />, title: "Nominal Pack Voltage", description: "42.9V to 56.1V" }
-              ]
-            ).map((feature, index) => (
+              };
+              const arr = specMap[normalizedSlug] || specMap["telecom-bms"]; 
+              return arr;
+            })().map((feature, index) => (
               <AnimatedDiv key={index}>
                 <div className="flex w-full rounded-2xl overflow-hidden bg-[#1b1b1b] min-h-[120px]">
                   <div className="w-[96px] md:w-[110px] shrink-0 bg-[#141414] flex items-center justify-center">
