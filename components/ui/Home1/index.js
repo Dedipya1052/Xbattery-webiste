@@ -1558,7 +1558,7 @@ const Example = ({ media, recentBlogs }) => {
 
                             <div className="relative w-full h-[180px] md:h-[200px] rounded-xl overflow-hidden mb-4">
 
-                              <Image src="/images/telecom_good_looking-Photoroom.png" alt="Xbattery BharatBMS-ESS-48V" fill className="object-contain transition-transform duration-500 ease-out group-hover:scale-[1.28]" />
+                              <Image src="/images/bms_offerings/ess-48v.png" alt="Xbattery BharatBMS-ESS-48V" fill className="object-contain transition-transform duration-500 ease-out group-hover:scale-[1.28]" />
 
                             </div>
 
@@ -1630,7 +1630,7 @@ const Example = ({ media, recentBlogs }) => {
 
                         <div className="relative w-full h-[180px] md:h-[200px] rounded-xl overflow-hidden mb-4">
 
-                          <Image src="/images/lv_good_looking-Photoroom.png" alt="XB-X 32S" fill className="object-contain transition-transform duration-500 ease-out group-hover:scale-[1.48]" />
+                          <Image src="/images/bms_offerings/ess-72v.png" alt="XB-X 32S" fill className="object-contain transition-transform duration-500 ease-out group-hover:scale-[1.48]" />
 
                         </div>
 
@@ -1700,7 +1700,7 @@ const Example = ({ media, recentBlogs }) => {
 
                             <div className="relative w-full h-[180px] md:h-[200px] rounded-xl overflow-hidden mb-4">
 
-                              <Image src="/images/lv_good_looking-Photoroom.png" alt="Xbattery BharatBMS-ESS-110V" fill className="object-contain transition-transform duration-500 ease-out group-hover:scale-[1.28]" />
+                              <Image src="/images/bms_offerings/ess-110v-photoroom.png" alt="Xbattery BharatBMS-ESS-110V" fill className="object-contain transition-transform duration-500 ease-out group-hover:scale-[1.28]" />
 
                             </div>
 
@@ -1796,7 +1796,7 @@ const Example = ({ media, recentBlogs }) => {
                               <Link href="/bms/BharatBMS-EV-400V" className="group focus:outline-none">
                                 <div className="relative rounded-2xl bg-[#151a1d] border border-[#1e2a31] p-6 h-full min-h-[420px] md:min-h-[450px] lg:min-h-[480px] flex flex-col transition-all duration-200 hover:bg-[#10151a] hover:border-[#00e5ff]/30 hover:border-2 hover:outline-none">
                                   <div className="relative w-full h-[180px] md:h-[200px] rounded-xl overflow-hidden mb-4">
-                                    <Image src="/images/ev_good_looking-Photoroom.png" alt="Xbattery BharatBMS-EV-400V" fill className="object-contain transition-transform duration-500 ease-out group-hover:scale-[1.18]" />
+                                    <Image src="/images/bms_offerings/ev-400v.png" alt="Xbattery BharatBMS-EV-400V" fill className="object-contain transition-transform duration-500 ease-out group-hover:scale-[1.18]" />
                                   </div>
                                   <h4 className={`text-lg md:text-xl font-semibold mb-2 text-[#00e5ff]`}>
                                     <span>Xbattery BharatBMS-EV-400V</span>
@@ -1827,7 +1827,7 @@ const Example = ({ media, recentBlogs }) => {
                               <Link href="/bms/BharatBMS-EV-110V" className="group focus:outline-none">
                                 <div className="relative rounded-2xl bg-[#151a1d] border border-[#1e2a31] p-6 h-full min-h-[420px] md:min-h-[450px] lg:min-h-[480px] flex flex-col transition-all duration-200 hover:bg-[#10151a] hover:border-[#00e5ff]/30 hover:border-2 hover:outline-none">
                                   <div className="relative w-full h-[180px] md:h-[200px] rounded-xl overflow-hidden mb-4">
-                                    <Image src="/images/ev_good_looking-Photoroom.png" alt="Xbattery BharatBMS-EV-110V" fill className="object-contain transition-transform duration-500 ease-out group-hover:scale-[1.18]" />
+                                    <Image src="/images/bms_offerings/ev-110v.png" alt="Xbattery BharatBMS-EV-110V" fill className="object-contain transition-transform duration-500 ease-out group-hover:scale-[1.18]" />
                                   </div>
                                   <h4 className={`text-lg md:text-xl font-semibold mb-2 text-[#00e5ff]`}>
                                     <span>Xbattery BharatBMS-EV-110V</span>
@@ -1858,7 +1858,7 @@ const Example = ({ media, recentBlogs }) => {
                               <Link href="/bms/BharatBMS-EV-500V" className="group focus:outline-none">
                                 <div className="relative rounded-2xl bg-[#151a1d] border border-[#1e2a31] p-6 h-full min-h-[420px] md:min-h-[450px] lg:min-h-[480px] flex flex-col transition-all duration-200 hover:bg-[#10151a] hover:border-[#00e5ff]/30 hover:border-2 hover:outline-none">
                                   <div className="relative w-full h-[180px] md:h-[200px] rounded-xl overflow-hidden mb-4">
-                                    <Image src="/images/ev_good_looking-Photoroom.png" alt="Xbattery BharatBMS-EV-500V" fill className="object-contain transition-transform duration-500 ease-out group-hover:scale-[1.18]" />
+                                    <Image src="/images/bms_offerings/ev-500v.png" alt="Xbattery BharatBMS-EV-500V" fill className="object-contain transition-transform duration-500 ease-out group-hover:scale-[1.18]" />
                                   </div>
                                   <h4 className={`text-lg md:text-xl font-semibold mb-2 text-[#00e5ff]`}>
                                     <span>Xbattery BharatBMS-EV-500V</span>
@@ -1889,7 +1889,7 @@ const Example = ({ media, recentBlogs }) => {
                               <Link href="/bms/BharatBMS-EV-800V" className="group focus:outline-none">
                                 <div className="relative rounded-2xl bg-[#151a1d] border border-[#1e2a31] p-6 h-full min-h-[420px] md:min-h-[450px] lg:min-h-[480px] flex flex-col transition-all duration-200 hover:bg-[#10151a] hover:border-[#00e5ff]/30 hover:border-2 hover:outline-none">
                                   <div className="relative w-full h-[180px] md:h-[200px] rounded-xl overflow-hidden mb-4">
-                                    <Image src="/images/ev_good_looking-Photoroom.png" alt="Xbattery BharatBMS-EV-800V" fill className="object-contain transition-transform duration-500 ease-out group-hover:scale-[1.18]" />
+                                    <Image src="/images/bms_offerings/ev-800v.png" alt="Xbattery BharatBMS-EV-800V" fill className="object-contain transition-transform duration-500 ease-out group-hover:scale-[1.18]" />
                                   </div>
                                   <h4 className={`text-lg md:text-xl font-semibold mb-2 text-[#00e5ff]`}>
                                     <span>Xbattery BharatBMS-EV-800V</span>

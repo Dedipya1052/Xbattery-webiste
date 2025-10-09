@@ -68,49 +68,49 @@ const CONTENT = {
     description:
       "The XB-X 16S is a versatile 48V BMS designed for modular energy storage systems with support for both LFP and NMC chemistries across 13-17 series configurations. Its stackable architecture and 100A continuous current handling make it ideal for scalable residential and commercial energy storage applications.",
     imageAlt: "EV-BMS Image",
-    image: "/images/telecom_good_looking-Photoroom.png",
+    image: "/images/bms_offerings/ess-48v.png",
   },
   "lv-bms": {
     title: "Xbattery BharatBMS-ESS-72V",
     description:
       "The XB-X 32S is a robust low-voltage energy storage system BMS operating at 110V nominal with LFP chemistry support for 32-36 series configurations.",
     imageAlt: "Telecom BMS Image",
-    image: "/images/lv_good_looking-Photoroom.png",
+    image: "/images/bms_offerings/ess-72v.png",
   },
   "lv-bms-110v": {
     title: "Xbattery BharatBMS-ESS-110V",
     description:
       "The XB-X 32S is a robust low-voltage energy storage system BMS operating at 110V nominal with LFP chemistry support for 32-36 series configurations.",
     imageAlt: "LV-BMS Image",
-    image: "/images/lv_good_looking-Photoroom.png",
+    image: "/images/bms_offerings/ess-110v-photoroom.png",
   },
   "ev-bms": {
     title: "Xbattery BharatBMS-EV-400V",
     description:
       "The XB-X 136S is a high-performance 435V BMS specifically engineered for electric vehicles including cars, trucks, and buses with 136-series LFP cell configurations. Built to automotive standards with ISO 26262 ASIL-C compliance, it supports up to 600A peak discharge currents and features advanced diagnostics for demanding EV applications.",
     imageAlt: "LV-BMS Image",
-    image: "/images/ev_good_looking-Photoroom.png",
+    image: "/images/bms_offerings/ev-400v.png",
   },
   "ev-bms-110v": {
     title: "Xbattery BharatBMS-EV-110V",
     description:
       "Advanced 110V BMS for electric passenger vehicles with enhanced safety protocols and intelligent thermal management systems. Designed for high-performance electric vehicles with robust protection systems and advanced diagnostics.",
     imageAlt: "EV-BMS Image",
-    image: "/images/ev_good_looking-Photoroom.png",
+    image: "/images/bms_offerings/ev-110v.png",
   },
   "ev-bms-500v": {
     title: "Xbattery BharatBMS-EV-500V",
     description:
       "High-performance 500V BMS specifically engineered for electric vehicles including cars, trucks, and buses with 125-156 series LFP cell configurations. Built to automotive standards with ISO 26262 ASIL-C compliance, it supports up to 600A peak discharge currents and features advanced diagnostics for demanding EV applications.",
     imageAlt: "EV-BMS Image",
-    image: "/images/ev_good_looking-Photoroom.png",
+    image: "/images/bms_offerings/ev-500v.png",
   },
   "ev-bms-800v": {
     title: "Xbattery BharatBMS-EV-800V",
     description:
       "Ultra-high-performance 800V BMS specifically engineered for electric vehicles including cars, trucks, and buses with 188-200 series LFP cell configurations. Built to automotive standards with ISO 26262 ASIL-C compliance, it supports up to 600A peak discharge currents and features advanced diagnostics for demanding EV applications.",
     imageAlt: "EV-BMS Image",
-    image: "/images/ev_good_looking-Photoroom.png",
+    image: "/images/bms_offerings/ev-800v.png",
   },
 };
 
@@ -470,13 +470,13 @@ export default function BmsOfferingPage({ slug }) {
           </div>
           <div className="w-full flex justify-end mt-2">
             <div className="flex flex-col items-center gap-2 mr-2">
-               <a
-                 href="/api/download-brochure"
-                 target="_blank"
-                 rel="noopener noreferrer"
-                 aria-label="View brochure PDF"
-                 className="inline-flex items-center justify-center w-12 h-12 rounded-xl bg-white border border-gray-200 shadow-[0_2px_8px_rgba(0,0,0,0.08)] hover:shadow-[0_4px_12px_rgba(0,0,0,0.12)] transition"
-               >
+              <a
+                href="/api/download-brochure"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="View brochure PDF"
+                className="inline-flex items-center justify-center w-16 h-16 rounded-xl bg-white border border-gray-200 shadow-[0_2px_8px_rgba(0,0,0,0.08)] hover:shadow-[0_4px_12px_rgba(0,0,0,0.12)] transition"
+              >
                 {/* Custom download icon with dual-color gradient stroke; button size unchanged */}
                 <svg
                   width="28"
