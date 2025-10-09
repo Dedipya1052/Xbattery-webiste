@@ -3,7 +3,7 @@ import styles from './styles.module.css';
 import { FaCar } from 'react-icons/fa';
 import Image from 'next/image';
 
-const BMSToggle = ({ onToggle, initialValue = 'ELECTRIC VEHICLES' }) => {
+const BMSToggle = ({ onToggle, initialValue = 'ENERGY STORAGE' }) => {
   const [activeTab, setActiveTab] = useState(initialValue);
 
   const handleToggle = (value) => {
