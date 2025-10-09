@@ -87,6 +87,52 @@ h1, h2, h3, h4, h5, h6 {
   border-color: #00e5ff !important;
 }
 
+/* Remove all white borders from BMS cards on hover */
+.group:hover div {
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+/* Specific fix for BMS cards white border issue */
+.rounded-2xl:hover {
+  outline: none !important;
+  box-shadow: none !important;
+  border: 2px solid #00e5ff30 !important;
+}
+
+/* Force override any default border on BMS cards */
+.group:hover .rounded-2xl {
+  border: 2px solid #00e5ff30 !important;
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+/* Completely remove white borders from BMS cards */
+.rounded-2xl {
+  border: none !important;
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+.rounded-2xl:hover {
+  border: 2px solid #00e5ff30 !important;
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+/* Target the specific BMS card containers */
+.group .rounded-2xl {
+  border: none !important;
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+.group:hover .rounded-2xl {
+  border: 2px solid #00e5ff30 !important;
+  outline: none !important;
+  box-shadow: none !important;
+}
+
 .group:focus-visible {
   outline: none !important;
   border-color: #00e5ff !important;

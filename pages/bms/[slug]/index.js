@@ -82,7 +82,7 @@ const CONTENT = {
     description:
       "The XB-X 32S is a robust low-voltage energy storage system BMS operating at 110V nominal with LFP chemistry support for 32-36 series configurations.",
     imageAlt: "LV-BMS Image",
-    image: "/images/bms_offerings/ess-110v-photoroom.png",
+    image: "/images/bms_offerings/ess2-110v.png",
   },
   "ev-bms": {
     title: "Xbattery BharatBMS-EV-400V",

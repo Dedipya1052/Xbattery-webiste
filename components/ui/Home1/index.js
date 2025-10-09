@@ -1700,7 +1700,7 @@ const Example = ({ media, recentBlogs }) => {
 
                             <div className="relative w-full h-[180px] md:h-[200px] rounded-xl overflow-hidden mb-4">
 
-                              <Image src="/images/bms_offerings/ess-110v-photoroom.png" alt="Xbattery BharatBMS-ESS-110V" fill className="object-contain transition-transform duration-500 ease-out group-hover:scale-[1.28]" />
+                              <Image src="/images/bms_offerings/ess2-110v.png" alt="Xbattery BharatBMS-ESS-110V" fill className="object-contain transition-transform duration-500 ease-out group-hover:scale-[1.28]" />
 
                             </div>
 
