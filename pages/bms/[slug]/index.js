@@ -475,7 +475,7 @@ export default function BmsOfferingPage({ slug }) {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="View brochure PDF"
-                className="inline-flex items-center justify-center w-12 h-12 rounded-xl bg-white border border-gray-200 shadow-[0_2px_8px_rgba(0,0,0,0.08)] hover:shadow-[0_4px_12px_rgba(0,0,0,0.12)] transition"
+                className="inline-flex items-center justify-center w-16 h-16 rounded-xl bg-white border border-gray-200 shadow-[0_2px_8px_rgba(0,0,0,0.08)] hover:shadow-[0_4px_12px_rgba(0,0,0,0.12)] transition"
               >
                 {/* Custom download icon with dual-color gradient stroke; button size unchanged */}
                 <svg

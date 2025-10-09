@@ -51,7 +51,7 @@ const Example = ({ media, recentBlogs }) => {
 
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
-  const [bmsToggle, setBmsToggle] = useState('ELECTRIC VEHICLES');
+  const [bmsToggle, setBmsToggle] = useState('ENERGY STORAGE');
   const [currentEVCard, setCurrentEVCard] = useState(0); // Carousel scroll position
 
   const evCards = [

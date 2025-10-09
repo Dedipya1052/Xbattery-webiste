@@ -5,6 +5,11 @@ import Image from 'next/image';
 
 const BMSToggle = ({ onToggle, initialValue = 'ENERGY STORAGE' }) => {
   const [activeTab, setActiveTab] = useState(initialValue);
+  
+  // Update local state when initialValue changes
+  React.useEffect(() => {
+    setActiveTab(initialValue);
+  }, [initialValue]);
 
   const handleToggle = (value) => {
     setActiveTab(value);
