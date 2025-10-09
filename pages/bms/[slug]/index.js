@@ -257,7 +257,7 @@ export default function BmsOfferingPage({ slug }) {
       <div className="bg-[#1c1c1c] text-white w-full relative">
         {/* Page header icon badge (top-right) */}
         <div className="absolute top-5 right-4 w-11 h-11 rounded-xl bg-[#0c0c0c] border border-white/20 flex items-center justify-center text-white overflow-visible z-50">
-          <CustomTooltip text={normalizedSlug === 'ev-bms' ? 'Electric vehicles' : 'Energy storage'}>
+          <CustomTooltip text={normalizedSlug.startsWith('ev-bms') ? 'Electric vehicle' : 'Energy storage'}>
             {normalizedSlug === 'telecom-bms' && (
               <div className="w-10 h-10 rounded-xl overflow-hidden flex items-center justify-center">
                 <Image src="/images/icons/download (29)-Photoroom.png" alt="BMS icon" width={42} height={42} className="object-cover scale-[1.3]" />
@@ -370,7 +370,7 @@ export default function BmsOfferingPage({ slug }) {
                 ],
                 "ev-bms-800v": [
                   { icon: <FaFlask />, title: "Supported Cell Chemistry", description: "LFP/NMC" },
-                  { icon: <FaCubes />, title: "Cell Count Range", description: "188S to 200S" },
+                  { icon: <FaCubes />, title: "Cell Count Range", description: "188S to 250S" },
                   { icon: <FaBolt />, title: "Nominal Pack Voltage", description: "800V" }
                 ]
               };
