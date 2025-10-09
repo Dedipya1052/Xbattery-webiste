@@ -476,40 +476,6 @@ const BharatBMS = () => {
                        {/* Cards Container with Overflow Hidden */}
                        <div className="overflow-hidden">
                          <div className="flex flex-nowrap transition-transform duration-500 ease-in-out gap-6" style={{ transform: `translateX(-${currentEVCard * 33.33}%)` }}>
-                         {/* Xbattery BharatBMS-EV-400V */}
-                         <AnimatedDiv className="flex-shrink-0" style={{ width: 'calc((100% / 3) - 1.5rem)' }}>
-                           <Link href="/bms/BharatBMS-EV-400V" className="group focus:outline-none">
-                             <div 
-                               className="relative rounded-2xl bg-[#1c1c1c] border-0 p-6 h-full min-h-[420px] md:min-h-[450px] lg:min-h-[480px] flex flex-col transition-all duration-200 hover:bg-[#1c1c1c] hover:outline-none focus:outline-none"
-                               style={{ border: 'none', outline: 'none', boxShadow: 'none' }}
-                             >
-                               <div className="relative w-full h-[180px] md:h-[200px] rounded-xl overflow-hidden mb-4">
-                                 <Image src="/images/bms_offerings/ev-400v.png" alt="Xbattery BharatBMS-EV-400V" fill className="object-contain transition-transform duration-500 ease-out group-hover:scale-[1.18]" />
-                               </div>
-                               <h4 className={`text-lg md:text-xl font-semibold mb-2 text-[#00e5ff]`}>
-                                 <span>Xbattery BharatBMS-EV-400V</span>
-                               </h4>
-                               <div className="w-16 h-[3px] bg-[#00e5ff] rounded-full mb-4"></div>
-                               <p className="text-sm text-[#cfe3ea] mb-4">The XB-X 136S is a high-performance 435V BMS specifically engineered for electric vehicles including cars, trucks, and buses with 136-series LFP cell configurations.</p>
-                               <div className="mt-auto">
-                                 <div className="text-sm text-[#64efff] tracking-wide mb-2">KEY FEATURES</div>
-                                 <ul className="text-sm text-[#cfe3ea] list-disc pl-4 space-y-1 marker:text-[#00e5ff]">
-                                   <li>Supported Cell Chemistry: <span className="font-semibold">LFP/NMC</span></li>
-                                   <li>Cell Count Range: 100S to 125S</li>
-                                   <li>Nominal Pack Voltage: 400V</li>
-                                 </ul>
-                                 <div className="mt-3 flex justify-end">
-                                   <svg width="36" height="36" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="text-white transition-transform duration-700 ease-out group-hover:text-[#00e5ff] group-hover:translate-x-2">
-                                     <path d="M4 12H20" stroke="currentColor" strokeOpacity="0.95" strokeWidth="1.2" strokeLinecap="round"/>
-                                     <path d="M14 6L20 12L14 18" stroke="currentColor" strokeOpacity="0.95" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round"/>
-                                   </svg>
-                                 </div>
-                                 <div className="mt-3 border-t border-[#1d2a30]"></div>
-                               </div>
-                             </div>
-                           </Link>
-                         </AnimatedDiv>
-
                          {/* Xbattery BharatBMS-EV-110V */}
                          <AnimatedDiv className="flex-shrink-0" style={{ width: 'calc((100% / 3) - 1.5rem)' }}>
                            <Link href="/bms/BharatBMS-EV-110V" className="group focus:outline-none">
@@ -531,6 +497,40 @@ const BharatBMS = () => {
                                    <li>Supported Cell Chemistry: <span className="font-semibold">LFP/NMC</span></li>
                                    <li>Cell Count Range: 32S to 60S</li>
                                    <li>Nominal Pack Voltage: 110V</li>
+                                 </ul>
+                                 <div className="mt-3 flex justify-end">
+                                   <svg width="36" height="36" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="text-white transition-transform duration-700 ease-out group-hover:text-[#00e5ff] group-hover:translate-x-2">
+                                     <path d="M4 12H20" stroke="currentColor" strokeOpacity="0.95" strokeWidth="1.2" strokeLinecap="round"/>
+                                     <path d="M14 6L20 12L14 18" stroke="currentColor" strokeOpacity="0.95" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round"/>
+                                   </svg>
+                                 </div>
+                                 <div className="mt-3 border-t border-[#1d2a30]"></div>
+                               </div>
+                             </div>
+                           </Link>
+                         </AnimatedDiv>
+
+                         {/* Xbattery BharatBMS-EV-400V */}
+                         <AnimatedDiv className="flex-shrink-0" style={{ width: 'calc((100% / 3) - 1.5rem)' }}>
+                           <Link href="/bms/BharatBMS-EV-400V" className="group focus:outline-none">
+                             <div 
+                               className="relative rounded-2xl bg-[#1c1c1c] border-0 p-6 h-full min-h-[420px] md:min-h-[450px] lg:min-h-[480px] flex flex-col transition-all duration-200 hover:bg-[#1c1c1c] hover:outline-none focus:outline-none"
+                               style={{ border: 'none', outline: 'none', boxShadow: 'none' }}
+                             >
+                               <div className="relative w-full h-[180px] md:h-[200px] rounded-xl overflow-hidden mb-4">
+                                 <Image src="/images/bms_offerings/ev-400v.png" alt="Xbattery BharatBMS-EV-400V" fill className="object-contain transition-transform duration-500 ease-out group-hover:scale-[1.18]" />
+                               </div>
+                               <h4 className={`text-lg md:text-xl font-semibold mb-2 text-[#00e5ff]`}>
+                                 <span>Xbattery BharatBMS-EV-400V</span>
+                               </h4>
+                               <div className="w-16 h-[3px] bg-[#00e5ff] rounded-full mb-4"></div>
+                               <p className="text-sm text-[#cfe3ea] mb-4">The XB-X 136S is a high-performance 435V BMS specifically engineered for electric vehicles including cars, trucks, and buses with 136-series LFP cell configurations.</p>
+                               <div className="mt-auto">
+                                 <div className="text-sm text-[#64efff] tracking-wide mb-2">KEY FEATURES</div>
+                                 <ul className="text-sm text-[#cfe3ea] list-disc pl-4 space-y-1 marker:text-[#00e5ff]">
+                                   <li>Supported Cell Chemistry: <span className="font-semibold">LFP/NMC</span></li>
+                                   <li>Cell Count Range: 100S to 125S</li>
+                                   <li>Nominal Pack Voltage: 400V</li>
                                  </ul>
                                  <div className="mt-3 flex justify-end">
                                    <svg width="36" height="36" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="text-white transition-transform duration-700 ease-out group-hover:text-[#00e5ff] group-hover:translate-x-2">
