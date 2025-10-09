@@ -44,6 +44,16 @@ const BMS_PRODUCTS = [
     slug: "ev-bms-110v",
     title: "Xbattery BharatBMS-EV-110V", 
       link: "/bms/BharatBMS-EV-110V"
+  },
+  {
+    slug: "ev-bms-500v",
+    title: "Xbattery BharatBMS-EV-500V", 
+      link: "/bms/BharatBMS-EV-500V"
+  },
+  {
+    slug: "ev-bms-800v",
+    title: "Xbattery BharatBMS-EV-800V", 
+      link: "/bms/BharatBMS-EV-800V"
   }
 ];
 
@@ -84,7 +94,21 @@ const CONTENT = {
   "ev-bms-110v": {
     title: "Xbattery BharatBMS-EV-110V",
     description:
-      "Advanced 400V BMS for electric passenger vehicles with enhanced safety protocols and intelligent thermal management systems. Designed for high-performance electric vehicles with robust protection systems and advanced diagnostics.",
+      "Advanced 110V BMS for electric passenger vehicles with enhanced safety protocols and intelligent thermal management systems. Designed for high-performance electric vehicles with robust protection systems and advanced diagnostics.",
+    imageAlt: "EV-BMS Image",
+    image: "/images/ev_good_looking-Photoroom.png",
+  },
+  "ev-bms-500v": {
+    title: "Xbattery BharatBMS-EV-500V",
+    description:
+      "High-performance 500V BMS specifically engineered for electric vehicles including cars, trucks, and buses with 125-156 series LFP cell configurations. Built to automotive standards with ISO 26262 ASIL-C compliance, it supports up to 600A peak discharge currents and features advanced diagnostics for demanding EV applications.",
+    imageAlt: "EV-BMS Image",
+    image: "/images/ev_good_looking-Photoroom.png",
+  },
+  "ev-bms-800v": {
+    title: "Xbattery BharatBMS-EV-800V",
+    description:
+      "Ultra-high-performance 800V BMS specifically engineered for electric vehicles including cars, trucks, and buses with 188-200 series LFP cell configurations. Built to automotive standards with ISO 26262 ASIL-C compliance, it supports up to 600A peak discharge currents and features advanced diagnostics for demanding EV applications.",
     imageAlt: "EV-BMS Image",
     image: "/images/ev_good_looking-Photoroom.png",
   },
@@ -107,8 +131,8 @@ export default function BmsOfferingPage({ slug }) {
     "BharatBMS-ESS-110V": "lv-bms-110v",
     "BharatBMS-EV-400V": "ev-bms",
     "BharatBMS-EV-110V": "ev-bms-110v",
-    "BharatBMS-EV-500V": "ev-bms",
-    "BharatBMS-EV-800V": "ev-bms",
+    "BharatBMS-EV-500V": "ev-bms-500v",
+    "BharatBMS-EV-800V": "ev-bms-800v",
   };
 
   const normalizedSlug = CONTENT[slug] ? slug : (SLUG_ALIAS[slug] || slug);
@@ -161,6 +185,22 @@ export default function BmsOfferingPage({ slug }) {
       FaThermometerHalf,      // Thermal Management
       FaTruck,                // Scalability
       FaChartPie              // Diagnostics and Monitoring
+    ],
+    "ev-bms-500v": [
+      FaBatteryEmpty,         // Cell Monitoring & Balancing
+      FaCar,                  // Communication & Control
+      FaShieldAlt,            // Safety Features
+      FaThermometerHalf,      // Thermal Management
+      FaTruck,                // Scalability
+      FaChartPie              // Diagnostics and Monitoring
+    ],
+    "ev-bms-800v": [
+      FaBatteryEmpty,         // Cell Monitoring & Balancing
+      FaCar,                  // Communication & Control
+      FaShieldAlt,            // Safety Features
+      FaThermometerHalf,      // Thermal Management
+      FaTruck,                // Scalability
+      FaChartPie              // Diagnostics and Monitoring
     ]
   };
 
@@ -168,8 +208,11 @@ export default function BmsOfferingPage({ slug }) {
   const softwareIconSets = {
     "telecom-bms": [FaChartLine, FaCog, FaCode],
     "lv-bms": [FaChartBar, FaCog, FaCode],
+    "lv-bms-110v": [FaChartBar, FaCog, FaCode],
     "ev-bms": [FaChartPie, FaCog, FaCode],
-    "ev-bms-110v": [FaChartPie, FaCog, FaCode]
+    "ev-bms-110v": [FaChartPie, FaCog, FaCode],
+    "ev-bms-500v": [FaChartPie, FaCog, FaCode],
+    "ev-bms-800v": [FaChartPie, FaCog, FaCode]
   };
 
   // Flyer label should show brand on first line and product name on second line
@@ -217,7 +260,7 @@ export default function BmsOfferingPage({ slug }) {
           <CustomTooltip text={normalizedSlug === 'ev-bms' ? 'Electric vehicles' : 'Energy storage'}>
             {normalizedSlug === 'telecom-bms' && (
               <div className="w-10 h-10 rounded-xl overflow-hidden flex items-center justify-center">
-                <Image src="/images/icons/rack-ess-white.svg" alt="Rack ESS icon" width={32} height={32} className="object-contain" />
+                <Image src="/images/icons/download (29)-Photoroom.png" alt="BMS icon" width={42} height={42} className="object-cover scale-[1.3]" />
               </div>
             )}
             {normalizedSlug === 'lv-bms' && (
@@ -236,6 +279,16 @@ export default function BmsOfferingPage({ slug }) {
               </div>
             )}
             {normalizedSlug === 'ev-bms-110v' && (
+              <div className="w-10 h-10 rounded-xl overflow-hidden flex items-center justify-center">
+                <FaCar size={24} />
+              </div>
+            )}
+            {normalizedSlug === 'ev-bms-500v' && (
+              <div className="w-10 h-10 rounded-xl overflow-hidden flex items-center justify-center">
+                <FaCar size={24} />
+              </div>
+            )}
+            {normalizedSlug === 'ev-bms-800v' && (
               <div className="w-10 h-10 rounded-xl overflow-hidden flex items-center justify-center">
                 <FaCar size={24} />
               </div>
@@ -287,23 +340,38 @@ export default function BmsOfferingPage({ slug }) {
               const specMap = {
                 "telecom-bms": [
                   { icon: <FaFlask />, title: "Supported Cell Chemistry", description: "LFP/NMC" },
-                  { icon: <FaCubes />, title: "Cell Count Range", description: "13S-17S" },
-                  { icon: <FaBolt />, title: "Nominal Pack Voltage", description: "42.9V to 56.1V" }
+                  { icon: <FaCubes />, title: "Cell Count Range", description: "Up to 28S" },
+                  { icon: <FaBolt />, title: "Nominal Pack Voltage", description: "48V" }
                 ],
                 "lv-bms": [
                   { icon: <FaFlask />, title: "Supported Cell Chemistry", description: "LFP/NMC" },
-                  { icon: <FaCubes />, title: "Cell Count Range", description: "32S-36S" },
-                  { icon: <FaBolt />, title: "Nominal Pack Voltage", description: "110V" }
+                  { icon: <FaCubes />, title: "Cell Count Range", description: "Up to 28S" },
+                  { icon: <FaBolt />, title: "Nominal Pack Voltage", description: "72V" }
                 ],
                 "lv-bms-110v": [
                   { icon: <FaFlask />, title: "Supported Cell Chemistry", description: "LFP/NMC" },
-                  { icon: <FaCubes />, title: "Cell Count Range", description: "32S-36S" },
+                  { icon: <FaCubes />, title: "Cell Count Range", description: "Up to 42S" },
                   { icon: <FaBolt />, title: "Nominal Pack Voltage", description: "110V" }
                 ],
                 "ev-bms": [
                   { icon: <FaFlask />, title: "Supported Cell Chemistry", description: "LFP/NMC" },
-                  { icon: <FaCubes />, title: "Cell Count Range", description: "136S" },
-                  { icon: <FaBolt />, title: "Nominal Pack Voltage", description: "435V" }
+                  { icon: <FaCubes />, title: "Cell Count Range", description: "100S to 125S" },
+                  { icon: <FaBolt />, title: "Nominal Pack Voltage", description: "400V" }
+                ],
+                "ev-bms-110v": [
+                  { icon: <FaFlask />, title: "Supported Cell Chemistry", description: "LFP/NMC" },
+                  { icon: <FaCubes />, title: "Cell Count Range", description: "32S to 60S" },
+                  { icon: <FaBolt />, title: "Nominal Pack Voltage", description: "110V" }
+                ],
+                "ev-bms-500v": [
+                  { icon: <FaFlask />, title: "Supported Cell Chemistry", description: "LFP/NMC" },
+                  { icon: <FaCubes />, title: "Cell Count Range", description: "125S to 156S" },
+                  { icon: <FaBolt />, title: "Nominal Pack Voltage", description: "500V" }
+                ],
+                "ev-bms-800v": [
+                  { icon: <FaFlask />, title: "Supported Cell Chemistry", description: "LFP/NMC" },
+                  { icon: <FaCubes />, title: "Cell Count Range", description: "188S to 200S" },
+                  { icon: <FaBolt />, title: "Nominal Pack Voltage", description: "800V" }
                 ]
               };
               const arr = specMap[normalizedSlug] || specMap["telecom-bms"]; 
