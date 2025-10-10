@@ -63,6 +63,10 @@
     width: 100%;
     height: 60%; 
     object-fit: cover;
+    border: 1px solid #000000 !important;
+    border-radius: 8px !important;
+    box-sizing: border-box !important;
+    display: block !important;
   }
   
   .card .content {
@@ -129,4 +133,152 @@
 
   .head1 {
     font-family: 'Open Sans', sans-serif;
+  }
+
+  .contentContainer {
+    border-bottom: 1px solid #000000 !important;
+    padding-bottom: 2rem !important;
+    box-sizing: border-box !important;
+    display: block !important;
+    width: 100% !important;
+    position: relative !important;
+    z-index: 1 !important;
+  }
+
+  /* Ensure border is visible at all screen sizes and zoom levels */
+  @media (min-width:1600px) {
+    .contentContainer {
+      border-bottom: 1px solid #000000 !important;
+      padding-bottom: 2rem !important;
+      box-sizing: border-box;
+    }
+  }
+  
+  @media (min-width:1211px) and (max-width:1599px) {
+    .contentContainer {
+      border-bottom: 1px solid #000000 !important;
+      padding-bottom: 2rem !important;
+      box-sizing: border-box;
+    }
+  }
+  
+  @media (min-width:1024px) and (max-width:1210px) {
+    .contentContainer {
+      border-bottom: 1px solid #000000 !important;
+      padding-bottom: 2rem !important;
+      box-sizing: border-box;
+    }
+  }
+  
+  @media (min-width:801px) and (max-width:1023px) {
+    .contentContainer {
+      border-bottom: 1px solid #000000 !important;
+      padding-bottom: 2rem !important;
+      box-sizing: border-box;
+    }
+  }
+  
+  @media (min-width:651px) and (max-width:800px) {
+    .contentContainer {
+      border-bottom: 1px solid #000000 !important;
+      padding-bottom: 2rem !important;
+      box-sizing: border-box;
+    }
+  }
+  
+  @media (min-width:501px) and (max-width:650px) {
+    .contentContainer {
+      border-bottom: 1px solid #000000 !important;
+      padding-bottom: 2rem !important;
+      box-sizing: border-box;
+    }
+  }
+  
+  @media (max-width:650px) {
+    .contentContainer {
+      border-bottom: 1px solid #000000 !important;
+      padding-bottom: 2rem !important;
+      box-sizing: border-box;
+    }
+  }
+  
+  @media (max-width:500px) {
+    .contentContainer {
+      border-bottom: 1px solid #000000 !important;
+      padding-bottom: 2rem !important;
+      box-sizing: border-box;
+    }
+  }
+  
+  @media (max-width:400px) {
+    .contentContainer {
+      border-bottom: 1px solid #000000 !important;
+      padding-bottom: 2rem !important;
+      box-sizing: border-box;
+    }
+  }
+  
+  @media (max-width:320px) {
+    .contentContainer {
+      border-bottom: 1px solid #000000 !important;
+      padding-bottom: 2rem !important;
+      box-sizing: border-box;
+    }
+  }
+
+  /* Ensure image border is visible at all screen sizes */
+  @media (min-width:1600px) {
+    .card img {
+      border: 1px solid #000000 !important;
+      border-radius: 8px !important;
+      box-sizing: border-box !important;
+    }
+  }
+  
+  @media (min-width:1024px) and (max-width:1210px) {
+    .card img {
+      border: 1px solid #000000 !important;
+      border-radius: 8px !important;
+      box-sizing: border-box !important;
+    }
+  }
+  
+  @media (min-width:650px) and (max-width:800px) {
+    .card img {
+      border: 1px solid #000000 !important;
+      border-radius: 8px !important;
+      box-sizing: border-box !important;
+    }
+  }
+  
+  @media (max-width:650px) {
+    .card img {
+      border: 1px solid #000000 !important;
+      border-radius: 8px !important;
+      box-sizing: border-box !important;
+    }
+  }
+  
+  @media (max-width:500px) {
+    .card img {
+      border: 1px solid #000000 !important;
+      border-radius: 8px !important;
+      box-sizing: border-box !important;
+    }
+  }
+  
+  @media (max-width:400px) {
+    .card img {
+      border: 1px solid #000000 !important;
+      border-radius: 8px !important;
+      box-sizing: border-box !important;
+    }
+  }
+  
+  @media (max-width:320px) {
+    .card img {
+      border: 1px solid #000000 !important;
+      border-radius: 8px !important;
+      box-sizing: border-box !important;
+    }
   }

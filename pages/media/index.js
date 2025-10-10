@@ -50,6 +50,38 @@ export default function Media({ blogs = [] }) {
   // Create static featured blogs with today's date
   const featuredStaticBlogs = [
     {
+      title: "Xbattery Bags $2.3 Mn To Develop Battery Management System",
+      description: "Battery tech startup Xbattery has raised $2.3 Mn in its seed funding round led by Bipin Patel Family Office, with participation from financial services company Jhaveri Credits.",
+      date: "2025-09-24T00:00:00.000Z",
+      categories: ["Featured"],
+      slug: "xbattery-bags-$2.3-mn-to-develop-battery-management-system",
+      externalLink: "https://inc42.com/buzz/xbattery-bags-2-3-mn-to-develop-battery-management-system/"
+    },
+    {
+      title: "Xbattery Raises $2.3M To Power India’s EVs",
+      description: "Fuelled by fresh funding, Hyderabad’s Xbattery is gearing up to scale BharatBMS, its indigenous high-voltage battery management system, aiming to power India’s EV and energy storage future.",
+      date: "2025-09-25T00:00:00.000Z",
+      categories: ["Featured"],
+      slug: "xbattery-raises-2-3m-to-power-indias-evs/",
+      externalLink: "https://www.electronicsforyou.biz/industry-buzz/xbattery-raises-2-3m-to-power-indias-evs/"
+    },
+    {
+      title: "Xbattery raises $2.3 million to fuel battery innovation",
+      description: "Hyderabad-based deeptech startup Xbattery has raised $2.3 million in a funding round led by the Bipin Patel Family Office, with participation from Jhaveri Credits.",
+      date: "2025-09-24T00:00:00.000Z",
+      categories: ["Featured"],
+      slug: "xbattery-raises-2-3-million-to-fuel-battery-innovation",
+      externalLink: "https://economictimes.indiatimes.com/tech/funding/xbattery-raises-2-3-million-to-fuel-battery-innovation/articleshow/124088432.cms?from=mdr"
+    },
+    {
+      title: "Xbattery Raises USD 2.3 Mn to Advance Indigenous Battery Management Systems",
+      description: "The Hyderabad-based company announced that the funds will be used to accelerate research and development, strengthen hardware sourcing, expand its team, and scale prototypes for early orders and commercialisation.",
+      date: "2025-09-25T00:00:00.000Z",
+      categories: ["Featured"],
+      slug: "xbattery-raises-usd-23-mn-to-advance-indigenous-battery",
+      externalLink: "https://www.entrepreneur.com/en-in/news-and-trends/xbattery-raises-usd-23-mn-to-advance-indigenous-battery/497547"
+    },
+    {
       title: "Xbattery's Indigenous BMS That's Chemical Agnostic?",
       description: "Hyderabad-based deep tech startup Xbattery is developing intelligent, secure BMS solutions to power india's clean energy & electric mobility shift.",
       date: "2025-08-04T00:00:00.000Z",
@@ -114,8 +146,23 @@ export default function Media({ blogs = [] }) {
     const contentfulBlogs = Array.isArray(blogs) ? blogs : [];
     const combinedBlogs = [...contentfulBlogs, ...featuredStaticBlogs];
     
-    // Sort all blogs by date (most recent first)
-    const sortedBlogs = combinedBlogs.sort((a, b) => new Date(b.date) - new Date(a.date));
+    // Sort all blogs by date (most recent first), but prioritize the specific Xbattery funding card
+    const sortedBlogs = combinedBlogs.sort((a, b) => {
+      // Check if this is the specific Xbattery funding card we want to prioritize
+      const isTargetCard = (blog) => {
+        return blog.title && blog.title.toLowerCase().includes('xbattery raises $2.3m') && 
+               blog.title.toLowerCase().includes('seed round') && 
+               blog.title.toLowerCase().includes('bipin patel');
+      };
+      
+      // If 'a' is the target card, it should come first
+      if (isTargetCard(a) && !isTargetCard(b)) return -1;
+      // If 'b' is the target card, it should come first
+      if (isTargetCard(b) && !isTargetCard(a)) return 1;
+      
+      // For all other cards, sort by date (most recent first)
+      return new Date(b.date) - new Date(a.date);
+    });
     
     setAllBlogs(sortedBlogs);
     setFilteredBlogs(sortedBlogs); // Initial filtered state is all blogs

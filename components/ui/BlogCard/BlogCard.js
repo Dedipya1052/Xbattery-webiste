@@ -39,8 +39,24 @@ export default function Card({ blog }) {
             alt="Thumbnail Image"
             width={thumbnail.fields.file.details.image.width}
             objectFit={"cover"}
+            style={{
+              border: '1px solid #000000',
+              borderRadius: '8px',
+              boxSizing: 'border-box',
+              display: 'block',
+              width: '100%'
+            }}
           />
-          <div className={`flex flex-col gap-[1.1rem] ${styles.head1} border-b-[1px] pb-[2rem] border-black`}>
+          <div 
+            className={`flex flex-col gap-[1.1rem] ${styles.head1} ${styles.contentContainer}`}
+            style={{
+              borderBottom: '1px solid #000000',
+              paddingBottom: '2rem',
+              boxSizing: 'border-box',
+              display: 'block',
+              width: '100%'
+            }}
+          >
           <div className="mt-[1rem] flex flex-col gap-[2px]">
           <div className=" text-sm text-gray-700 font-[500]">{`Published ${monthName[month]} ${day}, ${year}`}</div> 
           <div className=" text-sm text-gray-700 font-[500]">{author}</div>

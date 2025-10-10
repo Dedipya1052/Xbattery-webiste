@@ -55,7 +55,11 @@ export const bms = [
   },
   {
     name: "BMS Architecture Guide",
-    link: "/learn/the-complete-guide-to-bms-architecture-from-basic-to-advanced-topologies",
+    link: "/learn/the-complete-guide-to-bms-architecture",
+  },
+  {
+    name: "Active vs Passive Cell Balancing",
+    link: "/learn/active-vs-passive-cell-balancing",
   },
   
 ];
@@ -64,27 +68,39 @@ export const bms = [
 export const policies = [
   {
     name: "BIS Battery Standards",
-    link: "/learn/navigating-bis-standards-for-battery-systems-a-compliance-checklist",
+    link: "/learn/navigating-bis-standards-for-battery-systems",
   },
   
   {
     name: "Grid Storage Requirements",
-    link: "/learn/grid-code-requirements-for-energy-storage-what-every-developer-must-know",
+    link: "/learn/grid-code-requirements-for-energy-storage",
+  },
+  {
+    name: "EV Policies in India",
+    link: "/learn/state-wise-ev-policies-in-india",
   },
 ];
 
 // Technology Integration - custom items
 export const technology = [
   {
-    name: "AI Battery Prediction",
-    link: "/learn/how-ai-is-revolutionizing-battery-life-prediction-real-world-case-studies",
+    name: "Battery Life Prediction Using AI",
+    link: "/learn/how-ai-is-revolutionizing-battery-life-prediction",
   },
   
   {
-    name: "Battery Digital Twins",
-    link: "/learn/digital-twins-for-battery-management-from-concept-to-implementation",
+    name: "Digital Twins for BMS",
+    link: "/learn/digital-twins-for-battery-management",
+  },
+  
+  {
+    name: "Smart Battery Systems",
+    link: "/learn/iot-enabled-battery-monitoring",
   },
 ];
+
+
+
 
 // Section headers with category landing links, followed by items
 export const allLearnLinks = [
@@ -100,6 +116,7 @@ export const allLearnLinks = [
   ...batteries,
   { name: "Grid", link: "/learn/grid" },
   ...grid,
+  
 ];
 
 // Grouped export for UI sections to map over

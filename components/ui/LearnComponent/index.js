@@ -266,18 +266,20 @@ const LearnComp= () => {
 
 {/* Battery management card */}
 <div className="relative inline-block border-[0.8px] border-black rounded-md xl:h-[220px] overflow-hidden">
-             <Image
-               alt="image"
-               src="/images/comp5/new_learn_bms4.png"
-               className="block rounded-md h-[220px] w-[100%] object-cover object-right-bottom"
-             />
+             <Link href="/learn/best-battery-management-system-for-lithium-ion-batteries">
+               <Image
+                 alt="image"
+                 src="/images/comp5/new_learn_bms4.png"
+                 className="block rounded-md h-[220px] w-[100%] object-cover object-right-bottom"
+               />
+             </Link>
 
              <div className="absolute top-0 flex flex-col items-start justify-center p-4">
                <div className="p-0.5 rounded-md text-left">
                   <h2
                    className={`text-[1.3rem] font-semibold mb-2 ${styles.head1} leading-[45px] hover:text-[#33c433]`}
                  >
-                    <Link href="/learn/bms">
+                    <Link href="/learn/best-battery-management-system-for-lithium-ion-batteries">
                      {" "}
                      <span className="hover:text-[#33c433] hover:no-underline">
                        Battery Management System
@@ -302,18 +304,20 @@ const LearnComp= () => {
 
            {/* policies card */}
            <div className="relative inline-block border-[0.8px] border-black rounded-md xl:h-[220px] overflow-hidden">
-             <Image
-               alt="image"
-               src="/images/comp5/learn_policies.png"
-               className="block rounded-md h-[220px] w-[100%] object-cover object-right-bottom"
-             />
+             <Link href="/learn/navigating-bis-standards-for-battery-systems">
+               <Image
+                 alt="image"
+                 src="/images/comp5/learn_policies.png"
+                 className="block rounded-md h-[220px] w-[100%] object-cover object-right-bottom"
+               />
+             </Link>
 
              <div className="absolute top-0 flex flex-col items-start justify-center p-4">
                <div className="p-0.5 rounded-md text-left">
                   <h2
                    className={`text-[1.3rem] font-semibold mb-2 ${styles.head1} leading-[45px] hover:text-[#33c433]`}
                  >
-                    <Link href="/learn/policies">
+                    <Link href="/learn/navigating-bis-standards-for-battery-systems">
                      {" "}
                      <span className="hover:text-[#33c433] hover:no-underline">
                      Energy Policy & Regulations
@@ -338,18 +342,20 @@ const LearnComp= () => {
            {/* technology card */}
 
              <div className="relative inline-block border-[0.8px] border-black rounded-md xl:h-[220px] overflow-hidden">
-             <Image
-               alt="image"
-               src="/images/comp5/learn_technology.png"
-               className="block rounded-md h-[220px] w-[100%] object-cover object-right-bottom"
-             />
+             <Link href="/learn/how-ai-is-revolutionizing-battery-life-prediction">
+               <Image
+                 alt="image"
+                 src="/images/comp5/learn_technology.png"
+                 className="block rounded-md h-[220px] w-[100%] object-cover object-right-bottom"
+               />
+             </Link>
 
              <div className="absolute top-0 flex flex-col items-start justify-center p-4">
                <div className="p-0.5 rounded-md text-left">
                   <h2
                    className={`text-[1.3rem] font-semibold mb-2 ${styles.head1} leading-[45px] hover:text-[#33c433]`}
                  >
-                    <Link href="/learn/technology">
+                    <Link href="/learn/how-ai-is-revolutionizing-battery-life-prediction">
                      {" "}
                      <span className="hover:text-[#33c433] hover:no-underline">
                      Technology Integration

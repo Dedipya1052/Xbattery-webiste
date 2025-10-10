@@ -107,11 +107,15 @@ const Contact = () => {
         <h3 className="text-xl font-semibold text-white mb-2">Location</h3>
         <div className="text-gray-400 mb-4 overflow-hidden max-h-24">
           <p className="line-clamp-3">
-            T-Works, Silpa Gram Craft Village, Rai Durg, Hyderabad, Telangana 500081, India
+           {/* T-Works, Silpa Gram Craft Village, Rai Durg, Hyderabad, Telangana 500081, India 
+           
+           */}
+           Gandipet Main Rd, next to EIPL Apila, Kokapet, Gandipet, Hyderabad, Telangana 500075
           </p>
         </div>
         <a
-          href="https://maps.app.goo.gl/8P7uRGhyjK7dwp7a7"
+          href="https://www.google.com/maps/search/CoKarma+-+Coworking+Space/@17.3846746,78.3290788,17z?entry=ttu&g_ep=EgoyMDI1MTAwNi4wIKXMDSoASAFQAw%3D%3D"
+          
           target="_blank"
           rel="noopener noreferrer"
           className="text-blue-400 hover:text-blue-300 hover:underline transition-colors duration-300 mt-auto font-medium"
