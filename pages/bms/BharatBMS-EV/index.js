@@ -1101,58 +1101,7 @@ export default function BharatBMSEVPage() {
             </div>
           </div>
         </div>
-
-        {/* Navigation Buttons */}
-        <div
-          className={`flex ${(prevBMS && nextBMS) ? "justify-between" : "justify-center"} mt-[6rem] mb-[4rem] flex-wrap gap-[1.2rem] sm:gap-0`}
-        >
-          {prevBMS && (
-            <Link href={prevBMS.link}>
-              <button
-                className="text-white border border-white rounded-md px-6 py-3 text-sm font-medium hover:text-transparent transition-all duration-300"
-                style={{
-                  backgroundColor: '#151a1d',
-                  backgroundImage: 'linear-gradient(90deg, #25f1fc, #5bb2ff, #b15dfb)',
-                  WebkitBackgroundClip: 'text',
-                  backgroundClip: 'text',
-                  color: 'white',
-                  borderColor: 'white'
-                }}
-                onMouseEnter={(e) => {
-                  e.target.style.color = 'transparent';
-                }}
-                onMouseLeave={(e) => {
-                  e.target.style.color = 'white';
-                }}
-              >
-                Previous: {prevBMS.title}
-              </button>
-            </Link>
-          )}
-          {nextBMS && (
-            <Link href={nextBMS.link}>
-              <button
-                className="text-white border border-white rounded-md px-6 py-3 text-sm font-medium hover:text-transparent transition-all duration-300"
-                style={{
-                  backgroundColor: '#151a1d',
-                  backgroundImage: 'linear-gradient(90deg, #25f1fc, #5bb2ff, #b15dfb)',
-                  WebkitBackgroundClip: 'text',
-                  backgroundClip: 'text',
-                  color: 'white',
-                  borderColor: 'white'
-                }}
-                onMouseEnter={(e) => {
-                  e.target.style.color = 'transparent';
-                }}
-                onMouseLeave={(e) => {
-                  e.target.style.color = 'white';
-                }}
-              >
-                Next: {nextBMS.title}
-              </button>
-            </Link>
-          )}
-        </div>
+        
       </div>
       </div>
     </>
