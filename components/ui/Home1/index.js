@@ -57,8 +57,7 @@ const Example = ({ media, recentBlogs }) => {
   const evCards = [
     { id: '400V', title: 'Xbattery BharatBMS-EV-400V', link: '/bms/BharatBMS-EV-400V' },
     { id: '110V', title: 'Xbattery BharatBMS-EV-110V', link: '/bms/BharatBMS-EV-110V' },
-    { id: '500V', title: 'Xbattery BharatBMS-EV-500V', link: '/bms/BharatBMS-EV-500V' },
-    { id: '800V', title: 'Xbattery BharatBMS-EV-800V', link: '/bms/BharatBMS-EV-800V' }
+    { id: '500V', title: 'Xbattery BharatBMS-EV-500V', link: '/bms/BharatBMS-EV-500V' }
   ];
 
   const goToPreviousCard = () => {
@@ -1550,7 +1549,7 @@ const Example = ({ media, recentBlogs }) => {
 
                       <AnimatedDiv>
 
-                        <Link href="/bms/BharatBMS-ESS-48V" className="group focus:outline-none">
+                        <Link href="/bms/BharatBMS-ESS" className="group focus:outline-none">
 
                          <div className="relative rounded-2xl bg-[#151a1d] border border-[#1e2a31] p-6 h-full min-h-[420px] md:min-h-[450px] lg:min-h-[480px] flex flex-col transition-all duration-200 hover:bg-[#10151a] hover:border-[#1e2a31] hover:outline-none hover:shadow-[0_0_0_0.5px_rgba(0,229,255,0.55)]">
 
@@ -1558,7 +1557,7 @@ const Example = ({ media, recentBlogs }) => {
 
                             <div className="relative w-full h-[180px] md:h-[200px] rounded-xl overflow-hidden mb-4">
 
-                              <Image src="/images/bms_offerings/ess-48v.png" alt="Xbattery BharatBMS-ESS-48V" fill className="object-contain transition-transform duration-500 ease-out group-hover:scale-[1.28]" />
+                              <Image src="/images/telecom_good_looking-Photoroom.png" alt="Xbattery BharatBMS-ESS-48V" fill className="object-contain transition-transform duration-500 ease-out group-hover:scale-[1.28]" />
 
                             </div>
 
@@ -1622,7 +1621,7 @@ const Example = ({ media, recentBlogs }) => {
 
                       <AnimatedDiv>
 
-                    <Link href="/bms/BharatBMS-ESS-72V" className="group focus:outline-none">
+                    <Link href="/bms/BharatBMS-ESS" className="group focus:outline-none">
 
                      <div className="relative rounded-2xl bg-[#151a1d] border border-[#1e2a31] p-6 h-full min-h-[420px] md:min-h-[450px] lg:min-h-[480px] flex flex-col transition-all duration-200 hover:bg-[#10151a] hover:border-[#1e2a31] hover:outline-none hover:shadow-[0_0_0_0.5px_rgba(0,229,255,0.55)]">
 
@@ -1692,7 +1691,7 @@ const Example = ({ media, recentBlogs }) => {
 
                       <AnimatedDiv>
 
-                        <Link href="/bms/BharatBMS-ESS-110V" className="group focus:outline-none">
+                        <Link href="/bms/BharatBMS-ESS" className="group focus:outline-none">
 
                          <div className="relative rounded-2xl bg-[#151a1d] border border-[#1e2a31] p-6 h-full min-h-[420px] md:min-h-[450px] lg:min-h-[480px] flex flex-col transition-all duration-200 hover:bg-[#10151a] hover:border-[#1e2a31] hover:outline-none hover:shadow-[0_0_0_0.5px_rgba(0,229,255,0.55)]">
 
@@ -1793,7 +1792,7 @@ const Example = ({ media, recentBlogs }) => {
                             <div className="flex flex-nowrap transition-transform duration-500 ease-in-out gap-6" style={{ transform: `translateX(-${currentEVCard * 33.33}%)` }}>
                             {/* Xbattery BharatBMS-EV-110V */}
                             <AnimatedDiv className="flex-shrink-0" style={{ width: 'calc((100% / 3) - 1.5rem)' }}>
-                              <Link href="/bms/BharatBMS-EV-110V" className="group focus:outline-none">
+                              <Link href="/bms/BharatBMS-EV" className="group focus:outline-none">
                                 <div className="relative rounded-2xl bg-[#151a1d] border border-[#1e2a31] p-6 h-full min-h-[420px] md:min-h-[450px] lg:min-h-[480px] flex flex-col transition-all duration-200 hover:bg-[#10151a] hover:border-[#00e5ff]/30 hover:border-2 hover:outline-none">
                                   <div className="relative w-full h-[180px] md:h-[200px] rounded-xl overflow-hidden mb-4">
                                     <Image src="/images/bms_offerings/ev-110v.png" alt="Xbattery BharatBMS-EV-110V" fill className="object-contain transition-transform duration-500 ease-out group-hover:scale-[1.18]" />
@@ -1824,7 +1823,7 @@ const Example = ({ media, recentBlogs }) => {
 
                             {/* Xbattery BharatBMS-EV-400V */}
                             <AnimatedDiv className="flex-shrink-0" style={{ width: 'calc((100% / 3) - 1.5rem)' }}>
-                              <Link href="/bms/BharatBMS-EV-400V" className="group focus:outline-none">
+                              <Link href="/bms/BharatBMS-EV" className="group focus:outline-none">
                                 <div className="relative rounded-2xl bg-[#151a1d] border border-[#1e2a31] p-6 h-full min-h-[420px] md:min-h-[450px] lg:min-h-[480px] flex flex-col transition-all duration-200 hover:bg-[#10151a] hover:border-[#00e5ff]/30 hover:border-2 hover:outline-none">
                                   <div className="relative w-full h-[180px] md:h-[200px] rounded-xl overflow-hidden mb-4">
                                     <Image src="/images/bms_offerings/ev-400v.png" alt="Xbattery BharatBMS-EV-400V" fill className="object-contain transition-transform duration-500 ease-out group-hover:scale-[1.18]" />
@@ -1855,7 +1854,7 @@ const Example = ({ media, recentBlogs }) => {
 
                             {/* Xbattery BharatBMS-EV-500V */}
                             <AnimatedDiv className="flex-shrink-0" style={{ width: 'calc((100% / 3) - 1.5rem)' }}>
-                              <Link href="/bms/BharatBMS-EV-500V" className="group focus:outline-none">
+                              <Link href="/bms/BharatBMS-EV" className="group focus:outline-none">
                                 <div className="relative rounded-2xl bg-[#151a1d] border border-[#1e2a31] p-6 h-full min-h-[420px] md:min-h-[450px] lg:min-h-[480px] flex flex-col transition-all duration-200 hover:bg-[#10151a] hover:border-[#00e5ff]/30 hover:border-2 hover:outline-none">
                                   <div className="relative w-full h-[180px] md:h-[200px] rounded-xl overflow-hidden mb-4">
                                     <Image src="/images/bms_offerings/ev-500v.png" alt="Xbattery BharatBMS-EV-500V" fill className="object-contain transition-transform duration-500 ease-out group-hover:scale-[1.18]" />
@@ -1884,36 +1883,6 @@ const Example = ({ media, recentBlogs }) => {
                               </Link>
                             </AnimatedDiv>
 
-                            {/* Xbattery BharatBMS-EV-800V */}
-                            <AnimatedDiv className="flex-shrink-0" style={{ width: 'calc((100% / 3) - 1.5rem)' }}>
-                              <Link href="/bms/BharatBMS-EV-800V" className="group focus:outline-none">
-                                <div className="relative rounded-2xl bg-[#151a1d] border border-[#1e2a31] p-6 h-full min-h-[420px] md:min-h-[450px] lg:min-h-[480px] flex flex-col transition-all duration-200 hover:bg-[#10151a] hover:border-[#00e5ff]/30 hover:border-2 hover:outline-none">
-                                  <div className="relative w-full h-[180px] md:h-[200px] rounded-xl overflow-hidden mb-4">
-                                    <Image src="/images/bms_offerings/ev-800v.png" alt="Xbattery BharatBMS-EV-800V" fill className="object-contain transition-transform duration-500 ease-out group-hover:scale-[1.18]" />
-                                  </div>
-                                  <h4 className={`text-lg md:text-xl font-semibold mb-2 text-[#00e5ff]`}>
-                                    <span>Xbattery BharatBMS-EV-800V</span>
-                                  </h4>
-                                  <div className="w-16 h-[3px] bg-[#00e5ff] rounded-full mb-4"></div>
-                                  <p className="text-sm text-[#cfe3ea] mb-4">Ultra-high voltage 800V BMS engineered for next-generation electric vehicles, delivering advanced diagnostics, robust safety, and high power performance.</p>
-                                  <div className="mt-auto">
-                                    <div className="text-sm text-[#64efff] tracking-wide mb-2">KEY FEATURES</div>
-                                    <ul className="text-sm text-[#cfe3ea] list-disc pl-4 space-y-1 marker:text-[#00e5ff]">
-                                      <li>Supported Cell Chemistry: <span className="font-semibold">LFP/NMC</span></li>
-                                      <li>Cell Count Range: 188S to 250S</li>
-                                      <li>Nominal Pack Voltage: 800V</li>
-                                    </ul>
-                                    <div className="mt-3 flex justify-end">
-                                      <svg width="36" height="36" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="text-white transition-transform duration-700 ease-out group-hover:text-[#00e5ff] group-hover:translate-x-2">
-                                        <path d="M4 12H20" stroke="currentColor" strokeOpacity="0.95" strokeWidth="1.2" strokeLinecap="round"/>
-                                        <path d="M14 6L20 12L14 18" stroke="currentColor" strokeOpacity="0.95" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round"/>
-                                      </svg>
-                                    </div>
-                                    <div className="mt-3 border-t border-[#1d2a30]"></div>
-                                  </div>
-                                </div>
-                              </Link>
-                            </AnimatedDiv>
                             </div>
                           </div>
                         </div>
