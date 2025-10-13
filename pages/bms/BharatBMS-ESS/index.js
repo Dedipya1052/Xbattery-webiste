@@ -483,7 +483,7 @@ export default function BharatBMSESSPage() {
                             </IconWithGradient>
                             </div>
                            <div className="flex-1 min-h-[100px] px-0 py-3 md:px-0 md:py-4 flex flex-col items-center justify-center text-center">
-                            <h3 className="text-xs font-semibold text-white leading-tight text-center">Nominal Pack<br />Voltage</h3>
+                             <h3 className="text-xs font-semibold text-white leading-tight text-center">Nominal Pack Voltage</h3>
                             <p className="text-xs text-gray-300 mt-1 text-center">48V</p>
                           </div>
                         </div>
@@ -699,7 +699,7 @@ export default function BharatBMSESSPage() {
                             </IconWithGradient>
                         </div>
                            <div className="flex-1 min-h-[100px] px-0 py-3 md:px-0 md:py-4 flex flex-col items-center justify-center text-center">
-                            <h3 className="text-xs font-semibold text-white leading-tight text-center">Nominal Pack<br />Voltage</h3>
+                             <h3 className="text-xs font-semibold text-white leading-tight text-center">Nominal Pack Voltage</h3>
                             <p className="text-xs text-gray-300 mt-1 text-center">72V</p>
                       </div>
                         </div>
@@ -916,7 +916,7 @@ export default function BharatBMSESSPage() {
                             </IconWithGradient>
                       </div>
                            <div className="flex-1 min-h-[100px] px-0 py-3 md:px-0 md:py-4 flex flex-col items-center justify-center text-center">
-                            <h3 className="text-xs font-semibold text-white leading-tight text-center">Nominal Pack<br />Voltage</h3>
+                             <h3 className="text-xs font-semibold text-white leading-tight text-center">Nominal Pack Voltage</h3>
                             <p className="text-xs text-gray-300 mt-1 text-center">110V</p>
                     </div>
                       </div>
