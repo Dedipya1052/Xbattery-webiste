@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from "react";
 import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import Head from "next/head";
 import Link from "next/link";
 import Image from "next/image";
@@ -438,9 +438,9 @@ export default function BharatBMSESSPage() {
                     <Image
                       src={productImages[0]}
                       alt="ESS 48V BMS Product"
-                      width={800}
-                      height={400}
-                      className="object-contain w-full h-full"
+                      width={2000}
+                      height={500}
+                      className="object-contain w-full h-full hover:scale-110 transition-transform duration-300"
                     />
                   </div>
                   
@@ -458,21 +458,21 @@ export default function BharatBMSESSPage() {
                 <div className="space-y-6">
 
                   {/* ---------- Key Specifications ---------- */}
-                  <div className="bg-gradient-to-r from-[#1c1c1c] to-[#2a2a2a] p-8 rounded-xl border border-[#333] hover:border-[#00e5ff] transition-all duration-300">
+                  <div className="bg-gradient-to-r from-[#1c1c1c] to-[#2a2a2a] p-6 rounded-xl border border-[#333] transition-all duration-300">
                     <div className="flex items-center mb-6">
-                      <FaCogs className="text-white text-2xl mr-4" />
-                      <h3 className="text-xl font-bold text-white">Key Specifications</h3>
-                    </div>
-                    <div className="space-y-4">
+                      <FaCogs className="text-white text-lg mr-4" />
+                      <h3 className="text-base font-semibold text-white">Key Specifications</h3>
+                      </div>
+                    <div className="space-y-3">
                       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                         <div className="flex w-full rounded-xl overflow-hidden bg-[#1b1b1b] min-h-[80px] pointer-events-none transform hover:scale-105 transition-all duration-300 hover:shadow-lg hover:shadow-[#00e5ff]/20">
                           <div className="w-[60px] md:w-[70px] shrink-0 bg-[#141414] flex items-center justify-center">
                             <IconWithGradient size={18} title="Energy storage">
                               <FaFlask />
                             </IconWithGradient>
-                          </div>
+                            </div>
                            <div className="flex-1 min-h-[100px] px-0 py-3 md:px-0 md:py-4 flex flex-col items-center justify-center text-center">
-                            <h3 className="text-xs md:text-sm font-semibold text-white leading-tight">Supported Cell Chemistry</h3>
+                            <h3 className="text-xs font-semibold text-white leading-tight">Supported Cell Chemistry</h3>
                             <p className="text-xs text-gray-300 mt-1 text-center">LFP/NMC</p>
                           </div>
                         </div>
@@ -481,9 +481,9 @@ export default function BharatBMSESSPage() {
                             <IconWithGradient size={18} title="Energy storage">
                               <FaBolt />
                             </IconWithGradient>
-                          </div>
+                            </div>
                            <div className="flex-1 min-h-[100px] px-0 py-3 md:px-0 md:py-4 flex flex-col items-center justify-center text-center">
-                            <h3 className="text-xs md:text-sm font-semibold text-white leading-tight text-center">Nominal Pack<br />Voltage</h3>
+                            <h3 className="text-xs font-semibold text-white leading-tight text-center">Nominal Pack<br />Voltage</h3>
                             <p className="text-xs text-gray-300 mt-1 text-center">48V</p>
                           </div>
                         </div>
@@ -494,9 +494,9 @@ export default function BharatBMSESSPage() {
                             <IconWithGradient size={18} title="Energy storage">
                               <FaCubes />
                             </IconWithGradient>
-                          </div>
+                            </div>
                            <div className="flex-1 min-h-[100px] px-0 py-3 md:px-0 md:py-4 flex flex-col items-center justify-center text-center">
-                            <h3 className="text-xs md:text-sm font-semibold text-white leading-tight">Cell Count Range</h3>
+                            <h3 className="text-xs font-semibold text-white leading-tight">Cell Count Range</h3>
                             <p className="text-xs text-gray-300 mt-1 text-center">Up to 28S</p>
                           </div>
                         </div>
@@ -506,55 +506,55 @@ export default function BharatBMSESSPage() {
 
 
                   {/* ---------- Additional Content for Testing Scroll ---------- */}
-                  <div className="bg-gradient-to-r from-[#1c1c1c] to-[#2a2a2a] p-8 rounded-xl border border-[#333] hover:border-[#00e5ff] transition-all duration-300">
+                  <div className="bg-gradient-to-r from-[#1c1c1c] to-[#2a2a2a] p-6 rounded-xl border border-[#333] transition-all duration-300">
                     <div className="flex items-center mb-6">
-                      <FaShieldAlt className="text-white text-2xl mr-4" />
-                      <h3 className="text-xl font-bold text-white">Safety & Compliance</h3>
-                    </div>
-                    <div className="space-y-4">
-                      <div className="bg-[#0a0a0a] p-4 rounded-lg border border-[#333]">
-                        <h4 className="text-lg font-semibold text-white mb-2">ISO 26262 Compliance</h4>
-                        <p className="text-gray-300 text-sm">
+                      <FaShieldAlt className="text-white text-lg mr-4" />
+                      <h3 className="text-base font-semibold text-white">Safety & Compliance</h3>
+                      </div>
+                    <div className="space-y-3">
+                    <div className="bg-[#0a0a0a] p-3 rounded-lg border border-[#333]">
+                        <h4 className="text-sm font-semibold text-white mb-2">ISO 26262 Compliance</h4>
+                        <p className="text-gray-300 text-xs leading-relaxed">
                           Automotive functional safety standard compliance for critical safety applications.
-                        </p>
-                      </div>
-                      <div className="bg-[#0a0a0a] p-4 rounded-lg border border-[#333]">
-                        <h4 className="text-lg font-semibold text-white mb-2">Fault Detection</h4>
-                        <p className="text-gray-300 text-sm">
+                      </p>
+                    </div>
+                    <div className="bg-[#0a0a0a] p-3 rounded-lg border border-[#333]">
+                        <h4 className="text-sm font-semibold text-white mb-2">Fault Detection</h4>
+                        <p className="text-gray-300 text-xs leading-relaxed">
                           Advanced fault detection and isolation capabilities for enhanced system reliability.
-                        </p>
-                      </div>
-                      <div className="bg-[#0a0a0a] p-4 rounded-lg border border-[#333]">
-                        <h4 className="text-lg font-semibold text-white mb-2">Emergency Shutdown</h4>
-                        <p className="text-gray-300 text-sm">
+                      </p>
+                    </div>
+                    <div className="bg-[#0a0a0a] p-3 rounded-lg border border-[#333]">
+                        <h4 className="text-sm font-semibold text-white mb-2">Emergency Shutdown</h4>
+                        <p className="text-gray-300 text-xs leading-relaxed">
                           Rapid emergency shutdown protocols for critical safety situations.
-                        </p>
-                      </div>
+                      </p>
+                    </div>
                     </div>
                   </div>
 
                   {/* ---------- Performance Box ---------- */}
-                  <div className="bg-gradient-to-r from-[#1c1c1c] to-[#2a2a2a] p-8 rounded-xl border border-[#333] hover:border-[#00e5ff] transition-all duration-300">
+                  <div className="bg-gradient-to-r from-[#1c1c1c] to-[#2a2a2a] p-6 rounded-xl border border-[#333] transition-all duration-300">
                     <div className="flex items-center mb-6">
-                      <FaChartLine className="text-white text-2xl mr-4" />
-                      <h3 className="text-xl font-bold text-white">Performance</h3>
-                    </div>
-                    <div className="space-y-4">
-                      <div className="bg-[#0a0a0a] p-4 rounded-lg border border-[#333]">
-                        <h4 className="text-lg font-semibold text-white mb-2">Real-time Monitoring</h4>
-                        <p className="text-gray-300 text-sm">
+                      <FaChartLine className="text-white text-lg mr-4" />
+                      <h3 className="text-base font-semibold text-white">Performance</h3>
+                      </div>
+                    <div className="space-y-3">
+                      <div className="bg-[#0a0a0a] p-3 rounded-lg border border-[#333]">
+                        <h4 className="text-sm font-semibold text-white mb-2">Real-time Monitoring</h4>
+                        <p className="text-gray-300 text-xs leading-relaxed">
                           Continuous real-time monitoring of battery parameters with high precision.
                         </p>
-                      </div>
-                      <div className="bg-[#0a0a0a] p-4 rounded-lg border border-[#333]">
-                        <h4 className="text-lg font-semibold text-white mb-2">Data Logging</h4>
-                        <p className="text-gray-300 text-sm">
+                    </div>
+                      <div className="bg-[#0a0a0a] p-3 rounded-lg border border-[#333]">
+                        <h4 className="text-sm font-semibold text-white mb-2">Data Logging</h4>
+                        <p className="text-gray-300 text-xs leading-relaxed">
                           Comprehensive data logging and analytics for performance optimization.
                         </p>
                       </div>
-                      <div className="bg-[#0a0a0a] p-4 rounded-lg border border-[#333]">
-                        <h4 className="text-lg font-semibold text-white mb-2">Predictive Analytics</h4>
-                        <p className="text-gray-300 text-sm">
+                      <div className="bg-[#0a0a0a] p-3 rounded-lg border border-[#333]">
+                        <h4 className="text-sm font-semibold text-white mb-2">Predictive Analytics</h4>
+                        <p className="text-gray-300 text-xs leading-relaxed">
                           AI-powered predictive analytics for proactive maintenance and optimization.
                         </p>
                       </div>
@@ -562,21 +562,21 @@ export default function BharatBMSESSPage() {
                   </div>
 
                   {/* ---------- Diagnostics & Monitoring ---------- */}
-                  <div className="bg-gradient-to-r from-[#1c1c1c] to-[#2a2a2a] p-8 rounded-xl border border-[#333] hover:border-[#00e5ff] transition-all duration-300">
+                  <div className="bg-gradient-to-r from-[#1c1c1c] to-[#2a2a2a] p-6 rounded-xl border border-[#333] transition-all duration-300">
                     <div className="flex items-center mb-6">
-                      <FaChartLine className="text-white text-2xl mr-4" />
-                      <h3 className="text-xl font-bold text-white">Diagnostics & Monitoring</h3>
-                </div>
-                    <div className="space-y-4">
-                      <div className="bg-[#0a0a0a] p-4 rounded-lg border border-[#333]">
-                        <h4 className="text-base font-semibold text-white mb-2">Health Monitoring</h4>
-                        <p className="text-gray-300 text-sm">
+                      <FaChartLine className="text-white text-lg mr-4" />
+                      <h3 className="text-base font-semibold text-white">Diagnostics & Monitoring</h3>
+                      </div>
+                    <div className="space-y-3">
+                      <div className="bg-[#0a0a0a] p-3 rounded-lg border border-[#333]">
+                        <h4 className="text-sm font-semibold text-white mb-2">Health Monitoring</h4>
+                        <p className="text-gray-300 text-xs leading-relaxed">
                           Comprehensive battery health monitoring with predictive failure analysis.
                         </p>
                       </div>
-                      <div className="bg-[#0a0a0a] p-4 rounded-lg border border-[#333]">
-                        <h4 className="text-base font-semibold text-white mb-2">Fault Detection</h4>
-                        <p className="text-gray-300 text-sm">
+                      <div className="bg-[#0a0a0a] p-3 rounded-lg border border-[#333]">
+                        <h4 className="text-sm font-semibold text-white mb-2">Fault Detection</h4>
+                        <p className="text-gray-300 text-xs leading-relaxed">
                           Advanced fault detection algorithms for early warning and prevention.
                         </p>
                       </div>
@@ -584,21 +584,21 @@ export default function BharatBMSESSPage() {
                   </div>
 
                   {/* ---------- Thermal Management ---------- */}
-                  <div className="bg-gradient-to-r from-[#1c1c1c] to-[#2a2a2a] p-8 rounded-xl border border-[#333] hover:border-[#00e5ff] transition-all duration-300">
+                  <div className="bg-gradient-to-r from-[#1c1c1c] to-[#2a2a2a] p-6 rounded-xl border border-[#333] transition-all duration-300">
                     <div className="flex items-center mb-6">
-                      <FaIndustry className="text-white text-2xl mr-4" />
-                      <h3 className="text-xl font-bold text-white">Thermal Management</h3>
-                    </div>
-                    <div className="space-y-4">
-                      <div className="bg-[#0a0a0a] p-4 rounded-lg border border-[#333]">
-                        <h4 className="text-base font-semibold text-white mb-2">Temperature Control</h4>
-                        <p className="text-gray-300 text-sm">
+                      <FaIndustry className="text-white text-lg mr-4" />
+                      <h3 className="text-base font-semibold text-white">Thermal Management</h3>
+                      </div>
+                    <div className="space-y-3">
+                      <div className="bg-[#0a0a0a] p-3 rounded-lg border border-[#333]">
+                        <h4 className="text-sm font-semibold text-white mb-2">Temperature Control</h4>
+                        <p className="text-gray-300 text-xs leading-relaxed">
                           Intelligent thermal management system for optimal battery performance.
                         </p>
-                      </div>
-                      <div className="bg-[#0a0a0a] p-4 rounded-lg border border-[#333]">
-                        <h4 className="text-base font-semibold text-white mb-2">Cooling System</h4>
-                        <p className="text-gray-300 text-sm">
+                    </div>
+                      <div className="bg-[#0a0a0a] p-3 rounded-lg border border-[#333]">
+                        <h4 className="text-sm font-semibold text-white mb-2">Cooling System</h4>
+                        <p className="text-gray-300 text-xs leading-relaxed">
                           Advanced cooling mechanisms to maintain optimal operating temperatures.
                         </p>
                       </div>
@@ -606,21 +606,21 @@ export default function BharatBMSESSPage() {
                   </div>
 
                   {/* ---------- Communication & Control ---------- */}
-                  <div className="bg-gradient-to-r from-[#1c1c1c] to-[#2a2a2a] p-8 rounded-xl border border-[#333] hover:border-[#00e5ff] transition-all duration-300">
+                  <div className="bg-gradient-to-r from-[#1c1c1c] to-[#2a2a2a] p-6 rounded-xl border border-[#333] transition-all duration-300">
                     <div className="flex items-center mb-6">
-                      <FaCogs className="text-white text-2xl mr-4" />
-                      <h3 className="text-xl font-bold text-white">Communication & Control</h3>
+                      <FaCogs className="text-white text-lg mr-4" />
+                      <h3 className="text-base font-semibold text-white">Communication & Control</h3>
                     </div>
-                    <div className="space-y-4">
-                      <div className="bg-[#0a0a0a] p-4 rounded-lg border border-[#333]">
-                        <h4 className="text-base font-semibold text-white mb-2">CAN Bus Interface</h4>
-                        <p className="text-gray-300 text-sm">
+                    <div className="space-y-3">
+                      <div className="bg-[#0a0a0a] p-3 rounded-lg border border-[#333]">
+                        <h4 className="text-sm font-semibold text-white mb-2">CAN Bus Interface</h4>
+                        <p className="text-gray-300 text-xs leading-relaxed">
                           High-speed CAN bus communication for seamless system integration.
                         </p>
                       </div>
-                      <div className="bg-[#0a0a0a] p-4 rounded-lg border border-[#333]">
-                        <h4 className="text-base font-semibold text-white mb-2">Remote Monitoring</h4>
-                        <p className="text-gray-300 text-sm">
+                      <div className="bg-[#0a0a0a] p-3 rounded-lg border border-[#333]">
+                        <h4 className="text-sm font-semibold text-white mb-2">Remote Monitoring</h4>
+                        <p className="text-gray-300 text-xs leading-relaxed">
                           Cloud-based remote monitoring and control capabilities.
                         </p>
                       </div>
@@ -654,9 +654,9 @@ export default function BharatBMSESSPage() {
                     <Image
                       src={ess72vImages[0]}
                       alt="ESS 72V BMS Product"
-                      width={800}
-                      height={400}
-                      className="object-contain w-full h-full"
+                      width={3000}
+                      height={500}
+                      className="object-contain w-full h-full hover:scale-110 transition-transform duration-300"
                     />
                   </div>
                   
@@ -674,21 +674,21 @@ export default function BharatBMSESSPage() {
                 <div className="space-y-6">
 
                   {/* ---------- Key Specifications ---------- */}
-                  <div className="bg-gradient-to-r from-[#1c1c1c] to-[#2a2a2a] p-8 rounded-xl border border-[#333] hover:border-[#00e5ff] transition-all duration-300">
+                  <div className="bg-gradient-to-r from-[#1c1c1c] to-[#2a2a2a] p-6 rounded-xl border border-[#333] transition-all duration-300">
                     <div className="flex items-center mb-6">
-                      <FaCogs className="text-white text-2xl mr-4" />
-                      <h3 className="text-xl font-bold text-white">Key Specifications</h3>
+                      <FaCogs className="text-white text-lg mr-4" />
+                      <h3 className="text-base font-semibold text-white">Key Specifications</h3>
                       </div>
-                    <div className="space-y-4">
+                      <div className="space-y-3">
                       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                         <div className="flex w-full rounded-xl overflow-hidden bg-[#1b1b1b] min-h-[80px] pointer-events-none transform hover:scale-105 transition-all duration-300 hover:shadow-lg hover:shadow-[#00e5ff]/20">
                           <div className="w-[60px] md:w-[70px] shrink-0 bg-[#141414] flex items-center justify-center">
                             <IconWithGradient size={18} title="Energy storage">
                               <FaFlask />
                             </IconWithGradient>
-                    </div>
+                        </div>
                            <div className="flex-1 min-h-[100px] px-0 py-3 md:px-0 md:py-4 flex flex-col items-center justify-center text-center">
-                            <h3 className="text-xs md:text-sm font-semibold text-white leading-tight">Supported Cell Chemistry</h3>
+                            <h3 className="text-xs font-semibold text-white leading-tight">Supported Cell Chemistry</h3>
                             <p className="text-xs text-gray-300 mt-1 text-center">LFP/NMC</p>
                         </div>
                         </div>
@@ -699,10 +699,10 @@ export default function BharatBMSESSPage() {
                             </IconWithGradient>
                         </div>
                            <div className="flex-1 min-h-[100px] px-0 py-3 md:px-0 md:py-4 flex flex-col items-center justify-center text-center">
-                            <h3 className="text-xs md:text-sm font-semibold text-white leading-tight text-center">Nominal Pack<br />Voltage</h3>
+                            <h3 className="text-xs font-semibold text-white leading-tight text-center">Nominal Pack<br />Voltage</h3>
                             <p className="text-xs text-gray-300 mt-1 text-center">72V</p>
-                          </div>
                       </div>
+                        </div>
                         </div>
                       <div className="flex justify-center">
                         <div className="flex w-full max-w-[48%] rounded-xl overflow-hidden bg-[#1b1b1b] min-h-[100px] pointer-events-none transform hover:scale-105 transition-all duration-300 hover:shadow-lg hover:shadow-[#00e5ff]/20">
@@ -712,7 +712,7 @@ export default function BharatBMSESSPage() {
                             </IconWithGradient>
                         </div>
                            <div className="flex-1 min-h-[100px] px-0 py-3 md:px-0 md:py-4 flex flex-col items-center justify-center text-center">
-                            <h3 className="text-xs md:text-sm font-semibold text-white leading-tight">Cell Count Range</h3>
+                            <h3 className="text-xs font-semibold text-white leading-tight">Cell Count Range</h3>
                             <p className="text-xs text-gray-300 mt-1 text-center">Up to 28S</p>
                         </div>
                         </div>
@@ -722,130 +722,130 @@ export default function BharatBMSESSPage() {
                   </div>
 
                 {/* ---------- Safety & Compliance ---------- */}
-                <div className="bg-gradient-to-r from-[#1c1c1c] to-[#2a2a2a] p-8 rounded-xl border border-[#333] hover:border-[#00e5ff] transition-all duration-300 mt-8">
-                  <div className="flex items-center mb-6">
-                    <FaShieldAlt className="text-white text-2xl mr-4" />
-                    <h3 className="text-xl font-bold text-white">Safety & Compliance</h3>
-                  </div>
-                  <div className="space-y-4">
-                    <div className="bg-[#0a0a0a] p-4 rounded-lg border border-[#333]">
-                      <h4 className="text-base font-semibold text-white mb-2">ISO 26262 Compliance</h4>
-                      <p className="text-gray-300 text-sm">
+                <div className="bg-gradient-to-r from-[#1c1c1c] to-[#2a2a2a] p-6 rounded-xl border border-[#333] transition-all duration-300 mt-8">
+                    <div className="flex items-center mb-6">
+                    <FaShieldAlt className="text-white text-lg mr-4" />
+                    <h3 className="text-base font-semibold text-white">Safety & Compliance</h3>
+                      </div>
+                    <div className="space-y-3">
+                    <div className="bg-[#0a0a0a] p-3 rounded-lg border border-[#333]">
+                      <h4 className="text-sm font-semibold text-white mb-2">ISO 26262 Compliance</h4>
+                      <p className="text-gray-300 text-xs leading-relaxed">
                         Automotive functional safety standard compliance for critical safety applications.
                       </p>
                     </div>
-                    <div className="bg-[#0a0a0a] p-4 rounded-lg border border-[#333]">
-                      <h4 className="text-base font-semibold text-white mb-2">Fault Detection</h4>
-                      <p className="text-gray-300 text-sm">
+                    <div className="bg-[#0a0a0a] p-3 rounded-lg border border-[#333]">
+                      <h4 className="text-sm font-semibold text-white mb-2">Fault Detection</h4>
+                      <p className="text-gray-300 text-xs leading-relaxed">
                         Advanced fault detection and isolation capabilities for enhanced system reliability.
                       </p>
-                    </div>
-                    <div className="bg-[#0a0a0a] p-4 rounded-lg border border-[#333]">
-                      <h4 className="text-base font-semibold text-white mb-2">Emergency Shutdown</h4>
-                      <p className="text-gray-300 text-sm">
+                            </div>
+                    <div className="bg-[#0a0a0a] p-3 rounded-lg border border-[#333]">
+                      <h4 className="text-sm font-semibold text-white mb-2">Emergency Shutdown</h4>
+                      <p className="text-gray-300 text-xs leading-relaxed">
                         Rapid emergency shutdown protocols for critical safety situations.
                       </p>
-                    </div>
-                  </div>
-                </div>
+                          </div>
+                          </div>
+                        </div>
 
                 {/* ---------- Performance ---------- */}
-                <div className="bg-gradient-to-r from-[#1c1c1c] to-[#2a2a2a] p-8 rounded-xl border border-[#333] hover:border-[#00e5ff] transition-all duration-300 mt-8">
+                <div className="bg-gradient-to-r from-[#1c1c1c] to-[#2a2a2a] p-6 rounded-xl border border-[#333] transition-all duration-300 mt-8">
                   <div className="flex items-center mb-6">
-                    <FaChartLine className="text-white text-2xl mr-4" />
-                    <h3 className="text-xl font-bold text-white">Performance</h3>
-                  </div>
-                  <div className="space-y-4">
-                    <div className="bg-[#0a0a0a] p-4 rounded-lg border border-[#333]">
-                      <h4 className="text-base font-semibold text-white mb-2">Real-time Monitoring</h4>
-                      <p className="text-gray-300 text-sm">
+                    <FaChartLine className="text-white text-lg mr-4" />
+                    <h3 className="text-base font-semibold text-white">Performance</h3>
+                            </div>
+                  <div className="space-y-3">
+                    <div className="bg-[#0a0a0a] p-3 rounded-lg border border-[#333]">
+                      <h4 className="text-sm font-semibold text-white mb-2">Real-time Monitoring</h4>
+                      <p className="text-gray-300 text-xs leading-relaxed">
                         Continuous real-time monitoring of battery parameters with high precision.
                       </p>
-                    </div>
-                    <div className="bg-[#0a0a0a] p-4 rounded-lg border border-[#333]">
-                      <h4 className="text-base font-semibold text-white mb-2">Data Logging</h4>
-                      <p className="text-gray-300 text-sm">
+                          </div>
+                    <div className="bg-[#0a0a0a] p-3 rounded-lg border border-[#333]">
+                      <h4 className="text-sm font-semibold text-white mb-2">Data Logging</h4>
+                      <p className="text-gray-300 text-xs leading-relaxed">
                         Comprehensive data logging and analytics for performance optimization.
                       </p>
-                    </div>
-                    <div className="bg-[#0a0a0a] p-4 rounded-lg border border-[#333]">
-                      <h4 className="text-base font-semibold text-white mb-2">Predictive Analytics</h4>
-                      <p className="text-gray-300 text-sm">
+                          </div>
+                    <div className="bg-[#0a0a0a] p-3 rounded-lg border border-[#333]">
+                      <h4 className="text-sm font-semibold text-white mb-2">Predictive Analytics</h4>
+                      <p className="text-gray-300 text-xs leading-relaxed">
                         AI-powered predictive analytics for proactive maintenance and optimization.
                       </p>
-                    </div>
-                  </div>
+                        </div>
+                      </div>
+                            </div>
 
-                  {/* ---------- Diagnostics & Monitoring ---------- */}
-                  <div className="bg-gradient-to-r from-[#1c1c1c] to-[#2a2a2a] p-8 rounded-xl border border-[#333] hover:border-[#00e5ff] transition-all duration-300">
-                    <div className="flex items-center mb-6">
-                      <FaChartLine className="text-white text-2xl mr-4" />
-                      <h3 className="text-xl font-bold text-white">Diagnostics & Monitoring</h3>
-                      </div>
-                    <div className="space-y-4">
-                      <div className="bg-[#0a0a0a] p-4 rounded-lg border border-[#333]">
-                        <h4 className="text-base font-semibold text-white mb-2">Health Monitoring</h4>
-                        <p className="text-gray-300 text-sm">
-                          Comprehensive battery health monitoring with predictive failure analysis.
-                        </p>
-                      </div>
-                      <div className="bg-[#0a0a0a] p-4 rounded-lg border border-[#333]">
-                        <h4 className="text-base font-semibold text-white mb-2">Fault Detection</h4>
-                        <p className="text-gray-300 text-sm">
-                          Advanced fault detection algorithms for early warning and prevention.
-                        </p>
+                {/* ---------- Diagnostics & Monitoring ---------- */}
+                <div className="bg-gradient-to-r from-[#1c1c1c] to-[#2a2a2a] p-6 rounded-xl border border-[#333] transition-all duration-300 mt-8">
+                  <div className="flex items-center mb-6">
+                    <FaChartLine className="text-white text-lg mr-4" />
+                    <h3 className="text-base font-semibold text-white">Diagnostics & Monitoring</h3>
+                          </div>
+                  <div className="space-y-3">
+                    <div className="bg-[#0a0a0a] p-3 rounded-lg border border-[#333]">
+                      <h4 className="text-sm font-semibold text-white mb-2">Health Monitoring</h4>
+                      <p className="text-gray-300 text-xs leading-relaxed">
+                        Comprehensive battery health monitoring with predictive failure analysis.
+                      </p>
+                          </div>
+                    <div className="bg-[#0a0a0a] p-3 rounded-lg border border-[#333]">
+                      <h4 className="text-sm font-semibold text-white mb-2">Fault Detection</h4>
+                      <p className="text-gray-300 text-xs leading-relaxed">
+                        Advanced fault detection algorithms for early warning and prevention.
+                      </p>
+                        </div>
                       </div>
                     </div>
-                  </div>
 
-                  {/* ---------- Thermal Management ---------- */}
-                  <div className="bg-gradient-to-r from-[#1c1c1c] to-[#2a2a2a] p-8 rounded-xl border border-[#333] hover:border-[#00e5ff] transition-all duration-300">
-                    <div className="flex items-center mb-6">
-                      <FaIndustry className="text-white text-2xl mr-4" />
-                      <h3 className="text-xl font-bold text-white">Thermal Management</h3>
-                    </div>
-                    <div className="space-y-4">
-                      <div className="bg-[#0a0a0a] p-4 rounded-lg border border-[#333]">
-                        <h4 className="text-base font-semibold text-white mb-2">Temperature Control</h4>
-                        <p className="text-gray-300 text-sm">
-                          Intelligent thermal management system for optimal battery performance.
-                        </p>
-                      </div>
-                      <div className="bg-[#0a0a0a] p-4 rounded-lg border border-[#333]">
-                        <h4 className="text-base font-semibold text-white mb-2">Cooling System</h4>
-                        <p className="text-gray-300 text-sm">
-                          Advanced cooling mechanisms to maintain optimal operating temperatures.
-                        </p>
-                      </div>
-                    </div>
+                {/* ---------- Thermal Management ---------- */}
+                <div className="bg-gradient-to-r from-[#1c1c1c] to-[#2a2a2a] p-6 rounded-xl border border-[#333] transition-all duration-300 mt-8">
+                  <div className="flex items-center mb-6">
+                    <FaIndustry className="text-white text-lg mr-4" />
+                    <h3 className="text-base font-semibold text-white">Thermal Management</h3>
                   </div>
-
-                  {/* ---------- Communication & Control ---------- */}
-                  <div className="bg-gradient-to-r from-[#1c1c1c] to-[#2a2a2a] p-8 rounded-xl border border-[#333] hover:border-[#00e5ff] transition-all duration-300">
-                    <div className="flex items-center mb-6">
-                      <FaCogs className="text-white text-2xl mr-4" />
-                      <h3 className="text-xl font-bold text-white">Communication & Control</h3>
+                  <div className="space-y-3">
+                    <div className="bg-[#0a0a0a] p-3 rounded-lg border border-[#333]">
+                      <h4 className="text-sm font-semibold text-white mb-2">Temperature Control</h4>
+                      <p className="text-gray-300 text-xs leading-relaxed">
+                        Intelligent thermal management system for optimal battery performance.
+                      </p>
                     </div>
-                    <div className="space-y-4">
-                      <div className="bg-[#0a0a0a] p-4 rounded-lg border border-[#333]">
-                        <h4 className="text-base font-semibold text-white mb-2">CAN Bus Interface</h4>
-                        <p className="text-gray-300 text-sm">
-                          High-speed CAN bus communication for seamless system integration.
-                        </p>
-                      </div>
-                      <div className="bg-[#0a0a0a] p-4 rounded-lg border border-[#333]">
-                        <h4 className="text-base font-semibold text-white mb-2">Remote Monitoring</h4>
-                        <p className="text-gray-300 text-sm">
-                          Cloud-based remote monitoring and control capabilities.
-                        </p>
-                      </div>
+                    <div className="bg-[#0a0a0a] p-3 rounded-lg border border-[#333]">
+                      <h4 className="text-sm font-semibold text-white mb-2">Cooling System</h4>
+                      <p className="text-gray-300 text-xs leading-relaxed">
+                        Advanced cooling mechanisms to maintain optimal operating temperatures.
+                      </p>
                     </div>
                   </div>
                 </div>
 
-              </div>
-            </div>
-          </div>
+                {/* ---------- Communication & Control ---------- */}
+                <div className="bg-gradient-to-r from-[#1c1c1c] to-[#2a2a2a] p-6 rounded-xl border border-[#333] transition-all duration-300 mt-8">
+                  <div className="flex items-center mb-6">
+                      <FaCogs className="text-white text-lg mr-4" />
+                    <h3 className="text-base font-semibold text-white">Communication & Control</h3>
+                    </div>
+                  <div className="space-y-3">
+                    <div className="bg-[#0a0a0a] p-3 rounded-lg border border-[#333]">
+                      <h4 className="text-sm font-semibold text-white mb-2">CAN Bus Interface</h4>
+                      <p className="text-gray-300 text-xs leading-relaxed">
+                        High-speed CAN bus communication for seamless system integration.
+                      </p>
+                  </div>
+                    <div className="bg-[#0a0a0a] p-3 rounded-lg border border-[#333]">
+                      <h4 className="text-sm font-semibold text-white mb-2">Remote Monitoring</h4>
+                      <p className="text-gray-300 text-xs leading-relaxed">
+                        Cloud-based remote monitoring and control capabilities.
+                      </p>
+                    </div>
+                    </div>
+                    </div>
+
+                  </div>
+                </div>
+                      </div>
         </section>
 
         {/* ESS 110V BMS Product Section */}
@@ -864,18 +864,18 @@ export default function BharatBMSESSPage() {
                   {/* Heading */}
                   <div className="bg-[#1d1d1d] p-4 text-center rounded-t-2xl border-b border-gray-200 border-opacity-30">
                     <h3 className="text-xl font-bold text-white">Xbattery BharatBMS-ESS-110V</h3>
-                  </div>
+                      </div>
                   
                   {/* Image */}
                   <div className="flex-1 flex items-center justify-center p-8">
                     <Image
                       src="/images/bms_offerings/ess-110v-enhanced-Photoroom.png"
                       alt="ESS 110V BMS Product"
-                      width={800}
-                      height={400}
-                      className="object-contain w-full h-full"
+                      width={1000}
+                      height={500}
+                      className="object-contain w-full h-full hover:scale-110 transition-transform duration-300"
                     />
-                  </div>
+                      </div>
                   
                   {/* Placeholder Text */}
                   <div className="bg-[#1a1a1a] p-4 text-center">
@@ -891,35 +891,35 @@ export default function BharatBMSESSPage() {
                 <div className="space-y-6">
 
                   {/* ---------- Key Specifications ---------- */}
-                  <div className="bg-gradient-to-r from-[#1c1c1c] to-[#2a2a2a] p-8 rounded-xl border border-[#333] hover:border-[#00e5ff] transition-all duration-300">
-                    <div className="flex items-center mb-6">
-                      <FaCogs className="text-white text-2xl mr-4" />
-                      <h3 className="text-xl font-bold text-white">Key Specifications</h3>
+                  <div className="bg-gradient-to-r from-[#1c1c1c] to-[#2a2a2a] p-6 rounded-xl border border-[#333] transition-all duration-300">
+                  <div className="flex items-center mb-6">
+                      <FaCogs className="text-white text-lg mr-4" />
+                      <h3 className="text-base font-semibold text-white">Key Specifications</h3>
                     </div>
-                    <div className="space-y-4">
+                    <div className="space-y-3">
                       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                         <div className="flex w-full rounded-xl overflow-hidden bg-[#1b1b1b] min-h-[80px] pointer-events-none transform hover:scale-105 transition-all duration-300 hover:shadow-lg hover:shadow-[#00e5ff]/20">
                           <div className="w-[60px] md:w-[70px] shrink-0 bg-[#141414] flex items-center justify-center">
                             <IconWithGradient size={18} title="Energy storage">
                               <FaFlask />
                             </IconWithGradient>
-                          </div>
+                  </div>
                            <div className="flex-1 min-h-[100px] px-0 py-3 md:px-0 md:py-4 flex flex-col items-center justify-center text-center">
-                            <h3 className="text-xs md:text-sm font-semibold text-white leading-tight">Supported Cell Chemistry</h3>
+                            <h3 className="text-xs font-semibold text-white leading-tight">Supported Cell Chemistry</h3>
                             <p className="text-xs text-gray-300 mt-1 text-center">LFP/NMC</p>
-                          </div>
-                        </div>
+                      </div>
+                      </div>
                         <div className="flex w-full rounded-xl overflow-hidden bg-[#1b1b1b] min-h-[80px] pointer-events-none transform hover:scale-105 transition-all duration-300 hover:shadow-lg hover:shadow-[#00e5ff]/20">
                           <div className="w-[60px] md:w-[70px] shrink-0 bg-[#141414] flex items-center justify-center">
                             <IconWithGradient size={18} title="Energy storage">
                               <FaBolt />
                             </IconWithGradient>
-                          </div>
+                      </div>
                            <div className="flex-1 min-h-[100px] px-0 py-3 md:px-0 md:py-4 flex flex-col items-center justify-center text-center">
-                            <h3 className="text-xs md:text-sm font-semibold text-white leading-tight text-center">Nominal Pack<br />Voltage</h3>
+                            <h3 className="text-xs font-semibold text-white leading-tight text-center">Nominal Pack<br />Voltage</h3>
                             <p className="text-xs text-gray-300 mt-1 text-center">110V</p>
-                          </div>
-                        </div>
+                    </div>
+                      </div>
                       </div>
                       <div className="flex justify-center">
                         <div className="flex w-full max-w-[48%] rounded-xl overflow-hidden bg-[#1b1b1b] min-h-[100px] pointer-events-none transform hover:scale-105 transition-all duration-300 hover:shadow-lg hover:shadow-[#00e5ff]/20">
@@ -929,7 +929,7 @@ export default function BharatBMSESSPage() {
                             </IconWithGradient>
                           </div>
                            <div className="flex-1 min-h-[100px] px-0 py-3 md:px-0 md:py-4 flex flex-col items-center justify-center text-center">
-                            <h3 className="text-xs md:text-sm font-semibold text-white leading-tight">Cell Count Range</h3>
+                            <h3 className="text-xs font-semibold text-white leading-tight">Cell Count Range</h3>
                             <p className="text-xs text-gray-300 mt-1 text-center">Up to 42S</p>
                         </div>
                       </div>
@@ -938,27 +938,27 @@ export default function BharatBMSESSPage() {
                 </div>
 
                   {/* ---------- Safety & Compliance ---------- */}
-                <div className="bg-gradient-to-r from-[#1c1c1c] to-[#2a2a2a] p-8 rounded-xl border border-[#333] hover:border-[#00e5ff] transition-all duration-300">
+                  <div className="bg-gradient-to-r from-[#1c1c1c] to-[#2a2a2a] p-6 rounded-xl border border-[#333] transition-all duration-300">
                   <div className="flex items-center mb-6">
-                      <FaShieldAlt className="text-white text-2xl mr-4" />
-                      <h3 className="text-xl font-bold text-white">Safety & Compliance</h3>
-                  </div>
-                  <div className="space-y-4">
-                    <div className="bg-[#0a0a0a] p-4 rounded-lg border border-[#333]">
-                        <h4 className="text-base font-semibold text-white mb-2">ISO 26262 Compliance</h4>
-                        <p className="text-gray-300 text-sm">
+                      <FaShieldAlt className="text-white text-lg mr-4" />
+                      <h3 className="text-base font-semibold text-white">Safety & Compliance</h3>
+                    </div>
+                  <div className="space-y-3">
+                    <div className="bg-[#0a0a0a] p-3 rounded-lg border border-[#333]">
+                        <h4 className="text-sm font-semibold text-white mb-2">ISO 26262 Compliance</h4>
+                        <p className="text-gray-300 text-xs leading-relaxed">
                           Automotive functional safety standard compliance for critical safety applications.
                         </p>
-                    </div>
-                    <div className="bg-[#0a0a0a] p-4 rounded-lg border border-[#333]">
-                        <h4 className="text-base font-semibold text-white mb-2">Fault Detection</h4>
-                        <p className="text-gray-300 text-sm">
+                  </div>
+                    <div className="bg-[#0a0a0a] p-3 rounded-lg border border-[#333]">
+                        <h4 className="text-sm font-semibold text-white mb-2">Fault Detection</h4>
+                        <p className="text-gray-300 text-xs leading-relaxed">
                           Advanced fault detection and isolation capabilities for enhanced system reliability.
                         </p>
                     </div>
-                    <div className="bg-[#0a0a0a] p-4 rounded-lg border border-[#333]">
-                        <h4 className="text-base font-semibold text-white mb-2">Emergency Shutdown</h4>
-                        <p className="text-gray-300 text-sm">
+                    <div className="bg-[#0a0a0a] p-3 rounded-lg border border-[#333]">
+                        <h4 className="text-sm font-semibold text-white mb-2">Emergency Shutdown</h4>
+                        <p className="text-gray-300 text-xs leading-relaxed">
                           Rapid emergency shutdown protocols for critical safety situations.
                         </p>
                     </div>
@@ -966,100 +966,100 @@ export default function BharatBMSESSPage() {
                 </div>
 
                   {/* ---------- Performance ---------- */}
-                <div className="bg-gradient-to-r from-[#1c1c1c] to-[#2a2a2a] p-8 rounded-xl border border-[#333] hover:border-[#00e5ff] transition-all duration-300">
+                  <div className="bg-gradient-to-r from-[#1c1c1c] to-[#2a2a2a] p-6 rounded-xl border border-[#333] transition-all duration-300">
                   <div className="flex items-center mb-6">
-                      <FaChartLine className="text-white text-2xl mr-4" />
-                      <h3 className="text-xl font-bold text-white">Performance</h3>
+                      <FaChartLine className="text-white text-lg mr-4" />
+                      <h3 className="text-base font-semibold text-white">Performance</h3>
                     </div>
-                    <div className="space-y-4">
-                      <div className="bg-[#0a0a0a] p-4 rounded-lg border border-[#333]">
-                        <h4 className="text-base font-semibold text-white mb-2">Real-time Monitoring</h4>
-                        <p className="text-gray-300 text-sm">
+                    <div className="space-y-3">
+                      <div className="bg-[#0a0a0a] p-3 rounded-lg border border-[#333]">
+                        <h4 className="text-sm font-semibold text-white mb-2">Real-time Monitoring</h4>
+                        <p className="text-gray-300 text-xs leading-relaxed">
                           Continuous real-time monitoring of battery parameters with high precision.
                         </p>
-                      </div>
-                      <div className="bg-[#0a0a0a] p-4 rounded-lg border border-[#333]">
-                        <h4 className="text-base font-semibold text-white mb-2">Data Logging</h4>
-                        <p className="text-gray-300 text-sm">
+                  </div>
+                      <div className="bg-[#0a0a0a] p-3 rounded-lg border border-[#333]">
+                        <h4 className="text-sm font-semibold text-white mb-2">Data Logging</h4>
+                        <p className="text-gray-300 text-xs leading-relaxed">
                           Comprehensive data logging and analytics for performance optimization.
                         </p>
                       </div>
-                      <div className="bg-[#0a0a0a] p-4 rounded-lg border border-[#333]">
-                        <h4 className="text-base font-semibold text-white mb-2">Predictive Analytics</h4>
-                        <p className="text-gray-300 text-sm">
+                      <div className="bg-[#0a0a0a] p-3 rounded-lg border border-[#333]">
+                        <h4 className="text-sm font-semibold text-white mb-2">Predictive Analytics</h4>
+                        <p className="text-gray-300 text-xs leading-relaxed">
                           AI-powered predictive analytics for proactive maintenance and optimization.
                         </p>
-                      </div>
                     </div>
-                      </div>
+                  </div>
+                </div>
 
                   {/* ---------- Diagnostics & Monitoring ---------- */}
-                  <div className="bg-gradient-to-r from-[#1c1c1c] to-[#2a2a2a] p-8 rounded-xl border border-[#333] hover:border-[#00e5ff] transition-all duration-300">
-                    <div className="flex items-center mb-6">
-                      <FaChartLine className="text-white text-2xl mr-4" />
-                      <h3 className="text-xl font-bold text-white">Diagnostics & Monitoring</h3>
-                      </div>
-                    <div className="space-y-4">
-                      <div className="bg-[#0a0a0a] p-4 rounded-lg border border-[#333]">
-                        <h4 className="text-base font-semibold text-white mb-2">Health Monitoring</h4>
-                        <p className="text-gray-300 text-sm">
+                  <div className="bg-gradient-to-r from-[#1c1c1c] to-[#2a2a2a] p-6 rounded-xl border border-[#333] transition-all duration-300">
+                  <div className="flex items-center mb-6">
+                      <FaChartLine className="text-white text-lg mr-4" />
+                      <h3 className="text-base font-semibold text-white">Diagnostics & Monitoring</h3>
+                    </div>
+                    <div className="space-y-3">
+                      <div className="bg-[#0a0a0a] p-3 rounded-lg border border-[#333]">
+                        <h4 className="text-sm font-semibold text-white mb-2">Health Monitoring</h4>
+                        <p className="text-gray-300 text-xs leading-relaxed">
                           Comprehensive battery health monitoring with predictive failure analysis.
                         </p>
                       </div>
-                      <div className="bg-[#0a0a0a] p-4 rounded-lg border border-[#333]">
-                        <h4 className="text-base font-semibold text-white mb-2">Fault Detection</h4>
-                        <p className="text-gray-300 text-sm">
+                      <div className="bg-[#0a0a0a] p-3 rounded-lg border border-[#333]">
+                        <h4 className="text-sm font-semibold text-white mb-2">Fault Detection</h4>
+                        <p className="text-gray-300 text-xs leading-relaxed">
                           Advanced fault detection algorithms for early warning and prevention.
                         </p>
-                    </div>
-                  </div>
-                </div>
+                      </div>
+                      </div>
+                      </div>
 
                   {/* ---------- Thermal Management ---------- */}
-                <div className="bg-gradient-to-r from-[#1c1c1c] to-[#2a2a2a] p-8 rounded-xl border border-[#333] hover:border-[#00e5ff] transition-all duration-300">
+                  <div className="bg-gradient-to-r from-[#1c1c1c] to-[#2a2a2a] p-6 rounded-xl border border-[#333] transition-all duration-300">
                   <div className="flex items-center mb-6">
-                      <FaIndustry className="text-white text-2xl mr-4" />
-                      <h3 className="text-xl font-bold text-white">Thermal Management</h3>
+                      <FaIndustry className="text-white text-lg mr-4" />
+                      <h3 className="text-base font-semibold text-white">Thermal Management</h3>
                     </div>
-                    <div className="space-y-4">
-                      <div className="bg-[#0a0a0a] p-4 rounded-lg border border-[#333]">
-                        <h4 className="text-base font-semibold text-white mb-2">Temperature Control</h4>
-                        <p className="text-gray-300 text-sm">
+                    <div className="space-y-3">
+                      <div className="bg-[#0a0a0a] p-3 rounded-lg border border-[#333]">
+                        <h4 className="text-sm font-semibold text-white mb-2">Temperature Control</h4>
+                        <p className="text-gray-300 text-xs leading-relaxed">
                           Intelligent thermal management system for optimal battery performance.
                         </p>
-                  </div>
-                      <div className="bg-[#0a0a0a] p-4 rounded-lg border border-[#333]">
-                        <h4 className="text-base font-semibold text-white mb-2">Cooling System</h4>
-                        <p className="text-gray-300 text-sm">
+                      </div>
+                      <div className="bg-[#0a0a0a] p-3 rounded-lg border border-[#333]">
+                        <h4 className="text-sm font-semibold text-white mb-2">Cooling System</h4>
+                        <p className="text-gray-300 text-xs leading-relaxed">
                           Advanced cooling mechanisms to maintain optimal operating temperatures.
                         </p>
+                      </div>
+                      </div>
                     </div>
-                  </div>
-                </div>
 
                   {/* ---------- Communication & Control ---------- */}
-                <div className="bg-gradient-to-r from-[#1c1c1c] to-[#2a2a2a] p-8 rounded-xl border border-[#333] hover:border-[#00e5ff] transition-all duration-300">
+                  <div className="bg-gradient-to-r from-[#1c1c1c] to-[#2a2a2a] p-6 rounded-xl border border-[#333] transition-all duration-300">
                   <div className="flex items-center mb-6">
-                      <FaCogs className="text-white text-2xl mr-4" />
-                      <h3 className="text-xl font-bold text-white">Communication & Control</h3>
-                    </div>
-                    <div className="space-y-4">
-                      <div className="bg-[#0a0a0a] p-4 rounded-lg border border-[#333]">
-                        <h4 className="text-base font-semibold text-white mb-2">CAN Bus Interface</h4>
-                        <p className="text-gray-300 text-sm">
+                      <FaCogs className="text-white text-lg mr-4" />
+                      <h3 className="text-base font-semibold text-white">Communication & Control</h3>
+                  </div>
+                    <div className="space-y-3">
+                      <div className="bg-[#0a0a0a] p-3 rounded-lg border border-[#333]">
+                        <h4 className="text-sm font-semibold text-white mb-2">CAN Bus Interface</h4>
+                        <p className="text-gray-300 text-xs leading-relaxed">
                           High-speed CAN bus communication for seamless system integration.
                         </p>
                   </div>
-                      <div className="bg-[#0a0a0a] p-4 rounded-lg border border-[#333]">
-                        <h4 className="text-base font-semibold text-white mb-2">Remote Monitoring</h4>
-                        <p className="text-gray-300 text-sm">
+                      <div className="bg-[#0a0a0a] p-3 rounded-lg border border-[#333]">
+                        <h4 className="text-sm font-semibold text-white mb-2">Remote Monitoring</h4>
+                        <p className="text-gray-300 text-xs leading-relaxed">
                           Cloud-based remote monitoring and control capabilities.
                         </p>
                       </div>
                       </div>
                       </div>
-                    </div>
-                      </div>
+                </div>
+              </div>
             </div>
           </div>
         </section>
@@ -1096,57 +1096,6 @@ export default function BharatBMSESSPage() {
           </div>
         </div>
 
-        {/* Navigation Buttons */}
-        <div
-          className={`flex ${(prevBMS && nextBMS) ? "justify-between" : "justify-center"} mt-[6rem] mb-[4rem] flex-wrap gap-[1.2rem] sm:gap-0`}
-        >
-          {prevBMS && (
-            <Link href={prevBMS.link}>
-              <button
-                className="text-white border border-white rounded-md px-6 py-3 text-sm font-medium hover:text-transparent transition-all duration-300"
-                style={{
-                  backgroundColor: '#151a1d',
-                  backgroundImage: 'linear-gradient(90deg, #25f1fc, #5bb2ff, #b15dfb)',
-                  WebkitBackgroundClip: 'text',
-                  backgroundClip: 'text',
-                  color: 'white',
-                  borderColor: 'white'
-                }}
-                onMouseEnter={(e) => {
-                  e.target.style.color = 'transparent';
-                }}
-                onMouseLeave={(e) => {
-                  e.target.style.color = 'white';
-                }}
-              >
-                Previous: {prevBMS.title}
-              </button>
-            </Link>
-          )}
-          {nextBMS && (
-            <Link href={nextBMS.link}>
-              <button
-                className="text-white border border-white rounded-md px-6 py-3 text-sm font-medium hover:text-transparent transition-all duration-300"
-                style={{
-                  backgroundColor: '#151a1d',
-                  backgroundImage: 'linear-gradient(90deg, #25f1fc, #5bb2ff, #b15dfb)',
-                  WebkitBackgroundClip: 'text',
-                  backgroundClip: 'text',
-                  color: 'white',
-                  borderColor: 'white'
-                }}
-                onMouseEnter={(e) => {
-                  e.target.style.color = 'transparent';
-                }}
-                onMouseLeave={(e) => {
-                  e.target.style.color = 'white';
-                }}
-              >
-                Next: {nextBMS.title}
-              </button>
-            </Link>
-          )}
-        </div>
       </div>
       </div>
     </>
