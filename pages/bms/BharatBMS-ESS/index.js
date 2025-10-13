@@ -1069,7 +1069,7 @@ export default function BharatBMSESSPage() {
           <div className="w-full flex justify-end">
             <div className="flex flex-col items-center gap-2 mr-2">
               <a
-                href="/api/download-brochure"
+                href="/api/download-ess"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="View brochure PDF"
