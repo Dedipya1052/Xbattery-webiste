@@ -17,6 +17,7 @@ import {
   FaCog, FaWifi, FaServer, FaHome, FaTruck, FaCubes, FaBatteryEmpty, FaBatteryThreeQuarters, FaIndustry
 } from "react-icons/fa";
 import FactoryIcon from "@/components/Icons/FactoryIcon";
+import Layout from "@/components/Layout";
  
 import classes from "../../bharat-bms/styles.module.css";
 
@@ -263,7 +264,7 @@ export default function BharatBMSEVPage() {
   const flyerProductName = (data.title || "").replace(/^Xbattery\s+/i, "").toUpperCase();
 
   return (
-    <>
+    <React.Fragment>
       <Head>
         <title>{data.title} | Xbattery</title>
       </Head>
@@ -338,6 +339,7 @@ export default function BharatBMSEVPage() {
                 height={600} 
                 className="object-contain w-full h-full scale-[1.18] md:scale-[1.25]" 
               />
+            </div>
             </div>
           </div>
         </div>
@@ -460,656 +462,265 @@ export default function BharatBMSEVPage() {
         </div>
 
         {/* Our Products Section */}
-        <section
-          id="products-section"
-          ref={sectionRef}
-          className="relative bg-[#000000] overflow-hidden py-8"
-        >
-          
-          <div className="px-4 md:px-6">
+        <section className="py-5 md:py-6 px-4 md:px-6 bg-[#000000]">
+          <div className="max-w-[1200px] mx-auto">
             <AnimatedDiv>
               <h2 className={`text-3xl md:text-4xl font-bold mb-16 text-center ${classes.color}`}>
                 Our Products
               </h2>
             </AnimatedDiv>
 
-            <div className="max-w-[1400px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
-              {/* LEFT STICKY IMAGE */}
-              <div className="flex justify-center image-container relative lg:sticky lg:top-24 self-start">
-                {/* Image Container */}
-                <div className="w-full h-[600px] rounded-2xl overflow-hidden bg-gradient-to-br from-[#1a1a1a] to-[#2a2a2a] shadow-2xl flex flex-col">
-                  {/* Heading */}
-                  <div className="bg-[#1d1d1d] p-4 text-center rounded-t-2xl border-b border-gray-200 border-opacity-30">
-                    <h3 className="text-xl font-bold text-white">Xbattery BharatBMS-EV-110V</h3>
-                  </div>
-                  
-                  {/* Image */}
-                  <div className="flex-1 flex items-center justify-center p-8">
+            {/* EV 110V Product */}
+            <AnimatedDiv>
+            <div className="mb-24 bg-[#1c1c1c] border border-[#333] rounded-2xl p-2.5 md:p-3 shadow-[0_6px_18px_rgba(0,0,0,0.20)] max-w-7xl mx-auto">
+              <h3 className="text-xl md:text-2xl font-bold text-white text-center mb-6">Xbattery BharatBMS-EV-110V</h3>
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-3 items-start">
+                {/* Left - Product Image */}
+                <div className="flex justify-center">
+                  <div className="w-full max-w-lg text-center">
+                    <div className="rounded-[22px] border-[6px] border-[#333] p-6 bg-black">
+                      <div className="rounded-[14px] border-[1px] border-[#444] bg-[#1c1c1c] overflow-hidden h-[280px] md:h-[340px] flex items-center justify-center">
                     <Image
                       src={productImages[0]}
                       alt="EV 110V BMS Product"
-                      width={1000}
-                      height={500}
-                      className="object-contain w-full h-full hover:scale-110 transition-transform duration-300"
+                          width={560}
+                          height={340}
+                          className="w-full h-full object-contain"
                     />
                   </div>
-                  
-                  {/* Placeholder Text */}
-                  <div className="bg-[#1a1a1a] p-4 text-center">
-                    <p className="text-gray-300 text-sm">
+                    </div>
+                    <p className="text-gray-300 mt-4 text-center">
                       The XB-X 32S is a robust low-voltage electric vehicle BMS operating at 110V nominal with LFP chemistry support for 32-36 series configurations.
                     </p>
-                  </div>
                 </div>
               </div>
 
-              {/* RIGHT SCROLL CONTENT */}
-              <div ref={scrollableRef} className="h-[600px] overflow-y-auto pr-4 scrollbar-hide">
-                <div className="space-y-6">
-
-                  {/* ---------- Key Specifications ---------- */}
-                  <div className="bg-gradient-to-r from-[#1c1c1c] to-[#2a2a2a] p-6 rounded-xl border border-[#333] transition-all duration-300">
-                    <div className="flex items-center mb-6">
-                      <FaCogs className="text-white text-lg mr-4" />
-                      <h3 className="text-base font-semibold text-white">Key Specifications</h3>
+                {/* Right - Specifications */}
+                    <div className="space-y-2.5">
+                  {/* Key Specifications */}
+                  <div className="bg-[#2a2a2a] p-2 rounded-lg">
+                    <div className="flex items-center mb-4">
+                      <FaCogs className="text-gray-400 text-lg mr-3" />
+                      <h3 className="text-lg font-semibold text-white">Key Specifications</h3>
                     </div>
-                    <div className="space-y-3">
-                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                        <div className="flex w-full rounded-xl overflow-hidden bg-[#1b1b1b] min-h-[80px] pointer-events-none transform hover:scale-105 transition-all duration-300 hover:shadow-lg hover:shadow-[#00e5ff]/20">
-                          <div className="w-[60px] md:w-[70px] shrink-0 bg-[#141414] flex items-center justify-center">
-                            <IconWithGradient size={18} title="Energy storage">
-                              <FaFlask />
-                            </IconWithGradient>
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                      <div className="bg-[#1a1a1a] p-2.5 rounded-lg flex items-center">
+                        <FaFlask className="text-gray-400 text-xl mr-3" />
+                        <div>
+                          <h4 className="text-sm font-semibold text-white">Supported Cell Chemistry</h4>
+                          <p className="text-gray-300 text-sm">LFP/NMC</p>
                           </div>
-                          <div className="flex-1 min-h-[100px] px-0 py-3 md:px-0 md:py-4 flex flex-col items-center justify-center text-center">
-                            <h3 className="text-xs font-semibold text-white leading-tight">Supported Cell Chemistry</h3>
-                            <p className="text-xs text-gray-300 mt-1 text-center">LFP/NMC</p>
                           </div>
+                      <div className="bg-[#1a1a1a] p-2.5 rounded-lg flex items-center">
+                        <FaBolt className="text-gray-400 text-xl mr-3" />
+                        <div>
+                          <h4 className="text-sm font-semibold text-white">Nominal Pack Voltage</h4>
+                          <p className="text-gray-300 text-sm">110V</p>
                         </div>
-                        <div className="flex w-full rounded-xl overflow-hidden bg-[#1b1b1b] min-h-[80px] pointer-events-none transform hover:scale-105 transition-all duration-300 hover:shadow-lg hover:shadow-[#00e5ff]/20">
-                          <div className="w-[60px] md:w-[70px] shrink-0 bg-[#141414] flex items-center justify-center">
-                            <IconWithGradient size={18} title="Energy storage">
-                              <FaBolt />
-                            </IconWithGradient>
                           </div>
-                          <div className="flex-1 min-h-[100px] px-0 py-3 md:px-0 md:py-4 flex flex-col items-center justify-center text-center">
-                            <h3 className="text-xs font-semibold text-white leading-tight text-center">Nominal Pack Voltage</h3>
-                            <p className="text-xs text-gray-300 mt-1 text-center">110V</p>
-                          </div>
-                        </div>
-                      </div>
-                      <div className="flex justify-center">
-                        <div className="flex w-full max-w-[48%] rounded-xl overflow-hidden bg-[#1b1b1b] min-h-[100px] pointer-events-none transform hover:scale-105 transition-all duration-300 hover:shadow-lg hover:shadow-[#00e5ff]/20">
-                          <div className="w-[60px] md:w-[70px] shrink-0 bg-[#141414] flex items-center justify-center">
-                            <IconWithGradient size={18} title="Energy storage">
-                              <FaCubes />
-                            </IconWithGradient>
-                          </div>
-                          <div className="flex-1 min-h-[100px] px-0 py-3 md:px-0 md:py-4 flex flex-col items-center justify-center text-center">
-                            <h3 className="text-xs font-semibold text-white leading-tight">Cell Count Range</h3>
-                            <p className="text-xs text-gray-300 mt-1 text-center">32S to 60S</p>
-                          </div>
+                      <div className="bg-[#1a1a1a] p-2.5 rounded-lg flex items-center sm:col-span-2">
+                        <FaCubes className="text-gray-400 text-xl mr-3" />
+                        <div>
+                          <h4 className="text-sm font-semibold text-white">Cell Count Range</h4>
+                          <p className="text-gray-300 text-sm">32S to 60S</p>
                         </div>
                       </div>
                     </div>
                   </div>
 
-                  {/* ---------- Safety & Compliance ---------- */}
-                  <div className="bg-gradient-to-r from-[#1c1c1c] to-[#2a2a2a] p-6 rounded-xl border border-[#333] transition-all duration-300">
-                    <div className="flex items-center mb-6">
-                      <FaShieldAlt className="text-white text-lg mr-4" />
-                      <h3 className="text-base font-semibold text-white">Safety & Compliance</h3>
+                  {/* Safety & Compliance */}
+                  <div className="bg-[#2a2a2a] p-3 rounded-lg">
+                    <div className="flex items-center mb-4">
+                      <FaShieldAlt className="text-gray-400 text-lg mr-3" />
+                      <h3 className="text-lg font-semibold text-white">Safety & Compliance</h3>
                     </div>
-                    <div className="space-y-3">
-                      <div className="bg-[#0a0a0a] p-3 rounded-lg border border-[#333]">
+                    <div className="space-y-2.5">
+                      <div className="bg-[#1a1a1a] p-4 rounded-lg">
                         <h4 className="text-sm font-semibold text-white mb-2">ISO 26262 Compliance</h4>
-                        <p className="text-gray-300 text-xs leading-relaxed">
-                          Automotive functional safety standard compliance for critical safety applications.
-                        </p>
+                        <p className="text-gray-300 text-sm">Automotive functional safety standard compliance for critical safety applications.</p>
                       </div>
-                      <div className="bg-[#0a0a0a] p-3 rounded-lg border border-[#333]">
+                      <div className="bg-[#1a1a1a] p-4 rounded-lg">
                         <h4 className="text-sm font-semibold text-white mb-2">Fault Detection</h4>
-                        <p className="text-gray-300 text-xs leading-relaxed">
-                          Advanced fault detection and isolation capabilities for enhanced system reliability.
-                        </p>
+                        <p className="text-gray-300 text-sm">Advanced fault detection and isolation capabilities for enhanced system reliability.</p>
                       </div>
-                      <div className="bg-[#0a0a0a] p-3 rounded-lg border border-[#333]">
+                      <div className="bg-[#1a1a1a] p-4 rounded-lg">
                         <h4 className="text-sm font-semibold text-white mb-2">Emergency Shutdown</h4>
-                        <p className="text-gray-300 text-xs leading-relaxed">
-                          Rapid emergency shutdown protocols for critical safety situations.
-                        </p>
+                        <p className="text-gray-300 text-sm">Rapid emergency shutdown protocols for critical safety situations.</p>
                       </div>
                     </div>
                   </div>
+                    </div>
+                      </div>
+                      </div>
+            </AnimatedDiv>
 
-                  {/* ---------- Performance ---------- */}
-                  <div className="bg-gradient-to-r from-[#1c1c1c] to-[#2a2a2a] p-6 rounded-xl border border-[#333] transition-all duration-300">
-                    <div className="flex items-center mb-6">
-                      <FaChartLine className="text-white text-lg mr-4" />
-                      <h3 className="text-base font-semibold text-white">Performance</h3>
-                    </div>
-                    <div className="space-y-3">
-                      <div className="bg-[#0a0a0a] p-3 rounded-lg border border-[#333]">
-                        <h4 className="text-sm font-semibold text-white mb-2">Real-time Monitoring</h4>
-                        <p className="text-gray-300 text-xs leading-relaxed">
-                          Continuous real-time monitoring of battery parameters with high precision.
-                        </p>
-                      </div>
-                      <div className="bg-[#0a0a0a] p-3 rounded-lg border border-[#333]">
-                        <h4 className="text-sm font-semibold text-white mb-2">Data Logging</h4>
-                        <p className="text-gray-300 text-xs leading-relaxed">
-                          Comprehensive data logging and analytics for performance optimization.
-                        </p>
-                      </div>
-                      <div className="bg-[#0a0a0a] p-3 rounded-lg border border-[#333]">
-                        <h4 className="text-sm font-semibold text-white mb-2">Predictive Analytics</h4>
-                        <p className="text-gray-300 text-xs leading-relaxed">
-                          AI-powered predictive analytics for proactive maintenance and optimization.
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-
-                  {/* ---------- Diagnostics & Monitoring ---------- */}
-                  <div className="bg-gradient-to-r from-[#1c1c1c] to-[#2a2a2a] p-6 rounded-xl border border-[#333] transition-all duration-300">
-                    <div className="flex items-center mb-6">
-                      <FaChartLine className="text-white text-lg mr-4" />
-                      <h3 className="text-base font-semibold text-white">Diagnostics & Monitoring</h3>
-                    </div>
-                    <div className="space-y-3">
-                      <div className="bg-[#0a0a0a] p-3 rounded-lg border border-[#333]">
-                        <h4 className="text-sm font-semibold text-white mb-2">Health Monitoring</h4>
-                        <p className="text-gray-300 text-xs leading-relaxed">
-                          Comprehensive battery health monitoring with predictive failure analysis.
-                        </p>
-                      </div>
-                      <div className="bg-[#0a0a0a] p-3 rounded-lg border border-[#333]">
-                        <h4 className="text-sm font-semibold text-white mb-2">Fault Detection</h4>
-                        <p className="text-gray-300 text-xs leading-relaxed">
-                          Advanced fault detection algorithms for early warning and prevention.
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-
-                  {/* ---------- Thermal Management ---------- */}
-                  <div className="bg-gradient-to-r from-[#1c1c1c] to-[#2a2a2a] p-6 rounded-xl border border-[#333] transition-all duration-300">
-                    <div className="flex items-center mb-6">
-                      <FaIndustry className="text-white text-lg mr-4" />
-                      <h3 className="text-base font-semibold text-white">Thermal Management</h3>
-                    </div>
-                    <div className="space-y-3">
-                      <div className="bg-[#0a0a0a] p-3 rounded-lg border border-[#333]">
-                        <h4 className="text-sm font-semibold text-white mb-2">Temperature Control</h4>
-                        <p className="text-gray-300 text-xs leading-relaxed">
-                          Intelligent thermal management system for optimal battery performance.
-                        </p>
-                      </div>
-                      <div className="bg-[#0a0a0a] p-3 rounded-lg border border-[#333]">
-                        <h4 className="text-sm font-semibold text-white mb-2">Cooling System</h4>
-                        <p className="text-gray-300 text-xs leading-relaxed">
-                          Advanced cooling mechanisms to maintain optimal operating temperatures.
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-
-                  {/* ---------- Communication & Control ---------- */}
-                  <div className="bg-gradient-to-r from-[#1c1c1c] to-[#2a2a2a] p-6 rounded-xl border border-[#333] transition-all duration-300">
-                    <div className="flex items-center mb-6">
-                      <FaCogs className="text-white text-lg mr-4" />
-                      <h3 className="text-base font-semibold text-white">Communication & Control</h3>
-                    </div>
-                    <div className="space-y-3">
-                      <div className="bg-[#0a0a0a] p-3 rounded-lg border border-[#333]">
-                        <h4 className="text-sm font-semibold text-white mb-2">CAN Bus Interface</h4>
-                        <p className="text-gray-300 text-xs leading-relaxed">
-                          High-speed CAN bus communication for seamless system integration.
-                        </p>
-                      </div>
-                      <div className="bg-[#0a0a0a] p-3 rounded-lg border border-[#333]">
-                        <h4 className="text-sm font-semibold text-white mb-2">Remote Monitoring</h4>
-                        <p className="text-gray-300 text-xs leading-relaxed">
-                          Cloud-based remote monitoring and control capabilities.
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* EV 400V BMS Product Section */}
-        <section
-          id="ev-400v-section"
-          ref={ev400vSectionRef}
-          className="relative bg-[#0a0a0a] overflow-hidden py-8"
-        >
-          <div className="px-4 md:px-6">
-            <div className="max-w-[1400px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
-              {/* LEFT STICKY IMAGE */}
-              <div className="flex justify-center image-container relative lg:sticky lg:top-24 self-start">
-                {/* Image Container */}
-                <div className="w-full h-[600px] rounded-2xl overflow-hidden bg-gradient-to-br from-[#1a1a1a] to-[#2a2a2a] shadow-2xl flex flex-col">
-                  {/* Heading */}
-                  <div className="bg-[#1d1d1d] p-4 text-center rounded-t-2xl border-b border-gray-200 border-opacity-30">
-                    <h3 className="text-xl font-bold text-white">Xbattery BharatBMS-EV-400V</h3>
-                  </div>
-                  
-                  {/* Image */}
-                  <div className="flex-1 flex items-center justify-center p-8">
+            {/* EV 400V Product */}
+            <AnimatedDiv>
+            <div className="mb-24 bg-[#1c1c1c] border border-[#333] rounded-2xl p-2.5 md:p-3 shadow-[0_6px_18px_rgba(0,0,0,0.20)] max-w-7xl mx-auto">
+              <h3 className="text-xl md:text-2xl font-bold text-white text-center mb-6">Xbattery BharatBMS-EV-400V</h3>
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-3 items-start">
+                {/* Left - Product Image */}
+                <div className="flex justify-center">
+                  <div className="w-full max-w-lg text-center">
+                    <div className="rounded-[22px] border-[6px] border-[#333] p-6 bg-black">
+                      <div className="rounded-[14px] border-[1px] border-[#444] bg-[#1c1c1c] overflow-hidden h-[280px] md:h-[340px] flex items-center justify-center">
                     <Image
                       src={ev400vImages[0]}
                       alt="EV 400V BMS Product"
-                      width={1000}
-                      height={500}
-                      className="object-contain w-full h-full hover:scale-110 transition-transform duration-300"
+                          width={560}
+                          height={340}
+                          className="w-full h-full object-contain"
                     />
                   </div>
-                  
-                  {/* Placeholder Text */}
-                  <div className="bg-[#1a1a1a] p-4 text-center">
-                    <p className="text-gray-300 text-sm">
-                      The XB-X 100S is a high-performance 400V BMS specifically engineered for electric vehicles with 100-125 series LFP cell configurations.
+                    </div>
+                    <p className="text-gray-300 mt-4 text-center">
+                      The XB-X 32S is a robust low-voltage electric vehicle BMS operating at 400V nominal with LFP chemistry support for 32-36 series configurations.
                     </p>
-                  </div>
                 </div>
               </div>
 
-              {/* RIGHT SCROLL CONTENT */}
-              <div ref={ev400vScrollableRef} className="h-[600px] overflow-y-auto pr-4 scrollbar-hide">
-                <div className="space-y-6">
-
-                  {/* ---------- Key Specifications ---------- */}
-                  <div className="bg-gradient-to-r from-[#1c1c1c] to-[#2a2a2a] p-6 rounded-xl border border-[#333] transition-all duration-300">
-                    <div className="flex items-center mb-6">
-                      <FaCogs className="text-white text-lg mr-4" />
-                      <h3 className="text-base font-semibold text-white">Key Specifications</h3>
+                {/* Right - Specifications */}
+                    <div className="space-y-2.5">
+                  {/* Key Specifications */}
+                  <div className="bg-[#2a2a2a] p-2 rounded-lg">
+                    <div className="flex items-center mb-4">
+                      <FaCogs className="text-gray-400 text-lg mr-3" />
+                      <h3 className="text-lg font-semibold text-white">Key Specifications</h3>
                     </div>
-                    <div className="space-y-3">
-                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                        <div className="flex w-full rounded-xl overflow-hidden bg-[#1b1b1b] min-h-[80px] pointer-events-none transform hover:scale-105 transition-all duration-300 hover:shadow-lg hover:shadow-[#00e5ff]/20">
-                          <div className="w-[60px] md:w-[70px] shrink-0 bg-[#141414] flex items-center justify-center">
-                            <IconWithGradient size={18} title="Energy storage">
-                              <FaFlask />
-                            </IconWithGradient>
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                      <div className="bg-[#1a1a1a] p-2.5 rounded-lg flex items-center">
+                        <FaFlask className="text-gray-400 text-xl mr-3" />
+                        <div>
+                          <h4 className="text-sm font-semibold text-white">Supported Cell Chemistry</h4>
+                          <p className="text-gray-300 text-sm">LFP/NMC</p>
                           </div>
-                          <div className="flex-1 min-h-[100px] px-0 py-3 md:px-0 md:py-4 flex flex-col items-center justify-center text-center">
-                            <h3 className="text-xs font-semibold text-white leading-tight">Supported Cell Chemistry</h3>
-                            <p className="text-xs text-gray-300 mt-1 text-center">LFP/NMC</p>
                           </div>
+                      <div className="bg-[#1a1a1a] p-2.5 rounded-lg flex items-center">
+                        <FaBolt className="text-gray-400 text-xl mr-3" />
+                        <div>
+                          <h4 className="text-sm font-semibold text-white">Nominal Pack Voltage</h4>
+                          <p className="text-gray-300 text-sm">400V</p>
                         </div>
-                        <div className="flex w-full rounded-xl overflow-hidden bg-[#1b1b1b] min-h-[80px] pointer-events-none transform hover:scale-105 transition-all duration-300 hover:shadow-lg hover:shadow-[#00e5ff]/20">
-                          <div className="w-[60px] md:w-[70px] shrink-0 bg-[#141414] flex items-center justify-center">
-                            <IconWithGradient size={18} title="Energy storage">
-                              <FaBolt />
-                            </IconWithGradient>
                           </div>
-                          <div className="flex-1 min-h-[100px] px-0 py-3 md:px-0 md:py-4 flex flex-col items-center justify-center text-center">
-                            <h3 className="text-xs font-semibold text-white leading-tight text-center">Nominal Pack Voltage</h3>
-                            <p className="text-xs text-gray-300 mt-1 text-center">400V</p>
-                          </div>
-                        </div>
-                      </div>
-                      <div className="flex justify-center">
-                        <div className="flex w-full max-w-[48%] rounded-xl overflow-hidden bg-[#1b1b1b] min-h-[100px] pointer-events-none transform hover:scale-105 transition-all duration-300 hover:shadow-lg hover:shadow-[#00e5ff]/20">
-                          <div className="w-[60px] md:w-[70px] shrink-0 bg-[#141414] flex items-center justify-center">
-                            <IconWithGradient size={18} title="Energy storage">
-                              <FaCubes />
-                            </IconWithGradient>
-                          </div>
-                          <div className="flex-1 min-h-[100px] px-0 py-3 md:px-0 md:py-4 flex flex-col items-center justify-center text-center">
-                            <h3 className="text-xs font-semibold text-white leading-tight">Cell Count Range</h3>
-                            <p className="text-xs text-gray-300 mt-1 text-center">100S to 125S</p>
-                          </div>
+                      <div className="bg-[#1a1a1a] p-2.5 rounded-lg flex items-center sm:col-span-2">
+                        <FaCubes className="text-gray-400 text-xl mr-3" />
+                        <div>
+                          <h4 className="text-sm font-semibold text-white">Cell Count Range</h4>
+                          <p className="text-gray-300 text-sm">32S to 60S</p>
                         </div>
                       </div>
                     </div>
                   </div>
 
-                  {/* ---------- Safety & Compliance ---------- */}
-                  <div className="bg-gradient-to-r from-[#1c1c1c] to-[#2a2a2a] p-6 rounded-xl border border-[#333] transition-all duration-300">
-                    <div className="flex items-center mb-6">
-                      <FaShieldAlt className="text-white text-lg mr-4" />
-                      <h3 className="text-base font-semibold text-white">Safety & Compliance</h3>
+                  {/* Safety & Compliance */}
+                  <div className="bg-[#2a2a2a] p-3 rounded-lg">
+                    <div className="flex items-center mb-4">
+                      <FaShieldAlt className="text-gray-400 text-lg mr-3" />
+                      <h3 className="text-lg font-semibold text-white">Safety & Compliance</h3>
                     </div>
-                    <div className="space-y-3">
-                      <div className="bg-[#0a0a0a] p-3 rounded-lg border border-[#333]">
+                    <div className="space-y-2.5">
+                      <div className="bg-[#1a1a1a] p-4 rounded-lg">
                         <h4 className="text-sm font-semibold text-white mb-2">ISO 26262 Compliance</h4>
-                        <p className="text-gray-300 text-xs leading-relaxed">
-                          Automotive functional safety standard compliance for critical safety applications.
-                        </p>
+                        <p className="text-gray-300 text-sm">Automotive functional safety standard compliance for critical safety applications.</p>
                       </div>
-                      <div className="bg-[#0a0a0a] p-3 rounded-lg border border-[#333]">
+                      <div className="bg-[#1a1a1a] p-4 rounded-lg">
                         <h4 className="text-sm font-semibold text-white mb-2">Fault Detection</h4>
-                        <p className="text-gray-300 text-xs leading-relaxed">
-                          Advanced fault detection and isolation capabilities for enhanced system reliability.
-                        </p>
+                        <p className="text-gray-300 text-sm">Advanced fault detection and isolation capabilities for enhanced system reliability.</p>
                       </div>
-                      <div className="bg-[#0a0a0a] p-3 rounded-lg border border-[#333]">
+                      <div className="bg-[#1a1a1a] p-4 rounded-lg">
                         <h4 className="text-sm font-semibold text-white mb-2">Emergency Shutdown</h4>
-                        <p className="text-gray-300 text-xs leading-relaxed">
-                          Rapid emergency shutdown protocols for critical safety situations.
-                        </p>
+                        <p className="text-gray-300 text-sm">Rapid emergency shutdown protocols for critical safety situations.</p>
                       </div>
                     </div>
                   </div>
+                    </div>
+                      </div>
+                      </div>
+            </AnimatedDiv>
 
-                  {/* ---------- Performance ---------- */}
-                  <div className="bg-gradient-to-r from-[#1c1c1c] to-[#2a2a2a] p-6 rounded-xl border border-[#333] transition-all duration-300">
-                    <div className="flex items-center mb-6">
-                      <FaChartLine className="text-white text-lg mr-4" />
-                      <h3 className="text-base font-semibold text-white">Performance</h3>
-                    </div>
-                    <div className="space-y-3">
-                      <div className="bg-[#0a0a0a] p-3 rounded-lg border border-[#333]">
-                        <h4 className="text-sm font-semibold text-white mb-2">Real-time Monitoring</h4>
-                        <p className="text-gray-300 text-xs leading-relaxed">
-                          Continuous real-time monitoring of battery parameters with high precision.
-                        </p>
-                      </div>
-                      <div className="bg-[#0a0a0a] p-3 rounded-lg border border-[#333]">
-                        <h4 className="text-sm font-semibold text-white mb-2">Data Logging</h4>
-                        <p className="text-gray-300 text-xs leading-relaxed">
-                          Comprehensive data logging and analytics for performance optimization.
-                        </p>
-                      </div>
-                      <div className="bg-[#0a0a0a] p-3 rounded-lg border border-[#333]">
-                        <h4 className="text-sm font-semibold text-white mb-2">Predictive Analytics</h4>
-                        <p className="text-gray-300 text-xs leading-relaxed">
-                          AI-powered predictive analytics for proactive maintenance and optimization.
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-
-                  {/* ---------- Diagnostics & Monitoring ---------- */}
-                  <div className="bg-gradient-to-r from-[#1c1c1c] to-[#2a2a2a] p-6 rounded-xl border border-[#333] transition-all duration-300">
-                    <div className="flex items-center mb-6">
-                      <FaChartLine className="text-white text-lg mr-4" />
-                      <h3 className="text-base font-semibold text-white">Diagnostics & Monitoring</h3>
-                    </div>
-                    <div className="space-y-3">
-                      <div className="bg-[#0a0a0a] p-3 rounded-lg border border-[#333]">
-                        <h4 className="text-sm font-semibold text-white mb-2">Health Monitoring</h4>
-                        <p className="text-gray-300 text-xs leading-relaxed">
-                          Comprehensive battery health monitoring with predictive failure analysis.
-                        </p>
-                      </div>
-                      <div className="bg-[#0a0a0a] p-3 rounded-lg border border-[#333]">
-                        <h4 className="text-sm font-semibold text-white mb-2">Fault Detection</h4>
-                        <p className="text-gray-300 text-xs leading-relaxed">
-                          Advanced fault detection algorithms for early warning and prevention.
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-
-                  {/* ---------- Thermal Management ---------- */}
-                  <div className="bg-gradient-to-r from-[#1c1c1c] to-[#2a2a2a] p-6 rounded-xl border border-[#333] transition-all duration-300">
-                    <div className="flex items-center mb-6">
-                      <FaIndustry className="text-white text-lg mr-4" />
-                      <h3 className="text-base font-semibold text-white">Thermal Management</h3>
-                    </div>
-                    <div className="space-y-3">
-                      <div className="bg-[#0a0a0a] p-3 rounded-lg border border-[#333]">
-                        <h4 className="text-sm font-semibold text-white mb-2">Temperature Control</h4>
-                        <p className="text-gray-300 text-xs leading-relaxed">
-                          Intelligent thermal management system for optimal battery performance.
-                        </p>
-                      </div>
-                      <div className="bg-[#0a0a0a] p-3 rounded-lg border border-[#333]">
-                        <h4 className="text-sm font-semibold text-white mb-2">Cooling System</h4>
-                        <p className="text-gray-300 text-xs leading-relaxed">
-                          Advanced cooling mechanisms to maintain optimal operating temperatures.
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-
-                  {/* ---------- Communication & Control ---------- */}
-                  <div className="bg-gradient-to-r from-[#1c1c1c] to-[#2a2a2a] p-6 rounded-xl border border-[#333] transition-all duration-300">
-                    <div className="flex items-center mb-6">
-                      <FaCogs className="text-white text-lg mr-4" />
-                      <h3 className="text-base font-semibold text-white">Communication & Control</h3>
-                    </div>
-                    <div className="space-y-3">
-                      <div className="bg-[#0a0a0a] p-3 rounded-lg border border-[#333]">
-                        <h4 className="text-sm font-semibold text-white mb-2">CAN Bus Interface</h4>
-                        <p className="text-gray-300 text-xs leading-relaxed">
-                          High-speed CAN bus communication for seamless system integration.
-                        </p>
-                      </div>
-                      <div className="bg-[#0a0a0a] p-3 rounded-lg border border-[#333]">
-                        <h4 className="text-sm font-semibold text-white mb-2">Remote Monitoring</h4>
-                        <p className="text-gray-300 text-xs leading-relaxed">
-                          Cloud-based remote monitoring and control capabilities.
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* EV 500V BMS Product Section */}
-        <section
-          id="ev-500v-section"
-          ref={ev500vSectionRef}
-          className="relative bg-[#0a0a0a] overflow-hidden py-8"
-        >
-          <div className="px-4 md:px-6">
-            <div className="max-w-[1400px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
-              {/* LEFT STICKY IMAGE */}
-              <div className="flex justify-center image-container relative lg:sticky lg:top-24 self-start">
-                {/* Image Container */}
-                <div className="w-full h-[600px] rounded-2xl overflow-hidden bg-gradient-to-br from-[#1a1a1a] to-[#2a2a2a] shadow-2xl flex flex-col">
-                  {/* Heading */}
-                  <div className="bg-[#1d1d1d] p-4 text-center rounded-t-2xl border-b border-gray-200 border-opacity-30">
-                    <h3 className="text-xl font-bold text-white">Xbattery BharatBMS-EV-500V</h3>
-                  </div>
-                  
-                  {/* Image */}
-                  <div className="flex-1 flex items-center justify-center p-8">
+            {/* EV 500V Product */}
+            <AnimatedDiv>
+            <div className="mb-24 bg-[#1c1c1c] border border-[#333] rounded-2xl p-2.5 md:p-3 shadow-[0_6px_18px_rgba(0,0,0,0.20)] max-w-7xl mx-auto">
+              <h3 className="text-xl md:text-2xl font-bold text-white text-center mb-6">Xbattery BharatBMS-EV-500V</h3>
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-3 items-start">
+                {/* Left - Product Image */}
+                <div className="flex justify-center">
+                  <div className="w-full max-w-lg text-center">
+                    <div className="rounded-[22px] border-[6px] border-[#333] p-6 bg-black">
+                      <div className="rounded-[14px] border-[1px] border-[#444] bg-[#1c1c1c] overflow-hidden h-[280px] md:h-[340px] flex items-center justify-center">
                     <Image
                       src={ev500vImages[0]}
                       alt="EV 500V BMS Product"
-                      width={1000}
-                      height={500}
-                      className="object-contain w-full h-full hover:scale-110 transition-transform duration-300"
+                          width={560}
+                          height={340}
+                          className="w-full h-full object-contain"
                     />
                   </div>
-                  
-                  {/* Placeholder Text */}
-                  <div className="bg-[#1a1a1a] p-4 text-center">
-                    <p className="text-gray-300 text-sm">
-                      The XB-X 136S is a high-performance 500V BMS specifically engineered for electric vehicles with 136-series LFP cell configurations.
+                    </div>
+                    <p className="text-gray-300 mt-4 text-center">
+                      The XB-X 32S is a robust low-voltage electric vehicle BMS operating at 500V nominal with LFP chemistry support for 32-36 series configurations.
                     </p>
-                  </div>
                 </div>
               </div>
 
-              {/* RIGHT SCROLL CONTENT */}
-              <div ref={ev500vScrollableRef} className="h-[600px] overflow-y-auto pr-4 scrollbar-hide">
-                <div className="space-y-6">
-
-                  {/* ---------- Key Specifications ---------- */}
-                  <div className="bg-gradient-to-r from-[#1c1c1c] to-[#2a2a2a] p-6 rounded-xl border border-[#333] transition-all duration-300">
-                    <div className="flex items-center mb-6">
-                      <FaCogs className="text-white text-lg mr-4" />
-                      <h3 className="text-base font-semibold text-white">Key Specifications</h3>
+                {/* Right - Specifications */}
+                    <div className="space-y-2.5">
+                  {/* Key Specifications */}
+                  <div className="bg-[#2a2a2a] p-2 rounded-lg">
+                    <div className="flex items-center mb-4">
+                      <FaCogs className="text-gray-400 text-lg mr-3" />
+                      <h3 className="text-lg font-semibold text-white">Key Specifications</h3>
                     </div>
-                    <div className="space-y-3">
-                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                        <div className="flex w-full rounded-xl overflow-hidden bg-[#1b1b1b] min-h-[80px] pointer-events-none transform hover:scale-105 transition-all duration-300 hover:shadow-lg hover:shadow-[#00e5ff]/20">
-                          <div className="w-[60px] md:w-[70px] shrink-0 bg-[#141414] flex items-center justify-center">
-                            <IconWithGradient size={18} title="Energy storage">
-                              <FaFlask />
-                            </IconWithGradient>
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                      <div className="bg-[#1a1a1a] p-2.5 rounded-lg flex items-center">
+                        <FaFlask className="text-gray-400 text-xl mr-3" />
+                        <div>
+                          <h4 className="text-sm font-semibold text-white">Supported Cell Chemistry</h4>
+                          <p className="text-gray-300 text-sm">LFP/NMC</p>
                           </div>
-                          <div className="flex-1 min-h-[100px] px-0 py-3 md:px-0 md:py-4 flex flex-col items-center justify-center text-center">
-                            <h3 className="text-xs font-semibold text-white leading-tight">Supported Cell Chemistry</h3>
-                            <p className="text-xs text-gray-300 mt-1 text-center">LFP/NMC</p>
                           </div>
+                      <div className="bg-[#1a1a1a] p-2.5 rounded-lg flex items-center">
+                        <FaBolt className="text-gray-400 text-xl mr-3" />
+                        <div>
+                          <h4 className="text-sm font-semibold text-white">Nominal Pack Voltage</h4>
+                          <p className="text-gray-300 text-sm">500V</p>
                         </div>
-                        <div className="flex w-full rounded-xl overflow-hidden bg-[#1b1b1b] min-h-[80px] pointer-events-none transform hover:scale-105 transition-all duration-300 hover:shadow-lg hover:shadow-[#00e5ff]/20">
-                          <div className="w-[60px] md:w-[70px] shrink-0 bg-[#141414] flex items-center justify-center">
-                            <IconWithGradient size={18} title="Energy storage">
-                              <FaBolt />
-                            </IconWithGradient>
                           </div>
-                          <div className="flex-1 min-h-[100px] px-0 py-3 md:px-0 md:py-4 flex flex-col items-center justify-center text-center">
-                            <h3 className="text-xs font-semibold text-white leading-tight text-center">Nominal Pack Voltage</h3>
-                            <p className="text-xs text-gray-300 mt-1 text-center">500V</p>
-                          </div>
-                        </div>
-                      </div>
-                      <div className="flex justify-center">
-                        <div className="flex w-full max-w-[48%] rounded-xl overflow-hidden bg-[#1b1b1b] min-h-[100px] pointer-events-none transform hover:scale-105 transition-all duration-300 hover:shadow-lg hover:shadow-[#00e5ff]/20">
-                          <div className="w-[60px] md:w-[70px] shrink-0 bg-[#141414] flex items-center justify-center">
-                            <IconWithGradient size={18} title="Energy storage">
-                              <FaCubes />
-                            </IconWithGradient>
-                          </div>
-                          <div className="flex-1 min-h-[100px] px-0 py-3 md:px-0 md:py-4 flex flex-col items-center justify-center text-center">
-                            <h3 className="text-xs font-semibold text-white leading-tight">Cell Count Range</h3>
-                            <p className="text-xs text-gray-300 mt-1 text-center">125S to 156S</p>
-                          </div>
+                      <div className="bg-[#1a1a1a] p-2.5 rounded-lg flex items-center sm:col-span-2">
+                        <FaCubes className="text-gray-400 text-xl mr-3" />
+                        <div>
+                          <h4 className="text-sm font-semibold text-white">Cell Count Range</h4>
+                          <p className="text-gray-300 text-sm">32S to 60S</p>
                         </div>
                       </div>
                     </div>
                   </div>
 
-                  {/* ---------- Safety & Compliance ---------- */}
-                  <div className="bg-gradient-to-r from-[#1c1c1c] to-[#2a2a2a] p-6 rounded-xl border border-[#333] transition-all duration-300">
-                    <div className="flex items-center mb-6">
-                      <FaShieldAlt className="text-white text-lg mr-4" />
-                      <h3 className="text-base font-semibold text-white">Safety & Compliance</h3>
+                  {/* Safety & Compliance */}
+                  <div className="bg-[#2a2a2a] p-3 rounded-lg">
+                    <div className="flex items-center mb-4">
+                      <FaShieldAlt className="text-gray-400 text-lg mr-3" />
+                      <h3 className="text-lg font-semibold text-white">Safety & Compliance</h3>
                     </div>
-                    <div className="space-y-3">
-                      <div className="bg-[#0a0a0a] p-3 rounded-lg border border-[#333]">
+                    <div className="space-y-2.5">
+                      <div className="bg-[#1a1a1a] p-4 rounded-lg">
                         <h4 className="text-sm font-semibold text-white mb-2">ISO 26262 Compliance</h4>
-                        <p className="text-gray-300 text-xs leading-relaxed">
-                          Automotive functional safety standard compliance for critical safety applications.
-                        </p>
+                        <p className="text-gray-300 text-sm">Automotive functional safety standard compliance for critical safety applications.</p>
                       </div>
-                      <div className="bg-[#0a0a0a] p-3 rounded-lg border border-[#333]">
+                      <div className="bg-[#1a1a1a] p-4 rounded-lg">
                         <h4 className="text-sm font-semibold text-white mb-2">Fault Detection</h4>
-                        <p className="text-gray-300 text-xs leading-relaxed">
-                          Advanced fault detection and isolation capabilities for enhanced system reliability.
-                        </p>
+                        <p className="text-gray-300 text-sm">Advanced fault detection and isolation capabilities for enhanced system reliability.</p>
                       </div>
-                      <div className="bg-[#0a0a0a] p-3 rounded-lg border border-[#333]">
+                      <div className="bg-[#1a1a1a] p-4 rounded-lg">
                         <h4 className="text-sm font-semibold text-white mb-2">Emergency Shutdown</h4>
-                        <p className="text-gray-300 text-xs leading-relaxed">
-                          Rapid emergency shutdown protocols for critical safety situations.
-                        </p>
+                        <p className="text-gray-300 text-sm">Rapid emergency shutdown protocols for critical safety situations.</p>
                       </div>
                     </div>
                   </div>
-
-                  {/* ---------- Performance ---------- */}
-                  <div className="bg-gradient-to-r from-[#1c1c1c] to-[#2a2a2a] p-6 rounded-xl border border-[#333] transition-all duration-300">
-                    <div className="flex items-center mb-6">
-                      <FaChartLine className="text-white text-lg mr-4" />
-                      <h3 className="text-base font-semibold text-white">Performance</h3>
                     </div>
-                    <div className="space-y-3">
-                      <div className="bg-[#0a0a0a] p-3 rounded-lg border border-[#333]">
-                        <h4 className="text-sm font-semibold text-white mb-2">Real-time Monitoring</h4>
-                        <p className="text-gray-300 text-xs leading-relaxed">
-                          Continuous real-time monitoring of battery parameters with high precision.
-                        </p>
                       </div>
-                      <div className="bg-[#0a0a0a] p-3 rounded-lg border border-[#333]">
-                        <h4 className="text-sm font-semibold text-white mb-2">Data Logging</h4>
-                        <p className="text-gray-300 text-xs leading-relaxed">
-                          Comprehensive data logging and analytics for performance optimization.
-                        </p>
                       </div>
-                      <div className="bg-[#0a0a0a] p-3 rounded-lg border border-[#333]">
-                        <h4 className="text-sm font-semibold text-white mb-2">Predictive Analytics</h4>
-                        <p className="text-gray-300 text-xs leading-relaxed">
-                          AI-powered predictive analytics for proactive maintenance and optimization.
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-
-                  {/* ---------- Diagnostics & Monitoring ---------- */}
-                  <div className="bg-gradient-to-r from-[#1c1c1c] to-[#2a2a2a] p-6 rounded-xl border border-[#333] transition-all duration-300">
-                    <div className="flex items-center mb-6">
-                      <FaChartLine className="text-white text-lg mr-4" />
-                      <h3 className="text-base font-semibold text-white">Diagnostics & Monitoring</h3>
-                    </div>
-                    <div className="space-y-3">
-                      <div className="bg-[#0a0a0a] p-3 rounded-lg border border-[#333]">
-                        <h4 className="text-sm font-semibold text-white mb-2">Health Monitoring</h4>
-                        <p className="text-gray-300 text-xs leading-relaxed">
-                          Comprehensive battery health monitoring with predictive failure analysis.
-                        </p>
-                      </div>
-                      <div className="bg-[#0a0a0a] p-3 rounded-lg border border-[#333]">
-                        <h4 className="text-sm font-semibold text-white mb-2">Fault Detection</h4>
-                        <p className="text-gray-300 text-xs leading-relaxed">
-                          Advanced fault detection algorithms for early warning and prevention.
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-
-                  {/* ---------- Thermal Management ---------- */}
-                  <div className="bg-gradient-to-r from-[#1c1c1c] to-[#2a2a2a] p-6 rounded-xl border border-[#333] transition-all duration-300">
-                    <div className="flex items-center mb-6">
-                      <FaIndustry className="text-white text-lg mr-4" />
-                      <h3 className="text-base font-semibold text-white">Thermal Management</h3>
-                    </div>
-                    <div className="space-y-3">
-                      <div className="bg-[#0a0a0a] p-3 rounded-lg border border-[#333]">
-                        <h4 className="text-sm font-semibold text-white mb-2">Temperature Control</h4>
-                        <p className="text-gray-300 text-xs leading-relaxed">
-                          Intelligent thermal management system for optimal battery performance.
-                        </p>
-                      </div>
-                      <div className="bg-[#0a0a0a] p-3 rounded-lg border border-[#333]">
-                        <h4 className="text-sm font-semibold text-white mb-2">Cooling System</h4>
-                        <p className="text-gray-300 text-xs leading-relaxed">
-                          Advanced cooling mechanisms to maintain optimal operating temperatures.
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-
-                  {/* ---------- Communication & Control ---------- */}
-                  <div className="bg-gradient-to-r from-[#1c1c1c] to-[#2a2a2a] p-6 rounded-xl border border-[#333] transition-all duration-300">
-                    <div className="flex items-center mb-6">
-                      <FaCogs className="text-white text-lg mr-4" />
-                      <h3 className="text-base font-semibold text-white">Communication & Control</h3>
-                    </div>
-                    <div className="space-y-3">
-                      <div className="bg-[#0a0a0a] p-3 rounded-lg border border-[#333]">
-                        <h4 className="text-sm font-semibold text-white mb-2">CAN Bus Interface</h4>
-                        <p className="text-gray-300 text-xs leading-relaxed">
-                          High-speed CAN bus communication for seamless system integration.
-                        </p>
-                      </div>
-                      <div className="bg-[#0a0a0a] p-3 rounded-lg border border-[#333]">
-                        <h4 className="text-sm font-semibold text-white mb-2">Remote Monitoring</h4>
-                        <p className="text-gray-300 text-xs leading-relaxed">
-                          Cloud-based remote monitoring and control capabilities.
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
+            </AnimatedDiv>
 
         {/* Download Section */}
         <div className="py-8 px-4 md:px-6">
@@ -1125,26 +736,36 @@ export default function BharatBMSEVPage() {
                 {/* Custom download icon with dual-color gradient stroke; button size increased */}
                 <svg
                   width="28"
-                  height="32"
+                  height="28"
                   viewBox="0 0 24 24"
                   fill="none"
                   xmlns="http://www.w3.org/2000/svg"
                 >
-                  <path d="M12 3v10" stroke="#1e40af" strokeWidth="2.2" strokeLinecap="round"/>
-                  <path d="M8.5 10.5L12 14l3.5-3.5" stroke="#1e40af" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round"/>
-                  <path d="M4 17h16" stroke="#1e40af" strokeWidth="2.2" strokeLinecap="round"/>
+                  <defs>
+                    <linearGradient id="downloadGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                      <stop offset="0%" stopColor="#3B82F6" />
+                      <stop offset="100%" stopColor="#1D4ED8" />
+                    </linearGradient>
+                  </defs>
+                  <path
+                    d="M21 15V19C21 19.5304 20.7893 20.0391 20.4142 20.4142C20.0391 20.7893 19.5304 21 19 21H5C4.46957 21 3.96086 20.7893 3.58579 20.4142C3.21071 20.0391 3 19.5304 3 19V15M17 10L12 15M12 15L7 10M12 15V3"
+                    stroke="url(#downloadGradient)"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  />
                 </svg>
               </a>
-              <div className="text-center leading-4">
-                <div className="text-sm font-semibold text-white" style={{wordSpacing: '0.1em'}}>PRODUCT FLYER XBATTERY</div>
-                <div className="text-sm font-semibold text-white">BHARATBMS-EV</div>
+              <span className="text-sm text-white font-medium text-center">
+                <div>PRODUCT FLYER</div>
+                <div>XBATTERY BHARATBMS-ESS</div>
+              </span>
               </div>
             </div>
           </div>
         </div>
-        
+        </section>
       </div>
-      </div>
-    </>
+    </React.Fragment>
   );
 }
