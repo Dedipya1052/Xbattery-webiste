@@ -414,7 +414,7 @@ export default function BharatBMSESSPage() {
         <section
           id="products-section"
           ref={sectionRef}
-          className="relative h-[100vh] bg-[#000000] overflow-hidden"
+          className="relative h-[100vh] bg-[#000000] overflow-hidden mb-12"
         >
           <div className="sticky top-0 h-screen flex flex-col justify-center px-4 md:px-6">
             <AnimatedDiv>
