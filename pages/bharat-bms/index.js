@@ -351,7 +351,7 @@ const BharatBMS = () => {
                  <>
                    <AnimatedDiv>
                      <Link href="/bms/BharatBMS-ESS" className="group focus:outline-none">
-                      <div className="relative rounded-2xl bg-[#1c1c1c] border-0 p-6 h-full min-h-[420px] md:min-h-[450px] lg:min-h-[480px] flex flex-col transition-all duration-200 hover:bg-[#1c1c1c] hover:border-[#00e5ff]/30 hover:border-2 hover:outline-none focus:outline-none hover:border-solid hover:outline-none">
+                      <div className="relative rounded-2xl bg-[#1c1c1c] border border-white/20 p-6 h-full min-h-[420px] md:min-h-[450px] lg:min-h-[480px] flex flex-col transition-all duration-200 hover:bg-[#1c1c1c] hover:border-[#00e5ff]/30 hover:border-2 hover:outline-none focus:outline-none hover:border-solid hover:outline-none">
               
                         <div className="relative w-full h-[180px] md:h-[200px] rounded-xl overflow-hidden mb-4">
                           <Image src="/images/telecom_good_looking-Photoroom.png" alt="Xbattery BharatBMS-ESS-48V" fill className="object-contain transition-transform duration-500 ease-out group-hover:scale-[1.28]" />
@@ -384,7 +384,7 @@ const BharatBMS = () => {
 
                    <AnimatedDiv>
                      <Link href="/bms/BharatBMS-ESS" className="group focus:outline-none">
-                      <div className="relative rounded-2xl bg-[#1c1c1c] border-0 p-6 h-full min-h-[420px] md:min-h-[450px] lg:min-h-[480px] flex flex-col transition-all duration-200 hover:bg-[#1c1c1c] hover:border-[#00e5ff]/30 hover:border-2 hover:outline-none focus:outline-none hover:border-solid hover:outline-none">
+                      <div className="relative rounded-2xl bg-[#1c1c1c] border border-white/20 p-6 h-full min-h-[420px] md:min-h-[450px] lg:min-h-[480px] flex flex-col transition-all duration-200 hover:bg-[#1c1c1c] hover:border-[#00e5ff]/30 hover:border-2 hover:outline-none focus:outline-none hover:border-solid hover:outline-none">
               
                         <div className="relative w-full h-[180px] md:h-[200px] rounded-xl overflow-hidden mb-4">
                           <Image src="/images/bms_offerings/ess-72v.png" alt="XB-X 32S" fill className="object-contain transition-transform duration-500 ease-out group-hover:scale-[1.48]" />
@@ -417,7 +417,7 @@ const BharatBMS = () => {
 
                    <AnimatedDiv>
                      <Link href="/bms/BharatBMS-ESS" className="group focus:outline-none">
-                      <div className="relative rounded-2xl bg-[#1c1c1c] border-0 p-6 h-full min-h-[420px] md:min-h-[450px] lg:min-h-[480px] flex flex-col transition-all duration-200 hover:bg-[#1c1c1c] hover:border-[#00e5ff]/30 hover:border-2 hover:outline-none focus:outline-none hover:border-solid hover:outline-none">
+                      <div className="relative rounded-2xl bg-[#1c1c1c] border border-white/20 p-6 h-full min-h-[420px] md:min-h-[450px] lg:min-h-[480px] flex flex-col transition-all duration-200 hover:bg-[#1c1c1c] hover:border-[#00e5ff]/30 hover:border-2 hover:outline-none focus:outline-none hover:border-solid hover:outline-none">
               
                         <div className="relative w-full h-[180px] md:h-[200px] rounded-xl overflow-hidden mb-4">
                           <Image src="/images/bms_offerings/ess2-110v.png" alt="Xbattery BharatBMS-ESS-110V" fill className="object-contain transition-transform duration-500 ease-out group-hover:scale-[1.28]" />
@@ -479,8 +479,7 @@ const BharatBMS = () => {
                          <AnimatedDiv className="flex-shrink-0" style={{ width: 'calc((100% / 3) - 1.5rem)' }}>
                            <Link href="/bms/BharatBMS-EV" className="group focus:outline-none">
                              <div 
-                               className="relative rounded-2xl bg-[#1c1c1c] border-0 p-6 h-full min-h-[420px] md:min-h-[450px] lg:min-h-[480px] flex flex-col transition-all duration-200 hover:bg-[#1c1c1c] hover:outline-none focus:outline-none"
-                               style={{ border: 'none', outline: 'none', boxShadow: 'none' }}
+                               className="relative rounded-2xl bg-[#1c1c1c] border border-white/20 p-6 h-full min-h-[420px] md:min-h-[450px] lg:min-h-[480px] flex flex-col transition-all duration-200 hover:bg-[#1c1c1c] hover:border-[#00e5ff]/30 hover:border-2 hover:outline-none focus:outline-none hover:border-solid hover:outline-none"
                              >
                                <div className="relative w-full h-[180px] md:h-[200px] rounded-xl overflow-hidden mb-4">
                                  <Image src="/images/bms_offerings/ev-110v.png" alt="Xbattery BharatBMS-EV-110V" fill className="object-contain transition-transform duration-500 ease-out group-hover:scale-[1.18]" />
@@ -513,8 +512,7 @@ const BharatBMS = () => {
                          <AnimatedDiv className="flex-shrink-0" style={{ width: 'calc((100% / 3) - 1.5rem)' }}>
                            <Link href="/bms/BharatBMS-EV" className="group focus:outline-none">
                              <div 
-                               className="relative rounded-2xl bg-[#1c1c1c] border-0 p-6 h-full min-h-[420px] md:min-h-[450px] lg:min-h-[480px] flex flex-col transition-all duration-200 hover:bg-[#1c1c1c] hover:outline-none focus:outline-none"
-                               style={{ border: 'none', outline: 'none', boxShadow: 'none' }}
+                               className="relative rounded-2xl bg-[#1c1c1c] border border-white/20 p-6 h-full min-h-[420px] md:min-h-[450px] lg:min-h-[480px] flex flex-col transition-all duration-200 hover:bg-[#1c1c1c] hover:border-[#00e5ff]/30 hover:border-2 hover:outline-none focus:outline-none hover:border-solid hover:outline-none"
                              >
                                <div className="relative w-full h-[180px] md:h-[200px] rounded-xl overflow-hidden mb-4">
                                  <Image src="/images/bms_offerings/ev-400v.png" alt="Xbattery BharatBMS-EV-400V" fill className="object-contain transition-transform duration-500 ease-out group-hover:scale-[1.18]" />
@@ -547,8 +545,7 @@ const BharatBMS = () => {
                          <AnimatedDiv className="flex-shrink-0" style={{ width: 'calc((100% / 3) - 1.5rem)' }}>
                            <Link href="/bms/BharatBMS-EV" className="group focus:outline-none">
                              <div 
-                               className="relative rounded-2xl bg-[#1c1c1c] border-0 p-6 h-full min-h-[420px] md:min-h-[450px] lg:min-h-[480px] flex flex-col transition-all duration-200 hover:bg-[#1c1c1c] hover:outline-none focus:outline-none"
-                               style={{ border: 'none', outline: 'none', boxShadow: 'none' }}
+                               className="relative rounded-2xl bg-[#1c1c1c] border border-white/20 p-6 h-full min-h-[420px] md:min-h-[450px] lg:min-h-[480px] flex flex-col transition-all duration-200 hover:bg-[#1c1c1c] hover:border-[#00e5ff]/30 hover:border-2 hover:outline-none focus:outline-none hover:border-solid hover:outline-none"
                              >
                                <div className="relative w-full h-[180px] md:h-[200px] rounded-xl overflow-hidden mb-4">
                                  <Image src="/images/bms_offerings/ev-500v.png" alt="Xbattery BharatBMS-EV-500V" fill className="object-contain transition-transform duration-500 ease-out group-hover:scale-[1.18]" />
