@@ -103,7 +103,8 @@ export default function BharatBMSESSPage() {
       function isSectionInView(sectionRef) {
         if (!sectionRef.current) return false;
         const rect = sectionRef.current.getBoundingClientRect();
-        return rect.top <= 100 && rect.bottom > window.innerHeight - 100;
+        // Consider the section in view if any part overlaps the viewport
+        return rect.bottom > 0 && rect.top < window.innerHeight;
       }
 
       // Helper function to handle scroll for a section
@@ -167,7 +168,48 @@ export default function BharatBMSESSPage() {
         return false;
       }
 
-      // Check all sections in order of priority
+      // Build section list
+      const sections = [
+        { sectionRef, scrollableRef },
+        { sectionRef: ess72vSectionRef, scrollableRef: ess72vScrollableRef },
+        { sectionRef: ess110vSectionRef, scrollableRef: ess110vScrollableRef },
+      ];
+
+      // Determine hovered section by pointer position (Y within section rect)
+      let hoveredIndex = -1;
+      let bestDistance = Infinity;
+      sections.forEach((s, idx) => {
+        if (!s.sectionRef.current) return;
+        const rect = s.sectionRef.current.getBoundingClientRect();
+        if (e.clientY >= rect.top && e.clientY <= rect.bottom) {
+          const centerY = rect.top + rect.height / 2;
+          const distance = Math.abs(centerY - e.clientY);
+          if (distance < bestDistance) {
+            bestDistance = distance;
+            hoveredIndex = idx;
+          }
+        }
+      });
+
+      // Fallback: if none by Y-position, check DOM containment
+      if (hoveredIndex === -1) {
+        hoveredIndex = sections.findIndex(
+          (s) => s.sectionRef.current && s.sectionRef.current.contains(e.target)
+        );
+      }
+
+      if (hoveredIndex !== -1) {
+        // Only the hovered section should react to this wheel event. If it
+        // doesn't handle (because it's at a boundary), allow the default page
+        // scroll and do not delegate to other sections.
+        handleSectionScroll(
+          sections[hoveredIndex].sectionRef,
+          sections[hoveredIndex].scrollableRef
+        );
+        return;
+      }
+
+      // Otherwise, check sections that are in view in default order
       if (handleSectionScroll(sectionRef, scrollableRef)) return;
       if (handleSectionScroll(ess72vSectionRef, ess72vScrollableRef)) return;
       if (handleSectionScroll(ess110vSectionRef, ess110vScrollableRef)) return;
@@ -414,18 +456,18 @@ export default function BharatBMSESSPage() {
         <section
           id="products-section"
           ref={sectionRef}
-          className="relative h-[100vh] bg-[#000000] overflow-hidden mb-12"
+          className="relative bg-[#000000] overflow-hidden mb-12 py-8"
         >
-          <div className="sticky top-0 h-screen flex flex-col justify-center px-4 md:px-6">
+          <div className="px-4 md:px-6">
             <AnimatedDiv>
               <h2 className={`text-3xl md:text-4xl font-bold mb-16 text-center ${classes.color}`}>
                 Our Products
               </h2>
             </AnimatedDiv>
 
-            <div className="max-w-[1400px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-start">
+            <div className="max-w-[1400px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
               {/* LEFT STICKY IMAGE */}
-              <div className="flex justify-center image-container relative">
+              <div className="flex justify-center image-container relative lg:sticky lg:top-24 self-start">
                 {/* Image Container */}
                 <div className="w-full h-[600px] rounded-2xl overflow-hidden bg-gradient-to-br from-[#1a1a1a] to-[#2a2a2a] shadow-2xl flex flex-col">
                   {/* Heading */}
@@ -636,12 +678,12 @@ export default function BharatBMSESSPage() {
         <section
           id="ess-72v-section"
           ref={ess72vSectionRef}
-          className="relative h-[100vh] bg-[#0a0a0a] overflow-hidden"
+          className="relative bg-[#0a0a0a] overflow-hidden py-8"
         >
-          <div className="sticky top-0 h-screen flex flex-col justify-center px-4 md:px-6">
-            <div className="max-w-[1400px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-start">
+          <div className="px-4 md:px-6">
+            <div className="max-w-[1400px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
               {/* LEFT STICKY IMAGE */}
-              <div className="flex justify-center image-container relative">
+              <div className="flex justify-center image-container relative lg:sticky lg:top-24 self-start">
                 {/* Image Container */}
                 <div className="w-full h-[600px] rounded-2xl overflow-hidden bg-gradient-to-br from-[#1a1a1a] to-[#2a2a2a] shadow-2xl flex flex-col">
                   {/* Heading */}
@@ -852,13 +894,13 @@ export default function BharatBMSESSPage() {
         <section
           id="ess-110v-section"
           ref={ess110vSectionRef}
-          className="relative h-[100vh] bg-[#0a0a0a] overflow-hidden"
+          className="relative bg-[#0a0a0a] overflow-hidden py-8"
         >
-          <div className="sticky top-0 h-screen flex flex-col justify-center px-4 md:px-6">
+          <div className="px-4 md:px-6">
 
-            <div className="max-w-[1400px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-start">
+            <div className="max-w-[1400px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
               {/* LEFT STICKY IMAGE */}
-              <div className="flex justify-center image-container relative">
+              <div className="flex justify-center image-container relative lg:sticky lg:top-24 self-start">
                 {/* Image Container */}
                 <div className="w-full h-[600px] rounded-2xl overflow-hidden bg-gradient-to-br from-[#1a1a1a] to-[#2a2a2a] shadow-2xl flex flex-col">
                   {/* Heading */}
