@@ -456,19 +456,7 @@ const BharatBMS = () => {
                    {/* Carousel Navigation and Cards Container */}
                    <div className="relative col-span-1 md:col-span-2 lg:col-span-3">
                      
-                     {/* Left Arrow */}
-                     <button
-                       onClick={goToPreviousCard}
-                       disabled={currentEVCard === 0}
-                       aria-label="Previous card"
-                       className={`absolute left-[-70px] top-1/2 transform -translate-y-1/2 z-10 w-12 h-12 rounded-full border-2 border-[#00e5ff] flex items-center justify-center transition-all duration-300 ${
-                         currentEVCard === 0 
-                           ? 'opacity-30 cursor-not-allowed' 
-                           : 'hover:bg-[#00e5ff] hover:bg-opacity-10 cursor-pointer'
-                       }`}
-                     >
-                       <FaChevronLeft className="text-white text-xl" />
-                     </button>
+                    {/* Left Arrow removed */}
 
                      {/* Container to show only 3 cards at a time */}
                      <div className="relative overflow-hidden">
@@ -579,18 +567,7 @@ const BharatBMS = () => {
                      </div>
 
                      {/* Right Arrow */}
-                     <button
-                       onClick={goToNextCard}
-                       disabled={currentEVCard >= evCards.length - 3}
-                       aria-label="Next card"
-                       className={`absolute right-[-50px] top-1/2 transform -translate-y-1/2 z-10 w-12 h-12 rounded-full border-2 border-[#00e5ff] flex items-center justify-center transition-all duration-300 ${
-                         currentEVCard >= evCards.length - 3
-                           ? 'opacity-30 cursor-not-allowed' 
-                           : 'hover:bg-[#00e5ff] hover:bg-opacity-10 cursor-pointer'
-                       }`}
-                     >
-                       <FaChevronRight className="text-white text-xl" />
-                     </button>
+                    {/* Right Arrow removed */}
                    </div>
                  </>
                )}

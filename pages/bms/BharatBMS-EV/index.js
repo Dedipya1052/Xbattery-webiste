@@ -62,7 +62,7 @@ export default function BharatBMSEVPage() {
     let scrollTimeout = null;
     let animationFrame = null;
 
-    function smoothScrollTo(element, target, duration = 100) {
+    function smoothScrollTo(element, target, duration = 130) {
       if (animationFrame) {
         cancelAnimationFrame(animationFrame);
       }
@@ -134,12 +134,12 @@ export default function BharatBMSEVPage() {
               
               // Smooth scroll to top if scrolling fast
               if (Math.abs(e.deltaY) > 100) {
-                smoothScrollTo(scrollable, 0, 200);
+                smoothScrollTo(scrollable, 0, 240);
               } else {
                 // Smooth incremental scroll
-                const scrollAmount = Math.max(60, Math.abs(e.deltaY) * 1.5);
+                const scrollAmount = Math.max(55, Math.abs(e.deltaY) * 1.0);
                 const newScrollTop = Math.max(0, scrollable.scrollTop - scrollAmount);
-                smoothScrollTo(scrollable, newScrollTop, 80);
+                smoothScrollTo(scrollable, newScrollTop, 100);
               }
             return true;
             }
@@ -158,12 +158,12 @@ export default function BharatBMSEVPage() {
               
               // Smooth scroll to bottom if scrolling fast
               if (Math.abs(e.deltaY) > 100) {
-                smoothScrollTo(scrollable, scrollable.scrollHeight, 200);
+                smoothScrollTo(scrollable, scrollable.scrollHeight, 240);
               } else {
                 // Smooth incremental scroll
-                const scrollAmount = Math.max(60, Math.abs(e.deltaY) * 1.5);
+                const scrollAmount = Math.max(55, Math.abs(e.deltaY) * 1.0);
                 const newScrollTop = Math.min(scrollable.scrollHeight, scrollable.scrollTop + scrollAmount);
-                smoothScrollTo(scrollable, newScrollTop, 80);
+                smoothScrollTo(scrollable, newScrollTop, 100);
               }
             return true;
           }
@@ -423,8 +423,9 @@ export default function BharatBMSEVPage() {
         <section
           id="products-section"
           ref={sectionRef}
-          className="relative h-[100vh] bg-[#0a0a0a] overflow-hidden"
+          className="relative h-[100vh] bg-[#000000] overflow-hidden"
         >
+          
           <div className="sticky top-0 h-screen flex flex-col justify-center px-4 md:px-6">
             <AnimatedDiv>
               <h2 className={`text-3xl md:text-4xl font-bold mb-16 text-center ${classes.color}`}>
