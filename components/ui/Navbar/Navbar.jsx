@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import NavLink from "../NavLink";
+import NavbarNavigation from "../NavbarNavigation";
 import Link from "next/link";
 import Image from "next/image";
 import { useRouter } from "next/router";
@@ -144,6 +145,7 @@ const Navbar = () => {
               </Link>
 
               <div className="hidden lg:flex gap-7 items-center ml-auto mr-8">
+                <NavbarNavigation />
                 <button
                   onClick={scrollToEnergyStorage}
                   // unusual box and blue line for energy storage
@@ -208,6 +210,9 @@ const Navbar = () => {
 
             {mobileMenuOpen && (
               <div className="lg:hidden absolute top-16 left-0 right-0 bg-black text-white flex flex-col items-center p-4 space-y-4">
+                <div className="mb-2">
+                  <NavbarNavigation />
+                </div>
                 <button
                   onClick={(e) => {
                     scrollToEnergyStorage(e);
@@ -273,16 +278,19 @@ const Navbar = () => {
                   </Link>
                 </div>
                 <div className="hidden lg:flex flex-col md:flex-row gap-[1rem] md:gap-[2rem] text-center md:text-left">
-                  <div
-                    className={`text-[1rem] md:text-[1.2rem] transition-all duration-200 cursor-pointer space-grotesk-medium
-                ${
-                  currentPath === "/"
-                    ? "text-[#2faf2f]"
-                    : "hover:text-[#45c945]"
-                }`}
-                    onClick={scrollToEnergyStorage}
-                  >
-                    Energy Storage
+                  <div className="flex items-center gap-4">
+                    <NavbarNavigation />
+                    <div
+                      className={`text-[1rem] md:text-[1.2rem] transition-all duration-200 cursor-pointer space-grotesk-medium
+                  ${
+                    currentPath === "/"
+                      ? "text-[#2faf2f]"
+                      : "hover:text-[#45c945]"
+                  }`}
+                      onClick={scrollToEnergyStorage}
+                    >
+                      Energy Storage
+                    </div>
                   </div>
                   <div
                     className={`text-[1rem] md:text-[1.2rem] transition-all duration-200 space-grotesk-medium
@@ -376,6 +384,9 @@ const Navbar = () => {
                       : "translate-y-[-20px] opacity-0"
                   }`}
                 >
+                  <div className="mb-4">
+                    <NavbarNavigation />
+                  </div>
                   <div
                     className={`block text-[1rem] transition-all duration-200 mb-2 cursor-pointer space-grotesk-medium
                 ${

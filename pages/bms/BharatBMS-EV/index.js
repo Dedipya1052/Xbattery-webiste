@@ -8,6 +8,7 @@ import AnimatedDiv from "@/components/ui/Animate";
 import IconWithGradient from "@/components/ui/IconGradient";
 import ESSCabinetIcon from "@/components/Icons/ESSCabinetIcon";
 import CustomTooltip from "@/components/ui/CustomTooltip";
+import NavigationIcon from "@/components/ui/NavigationIcon";
 import { Button } from "@chakra-ui/react";
 import { useRouter } from "next/router";
 import { 
@@ -314,13 +315,9 @@ export default function BharatBMSEVPage() {
       />
       <div className={classes.head1}>
       <div className="bg-[#1c1c1c] text-white w-full relative">
-        {/* Page header icon badge (top-right) */}
-        <div className="absolute top-5 right-4 w-11 h-11 rounded-xl bg-[#0c0c0c] border border-white/20 flex items-center justify-center text-white overflow-visible z-50">
-          <CustomTooltip text="Electric vehicle">
-            <div className="w-10 h-10 rounded-xl overflow-hidden flex items-center justify-center">
-              <FaCar size={24} />
-            </div>
-          </CustomTooltip>
+        {/* Page header navigation icon (top-right) */}
+        <div className="absolute top-5 right-4 z-50">
+          <NavigationIcon pageType="ev" />
         </div>
         <div className="mx-auto w-[95%] md:w-[90%] xl:w-[95%] 2xl:w-[1500px] py-8 md:py-16 px-3 md:px-6 flex flex-col lg:flex-row items-center justify-center h-full min-h-[460px]">
           <div className="text-center lg:text-left p-2 md:p-4 mb-6 lg:mb-0 w-full ml-4">
@@ -437,21 +434,23 @@ export default function BharatBMSEVPage() {
         <section id="our-products" className="py-5 md:py-6 px-4 md:px-6 bg-[#000000]">
           <div className="max-w-[1200px] mx-auto">
             <AnimatedDiv>
-              <h2 className={`text-3xl md:text-4xl font-bold mb-16 text-center ${classes.color}`}>
+              <h2 className={`text-3xl md:text-4xl font-bold mb-0 text-center ${classes.color}`}>
                 Our Products
               </h2>
             </AnimatedDiv>
 
+            {/* Black Div Box for EV 110V */}
+            <div id="ess-ev-110" className="w-full h-12 bg-black mb-4 mt-4"></div>
+
             {/* EV 110V Product */}
             <AnimatedDiv>
-            <div id="ev-110v" className="scroll-mt-[80px] mb-24 bg-[#1c1c1c] border border-[#333] rounded-2xl p-2.5 md:p-3 shadow-[0_6px_18px_rgba(0,0,0,0.20)] max-w-7xl mx-auto">
+            <div id="ev-110v" className="mb-0 bg-[#1c1c1c] border border-[#333] rounded-2xl p-2.5 md:p-3 shadow-[0_6px_18px_rgba(0,0,0,0.20)] max-w-7xl mx-auto">
               <h3 className="text-xl md:text-2xl font-bold text-white text-center mb-6">Xbattery BharatBMS-EV-110V</h3>
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-5 items-start">
                 {/* Left - Product Image */}
                 <div className="flex justify-center">
                   <div className="w-full max-w-lg text-center">
-                    <div className="rounded-[22px] border-[6px] border-[#333] p-6 bg-black">
-                      <div className="rounded-[14px] border-[1px] border-[#444] bg-[#1c1c1c] overflow-hidden h-[280px] md:h-[340px] flex items-center justify-center">
+                     <div className="bg-[#1c1c1c] overflow-hidden h-[280px] md:h-[340px] flex items-center justify-center">
                     <Image
                       src={productImages[0]}
                       alt="EV 110V BMS Product"
@@ -459,7 +458,6 @@ export default function BharatBMSEVPage() {
                           height={340}
                           className="w-full h-full object-contain"
                     />
-                  </div>
                     </div>
                     <p className="text-gray-300 mt-4 text-center">
                       The XB-X 32S is a robust low-voltage electric vehicle BMS operating at 110V nominal with LFP chemistry support for 32-36 series configurations.
@@ -470,30 +468,30 @@ export default function BharatBMSEVPage() {
                 {/* Right - Specifications */}
                 <div className="space-y-2.5">
                   {/* Key Specifications */}
-                  <div className="bg-[#2a2a2a] p-2 rounded-lg">
+                   <div>
                     <div className="flex items-center mb-4">
-                      <FaCogs className="text-gray-400 text-lg mr-3" />
+                      <FaCogs className="text-gray-200 text-lg mr-3" />
                       <h3 className="text-lg font-semibold text-white">Key Specifications</h3>
                     </div>
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
-                      <div className="bg-[#1a1a1a] p-2.5 rounded-lg flex items-center">
-                        <FaCubes className="text-gray-400 text-xl mr-3" />
-                        <div>
-                          <h4 className="text-sm font-semibold text-white">Cell Configuration</h4>
-                          <p className="text-gray-300 text-sm">Up to 36S</p>
+                      <div className="grid grid-cols-1 sm:grid-cols-3 gap-2">
+                        <div className="bg-[#262626] p-4 rounded-lg flex flex-col justify-center h-[180px] border border-[#333]">
+                          <FaCubes className="text-gray-200 text-2xl mx-auto mb-3 mt-4" />
+                          <div className="flex flex-col justify-center items-center text-center">
+                            <h4 className="text-sm font-semibold text-white whitespace-nowrap">Cell Configuration</h4>
+                        <p className="text-gray-300 text-sm">Up to 125S</p>
                           </div>
                           </div>
-                      <div className="bg-[#1a1a1a] p-2.5 rounded-lg flex items-center">
-                        <FaBolt className="text-gray-400 text-xl mr-3" />
-                        <div>
-                          <h4 className="text-sm font-semibold text-white">Nominal Pack Voltage Range</h4>
-                          <p className="text-gray-300 text-sm">110.0V</p>
+                        <div className="bg-[#262626] p-4 rounded-lg flex flex-col justify-center h-[180px] border border-[#333]">
+                          <FaBolt className="text-gray-200 text-2xl mx-auto mb-3 mt-4" />
+                          <div className="flex flex-col justify-center items-center text-center">
+                            <h4 className="text-sm font-semibold text-white whitespace-nowrap">Nominal Pack<br />Voltage Range</h4>
+                        <p className="text-gray-300 text-sm">400.0V</p>
                         </div>
                         </div>
-                      <div className="bg-[#1a1a1a] p-2.5 rounded-lg flex items-center sm:col-start-1 sm:col-end-3 sm:justify-self-center sm:w-1/2">
-                        <FaBatteryFull className="text-gray-400 text-xl mr-3" />
-                        <div>
-                          <h4 className="text-sm font-semibold text-white">Battery Capacity Range</h4>
+                        <div className="bg-[#262626] p-4 rounded-lg flex flex-col justify-center h-[180px] border border-[#333]">
+                          <FaBatteryFull className="text-gray-200 text-2xl mx-auto mb-3 mt-4" />
+                          <div className="flex flex-col justify-center items-center text-center">
+                            <h4 className="text-sm font-semibold text-white whitespace-nowrap">Battery Capacity Range</h4>
                           <p className="text-gray-300 text-sm">25kWh</p>
                         </div>
                       </div>
@@ -501,23 +499,56 @@ export default function BharatBMSEVPage() {
                   </div>
 
                   {/* Applications */}
-                  <div className="bg-[#2a2a2a] p-3 rounded-lg">
+                   <div>
                     <div className="flex items-center mb-4">
-                      <FaIndustry className="text-gray-400 text-lg mr-3" />
+                      <FaIndustry className="text-gray-200 text-lg mr-3" />
                       <h3 className="text-lg font-semibold text-white">Applications</h3>
                     </div>
-                    <div className="space-y-2.5">
-                      <div className="bg-[#1a1a1a] p-4 rounded-lg">
-                        <h4 className="text-sm font-semibold text-white mb-2">EV – Truck</h4>
-                        <p className="text-gray-300 text-sm">Reliable energy for heavy transport.</p>
+                      <div className="grid grid-cols-1 sm:grid-cols-3 gap-2">
+                        <div className="bg-[#262626] p-4 rounded-lg text-center h-[180px] flex flex-col justify-center border border-[#333]">
+                          <div className="w-12 h-10 mx-auto mb-3 -mt-1 flex items-center justify-center">
+                            <Image
+                              src="/images/icons/truck.png"
+                              alt="EV – Truck"
+                              width={48}
+                              height={40}
+                              className="object-contain scale-90"
+                            />
+                          </div>
+                          <div className="flex flex-col justify-center mt-2">
+                            <h4 className="text-sm font-semibold text-white whitespace-nowrap">EV – Truck</h4>
+                        <p className="text-gray-300 text-sm">Reliable energy for heavy transport</p>
+                    </div>
+                        </div>
+                        <div className="bg-[#262626] p-4 rounded-lg text-center h-[180px] flex flex-col justify-center border border-[#333]">
+                          <div className="w-12 h-10 mx-auto mb-3 mt-1 flex items-center justify-center">
+                            <Image
+                              src="/images/icons/3wheel.png"
+                              alt="EV – 3 Wheeler"
+                              width={48}
+                              height={40}
+                              className="object-contain scale-90"
+                            />
+                          </div>
+                          <div className="flex flex-col justify-center">
+                            <h4 className="text-sm font-semibold text-white whitespace-nowrap">EV – 3 Wheeler</h4>
+                        <p className="text-gray-300 text-sm">Optimized range for urban drive</p>
+                    </div>
                       </div>
-                      <div className="bg-[#1a1a1a] p-4 rounded-lg">
-                        <h4 className="text-sm font-semibold text-white mb-2">EV – 3 Wheeler</h4>
-                        <p className="text-gray-300 text-sm">Optimized range for urban drive.</p>
+                        <div className="bg-[#262626] p-4 rounded-lg text-center h-[180px] flex flex-col justify-center border border-[#333]">
+                          <div className="w-12 h-10 mx-auto mb-3 mt-1 flex items-center justify-center">
+                             <Image
+                               src="/images/icons/2wheelsrs.png"
+                               alt="EV – 2 Wheeler"
+                               width={48}
+                               height={40}
+                               className="object-contain scale-110"
+                             />
                       </div>
-                      <div className="bg-[#1a1a1a] p-4 rounded-lg">
-                        <h4 className="text-sm font-semibold text-white mb-2">EV – Bus</h4>
-                        <p className="text-gray-300 text-sm">Safe, scalable fleet performance</p>
+                          <div className="flex flex-col justify-center">
+                            <h4 className="text-sm font-semibold text-white whitespace-nowrap">EV – 2 Wheeler</h4>
+                        <p className="text-gray-300 text-sm">Efficient urban mobility</p>
+                      </div>
                       </div>
                     </div>
                   </div>
@@ -526,16 +557,18 @@ export default function BharatBMSEVPage() {
                       </div>
             </AnimatedDiv>
 
+            {/* Black Div Box for EV 400V */}
+            <div id="ess-ev-400" className="w-full h-12 bg-black mb-4 mt-4"></div>
+
             {/* EV 400V Product */}
             <AnimatedDiv>
-            <div id="ev-400v" className="scroll-mt-[80px] mb-24 bg-[#1c1c1c] border border-[#333] rounded-2xl p-2.5 md:p-3 shadow-[0_6px_18px_rgba(0,0,0,0.20)] max-w-7xl mx-auto">
+            <div id="ev-400v" className="mb-0 bg-[#1c1c1c] border border-[#333] rounded-2xl p-2.5 md:p-3 shadow-[0_6px_18px_rgba(0,0,0,0.20)] max-w-7xl mx-auto">
               <h3 className="text-xl md:text-2xl font-bold text-white text-center mb-6">Xbattery BharatBMS-EV-400V</h3>
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-5 items-start">
                 {/* Left - Product Image */}
                 <div className="flex justify-center">
                   <div className="w-full max-w-lg text-center">
-                    <div className="rounded-[22px] border-[6px] border-[#333] p-6 bg-black">
-                      <div className="rounded-[14px] border-[1px] border-[#444] bg-[#1c1c1c] overflow-hidden h-[280px] md:h-[340px] flex items-center justify-center">
+                     <div className="bg-[#1c1c1c] overflow-hidden h-[280px] md:h-[340px] flex items-center justify-center">
                     <Image
                       src={ev400vImages[0]}
                       alt="EV 400V BMS Product"
@@ -543,7 +576,6 @@ export default function BharatBMSEVPage() {
                           height={340}
                           className="w-full h-full object-contain"
                     />
-                  </div>
                     </div>
                     <p className="text-gray-300 mt-4 text-center">
                       The XB-X 32S is a robust low-voltage electric vehicle BMS operating at 400V nominal with LFP chemistry support for 32-36 series configurations.
@@ -554,30 +586,30 @@ export default function BharatBMSEVPage() {
                 {/* Right - Specifications */}
                 <div className="space-y-2.5">
                   {/* Key Specifications */}
-                  <div className="bg-[#2a2a2a] p-2 rounded-lg">
+                    <div>
                     <div className="flex items-center mb-4">
-                      <FaCogs className="text-gray-400 text-lg mr-3" />
+                       <FaCogs className="text-gray-200 text-lg mr-3" />
                       <h3 className="text-lg font-semibold text-white">Key Specifications</h3>
                     </div>
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
-                      <div className="bg-[#1a1a1a] p-2.5 rounded-lg flex items-center">
-                        <FaCubes className="text-gray-400 text-xl mr-3" />
-                        <div>
-                          <h4 className="text-sm font-semibold text-white">Cell Configuration</h4>
+                       <div className="grid grid-cols-1 sm:grid-cols-3 gap-2">
+                         <div className="bg-[#262626] p-4 rounded-lg flex flex-col justify-center h-[180px] border border-[#333]">
+                           <FaCubes className="text-gray-200 text-2xl mx-auto mb-3 mt-4" />
+                           <div className="flex flex-col justify-center items-center text-center">
+                             <h4 className="text-sm font-semibold text-white whitespace-nowrap">Cell Configuration</h4>
                           <p className="text-gray-300 text-sm">Up to 125S</p>
                           </div>
                           </div>
-                      <div className="bg-[#1a1a1a] p-2.5 rounded-lg flex items-center">
-                        <FaBolt className="text-gray-400 text-xl mr-3" />
-                        <div>
-                          <h4 className="text-sm font-semibold text-white">Nominal Pack Voltage Range</h4>
+                         <div className="bg-[#262626] p-4 rounded-lg flex flex-col justify-center h-[180px] border border-[#333]">
+                           <FaBolt className="text-gray-200 text-2xl mx-auto mb-3 mt-4" />
+                           <div className="flex flex-col justify-center items-center text-center">
+                             <h4 className="text-sm font-semibold text-white whitespace-nowrap">Nominal Pack<br />Voltage Range</h4>
                           <p className="text-gray-300 text-sm">400.0V</p>
                         </div>
                           </div>
-                      <div className="bg-[#1a1a1a] p-2.5 rounded-lg flex items-center sm:col-start-1 sm:col-end-3 sm:justify-self-center sm:w-1/2">
-                        <FaBatteryFull className="text-gray-400 text-xl mr-3" />
-                        <div>
-                          <h4 className="text-sm font-semibold text-white">Battery Capacity Range</h4>
+                         <div className="bg-[#262626] p-4 rounded-lg flex flex-col justify-center h-[180px] border border-[#333]">
+                           <FaBatteryFull className="text-gray-200 text-2xl mx-auto mb-3 mt-4" />
+                           <div className="flex flex-col justify-center items-center text-center">
+                             <h4 className="text-sm font-semibold text-white whitespace-nowrap">Battery Capacity Range</h4>
                           <p className="text-gray-300 text-sm">80kWh</p>
                         </div>
                       </div>
@@ -585,23 +617,56 @@ export default function BharatBMSEVPage() {
                   </div>
 
                   {/* Applications */}
-                  <div className="bg-[#2a2a2a] p-3 rounded-lg">
+                   <div>
                     <div className="flex items-center mb-4">
-                      <FaIndustry className="text-gray-400 text-lg mr-3" />
+                      <FaIndustry className="text-gray-200 text-lg mr-3" />
                       <h3 className="text-lg font-semibold text-white">Applications</h3>
                     </div>
-                    <div className="space-y-2.5">
-                      <div className="bg-[#1a1a1a] p-4 rounded-lg">
-                        <h4 className="text-sm font-semibold text-white mb-2">EV – Truck</h4>
-                        <p className="text-gray-300 text-sm">Reliable energy for heavy transport.</p>
+                      <div className="grid grid-cols-1 sm:grid-cols-3 gap-2">
+                        <div className="bg-[#262626] p-4 rounded-lg text-center h-[180px] flex flex-col justify-center border border-[#333]">
+                          <div className="w-12 h-10 mx-auto mb-3 -mt-1 flex items-center justify-center">
+                            <Image
+                              src="/images/icons/car.png"
+                              alt="EV – Car"
+                              width={48}
+                              height={40}
+                              className="object-contain scale-90"
+                            />
+                          </div>
+                          <div className="flex flex-col justify-center mt-2">
+                            <h4 className="text-sm font-semibold text-white whitespace-nowrap">EV – Car</h4>
+                        <p className="text-gray-300 text-sm">Efficient power for smart mobility</p>
+                    </div>
+                        </div>
+                        <div className="bg-[#262626] p-4 rounded-lg text-center h-[180px] flex flex-col justify-center border border-[#333]">
+                          <div className="w-12 h-10 mx-auto mb-3 mt-1 flex items-center justify-center">
+                            <Image
+                              src="/images/icons/truck.png"
+                              alt="EV – Truck"
+                              width={48}
+                              height={40}
+                              className="object-contain scale-90"
+                            />
+                          </div>
+                          <div className="flex flex-col justify-center">
+                            <h4 className="text-sm font-semibold text-white whitespace-nowrap">EV – Truck</h4>
+                        <p className="text-gray-300 text-sm">Reliable energy for heavy transport</p>
                       </div>
-                      <div className="bg-[#1a1a1a] p-4 rounded-lg">
-                        <h4 className="text-sm font-semibold text-white mb-2">EV – 3 Wheeler</h4>
-                        <p className="text-gray-300 text-sm">Optimized range for urban drive.</p>
                       </div>
-                      <div className="bg-[#1a1a1a] p-4 rounded-lg">
-                        <h4 className="text-sm font-semibold text-white mb-2">EV – Bus</h4>
+                        <div className="bg-[#262626] p-4 rounded-lg text-center h-[180px] flex flex-col justify-center border border-[#333]">
+                          <div className="w-12 h-10 mx-auto mb-3 mt-1 flex items-center justify-center">
+                            <Image
+                              src="/images/icons/bus.png"
+                              alt="EV – Bus"
+                              width={48}
+                              height={40}
+                              className="object-contain scale-90"
+                            />
+                      </div>
+                          <div className="flex flex-col justify-center">
+                            <h4 className="text-sm font-semibold text-white whitespace-nowrap">EV – Bus</h4>
                         <p className="text-gray-300 text-sm">Safe, scalable fleet performance</p>
+                          </div>
                       </div>
                     </div>
                   </div>
@@ -610,16 +675,18 @@ export default function BharatBMSEVPage() {
                       </div>
             </AnimatedDiv>
 
-            {/* EV 500V Product */}
+            {/* Black Div Box for EV 600V */}
+            <div id="ess-ev-600" className="w-full h-12 bg-black mb-4 mt-4"></div>
+
+            {/* EV 600V Product */}
             <AnimatedDiv>
-            <div id="ev-500v" className="scroll-mt-[80px] mb-24 bg-[#1c1c1c] border border-[#333] rounded-2xl p-2.5 md:p-3 shadow-[0_6px_18px_rgba(0,0,0,0.20)] max-w-7xl mx-auto">
-              <h3 className="text-xl md:text-2xl font-bold text-white text-center mb-6">Xbattery BharatBMS-EV-500V</h3>
+            <div id="ev-600v" className="mb-24 bg-[#1c1c1c] border border-[#333] rounded-2xl p-2.5 md:p-3 shadow-[0_6px_18px_rgba(0,0,0,0.20)] max-w-7xl mx-auto">
+               <h3 className="text-xl md:text-2xl font-bold text-white text-center mb-6">Xbattery BharatBMS-EV-600V</h3>
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-5 items-start">
                 {/* Left - Product Image */}
                 <div className="flex justify-center">
                   <div className="w-full max-w-lg text-center">
-                    <div className="rounded-[22px] border-[6px] border-[#333] p-6 bg-black">
-                      <div className="rounded-[14px] border-[1px] border-[#444] bg-[#1c1c1c] overflow-hidden h-[280px] md:h-[340px] flex items-center justify-center">
+                     <div className="bg-[#1c1c1c] overflow-hidden h-[280px] md:h-[340px] flex items-center justify-center">
                     <Image
                       src={ev500vImages[0]}
                       alt="EV 500V BMS Product"
@@ -627,7 +694,6 @@ export default function BharatBMSEVPage() {
                           height={340}
                           className="w-full h-full object-contain"
                     />
-                  </div>
                     </div>
                     <p className="text-gray-300 mt-4 text-center">
                       The XB-X 32S is a robust low-voltage electric vehicle BMS operating at 500V nominal with LFP chemistry support for 32-36 series configurations.
@@ -638,30 +704,30 @@ export default function BharatBMSEVPage() {
                 {/* Right - Specifications */}
                 <div className="space-y-2.5">
                   {/* Key Specifications */}
-                  <div className="bg-[#2a2a2a] p-2 rounded-lg">
+                   <div>
                     <div className="flex items-center mb-4">
-                      <FaCogs className="text-gray-400 text-lg mr-3" />
+                      <FaCogs className="text-gray-200 text-lg mr-3" />
                       <h3 className="text-lg font-semibold text-white">Key Specifications</h3>
                     </div>
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
-                      <div className="bg-[#1a1a1a] p-2.5 rounded-lg flex items-center">
-                        <FaCubes className="text-gray-400 text-xl mr-3" />
-                        <div>
-                          <h4 className="text-sm font-semibold text-white">Cell Configuration</h4>
+                      <div className="grid grid-cols-1 sm:grid-cols-3 gap-2">
+                        <div className="bg-[#262626] p-4 rounded-lg flex flex-col justify-center h-[180px] border border-[#333]">
+                          <FaCubes className="text-gray-200 text-2xl mx-auto mb-3 mt-4" />
+                          <div className="flex flex-col justify-center items-center text-center">
+                            <h4 className="text-sm font-semibold text-white whitespace-nowrap">Cell Configuration</h4>
                           <p className="text-gray-300 text-sm">Up to 186S</p>
                           </div>
                           </div>
-                      <div className="bg-[#1a1a1a] p-2.5 rounded-lg flex items-center">
-                        <FaBolt className="text-gray-400 text-xl mr-3" />
-                        <div>
-                          <h4 className="text-sm font-semibold text-white">Nominal Pack Voltage Range</h4>
+                        <div className="bg-[#262626] p-4 rounded-lg flex flex-col justify-center h-[180px] border border-[#333]">
+                          <FaBolt className="text-gray-200 text-2xl mx-auto mb-3 mt-4" />
+                          <div className="flex flex-col justify-center items-center text-center">
+                            <h4 className="text-sm font-semibold text-white whitespace-nowrap">Nominal Pack<br />Voltage Range</h4>
                           <p className="text-gray-300 text-sm">600.0V</p>
                         </div>
                           </div>
-                      <div className="bg-[#1a1a1a] p-2.5 rounded-lg flex items-center sm:col-start-1 sm:col-end-3 sm:justify-self-center sm:w-1/2">
-                        <FaBatteryFull className="text-gray-400 text-xl mr-3" />
-                        <div>
-                          <h4 className="text-sm font-semibold text-white">Battery Capacity Range</h4>
+                        <div className="bg-[#262626] p-4 rounded-lg flex flex-col justify-center h-[180px] border border-[#333]">
+                          <FaBatteryFull className="text-gray-200 text-2xl mx-auto mb-3 mt-4" />
+                          <div className="flex flex-col justify-center items-center text-center">
+                            <h4 className="text-sm font-semibold text-white whitespace-nowrap">Battery Capacity Range</h4>
                           <p className="text-gray-300 text-sm">120kWh</p>
                         </div>
                       </div>
@@ -669,23 +735,56 @@ export default function BharatBMSEVPage() {
                   </div>
 
                   {/* Applications */}
-                  <div className="bg-[#2a2a2a] p-3 rounded-lg">
+                   <div>
                     <div className="flex items-center mb-4">
-                      <FaIndustry className="text-gray-400 text-lg mr-3" />
+                      <FaIndustry className="text-gray-200 text-lg mr-3" />
                       <h3 className="text-lg font-semibold text-white">Applications</h3>
                     </div>
-                    <div className="space-y-2.5">
-                      <div className="bg-[#1a1a1a] p-4 rounded-lg">
-                        <h4 className="text-sm font-semibold text-white mb-2">EV – Truck</h4>
-                        <p className="text-gray-300 text-sm">Reliable energy for heavy transport.</p>
+                      <div className="grid grid-cols-1 sm:grid-cols-3 gap-2">
+                        <div className="bg-[#262626] p-4 rounded-lg text-center h-[180px] flex flex-col justify-center border border-[#333]">
+                          <div className="w-12 h-10 mx-auto mb-3 -mt-1 flex items-center justify-center">
+                            <Image
+                              src="/images/icons/truck.png"
+                              alt="EV – Truck"
+                              width={48}
+                              height={40}
+                              className="object-contain scale-90"
+                            />
+                          </div>
+                          <div className="flex flex-col justify-center mt-2">
+                            <h4 className="text-sm font-semibold text-white whitespace-nowrap">EV – Truck</h4>
+                        <p className="text-gray-300 text-sm">Reliable energy for heavy transport</p>
                       </div>
-                      <div className="bg-[#1a1a1a] p-4 rounded-lg">
-                        <h4 className="text-sm font-semibold text-white mb-2">EV – 3 Wheeler</h4>
-                        <p className="text-gray-300 text-sm">Optimized range for urban drive.</p>
                       </div>
-                      <div className="bg-[#1a1a1a] p-4 rounded-lg">
-                        <h4 className="text-sm font-semibold text-white mb-2">EV – Bus</h4>
+                        <div className="bg-[#262626] p-4 rounded-lg text-center h-[180px] flex flex-col justify-center border border-[#333]">
+                          <div className="w-12 h-10 mx-auto mb-3 mt-1 flex items-center justify-center">
+                            <Image
+                              src="/images/icons/bus.png"
+                              alt="EV – Bus"
+                              width={48}
+                              height={40}
+                              className="object-contain scale-90"
+                            />
+                      </div>
+                          <div className="flex flex-col justify-center">
+                            <h4 className="text-sm font-semibold text-white whitespace-nowrap">EV – Bus</h4>
                         <p className="text-gray-300 text-sm">Safe, scalable fleet performance</p>
+                      </div>
+                        </div>
+                        <div className="bg-[#262626] p-4 rounded-lg text-center h-[180px] flex flex-col justify-center border border-[#333]">
+                          <div className="w-12 h-10 mx-auto mb-3 mt-1 flex items-center justify-center">
+                            <Image
+                              src="/images/icons/heavyvechile.png"
+                              alt="Heavy Vehicle"
+                              width={48}
+                              height={40}
+                              className="object-contain scale-90"
+                            />
+                          </div>
+                          <div className="flex flex-col justify-center">
+                            <h4 className="text-sm font-semibold text-white whitespace-nowrap">Heavy Vehicle</h4>
+                        <p className="text-gray-300 text-sm">Industrial and commercial applications</p>
+                          </div>
                       </div>
                     </div>
                   </div>

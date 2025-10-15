@@ -353,35 +353,6 @@ export default function BharatBMSESSPage() {
           </div>
         </AnimatedDiv>
 
-        {/* Key Specifications section (mirroring BharatBMS style) */}
-        <div className=" py-9 px-4 md:px-6 rounded-lg mb-1">
-          <AnimatedDiv>
-            <h2 className={`text-2xl md:text-3xl font-semibold mb-12 text-center ${classes.color}`}>
-              Key Specifications
-            </h2>
-          </AnimatedDiv>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 max-w-[1200px] mx-auto items-stretch">
-            {[
-              { icon: <FaFlask />, title: "Supported Cell Chemistry", description: "LFP/NMC" },
-              { icon: <FaCubes />, title: "Cell Count Range", description: "Up to 28S" },
-              { icon: <FaBolt />, title: "Nominal Pack Voltage", description: "48V" }
-            ].map((feature, index) => (
-              <AnimatedDiv key={index}>
-                 <div className="flex w-full rounded-2xl overflow-hidden bg-[#1b1b1b] min-h-[120px] pointer-events-none">
-                  <div className="w-[96px] md:w-[110px] shrink-0 bg-[#141414] flex items-center justify-center">
-                    <IconWithGradient size={24} title="Energy storage">
-                      {feature.icon}
-                    </IconWithGradient>
-                  </div>
-                  <div className="flex-1 min-h-[120px] px-0 py-5 md:px-0 md:py-6 flex flex-col items-center justify-center text-center">
-                    <h3 className="text-sm md:text-base font-semibold text-white leading-tight">{feature.title}</h3>
-                    <p className="text-sm text-gray-300 mt-1 text-center">{feature.description}</p>
-                  </div>
-                </div>
-              </AnimatedDiv>
-            ))}
-          </div>
-        </div>
 
         {/* Features section (mirroring BharatBMS content) */}
         <div className=" py-9 px-4 md:px-6 rounded-lg mb-1">
@@ -463,21 +434,23 @@ export default function BharatBMSESSPage() {
         <section className="py-5 md:py-6 px-4 md:px-6 bg-[#000000]">
           <div className="max-w-[1200px] mx-auto">
             <AnimatedDiv>
-              <h2 className={`text-3xl md:text-4xl font-bold mb-16 text-center ${classes.color}`}>
+              <h2 className={`text-3xl md:text-4xl font-bold mb-0 text-center ${classes.color}`}>
                 Our Products
               </h2>
             </AnimatedDiv>
 
+            {/* Black Div Box */}
+            <div id="ess-48v-white" className="w-full h-12 bg-black mb-4 mt-4"></div>
+
             {/* ESS 48V Product */}
             <AnimatedDiv>
-            <div id="ess-48v" className="scroll-mt-[80px] mb-24 bg-[#1c1c1c] border border-[#333] rounded-2xl p-2.5 md:p-3 shadow-[0_6px_18px_rgba(0,0,0,0.20)] max-w-7xl mx-auto">
+            <div id="ess-48v" className="mb-0 bg-[#1c1c1c] border border-[#333] rounded-2xl p-2.5 md:p-3 shadow-[0_6px_18px_rgba(0,0,0,0.20)] max-w-7xl mx-auto">
               <h3 className="text-xl md:text-2xl font-bold text-white text-center mb-6">Xbattery BharatBMS-ESS-48V</h3>
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-5 items-start">
                 {/* Left - Product Image */}
                 <div className="flex justify-center">
                   <div className="w-full max-w-lg text-center">
-                    <div className="rounded-[22px] border-[6px] border-[#333] p-6 bg-black">
-                      <div className="rounded-[14px] border-[1px] border-[#444] bg-[#1c1c1c] overflow-hidden h-[280px] md:h-[340px] flex items-center justify-center">
+                     <div className="bg-[#1c1c1c] overflow-hidden h-[280px] md:h-[340px] flex items-center justify-center">
                     <Image
                       src={productImages[0]}
                       alt="ESS 48V BMS Product"
@@ -485,7 +458,6 @@ export default function BharatBMSESSPage() {
                           height={340}
                           className="w-full h-full object-contain"
                     />
-                  </div>
                     </div>
                     <p className="text-gray-300 mt-4 text-center">
                     The XB-X 16S is a versatile 48V BMS designed for modular energy storage systems with support for both LFP and NMC chemistries across 13-17 series configurations.
@@ -496,30 +468,30 @@ export default function BharatBMSESSPage() {
                 {/* Right - Specifications */}
                 <div className="space-y-2.5">
                   {/* Key Specifications */}
-                  <div className="bg-[#2a2a2a] p-2 rounded-lg">
+                   <div>
                     <div className="flex items-center mb-4">
-                      <FaCogs className="text-gray-400 text-lg mr-3" />
+                      <FaCogs className="text-gray-200 text-lg mr-3" />
                       <h3 className="text-lg font-semibold text-white">Key Specifications</h3>
                       </div>
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
-                      <div className="bg-[#1a1a1a] p-2.5 rounded-lg flex items-center">
-                        <FaCubes className="text-[#00e5ff] text-xl mr-3" />
-                        <div>
-                          <h4 className="text-sm font-semibold text-white">Cell Configuration</h4>
+                     <div className="grid grid-cols-1 sm:grid-cols-3 gap-2">
+                        <div className="bg-[#262626] p-4 rounded-lg text-center flex flex-col justify-center border border-[#333] h-[180px]">
+                          <FaCubes className="text-gray-200 text-2xl mx-auto mb-3" />
+                          <div className="flex flex-col justify-center">
+                            <h4 className="text-sm font-semibold text-white whitespace-nowrap">Cell Configuration</h4>
                           <p className="text-gray-300 text-sm">Up to 28S</p>
                             </div>
                           </div>
-                      <div className="bg-[#1a1a1a] p-2.5 rounded-lg flex items-center">
-                        <FaBolt className="text-[#00e5ff] text-xl mr-3" />
-                        <div>
-                          <h4 className="text-sm font-semibold text-white">Nominal Pack Voltage Range</h4>
-                          <p className="text-gray-300 text-sm">48.0V</p>
+                        <div className="bg-[#262626] p-4 rounded-lg text-center flex flex-col justify-center border border-[#333] h-[180px]">
+                          <FaBolt className="text-gray-200 text-2xl mx-auto mb-3 mt-4" />
+                          <div className="flex flex-col justify-center items-center">
+                            <h4 className="text-sm font-semibold text-white text-center">Nominal Pack<br />Voltage Range</h4>
+                            <p className="text-gray-300 text-sm text-center">48.0V</p>
                         </div>
                             </div>
-                      <div className="bg-[#1a1a1a] p-2.5 rounded-lg flex items-center sm:col-start-1 sm:col-end-3 sm:justify-self-center sm:w-1/2">
-                        <FaBatteryFull className="text-[#00e5ff] text-xl mr-3" />
-                        <div>
-                          <h4 className="text-sm font-semibold text-white">Battery Capacity Range</h4>
+                        <div className="bg-[#262626] p-4 rounded-lg text-center flex flex-col justify-center border border-[#333] h-[180px]">
+                          <FaBatteryFull className="text-gray-200 text-2xl mx-auto mb-3" />
+                          <div className="flex flex-col justify-center">
+                            <h4 className="text-sm font-semibold text-white whitespace-nowrap">Battery Capacity Range</h4>
                           <p className="text-gray-300 text-sm">25kWh</p>
                         </div>
                       </div>
@@ -527,23 +499,56 @@ export default function BharatBMSESSPage() {
                   </div>
 
                   {/* Applications */}
-                  <div className="bg-[#2a2a2a] p-3 rounded-lg">
+                   <div>
                     <div className="flex items-center mb-4">
-                      <FaIndustry className="text-gray-400 text-lg mr-3" />
+                      <FaIndustry className="text-gray-200 text-lg mr-3" />
                       <h3 className="text-lg font-semibold text-white">Applications</h3>
                       </div>
-                    <div className="space-y-2.5">
-                      <div className="bg-[#1a1a1a] p-4 rounded-lg">
-                        <h4 className="text-sm font-semibold text-white mb-2">Backup & UPS Systems</h4>
+                      <div className="grid grid-cols-1 sm:grid-cols-3 gap-2">
+                        <div className="bg-[#262626] p-4 rounded-lg text-center h-[180px] flex flex-col justify-center border border-[#333]">
+                          <div className="w-12 h-10 mx-auto mb-3 -mt-1 flex items-center justify-center">
+                            <Image
+                              src="/images/icons/4db28b5d-38ca-4b6f-bde7-428f5c59afb8-Photoroom.png"
+                              alt="Backup & UPS Systems"
+                              width={48}
+                              height={40}
+                              className="object-contain scale-90"
+                            />
+                          </div>
+                          <div className="flex flex-col justify-center mt-2">
+                            <h4 className="text-sm font-semibold text-white whitespace-nowrap">Backup & UPS Systems</h4>
                         <p className="text-gray-300 text-sm">Uninterrupted, stable energy support</p>
                     </div>
-                      <div className="bg-[#1a1a1a] p-4 rounded-lg">
-                        <h4 className="text-sm font-semibold text-white mb-2">Industrial Battery Packs</h4>
+                        </div>
+                        <div className="bg-[#262626] p-4 rounded-lg text-center h-[180px] flex flex-col justify-center border border-[#333]">
+                          <div className="w-12 h-10 mx-auto mb-3 mt-1 flex items-center justify-center">
+                            <Image
+                              src="/images/icons/unnamed-Photoroom (4).png"
+                              alt="Industrial Battery Packs"
+                              width={48}
+                              height={40}
+                              className="object-contain scale-90"
+                            />
+                          </div>
+                          <div className="flex flex-col justify-center">
+                            <h4 className="text-sm font-semibold text-white whitespace-nowrap">Industrial Battery Packs</h4>
                         <p className="text-gray-300 text-sm">High-performance power systems</p>
                     </div>
-                      <div className="bg-[#1a1a1a] p-4 rounded-lg">
-                        <h4 className="text-sm font-semibold text-white mb-2">Telecom Infrastructure</h4>
+                        </div>
+                        <div className="bg-[#262626] p-4 rounded-lg text-center h-[180px] flex flex-col justify-center border border-[#333]">
+                          <div className="w-12 h-10 mx-auto mb-3 mt-1 flex items-center justify-center">
+                            <Image
+                              src="/images/icons/unnamed-Photoroom (3).png"
+                              alt="Telecom Infrastructure"
+                              width={48}
+                              height={40}
+                              className="object-contain scale-90"
+                            />
+                          </div>
+                          <div className="flex flex-col justify-center">
+                            <h4 className="text-sm font-semibold text-white whitespace-nowrap">Telecom Infrastructure</h4>
                         <p className="text-gray-300 text-sm">Reliable backup for towers</p>
+                          </div>
                     </div>
                     </div>
                   </div>
@@ -552,16 +557,18 @@ export default function BharatBMSESSPage() {
                       </div>
             </AnimatedDiv>
 
+            {/* Black Div Box for 72V */}
+            <div id="ess-72v-white" className="w-full h-12 bg-black mb-4 mt-4"></div>
+
             {/* ESS 72V Product */}
             <AnimatedDiv>
-            <div id="ess-72v" className="scroll-mt-[80px] mb-24 bg-[#1c1c1c] border border-[#333] rounded-2xl p-2.5 md:p-3 shadow-[0_6px_18px_rgba(0,0,0,0.20)] max-w-7xl mx-auto">
+            <div id="ess-72v" className="mb-0 bg-[#1c1c1c] border border-[#333] rounded-2xl p-2.5 md:p-3 shadow-[0_6px_18px_rgba(0,0,0,0.20)] max-w-7xl mx-auto">
               <h3 className="text-xl md:text-2xl font-bold text-white text-center mb-6">Xbattery BharatBMS-ESS-72V</h3>
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-5 items-start">
                 {/* Left - Product Image */}
                 <div className="flex justify-center">
                   <div className="w-full max-w-lg text-center">
-                    <div className="rounded-[22px] border-[6px] border-[#333] p-6 bg-black">
-                      <div className="rounded-[14px] border-[1px] border-[#444] bg-[#1c1c1c] overflow-hidden h-[280px] md:h-[340px] flex items-center justify-center">
+                    <div className="bg-[#1c1c1c] overflow-hidden h-[280px] md:h-[340px] flex items-center justify-center">
                     <Image
                       src={ess72vImages[0]}
                       alt="ESS 72V BMS Product"
@@ -569,7 +576,6 @@ export default function BharatBMSESSPage() {
                           height={340}
                           className="w-full h-full object-contain"
                     />
-                  </div>
                     </div>
                     <p className="text-gray-300 mt-4 text-center">
                     The XB-X 16S is a versatile 48V BMS designed for modular energy storage systems with support for both LFP and NMC chemistries across 13-17 series configurations.
@@ -580,30 +586,30 @@ export default function BharatBMSESSPage() {
                 {/* Right - Specifications */}
                 <div className="space-y-2.5">
                   {/* Key Specifications */}
-                  <div className="bg-[#2a2a2a] p-2 rounded-lg">
+                   <div>
                     <div className="flex items-center mb-4">
-                      <FaCogs className="text-gray-400 text-lg mr-3" />
+                      <FaCogs className="text-gray-200 text-lg mr-3" />
                       <h3 className="text-lg font-semibold text-white">Key Specifications</h3>
                       </div>
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
-                      <div className="bg-[#1a1a1a] p-2.5 rounded-lg flex items-center">
-                        <FaCubes className="text-[#00e5ff] text-xl mr-3" />
-                        <div>
-                          <h4 className="text-sm font-semibold text-white">Cell Configuration</h4>
+                     <div className="grid grid-cols-1 sm:grid-cols-3 gap-2">
+                        <div className="bg-[#262626] p-4 rounded-lg text-center flex flex-col justify-center border border-[#333] h-[180px]">
+                          <FaCubes className="text-gray-200 text-2xl mx-auto mb-3" />
+                          <div className="flex flex-col justify-center">
+                            <h4 className="text-sm font-semibold text-white whitespace-nowrap">Cell Configuration</h4>
                           <p className="text-gray-300 text-sm">Up to 28S</p>
                         </div>
                         </div>
-                      <div className="bg-[#1a1a1a] p-2.5 rounded-lg flex items-center">
-                        <FaBolt className="text-[#00e5ff] text-xl mr-3" />
-                        <div>
-                          <h4 className="text-sm font-semibold text-white">Nominal Pack Voltage Range</h4>
-                          <p className="text-gray-300 text-sm">72.0V</p>
+                        <div className="bg-[#262626] p-4 rounded-lg text-center flex flex-col justify-center border border-[#333] h-[180px]">
+                          <FaBolt className="text-gray-200 text-2xl mx-auto mb-3 mt-4" />
+                          <div className="flex flex-col justify-center items-center">
+                            <h4 className="text-sm font-semibold text-white text-center">Nominal Pack<br />Voltage Range</h4>
+                            <p className="text-gray-300 text-sm text-center">72.0V</p>
                         </div>
                         </div>
-                      <div className="bg-[#1a1a1a] p-2.5 rounded-lg flex items-center sm:col-start-1 sm:col-end-3 sm:justify-self-center sm:w-1/2">
-                        <FaBatteryFull className="text-[#00e5ff] text-xl mr-3" />
-                        <div>
-                          <h4 className="text-sm font-semibold text-white">Battery Capacity Range</h4>
+                        <div className="bg-[#262626] p-4 rounded-lg text-center flex flex-col justify-center border border-[#333] h-[180px]">
+                          <FaBatteryFull className="text-gray-200 text-2xl mx-auto mb-3" />
+                          <div className="flex flex-col justify-center">
+                            <h4 className="text-sm font-semibold text-white whitespace-nowrap">Battery Capacity Range</h4>
                           <p className="text-gray-300 text-sm">25kWh</p>
                         </div>
                       </div>
@@ -611,23 +617,56 @@ export default function BharatBMSESSPage() {
                   </div>
 
                   {/* Applications */}
-                  <div className="bg-[#2a2a2a] p-3 rounded-lg">
+                   <div>
                     <div className="flex items-center mb-4">
-                      <FaIndustry className="text-gray-400 text-lg mr-3" />
+                      <FaIndustry className="text-gray-200 text-lg mr-3" />
                       <h3 className="text-lg font-semibold text-white">Applications</h3>
                       </div>
-                    <div className="space-y-2.5">
-                      <div className="bg-[#1a1a1a] p-4 rounded-lg">
-                      <h4 className="text-sm font-semibold text-white mb-2">Backup & UPS Systems</h4>
+                      <div className="grid grid-cols-1 sm:grid-cols-3 gap-2">
+                        <div className="bg-[#262626] p-4 rounded-lg text-center h-[180px] flex flex-col justify-center border border-[#333]">
+                          <div className="w-12 h-10 mx-auto mb-3 -mt-1 flex items-center justify-center">
+                            <Image
+                              src="/images/icons/4db28b5d-38ca-4b6f-bde7-428f5c59afb8-Photoroom.png"
+                              alt="Backup & UPS Systems"
+                              width={48}
+                              height={40}
+                              className="object-contain scale-90"
+                            />
+                          </div>
+                          <div className="flex flex-col justify-center mt-2">
+                            <h4 className="text-sm font-semibold text-white whitespace-nowrap">Backup & UPS Systems</h4>
                         <p className="text-gray-300 text-sm">Uninterrupted, stable energy support</p>
                     </div>
-                      <div className="bg-[#1a1a1a] p-4 rounded-lg">
-                      <h4 className="text-sm font-semibold text-white mb-2">Industrial Battery Packs</h4>
+                        </div>
+                        <div className="bg-[#262626] p-4 rounded-lg text-center h-[180px] flex flex-col justify-center border border-[#333]">
+                          <div className="w-12 h-10 mx-auto mb-3 mt-1 flex items-center justify-center">
+                            <Image
+                              src="/images/icons/unnamed-Photoroom (4).png"
+                              alt="Industrial Battery Packs"
+                              width={48}
+                              height={40}
+                              className="object-contain scale-90"
+                            />
+                          </div>
+                          <div className="flex flex-col justify-center">
+                            <h4 className="text-sm font-semibold text-white whitespace-nowrap">Industrial Battery Packs</h4>
                         <p className="text-gray-300 text-sm">High-performance power systems</p>
                             </div>
-                      <div className="bg-[#1a1a1a] p-4 rounded-lg">
-                      <h4 className="text-sm font-semibold text-white mb-2">Telecom Infrastructure</h4>
-                        <p className="text-gray-300 text-sm">Reliable backup for towers</p>
+                        </div>
+                        <div className="bg-[#262626] p-4 rounded-lg text-center h-[180px] flex flex-col justify-center border border-[#333]">
+                          <div className="w-12 h-10 mx-auto mb-3 mt-1 flex items-center justify-center">
+                            <Image
+                              src="/images/icons/unnamed-Photoroom (5).png"
+                              alt="Renewable Energy Storage"
+                              width={48}
+                              height={40}
+                              className="object-contain scale-110"
+                            />
+                          </div>
+                          <div className="flex flex-col justify-center items-center text-center">
+                            <h4 className="text-sm font-semibold text-white whitespace-nowrap">Renewable Energy Storage</h4>
+                        <p className="text-gray-300 text-sm">Solar and wind power systems</p>
+                          </div>
                           </div>
                           </div>
                         </div>
@@ -636,16 +675,18 @@ export default function BharatBMSESSPage() {
                           </div>
             </AnimatedDiv>
 
+            {/* Black Div Box for 110V */}
+            <div id="ess-110v-white" className="w-full h-12 bg-black mb-4 mt-4"></div>
+
             {/* ESS 110V Product */}
             <AnimatedDiv>
-            <div id="ess-110v" className="scroll-mt-[80px] mb-24 bg-[#1c1c1c] border border-[#333] rounded-2xl p-2.5 md:p-3 shadow-[0_6px_18px_rgba(0,0,0,0.20)] max-w-7xl mx-auto">
+            <div id="ess-110v" className="mb-24 bg-[#1c1c1c] border border-[#333] rounded-2xl p-2.5 md:p-3 shadow-[0_6px_18px_rgba(0,0,0,0.20)] max-w-7xl mx-auto">
               <h3 className="text-xl md:text-2xl font-bold text-white text-center mb-6">Xbattery BharatBMS-ESS-110V</h3>
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-5 items-start">
                 {/* Left - Product Image */}
                 <div className="flex justify-center">
                   <div className="w-full max-w-lg text-center">
-                    <div className="rounded-[22px] border-[6px] border-[#333] p-6 bg-black">
-                      <div className="rounded-[14px] border-[1px] border-[#444] bg-[#1c1c1c] overflow-hidden h-[280px] md:h-[340px] flex items-center justify-center">
+                    <div className="bg-[#1c1c1c] overflow-hidden h-[280px] md:h-[340px] flex items-center justify-center">
                     <Image
                       src="/images/bms_offerings/ess-110v-enhanced-Photoroom.png"
                       alt="ESS 110V BMS Product"
@@ -653,7 +694,6 @@ export default function BharatBMSESSPage() {
                           height={340}
                           className="w-full h-full object-contain"
                     />
-                      </div>
                     </div>
                     <p className="text-gray-300 mt-4 text-center">
                     The XB-X 16S is a versatile 48V BMS designed for modular energy storage systems with support for both LFP and NMC chemistries across 13-17 series configurations.
@@ -664,30 +704,30 @@ export default function BharatBMSESSPage() {
                 {/* Right - Specifications */}
                 <div className="space-y-2.5">
                   {/* Key Specifications */}
-                  <div className="bg-[#2a2a2a] p-2 rounded-lg">
+                   <div>
                     <div className="flex items-center mb-4">
-                      <FaCogs className="text-gray-400 text-lg mr-3" />
+                      <FaCogs className="text-gray-200 text-lg mr-3" />
                       <h3 className="text-lg font-semibold text-white">Key Specifications</h3>
                     </div>
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
-                      <div className="bg-[#1a1a1a] p-2.5 rounded-lg flex items-center">
-                        <FaCubes className="text-[#00e5ff] text-xl mr-3" />
-                        <div>
-                          <h4 className="text-sm font-semibold text-white">Cell Configuration</h4>
+                     <div className="grid grid-cols-1 sm:grid-cols-3 gap-2">
+                        <div className="bg-[#262626] p-4 rounded-lg text-center flex flex-col justify-center border border-[#333] h-[180px]">
+                          <FaCubes className="text-gray-200 text-2xl mx-auto mb-3" />
+                          <div className="flex flex-col justify-center">
+                            <h4 className="text-sm font-semibold text-white whitespace-nowrap">Cell Configuration</h4>
                           <p className="text-gray-300 text-sm">Up to 42S</p>
                   </div>
                       </div>
-                      <div className="bg-[#1a1a1a] p-2.5 rounded-lg flex items-center">
-                        <FaBolt className="text-[#00e5ff] text-xl mr-3" />
-                        <div>
-                          <h4 className="text-sm font-semibold text-white">Nominal Pack Voltage Range</h4>
-                          <p className="text-gray-300 text-sm">110.0V</p>
+                        <div className="bg-[#262626] p-4 rounded-lg text-center flex flex-col justify-center border border-[#333] h-[180px]">
+                          <FaBolt className="text-gray-200 text-2xl mx-auto mb-3 mt-4" />
+                          <div className="flex flex-col justify-center items-center">
+                            <h4 className="text-sm font-semibold text-white text-center">Nominal Pack<br />Voltage Range</h4>
+                            <p className="text-gray-300 text-sm text-center">110.0V</p>
                       </div>
                       </div>
-                      <div className="bg-[#1a1a1a] p-2.5 rounded-lg flex items-center sm:col-start-1 sm:col-end-3 sm:justify-self-center sm:w-1/2">
-                        <FaBatteryFull className="text-[#00e5ff] text-xl mr-3" />
-                        <div>
-                          <h4 className="text-sm font-semibold text-white">Battery Capacity Range</h4>
+                        <div className="bg-[#262626] p-4 rounded-lg text-center flex flex-col justify-center border border-[#333] h-[180px]">
+                          <FaBatteryFull className="text-gray-200 text-2xl mx-auto mb-3" />
+                          <div className="flex flex-col justify-center">
+                            <h4 className="text-sm font-semibold text-white whitespace-nowrap">Battery Capacity Range</h4>
                           <p className="text-gray-300 text-sm">38kWh</p>
                       </div>
                     </div>
@@ -695,23 +735,56 @@ export default function BharatBMSESSPage() {
                 </div>
 
                   {/* Applications */}
-                  <div className="bg-[#2a2a2a] p-3 rounded-lg">
+                   <div>
                     <div className="flex items-center mb-4">
-                      <FaIndustry className="text-gray-400 text-lg mr-3" />
+                      <FaIndustry className="text-gray-200 text-lg mr-3" />
                       <h3 className="text-lg font-semibold text-white">Applications</h3>
                     </div>
-                    <div className="space-y-2.5">
-                      <div className="bg-[#1a1a1a] p-4 rounded-lg">
-                        <h4 className="text-sm font-semibold text-white mb-2">Backup & UPS Systems</h4>
+                      <div className="grid grid-cols-1 sm:grid-cols-3 gap-2">
+                        <div className="bg-[#262626] p-4 rounded-lg text-center h-[180px] flex flex-col justify-center border border-[#333]">
+                          <div className="w-12 h-10 mx-auto mb-3 -mt-1 flex items-center justify-center">
+                            <Image
+                              src="/images/icons/4db28b5d-38ca-4b6f-bde7-428f5c59afb8-Photoroom.png"
+                              alt="Backup & UPS Systems"
+                              width={48}
+                              height={40}
+                              className="object-contain scale-90"
+                            />
+                          </div>
+                          <div className="flex flex-col justify-center mt-2">
+                            <h4 className="text-sm font-semibold text-white whitespace-nowrap">Backup & UPS Systems</h4>
                         <p className="text-gray-300 text-sm">Uninterrupted, stable energy support</p>
                   </div>
-                      <div className="bg-[#1a1a1a] p-4 rounded-lg">
-                        <h4 className="text-sm font-semibold text-white mb-2">Industrial Battery Packs</h4>
+                        </div>
+                        <div className="bg-[#262626] p-4 rounded-lg text-center h-[180px] flex flex-col justify-center border border-[#333]">
+                          <div className="w-12 h-10 mx-auto mb-3 mt-1 flex items-center justify-center">
+                            <Image
+                              src="/images/icons/unnamed-Photoroom (4).png"
+                              alt="Industrial Battery Packs"
+                              width={48}
+                              height={40}
+                              className="object-contain scale-90"
+                            />
+                          </div>
+                          <div className="flex flex-col justify-center">
+                            <h4 className="text-sm font-semibold text-white whitespace-nowrap">Industrial Battery Packs</h4>
                         <p className="text-gray-300 text-sm">High-performance power systems</p>
                     </div>
-                      <div className="bg-[#1a1a1a] p-4 rounded-lg">
-                        <h4 className="text-sm font-semibold text-white mb-2">Telecom Infrastructure</h4>
-                        <p className="text-gray-300 text-sm">Reliable backup for towers</p>
+                        </div>
+                        <div className="bg-[#262626] p-4 rounded-lg text-center h-[180px] flex flex-col justify-center border border-[#333]">
+                          <div className="w-12 h-10 mx-auto mb-3 mt-1 flex items-center justify-center">
+                            <Image
+                              src="/images/icons/unnamed-Photoroom (5).png"
+                              alt="Renewable Energy Storage"
+                              width={48}
+                              height={40}
+                              className="object-contain scale-110"
+                            />
+                          </div>
+                          <div className="flex flex-col justify-center items-center text-center">
+                            <h4 className="text-sm font-semibold text-white whitespace-nowrap">Renewable Energy Storage</h4>
+                        <p className="text-gray-300 text-sm">Solar and wind power systems</p>
+                          </div>
                     </div>
                   </div>
                 </div>
