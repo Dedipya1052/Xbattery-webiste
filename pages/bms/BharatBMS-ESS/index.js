@@ -647,7 +647,7 @@ export default function BharatBMSESSPage() {
                     <div className="rounded-[22px] border-[6px] border-[#333] p-6 bg-black">
                       <div className="rounded-[14px] border-[1px] border-[#444] bg-[#1c1c1c] overflow-hidden h-[280px] md:h-[340px] flex items-center justify-center">
                     <Image
-                      src={ess110vImages[0]}
+                      src="/images/bms_offerings/ess-110v-enhanced-Photoroom.png"
                       alt="ESS 110V BMS Product"
                           width={560}
                           height={340}
