@@ -742,7 +742,7 @@ export default function BharatBMSEVPage() {
               </a>
               <span className="text-sm text-white font-medium text-center">
                 <div>PRODUCT FLYER</div>
-                <div>XBATTERY BHARATBMS-ESS</div>
+                <div>XBATTERY BHARATBMS-EV</div>
               </span>
               </div>
             </div>
