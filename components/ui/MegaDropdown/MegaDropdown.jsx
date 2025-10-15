@@ -1,10 +1,22 @@
 import React, { useState, useRef, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import { FaBolt, FaCogs, FaCode, FaChartLine, FaShieldAlt, FaThermometerHalf, FaServer, FaBatteryFull, FaWifi, FaIndustry, FaCubes, FaCar, FaTruck, FaBatteryEmpty, FaChartPie } from 'react-icons/fa';
+import { 
+  FaBatteryFull, 
+  FaWifi, 
+  FaShieldAlt, 
+  FaThermometerHalf, 
+  FaServer, 
+  FaChartLine,
+  FaBook,
+  FaFileAlt,
+  FaBullseye,
+  FaUsers,
+  FaPlug
+} from 'react-icons/fa';
 
 const MegaDropdown = ({ isOpen, onClose, pageType = 'ess' }) => {
-  const [activeSection, setActiveSection] = useState('products');
+  const [activeTab, setActiveTab] = useState(null);
   const dropdownRef = useRef(null);
 
   // Close dropdown when clicking outside
@@ -24,250 +36,221 @@ const MegaDropdown = ({ isOpen, onClose, pageType = 'ess' }) => {
     };
   }, [isOpen, onClose]);
 
-  // Data for different sections
-  const sectionsData = {
-    products: {
-      title: 'Products',
-      items: pageType === 'ess' ? [
+  // Product data with actual images from your product sections
+  const products = [
         {
           title: 'BharatBMS-ESS-48V',
-          description: '48V Energy Storage System',
-          image: '/images/bms_offerings/ess-48v-front-view.png',
+      description: 'Advanced battery management for industrial applications',
+      image: '/images/telecom_good_looking-Photoroom.png',
           link: '/bms/BharatBMS-ESS'
         },
         {
           title: 'BharatBMS-ESS-72V',
-          description: '72V Energy Storage System',
+      description: 'Space-efficient solution for commercial use',
           image: '/images/bms_offerings/ess-72v.png',
           link: '/bms/BharatBMS-ESS-72V'
         },
         {
           title: 'BharatBMS-ESS-110V',
-          description: '110V Energy Storage System',
+      description: 'Intelligent monitoring and control system',
           image: '/images/bms_offerings/ess-110v.png',
           link: '/bms/BharatBMS-ESS-110V'
         }
-      ] : pageType === 'ev' ? [
-        {
-          title: 'BharatBMS-EV-110V',
-          description: '110V Electric Vehicle BMS',
-          image: '/images/bms_offerings/ev-110v.png',
-          link: '/bms/BharatBMS-EV-110V'
-        },
-        {
-          title: 'BharatBMS-EV-400V',
-          description: '400V Electric Vehicle BMS',
-          image: '/images/bms_offerings/ev-400v.png',
-          link: '/bms/BharatBMS-EV-400V'
-        },
-        {
-          title: 'BharatBMS-EV-600V',
-          description: '600V Electric Vehicle BMS',
-          image: '/images/bms_offerings/ev-500v.png',
-          link: '/bms/BharatBMS-EV-600V'
-        }
-      ] : [
-        // Navbar - show both ESS and EV products
-        {
-          title: 'BharatBMS-ESS-48V',
-          description: '48V Energy Storage System',
-          image: '/images/bms_offerings/ess-48v-front-view.png',
-          link: '/bms/BharatBMS-ESS',
-          category: 'ESS'
-        },
-        {
-          title: 'BharatBMS-ESS-72V',
-          description: '72V Energy Storage System',
-          image: '/images/bms_offerings/ess-72v.png',
-          link: '/bms/BharatBMS-ESS-72V',
-          category: 'ESS'
-        },
-        {
-          title: 'BharatBMS-ESS-110V',
-          description: '110V Energy Storage System',
-          image: '/images/bms_offerings/ess-110v.png',
-          link: '/bms/BharatBMS-ESS-110V',
-          category: 'ESS'
-        },
-        {
-          title: 'BharatBMS-EV-110V',
-          description: '110V Electric Vehicle BMS',
-          image: '/images/bms_offerings/ev-110v.png',
-          link: '/bms/BharatBMS-EV-110V',
-          category: 'EV'
-        },
-        {
-          title: 'BharatBMS-EV-400V',
-          description: '400V Electric Vehicle BMS',
-          image: '/images/bms_offerings/ev-400v.png',
-          link: '/bms/BharatBMS-EV-400V',
-          category: 'EV'
-        },
-        {
-          title: 'BharatBMS-EV-600V',
-          description: '600V Electric Vehicle BMS',
-          image: '/images/bms_offerings/ev-500v.png',
-          link: '/bms/BharatBMS-EV-600V',
-          category: 'EV'
-        }
-      ]
+  ];
+
+  // Features data
+  const features = [
+    {
+      title: 'Battery Modules',
+      description: 'Explore our modular battery solutions',
+      icon: FaBatteryFull
     },
-    features: {
-      title: 'Features',
-      items: [
-        {
-          title: 'Cell Monitoring & Balancing',
-          description: 'Supports up to 18 series cells with passive balancing for equalization. Voltage accuracy: ±2mV.',
+    {
+      title: 'Integration Guide',
+      description: 'Step-by-step integration process',
+      icon: FaBook
+    },
+    {
+      title: 'Specifications',
+      description: 'Detailed technical documentation',
+      icon: FaFileAlt
+    },
+    {
+      title: 'Performance',
+      description: 'Real-time monitoring and analytics',
+      icon: FaBullseye
+    },
+    {
+      title: 'Support',
+      description: 'Expert assistance and guidance',
+      icon: FaUsers
+    },
+    {
+      title: 'API Access',
+      description: 'Developer tools and resources',
+      icon: FaPlug
+    }
+  ];
+
+  // Specifications data
+  const specifications = [
+    {
+      title: 'Cell Monitoring',
+      description: 'Real-time voltage and current monitoring',
           icon: FaBatteryFull
         },
         {
-          title: 'Communication & Control',
-          description: 'CAN FD, UART, SPI, and Ethernet for real-time processing and remote monitoring.',
+      title: 'Communication',
+      description: 'CAN FD, UART, SPI, and Ethernet support',
           icon: FaWifi
         },
         {
           title: 'Safety Features',
-          description: 'ISO 26262 compliant protection for voltage, current, and temperature with fault diagnostics.',
+      description: 'ISO 26262 compliant protection systems',
           icon: FaShieldAlt
         },
         {
           title: 'Thermal Management',
-          description: 'Real-time temperature sensing and thermal runaway detection for high-temperature control.',
+      description: 'Advanced temperature sensing and control',
           icon: FaThermometerHalf
         },
         {
           title: 'Scalability',
-          description: 'Modular architecture supports series and parallel setups for larger energy storage needs.',
+      description: 'Modular architecture for various configurations',
           icon: FaServer
         },
         {
-          title: 'Diagnostics and Monitoring',
-          description: 'Real-time data visualization and lifecycle analytics for better battery management.',
+      title: 'Analytics',
+      description: 'Real-time data visualization and monitoring',
           icon: FaChartLine
-        }
-      ]
-    },
-    software: {
-      title: 'Software',
-      items: [
-        {
-          title: 'SOC/SOH Estimation',
-          description: 'Accurate algorithms for State-of-Charge and State-of-Health calculation, ensuring reliable battery status reporting.',
-          icon: FaChartLine
-        },
-        {
-          title: 'Software Framework',
-          description: 'Optimized in C for high efficiency and real-time performance, suitable for demanding applications.',
-          icon: FaCode
-        },
-        {
-          title: 'Customizable API',
-          description: 'Open API for seamless integration and tailoring system behavior to specific applications.',
-          icon: FaCogs
-        }
-      ]
     }
-  };
+  ];
 
   if (!isOpen) return null;
 
   return (
     <div 
       ref={dropdownRef}
-      className="fixed top-16 left-0 w-screen bg-[#1c1c1c] border border-[#333] shadow-2xl rounded-2xl z-50 overflow-hidden"
+      className="fixed top-16 left-0 w-full bg-[#1A202C] border border-[#2D3748] shadow-2xl rounded-2xl z-50 overflow-hidden"
       style={{ marginTop: '8px' }}
+      onMouseEnter={() => {/* Keep menu open when hovering over it */}}
+      onMouseLeave={() => {/* Let parent handle closing */}}
     >
-      <div className="flex h-[400px]">
-        {/* Left Navigation */}
-        <div className="w-1/4 bg-[#0c0c0c] border-r border-[#333] p-4">
-          <h3 className="text-lg font-semibold text-white mb-4">Navigation</h3>
-          <nav className="space-y-2">
-            {Object.keys(sectionsData).map((sectionKey) => (
-              <button
-                key={sectionKey}
-                onClick={() => setActiveSection(sectionKey)}
-                className={`w-full text-left px-3 py-2 rounded-lg transition-all duration-200 ${
-                  activeSection === sectionKey
-                    ? 'bg-[#00e5ff] text-black shadow-md font-semibold'
-                    : 'text-gray-300 hover:bg-[#1a1a1a] hover:text-[#00e5ff]'
-                }`}
+      <div className="p-6">
+         {/* Navigation Tabs */}
+         <div className="flex justify-center space-x-8 mb-6 border-b border-[#2D3748]">
+           <button
+             onMouseEnter={() => setActiveTab('products')}
+             className={`pb-3 text-sm font-medium transition-colors duration-200 flex items-center space-x-2 ${
+               activeTab === 'products'
+                 ? 'text-[#4FD1C5] border-b-2 border-[#4FD1C5]'
+                 : 'text-gray-400 hover:text-white'
+             }`}
+           >
+             <span>Products</span>
+             <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+               <path fillRule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clipRule="evenodd" />
+             </svg>
+           </button>
+           <button
+             onMouseEnter={() => setActiveTab('features')}
+             className={`pb-3 text-sm font-medium transition-colors duration-200 flex items-center space-x-2 ${
+               activeTab === 'features'
+                 ? 'text-[#4FD1C5] border-b-2 border-[#4FD1C5]'
+                 : 'text-gray-400 hover:text-white'
+             }`}
+           >
+             <span>Features</span>
+             <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+               <path fillRule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clipRule="evenodd" />
+             </svg>
+           </button>
+           <button
+             onMouseEnter={() => setActiveTab('specifications')}
+             className={`pb-3 text-sm font-medium transition-colors duration-200 flex items-center space-x-2 ${
+               activeTab === 'specifications'
+                 ? 'text-[#4FD1C5] border-b-2 border-[#4FD1C5]'
+                 : 'text-gray-400 hover:text-white'
+             }`}
+           >
+             <span>Specifications</span>
+             <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+               <path fillRule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clipRule="evenodd" />
+             </svg>
+           </button>
+         </div>
+
+        {/* Content Area */}
+        {activeTab === 'products' && (
+          <div className="flex justify-center">
+             <div className="grid grid-cols-3 gap-12">
+            {products.map((product, index) => (
+              <Link
+                key={index}
+                href={product.link}
+                className="group focus:outline-none"
+                onClick={onClose}
               >
-                {sectionsData[sectionKey].title}
-              </button>
-            ))}
-          </nav>
-        </div>
-
-        {/* Right Content */}
-        <div className="w-3/4 p-4 overflow-y-auto bg-[#1c1c1c]">
-          <div className="mb-4">
-            <h2 className="text-xl font-bold text-white mb-2">
-              {sectionsData[activeSection].title}
-            </h2>
-            <p className="text-gray-300 text-sm">
-              {activeSection === 'products' 
-                ? 'Explore our range of battery management systems'
-                : activeSection === 'features'
-                ? 'Advanced features for optimal battery performance'
-                : 'Software solutions for comprehensive battery management'
-              }
-            </p>
-          </div>
-
-          {activeSection === 'products' ? (
-            <div className="grid grid-cols-2 gap-4">
-              {sectionsData[activeSection].items.map((item, index) => (
-                <div key={index} className="border border-[#333] rounded-lg p-3 hover:border-[#00e5ff] hover:shadow-lg transition-all duration-200 bg-[#0c0c0c]">
-                  <div className="flex items-center space-x-3">
-                    <div className="w-12 h-12 bg-[#1c1c1c] rounded-lg flex items-center justify-center overflow-hidden border border-[#333]">
+                <div className="bg-[#2D3748] rounded-lg p-4 h-80 w-64 flex flex-col transition-transform duration-200 group-hover:scale-105">
+                  {/* White image container */}
+                  <div className="bg-white rounded-lg p-4 mb-4 flex-1 flex items-center justify-center overflow-hidden">
+                    <div className="w-full h-full flex items-center justify-center">
                       <Image
-                        src={item.image}
-                        alt={item.title}
-                        width={48}
-                        height={48}
-                        className="object-contain"
+                        src={product.image}
+                        alt={product.title}
+                        width={200}
+                        height={120}
+                        className="object-contain scale-150"
                       />
                     </div>
-                    <div className="flex-1">
-                      <div className="flex items-center gap-2 mb-1">
-                        <h4 className="font-semibold text-white text-sm">{item.title}</h4>
-                        {item.category && (
-                          <span className="px-1 py-0.5 text-xs font-medium bg-[#00e5ff] bg-opacity-20 text-[#00e5ff] rounded border border-[#00e5ff] border-opacity-30">
-                            {item.category}
-                          </span>
-                        )}
-                      </div>
-                      <p className="text-xs text-gray-300 mb-2">{item.description}</p>
-                      <Link 
-                        href={item.link}
-                        className="text-[#00e5ff] hover:text-[#00b8cc] text-xs font-medium transition-colors"
-                        onClick={onClose}
-                      >
-                        Learn More →
-                      </Link>
-                    </div>
+                  </div>
+                  {/* Product info */}
+                  <div className="text-center">
+                    <h3 className="font-bold text-[#4FD1C5] text-sm mb-1">
+                      {product.title}
+                    </h3>
+                    <p className="text-gray-400 text-xs leading-relaxed">
+                      {product.description}
+                    </p>
                   </div>
                 </div>
-              ))}
+              </Link>
+            ))}
             </div>
-          ) : (
-            <div className="grid grid-cols-2 gap-4">
-              {sectionsData[activeSection].items.map((item, index) => (
-                <div key={index} className="border border-[#333] rounded-lg p-3 hover:border-[#00e5ff] hover:shadow-lg transition-all duration-200 bg-[#0c0c0c]">
-                  <div className="flex items-start space-x-3">
-                    <div className="w-10 h-10 bg-[#00e5ff] bg-opacity-20 rounded-lg flex items-center justify-center text-[#00e5ff] border border-[#00e5ff] border-opacity-30">
-                      <item.icon size={16} />
+          </div>
+        )}
+
+        {activeTab === 'features' && (
+          <div className="grid grid-cols-2 gap-6">
+            {features.map((feature, index) => (
+              <div key={index} className="flex items-start space-x-4">
+                <div className="w-8 h-8 flex items-center justify-center text-[#4FD1C5]">
+                  <feature.icon size={20} />
                     </div>
                     <div className="flex-1">
-                      <h4 className="font-semibold text-white text-sm mb-1">{item.title}</h4>
-                      <p className="text-xs text-gray-300">{item.description}</p>
+                  <h3 className="font-bold text-white text-sm mb-1">{feature.title}</h3>
+                  <p className="text-gray-400 text-xs leading-relaxed">{feature.description}</p>
                     </div>
+              </div>
+            ))}
+          </div>
+        )}
+
+        {activeTab === 'specifications' && (
+          <div className="grid grid-cols-2 gap-6">
+            {specifications.map((spec, index) => (
+              <div key={index} className="flex items-start space-x-4">
+                <div className="w-8 h-8 flex items-center justify-center text-[#4FD1C5]">
+                  <spec.icon size={20} />
+                </div>
+                <div className="flex-1">
+                  <h3 className="font-bold text-white text-sm mb-1">{spec.title}</h3>
+                  <p className="text-gray-400 text-xs leading-relaxed">{spec.description}</p>
                   </div>
                 </div>
               ))}
             </div>
           )}
-        </div>
       </div>
     </div>
   );
