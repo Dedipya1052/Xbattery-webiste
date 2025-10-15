@@ -456,7 +456,7 @@ export default function BharatBMSESSPage() {
                       alt="ESS 48V BMS Product"
                           width={560}
                           height={340}
-                          className="w-full h-full object-contain"
+                          className="w-full h-full object-contain hover:scale-110 transition-transform duration-300 ease-in-out"
                     />
                     </div>
                     <p className="text-gray-300 mt-4 text-center">
@@ -470,7 +470,7 @@ export default function BharatBMSESSPage() {
                   {/* Key Specifications */}
                    <div>
                     <div className="flex items-center mb-4">
-                      <FaCogs className="text-gray-200 text-lg mr-3" />
+                      <FaCogs className="text-gray-200 text-xl mr-3" />
                       <h3 className="text-lg font-semibold text-white">Key Specifications</h3>
                       </div>
                      <div className="grid grid-cols-1 sm:grid-cols-3 gap-2">
@@ -478,7 +478,7 @@ export default function BharatBMSESSPage() {
                           <FaCubes className="text-gray-200 text-2xl mx-auto mb-3" />
                           <div className="flex flex-col justify-center">
                             <h4 className="text-sm font-semibold text-white whitespace-nowrap">Cell Configuration</h4>
-                          <p className="text-gray-300 text-sm">Up to 28S</p>
+                          <p className="text-gray-300 text-sm">Up to 16S</p>
                             </div>
                           </div>
                         <div className="bg-[#262626] p-4 rounded-lg text-center flex flex-col justify-center border border-[#333] h-[180px]">
@@ -501,7 +501,7 @@ export default function BharatBMSESSPage() {
                   {/* Applications */}
                    <div>
                     <div className="flex items-center mb-4">
-                      <FaIndustry className="text-gray-200 text-lg mr-3" />
+                      <FaIndustry className="text-gray-200 text-xl mr-3" />
                       <h3 className="text-lg font-semibold text-white">Applications</h3>
                       </div>
                       <div className="grid grid-cols-1 sm:grid-cols-3 gap-2">
@@ -574,7 +574,7 @@ export default function BharatBMSESSPage() {
                       alt="ESS 72V BMS Product"
                           width={560}
                           height={340}
-                          className="w-full h-full object-contain"
+                          className="w-full h-full object-contain hover:scale-110 transition-transform duration-300 ease-in-out"
                     />
                     </div>
                     <p className="text-gray-300 mt-4 text-center">
@@ -588,7 +588,7 @@ export default function BharatBMSESSPage() {
                   {/* Key Specifications */}
                    <div>
                     <div className="flex items-center mb-4">
-                      <FaCogs className="text-gray-200 text-lg mr-3" />
+                      <FaCogs className="text-gray-200 text-xl mr-3" />
                       <h3 className="text-lg font-semibold text-white">Key Specifications</h3>
                       </div>
                      <div className="grid grid-cols-1 sm:grid-cols-3 gap-2">
@@ -596,7 +596,7 @@ export default function BharatBMSESSPage() {
                           <FaCubes className="text-gray-200 text-2xl mx-auto mb-3" />
                           <div className="flex flex-col justify-center">
                             <h4 className="text-sm font-semibold text-white whitespace-nowrap">Cell Configuration</h4>
-                          <p className="text-gray-300 text-sm">Up to 28S</p>
+                          <p className="text-gray-300 text-sm">Up to 24S</p>
                         </div>
                         </div>
                         <div className="bg-[#262626] p-4 rounded-lg text-center flex flex-col justify-center border border-[#333] h-[180px]">
@@ -619,7 +619,7 @@ export default function BharatBMSESSPage() {
                   {/* Applications */}
                    <div>
                     <div className="flex items-center mb-4">
-                      <FaIndustry className="text-gray-200 text-lg mr-3" />
+                      <FaIndustry className="text-gray-200 text-xl mr-3" />
                       <h3 className="text-lg font-semibold text-white">Applications</h3>
                       </div>
                       <div className="grid grid-cols-1 sm:grid-cols-3 gap-2">
@@ -692,7 +692,7 @@ export default function BharatBMSESSPage() {
                       alt="ESS 110V BMS Product"
                           width={560}
                           height={340}
-                          className="w-full h-full object-contain"
+                          className="w-full h-full object-contain hover:scale-110 transition-transform duration-300 ease-in-out"
                     />
                     </div>
                     <p className="text-gray-300 mt-4 text-center">
@@ -706,7 +706,7 @@ export default function BharatBMSESSPage() {
                   {/* Key Specifications */}
                    <div>
                     <div className="flex items-center mb-4">
-                      <FaCogs className="text-gray-200 text-lg mr-3" />
+                      <FaCogs className="text-gray-200 text-xl mr-3" />
                       <h3 className="text-lg font-semibold text-white">Key Specifications</h3>
                     </div>
                      <div className="grid grid-cols-1 sm:grid-cols-3 gap-2">
@@ -714,7 +714,7 @@ export default function BharatBMSESSPage() {
                           <FaCubes className="text-gray-200 text-2xl mx-auto mb-3" />
                           <div className="flex flex-col justify-center">
                             <h4 className="text-sm font-semibold text-white whitespace-nowrap">Cell Configuration</h4>
-                          <p className="text-gray-300 text-sm">Up to 42S</p>
+                          <p className="text-gray-300 text-sm">Up to 36S</p>
                   </div>
                       </div>
                         <div className="bg-[#262626] p-4 rounded-lg text-center flex flex-col justify-center border border-[#333] h-[180px]">
@@ -737,7 +737,7 @@ export default function BharatBMSESSPage() {
                   {/* Applications */}
                    <div>
                     <div className="flex items-center mb-4">
-                      <FaIndustry className="text-gray-200 text-lg mr-3" />
+                      <FaIndustry className="text-gray-200 text-xl mr-3" />
                       <h3 className="text-lg font-semibold text-white">Applications</h3>
                     </div>
                       <div className="grid grid-cols-1 sm:grid-cols-3 gap-2">

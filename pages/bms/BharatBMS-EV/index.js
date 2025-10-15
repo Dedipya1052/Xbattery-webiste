@@ -456,7 +456,7 @@ export default function BharatBMSEVPage() {
                       alt="EV 110V BMS Product"
                           width={560}
                           height={340}
-                          className="w-full h-full object-contain"
+                          className="w-full h-full object-contain hover:scale-110 transition-transform duration-300 ease-in-out"
                     />
                     </div>
                     <p className="text-gray-300 mt-4 text-center">
@@ -470,29 +470,29 @@ export default function BharatBMSEVPage() {
                   {/* Key Specifications */}
                    <div>
                     <div className="flex items-center mb-4">
-                      <FaCogs className="text-gray-200 text-lg mr-3" />
+                      <FaCogs className="text-gray-200 text-xl mr-3" />
                       <h3 className="text-lg font-semibold text-white">Key Specifications</h3>
                     </div>
                       <div className="grid grid-cols-1 sm:grid-cols-3 gap-2">
                         <div className="bg-[#262626] p-4 rounded-lg flex flex-col justify-center h-[180px] border border-[#333]">
-                          <FaCubes className="text-gray-200 text-2xl mx-auto mb-3 mt-4" />
+                          <FaCubes className="text-gray-200 text-2xl mx-auto mb-3" />
                           <div className="flex flex-col justify-center items-center text-center">
                             <h4 className="text-sm font-semibold text-white whitespace-nowrap">Cell Configuration</h4>
-                        <p className="text-gray-300 text-sm">Up to 125S</p>
+                        <p className="text-gray-300 text-sm text-center">Up to 36S</p>
                           </div>
                           </div>
                         <div className="bg-[#262626] p-4 rounded-lg flex flex-col justify-center h-[180px] border border-[#333]">
                           <FaBolt className="text-gray-200 text-2xl mx-auto mb-3 mt-4" />
                           <div className="flex flex-col justify-center items-center text-center">
                             <h4 className="text-sm font-semibold text-white whitespace-nowrap">Nominal Pack<br />Voltage Range</h4>
-                        <p className="text-gray-300 text-sm">400.0V</p>
+                        <p className="text-gray-300 text-sm text-center">110.0V</p>
                         </div>
                         </div>
                         <div className="bg-[#262626] p-4 rounded-lg flex flex-col justify-center h-[180px] border border-[#333]">
-                          <FaBatteryFull className="text-gray-200 text-2xl mx-auto mb-3 mt-4" />
-                          <div className="flex flex-col justify-center items-center text-center">
+                          <FaBatteryFull className="text-gray-200 text-2xl mx-auto mb-3" />
+                          <div className="flex flex-col justify-center">
                             <h4 className="text-sm font-semibold text-white whitespace-nowrap">Battery Capacity Range</h4>
-                          <p className="text-gray-300 text-sm">25kWh</p>
+                          <p className="text-gray-300 text-sm text-center">25kWh</p>
                         </div>
                       </div>
                     </div>
@@ -501,7 +501,7 @@ export default function BharatBMSEVPage() {
                   {/* Applications */}
                    <div>
                     <div className="flex items-center mb-4">
-                      <FaIndustry className="text-gray-200 text-lg mr-3" />
+                      <FaIndustry className="text-gray-200 text-xl mr-3" />
                       <h3 className="text-lg font-semibold text-white">Applications</h3>
                     </div>
                       <div className="grid grid-cols-1 sm:grid-cols-3 gap-2">
@@ -512,7 +512,7 @@ export default function BharatBMSEVPage() {
                               alt="EV – Truck"
                               width={48}
                               height={40}
-                              className="object-contain scale-90"
+                              className="object-contain scale-90 mt-5"
                             />
                           </div>
                           <div className="flex flex-col justify-center mt-2">
@@ -527,7 +527,7 @@ export default function BharatBMSEVPage() {
                               alt="EV – 3 Wheeler"
                               width={48}
                               height={40}
-                              className="object-contain scale-90"
+                              className="object-contain scale-90 mt-1"
                             />
                           </div>
                           <div className="flex flex-col justify-center">
@@ -542,7 +542,7 @@ export default function BharatBMSEVPage() {
                                alt="EV – 2 Wheeler"
                                width={48}
                                height={40}
-                               className="object-contain scale-110"
+                              className="object-contain scale-150"
                              />
                       </div>
                           <div className="flex flex-col justify-center">
@@ -574,7 +574,7 @@ export default function BharatBMSEVPage() {
                       alt="EV 400V BMS Product"
                           width={560}
                           height={340}
-                          className="w-full h-full object-contain"
+                          className="w-full h-full object-contain hover:scale-110 transition-transform duration-300 ease-in-out"
                     />
                     </div>
                     <p className="text-gray-300 mt-4 text-center">
@@ -588,29 +588,29 @@ export default function BharatBMSEVPage() {
                   {/* Key Specifications */}
                     <div>
                     <div className="flex items-center mb-4">
-                       <FaCogs className="text-gray-200 text-lg mr-3" />
+                       <FaCogs className="text-gray-200 text-xl mr-3" />
                       <h3 className="text-lg font-semibold text-white">Key Specifications</h3>
                     </div>
                        <div className="grid grid-cols-1 sm:grid-cols-3 gap-2">
                          <div className="bg-[#262626] p-4 rounded-lg flex flex-col justify-center h-[180px] border border-[#333]">
-                           <FaCubes className="text-gray-200 text-2xl mx-auto mb-3 mt-4" />
+                           <FaCubes className="text-gray-200 text-2xl mx-auto mb-3" />
                            <div className="flex flex-col justify-center items-center text-center">
                              <h4 className="text-sm font-semibold text-white whitespace-nowrap">Cell Configuration</h4>
-                          <p className="text-gray-300 text-sm">Up to 125S</p>
+                           <p className="text-gray-300 text-sm text-center">Up to 125S</p>
                           </div>
                           </div>
                          <div className="bg-[#262626] p-4 rounded-lg flex flex-col justify-center h-[180px] border border-[#333]">
                            <FaBolt className="text-gray-200 text-2xl mx-auto mb-3 mt-4" />
                            <div className="flex flex-col justify-center items-center text-center">
                              <h4 className="text-sm font-semibold text-white whitespace-nowrap">Nominal Pack<br />Voltage Range</h4>
-                          <p className="text-gray-300 text-sm">400.0V</p>
+                           <p className="text-gray-300 text-sm text-center">400.0V</p>
                         </div>
                           </div>
                          <div className="bg-[#262626] p-4 rounded-lg flex flex-col justify-center h-[180px] border border-[#333]">
-                           <FaBatteryFull className="text-gray-200 text-2xl mx-auto mb-3 mt-4" />
+                           <FaBatteryFull className="text-gray-200 text-2xl mx-auto mb-3" />
                            <div className="flex flex-col justify-center items-center text-center">
                              <h4 className="text-sm font-semibold text-white whitespace-nowrap">Battery Capacity Range</h4>
-                          <p className="text-gray-300 text-sm">80kWh</p>
+                           <p className="text-gray-300 text-sm text-center">80kWh</p>
                         </div>
                       </div>
                     </div>
@@ -619,7 +619,7 @@ export default function BharatBMSEVPage() {
                   {/* Applications */}
                    <div>
                     <div className="flex items-center mb-4">
-                      <FaIndustry className="text-gray-200 text-lg mr-3" />
+                      <FaIndustry className="text-gray-200 text-xl mr-3" />
                       <h3 className="text-lg font-semibold text-white">Applications</h3>
                     </div>
                       <div className="grid grid-cols-1 sm:grid-cols-3 gap-2">
@@ -630,7 +630,7 @@ export default function BharatBMSEVPage() {
                               alt="EV – Car"
                               width={48}
                               height={40}
-                              className="object-contain scale-90"
+                              className="object-contain scale-90 mt-6"
                             />
                           </div>
                           <div className="flex flex-col justify-center mt-2">
@@ -645,7 +645,7 @@ export default function BharatBMSEVPage() {
                               alt="EV – Truck"
                               width={48}
                               height={40}
-                              className="object-contain scale-90"
+                              className="object-contain scale-90 mt-3"
                             />
                           </div>
                           <div className="flex flex-col justify-center">
@@ -660,7 +660,7 @@ export default function BharatBMSEVPage() {
                               alt="EV – Bus"
                               width={48}
                               height={40}
-                              className="object-contain scale-90"
+                              className="object-contain scale-105 mt-3"
                             />
                       </div>
                           <div className="flex flex-col justify-center">
@@ -692,7 +692,7 @@ export default function BharatBMSEVPage() {
                       alt="EV 500V BMS Product"
                           width={560}
                           height={340}
-                          className="w-full h-full object-contain"
+                          className="w-full h-full object-contain hover:scale-110 transition-transform duration-300 ease-in-out"
                     />
                     </div>
                     <p className="text-gray-300 mt-4 text-center">
@@ -706,29 +706,29 @@ export default function BharatBMSEVPage() {
                   {/* Key Specifications */}
                    <div>
                     <div className="flex items-center mb-4">
-                      <FaCogs className="text-gray-200 text-lg mr-3" />
+                      <FaCogs className="text-gray-200 text-xl mr-3" />
                       <h3 className="text-lg font-semibold text-white">Key Specifications</h3>
                     </div>
                       <div className="grid grid-cols-1 sm:grid-cols-3 gap-2">
-                        <div className="bg-[#262626] p-4 rounded-lg flex flex-col justify-center h-[180px] border border-[#333]">
-                          <FaCubes className="text-gray-200 text-2xl mx-auto mb-3 mt-4" />
-                          <div className="flex flex-col justify-center items-center text-center">
+                         <div className="bg-[#262626] p-4 rounded-lg flex flex-col justify-center h-[180px] border border-[#333]">
+                           <FaCubes className="text-gray-200 text-2xl mx-auto mb-3 mt-4" />
+                           <div className="flex flex-col justify-center items-center text-center">
                             <h4 className="text-sm font-semibold text-white whitespace-nowrap">Cell Configuration</h4>
-                          <p className="text-gray-300 text-sm">Up to 186S</p>
+                          <p className="text-gray-300 text-sm text-center">Up to 186S</p>
                           </div>
                           </div>
                         <div className="bg-[#262626] p-4 rounded-lg flex flex-col justify-center h-[180px] border border-[#333]">
                           <FaBolt className="text-gray-200 text-2xl mx-auto mb-3 mt-4" />
                           <div className="flex flex-col justify-center items-center text-center">
                             <h4 className="text-sm font-semibold text-white whitespace-nowrap">Nominal Pack<br />Voltage Range</h4>
-                          <p className="text-gray-300 text-sm">600.0V</p>
+                          <p className="text-gray-300 text-sm text-center">600.0V</p>
                         </div>
                           </div>
                         <div className="bg-[#262626] p-4 rounded-lg flex flex-col justify-center h-[180px] border border-[#333]">
-                          <FaBatteryFull className="text-gray-200 text-2xl mx-auto mb-3 mt-4" />
+                          <FaBatteryFull className="text-gray-200 text-2xl mx-auto mb-3" />
                           <div className="flex flex-col justify-center items-center text-center">
                             <h4 className="text-sm font-semibold text-white whitespace-nowrap">Battery Capacity Range</h4>
-                          <p className="text-gray-300 text-sm">120kWh</p>
+                          <p className="text-gray-300 text-sm text-center">120kWh</p>
                         </div>
                       </div>
                     </div>
@@ -737,7 +737,7 @@ export default function BharatBMSEVPage() {
                   {/* Applications */}
                    <div>
                     <div className="flex items-center mb-4">
-                      <FaIndustry className="text-gray-200 text-lg mr-3" />
+                      <FaIndustry className="text-gray-200 text-xl mr-3" />
                       <h3 className="text-lg font-semibold text-white">Applications</h3>
                     </div>
                       <div className="grid grid-cols-1 sm:grid-cols-3 gap-2">
@@ -748,7 +748,7 @@ export default function BharatBMSEVPage() {
                               alt="EV – Truck"
                               width={48}
                               height={40}
-                              className="object-contain scale-90"
+                              className="object-contain scale-90 mt-3"
                             />
                           </div>
                           <div className="flex flex-col justify-center mt-2">
@@ -763,7 +763,7 @@ export default function BharatBMSEVPage() {
                               alt="EV – Bus"
                               width={48}
                               height={40}
-                              className="object-contain scale-90"
+                              className="object-contain scale-105"
                             />
                       </div>
                           <div className="flex flex-col justify-center">
@@ -778,12 +778,12 @@ export default function BharatBMSEVPage() {
                               alt="Heavy Vehicle"
                               width={48}
                               height={40}
-                              className="object-contain scale-90"
+                               className="object-contain scale-125 mt-10"
                             />
                           </div>
-                          <div className="flex flex-col justify-center">
-                            <h4 className="text-sm font-semibold text-white whitespace-nowrap">Heavy Vehicle</h4>
-                        <p className="text-gray-300 text-sm">Industrial and commercial applications</p>
+                           <div className="flex flex-col justify-center mt-5">
+                             <h4 className="text-sm font-semibold text-white whitespace-nowrap">Heavy Vehicle</h4>
+                         <p className="text-gray-300 text-sm"><span className="block">Industrial and commercial</span><span className="block">applications</span></p>
                           </div>
                       </div>
                     </div>
