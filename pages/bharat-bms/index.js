@@ -350,7 +350,7 @@ const BharatBMS = () => {
                {bmsToggle === 'ENERGY STORAGE' && (
                  <>
                    <AnimatedDiv>
-                     <Link href="/bms/BharatBMS-ESS" className="group focus:outline-none">
+                     <Link href="/bms/BharatBMS-ESS#ess-48v" className="group focus:outline-none">
                       <div className="relative rounded-2xl bg-[#1c1c1c] border border-white/20 p-6 h-full min-h-[420px] md:min-h-[450px] lg:min-h-[480px] flex flex-col transition-all duration-200 hover:bg-[#1c1c1c] hover:border-[#00e5ff]/30 hover:border-2 hover:outline-none focus:outline-none hover:border-solid hover:outline-none">
               
                         <div className="relative w-full h-[180px] md:h-[200px] rounded-xl overflow-hidden mb-4">
@@ -383,7 +383,7 @@ const BharatBMS = () => {
                    </AnimatedDiv>
 
                    <AnimatedDiv>
-                     <Link href="/bms/BharatBMS-ESS" className="group focus:outline-none">
+                     <Link href="/bms/BharatBMS-ESS#ess-72v" className="group focus:outline-none">
                       <div className="relative rounded-2xl bg-[#1c1c1c] border border-white/20 p-6 h-full min-h-[420px] md:min-h-[450px] lg:min-h-[480px] flex flex-col transition-all duration-200 hover:bg-[#1c1c1c] hover:border-[#00e5ff]/30 hover:border-2 hover:outline-none focus:outline-none hover:border-solid hover:outline-none">
               
                         <div className="relative w-full h-[180px] md:h-[200px] rounded-xl overflow-hidden mb-4">
@@ -416,7 +416,7 @@ const BharatBMS = () => {
                    </AnimatedDiv>
 
                    <AnimatedDiv>
-                     <Link href="/bms/BharatBMS-ESS" className="group focus:outline-none">
+                     <Link href="/bms/BharatBMS-ESS#ess-110v" className="group focus:outline-none">
                       <div className="relative rounded-2xl bg-[#1c1c1c] border border-white/20 p-6 h-full min-h-[420px] md:min-h-[450px] lg:min-h-[480px] flex flex-col transition-all duration-200 hover:bg-[#1c1c1c] hover:border-[#00e5ff]/30 hover:border-2 hover:outline-none focus:outline-none hover:border-solid hover:outline-none">
               
                         <div className="relative w-full h-[180px] md:h-[200px] rounded-xl overflow-hidden mb-4">
@@ -465,7 +465,7 @@ const BharatBMS = () => {
                          <div className="flex flex-nowrap transition-transform duration-500 ease-in-out gap-6" style={{ transform: `translateX(-${currentEVCard * 33.33}%)` }}>
                          {/* Xbattery BharatBMS-EV-110V */}
                          <AnimatedDiv className="flex-shrink-0" style={{ width: 'calc((100% / 3) - 1.5rem)' }}>
-                           <Link href="/bms/BharatBMS-EV" className="group focus:outline-none">
+                           <Link href="/bms/BharatBMS-EV#ev-110v" className="group focus:outline-none">
                              <div 
                                className="relative rounded-2xl bg-[#1c1c1c] border border-white/20 p-6 h-full min-h-[420px] md:min-h-[450px] lg:min-h-[480px] flex flex-col transition-all duration-200 hover:bg-[#1c1c1c] hover:border-[#00e5ff]/30 hover:border-2 hover:outline-none focus:outline-none hover:border-solid hover:outline-none"
                              >
@@ -498,7 +498,7 @@ const BharatBMS = () => {
 
                          {/* Xbattery BharatBMS-EV-400V */}
                          <AnimatedDiv className="flex-shrink-0" style={{ width: 'calc((100% / 3) - 1.5rem)' }}>
-                           <Link href="/bms/BharatBMS-EV" className="group focus:outline-none">
+                           <Link href="/bms/BharatBMS-EV#ev-400v" className="group focus:outline-none">
                              <div 
                                className="relative rounded-2xl bg-[#1c1c1c] border border-white/20 p-6 h-full min-h-[420px] md:min-h-[450px] lg:min-h-[480px] flex flex-col transition-all duration-200 hover:bg-[#1c1c1c] hover:border-[#00e5ff]/30 hover:border-2 hover:outline-none focus:outline-none hover:border-solid hover:outline-none"
                              >
@@ -531,7 +531,7 @@ const BharatBMS = () => {
 
                          {/* Xbattery BharatBMS-EV-500V */}
                          <AnimatedDiv className="flex-shrink-0" style={{ width: 'calc((100% / 3) - 1.5rem)' }}>
-                           <Link href="/bms/BharatBMS-EV" className="group focus:outline-none">
+                           <Link href="/bms/BharatBMS-EV#ev-500v" className="group focus:outline-none">
                              <div 
                                className="relative rounded-2xl bg-[#1c1c1c] border border-white/20 p-6 h-full min-h-[420px] md:min-h-[450px] lg:min-h-[480px] flex flex-col transition-all duration-200 hover:bg-[#1c1c1c] hover:border-[#00e5ff]/30 hover:border-2 hover:outline-none focus:outline-none hover:border-solid hover:outline-none"
                              >
