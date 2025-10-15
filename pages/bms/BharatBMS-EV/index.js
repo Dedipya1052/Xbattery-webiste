@@ -516,10 +516,6 @@ export default function BharatBMSEVPage() {
                         <p className="text-gray-300 text-sm">Optimized range for urban drive.</p>
                       </div>
                       <div className="bg-[#1a1a1a] p-4 rounded-lg">
-                        <h4 className="text-sm font-semibold text-white mb-2">EV – Car</h4>
-                        <p className="text-gray-300 text-sm">Efficient power for smart mobility.</p>
-                      </div>
-                      <div className="bg-[#1a1a1a] p-4 rounded-lg">
                         <h4 className="text-sm font-semibold text-white mb-2">EV – Bus</h4>
                         <p className="text-gray-300 text-sm">Safe, scalable fleet performance</p>
                       </div>
@@ -604,10 +600,6 @@ export default function BharatBMSEVPage() {
                         <p className="text-gray-300 text-sm">Optimized range for urban drive.</p>
                       </div>
                       <div className="bg-[#1a1a1a] p-4 rounded-lg">
-                        <h4 className="text-sm font-semibold text-white mb-2">EV – Car</h4>
-                        <p className="text-gray-300 text-sm">Efficient power for smart mobility.</p>
-                      </div>
-                      <div className="bg-[#1a1a1a] p-4 rounded-lg">
                         <h4 className="text-sm font-semibold text-white mb-2">EV – Bus</h4>
                         <p className="text-gray-300 text-sm">Safe, scalable fleet performance</p>
                       </div>
@@ -690,10 +682,6 @@ export default function BharatBMSEVPage() {
                       <div className="bg-[#1a1a1a] p-4 rounded-lg">
                         <h4 className="text-sm font-semibold text-white mb-2">EV – 3 Wheeler</h4>
                         <p className="text-gray-300 text-sm">Optimized range for urban drive.</p>
-                      </div>
-                      <div className="bg-[#1a1a1a] p-4 rounded-lg">
-                        <h4 className="text-sm font-semibold text-white mb-2">EV – Car</h4>
-                        <p className="text-gray-300 text-sm">Efficient power for smart mobility.</p>
                       </div>
                       <div className="bg-[#1a1a1a] p-4 rounded-lg">
                         <h4 className="text-sm font-semibold text-white mb-2">EV – Bus</h4>

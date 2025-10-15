@@ -360,7 +360,10 @@ const BharatBMS = () => {
                           <span>Xbattery BharatBMS-ESS-48V</span>
                         </h4>
                         <div className="w-16 h-[3px] bg-[#00e5ff] rounded-full mb-4"></div>
-                        <p className="text-sm text-[#cfe3ea] mb-4">The XB-X 16S is a versatile 48V BMS designed for modular energy storage systems with support for both LFP and NMC chemistries across 13-17 series configurations.</p>
+                        <p className="text-sm text-[#cfe3ea] mb-4">Xbattery BharatBMS ESS-48V
+Smart BMS for UPS, telecom, and small ESS
+applications, supports up to 28S for
+compact and reliable energy storage.</p>
                         <div className="mt-auto">
                           <div className="text-sm text-[#64efff] tracking-wide mb-2">KEY FEATURES</div>
                           <ul className="text-sm text-[#cfe3ea] list-disc pl-4 space-y-1 marker:text-[#00e5ff]">
@@ -393,7 +396,10 @@ const BharatBMS = () => {
                           <span>Xbattery BharatBMS-ESS-72V</span>
                         </h4>
                         <div className="w-16 h-[3px] bg-[#00e5ff] rounded-full mb-4"></div>
-                        <p className="text-sm text-[#cfe3ea] mb-4">The XB-X 32S is a robust low-voltage energy storage system BMS operating at 110V nominal with LFP chemistry support for 32-36 series configurations.</p>
+                        <p className="text-sm text-[#cfe3ea] mb-4">Xbattery BharatBMS ESS-72V
+High-efficiency BMS for industrial and
+medium-scale ESS, supports up to 28S for
+safe and efficient power management.</p>
                         <div className="mt-auto">
                           <div className="text-sm text-[#64efff] tracking-wide mb-2">KEY FEATURES</div>
                           <ul className="text-sm text-[#cfe3ea] list-disc pl-4 space-y-1 marker:text-[#00e5ff]">
@@ -426,7 +432,10 @@ const BharatBMS = () => {
                           <span>Xbattery BharatBMS-ESS-110V</span>
                         </h4>
                         <div className="w-16 h-[3px] bg-[#00e5ff] rounded-full mb-4"></div>
-                        <p className="text-sm text-[#cfe3ea] mb-4">The XB-X 32S is a robust low-voltage energy storage system BMS operating at 110V nominal with LFP chemistry support for 32-36 series configurations.</p>
+                        <p className="text-sm text-[#cfe3ea] mb-4">Xbattery BharatBMS ESS-110V
+Advanced BMS for large ESS and grid
+storage, supports up to 42S for high
+voltage, high-performance energy systems</p>
                         <div className="mt-auto">
                           <div className="text-sm text-[#64efff] tracking-wide mb-2">KEY FEATURES</div>
                           <ul className="text-sm text-[#cfe3ea] list-disc pl-4 space-y-1 marker:text-[#00e5ff]">
