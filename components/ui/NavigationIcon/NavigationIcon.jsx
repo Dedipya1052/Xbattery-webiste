@@ -19,7 +19,7 @@ const NavigationIcon = ({ pageType = 'ess' }) => {
     setIsHovered(false);
     const timeout = setTimeout(() => {
       setIsDropdownOpen(false);
-    }, 500); // Increased delay to 500ms for better hover experience
+    }, 800); // Shorter delay when leaving product text
     setHoverTimeout(timeout);
   };
 
@@ -35,9 +35,9 @@ const NavigationIcon = ({ pageType = 'ess' }) => {
     >
       {/* Products Text - Updated to show text instead of hamburger icon */}
       <div 
-        className="px-4 py-2 rounded-lg bg-[#0c0c0c] flex items-center justify-center text-white cursor-pointer transition-all duration-200 group focus:outline-none hover:outline-none focus:border-none hover:border-none hover:bg-[#1a1a1a]"
+        className="px-4 py-2 rounded-lg bg-black flex items-center justify-center text-white cursor-pointer transition-all duration-200 group focus:outline-none hover:outline-none focus:border-none hover:border-none hover:bg-gray-800"
         style={{
-          backgroundColor: '#0c0c0c !important',
+          backgroundColor: 'black !important',
           outline: 'none !important',
           border: 'none !important',
           boxShadow: 'none !important'
@@ -68,6 +68,8 @@ const NavigationIcon = ({ pageType = 'ess' }) => {
         isOpen={isDropdownOpen}
         onClose={handleClose}
         pageType={pageType}
+        productTextTimeout={100}
+        menuTimeout={100}
       />
     </div>
   );

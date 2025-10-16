@@ -16,7 +16,7 @@ const NavbarNavigation = () => {
   const handleMouseLeave = () => {
     const timeout = setTimeout(() => {
       setIsDropdownOpen(false);
-    }, 2000); // Increased delay to 2 seconds
+    }, 400); // Shorter delay when leaving product text
     setHoverTimeout(timeout);
   };
 
@@ -31,7 +31,7 @@ const NavbarNavigation = () => {
       onMouseLeave={handleMouseLeave}
     >
       {/* Products Text */}
-      <div className="flex items-center text-white cursor-pointer transition-all duration-200 group focus:outline-none hover:outline-none focus:border-none hover:border-none">
+      <div className="flex items-center text-white cursor-pointer transition-all duration-200 group focus:outline-none hover:outline-none focus:border-none hover:border-none bg-black">
         <span className="text-lg font-medium text-white transition-colors duration-200 space-grotesk-medium">
           Products
         </span>
@@ -58,6 +58,8 @@ const NavbarNavigation = () => {
         isOpen={isDropdownOpen}
         onClose={handleClose}
         pageType="navbar"
+        productTextTimeout={500}
+        menuTimeout={100}
       />
     </div>
   );

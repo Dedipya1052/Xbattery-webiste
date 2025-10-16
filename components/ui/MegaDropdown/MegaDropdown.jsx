@@ -3,7 +3,7 @@ import ESSBMSIcon from '@/components/Icons/ESSBMSIcon';
 import ESSBMSIcon48V from '@/components/Icons/ESSBMSIcon48V';
 import ESSBMSIcon72V from '@/components/Icons/ESSBMSIcon72V';
 
-const MegaDropdown = ({ isOpen, onClose, pageType = 'ess' }) => {
+const MegaDropdown = ({ isOpen, onClose, pageType = 'ess', productTextTimeout = 1000, menuTimeout = 2000 }) => {
   const [hoverTimeout, setHoverTimeout] = useState(null);
   const [activeCategory, setActiveCategory] = useState('ess');
   const dropdownRef = useRef(null);
@@ -124,10 +124,10 @@ const MegaDropdown = ({ isOpen, onClose, pageType = 'ess' }) => {
         }
       }}
       onMouseLeave={() => {
-        // Let parent handle closing with delay
+        // Close menu with specified delay when leaving the menu
         const timeout = setTimeout(() => {
           onClose();
-        }, 2000);
+        }, menuTimeout);
         setHoverTimeout(timeout);
       }}
     >
