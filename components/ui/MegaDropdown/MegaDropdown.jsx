@@ -41,20 +41,20 @@ const MegaDropdown = ({ isOpen, onClose, onMouseEnter, onMouseLeave, pageType = 
     title: "BharatBMS-ESS",
     sections: [
       {
-        name: "Low Voltage",
+        name: "Energy Storage Systems",
         products: [
-          { name: "FS-LT", description: "For standalone & stackable architectures" },
-          { name: "CT-Safe", description: "For onroad & battery safety" },
-          { name: "CT-Lite", description: "For cost-competitive mobility applications." },
-          { name: "CT-Lite+ 50A", description: "For cost-competitive mobility applications." },
-          { name: "CT-Lite + 80A", description: "For cost-competitive mobility applications." }
+          { name: "FS-LT", description: "For standalone & stackable ESS architectures" },
+          { name: "CT-Safe", description: "For grid-scale energy storage safety" },
+          { name: "CT-Lite", description: "For residential energy storage systems" },
+          { name: "CT-Lite+ 50A", description: "For commercial energy storage applications" },
+          { name: "CT-Lite + 80A", description: "For industrial energy storage solutions" }
         ]
       },
       {
-        name: "High Voltage", 
+        name: "Grid Integration", 
         products: [
-          { name: "FS-XT", description: "For high voltage & high power applications" },
-          { name: "HP Safe", description: "For high power low-voltage applications" }
+          { name: "FS-XT", description: "For high voltage grid-tied applications" },
+          { name: "HP Safe", description: "For utility-scale energy storage systems" }
         ]
       }
     ]
@@ -64,35 +64,40 @@ const MegaDropdown = ({ isOpen, onClose, onMouseEnter, onMouseLeave, pageType = 
     title: "BharatBMS-EV",
     sections: [
       {
-        name: "Power Management",
+        name: "Electric Vehicle Systems",
         products: [
-          { name: "FSB-PR-I", description: "Interface board for external contractors" }
+          { name: "FSB-PR-I", description: "Interface board for EV charging contractors" },
+          { name: "EV-BMS", description: "Battery management for electric vehicles" },
+          { name: "Charging Control", description: "Smart charging management systems" }
         ]
       },
       {
-        name: "Telematics",
+        name: "Vehicle Telematics",
         products: [
-          { name: "TCU", description: "For advanced use-cases" }
+          { name: "TCU", description: "Telematics control unit for EV monitoring" },
+          { name: "Fleet Management", description: "Electric vehicle fleet tracking" }
         ]
       }
     ]
   };
 
   const batteryCapacityContent = {
-    title: "Battery Capacity",
+    title: "Battery Management",
     sections: [
       {
-        name: "Small Capacity",
+        name: "Battery Monitoring",
         products: [
-          { name: "5-20 kWh", description: "Residential and small commercial" },
-          { name: "20-50 kWh", description: "Medium commercial applications" }
+          { name: "Cell Monitoring", description: "Individual cell voltage and temperature tracking" },
+          { name: "State of Charge", description: "Accurate SOC estimation algorithms" },
+          { name: "Health Monitoring", description: "Battery degradation and lifespan analysis" }
         ]
       },
       {
-        name: "Large Capacity",
+        name: "Safety Systems",
         products: [
-          { name: "50-100 kWh", description: "Industrial and grid-scale" },
-          { name: "100+ kWh", description: "Utility-scale energy storage" }
+          { name: "Thermal Management", description: "Advanced thermal protection systems" },
+          { name: "Fault Detection", description: "Real-time fault detection and isolation" },
+          { name: "Emergency Shutdown", description: "Safe emergency shutdown procedures" }
         ]
       }
     ]
@@ -136,7 +141,7 @@ const MegaDropdown = ({ isOpen, onClose, onMouseEnter, onMouseLeave, pageType = 
               }}
               onMouseEnter={() => setActiveCategory('ess')}
             >
-              Battery Management Systems
+              BharatBMS-ESS
             </div>
             <div 
               className={`text-white font-medium text-base py-2 px-3 rounded cursor-pointer transition-colors ${
@@ -147,7 +152,7 @@ const MegaDropdown = ({ isOpen, onClose, onMouseEnter, onMouseLeave, pageType = 
               }}
               onMouseEnter={() => setActiveCategory('ev')}
             >
-              Other Advanced Electronics
+              BharatBMS-EV
             </div>
             <div 
               className={`text-white font-medium text-base py-2 px-3 rounded cursor-pointer transition-colors ${
@@ -158,7 +163,7 @@ const MegaDropdown = ({ isOpen, onClose, onMouseEnter, onMouseLeave, pageType = 
               }}
               onMouseEnter={() => setActiveCategory('capacity')}
             >
-              Upcoming Projects
+              Battery Management
             </div>
           </div>
         </div>
@@ -168,9 +173,9 @@ const MegaDropdown = ({ isOpen, onClose, onMouseEnter, onMouseLeave, pageType = 
           <div className="rounded-lg p-4" style={{ backgroundColor: '#3A3A3C' }}>
             {getCurrentContent().sections.map((section, sectionIndex) => (
               <div key={sectionIndex}>
-                <div className="flex items-center mb-3">
+                <div className="flex items-center mb-2">
                   <div className="w-6 h-6 flex items-center justify-center mr-3">
-                    {section.name === 'Low Voltage' || section.name === 'High Voltage' ? (
+                    {section.name === 'Energy Storage Systems' || section.name === 'Grid Integration' ? (
                       <div className="w-6 h-6 rounded-full border border-cyan-400 flex items-center justify-center">
                         <svg className="w-3 h-3" fill="url(#lightningGradient)" viewBox="0 0 20 20">
                           <defs>
@@ -182,14 +187,14 @@ const MegaDropdown = ({ isOpen, onClose, onMouseEnter, onMouseLeave, pageType = 
                           <path fillRule="evenodd" d="M11.3 1.046A1 1 0 0112 2v5h4a1 1 0 01.82 1.573l-7 10A1 1 0 018 18v-5H4a1 1 0 01-.82-1.573l7-10a1 1 0 011.12-.38z" clipRule="evenodd" />
                         </svg>
                       </div>
-                    ) : section.name === 'Power Management' ? (
+                    ) : section.name === 'Electric Vehicle Systems' ? (
                       <div className="w-6 h-6 rounded-full border-2 border-blue-500 flex items-center justify-center relative">
                         <svg className="w-3 h-3 text-blue-400" fill="currentColor" viewBox="0 0 20 20">
                           <path d="M4 3a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V5a2 2 0 00-2-2H4zm12 12H4V5h12v10z"/>
                         </svg>
                         <div className="absolute -bottom-1 -right-1 w-2 h-2 bg-green-500 rounded-full"></div>
                       </div>
-                    ) : section.name === 'Telematics' ? (
+                    ) : section.name === 'Vehicle Telematics' ? (
                       <div className="w-6 h-6 rounded-full border-2 border-blue-500 flex items-center justify-center">
                         <div className="relative w-4 h-4">
                           <svg className="absolute top-0 left-0 w-2 h-2 text-blue-400" fill="currentColor" viewBox="0 0 20 20">
@@ -199,6 +204,12 @@ const MegaDropdown = ({ isOpen, onClose, onMouseEnter, onMouseLeave, pageType = 
                             <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/>
                           </svg>
                         </div>
+                      </div>
+                    ) : section.name === 'Battery Monitoring' || section.name === 'Safety Systems' ? (
+                      <div className="w-6 h-6 rounded-full border border-orange-400 flex items-center justify-center">
+                        <svg className="w-3 h-3 text-orange-400" fill="currentColor" viewBox="0 0 20 20">
+                          <path fillRule="evenodd" d="M3 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clipRule="evenodd" />
+                        </svg>
                       </div>
                     ) : (
                       <div className="w-6 h-6 rounded-full border border-cyan-400 flex items-center justify-center">
@@ -217,9 +228,9 @@ const MegaDropdown = ({ isOpen, onClose, onMouseEnter, onMouseLeave, pageType = 
                   <h3 className="text-white font-bold text-base">{section.name}</h3>
                 </div>
                 <div className="ml-9">
-                  <div className="grid grid-cols-2 gap-x-8 gap-y-4">
+                  <div className="grid grid-cols-2 gap-x-8 gap-y-3">
                     {section.products.map((product, productIndex) => (
-                      <div key={productIndex} className="mb-4">
+                      <div key={productIndex} className="mb-3">
                         <div className="text-white font-medium text-sm mb-1">{product.name}</div>
                         {product.description && (
                           <div className="text-gray-300 text-xs">{product.description}</div>
@@ -229,7 +240,7 @@ const MegaDropdown = ({ isOpen, onClose, onMouseEnter, onMouseLeave, pageType = 
                   </div>
                 </div>
                 {sectionIndex < getCurrentContent().sections.length - 1 && (
-                  <div className="mt-6 mb-6" style={{ borderTop: '1px solid #4A4A4C' }}></div>
+                  <div className="mt-4 mb-4" style={{ borderTop: '1px solid #4A4A4C' }}></div>
                 )}
               </div>
             ))}

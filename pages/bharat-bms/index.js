@@ -338,37 +338,37 @@ const BharatBMS = () => {
 
            {/* OUR BMS OFFERINGS - With Toggle and Both ESS and EV Cards */}
            <div className="mt-6" id="bms-offerings">
-             <h3 className={`${classes.color} text-center text-2xl md:text-3xl font-bold mb-6 mt-[6rem]`}>OUR BMS OFFERINGS</h3>
+             <h3 className={`${classes.color} text-center text-xl sm:text-2xl md:text-3xl font-bold mb-4 md:mb-6 mt-[4rem] md:mt-[6rem]`}>OUR BMS OFFERINGS</h3>
              
              <BMSToggle 
                onToggle={(value) => setBmsToggle(value)}
                initialValue={bmsToggle}
              />
              
-             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-10 mb-[4rem]">
+             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 mt-6 md:mt-10 mb-[2rem] md:mb-[4rem] px-4 md:px-0">
                {/* ESS Products */}
                {bmsToggle === 'ENERGY STORAGE' && (
                  <>
                    <AnimatedDiv>
                      <Link href="/bms/BharatBMS-ESS#ess-48v-white" className="group focus:outline-none">
-                      <div className="relative rounded-2xl bg-[#1c1c1c] border border-white/20 p-6 h-full min-h-[420px] md:min-h-[450px] lg:min-h-[480px] flex flex-col transition-all duration-200 hover:bg-[#1c1c1c] hover:border-[#00e5ff]/30 hover:border-2 hover:outline-none focus:outline-none hover:border-solid hover:outline-none">
+                      <div className="relative rounded-2xl bg-[#1c1c1c] border border-white/20 p-4 md:p-6 h-full min-h-[380px] sm:min-h-[420px] md:min-h-[450px] lg:min-h-[480px] flex flex-col transition-all duration-200 hover:bg-[#1c1c1c] hover:border-[#00e5ff]/30 hover:border-2 hover:outline-none focus:outline-none hover:border-solid hover:outline-none">
               
-                        <div className="relative w-full h-[180px] md:h-[200px] rounded-xl overflow-hidden mb-4">
+                        <div className="relative w-full h-[160px] sm:h-[180px] md:h-[200px] rounded-xl overflow-hidden mb-3 md:mb-4">
                           <Image src="/images/telecom_good_looking-Photoroom.png" alt="Xbattery BharatBMS-ESS-48V" fill className="object-contain transition-transform duration-500 ease-out group-hover:scale-[1.28]" />
                         </div>
-                        <h4 className={`text-lg md:text-xl font-semibold mb-2 text-[#00e5ff]`}>
+                        <h4 className={`text-base md:text-lg lg:text-xl font-semibold mb-2 text-[#00e5ff] leading-tight`}>
                           <span>Xbattery BharatBMS-ESS-48V</span>
                         </h4>
-                        <div className="w-16 h-[3px] bg-[#00e5ff] rounded-full mb-4"></div>
-                        <p className="text-sm text-[#cfe3ea] mb-4">BharatBMS-ESS-48V is a versatile 48V BMS designed for modular energy storage systems with support for both LFP and NMC chemistries across 13-17 series configurations.</p>
+                        <div className="w-12 md:w-16 h-[2px] md:h-[3px] bg-[#00e5ff] rounded-full mb-3 md:mb-4"></div>
+                        <p className="text-xs md:text-sm text-[#cfe3ea] mb-3 md:mb-4 leading-relaxed">BharatBMS-ESS-48V is a versatile 48V BMS designed for modular energy storage systems with support for both LFP and NMC chemistries across 13-17 series configurations.</p>
                         <div className="mt-auto">
-                          <div className="text-sm text-[#64efff] tracking-wide mb-2">KEY FEATURES</div>
-                          <ul className="text-sm text-[#cfe3ea] list-disc pl-4 space-y-1 marker:text-[#00e5ff]">
-                            <li>
+                          <div className="text-xs md:text-sm text-[#64efff] tracking-wide mb-2">KEY FEATURES</div>
+                          <ul className="text-xs md:text-sm text-[#cfe3ea] list-disc pl-3 md:pl-4 space-y-1 marker:text-[#00e5ff]">
+                            <li className="leading-relaxed">
                               Supported Cell Chemistry: <span className="font-semibold">LFP/NMC</span>
                             </li>
-                            <li>Cell Count Range: Up to 28S</li>
-                            <li>Nominal Pack Voltage: 48V</li>
+                            <li className="leading-relaxed">Cell Count Range: Up to 28S</li>
+                            <li className="leading-relaxed">Nominal Pack Voltage: 48V</li>
                           </ul>
                           <div className="mt-3 flex justify-end">
                             <svg width="36" height="36" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="text-white transition-transform duration-700 ease-out group-hover:text-[#00e5ff] group-hover:translate-x-2">
@@ -384,24 +384,24 @@ const BharatBMS = () => {
 
                    <AnimatedDiv>
                      <Link href="/bms/BharatBMS-ESS#ess-72v-white" className="group focus:outline-none">
-                      <div className="relative rounded-2xl bg-[#1c1c1c] border border-white/20 p-6 h-full min-h-[420px] md:min-h-[450px] lg:min-h-[480px] flex flex-col transition-all duration-200 hover:bg-[#1c1c1c] hover:border-[#00e5ff]/30 hover:border-2 hover:outline-none focus:outline-none hover:border-solid hover:outline-none">
+                      <div className="relative rounded-2xl bg-[#1c1c1c] border border-white/20 p-4 md:p-6 h-full min-h-[380px] sm:min-h-[420px] md:min-h-[450px] lg:min-h-[480px] flex flex-col transition-all duration-200 hover:bg-[#1c1c1c] hover:border-[#00e5ff]/30 hover:border-2 hover:outline-none focus:outline-none hover:border-solid hover:outline-none">
               
-                        <div className="relative w-full h-[180px] md:h-[200px] rounded-xl overflow-hidden mb-4">
+                        <div className="relative w-full h-[160px] sm:h-[180px] md:h-[200px] rounded-xl overflow-hidden mb-3 md:mb-4">
                           <Image src="/images/bms_offerings/ess-72v.png" alt="XB-X 32S" fill className="object-contain transition-transform duration-500 ease-out group-hover:scale-[1.48]" />
                         </div>
-                        <h4 className={`text-lg md:text-xl font-semibold mb-2 text-[#00e5ff]`}>
+                        <h4 className={`text-base md:text-lg lg:text-xl font-semibold mb-2 text-[#00e5ff] leading-tight`}>
                           <span>Xbattery BharatBMS-ESS-72V</span>
                         </h4>
-                        <div className="w-16 h-[3px] bg-[#00e5ff] rounded-full mb-4"></div>
-                        <p className="text-sm text-[#cfe3ea] mb-4">BharatBMS-ESS-72V is High-efficiency battery management for industrial and medium-scale energy storage systems supporting up to 28S configurations.</p>
+                        <div className="w-12 md:w-16 h-[2px] md:h-[3px] bg-[#00e5ff] rounded-full mb-3 md:mb-4"></div>
+                        <p className="text-xs md:text-sm text-[#cfe3ea] mb-3 md:mb-4 leading-relaxed">BharatBMS-ESS-72V is High-efficiency battery management for industrial and medium-scale energy storage systems supporting up to 28S configurations.</p>
                         <div className="mt-auto">
-                          <div className="text-sm text-[#64efff] tracking-wide mb-2">KEY FEATURES</div>
-                          <ul className="text-sm text-[#cfe3ea] list-disc pl-4 space-y-1 marker:text-[#00e5ff]">
-                            <li>
+                          <div className="text-xs md:text-sm text-[#64efff] tracking-wide mb-2">KEY FEATURES</div>
+                          <ul className="text-xs md:text-sm text-[#cfe3ea] list-disc pl-3 md:pl-4 space-y-1 marker:text-[#00e5ff]">
+                            <li className="leading-relaxed">
                               Supported Cell Chemistry: <span className="font-semibold">LFP/NMC</span>
                             </li>
-                            <li>Cell Count Range: Up to 28S</li>
-                            <li>Nominal Pack Voltage: 72V</li>
+                            <li className="leading-relaxed">Cell Count Range: Up to 28S</li>
+                            <li className="leading-relaxed">Nominal Pack Voltage: 72V</li>
                           </ul>
                           <div className="mt-3 flex justify-end">
                             <svg width="36" height="36" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="text-white transition-transform duration-700 ease-out group-hover:text-[#00e5ff] group-hover:translate-x-2">
@@ -417,24 +417,24 @@ const BharatBMS = () => {
 
                    <AnimatedDiv>
                      <Link href="/bms/BharatBMS-ESS#ess-110v-white" className="group focus:outline-none">
-                      <div className="relative rounded-2xl bg-[#1c1c1c] border border-white/20 p-6 h-full min-h-[420px] md:min-h-[450px] lg:min-h-[480px] flex flex-col transition-all duration-200 hover:bg-[#1c1c1c] hover:border-[#00e5ff]/30 hover:border-2 hover:outline-none focus:outline-none hover:border-solid hover:outline-none">
+                      <div className="relative rounded-2xl bg-[#1c1c1c] border border-white/20 p-4 md:p-6 h-full min-h-[380px] sm:min-h-[420px] md:min-h-[450px] lg:min-h-[480px] flex flex-col transition-all duration-200 hover:bg-[#1c1c1c] hover:border-[#00e5ff]/30 hover:border-2 hover:outline-none focus:outline-none hover:border-solid hover:outline-none">
               
-                        <div className="relative w-full h-[180px] md:h-[200px] rounded-xl overflow-hidden mb-4">
+                        <div className="relative w-full h-[160px] sm:h-[180px] md:h-[200px] rounded-xl overflow-hidden mb-3 md:mb-4">
                           <Image src="/images/bms_offerings/ess2-110v.png" alt="Xbattery BharatBMS-ESS-110V" fill className="object-contain transition-transform duration-500 ease-out group-hover:scale-[1.28]" />
                         </div>
-                        <h4 className={`text-lg md:text-xl font-semibold mb-2 text-[#00e5ff]`}>
+                        <h4 className={`text-base md:text-lg lg:text-xl font-semibold mb-2 text-[#00e5ff] leading-tight`}>
                           <span>Xbattery BharatBMS-ESS-110V</span>
                         </h4>
-                        <div className="w-16 h-[3px] bg-[#00e5ff] rounded-full mb-4"></div>
-                        <p className="text-sm text-[#cfe3ea] mb-4">BharatBMS-ESS-110V is an advanced battery management system for large-scale energy storage and grid applications supporting up to 42S configurations.</p>
+                        <div className="w-12 md:w-16 h-[2px] md:h-[3px] bg-[#00e5ff] rounded-full mb-3 md:mb-4"></div>
+                        <p className="text-xs md:text-sm text-[#cfe3ea] mb-3 md:mb-4 leading-relaxed">BharatBMS-ESS-110V is an advanced battery management system for large-scale energy storage and grid applications supporting up to 42S configurations.</p>
                         <div className="mt-auto">
-                          <div className="text-sm text-[#64efff] tracking-wide mb-2">KEY FEATURES</div>
-                          <ul className="text-sm text-[#cfe3ea] list-disc pl-4 space-y-1 marker:text-[#00e5ff]">
-                            <li>
+                          <div className="text-xs md:text-sm text-[#64efff] tracking-wide mb-2">KEY FEATURES</div>
+                          <ul className="text-xs md:text-sm text-[#cfe3ea] list-disc pl-3 md:pl-4 space-y-1 marker:text-[#00e5ff]">
+                            <li className="leading-relaxed">
                               Supported Cell Chemistry: <span className="font-semibold">LFP/NMC</span>
                             </li>
-                            <li>Cell Count Range: Up to 42S</li>
-                            <li>Nominal Pack Voltage: 110V</li>
+                            <li className="leading-relaxed">Cell Count Range: Up to 42S</li>
+                            <li className="leading-relaxed">Nominal Pack Voltage: 110V</li>
                           </ul>
                           <div className="mt-3 flex justify-end">
                             <svg width="36" height="36" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="text-white transition-transform duration-700 ease-out group-hover:text-[#00e5ff] group-hover:translate-x-2">
@@ -454,7 +454,7 @@ const BharatBMS = () => {
                {bmsToggle === 'ELECTRIC VEHICLES' && (
                  <>
                    {/* Carousel Navigation and Cards Container */}
-                   <div className="relative col-span-1 md:col-span-2 lg:col-span-3">
+                   <div className="relative col-span-1 sm:col-span-2 lg:col-span-3">
                      
                     {/* Left Arrow removed */}
 
@@ -462,27 +462,27 @@ const BharatBMS = () => {
                      <div className="relative overflow-hidden">
                        {/* Cards Container with Overflow Hidden */}
                        <div className="overflow-hidden">
-                         <div className="flex flex-nowrap transition-transform duration-500 ease-in-out gap-6" style={{ transform: `translateX(-${currentEVCard * 33.33}%)` }}>
+                         <div className="flex flex-nowrap transition-transform duration-500 ease-in-out gap-4 md:gap-6" style={{ transform: `translateX(-${currentEVCard * 33.33}%)` }}>
                          {/* Xbattery BharatBMS-EV-110V */}
                          <AnimatedDiv className="flex-shrink-0" style={{ width: 'calc((100% / 3) - 1.5rem)' }}>
                            <Link href="/bms/BharatBMS-EV#ess-ev-110" className="group focus:outline-none">
                              <div 
-                               className="relative rounded-2xl bg-[#1c1c1c] border border-white/20 p-6 h-full min-h-[420px] md:min-h-[450px] lg:min-h-[480px] flex flex-col transition-all duration-200 hover:bg-[#1c1c1c] hover:border-[#00e5ff]/30 hover:border-2 hover:outline-none focus:outline-none hover:border-solid hover:outline-none"
+                               className="relative rounded-2xl bg-[#1c1c1c] border border-white/20 p-4 md:p-6 h-full min-h-[380px] sm:min-h-[420px] md:min-h-[450px] lg:min-h-[480px] flex flex-col transition-all duration-200 hover:bg-[#1c1c1c] hover:border-[#00e5ff]/30 hover:border-2 hover:outline-none focus:outline-none hover:border-solid hover:outline-none"
                              >
-                               <div className="relative w-full h-[180px] md:h-[200px] rounded-xl overflow-hidden mb-4">
+                               <div className="relative w-full h-[160px] sm:h-[180px] md:h-[200px] rounded-xl overflow-hidden mb-3 md:mb-4">
                                  <Image src="/images/bms_offerings/ev-110v.png" alt="Xbattery BharatBMS-EV-110V" fill className="object-contain transition-transform duration-500 ease-out group-hover:scale-[1.18]" />
                                </div>
-                               <h4 className={`text-lg md:text-xl font-semibold mb-2 text-[#00e5ff]`}>
+                               <h4 className={`text-base md:text-lg lg:text-xl font-semibold mb-2 text-[#00e5ff] leading-tight`}>
                                  <span>Xbattery BharatBMS-EV-110V</span>
                                </h4>
-                               <div className="w-16 h-[3px] bg-[#00e5ff] rounded-full mb-4"></div>
-                               <p className="text-sm text-[#cfe3ea] mb-4">BharatBMS-EV-110V is Optimized for e-rickshaws, autos, and tempos with up to 80S configurations and automotive-grade safety compliance.</p>
+                               <div className="w-12 md:w-16 h-[2px] md:h-[3px] bg-[#00e5ff] rounded-full mb-3 md:mb-4"></div>
+                               <p className="text-xs md:text-sm text-[#cfe3ea] mb-3 md:mb-4 leading-relaxed">BharatBMS-EV-110V is Optimized for e-rickshaws, autos, and tempos with up to 80S configurations and automotive-grade safety compliance.</p>
                                <div className="mt-auto">
-                                 <div className="text-sm text-[#64efff] tracking-wide mb-2">KEY FEATURES</div>
-                                 <ul className="text-sm text-[#cfe3ea] list-disc pl-4 space-y-1 marker:text-[#00e5ff]">
-                                   <li>Supported Cell Chemistry: <span className="font-semibold">LFP/NMC</span></li>
-                                   <li>Cell Count Range: 32S to 60S</li>
-                                   <li>Nominal Pack Voltage: 110V</li>
+                                 <div className="text-xs md:text-sm text-[#64efff] tracking-wide mb-2">KEY FEATURES</div>
+                                 <ul className="text-xs md:text-sm text-[#cfe3ea] list-disc pl-3 md:pl-4 space-y-1 marker:text-[#00e5ff]">
+                                   <li className="leading-relaxed">Supported Cell Chemistry: <span className="font-semibold">LFP/NMC</span></li>
+                                   <li className="leading-relaxed">Cell Count Range: 32S to 60S</li>
+                                   <li className="leading-relaxed">Nominal Pack Voltage: 110V</li>
                                  </ul>
                                  <div className="mt-3 flex justify-end">
                                    <svg width="36" height="36" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="text-white transition-transform duration-700 ease-out group-hover:text-[#00e5ff] group-hover:translate-x-2">

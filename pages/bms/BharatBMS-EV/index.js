@@ -434,10 +434,10 @@ export default function BharatBMSEVPage() {
         </div>
 
         {/* Our Products Section */}
-        <section id="our-products" className="py-5 md:py-6 px-4 md:px-6 bg-[#000000]">
+        <section id="our-products" className="py-4 md:py-6 lg:py-8 px-3 md:px-4 lg:px-6 bg-[#000000]">
           <div className="max-w-[1200px] mx-auto">
             <AnimatedDiv>
-              <h2 className={`text-3xl md:text-4xl font-bold mb-0 text-center ${classes.color}`}>
+              <h2 className={`text-2xl sm:text-3xl md:text-4xl font-bold mb-0 text-center ${classes.color}`}>
                 Our Products
               </h2>
             </AnimatedDiv>
@@ -447,13 +447,13 @@ export default function BharatBMSEVPage() {
 
             {/* EV 110V Product */}
             <AnimatedDiv>
-            <div id="ev-110v" className="mb-0 bg-[#1c1c1c] border border-[#333] rounded-2xl p-2.5 md:p-3 shadow-[0_6px_18px_rgba(0,0,0,0.20)] max-w-7xl mx-auto">
-              <h3 className="text-xl md:text-2xl font-bold text-white text-center mb-6">Xbattery BharatBMS-EV-110V</h3>
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-5 items-start">
+            <div id="ev-110v" className="mb-0 bg-[#1c1c1c] border border-[#333] rounded-2xl p-3 md:p-4 lg:p-6 shadow-[0_6px_18px_rgba(0,0,0,0.20)] max-w-7xl mx-auto">
+              <h3 className="text-lg md:text-xl lg:text-2xl font-bold text-white text-center mb-4 md:mb-6">Xbattery BharatBMS-EV-110V</h3>
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 md:gap-6 items-start">
                 {/* Left - Product Image */}
-                <div className="flex justify-center">
+                <div className="flex justify-center order-2 lg:order-1">
                   <div className="w-full max-w-lg text-center">
-                     <div className="bg-[#1c1c1c] overflow-hidden h-[320px] md:h-[380px] flex items-center justify-center">
+                     <div className="bg-[#1c1c1c] overflow-hidden h-[280px] sm:h-[320px] md:h-[380px] flex items-center justify-center rounded-lg">
                     <Image
                       src={productImages[0]}
                       alt="EV 110V BMS Product"
@@ -462,84 +462,84 @@ export default function BharatBMSEVPage() {
                           className="w-full h-full object-contain hover:scale-110 transition-transform duration-300 ease-in-out"
                     />
                     </div>
-                    <p className="text-gray-300 mt-4 text-center">
+                    <p className="text-gray-300 mt-3 md:mt-4 text-center text-sm md:text-base leading-relaxed px-2">
                       BharatBMS-EV-110V is Optimized for e-rickshaws, autos, and tempos with up to 80S configurations and automotive-grade safety compliance.
                     </p>
                 </div>
               </div>
 
                 {/* Right - Specifications */}
-                <div className="space-y-2.5">
+                <div className="space-y-4 md:space-y-6 order-1 lg:order-2">
                   {/* Key Specifications */}
                    <div>
-                    <div className="flex items-center mb-4">
-                      <FaCogs className="text-gray-200 text-xl mr-3" />
-                      <h3 className="text-lg font-semibold text-white">Key Specifications</h3>
+                    <div className="flex items-center mb-3 md:mb-4">
+                      <FaCogs className="text-gray-200 text-lg md:text-xl mr-2 md:mr-3" />
+                      <h3 className="text-base md:text-lg font-semibold text-white">Key Specifications</h3>
                     </div>
-                      <div className="grid grid-cols-1 sm:grid-cols-3 gap-2">
-                        <div className="bg-[#262626] p-4 rounded-lg flex flex-col justify-center h-[180px] border border-[#333]">
-                          <FaCubes className="text-gray-200 text-2xl mx-auto mb-3" />
+                      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
+                        <div className="bg-[#262626] p-3 md:p-4 rounded-lg flex flex-col justify-center min-h-[160px] border border-[#333]">
+                          <FaCubes className="text-gray-200 text-xl md:text-2xl mx-auto mb-2 md:mb-3" />
                           <div className="flex flex-col justify-center items-center text-center">
-                            <h4 className="text-sm font-semibold text-white whitespace-nowrap">Cell Configuration</h4>
-                        <p className="text-gray-300 text-sm text-center">Up to 36S</p>
+                            <h4 className="text-xs md:text-sm font-semibold text-white text-center leading-tight">Cell Configuration</h4>
+                            <p className="text-gray-300 text-xs md:text-sm text-center mt-1">Up to 36S</p>
                           </div>
-                          </div>
-                        <div className="bg-[#262626] p-4 rounded-lg flex flex-col justify-center h-[180px] border border-[#333]">
-                          <FaBolt className="text-gray-200 text-2xl mx-auto mb-3 mt-4" />
+                        </div>
+                        <div className="bg-[#262626] p-3 md:p-4 rounded-lg flex flex-col justify-center min-h-[160px] border border-[#333]">
+                          <FaBolt className="text-gray-200 text-xl md:text-2xl mx-auto mb-2 md:mb-3" />
                           <div className="flex flex-col justify-center items-center text-center">
-                            <h4 className="text-sm font-semibold text-white whitespace-nowrap">Nominal Pack<br />Voltage Range</h4>
-                        <p className="text-gray-300 text-sm text-center">110.0V</p>
+                            <h4 className="text-xs md:text-sm font-semibold text-white text-center leading-tight">Nominal Pack<br />Voltage Range</h4>
+                            <p className="text-gray-300 text-xs md:text-sm text-center mt-1">110.0V</p>
+                          </div>
                         </div>
-                        </div>
-                        <div className="bg-[#262626] p-4 rounded-lg flex flex-col justify-center h-[180px] border border-[#333]">
-                          <FaBatteryFull className="text-gray-200 text-2xl mx-auto mb-3" />
+                        <div className="bg-[#262626] p-3 md:p-4 rounded-lg flex flex-col justify-center min-h-[160px] border border-[#333] sm:col-span-2 lg:col-span-1">
+                          <FaBatteryFull className="text-gray-200 text-xl md:text-2xl mx-auto mb-2 md:mb-3" />
                           <div className="flex flex-col justify-center">
-                            <h4 className="text-sm font-semibold text-white whitespace-nowrap">Battery Capacity Range</h4>
-                          <p className="text-gray-300 text-sm text-center">25kWh</p>
+                            <h4 className="text-xs md:text-sm font-semibold text-white text-center leading-tight">Battery Capacity Range</h4>
+                            <p className="text-gray-300 text-xs md:text-sm text-center mt-1">25kWh</p>
+                          </div>
                         </div>
                       </div>
-                    </div>
                   </div>
 
                   {/* Applications */}
                    <div>
-                    <div className="flex items-center mb-4">
-                      <FaIndustry className="text-gray-200 text-xl mr-3" />
-                      <h3 className="text-lg font-semibold text-white">Applications</h3>
+                    <div className="flex items-center mb-3 md:mb-4">
+                      <FaIndustry className="text-gray-200 text-lg md:text-xl mr-2 md:mr-3" />
+                      <h3 className="text-base md:text-lg font-semibold text-white">Applications</h3>
                     </div>
-                      <div className="grid grid-cols-1 sm:grid-cols-3 gap-2">
-                        <div className="bg-[#262626] p-4 rounded-lg text-center h-[180px] flex flex-col justify-center border border-[#333]">
-                          <div className="w-12 h-10 mx-auto mb-3 -mt-1 flex items-center justify-center">
+                      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
+                        <div className="bg-[#262626] p-3 md:p-4 rounded-lg text-center min-h-[160px] flex flex-col justify-center border border-[#333]">
+                          <div className="w-10 h-8 md:w-12 md:h-10 mx-auto mb-2 md:mb-3 flex items-center justify-center">
                             <Image
                               src="/images/icons/truck.png"
                               alt="EV – Truck"
                               width={48}
                               height={40}
-                              className="object-contain scale-90 mt-5"
+                              className="object-contain scale-90"
                             />
                           </div>
-                          <div className="flex flex-col justify-center mt-2">
-                            <h4 className="text-sm font-semibold text-white whitespace-nowrap">EV – Truck</h4>
-                        <p className="text-gray-300 text-sm">Reliable energy for heavy transport</p>
-                    </div>
+                          <div className="flex flex-col justify-center">
+                            <h4 className="text-xs md:text-sm font-semibold text-white text-center leading-tight">EV – Truck</h4>
+                            <p className="text-gray-300 text-xs md:text-sm text-center mt-1">Reliable energy for heavy transport</p>
+                          </div>
                         </div>
-                        <div className="bg-[#262626] p-4 rounded-lg text-center h-[180px] flex flex-col justify-center border border-[#333]">
-                          <div className="w-12 h-10 mx-auto mb-3 mt-1 flex items-center justify-center">
+                        <div className="bg-[#262626] p-3 md:p-4 rounded-lg text-center min-h-[160px] flex flex-col justify-center border border-[#333]">
+                          <div className="w-10 h-8 md:w-12 md:h-10 mx-auto mb-2 md:mb-3 flex items-center justify-center">
                             <Image
                               src="/images/icons/3wheel.png"
                               alt="EV – 3 Wheeler"
                               width={48}
                               height={40}
-                              className="object-contain scale-90 mt-1"
+                              className="object-contain scale-90"
                             />
                           </div>
                           <div className="flex flex-col justify-center">
-                            <h4 className="text-sm font-semibold text-white whitespace-nowrap">EV – 3 Wheeler</h4>
-                        <p className="text-gray-300 text-sm">Optimized range for urban drive</p>
-                    </div>
-                      </div>
-                        <div className="bg-[#262626] p-4 rounded-lg text-center h-[180px] flex flex-col justify-center border border-[#333]">
-                          <div className="w-12 h-10 mx-auto mb-3 mt-1 flex items-center justify-center">
+                            <h4 className="text-xs md:text-sm font-semibold text-white text-center leading-tight">EV – 3 Wheeler</h4>
+                            <p className="text-gray-300 text-xs md:text-sm text-center mt-1">Optimized range for urban drive</p>
+                          </div>
+                        </div>
+                        <div className="bg-[#262626] p-3 md:p-4 rounded-lg text-center min-h-[160px] flex flex-col justify-center border border-[#333] sm:col-span-2 lg:col-span-1">
+                          <div className="w-10 h-8 md:w-12 md:h-10 mx-auto mb-2 md:mb-3 flex items-center justify-center">
                              <Image
                                src="/images/icons/2wheelsrs.png"
                                alt="EV – 2 Wheeler"
@@ -547,16 +547,16 @@ export default function BharatBMSEVPage() {
                                height={40}
                               className="object-contain scale-150"
                              />
-                      </div>
+                          </div>
                           <div className="flex flex-col justify-center">
-                            <h4 className="text-sm font-semibold text-white whitespace-nowrap">EV – 2 Wheeler</h4>
-                        <p className="text-gray-300 text-sm">Efficient urban mobility</p>
-                      </div>
+                            <h4 className="text-xs md:text-sm font-semibold text-white text-center leading-tight">EV – 2 Wheeler</h4>
+                            <p className="text-gray-300 text-xs md:text-sm text-center mt-1">Efficient urban mobility</p>
+                          </div>
+                        </div>
                       </div>
                     </div>
                   </div>
                     </div>
-                      </div>
                       </div>
             </AnimatedDiv>
 
@@ -565,13 +565,13 @@ export default function BharatBMSEVPage() {
 
             {/* EV 400V Product */}
             <AnimatedDiv>
-            <div id="ev-400v" className="mb-0 bg-[#1c1c1c] border border-[#333] rounded-2xl p-2.5 md:p-3 shadow-[0_6px_18px_rgba(0,0,0,0.20)] max-w-7xl mx-auto">
-              <h3 className="text-xl md:text-2xl font-bold text-white text-center mb-6">Xbattery BharatBMS-EV-400V</h3>
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-5 items-start">
+            <div id="ev-400v" className="mb-0 bg-[#1c1c1c] border border-[#333] rounded-2xl p-3 md:p-4 lg:p-6 shadow-[0_6px_18px_rgba(0,0,0,0.20)] max-w-7xl mx-auto">
+              <h3 className="text-lg md:text-xl lg:text-2xl font-bold text-white text-center mb-4 md:mb-6">Xbattery BharatBMS-EV-400V</h3>
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 md:gap-6 items-start">
                 {/* Left - Product Image */}
-                <div className="flex justify-center">
+                <div className="flex justify-center order-2 lg:order-1">
                   <div className="w-full max-w-lg text-center">
-                     <div className="bg-[#1c1c1c] overflow-hidden h-[320px] md:h-[380px] flex items-center justify-center">
+                     <div className="bg-[#1c1c1c] overflow-hidden h-[280px] sm:h-[320px] md:h-[380px] flex items-center justify-center rounded-lg">
                     <Image
                       src={ev400vImages[0]}
                       alt="EV 400V BMS Product"
@@ -580,40 +580,40 @@ export default function BharatBMSEVPage() {
                           className="w-full h-full object-contain hover:scale-110 transition-transform duration-300 ease-in-out"
                     />
                     </div>
-                    <p className="text-gray-300 mt-4 text-center">
+                    <p className="text-gray-300 mt-3 md:mt-4 text-center text-sm md:text-base leading-relaxed px-2">
                       BharatBMS-EV-400V is Designed for passenger cars with up to 120S configurations and advanced CAN FD communication protocols.
                     </p>
                 </div>
               </div>
 
                 {/* Right - Specifications */}
-                <div className="space-y-2.5">
+                <div className="space-y-4 md:space-y-6 order-1 lg:order-2">
                   {/* Key Specifications */}
                     <div>
-                    <div className="flex items-center mb-4">
-                       <FaCogs className="text-gray-200 text-xl mr-3" />
-                      <h3 className="text-lg font-semibold text-white">Key Specifications</h3>
+                    <div className="flex items-center mb-3 md:mb-4">
+                       <FaCogs className="text-gray-200 text-lg md:text-xl mr-2 md:mr-3" />
+                      <h3 className="text-base md:text-lg font-semibold text-white">Key Specifications</h3>
                     </div>
-                       <div className="grid grid-cols-1 sm:grid-cols-3 gap-2">
-                         <div className="bg-[#262626] p-4 rounded-lg flex flex-col justify-center h-[180px] border border-[#333]">
-                           <FaCubes className="text-gray-200 text-2xl mx-auto mb-3" />
+                       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
+                         <div className="bg-[#262626] p-3 md:p-4 rounded-lg flex flex-col justify-center min-h-[160px] border border-[#333]">
+                           <FaCubes className="text-gray-200 text-xl md:text-2xl mx-auto mb-2 md:mb-3" />
                            <div className="flex flex-col justify-center items-center text-center">
-                             <h4 className="text-sm font-semibold text-white whitespace-nowrap">Cell Configuration</h4>
-                           <p className="text-gray-300 text-sm text-center">Up to 125S</p>
+                             <h4 className="text-xs md:text-sm font-semibold text-white text-center leading-tight">Cell Configuration</h4>
+                           <p className="text-gray-300 text-xs md:text-sm text-center mt-1">Up to 125S</p>
                           </div>
                           </div>
-                         <div className="bg-[#262626] p-4 rounded-lg flex flex-col justify-center h-[180px] border border-[#333]">
-                           <FaBolt className="text-gray-200 text-2xl mx-auto mb-3 mt-4" />
+                         <div className="bg-[#262626] p-3 md:p-4 rounded-lg flex flex-col justify-center min-h-[160px] border border-[#333]">
+                           <FaBolt className="text-gray-200 text-xl md:text-2xl mx-auto mb-2 md:mb-3" />
                            <div className="flex flex-col justify-center items-center text-center">
-                             <h4 className="text-sm font-semibold text-white whitespace-nowrap">Nominal Pack<br />Voltage Range</h4>
-                           <p className="text-gray-300 text-sm text-center">400.0V</p>
+                             <h4 className="text-xs md:text-sm font-semibold text-white text-center leading-tight">Nominal Pack<br />Voltage Range</h4>
+                           <p className="text-gray-300 text-xs md:text-sm text-center mt-1">400.0V</p>
                         </div>
                           </div>
-                         <div className="bg-[#262626] p-4 rounded-lg flex flex-col justify-center h-[180px] border border-[#333]">
-                           <FaBatteryFull className="text-gray-200 text-2xl mx-auto mb-3" />
+                         <div className="bg-[#262626] p-3 md:p-4 rounded-lg flex flex-col justify-center min-h-[160px] border border-[#333] sm:col-span-2 lg:col-span-1">
+                           <FaBatteryFull className="text-gray-200 text-xl md:text-2xl mx-auto mb-2 md:mb-3" />
                            <div className="flex flex-col justify-center items-center text-center">
-                             <h4 className="text-sm font-semibold text-white whitespace-nowrap">Battery Capacity Range</h4>
-                           <p className="text-gray-300 text-sm text-center">80kWh</p>
+                             <h4 className="text-xs md:text-sm font-semibold text-white text-center leading-tight">Battery Capacity Range</h4>
+                           <p className="text-gray-300 text-xs md:text-sm text-center mt-1">80kWh</p>
                         </div>
                       </div>
                     </div>
@@ -621,9 +621,9 @@ export default function BharatBMSEVPage() {
 
                   {/* Applications */}
                    <div>
-                    <div className="flex items-center mb-4">
-                      <FaIndustry className="text-gray-200 text-xl mr-3" />
-                      <h3 className="text-lg font-semibold text-white">Applications</h3>
+                    <div className="flex items-center mb-3 md:mb-4">
+                      <FaIndustry className="text-gray-200 text-lg md:text-xl mr-2 md:mr-3" />
+                      <h3 className="text-base md:text-lg font-semibold text-white">Applications</h3>
                     </div>
                       <div className="grid grid-cols-1 sm:grid-cols-3 gap-2">
                         <div className="bg-[#262626] p-4 rounded-lg text-center h-[180px] flex flex-col justify-center border border-[#333]">
@@ -708,9 +708,9 @@ export default function BharatBMSEVPage() {
                 <div className="space-y-2.5">
                   {/* Key Specifications */}
                    <div>
-                    <div className="flex items-center mb-4">
-                      <FaCogs className="text-gray-200 text-xl mr-3" />
-                      <h3 className="text-lg font-semibold text-white">Key Specifications</h3>
+                    <div className="flex items-center mb-3 md:mb-4">
+                      <FaCogs className="text-gray-200 text-lg md:text-xl mr-2 md:mr-3" />
+                      <h3 className="text-base md:text-lg font-semibold text-white">Key Specifications</h3>
                     </div>
                       <div className="grid grid-cols-1 sm:grid-cols-3 gap-2">
                          <div className="bg-[#262626] p-4 rounded-lg flex flex-col justify-center h-[180px] border border-[#333]">
@@ -739,9 +739,9 @@ export default function BharatBMSEVPage() {
 
                   {/* Applications */}
                    <div>
-                    <div className="flex items-center mb-4">
-                      <FaIndustry className="text-gray-200 text-xl mr-3" />
-                      <h3 className="text-lg font-semibold text-white">Applications</h3>
+                    <div className="flex items-center mb-3 md:mb-4">
+                      <FaIndustry className="text-gray-200 text-lg md:text-xl mr-2 md:mr-3" />
+                      <h3 className="text-base md:text-lg font-semibold text-white">Applications</h3>
                     </div>
                       <div className="grid grid-cols-1 sm:grid-cols-3 gap-2">
                         <div className="bg-[#262626] p-4 rounded-lg text-center h-[180px] flex flex-col justify-center border border-[#333]">
