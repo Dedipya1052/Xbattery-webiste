@@ -22,7 +22,7 @@
   border: 1px solid rgba(0,229,255,0.35);
   border-radius: 14px; /* smoother pill corners */
   padding: 8px 12px;
-  min-width: 118px;
+  min-width: 140px;
   text-align: center;
   position: relative;
   /* Remove flashy glow; keep a subtle neutral shadow for depth */
@@ -42,6 +42,7 @@
   line-height: 1.15rem;
   font-weight: 600;
   letter-spacing: 0.2px;
+  white-space: nowrap;
 }
 
 

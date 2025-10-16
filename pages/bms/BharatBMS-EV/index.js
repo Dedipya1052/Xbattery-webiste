@@ -316,9 +316,9 @@ export default function BharatBMSEVPage() {
       <div className="bg-[#1c1c1c] text-white w-full relative">
         {/* Page header navigation icon (top-right) */}
         <div className="absolute top-5 right-4 w-11 h-11 rounded-xl bg-[#0c0c0c] border border-white/20 flex items-center justify-center text-white overflow-visible z-50">
-          <CustomTooltip text="Electric vehicle">
+          <CustomTooltip text="Electric Vehicles">
             <div className="w-10 h-10 rounded-xl overflow-hidden flex items-center justify-center">
-              <Image src="/images/icons/download (29)-Photoroom.png" alt="BMS icon" width={42} height={42} className="object-cover scale-[1.3]" />
+              <Image src="/images/icons/truck.png" alt="Electric Vehicles" width={37} height={37} className="object-cover scale-[1.0]" />
             </div>
           </CustomTooltip>
         </div>
@@ -443,7 +443,7 @@ export default function BharatBMSEVPage() {
             </AnimatedDiv>
 
             {/* Black Div Box for EV 110V */}
-            <div id="ess-ev-110" className="w-full h-12 bg-black mb-4 mt-4"></div>
+            <div id="ess-ev-110" className="w-full h-16 bg-black mb-6 mt-6"></div>
 
             {/* EV 110V Product */}
             <AnimatedDiv>
@@ -459,7 +459,7 @@ export default function BharatBMSEVPage() {
                       alt="EV 110V BMS Product"
                           width={560}
                           height={340}
-                          className="w-full h-full object-contain hover:scale-220 transition-transform duration-300 ease-in-out"
+                          className="w-full h-full object-contain hover:scale-110 transition-transform duration-300 ease-in-out"
                     />
                     </div>
                     <p className="text-gray-300 mt-3 md:mt-4 text-center text-sm md:text-base leading-relaxed px-2">
@@ -503,7 +503,7 @@ export default function BharatBMSEVPage() {
 
                   {/* Applications */}
                    <div>
-                    <div className="flex items-center mb-3 md:mb-4">
+                    <div className="flex items-center mb-3 md:mb-4 mt-6">
                       <FaIndustry className="text-gray-200 text-lg md:text-xl mr-2 md:mr-3" />
                       <h3 className="text-base md:text-lg font-semibold text-white">Applications</h3>
                     </div>
@@ -512,14 +512,14 @@ export default function BharatBMSEVPage() {
                           <div className="w-10 h-8 md:w-12 md:h-10 mx-auto mb-2 md:mb-3 flex items-center justify-center">
                             <Image
                               src="/images/icons/truck.png"
-                              alt="EV – Truck"
+                              alt="EV Truck"
                               width={48}
                               height={40}
                               className="object-contain scale-90"
                             />
                           </div>
                           <div className="flex flex-col justify-center">
-                            <h4 className="text-xs md:text-sm font-semibold text-white text-center leading-tight">EV – Truck</h4>
+                            <h4 className="text-xs md:text-sm font-semibold text-white text-center leading-tight">Mini Truck</h4>
                             <p className="text-gray-300 text-xs md:text-sm text-center mt-1">Reliable energy for heavy transport</p>
                           </div>
                         </div>
@@ -527,14 +527,14 @@ export default function BharatBMSEVPage() {
                           <div className="w-10 h-8 md:w-12 md:h-10 mx-auto mb-2 md:mb-3 flex items-center justify-center">
                             <Image
                               src="/images/icons/3wheel.png"
-                              alt="EV – 3 Wheeler"
+                              alt="EV 3 Wheeler"
                               width={48}
                               height={40}
                               className="object-contain scale-90"
                             />
                           </div>
                           <div className="flex flex-col justify-center">
-                            <h4 className="text-xs md:text-sm font-semibold text-white text-center leading-tight">EV – 3 Wheeler</h4>
+                            <h4 className="text-xs md:text-sm font-semibold text-white text-center leading-tight">EV 3 Wheeler</h4>
                             <p className="text-gray-300 text-xs md:text-sm text-center mt-1">Optimized range for urban drive</p>
                           </div>
                         </div>
@@ -542,14 +542,14 @@ export default function BharatBMSEVPage() {
                           <div className="w-10 h-8 md:w-12 md:h-10 mx-auto mb-2 md:mb-3 flex items-center justify-center">
                              <Image
                                src="/images/icons/2wheelsrs.png"
-                               alt="EV – 2 Wheeler"
+                               alt="EV 2 Wheeler"
                                width={48}
                                height={40}
                               className="object-contain scale-150"
                              />
                           </div>
                           <div className="flex flex-col justify-center">
-                            <h4 className="text-xs md:text-sm font-semibold text-white text-center leading-tight">EV – 2 Wheeler</h4>
+                            <h4 className="text-xs md:text-sm font-semibold text-white text-center leading-tight">EV 2 Wheeler</h4>
                             <p className="text-gray-300 text-xs md:text-sm text-center mt-1">Efficient urban mobility</p>
                           </div>
                         </div>
@@ -561,7 +561,7 @@ export default function BharatBMSEVPage() {
             </AnimatedDiv>
 
             {/* Black Div Box for EV 400V */}
-            <div id="ess-ev-400" className="w-full h-12 bg-black mb-4 mt-4"></div>
+            <div id="ess-ev-400" className="w-full h-16 bg-black mb-6 mt-6"></div>
 
             {/* EV 400V Product */}
             <AnimatedDiv>
@@ -577,7 +577,7 @@ export default function BharatBMSEVPage() {
                       alt="EV 400V BMS Product"
                           width={560}
                           height={340}
-                          className="w-full h-full object-contain hover:scale-150 transition-transform duration-300 ease-in-out"
+                          className="w-full h-full object-contain hover:scale-105 transition-transform duration-300 ease-in-out"
                     />
                     </div>
                     <p className="text-gray-300 mt-3 md:mt-4 text-center text-sm md:text-base leading-relaxed px-2">
@@ -621,7 +621,7 @@ export default function BharatBMSEVPage() {
 
                   {/* Applications */}
                    <div>
-                    <div className="flex items-center mb-3 md:mb-4">
+                    <div className="flex items-center mb-3 md:mb-4 mt-6">
                       <FaIndustry className="text-gray-200 text-lg md:text-xl mr-2 md:mr-3" />
                       <h3 className="text-base md:text-lg font-semibold text-white">Applications</h3>
                     </div>
@@ -630,14 +630,14 @@ export default function BharatBMSEVPage() {
                           <div className="w-12 h-10 mx-auto mb-3 -mt-1 flex items-center justify-center">
                             <Image
                               src="/images/icons/car.png"
-                              alt="EV – Car"
+                              alt="EV Car"
                               width={48}
                               height={40}
                               className="object-contain scale-90 mt-6"
                             />
                           </div>
                           <div className="flex flex-col justify-center mt-2">
-                            <h4 className="text-sm font-semibold text-white whitespace-nowrap">EV – Car</h4>
+                            <h4 className="text-sm font-semibold text-white whitespace-nowrap">EV Car</h4>
                         <p className="text-gray-300 text-sm">Efficient power for smart mobility</p>
                     </div>
                         </div>
@@ -645,14 +645,14 @@ export default function BharatBMSEVPage() {
                           <div className="w-12 h-10 mx-auto mb-3 mt-1 flex items-center justify-center">
                             <Image
                               src="/images/icons/truck.png"
-                              alt="EV – Truck"
+                              alt="EV Truck"
                               width={48}
                               height={40}
                               className="object-contain scale-90 mt-3"
                             />
                           </div>
                           <div className="flex flex-col justify-center">
-                            <h4 className="text-sm font-semibold text-white whitespace-nowrap">EV – Truck</h4>
+                            <h4 className="text-sm font-semibold text-white whitespace-nowrap">Mini Truck</h4>
                         <p className="text-gray-300 text-sm">Reliable energy for heavy transport</p>
                       </div>
                       </div>
@@ -660,14 +660,14 @@ export default function BharatBMSEVPage() {
                           <div className="w-12 h-10 mx-auto mb-3 mt-1 flex items-center justify-center">
                             <Image
                               src="/images/icons/bus.png"
-                              alt="EV – Bus"
+                              alt="EV Bus"
                               width={48}
                               height={40}
                               className="object-contain scale-105 mt-3"
                             />
                       </div>
                           <div className="flex flex-col justify-center">
-                            <h4 className="text-sm font-semibold text-white whitespace-nowrap">EV – Bus</h4>
+                            <h4 className="text-sm font-semibold text-white whitespace-nowrap">EV Bus</h4>
                         <p className="text-gray-300 text-sm">Safe, scalable fleet performance</p>
                           </div>
                       </div>
@@ -679,7 +679,7 @@ export default function BharatBMSEVPage() {
             </AnimatedDiv>
 
             {/* Black Div Box for EV 600V */}
-            <div id="ess-ev-600" className="w-full h-12 bg-black mb-4 mt-4"></div>
+            <div id="ess-ev-600" className="w-full h-16 bg-black mb-6 mt-6"></div>
 
             {/* EV 600V Product */}
             <AnimatedDiv>
@@ -695,7 +695,7 @@ export default function BharatBMSEVPage() {
                       alt="EV 500V BMS Product"
                           width={560}
                           height={340}
-                          className="w-full h-full object-contain hover:scale-135 transition-transform duration-300 ease-in-out"
+                          className="w-full h-full object-contain hover:scale-105 transition-transform duration-300 ease-in-out"
                     />
                     </div>
                     <p className="text-gray-300 mt-4 text-center">
@@ -739,7 +739,7 @@ export default function BharatBMSEVPage() {
 
                   {/* Applications */}
                    <div>
-                    <div className="flex items-center mb-3 md:mb-4">
+                    <div className="flex items-center mb-3 md:mb-4 mt-6">
                       <FaIndustry className="text-gray-200 text-lg md:text-xl mr-2 md:mr-3" />
                       <h3 className="text-base md:text-lg font-semibold text-white">Applications</h3>
                     </div>
@@ -748,14 +748,14 @@ export default function BharatBMSEVPage() {
                           <div className="w-12 h-10 mx-auto mb-3 -mt-1 flex items-center justify-center">
                             <Image
                               src="/images/icons/truck.png"
-                              alt="EV – Truck"
+                              alt="EV Truck"
                               width={48}
                               height={40}
                               className="object-contain scale-90 mt-3"
                             />
                           </div>
                           <div className="flex flex-col justify-center mt-2">
-                            <h4 className="text-sm font-semibold text-white whitespace-nowrap">EV – Truck</h4>
+                            <h4 className="text-sm font-semibold text-white whitespace-nowrap">EV Truck</h4>
                         <p className="text-gray-300 text-sm">Reliable energy for heavy transport</p>
                       </div>
                       </div>
@@ -763,21 +763,21 @@ export default function BharatBMSEVPage() {
                           <div className="w-12 h-10 mx-auto mb-3 mt-1 flex items-center justify-center">
                             <Image
                               src="/images/icons/bus.png"
-                              alt="EV – Bus"
+                              alt="EV Bus"
                               width={48}
                               height={40}
                               className="object-contain scale-105"
                             />
                       </div>
                           <div className="flex flex-col justify-center">
-                            <h4 className="text-sm font-semibold text-white whitespace-nowrap">EV – Bus</h4>
+                            <h4 className="text-sm font-semibold text-white whitespace-nowrap">EV Bus</h4>
                         <p className="text-gray-300 text-sm">Safe, scalable fleet performance</p>
                       </div>
                         </div>
                         <div className="bg-[#262626] p-4 rounded-lg text-center h-[180px] flex flex-col justify-center border border-[#333]">
                           <div className="w-12 h-10 mx-auto mb-3 mt-1 flex items-center justify-center">
                             <Image
-                              src="/images/icons/heavy2.png"
+                              src="/images/icons/heavy-truck.png"
                               alt="Heavy Vehicle"
                               width={48}
                               height={40}
