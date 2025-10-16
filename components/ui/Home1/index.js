@@ -57,7 +57,7 @@ const Example = ({ media, recentBlogs }) => {
   const evCards = [
     { id: '400V', title: 'Xbattery BharatBMS-EV-400V', link: '/bms/BharatBMS-EV-400V' },
     { id: '110V', title: 'Xbattery BharatBMS-EV-110V', link: '/bms/BharatBMS-EV-110V' },
-    { id: '500V', title: 'Xbattery BharatBMS-EV-500V', link: '/bms/BharatBMS-EV-500V' }
+    { id: '500V', title: 'Xbattery BharatBMS-EV-600V', link: '/bms/BharatBMS-EV-500V' }
   ];
 
   const goToPreviousCard = () => {
@@ -1569,7 +1569,7 @@ const Example = ({ media, recentBlogs }) => {
 
                             <div className="w-16 h-[3px] bg-[#00e5ff] rounded-full mb-4"></div>
 
-                            <p className="text-sm text-[#cfe3ea] mb-4">The XB-X 16S is a versatile 48V BMS designed for modular energy storage systems with support for both LFP and NMC chemistries across 13-17 series configurations.</p>
+                            <p className="text-sm text-[#cfe3ea] mb-4">BharatBMS-ESS-48V is a versatile 48V BMS designed for modular energy storage systems with support for both LFP and NMC chemistries across 13-17 series configurations.</p>
 
                             <div className="mt-auto">
 
@@ -1641,7 +1641,7 @@ const Example = ({ media, recentBlogs }) => {
 
                         <div className="w-16 h-[3px] bg-[#00e5ff] rounded-full mb-4"></div>
 
-                        <p className="text-sm text-[#cfe3ea] mb-4">The XB-X 32S is a robust low-voltage energy storage system BMS operating at 110V nominal with LFP chemistry support for 32-36 series configurations.</p>
+                        <p className="text-sm text-[#cfe3ea] mb-4">BharatBMS-ESS-72V is High-efficiency battery management for industrial and medium-scale energy storage systems supporting up to 28S configurations. Provides safe and efficient power management for industrial battery packs and renewable energy applications.</p>
 
                         <div className="mt-auto">
 
@@ -1711,7 +1711,7 @@ const Example = ({ media, recentBlogs }) => {
 
                             <div className="w-16 h-[3px] bg-[#00e5ff] rounded-full mb-4"></div>
 
-                            <p className="text-sm text-[#cfe3ea] mb-4">The XB-X 32S is a robust low-voltage energy storage system BMS operating at 110V nominal with LFP chemistry support for 32-36 series configurations.</p>
+                            <p className="text-sm text-[#cfe3ea] mb-4">BharatBMS-ESS-110V is an advanced battery management system for large-scale energy storage and grid applications supporting up to 42S configurations. Offers scalable architecture and intelligent monitoring for demanding industrial and renewable energy requirements.</p>
 
                             <div className="mt-auto">
 
@@ -1789,7 +1789,7 @@ const Example = ({ media, recentBlogs }) => {
                                     <span>Xbattery BharatBMS-EV-110V</span>
                                   </h4>
                                   <div className="w-16 h-[3px] bg-[#00e5ff] rounded-full mb-4"></div>
-                                  <p className="text-sm text-[#cfe3ea] mb-4">Advanced 400V BMS for electric passenger vehicles with enhanced safety protocols and intelligent thermal management systems.</p>
+                                  <p className="text-sm text-[#cfe3ea] mb-4">BharatBMS-EV-110V is Optimized for e-rickshaws, autos, and tempos with up to 80S configurations and automotive-grade safety compliance. Delivers efficient power management and reliable performance for 3-wheel electric vehicles.</p>
                                   <div className="mt-auto">
                                     <div className="text-sm text-[#64efff] tracking-wide mb-2">KEY FEATURES</div>
                                     <ul className="text-sm text-[#cfe3ea] list-disc pl-4 space-y-1 marker:text-[#00e5ff]">
@@ -1820,7 +1820,7 @@ const Example = ({ media, recentBlogs }) => {
                                     <span>Xbattery BharatBMS-EV-400V</span>
                                   </h4>
                                   <div className="w-16 h-[3px] bg-[#00e5ff] rounded-full mb-4"></div>
-                                  <p className="text-sm text-[#cfe3ea] mb-4">The XB-X 136S is a high-performance 435V BMS specifically engineered for electric vehicles including cars, trucks, and buses with 136-series LFP cell configurations.</p>
+                                  <p className="text-sm text-[#cfe3ea] mb-4">BharatBMS-EV-400V is Designed for passenger cars with up to 120S configurations and advanced CAN FD communication protocols. Ensures smooth EV operation with intelligent balancing and comprehensive safety features.</p>
                                   <div className="mt-auto">
                                     <div className="text-sm text-[#64efff] tracking-wide mb-2">KEY FEATURES</div>
                                     <ul className="text-sm text-[#cfe3ea] list-disc pl-4 space-y-1 marker:text-[#00e5ff]">
@@ -1840,7 +1840,7 @@ const Example = ({ media, recentBlogs }) => {
                               </Link>
                             </AnimatedDiv>
 
-                            {/* Xbattery BharatBMS-EV-500V */}
+                            {/* Xbattery BharatBMS-EV-600V */}
                             <AnimatedDiv className="flex-shrink-0" style={{ width: 'calc((100% / 3) - 1.5rem)' }}>
                               <Link href="/bms/BharatBMS-EV#ess-ev-600" className="group focus:outline-none">
                                 <div className="relative rounded-2xl bg-[#151a1d] border border-[#1e2a31] p-6 h-full min-h-[420px] md:min-h-[450px] lg:min-h-[480px] flex flex-col transition-all duration-200 hover:bg-[#10151a] hover:border-[#00e5ff]/30 hover:border-2 hover:outline-none">
@@ -1848,10 +1848,10 @@ const Example = ({ media, recentBlogs }) => {
                                     <Image src="/images/bms_offerings/ev-500v.png" alt="Xbattery BharatBMS-EV-500V" fill className="object-contain transition-transform duration-500 ease-out group-hover:scale-[1.18]" />
                                   </div>
                                   <h4 className={`text-lg md:text-xl font-semibold mb-2 text-[#00e5ff]`}>
-                                    <span>Xbattery BharatBMS-EV-500V</span>
+                                    <span>Xbattery BharatBMS-EV-600V</span>
                                   </h4>
                                   <div className="w-16 h-[3px] bg-[#00e5ff] rounded-full mb-4"></div>
-                                  <p className="text-sm text-[#cfe3ea] mb-4">High-performance 400V BMS for commercial electric vehicles with robust protection systems and advanced diagnostics.</p>
+                                  <p className="text-sm text-[#cfe3ea] mb-4">BharatBMS-EV-600V is built for buses and heavy commercial vehicles supporting up to 180S configurations with robust current handling. Provides exceptional durability and high-performance control for demanding transportation applications.</p>
                                   <div className="mt-auto">
                                     <div className="text-sm text-[#64efff] tracking-wide mb-2">KEY FEATURES</div>
                                     <ul className="text-sm text-[#cfe3ea] list-disc pl-4 space-y-1 marker:text-[#00e5ff]">

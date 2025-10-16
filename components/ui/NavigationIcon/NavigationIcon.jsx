@@ -19,7 +19,7 @@ const NavigationIcon = ({ pageType = 'ess' }) => {
     setIsHovered(false);
     const timeout = setTimeout(() => {
       setIsDropdownOpen(false);
-    }, 300); // Increased delay to 300ms
+    }, 500); // Increased delay to 500ms for better hover experience
     setHoverTimeout(timeout);
   };
 
@@ -33,25 +33,28 @@ const NavigationIcon = ({ pageType = 'ess' }) => {
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
     >
-      {/* Navigation Icon */}
+      {/* Products Text - Updated to show text instead of hamburger icon */}
       <div 
-        className="w-11 h-11 rounded-xl bg-[#0c0c0c] flex items-center justify-center text-white cursor-pointer transition-all duration-200 group focus:outline-none hover:outline-none focus:border-none hover:border-none"
+        className="px-4 py-2 rounded-lg bg-[#0c0c0c] flex items-center justify-center text-white cursor-pointer transition-all duration-200 group focus:outline-none hover:outline-none focus:border-none hover:border-none hover:bg-[#1a1a1a]"
         style={{
           backgroundColor: '#0c0c0c !important',
           outline: 'none !important',
           border: 'none !important',
           boxShadow: 'none !important'
         }}>
+        <span className="text-sm font-medium text-white transition-colors duration-200">
+          Products
+        </span>
         <svg 
-          width="20" 
-          height="20" 
+          width="16" 
+          height="16" 
           viewBox="0 0 24 24" 
           fill="none" 
           xmlns="http://www.w3.org/2000/svg"
-          className="text-white transition-colors duration-200"
+          className="text-white transition-colors duration-200 ml-2"
         >
           <path 
-            d="M3 12H21M3 6H21M3 18H21" 
+            d="M6 9L12 15L18 9" 
             stroke="currentColor" 
             strokeWidth="2" 
             strokeLinecap="round" 

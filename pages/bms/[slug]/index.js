@@ -47,7 +47,7 @@ const BMS_PRODUCTS = [
   },
   {
     slug: "ev-bms-500v",
-    title: "Xbattery BharatBMS-EV-500V", 
+    title: "Xbattery BharatBMS-EV-600V", 
       link: "/bms/BharatBMS-EV-500V"
   },
   {
@@ -87,7 +87,7 @@ const CONTENT = {
   "ev-bms": {
     title: "Xbattery BharatBMS-EV-400V",
     description:
-      "The XB-X 136S is a high-performance 435V BMS specifically engineered for electric vehicles including cars, trucks, and buses with 136-series LFP cell configurations. Built to automotive standards with ISO 26262 ASIL-C compliance, it supports up to 600A peak discharge currents and features advanced diagnostics for demanding EV applications.",
+      "BharatBMS-EV-400V is Designed for passenger cars with up to 120S configurations and advanced CAN FD communication protocols. Ensures smooth EV operation with intelligent balancing and comprehensive safety features.",
     imageAlt: "LV-BMS Image",
     image: "/images/bms_offerings/ev-400v.png",
   },
@@ -99,7 +99,7 @@ const CONTENT = {
     image: "/images/bms_offerings/ev-110v.png",
   },
   "ev-bms-500v": {
-    title: "Xbattery BharatBMS-EV-500V",
+    title: "Xbattery BharatBMS-EV-600V",
     description:
       "High-performance 500V BMS specifically engineered for electric vehicles including cars, trucks, and buses with 125-156 series LFP cell configurations. Built to automotive standards with ISO 26262 ASIL-C compliance, it supports up to 600A peak discharge currents and features advanced diagnostics for demanding EV applications.",
     imageAlt: "EV-BMS Image",

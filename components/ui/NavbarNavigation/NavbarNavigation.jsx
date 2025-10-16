@@ -1,16 +1,23 @@
 import React, { useState } from 'react';
-import Image from 'next/image';
 import MegaDropdown from '../MegaDropdown';
 
 const NavbarNavigation = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const [hoverTimeout, setHoverTimeout] = useState(null);
 
   const handleMouseEnter = () => {
+    if (hoverTimeout) {
+      clearTimeout(hoverTimeout);
+      setHoverTimeout(null);
+    }
     setIsDropdownOpen(true);
   };
 
   const handleMouseLeave = () => {
-    setIsDropdownOpen(false);
+    const timeout = setTimeout(() => {
+      setIsDropdownOpen(false);
+    }, 2000); // Increased delay to 2 seconds
+    setHoverTimeout(timeout);
   };
 
   const handleClose = () => {
@@ -23,17 +30,27 @@ const NavbarNavigation = () => {
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
     >
-      {/* Navigation Icon */}
-      <div className="w-11 h-11 rounded-xl bg-[#0c0c0c] border border-white/20 flex items-center justify-center text-white cursor-pointer hover:bg-[#1a1a1a] hover:border-[#00e5ff] transition-all duration-200 group overflow-visible">
-        <div className="w-10 h-10 rounded-xl overflow-hidden flex items-center justify-center">
-          <Image 
-            src="/images/icons/download (29)-Photoroom.png" 
-            alt="Navigation icon" 
-            width={42} 
-            height={42} 
-            className="object-cover scale-[1.3]" 
+      {/* Products Text */}
+      <div className="flex items-center text-white cursor-pointer transition-all duration-200 group focus:outline-none hover:outline-none focus:border-none hover:border-none">
+        <span className="text-lg font-medium text-white transition-colors duration-200 space-grotesk-medium">
+          Products
+        </span>
+        <svg 
+          width="16" 
+          height="16" 
+          viewBox="0 0 24 24" 
+          fill="none" 
+          xmlns="http://www.w3.org/2000/svg"
+          className="text-white transition-colors duration-200 ml-2"
+        >
+          <path 
+            d="M6 9L12 15L18 9" 
+            stroke="currentColor" 
+            strokeWidth="2" 
+            strokeLinecap="round" 
+            strokeLinejoin="round"
           />
-        </div>
+        </svg>
       </div>
 
       {/* Mega Dropdown */}

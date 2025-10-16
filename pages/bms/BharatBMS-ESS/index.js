@@ -233,7 +233,7 @@ export default function BharatBMSESSPage() {
 
   const data = {
     title: "Xbattery BharatBMS-ESS",
-    description: "The XB-X 16S is a versatile 48V BMS designed for modular energy storage systems with support for both LFP and NMC chemistries across 13-17 series configurations. Its stackable architecture and 100A continuous current handling make it ideal for scalable residential and commercial energy storage applications.",
+    description: "The BharatBMS-ESS redefines energy management with intelligent performance, robust safety, and scalable design. Engineered for next-generation ESS solutions, it supports up to 42S LFP and NMC battery packs, ensuring precise monitoring, intelligent cell balancing, and multi-level protection, all in a compact, space-efficient form.",
     imageAlt: "EV-BMS Image",
     image: "/images/telecom_good_looking-Photoroom.png",
   };
@@ -450,7 +450,7 @@ export default function BharatBMSESSPage() {
                 {/* Left - Product Image */}
                 <div className="flex justify-center">
                   <div className="w-full max-w-lg text-center">
-                     <div className="bg-[#1c1c1c] overflow-hidden h-[280px] md:h-[340px] flex items-center justify-center">
+                     <div className="bg-[#1c1c1c] overflow-hidden h-[320px] md:h-[380px] flex items-center justify-center">
                     <Image
                       src={productImages[0]}
                       alt="ESS 48V BMS Product"
@@ -460,7 +460,7 @@ export default function BharatBMSESSPage() {
                     />
                     </div>
                     <p className="text-gray-300 mt-4 text-center">
-                    The XB-X 16S is a versatile 48V BMS designed for modular energy storage systems with support for both LFP and NMC chemistries across 13-17 series configurations.
+                    BharatBMS-ESS-48V is a versatile 48V BMS designed for modular energy storage systems with support for both LFP and NMC chemistries across 13-17 series configurations.
                     </p>
                 </div>
               </div>
@@ -498,12 +498,12 @@ export default function BharatBMSESSPage() {
                     </div>
                   </div>
 
-                  {/* Applications */}
-                   <div>
-                    <div className="flex items-center mb-4">
-                      <FaIndustry className="text-gray-200 text-xl mr-3" />
-                      <h3 className="text-lg font-semibold text-white">Applications</h3>
-                      </div>
+                   {/* Applications */}
+                    <div className="mt-8">
+                     <div className="flex items-center mb-4">
+                       <FaIndustry className="text-gray-200 text-xl mr-3" />
+                       <h3 className="text-lg font-semibold text-white">Applications</h3>
+                     </div>
                       <div className="grid grid-cols-1 sm:grid-cols-3 gap-2">
                         <div className="bg-[#262626] p-4 rounded-lg text-center h-[180px] flex flex-col justify-center border border-[#333]">
                           <div className="w-12 h-10 mx-auto mb-3 -mt-1 flex items-center justify-center">
@@ -578,7 +578,7 @@ export default function BharatBMSESSPage() {
                     />
                     </div>
                     <p className="text-gray-300 mt-4 text-center">
-                    The XB-X 16S is a versatile 48V BMS designed for modular energy storage systems with support for both LFP and NMC chemistries across 13-17 series configurations.
+                    BharatBMS-ESS-72V is High-efficiency battery management for industrial and medium-scale energy storage systems supporting up to 28S configurations. Provides safe and efficient power management for industrial battery packs and renewable energy applications.
                     </p>
                 </div>
               </div>
@@ -616,12 +616,12 @@ export default function BharatBMSESSPage() {
                     </div>
                   </div>
 
-                  {/* Applications */}
-                   <div>
-                    <div className="flex items-center mb-4">
-                      <FaIndustry className="text-gray-200 text-xl mr-3" />
-                      <h3 className="text-lg font-semibold text-white">Applications</h3>
-                      </div>
+                   {/* Applications */}
+                    <div className="mt-6">
+                     <div className="flex items-center mb-4">
+                       <FaIndustry className="text-gray-200 text-xl mr-3" />
+                       <h3 className="text-lg font-semibold text-white">Applications</h3>
+                     </div>
                       <div className="grid grid-cols-1 sm:grid-cols-3 gap-2">
                         <div className="bg-[#262626] p-4 rounded-lg text-center h-[180px] flex flex-col justify-center border border-[#333]">
                           <div className="w-12 h-10 mx-auto mb-3 -mt-1 flex items-center justify-center">
@@ -696,7 +696,7 @@ export default function BharatBMSESSPage() {
                     />
                     </div>
                     <p className="text-gray-300 mt-4 text-center">
-                    The XB-X 16S is a versatile 48V BMS designed for modular energy storage systems with support for both LFP and NMC chemistries across 13-17 series configurations.
+                    BharatBMS-ESS-110V is an advanced battery management system for large-scale energy storage and grid applications supporting up to 42S configurations. Offers scalable architecture and intelligent monitoring for demanding industrial and renewable energy requirements.
                     </p>
                 </div>
               </div>
@@ -734,12 +734,12 @@ export default function BharatBMSESSPage() {
                   </div>
                 </div>
 
-                  {/* Applications */}
-                   <div>
-                    <div className="flex items-center mb-4">
-                      <FaIndustry className="text-gray-200 text-xl mr-3" />
-                      <h3 className="text-lg font-semibold text-white">Applications</h3>
-                    </div>
+                   {/* Applications */}
+                    <div className="mt-6">
+                     <div className="flex items-center mb-4">
+                       <FaIndustry className="text-gray-200 text-xl mr-3" />
+                       <h3 className="text-lg font-semibold text-white">Applications</h3>
+                     </div>
                       <div className="grid grid-cols-1 sm:grid-cols-3 gap-2">
                         <div className="bg-[#262626] p-4 rounded-lg text-center h-[180px] flex flex-col justify-center border border-[#333]">
                           <div className="w-12 h-10 mx-auto mb-3 -mt-1 flex items-center justify-center">

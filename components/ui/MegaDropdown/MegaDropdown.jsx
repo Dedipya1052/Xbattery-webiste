@@ -1,22 +1,11 @@
 import React, { useState, useRef, useEffect } from 'react';
-import Link from 'next/link';
-import Image from 'next/image';
-import { 
-  FaBatteryFull, 
-  FaWifi, 
-  FaShieldAlt, 
-  FaThermometerHalf, 
-  FaServer, 
-  FaChartLine,
-  FaBook,
-  FaFileAlt,
-  FaBullseye,
-  FaUsers,
-  FaPlug
-} from 'react-icons/fa';
+import ESSBMSIcon from '@/components/Icons/ESSBMSIcon';
+import ESSBMSIcon48V from '@/components/Icons/ESSBMSIcon48V';
+import ESSBMSIcon72V from '@/components/Icons/ESSBMSIcon72V';
 
 const MegaDropdown = ({ isOpen, onClose, pageType = 'ess' }) => {
-  const [activeTab, setActiveTab] = useState('products');
+  const [hoverTimeout, setHoverTimeout] = useState(null);
+  const [activeCategory, setActiveCategory] = useState('ess');
   const dropdownRef = useRef(null);
 
   // Close dropdown when clicking outside
@@ -36,100 +25,90 @@ const MegaDropdown = ({ isOpen, onClose, pageType = 'ess' }) => {
     };
   }, [isOpen, onClose]);
 
-  // Product data with actual images from your product sections
-  const products = [
-        {
-          title: 'BharatBMS-ESS-48V',
-      description: 'Advanced battery management for industrial applications',
-      image: '/images/telecom_good_looking-Photoroom.png',
-          link: '/bms/BharatBMS-ESS'
-        },
-        {
-          title: 'BharatBMS-ESS-72V',
-      description: 'Space-efficient solution for commercial use',
-          image: '/images/bms_offerings/ess-72v.png',
-          link: '/bms/BharatBMS-ESS-72V'
-        },
-        {
-          title: 'BharatBMS-ESS-110V',
-      description: 'Intelligent monitoring and control system',
-          image: '/images/bms_offerings/ess-110v.png',
-          link: '/bms/BharatBMS-ESS-110V'
-        }
-  ];
+  // Cleanup hover timeout on unmount
+  useEffect(() => {
+    return () => {
+      if (hoverTimeout) {
+        clearTimeout(hoverTimeout);
+      }
+    };
+  }, [hoverTimeout]);
 
-  // Features data
-  const features = [
-    {
-      title: 'Battery Modules',
-      description: 'Explore our modular battery solutions',
-      icon: FaBatteryFull
-    },
-    {
-      title: 'Integration Guide',
-      description: 'Step-by-step integration process',
-      icon: FaBook
-    },
-    {
-      title: 'Specifications',
-      description: 'Detailed technical documentation',
-      icon: FaFileAlt
-    },
-    {
-      title: 'Performance',
-      description: 'Real-time monitoring and analytics',
-      icon: FaBullseye
-    },
-    {
-      title: 'Support',
-      description: 'Expert assistance and guidance',
-      icon: FaUsers
-    },
-    {
-      title: 'API Access',
-      description: 'Developer tools and resources',
-      icon: FaPlug
-    }
-  ];
+  // Content data for different categories
+  const essContent = {
+    title: "BharatBMS-ESS",
+    sections: [
+      {
+        name: "Low Voltage",
+        products: [
+          { name: "FS-LT", description: "For standalone & stackable architectures" },
+          { name: "CT-Safe", description: "For onroad & battery safety" },
+          { name: "CT-Lite", description: "For cost-competitive mobility applications." },
+          { name: "CT-Lite+ 50A", description: "For cost-competitive mobility applications." },
+          { name: "CT-Lite + 80A", description: "For cost-competitive mobility applications." }
+        ]
+      },
+      {
+        name: "High Voltage", 
+        products: [
+          { name: "FS-XT", description: "For high voltage & high power applications" },
+          { name: "HP Safe", description: "For high power low-voltage applications" }
+        ]
+      }
+    ]
+  };
 
-  // Specifications data
-  const specifications = [
-    {
-      title: 'Cell Monitoring',
-      description: 'Real-time voltage and current monitoring',
-          icon: FaBatteryFull
-        },
-        {
-      title: 'Communication',
-      description: 'CAN FD, UART, SPI, and Ethernet support',
-          icon: FaWifi
-        },
-        {
-          title: 'Safety Features',
-      description: 'ISO 26262 compliant protection systems',
-          icon: FaShieldAlt
-        },
-        {
-          title: 'Thermal Management',
-      description: 'Advanced temperature sensing and control',
-          icon: FaThermometerHalf
-        },
-        {
-          title: 'Scalability',
-      description: 'Modular architecture for various configurations',
-          icon: FaServer
-        },
-        {
-      title: 'Analytics',
-      description: 'Real-time data visualization and monitoring',
-          icon: FaChartLine
+  const evContent = {
+    title: "BharatBMS-EV",
+    sections: [
+      {
+        name: "Power Management",
+        products: [
+          { name: "FSB-PR-I", description: "Interface board for external contractors" }
+        ]
+      },
+      {
+        name: "Telematics",
+        products: [
+          { name: "TCU", description: "For advanced use-cases" }
+        ]
+      }
+    ]
+  };
+
+  const batteryCapacityContent = {
+    title: "Battery Capacity",
+    sections: [
+      {
+        name: "Small Capacity",
+        products: [
+          { name: "5-20 kWh", description: "Residential and small commercial" },
+          { name: "20-50 kWh", description: "Medium commercial applications" }
+        ]
+      },
+      {
+        name: "Large Capacity",
+        products: [
+          { name: "50-100 kWh", description: "Industrial and grid-scale" },
+          { name: "100+ kWh", description: "Utility-scale energy storage" }
+        ]
+      }
+    ]
+  };
+
+  const getCurrentContent = () => {
+    switch(activeCategory) {
+      case 'ess': return essContent;
+      case 'ev': return evContent;
+      case 'capacity': return batteryCapacityContent;
+      default: return essContent;
     }
-  ];
+  };
 
   return (
     <div 
       ref={dropdownRef}
-      className={`fixed top-16 left-0 w-full bg-[#252525] shadow-2xl rounded-2xl z-50 overflow-hidden transition-all duration-300 ease-out focus:outline-none hover:outline-none border border-gray-600 ${
+      className={`absolute top-full left-0 w-[700px] shadow-2xl rounded-lg z-50 overflow-hidden transition-all duration-300 ease-out focus:outline-none hover:outline-none ${
         isOpen ? 'opacity-100 translate-y-0 pointer-events-auto' : 'opacity-0 -translate-y-4 pointer-events-none'
       }`}
       style={{ 
@@ -137,139 +116,131 @@ const MegaDropdown = ({ isOpen, onClose, pageType = 'ess' }) => {
         outline: 'none !important',
         boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.25) !important'
       }}
-      onMouseEnter={() => {/* Keep menu open when hovering over it */}}
-      onMouseLeave={() => {/* Let parent handle closing */}}
+      onMouseEnter={() => {
+        // Keep menu open when hovering over it
+        if (hoverTimeout) {
+          clearTimeout(hoverTimeout);
+          setHoverTimeout(null);
+        }
+      }}
+      onMouseLeave={() => {
+        // Let parent handle closing with delay
+        const timeout = setTimeout(() => {
+          onClose();
+        }, 2000);
+        setHoverTimeout(timeout);
+      }}
     >
-      <div className="p-6">
-         {/* Navigation Tabs */}
-         <div className="flex justify-center space-x-8 mb-6 border-b border-[#404040]">
-           <button
-             onMouseEnter={() => setActiveTab('products')}
-             className={`pb-3 text-sm font-medium transition-colors duration-200 flex items-center space-x-2 focus:outline-none hover:outline-none focus:border-none hover:border-none ${
-               activeTab === 'products'
-                 ? 'text-[#4FD1C5] border-b-2 border-[#4FD1C5]'
-                 : 'text-gray-300 hover:text-white'
-             }`}
-           >
-             <span>Products</span>
-             <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
-               <path fillRule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clipRule="evenodd" />
-             </svg>
-           </button>
-           <button
-             onMouseEnter={() => setActiveTab('features')}
-             className={`pb-3 text-sm font-medium transition-colors duration-200 flex items-center space-x-2 focus:outline-none hover:outline-none focus:border-none hover:border-none ${
-               activeTab === 'features'
-                 ? 'text-[#4FD1C5] border-b-2 border-[#4FD1C5]'
-                 : 'text-gray-300 hover:text-white'
-             }`}
-           >
-             <span>Features</span>
-             <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
-               <path fillRule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clipRule="evenodd" />
-             </svg>
-           </button>
-           <button
-             onMouseEnter={() => setActiveTab('specifications')}
-             className={`pb-3 text-sm font-medium transition-colors duration-200 flex items-center space-x-2 focus:outline-none hover:outline-none focus:border-none hover:border-none ${
-               activeTab === 'specifications'
-                 ? 'text-[#4FD1C5] border-b-2 border-[#4FD1C5]'
-                 : 'text-gray-300 hover:text-white'
-             }`}
-           >
-             <span>Specifications</span>
-             <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
-               <path fillRule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clipRule="evenodd" />
-             </svg>
-           </button>
-         </div>
+      <div className="flex">
+        {/* Left Column - Categories */}
+        <div className="w-1/3 p-4" style={{ backgroundColor: '#2C2C2E ' }}>
+          <div className="space-y-1">
+            <div 
+              className={`text-white font-medium text-base py-2 px-3 rounded cursor-pointer transition-colors ${
+                activeCategory === 'ess' ? 'bg-gray-600' : 'hover:bg-gray-600'
+              }`}
+              style={{ 
+                backgroundColor: activeCategory === 'ess' ? '#3A3A3C' : undefined
+              }}
+              onMouseEnter={() => setActiveCategory('ess')}
+            >
+              Battery Management Systems
+            </div>
+            <div 
+              className={`text-white font-medium text-base py-2 px-3 rounded cursor-pointer transition-colors ${
+                activeCategory === 'ev' ? 'bg-gray-600' : 'hover:bg-gray-600'
+              }`}
+              style={{ 
+                backgroundColor: activeCategory === 'ev' ? '#3A3A3C' : undefined
+              }}
+              onMouseEnter={() => setActiveCategory('ev')}
+            >
+              Other Advanced Electronics
+            </div>
+            <div 
+              className={`text-white font-medium text-base py-2 px-3 rounded cursor-pointer transition-colors ${
+                activeCategory === 'capacity' ? 'bg-gray-600' : 'hover:bg-gray-600'
+              }`}
+              style={{ 
+                backgroundColor: activeCategory === 'capacity' ? '#3A3A3C' : undefined
+              }}
+              onMouseEnter={() => setActiveCategory('capacity')}
+            >
+              Upcoming Projects
+            </div>
+          </div>
+        </div>
 
-        {/* Content Area */}
-        <div className="relative min-h-[200px]">
-          {/* Products Section */}
-          <div className={`transition-all duration-300 ease-out ${
-            activeTab === 'products' 
-              ? 'opacity-100 translate-y-0 block' 
-              : 'opacity-0 -translate-y-4 absolute inset-0 pointer-events-none'
-          }`}>
-            <div className="flex justify-center">
-              <div className="grid grid-cols-3 gap-12">
-                {products.map((product, index) => (
-                  <Link
-                    key={index}
-                    href={product.link}
-                    className="group focus:outline-none hover:outline-none focus:border-none hover:border-none"
-                    onClick={onClose}
-                  >
-                    <div className="bg-[#404040] rounded-lg p-4 h-80 w-64 flex flex-col transition-transform duration-200 group-hover:scale-105">
-                      {/* White image container */}
-                      <div className="bg-white rounded-lg p-4 mb-4 flex-1 flex items-center justify-center overflow-hidden">
-                        <div className="w-full h-full flex items-center justify-center">
-                          <Image
-                            src={product.image}
-                            alt={product.title}
-                            width={200}
-                            height={120}
-                            className="object-contain scale-150"
-                          />
+        {/* Right Column - Product Details */}
+        <div className="w-2/3 p-4" style={{ backgroundColor: '#2C2C2E' }}>
+          <div className="rounded-lg p-4" style={{ backgroundColor: '#3A3A3C' }}>
+            {getCurrentContent().sections.map((section, sectionIndex) => (
+              <div key={sectionIndex}>
+                <div className="flex items-center mb-3">
+                  <div className="w-6 h-6 flex items-center justify-center mr-3">
+                    {section.name === 'Low Voltage' || section.name === 'High Voltage' ? (
+                      <div className="w-6 h-6 rounded-full border border-cyan-400 flex items-center justify-center">
+                        <svg className="w-3 h-3" fill="url(#lightningGradient)" viewBox="0 0 20 20">
+                          <defs>
+                            <linearGradient id="lightningGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+                              <stop offset="0%" stopColor="#10B981" />
+                              <stop offset="100%" stopColor="#8B5CF6" />
+                            </linearGradient>
+                          </defs>
+                          <path fillRule="evenodd" d="M11.3 1.046A1 1 0 0112 2v5h4a1 1 0 01.82 1.573l-7 10A1 1 0 018 18v-5H4a1 1 0 01-.82-1.573l7-10a1 1 0 011.12-.38z" clipRule="evenodd" />
+                        </svg>
+                      </div>
+                    ) : section.name === 'Power Management' ? (
+                      <div className="w-6 h-6 rounded-full border-2 border-blue-500 flex items-center justify-center relative">
+                        <svg className="w-3 h-3 text-blue-400" fill="currentColor" viewBox="0 0 20 20">
+                          <path d="M4 3a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V5a2 2 0 00-2-2H4zm12 12H4V5h12v10z"/>
+                        </svg>
+                        <div className="absolute -bottom-1 -right-1 w-2 h-2 bg-green-500 rounded-full"></div>
+                      </div>
+                    ) : section.name === 'Telematics' ? (
+                      <div className="w-6 h-6 rounded-full border-2 border-blue-500 flex items-center justify-center">
+                        <div className="relative w-4 h-4">
+                          <svg className="absolute top-0 left-0 w-2 h-2 text-blue-400" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/>
+                          </svg>
+                          <svg className="absolute bottom-0 right-0 w-2 h-2 text-green-400" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/>
+                          </svg>
                         </div>
                       </div>
-                      {/* Product info */}
-                      <div className="text-center">
-                        <h3 className="font-bold text-[#4FD1C5] text-sm mb-1">
-                          {product.title}
-                        </h3>
-                        <p className="text-gray-300 text-xs leading-relaxed">
-                          {product.description}
-                        </p>
+                    ) : (
+                      <div className="w-6 h-6 rounded-full border border-cyan-400 flex items-center justify-center">
+                        <svg className="w-3 h-3" fill="url(#lightningGradient)" viewBox="0 0 20 20">
+                          <defs>
+                            <linearGradient id="lightningGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+                              <stop offset="0%" stopColor="#10B981" />
+                              <stop offset="100%" stopColor="#8B5CF6" />
+                            </linearGradient>
+                          </defs>
+                          <path fillRule="evenodd" d="M11.3 1.046A1 1 0 0112 2v5h4a1 1 0 01.82 1.573l-7 10A1 1 0 018 18v-5H4a1 1 0 01-.82-1.573l7-10a1 1 0 011.12-.38z" clipRule="evenodd" />
+                        </svg>
                       </div>
-                    </div>
-                  </Link>
-                ))}
+                    )}
+                  </div>
+                  <h3 className="text-white font-bold text-base">{section.name}</h3>
+                </div>
+                <div className="ml-9">
+                  <div className="grid grid-cols-2 gap-x-8 gap-y-4">
+                    {section.products.map((product, productIndex) => (
+                      <div key={productIndex} className="mb-4">
+                        <div className="text-white font-medium text-sm mb-1">{product.name}</div>
+                        {product.description && (
+                          <div className="text-gray-300 text-xs">{product.description}</div>
+                        )}
+                      </div>
+                    ))}
+                  </div>
+                </div>
+                {sectionIndex < getCurrentContent().sections.length - 1 && (
+                  <div className="mt-6 mb-6" style={{ borderTop: '1px solid #4A4A4C' }}></div>
+                )}
               </div>
-            </div>
-          </div>
-
-          {/* Features Section */}
-          <div className={`transition-all duration-300 ease-out ${
-            activeTab === 'features' 
-              ? 'opacity-100 translate-y-0 block' 
-              : 'opacity-0 -translate-y-4 absolute inset-0 pointer-events-none'
-          }`}>
-            <div className="grid grid-cols-2 gap-6">
-              {features.map((feature, index) => (
-                <div key={index} className="flex items-start space-x-4">
-                  <div className="w-8 h-8 flex items-center justify-center text-[#4FD1C5]">
-                    <feature.icon size={20} />
-                  </div>
-                  <div className="flex-1">
-                    <h3 className="font-bold text-white text-sm mb-1">{feature.title}</h3>
-                    <p className="text-gray-300 text-xs leading-relaxed">{feature.description}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          {/* Specifications Section */}
-          <div className={`transition-all duration-300 ease-out ${
-            activeTab === 'specifications' 
-              ? 'opacity-100 translate-y-0 block' 
-              : 'opacity-0 -translate-y-4 absolute inset-0 pointer-events-none'
-          }`}>
-            <div className="grid grid-cols-2 gap-6">
-              {specifications.map((spec, index) => (
-                <div key={index} className="flex items-start space-x-4">
-                  <div className="w-8 h-8 flex items-center justify-center text-[#4FD1C5]">
-                    <spec.icon size={20} />
-                  </div>
-                  <div className="flex-1">
-                    <h3 className="font-bold text-white text-sm mb-1">{spec.title}</h3>
-                    <p className="text-gray-300 text-xs leading-relaxed">{spec.description}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
+            ))}
           </div>
         </div>
       </div>

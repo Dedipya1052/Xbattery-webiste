@@ -8,7 +8,6 @@ import AnimatedDiv from "@/components/ui/Animate";
 import IconWithGradient from "@/components/ui/IconGradient";
 import ESSCabinetIcon from "@/components/Icons/ESSCabinetIcon";
 import CustomTooltip from "@/components/ui/CustomTooltip";
-import NavigationIcon from "@/components/ui/NavigationIcon";
 import { Button } from "@chakra-ui/react";
 import { useRouter } from "next/router";
 import { 
@@ -234,7 +233,7 @@ export default function BharatBMSEVPage() {
 
   const data = {
     title: "Xbattery BharatBMS-EV",
-    description: "The XB-X 136S is a high-performance 435V BMS specifically engineered for electric vehicles including cars, trucks, and buses with 136-series LFP cell configurations. Built to automotive standards with ISO 26262 ASIL-C compliance, it supports up to 600A peak discharge currents and features advanced diagnostics for demanding EV applications.",
+    description: "Xbattery BharatBMS EV is a high-performance Battery Management System designed for electric cars, trucks, and buses.Supporting up to 250S LFP and NMC cells, it ensures accurate monitoring, intelligent balancing, and advanced protection. With CAN FD, RS-485, and Ethernet communication, and compliance with ISO 26262, ASIL-C, AIS-058 and AIS-004(part 3) standards, it delivers automotive-grade safety, reliability, and performance for modern electric mobility.",
     imageAlt: "LV-BMS Image",
     image: "/images/bms_offerings/ev-500v.png",
   };
@@ -316,8 +315,12 @@ export default function BharatBMSEVPage() {
       <div className={classes.head1}>
       <div className="bg-[#1c1c1c] text-white w-full relative">
         {/* Page header navigation icon (top-right) */}
-        <div className="absolute top-5 right-4 z-50">
-          <NavigationIcon pageType="ev" />
+        <div className="absolute top-5 right-4 w-11 h-11 rounded-xl bg-[#0c0c0c] border border-white/20 flex items-center justify-center text-white overflow-visible z-50">
+          <CustomTooltip text="Electric vehicle">
+            <div className="w-10 h-10 rounded-xl overflow-hidden flex items-center justify-center">
+              <Image src="/images/icons/download (29)-Photoroom.png" alt="BMS icon" width={42} height={42} className="object-cover scale-[1.3]" />
+            </div>
+          </CustomTooltip>
         </div>
         <div className="mx-auto w-[95%] md:w-[90%] xl:w-[95%] 2xl:w-[1500px] py-8 md:py-16 px-3 md:px-6 flex flex-col lg:flex-row items-center justify-center h-full min-h-[460px]">
           <div className="text-center lg:text-left p-2 md:p-4 mb-6 lg:mb-0 w-full ml-4">
@@ -450,7 +453,7 @@ export default function BharatBMSEVPage() {
                 {/* Left - Product Image */}
                 <div className="flex justify-center">
                   <div className="w-full max-w-lg text-center">
-                     <div className="bg-[#1c1c1c] overflow-hidden h-[280px] md:h-[340px] flex items-center justify-center">
+                     <div className="bg-[#1c1c1c] overflow-hidden h-[320px] md:h-[380px] flex items-center justify-center">
                     <Image
                       src={productImages[0]}
                       alt="EV 110V BMS Product"
@@ -460,7 +463,7 @@ export default function BharatBMSEVPage() {
                     />
                     </div>
                     <p className="text-gray-300 mt-4 text-center">
-                      The XB-X 32S is a robust low-voltage electric vehicle BMS operating at 110V nominal with LFP chemistry support for 32-36 series configurations.
+                      BharatBMS-EV-110V is Optimized for e-rickshaws, autos, and tempos with up to 80S configurations and automotive-grade safety compliance. Delivers efficient power management and reliable performance for 3-wheel electric vehicles.
                     </p>
                 </div>
               </div>
@@ -568,7 +571,7 @@ export default function BharatBMSEVPage() {
                 {/* Left - Product Image */}
                 <div className="flex justify-center">
                   <div className="w-full max-w-lg text-center">
-                     <div className="bg-[#1c1c1c] overflow-hidden h-[280px] md:h-[340px] flex items-center justify-center">
+                     <div className="bg-[#1c1c1c] overflow-hidden h-[320px] md:h-[380px] flex items-center justify-center">
                     <Image
                       src={ev400vImages[0]}
                       alt="EV 400V BMS Product"
@@ -578,7 +581,7 @@ export default function BharatBMSEVPage() {
                     />
                     </div>
                     <p className="text-gray-300 mt-4 text-center">
-                      The XB-X 32S is a robust low-voltage electric vehicle BMS operating at 400V nominal with LFP chemistry support for 32-36 series configurations.
+                      BharatBMS-EV-400V is Designed for passenger cars with up to 120S configurations and advanced CAN FD communication protocols. Ensures smooth EV operation with intelligent balancing and comprehensive safety features.
                     </p>
                 </div>
               </div>
@@ -686,7 +689,7 @@ export default function BharatBMSEVPage() {
                 {/* Left - Product Image */}
                 <div className="flex justify-center">
                   <div className="w-full max-w-lg text-center">
-                     <div className="bg-[#1c1c1c] overflow-hidden h-[280px] md:h-[340px] flex items-center justify-center">
+                     <div className="bg-[#1c1c1c] overflow-hidden h-[320px] md:h-[380px] flex items-center justify-center">
                     <Image
                       src={ev500vImages[0]}
                       alt="EV 500V BMS Product"
@@ -696,7 +699,7 @@ export default function BharatBMSEVPage() {
                     />
                     </div>
                     <p className="text-gray-300 mt-4 text-center">
-                      The XB-X 32S is a robust low-voltage electric vehicle BMS operating at 500V nominal with LFP chemistry support for 32-36 series configurations.
+                      BharatBMS-EV-600V is Built for buses and heavy commercial vehicles supporting up to 180S configurations with robust current handling. Provides exceptional durability and high-performance control for demanding transportation applications.
                     </p>
                 </div>
               </div>
