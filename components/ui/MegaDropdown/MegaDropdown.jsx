@@ -3,10 +3,12 @@ import ESSBMSIcon from '@/components/Icons/ESSBMSIcon';
 import ESSBMSIcon48V from '@/components/Icons/ESSBMSIcon48V';
 import ESSBMSIcon72V from '@/components/Icons/ESSBMSIcon72V';
 
-const MegaDropdown = ({ isOpen, onClose, pageType = 'ess', productTextTimeout = 1000, menuTimeout = 2000 }) => {
+const MegaDropdown = ({ isOpen, onClose, onMouseEnter, onMouseLeave, pageType = 'ess', productTextTimeout = 1000, menuTimeout = 2000 }) => {
   const [hoverTimeout, setHoverTimeout] = useState(null);
   const [activeCategory, setActiveCategory] = useState('ess');
   const dropdownRef = useRef(null);
+
+  console.log('MegaDropdown received isOpen:', isOpen);
 
   // Close dropdown when clicking outside
   useEffect(() => {
@@ -108,28 +110,18 @@ const MegaDropdown = ({ isOpen, onClose, pageType = 'ess', productTextTimeout = 
   return (
     <div 
       ref={dropdownRef}
-      className={`absolute top-full left-0 w-[700px] shadow-2xl rounded-lg z-50 overflow-hidden transition-all duration-300 ease-out focus:outline-none hover:outline-none ${
+      className={`absolute top-full left-0 w-[700px] shadow-2xl rounded-lg overflow-hidden transition-all duration-300 ease-out focus:outline-none hover:outline-none ${
         isOpen ? 'opacity-100 translate-y-0 pointer-events-auto' : 'opacity-0 -translate-y-4 pointer-events-none'
       }`}
       style={{ 
         marginTop: '8px',
         outline: 'none !important',
-        boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.25) !important'
+        boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.25) !important',
+        zIndex: 9999,
+        position: 'absolute'
       }}
-      onMouseEnter={() => {
-        // Keep menu open when hovering over it
-        if (hoverTimeout) {
-          clearTimeout(hoverTimeout);
-          setHoverTimeout(null);
-        }
-      }}
-      onMouseLeave={() => {
-        // Close menu with specified delay when leaving the menu
-        const timeout = setTimeout(() => {
-          onClose();
-        }, menuTimeout);
-        setHoverTimeout(timeout);
-      }}
+      onMouseEnter={onMouseEnter}
+      onMouseLeave={onMouseLeave}
     >
       <div className="flex">
         {/* Left Column - Categories */}

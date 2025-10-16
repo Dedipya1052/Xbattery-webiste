@@ -35,9 +35,9 @@ const NavigationIcon = ({ pageType = 'ess' }) => {
     >
       {/* Products Text - Updated to show text instead of hamburger icon */}
       <div 
-        className="px-4 py-2 rounded-lg bg-black flex items-center justify-center text-white cursor-pointer transition-all duration-200 group focus:outline-none hover:outline-none focus:border-none hover:border-none hover:bg-gray-800"
+        className="px-4 py-2 rounded-lg bg-[#0c0c0c] flex items-center justify-center text-white cursor-pointer transition-all duration-200 group focus:outline-none hover:outline-none focus:border-none hover:border-none hover:bg-[#1a1a1a]"
         style={{
-          backgroundColor: 'black !important',
+          backgroundColor: '#0c0c0c !important',
           outline: 'none !important',
           border: 'none !important',
           boxShadow: 'none !important'

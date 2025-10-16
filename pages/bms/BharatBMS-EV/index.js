@@ -777,7 +777,7 @@ export default function BharatBMSEVPage() {
                         <div className="bg-[#262626] p-4 rounded-lg text-center h-[180px] flex flex-col justify-center border border-[#333]">
                           <div className="w-12 h-10 mx-auto mb-3 mt-1 flex items-center justify-center">
                             <Image
-                              src="/images/icons/heavyvechile.png"
+                              src="/images/icons/heavy2.png"
                               alt="Heavy Vehicle"
                               width={48}
                               height={40}
