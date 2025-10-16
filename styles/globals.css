@@ -160,4 +160,68 @@ h1, h2, h3, h4, h5, h6 {
   border-color: #00e5ff !important;
 }
 
+/* Remove all borders and outlines from navigation icon */
+.w-11.h-11.rounded-xl {
+  outline: none !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+.w-11.h-11.rounded-xl:hover,
+.w-11.h-11.rounded-xl:focus,
+.w-11.h-11.rounded-xl:active {
+  outline: none !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+/* Remove outlines from mega dropdown but allow border */
+.fixed.top-16 {
+  outline: none !important;
+}
+
+.fixed.top-16:hover,
+.fixed.top-16:focus,
+.fixed.top-16:active {
+  outline: none !important;
+}
+
+/* Remove borders from mega dropdown buttons */
+.fixed.top-16 button {
+  outline: none !important;
+  border: none !important;
+}
+
+.fixed.top-16 button:hover,
+.fixed.top-16 button:focus,
+.fixed.top-16 button:active {
+  outline: none !important;
+  border: none !important;
+}
+
+/* Remove borders from mega dropdown links */
+.fixed.top-16 a {
+  outline: none !important;
+  border: none !important;
+}
+
+.fixed.top-16 a:hover,
+.fixed.top-16 a:focus,
+.fixed.top-16 a:active {
+  outline: none !important;
+  border: none !important;
+}
+
+/* Keep the same border on mega dropdown hover */
+.fixed.top-16:hover {
+  border: 1px solid #bdbdbd5a !important; /* Same gray border as default */
+  outline: none !important;
+}
+
+/* Override any group hover effects on mega dropdown */
+.fixed.top-16.group:hover {
+  border: 1px solid #4b5563 !important; /* Same gray border as default */
+  outline: none !important;
+}
+
 

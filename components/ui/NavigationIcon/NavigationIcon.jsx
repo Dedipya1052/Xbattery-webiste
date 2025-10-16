@@ -4,16 +4,19 @@ import MegaDropdown from '../MegaDropdown';
 const NavigationIcon = ({ pageType = 'ess' }) => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [hoverTimeout, setHoverTimeout] = useState(null);
+  const [isHovered, setIsHovered] = useState(false);
 
   const handleMouseEnter = () => {
     if (hoverTimeout) {
       clearTimeout(hoverTimeout);
       setHoverTimeout(null);
     }
+    setIsHovered(true);
     setIsDropdownOpen(true);
   };
 
   const handleMouseLeave = () => {
+    setIsHovered(false);
     const timeout = setTimeout(() => {
       setIsDropdownOpen(false);
     }, 300); // Increased delay to 300ms
@@ -31,7 +34,14 @@ const NavigationIcon = ({ pageType = 'ess' }) => {
       onMouseLeave={handleMouseLeave}
     >
       {/* Navigation Icon */}
-      <div className="w-11 h-11 rounded-xl bg-[#0c0c0c] border border-white/20 flex items-center justify-center text-white cursor-pointer hover:bg-[#1a1a1a] hover:border-white hover:border-2 transition-all duration-200 group">
+      <div 
+        className="w-11 h-11 rounded-xl bg-[#0c0c0c] flex items-center justify-center text-white cursor-pointer transition-all duration-200 group focus:outline-none hover:outline-none focus:border-none hover:border-none"
+        style={{
+          backgroundColor: '#0c0c0c !important',
+          outline: 'none !important',
+          border: 'none !important',
+          boxShadow: 'none !important'
+        }}>
         <svg 
           width="20" 
           height="20" 
