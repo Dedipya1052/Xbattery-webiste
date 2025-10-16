@@ -456,7 +456,7 @@ export default function BharatBMSESSPage() {
                       alt="ESS 48V BMS Product"
                           width={560}
                           height={340}
-                          className="w-full h-full object-contain hover:scale-110 transition-transform duration-300 ease-in-out"
+                          className="w-full h-full object-contain hover:scale-128 transition-transform duration-300 ease-in-out"
                     />
                     </div>
                     <p className="text-gray-300 mt-4 text-center">
@@ -574,7 +574,7 @@ export default function BharatBMSESSPage() {
                       alt="ESS 72V BMS Product"
                           width={560}
                           height={340}
-                          className="w-full h-full object-contain hover:scale-110 transition-transform duration-300 ease-in-out"
+                          className="w-full h-full object-contain hover:scale-128 transition-transform duration-300 ease-in-out"
                     />
                     </div>
                     <p className="text-gray-300 mt-4 text-center">
@@ -692,7 +692,7 @@ export default function BharatBMSESSPage() {
                       alt="ESS 110V BMS Product"
                           width={560}
                           height={340}
-                          className="w-full h-full object-contain hover:scale-110 transition-transform duration-300 ease-in-out"
+                          className="w-full h-full object-contain hover:scale-128 transition-transform duration-300 ease-in-out"
                     />
                     </div>
                     <p className="text-gray-300 mt-4 text-center">

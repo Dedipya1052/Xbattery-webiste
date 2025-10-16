@@ -459,7 +459,7 @@ export default function BharatBMSEVPage() {
                       alt="EV 110V BMS Product"
                           width={560}
                           height={340}
-                          className="w-full h-full object-contain hover:scale-110 transition-transform duration-300 ease-in-out"
+                          className="w-full h-full object-contain hover:scale-220 transition-transform duration-300 ease-in-out"
                     />
                     </div>
                     <p className="text-gray-300 mt-3 md:mt-4 text-center text-sm md:text-base leading-relaxed px-2">
@@ -573,11 +573,11 @@ export default function BharatBMSEVPage() {
                   <div className="w-full max-w-lg text-center">
                      <div className="bg-[#1c1c1c] overflow-hidden h-[280px] sm:h-[320px] md:h-[380px] flex items-center justify-center rounded-lg">
                     <Image
-                      src={ev400vImages[0]}
+                      src="/images/bms_offerings/ev-400v-2.png"
                       alt="EV 400V BMS Product"
                           width={560}
                           height={340}
-                          className="w-full h-full object-contain hover:scale-110 transition-transform duration-300 ease-in-out"
+                          className="w-full h-full object-contain hover:scale-150 transition-transform duration-300 ease-in-out"
                     />
                     </div>
                     <p className="text-gray-300 mt-3 md:mt-4 text-center text-sm md:text-base leading-relaxed px-2">
@@ -695,7 +695,7 @@ export default function BharatBMSEVPage() {
                       alt="EV 500V BMS Product"
                           width={560}
                           height={340}
-                          className="w-full h-full object-contain hover:scale-110 transition-transform duration-300 ease-in-out"
+                          className="w-full h-full object-contain hover:scale-135 transition-transform duration-300 ease-in-out"
                     />
                     </div>
                     <p className="text-gray-300 mt-4 text-center">

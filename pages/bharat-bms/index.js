@@ -542,7 +542,7 @@ const BharatBMS = () => {
                                  <span>Xbattery BharatBMS-EV-600V</span>
                                </h4>
                                <div className="w-16 h-[3px] bg-[#00e5ff] rounded-full mb-4"></div>
-                               <p className="text-sm text-[#cfe3ea] mb-4">BharatBMS-EV-600V is Built for buses and heavy commercial vehicles supporting up to 180S configurations with robust current handling.</p>
+                               <p className="text-sm text-[#cfe3ea] mb-4">BharatBMS-EV-600V is Built for buses and<br />heavy commercial vehicles supporting up to 180S configurations with robust current handling.</p>
                                <div className="mt-auto">
                                  <div className="text-sm text-[#64efff] tracking-wide mb-2">KEY FEATURES</div>
                                  <ul className="text-sm text-[#cfe3ea] list-disc pl-4 space-y-1 marker:text-[#00e5ff]">
