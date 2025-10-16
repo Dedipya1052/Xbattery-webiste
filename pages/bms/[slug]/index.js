@@ -87,7 +87,7 @@ const CONTENT = {
   "ev-bms": {
     title: "Xbattery BharatBMS-EV-400V",
     description:
-      "BharatBMS-EV-400V is Designed for passenger cars with up to 120S configurations and advanced CAN FD communication protocols. Ensures smooth EV operation with intelligent balancing and comprehensive safety features.",
+      "BharatBMS-EV-400V is Designed for passenger cars with up to 120S configurations and advanced CAN FD communication protocols.",
     imageAlt: "LV-BMS Image",
     image: "/images/bms_offerings/ev-400v.png",
   },

@@ -578,7 +578,7 @@ export default function BharatBMSESSPage() {
                     />
                     </div>
                     <p className="text-gray-300 mt-4 text-center">
-                    BharatBMS-ESS-72V is High-efficiency battery management for industrial and medium-scale energy storage systems supporting up to 28S configurations. Provides safe and efficient power management for industrial battery packs and renewable energy applications.
+                    BharatBMS-ESS-72V is High-efficiency battery management for industrial and medium-scale energy storage systems supporting up to 28S configurations.
                     </p>
                 </div>
               </div>
@@ -696,7 +696,7 @@ export default function BharatBMSESSPage() {
                     />
                     </div>
                     <p className="text-gray-300 mt-4 text-center">
-                    BharatBMS-ESS-110V is an advanced battery management system for large-scale energy storage and grid applications supporting up to 42S configurations. Offers scalable architecture and intelligent monitoring for demanding industrial and renewable energy requirements.
+                    BharatBMS-ESS-110V is an advanced battery management system for large-scale energy storage and grid applications supporting up to 42S configurations.
                     </p>
                 </div>
               </div>

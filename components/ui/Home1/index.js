@@ -1641,7 +1641,7 @@ const Example = ({ media, recentBlogs }) => {
 
                         <div className="w-16 h-[3px] bg-[#00e5ff] rounded-full mb-4"></div>
 
-                        <p className="text-sm text-[#cfe3ea] mb-4">BharatBMS-ESS-72V is High-efficiency battery management for industrial and medium-scale energy storage systems supporting up to 28S configurations. Provides safe and efficient power management for industrial battery packs and renewable energy applications.</p>
+                        <p className="text-sm text-[#cfe3ea] mb-4">BharatBMS-ESS-72V is High-efficiency battery management for industrial and medium-scale energy storage systems supporting up to 28S configurations.</p>
 
                         <div className="mt-auto">
 
@@ -1711,7 +1711,7 @@ const Example = ({ media, recentBlogs }) => {
 
                             <div className="w-16 h-[3px] bg-[#00e5ff] rounded-full mb-4"></div>
 
-                            <p className="text-sm text-[#cfe3ea] mb-4">BharatBMS-ESS-110V is an advanced battery management system for large-scale energy storage and grid applications supporting up to 42S configurations. Offers scalable architecture and intelligent monitoring for demanding industrial and renewable energy requirements.</p>
+                            <p className="text-sm text-[#cfe3ea] mb-4">BharatBMS-ESS-110V is an advanced battery management system for large-scale energy storage and grid applications supporting up to 42S configurations.</p>
 
                             <div className="mt-auto">
 
@@ -1789,7 +1789,7 @@ const Example = ({ media, recentBlogs }) => {
                                     <span>Xbattery BharatBMS-EV-110V</span>
                                   </h4>
                                   <div className="w-16 h-[3px] bg-[#00e5ff] rounded-full mb-4"></div>
-                                  <p className="text-sm text-[#cfe3ea] mb-4">BharatBMS-EV-110V is Optimized for e-rickshaws, autos, and tempos with up to 80S configurations and automotive-grade safety compliance. Delivers efficient power management and reliable performance for 3-wheel electric vehicles.</p>
+                                  <p className="text-sm text-[#cfe3ea] mb-4">BharatBMS-EV-110V is Optimized for e-rickshaws, autos, and tempos with up to 80S configurations and automotive-grade safety compliance.</p>
                                   <div className="mt-auto">
                                     <div className="text-sm text-[#64efff] tracking-wide mb-2">KEY FEATURES</div>
                                     <ul className="text-sm text-[#cfe3ea] list-disc pl-4 space-y-1 marker:text-[#00e5ff]">
@@ -1820,7 +1820,7 @@ const Example = ({ media, recentBlogs }) => {
                                     <span>Xbattery BharatBMS-EV-400V</span>
                                   </h4>
                                   <div className="w-16 h-[3px] bg-[#00e5ff] rounded-full mb-4"></div>
-                                  <p className="text-sm text-[#cfe3ea] mb-4">BharatBMS-EV-400V is Designed for passenger cars with up to 120S configurations and advanced CAN FD communication protocols. Ensures smooth EV operation with intelligent balancing and comprehensive safety features.</p>
+                                  <p className="text-sm text-[#cfe3ea] mb-4">BharatBMS-EV-400V is Designed for passenger cars with up to 120S configurations and advanced CAN FD communication protocols.</p>
                                   <div className="mt-auto">
                                     <div className="text-sm text-[#64efff] tracking-wide mb-2">KEY FEATURES</div>
                                     <ul className="text-sm text-[#cfe3ea] list-disc pl-4 space-y-1 marker:text-[#00e5ff]">
@@ -1851,7 +1851,7 @@ const Example = ({ media, recentBlogs }) => {
                                     <span>Xbattery BharatBMS-EV-600V</span>
                                   </h4>
                                   <div className="w-16 h-[3px] bg-[#00e5ff] rounded-full mb-4"></div>
-                                  <p className="text-sm text-[#cfe3ea] mb-4">BharatBMS-EV-600V is built for buses and heavy commercial vehicles supporting up to 180S configurations with robust current handling. Provides exceptional durability and high-performance control for demanding transportation applications.</p>
+                                  <p className="text-sm text-[#cfe3ea] mb-4">BharatBMS-EV-600V is built for buses and heavy commercial vehicles supporting up to 180S configurations with robust current handling.</p>
                                   <div className="mt-auto">
                                     <div className="text-sm text-[#64efff] tracking-wide mb-2">KEY FEATURES</div>
                                     <ul className="text-sm text-[#cfe3ea] list-disc pl-4 space-y-1 marker:text-[#00e5ff]">
