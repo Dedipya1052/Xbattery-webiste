@@ -440,7 +440,7 @@ export default function BharatBMSESSPage() {
             </AnimatedDiv>
 
             {/* Black Div Box */}
-            <div id="ess-48v-white" className="w-full h-8 bg-white mb-12 mt-12"></div>
+            <div id="ess-48v-white" className="w-full h-8 bg-black mb-12 mt-12"></div>
 
             {/* ESS 48V Product */}
             <AnimatedDiv>
@@ -558,7 +558,7 @@ export default function BharatBMSESSPage() {
             </AnimatedDiv>
 
             {/* Black Div Box for 72V */}
-            <div id="ess-72v-white" className="w-full h-8 bg-white mb-12 mt-12"></div>
+            <div id="ess-72v-white" className="w-full h-8 bg-black mb-12 mt-12"></div>
 
             {/* ESS 72V Product */}
             <AnimatedDiv>
@@ -676,7 +676,7 @@ export default function BharatBMSESSPage() {
             </AnimatedDiv>
 
             {/* Black Div Box for 110V */}
-            <div id="ess-110v-white" className="w-full h-8 bg-white mb-12 mt-12"></div>
+            <div id="ess-110v-white" className="w-full h-8 bg-black mb-12 mt-12"></div>
 
             {/* ESS 110V Product */}
             <AnimatedDiv>
