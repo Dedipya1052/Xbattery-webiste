@@ -18,6 +18,8 @@ import { useRef } from "react";
 
 import Link from "next/link";
 
+import NavbarNavigation from "../NavbarNavigation";
+
 import AnimatedDiv from "../Animate";
 
 import IconWithGradient from "../IconGradient";
@@ -75,6 +77,7 @@ const Example = ({ media, recentBlogs }) => {
   const [isScrolled, setIsScrolled] = useState(false);
 
   const [isEnergyStorageInView, setIsEnergyStorageInView] = useState(false);
+  const [isProductsInView, setIsProductsInView] = useState(false);
 
 
 
@@ -85,6 +88,7 @@ const Example = ({ media, recentBlogs }) => {
   const reference = useRef(null);
 
   const energyStorageRef = useRef(null);
+  const productsRef = useRef(null);
   const essScrollRef = useRef(null);
   const evScrollRef = useRef(null);
 
@@ -309,6 +313,25 @@ const Example = ({ media, recentBlogs }) => {
 
         console.log('Setting isEnergyStorageInView to:', isInView);
 
+      }
+
+      // Check if products section is in view
+      if (productsRef.current) {
+        const rect = productsRef.current.getBoundingClientRect();
+        const headerOffset = 300; // Same offset as energy storage
+        
+        // Check if the section is in the viewport
+        const isInView = rect.top <= headerOffset;
+        
+        console.log('Products section:', {
+          top: rect.top,
+          bottom: rect.bottom,
+          isInView: isInView,
+          scrollY: window.scrollY
+        });
+        
+        setIsProductsInView(isInView);
+        console.log('Setting isProductsInView to:', isInView);
       }
 
     };
@@ -1055,6 +1078,8 @@ const Example = ({ media, recentBlogs }) => {
 
             <div className="hidden lg:flex gap-7 items-center ml-auto mr-8">
 
+              <NavbarNavigation isProductsInView={isProductsInView} isBlackNav={true} />
+
               <button
 
                 onClick={(e) => {
@@ -1204,6 +1229,8 @@ const Example = ({ media, recentBlogs }) => {
           {mobileMenuOpen && (
 
             <div className="lg:hidden absolute top-16 left-0 right-0 bg-black text-white flex flex-col items-center p-4 space-y-4">
+
+              <NavbarNavigation isProductsInView={isProductsInView} isBlackNav={true} />
 
               <button
 
@@ -1555,7 +1582,7 @@ const Example = ({ media, recentBlogs }) => {
 
               {/* BMS cards directly below BharatBMS text in the same section */}
 
-              <div className="mt-6" id="bms-offerings">
+              <div className="mt-6" id="bms-offerings" ref={productsRef}>
 
                 <h3 className={`${styles.color} text-center text-2xl md:text-3xl font-bold mb-6 mt-[6rem]`}>OUR BMS OFFERINGS</h3>
 

@@ -278,19 +278,17 @@ const Navbar = () => {
                   </Link>
                 </div>
                 <div className="hidden lg:flex flex-col md:flex-row gap-[1rem] md:gap-[2rem] text-center md:text-left">
-                  <div className="flex items-center gap-4">
-                    <NavbarNavigation />
-                    <div
-                      className={`text-[1rem] md:text-[1.2rem] transition-all duration-200 cursor-pointer space-grotesk-medium
-                  ${
-                    currentPath === "/"
-                      ? "text-[#2faf2f]"
-                      : "hover:text-[#45c945]"
-                  }`}
-                      onClick={scrollToEnergyStorage}
-                    >
-                      Energy Storage
-                    </div>
+                  <NavbarNavigation isBlackNav={isHomePage} />
+                  <div
+                    className={`text-[1rem] md:text-[1.2rem] transition-all duration-200 cursor-pointer space-grotesk-medium
+                ${
+                  currentPath === "/"
+                    ? "text-[#2faf2f]"
+                    : "hover:text-[#45c945]"
+                }`}
+                    onClick={scrollToEnergyStorage}
+                  >
+                    Energy Storage
                   </div>
                   <div
                     className={`text-[1rem] md:text-[1.2rem] transition-all duration-200 space-grotesk-medium
@@ -385,7 +383,7 @@ const Navbar = () => {
                   }`}
                 >
                   <div className="mb-4">
-                    <NavbarNavigation />
+                    <NavbarNavigation isBlackNav={isHomePage} />
                   </div>
                   <div
                     className={`block text-[1rem] transition-all duration-200 mb-2 cursor-pointer space-grotesk-medium

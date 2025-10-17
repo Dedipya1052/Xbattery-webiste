@@ -1,7 +1,10 @@
 import React, { useState, useRef } from 'react';
 import MegaDropdown from '../MegaDropdown';
+import { useRouter } from 'next/router';
 
-const NavbarNavigation = () => {
+const NavbarNavigation = ({ isProductsInView = false, isBlackNav = false }) => {
+  const router = useRouter();
+  const isHomePage = router.pathname === "/";
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [hoverTimeout, setHoverTimeout] = useState(null);
   const isHovering = useRef(false);
@@ -61,7 +64,15 @@ const NavbarNavigation = () => {
     <div className="relative block">
       {/* Products Text */}
       <div 
-        className="text-lg font-medium transition-colors duration-300 space-grotesk-medium cursor-pointer text-[#cacaca] hover:text-white"
+        className={`font-medium transition-colors duration-300 space-grotesk-medium cursor-pointer ${
+          isHomePage && router.pathname === "/"
+            ? `text-lg ${isProductsInView ? "text-white" : "text-[#cacaca] hover:text-white"}` 
+            : isBlackNav
+              ? "text-lg text-white hover:text-[#e6e6e6]"
+              : router.pathname === "/about" || router.pathname.includes("bharat-bms") || router.pathname.includes("/bms")
+                ? "text-lg text-[#cacaca] hover:text-white"
+                : "text-[1rem] md:text-[1.2rem] text-black hover:text-[#45c945]"
+        }`}
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}
       >
