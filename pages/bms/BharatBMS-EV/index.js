@@ -443,7 +443,7 @@ export default function BharatBMSEVPage() {
             </AnimatedDiv>
 
             {/* Black Div Box for EV 110V */}
-            <div id="ess-ev-110" className="w-full h-16 bg-black mb-6 mt-6"></div>
+            <div id="ev-110v-white" className="w-full h-8 bg-white mb-0 mt-24"></div>
 
             {/* EV 110V Product */}
             <AnimatedDiv>
@@ -561,7 +561,7 @@ export default function BharatBMSEVPage() {
             </AnimatedDiv>
 
             {/* Black Div Box for EV 400V */}
-            <div id="ess-ev-400" className="w-full h-16 bg-black mb-6 mt-6"></div>
+            <div id="ev-400v-white" className="w-full h-8 bg-white mb-0 mt-24"></div>
 
             {/* EV 400V Product */}
             <AnimatedDiv>
@@ -679,7 +679,7 @@ export default function BharatBMSEVPage() {
             </AnimatedDiv>
 
             {/* Black Div Box for EV 600V */}
-            <div id="ess-ev-600" className="w-full h-16 bg-black mb-6 mt-6"></div>
+            <div id="ev-600v-white" className="w-full h-8 bg-white mb-0 mt-24"></div>
 
             {/* EV 600V Product */}
             <AnimatedDiv>
