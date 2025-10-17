@@ -41,20 +41,27 @@ const MegaDropdown = ({ isOpen, onClose, onMouseEnter, onMouseLeave, pageType = 
     title: "BharatBMS-ESS",
     sections: [
       {
-        name: "Energy Storage Systems",
+        name: "Xbattery BharatBMS-ESS-48V",
         products: [
-          { name: "FS-LT", description: "For standalone & stackable ESS architectures" },
-          { name: "CT-Safe", description: "For grid-scale energy storage safety" },
-          { name: "CT-Lite", description: "For residential energy storage systems" },
-          { name: "CT-Lite+ 50A", description: "For commercial energy storage applications" },
-          { name: "CT-Lite + 80A", description: "For industrial energy storage solutions" }
+          { 
+            name: "Smart BMS for UPS, telecom, and small ESS applications, supports up to 28S for compact and reliable energy storage"
+          }
         ]
       },
       {
-        name: "Grid Integration", 
+        name: "Xbattery BharatBMS-ESS-72V", 
         products: [
-          { name: "FS-XT", description: "For high voltage grid-tied applications" },
-          { name: "HP Safe", description: "For utility-scale energy storage systems" }
+          { 
+            name: "High-efficiency BMS for industrial and medium-scale ESS, supports up to 28S for safe and efficient power management."
+          }
+        ]
+      },
+      {
+        name: "Xbattery BharatBMS-ESS-110V",
+        products: [
+          { 
+            name: "Advanced BMS for large ESS and grid storage, supports up to 42S for high voltage, high-performance energy systems"
+          }
         ]
       }
     ]
@@ -64,18 +71,27 @@ const MegaDropdown = ({ isOpen, onClose, onMouseEnter, onMouseLeave, pageType = 
     title: "BharatBMS-EV",
     sections: [
       {
-        name: "Electric Vehicle Systems",
+        name: "Xbattery BharatBMS-EV-110V",
         products: [
-          { name: "FSB-PR-I", description: "Interface board for EV charging contractors" },
-          { name: "EV-BMS", description: "Battery management for electric vehicles" },
-          { name: "Charging Control", description: "Smart charging management systems" }
+          { 
+            name: "Optimized for e-rickshaws, autos, and tempos. Supports up to 60S configurations, ensuring efficient, safe, and reliable performance for 3-wheel electric vehicles"
+          }
         ]
       },
       {
-        name: "Vehicle Telematics",
+        name: "Xbattery BharatBMS-EV-400V", 
         products: [
-          { name: "TCU", description: "Telematics control unit for EV monitoring" },
-          { name: "Fleet Management", description: "Electric vehicle fleet tracking" }
+          { 
+            name: "Designed for passenger cars, hatchbacks, and sedans. Supports up to 125S, delivering advanced power management and enhanced safety for smooth EV operation"
+          }
+        ]
+      },
+      {
+        name: "Xbattery BharatBMS-EV-600V",
+        products: [
+          { 
+            name: "Built for SUVs and light commercial vehicles. Supports up to 186S, providing high-performance control, protection, and durability for demanding applications"
+          }
         ]
       }
     ]
@@ -170,78 +186,54 @@ const MegaDropdown = ({ isOpen, onClose, onMouseEnter, onMouseLeave, pageType = 
 
         {/* Right Column - Product Details */}
         <div className="w-2/3 p-4" style={{ backgroundColor: '#2C2C2E' }}>
-          <div className="rounded-lg p-4" style={{ backgroundColor: '#3A3A3C' }}>
+          <div className="space-y-4">
             {getCurrentContent().sections.map((section, sectionIndex) => (
-              <div key={sectionIndex}>
-                <div className="flex items-center mb-2">
+              <div 
+                key={sectionIndex} 
+                className="rounded-lg p-4 cursor-pointer hover:bg-gray-600/20 transition-colors duration-200" 
+                style={{ backgroundColor: '#3A3A3C' }}
+                onClick={() => {
+                  // Navigate to specific section based on product
+                  if (section.name === "Xbattery BharatBMS-ESS-48V") {
+                    window.location.href = "/bms/BharatBMS-ESS#ess-48v";
+                  } else if (section.name === "Xbattery BharatBMS-ESS-72V") {
+                    window.location.href = "/bms/BharatBMS-ESS#ess-72v";
+                  } else if (section.name === "Xbattery BharatBMS-ESS-110V") {
+                    window.location.href = "/bms/BharatBMS-ESS#ess-110v";
+                  } else if (section.name === "Xbattery BharatBMS-EV-110V") {
+                    window.location.href = "/bms/BharatBMS-EV#ev-110v";
+                  } else if (section.name === "Xbattery BharatBMS-EV-400V") {
+                    window.location.href = "/bms/BharatBMS-EV#ev-400v";
+                  } else if (section.name === "Xbattery BharatBMS-EV-600V") {
+                    window.location.href = "/bms/BharatBMS-EV#ev-600v";
+                  }
+                }}
+              >
+                <div className="flex items-center mb-3">
                   <div className="w-6 h-6 flex items-center justify-center mr-3">
-                    {section.name === 'Energy Storage Systems' || section.name === 'Grid Integration' ? (
-                      <div className="w-6 h-6 rounded-full border border-cyan-400 flex items-center justify-center">
-                        <svg className="w-3 h-3" fill="url(#lightningGradient)" viewBox="0 0 20 20">
-                          <defs>
-                            <linearGradient id="lightningGradient" x1="0%" y1="0%" x2="0%" y2="100%">
-                              <stop offset="0%" stopColor="#10B981" />
-                              <stop offset="100%" stopColor="#8B5CF6" />
-                            </linearGradient>
-                          </defs>
-                          <path fillRule="evenodd" d="M11.3 1.046A1 1 0 0112 2v5h4a1 1 0 01.82 1.573l-7 10A1 1 0 018 18v-5H4a1 1 0 01-.82-1.573l7-10a1 1 0 011.12-.38z" clipRule="evenodd" />
-                        </svg>
-                      </div>
-                    ) : section.name === 'Electric Vehicle Systems' ? (
-                      <div className="w-6 h-6 rounded-full border-2 border-blue-500 flex items-center justify-center relative">
-                        <svg className="w-3 h-3 text-blue-400" fill="currentColor" viewBox="0 0 20 20">
-                          <path d="M4 3a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V5a2 2 0 00-2-2H4zm12 12H4V5h12v10z"/>
-                        </svg>
-                        <div className="absolute -bottom-1 -right-1 w-2 h-2 bg-green-500 rounded-full"></div>
-                      </div>
-                    ) : section.name === 'Vehicle Telematics' ? (
-                      <div className="w-6 h-6 rounded-full border-2 border-blue-500 flex items-center justify-center">
-                        <div className="relative w-4 h-4">
-                          <svg className="absolute top-0 left-0 w-2 h-2 text-blue-400" fill="currentColor" viewBox="0 0 20 20">
-                            <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/>
-                          </svg>
-                          <svg className="absolute bottom-0 right-0 w-2 h-2 text-green-400" fill="currentColor" viewBox="0 0 20 20">
-                            <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/>
-                          </svg>
-                        </div>
-                      </div>
-                    ) : section.name === 'Battery Monitoring' || section.name === 'Safety Systems' ? (
-                      <div className="w-6 h-6 rounded-full border border-orange-400 flex items-center justify-center">
-                        <svg className="w-3 h-3 text-orange-400" fill="currentColor" viewBox="0 0 20 20">
-                          <path fillRule="evenodd" d="M3 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clipRule="evenodd" />
-                        </svg>
-                      </div>
-                    ) : (
-                      <div className="w-6 h-6 rounded-full border border-cyan-400 flex items-center justify-center">
-                        <svg className="w-3 h-3" fill="url(#lightningGradient)" viewBox="0 0 20 20">
-                          <defs>
-                            <linearGradient id="lightningGradient" x1="0%" y1="0%" x2="0%" y2="100%">
-                              <stop offset="0%" stopColor="#10B981" />
-                              <stop offset="100%" stopColor="#8B5CF6" />
-                            </linearGradient>
-                          </defs>
-                          <path fillRule="evenodd" d="M11.3 1.046A1 1 0 0112 2v5h4a1 1 0 01.82 1.573l-7 10A1 1 0 018 18v-5H4a1 1 0 01-.82-1.573l7-10a1 1 0 011.12-.38z" clipRule="evenodd" />
-                        </svg>
-                      </div>
-                    )}
+                    <div className="w-6 h-6 rounded-full border border-cyan-400 flex items-center justify-center">
+                      <svg className="w-3 h-3" fill="url(#lightningGradient)" viewBox="0 0 20 20">
+                        <defs>
+                          <linearGradient id="lightningGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+                            <stop offset="0%" stopColor="#10B981" />
+                            <stop offset="100%" stopColor="#8B5CF6" />
+                          </linearGradient>
+                        </defs>
+                        <path fillRule="evenodd" d="M11.3 1.046A1 1 0 0112 2v5h4a1 1 0 01.82 1.573l-7 10A1 1 0 018 18v-5H4a1 1 0 01-.82-1.573l7-10a1 1 0 011.12-.38z" clipRule="evenodd" />
+                      </svg>
+                    </div>
                   </div>
                   <h3 className="text-white font-bold text-base">{section.name}</h3>
                 </div>
                 <div className="ml-9">
-                  <div className="grid grid-cols-2 gap-x-8 gap-y-3">
+                  <div className="space-y-3">
                     {section.products.map((product, productIndex) => (
-                      <div key={productIndex} className="mb-3">
-                        <div className="text-white font-medium text-sm mb-1">{product.name}</div>
-                        {product.description && (
-                          <div className="text-gray-300 text-xs">{product.description}</div>
-                        )}
+                      <div key={productIndex} className="mb-4">
+                        <p className="text-gray-300 text-sm leading-relaxed text-left tracking-normal">{product.name}</p>
                       </div>
                     ))}
                   </div>
                 </div>
-                {sectionIndex < getCurrentContent().sections.length - 1 && (
-                  <div className="mt-4 mb-4" style={{ borderTop: '1px solid #4A4A4C' }}></div>
-                )}
               </div>
             ))}
           </div>
