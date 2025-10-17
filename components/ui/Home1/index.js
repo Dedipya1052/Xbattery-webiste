@@ -105,6 +105,7 @@ const Example = ({ media, recentBlogs }) => {
     if (typeof window === 'undefined') return;
 
     const shouldScroll = sessionStorage.getItem('scrollToOfferings');
+    const shouldScrollToESS = sessionStorage.getItem('scrollToESS');
 
     if (shouldScroll) {
 
@@ -123,6 +124,32 @@ const Example = ({ media, recentBlogs }) => {
         window.scrollTo({ top: offsetPosition, behavior: 'instant' in window ? 'instant' : 'smooth' });
 
       }
+
+    }
+
+    if (shouldScrollToESS) {
+
+      sessionStorage.removeItem('scrollToESS');
+
+      // Set the toggle to ENERGY STORAGE to show ESS sections
+      setBmsToggle('ENERGY STORAGE');
+
+      // Add a small delay to ensure the toggle state is updated before scrolling
+      setTimeout(() => {
+        const el = document.getElementById('bms-offerings');
+
+        if (el) {
+
+          const headerOffset = 80;
+
+          const elementPosition = el.getBoundingClientRect().top;
+
+          const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+          window.scrollTo({ top: offsetPosition, behavior: 'instant' in window ? 'instant' : 'smooth' });
+
+        }
+      }, 100);
 
     }
 

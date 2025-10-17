@@ -49,11 +49,11 @@ export default function BharatBMSEVPage() {
     "/images/bms_offerings/ev-500v-side.png",
   ];
   
-  // Ensure home page scrolls to BMS offerings when navigating back
+  // Ensure home page scrolls to ESS sections when navigating back
   useEffect(() => {
     if (typeof window !== 'undefined') {
       try {
-        sessionStorage.setItem('scrollToOfferings', '1');
+        sessionStorage.setItem('scrollToESS', '1');
       } catch {}
     }
   }, []);
