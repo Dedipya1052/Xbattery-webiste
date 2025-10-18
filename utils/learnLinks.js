@@ -56,11 +56,17 @@ export const bms = [
   {
     name: "BMS Architecture Guide",
     link: "/learn/the-complete-guide-to-bms-architecture",
+
   },
   {
     name: "Active vs Passive Cell Balancing",
     link: "/learn/active-vs-passive-cell-balancing",
   },
+  {
+    name: "SOC vs SOH",
+    link: "/learn/soc-vs-soh",
+  },
+  
   
 ];
 
@@ -78,6 +84,12 @@ export const policies = [
   {
     name: "EV Policies in India",
     link: "/learn/state-wise-ev-policies-in-india",
+
+  },
+  {
+    name: "PLI Scheme for Batteries",
+    link: "/learn/indias-pli-scheme-for-batteries",
+
   },
 ];
 
@@ -96,6 +108,13 @@ export const technology = [
   {
     name: "Smart Battery Systems",
     link: "/learn/iot-enabled-battery-monitoring",
+
+
+  },
+  {
+    name: "Cybersecurity in Batteries",
+    link: "/learn/cybersecurity-threats-in-smart-battery-systems",
+
   },
 ];
 

@@ -58,7 +58,7 @@ const Privacy = () => {
             <ul className={classes.ulholder}>
               <p className={classes.lastUpdated}>Last Updated: September 4, 2025</p>
               <p className={classes.bodyText}>
-                Xbattery Energy Private Limited ("Xbattery," "we," "us," or "our"), with its registered office at Villa No AE-140, Mantri Euphoria, Gandipet, Rajendra Nagar, K.V. Rangareddy, Telangana, India, 500075, is committed to safeguarding the privacy of our users ("you," "your") while you access our website ({""}
+                Xbattery Energy Private Limited ("Xbattery," "we," "us," or "our"), with its registered office at Sy No. 154, H.No. 7-107, Main Road, Gandipet Mandal, Narsingi, Rangareddy, Telangana - 500075, is committed to safeguarding the privacy of our users ("you," "your") while you access our website ({""}
                 <a href="https://xbattery.energy" className="font-bold hover:opacity-80" target="_blank" rel="noopener noreferrer">
                   https://xbattery.energy
                 </a>
@@ -339,7 +339,7 @@ const Privacy = () => {
                   support@xbattery.energy
                 </a>
                 <br />
-                <span className={classes.bulletLabel}>Address:</span> Villa No AE-140, Mantri Euphoria, Gandipet, Rajendra Nagar, K.V. Rangareddy, Telangana, India, 500075.
+                <span className={classes.bulletLabel}>Address:</span> Sy No. 154, H.No. 7-107, Main Road, Gandipet Mandal, Narsingi, Rangareddy, Telangana - 500075.
               </p>
               <p className={classes.bodyText}>
                 We will address your query within 30 days, as required by the{" "}
@@ -368,7 +368,7 @@ const Privacy = () => {
                   support@xbattery.energy
                 </a>
                 <br />
-                <span className={classes.bulletLabel}>Address:</span> Villa No AE-140, Mantri Euphoria, Gandipet, Rajendra Nagar, K.V. Rangareddy, Telangana, India, 500075.
+                <span className={classes.bulletLabel}>Address:</span> Sy No. 154, H.No. 7-107, Main Road, Gandipet Mandal, Narsingi, Rangareddy, Telangana - 500075.
               </p>
             </ul>
           </div>

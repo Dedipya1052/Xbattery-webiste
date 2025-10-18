@@ -293,7 +293,8 @@ const Cookies = () => {
                   support@xbattery.energy
                 </a>
                 <br />
-                <span className="font-bold">Address:</span> Villa No AE-140, Mantri Euphoria, Gandipet, Rajendra Nagar, K.V. Rangareddy, Telangana, India, 500075.
+                <span className="font-bold">Address:</span> Sy No. 154, H.No. 7-107, Main Road, Gandipet Mandal, Narsingi, Rangareddy, Telangana - 500075.
+ 
               </p>
             </ul>
           </div>

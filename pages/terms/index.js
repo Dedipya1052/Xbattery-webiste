@@ -60,7 +60,7 @@ const Terms = () => {
             <ul className={classes.ulholder}>
               <p className={classes.lastUpdated}>Last Updated: September 4, 2025</p>
               <p className={classes.bodyText}>
-                Welcome to Xbattery Energy Private Limited ("Xbattery," "we," "us," or "our"), located at Villa No AE-140, Mantri Euphoria, Gandipet, Rajendra Nagar, K.V. Rangareddy, Telangana, India, 500075. These Terms of Use ("Terms") govern your access to and use of our website ({""}
+                Welcome to Xbattery Energy Private Limited ("Xbattery," "we," "us," or "our"), located at Sy No. 154, H.No. 7-107, Main Road, Gandipet Mandal, Narsingi, Rangareddy, Telangana - 500075. These Terms of Use ("Terms") govern your access to and use of our website ({""}
                 <a href="https://xbattery.energy" className={classes.link} target="_blank" rel="noopener noreferrer">
                   https://xbattery.energy
                 </a>
@@ -294,7 +294,7 @@ const Terms = () => {
                   support@xbattery.energy
                 </a>
                 <br />
-                <span className="font-bold">Address:</span> Villa No AE-140, Mantri Euphoria, Gandipet, Rajendra Nagar, K.V. Rangareddy, Telangana, India, 500075.
+                <span className="font-bold">Address:</span> Sy No. 154, H.No. 7-107, Main Road, Gandipet Mandal, Narsingi, Rangareddy, Telangana - 500075.
               </p>
               <p className={classes.bodyText}>
                 We will respond within 30 days, as required by the <span className="font-bold">Information Technology Act, 2000</span>.
@@ -323,7 +323,7 @@ const Terms = () => {
                   support@xbattery.energy
                 </a>
                 <br />
-                <span className="font-bold">Address:</span> Villa No AE-140, Mantri Euphoria, Gandipet, Rajendra Nagar, K.V. Rangareddy, Telangana, India, 500075.
+                <span className="font-bold">Address:</span> Sy No. 154, H.No. 7-107, Main Road, Gandipet Mandal, Narsingi, Rangareddy, Telangana - 500075.
               </p>
             </ul>
           </div>

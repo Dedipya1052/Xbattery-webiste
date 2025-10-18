@@ -19,15 +19,18 @@ import { FaYoutube } from "react-icons/fa";
 import { FaFacebook } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
 import { useEffect, useState } from "react";
-import { allLearnLinks as centralizedAllBlogs } from "@/utils/learnLinks";
-
-
-const allBlogs = centralizedAllBlogs;
-
-// Function to find the index of the current blog
-const findBlogIndex = (slug) => {
-  return allBlogs.findIndex((blog) => blog.link.includes(slug));
-};
+import RelatedArticles from "@/components/ui/RelatedArticles";
+import { 
+  energyStorage, 
+  renewableEnergy, 
+  electricity, 
+  electricVehicles, 
+  batteries, 
+  grid, 
+  bms, 
+  policies, 
+  technology 
+} from "@/utils/learnLinks";
 
 // * fetch blogs from contentful CMS
 async function fetchBlogs() {
@@ -121,6 +124,55 @@ export async function getStaticProps({ params }) {
 
     const currentBlog = res.items[0].fields;
 
+    // Fetch all articles for related articles
+    const allArticlesRes = await client.getEntries({ content_type: "articles" });
+    const allArticles = allArticlesRes.items.map(article => ({
+      title: article.fields.title,
+      coverImage: `https:${article.fields.coverImage.fields.file.url}`,
+      categories: article.fields.categories,
+      link: `/learn/${article.fields.slug}`,
+    }));
+
+    // Determine which card category the current article belongs to
+    const getCardCategory = (articleSlug) => {
+      // Check which card category this article belongs to based on the learnLinks structure
+      if (energyStorage.some(item => item.link.includes(articleSlug))) return 'energyStorage';
+      if (renewableEnergy.some(item => item.link.includes(articleSlug))) return 'renewableEnergy';
+      if (electricity.some(item => item.link.includes(articleSlug))) return 'electricity';
+      if (electricVehicles.some(item => item.link.includes(articleSlug))) return 'electricVehicles';
+      if (batteries.some(item => item.link.includes(articleSlug))) return 'batteries';
+      if (grid.some(item => item.link.includes(articleSlug))) return 'grid';
+      if (bms.some(item => item.link.includes(articleSlug))) return 'bms';
+      if (policies.some(item => item.link.includes(articleSlug))) return 'policies';
+      if (technology.some(item => item.link.includes(articleSlug))) return 'technology';
+      return null;
+    };
+
+    const currentCardCategory = getCardCategory(currentBlog.slug);
+    
+    // Filter articles to only show articles from the same card category
+    let relatedArticles = allArticles.filter(article => {
+      // Exclude current article
+      if (article.link === `/learn/${currentBlog.slug}`) {
+        return false;
+      }
+      // Only include articles from the same card category
+      const articleCardCategory = getCardCategory(article.link.replace('/learn/', ''));
+      return articleCardCategory === currentCardCategory;
+    });
+
+    // If we have fewer than 3 related articles in the same card category, 
+    // fill with other articles from the same card category only (excluding current article)
+    if (relatedArticles.length < 3 && currentCardCategory) {
+      const cardArticles = allArticles.filter(article => {
+        const articleCardCategory = getCardCategory(article.link.replace('/learn/', ''));
+        return articleCardCategory === currentCardCategory && 
+               article.link !== `/learn/${currentBlog.slug}` &&
+               !relatedArticles.some(related => related.link === article.link);
+      });
+      relatedArticles = [...relatedArticles, ...cardArticles].slice(0, 3);
+    }
+
     const {
       title,
       categories,
@@ -150,6 +202,7 @@ export async function getStaticProps({ params }) {
           faqs: faqs ? faqs : null,
           modifiedOn,
         },
+        articles: relatedArticles,
       },
       revalidate: 300,
     };
@@ -159,7 +212,7 @@ export async function getStaticProps({ params }) {
   }
 }
 
-export default function BlogPage({ blog }) {
+export default function BlogPage({ blog, articles }) {
   //console.log(blog)
   //console.log("blogs : ",blogs);
   const router = useRouter();
@@ -185,14 +238,6 @@ export default function BlogPage({ blog }) {
     setIsMounted(true);
   }, []);
 
-  const currentBlogIndex = findBlogIndex(slug);
-
-  // Determine the next and previous blogs
-  const prevBlog = currentBlogIndex > 0 ? allBlogs[currentBlogIndex - 1] : null;
-  const nextBlog =
-    currentBlogIndex < allBlogs.length - 1
-      ? allBlogs[currentBlogIndex + 1]
-      : null;
 
   useEffect(() => {
     if (animation) {
@@ -307,33 +352,8 @@ export default function BlogPage({ blog }) {
             <div dangerouslySetInnerHTML={{ __html: contentMatch }} />
           </div>
         )}
-        {/* Next and Previous buttons */}
-        <div
-          className={`flex ${(prevBlog && nextBlog)? "justify-between" : "justify-center"} mt-[6rem] mb-[-3.5rem] flex-wrap gap-[1.2rem] sm:gap-0 `}
-        >
-          {prevBlog && (
-            <Button
-              onClick={() => router.push(prevBlog.link)}
-              bg="white"
-              color="black"
-              border="1px solid #000"
-              _hover={{   color: "rgb(42, 193, 42)" }}
-            >
-              Previous: {prevBlog.name}
-            </Button>
-          )}
-          {nextBlog && (
-            <Button
-              onClick={() => router.push(nextBlog.link)}
-              bg="white"
-              color="black"
-              border="1px solid #000"
-              _hover={{  color: "rgb(42, 193, 42)" }}
-            >
-              Next: {nextBlog.name}
-            </Button>
-          )}
-        </div>
+        {/* Related Articles */}
+        <RelatedArticles articles={articles} currentSlug={slug} />
       </div>
       {/* <div className="bg-black h-[0.7px] w-[90%] mx-auto mt-[5rem] mb-[6rem]"></div> */}
       {/* <TopBlogs blogs={blogs} slug={slug}/> */}

@@ -110,7 +110,10 @@ const Contact = () => {
            {/* T-Works, Silpa Gram Craft Village, Rai Durg, Hyderabad, Telangana 500081, India 
            
            */}
-           Gandipet Main Rd, next to EIPL Apila, Kokapet, Gandipet, Hyderabad, Telangana 500075
+
+           Sy No. 154, H.No. 7-107, Main Road, Gandipet Mandal, Narsingi, Rangareddy, Telangana - 500075
+
+
           </p>
         </div>
         <a
