@@ -1364,13 +1364,13 @@ const Example = ({ media, recentBlogs }) => {
 
           >
 
-            <div className="relative w-full top-[-1rem] md:top-[-4rem] ">
+            <div className="relative w-full top-[2rem] md:top-[-4rem] ">
 
               <video
 
                 ref={videoRef1} // add reference for this video
 
-                className={`w-full h-[50vh] md:w-full md:h-auto object-contain object-center`}
+                className={`w-full h-[35vh] md:w-full md:h-auto object-contain object-center`}
 
                 autoPlay
 
@@ -1434,7 +1434,7 @@ const Example = ({ media, recentBlogs }) => {
 
 
 
-                             <div className="mt-8 sm:mt-12 md:mt-[-10rem] text-center flex flex-col items-center justify-center px-4">
+                             <div className="mt-[-3rem] sm:mt-[-1rem] md:mt-[-10rem] text-center flex flex-col items-center justify-center px-4">
 
                 <h1 className="text-white text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold">
 
@@ -1496,11 +1496,11 @@ const Example = ({ media, recentBlogs }) => {
 
 
 
-          <div className="w-full bg-[#181818] mt-[-10rem] md:mt-[-11rem]">
+          <div className="w-full bg-[#181818] mt-[-4rem] md:mt-[-11rem]">
 
               <div
 
-                className="mt-[7rem] mb-[0rem] pt-[3rem] pb-[8rem] w-[94%] md:w-[90%] lg:w-[85%] xl:w-[80%] 2xl:w-[1450px] mx-auto "                // onClick={handleRedirect}
+                className="mt-[4rem] md:mt-[7rem] mb-[0rem] pt-[2rem] md:pt-[3rem] pb-[8rem] w-[94%] md:w-[90%] lg:w-[85%] xl:w-[80%] 2xl:w-[1450px] mx-auto "                // onClick={handleRedirect}
 
 
 
