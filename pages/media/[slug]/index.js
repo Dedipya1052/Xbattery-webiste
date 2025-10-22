@@ -6,7 +6,7 @@
 // //import TopBlogs from "@/components/TopBlogs";
 // import { GoDotFill } from "react-icons/go";
 // import Link from "next/link";
-// // import { FAQPageJsonLd } from 'next-seo';
+import FAQSchema from '@/components/FAQSchema';
 // import { Button, Image } from "@chakra-ui/react";
 // import { IoArrowBack } from "react-icons/io5";
 // import { useRouter } from "next/router";
@@ -802,6 +802,7 @@ export default function BlogPage({ blog, blogs }) {
         <meta property="article:modified_time" content={modifiedOn} />
         <link rel="canonical" href={`https://xbattery.energy/blog/${slug}`} />
       </Head>
+      <FAQSchema faqs={faqs} />
 
       <MathJaxContext>
         {/* Green spotlight section */}

@@ -6,7 +6,7 @@ import Head from "next/head";
 //import TopBlogs from "@/components/TopBlogs";
 import { GoDotFill } from "react-icons/go";
 import Link from "next/link";
-// import { FAQPageJsonLd } from 'next-seo';
+import FAQSchema from '@/components/FAQSchema';
 import { Button, Image, useDisclosure } from "@chakra-ui/react";
 import { IoArrowBack } from "react-icons/io5";
 import { useRouter } from "next/router";
@@ -141,7 +141,7 @@ export async function getStaticProps({ params }) {
   const currentBlog = res.items[0].fields;
 
   //console.log(currentBlog);
-  const { title, coverImage, blogContent, slug, pdf,previewImage } = currentBlog;
+  const { title, coverImage, blogContent, slug, pdf, previewImage, faqs } = currentBlog;
   // console.log({ blog: res.items });
   const blogs = await fetchBlogs();
   //console.log("initial blogs :",blogs.length);
@@ -167,8 +167,8 @@ export async function getStaticProps({ params }) {
         blogContent,
         slug,
         pdf,
-        previewImage
-        // faqs : faqs?faqs:null
+        previewImage,
+        faqs: faqs ? faqs : null
       },
       blogs: filteredBlogs,
     },
@@ -187,12 +187,11 @@ export default function BlogPage({ blog, blogs }) {
 
   const {
     title,
-
     coverImage,
-
     blogContent,
     pdf,
-    previewImage
+    previewImage,
+    faqs
   } = blog;
 
   // console.log("pdf : ",pdf.fields.file.url );
@@ -323,11 +322,7 @@ export default function BlogPage({ blog, blogs }) {
        
         <link rel="canonical" href={`https://getalter.ai/blog/${slug}`} /> */}
       </Head>
-      {/* { faqs.length>0 &&
-      <FAQPageJsonLd
-          mainEntity={faqs}
-      />
-      } */}
+      <FAQSchema faqs={faqs} />
       <div className={styles.container}>
         {/* <div className={styles.affBackButton} onClick={()=>router.push("/whitepapers")}> <IoArrowBack /> <p>Back</p></div> */}
         <div className={styles.mainDiv}>
