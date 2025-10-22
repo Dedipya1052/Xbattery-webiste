@@ -12,6 +12,7 @@ import { useRouter } from "next/router";
 import Card from "@/components/ui/BlogCard/BlogCard";
 import TopBlogs from "@/components/ui/TopBlogs";
 import { useEffect, useState } from "react";
+import { extractFAQsFromContent } from "@/utils/faqExtractor";
 import {
   Modal,
   ModalOverlay,
@@ -141,6 +142,27 @@ export async function getStaticProps({ params }) {
 
   //console.log(currentBlog);
   const { title, coverImage, blogContent, slug, pdf, previewImage, faqs } = currentBlog;
+
+  // Build page-specific FAQ schema from this whitepaper's content (fallback if Contentful field is missing)
+  let pageFAQs = null;
+  try {
+    const extracted = extractFAQsFromContent(blogContent);
+    if (Array.isArray(extracted) && extracted.length > 0) {
+      pageFAQs = {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": extracted.map(({ question, answer }) => ({
+          "@type": "Question",
+          name: question,
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: answer,
+          },
+        })),
+      };
+    }
+  } catch {}
+
   // console.log({ blog: res.items });
   const blogs = await fetchBlogs();
   //console.log("initial blogs :",blogs.length);
@@ -167,7 +189,8 @@ export async function getStaticProps({ params }) {
         slug,
         pdf,
         previewImage,
-        faqs: faqs ? faqs : null
+        // Prefer page-specific extracted FAQs; otherwise fall back to Contentful field
+        faqs: pageFAQs ? pageFAQs : (faqs ? faqs : null)
       },
       blogs: filteredBlogs,
     },

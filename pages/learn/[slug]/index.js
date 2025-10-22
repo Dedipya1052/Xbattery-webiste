@@ -19,6 +19,7 @@ import { FaFacebook } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
 import { useEffect, useState } from "react";
 import RelatedArticles from "@/components/ui/RelatedArticles";
+import { extractFAQsFromContent } from "@/utils/faqExtractor";
 import { 
   energyStorage, 
   renewableEnergy, 
@@ -186,6 +187,26 @@ export async function getStaticProps({ params }) {
       faqs,
     } = currentBlog;
 
+    // Build page-specific FAQ schema from this article's content (fallback if Contentful field is missing)
+    let pageFAQs = null;
+    try {
+      const extracted = extractFAQsFromContent(blogContent);
+      if (Array.isArray(extracted) && extracted.length > 0) {
+        pageFAQs = {
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          "mainEntity": extracted.map(({ question, answer }) => ({
+            "@type": "Question",
+            name: question,
+            acceptedAnswer: {
+              "@type": "Answer",
+              text: answer,
+            },
+          })),
+        };
+      }
+    } catch {}
+
     return {
       props: {
         blog: {
@@ -198,7 +219,8 @@ export async function getStaticProps({ params }) {
           blogContent,
           slug,
           animation: animation ? animation : null,
-          faqs: faqs ? faqs : null,
+          // Prefer page-specific extracted FAQs; otherwise fall back to Contentful field
+          faqs: pageFAQs ? pageFAQs : (faqs ? faqs : null),
           modifiedOn,
         },
         articles: relatedArticles,
