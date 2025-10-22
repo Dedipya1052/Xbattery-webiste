@@ -17,6 +17,7 @@ import { MathJax, MathJaxContext } from 'better-react-mathjax';
 
 
 
+
 // * fetch blogs from contentful CMS
  async function fetchBlogs() {
   const client = createClient({
