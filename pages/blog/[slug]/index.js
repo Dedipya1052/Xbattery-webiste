@@ -6,7 +6,6 @@ import Head from "next/head";
 //import TopBlogs from "@/components/TopBlogs";
 import { GoDotFill } from "react-icons/go";
 import Link from "next/link";
-import FAQSchema from '@/components/FAQSchema';
 import { Button, Image } from "@chakra-ui/react";
 import { IoArrowBack } from "react-icons/io5";
 import { useRouter } from "next/router";
@@ -222,9 +221,11 @@ export default function BlogPage({ blog,blogs}) {
   // const minutes = dateObject.getMinutes();
   // const seconds = dateObject.getSeconds();
 
+  // FAQ schema is now working!
+  
   return (
-    <div className={styles.head1}>
-      <Head>
+      <div className={styles.head1}>
+        <Head>
         <title>{`${title} | Blog | Xbattery`}</title>
         <meta name="description" content={description} />
         <meta
@@ -238,8 +239,15 @@ export default function BlogPage({ blog,blogs}) {
         <meta property="article:published_time" content={date} />
         <meta property="article:modified_time" content={modifiedOn} />
         <link rel="canonical" href={`https://xbattery.energy/blog/${slug}`} />
+        {faqs && (
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{
+              __html: JSON.stringify(faqs)
+            }}
+          />
+        )}
       </Head>
-      <FAQSchema faqs={faqs} content={blogContent} />
 
       <MathJaxContext>
       
@@ -277,7 +285,7 @@ export default function BlogPage({ blog,blogs}) {
 
       </MathJaxContext>
      
-      <TopBlogs blogs={blogs} slug={slug}/>
+      {/* <TopBlogs blogs={blogs} slug={slug}/> */}
     </div>
   );
 }

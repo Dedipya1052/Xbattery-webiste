@@ -1,6 +1,11 @@
 // Utility function to extract FAQs from blog content
 export function extractFAQsFromContent(content) {
-  if (!content) return [];
+  console.log('🔍 extractFAQsFromContent called with:', typeof content);
+  
+  if (!content) {
+    console.log('❌ No content provided');
+    return [];
+  }
 
   try {
     // Convert content to string if it's a rich text object
@@ -8,10 +13,15 @@ export function extractFAQsFromContent(content) {
     
     if (typeof content === 'string') {
       contentString = content;
+      console.log('📝 Using string content directly');
     } else if (content.content && Array.isArray(content.content)) {
       // Extract text from rich text content
       contentString = extractTextFromRichText(content);
+      console.log('📝 Extracted text from rich text content');
     }
+    
+    console.log('📄 Content string length:', contentString.length);
+    console.log('📄 Content preview:', contentString.substring(0, 200) + '...');
 
     // Look for FAQ patterns in the content
     const faqPatterns = [
@@ -35,8 +45,11 @@ export function extractFAQsFromContent(content) {
     }
 
     if (!faqSection) {
+      console.log('❌ No FAQ section found in content');
       return [];
     }
+    
+    console.log('✅ FAQ section found:', faqSection.substring(0, 200) + '...');
 
     // Extract individual Q&A pairs
     const qaPairs = [];
@@ -71,6 +84,8 @@ export function extractFAQsFromContent(content) {
       }
     }
 
+    console.log('📊 Final extracted FAQs:', qaPairs.length);
+    console.log('📋 FAQ pairs:', qaPairs);
     return qaPairs;
   } catch (error) {
     console.error('Error extracting FAQs from content:', error);
@@ -80,15 +95,20 @@ export function extractFAQsFromContent(content) {
 
 // Helper function to extract text from rich text content
 function extractTextFromRichText(node) {
+  console.log('🔍 extractTextFromRichText called with:', typeof node);
+  
   if (typeof node === 'string') return node;
   
   if (node.content && Array.isArray(node.content)) {
-    return node.content.map(item => {
+    console.log('📝 Processing rich text content with', node.content.length, 'items');
+    const result = node.content.map(item => {
       if (typeof item === 'string') return item;
       if (item.value) return item.value;
       if (item.content) return extractTextFromRichText(item);
       return '';
     }).join('');
+    console.log('📄 Extracted text length:', result.length);
+    return result;
   }
   
   if (node.value) return node.value;

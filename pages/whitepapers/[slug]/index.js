@@ -6,7 +6,6 @@ import Head from "next/head";
 //import TopBlogs from "@/components/TopBlogs";
 import { GoDotFill } from "react-icons/go";
 import Link from "next/link";
-import FAQSchema from '@/components/FAQSchema';
 import { Button, Image, useDisclosure } from "@chakra-ui/react";
 import { IoArrowBack } from "react-icons/io5";
 import { useRouter } from "next/router";
@@ -321,8 +320,15 @@ export default function BlogPage({ blog, blogs }) {
         <meta property="article:published_time" content={date} />
        
         <link rel="canonical" href={`https://getalter.ai/blog/${slug}`} /> */}
+        {faqs && (
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{
+              __html: JSON.stringify(faqs)
+            }}
+          />
+        )}
       </Head>
-      <FAQSchema faqs={faqs} />
       <div className={styles.container}>
         {/* <div className={styles.affBackButton} onClick={()=>router.push("/whitepapers")}> <IoArrowBack /> <p>Back</p></div> */}
         <div className={styles.mainDiv}>

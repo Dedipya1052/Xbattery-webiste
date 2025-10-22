@@ -12,7 +12,12 @@ const FAQSchema = ({ faqs, content }) => {
   } else if (faqs && faqs.items && Array.isArray(faqs.items)) {
     processedFAQs = faqs.items;
   } else if (faqs && typeof faqs === 'object' && faqs !== null) {
-    processedFAQs = [faqs];
+    // Check if this is already a complete FAQ schema
+    if (faqs['@type'] === 'FAQPage' && faqs.mainEntity && Array.isArray(faqs.mainEntity)) {
+      processedFAQs = faqs.mainEntity;
+    } else {
+      processedFAQs = [faqs];
+    }
   } else if (content) {
     // If no structured FAQs, try to extract from content
     processedFAQs = extractFAQsFromContent(content);
@@ -47,18 +52,15 @@ const FAQSchema = ({ faqs, content }) => {
     "mainEntity": processedFaqs
   };
 
-
   return (
-    <>
-      <Head>
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify(faqSchema)
-          }}
-        />
-      </Head>
-    </>
+    <Head>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(faqSchema)
+        }}
+      />
+    </Head>
   );
 };
 
