@@ -392,26 +392,48 @@ export default function BharatBMSEVPage() {
               Features
             </h2>
           </AnimatedDiv>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 max-w-[1200px] mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-10 max-w-[1000px] mx-auto">
             {[
-              { title: "Cell Monitoring & Balancing", description: "Supports up to 18 series cells with passive balancing for equalization. Voltage accuracy: ±2mV." },
-              { title: "Communication & Control", description: "CAN FD, UART, SPI, and Ethernet for real-time processing and remote monitoring." },
               { title: "Safety Features", description: "ISO 26262 compliant protection for voltage, current, and temperature with fault diagnostics." },
-              { title: "Thermal Management", description: "Real-time temperature sensing and thermal runaway detection for high-temperature control." },
-              { title: "Scalability", description: "Modular architecture supports series and parallel setups for larger energy storage needs." },
+              { title: "Cell Monitoring & Balancing", description: "Supports up to 18 series cells with passive balancing for equalization. Voltage accuracy: ±2mV." },
               { title: "Diagnostics and Monitoring", description: "Real-time data visualization and lifecycle analytics for better battery management." },
             ].map((feature, index) => (
               <AnimatedDiv key={index}>
-                <div className="flex flex-col items-center text-center bg-[#1c1c1c] p-8 rounded-lg shadow-md h-full">
-                  <div className="text-[#00e5ff] text-2xl mb-4">
-                    {React.createElement(featureIconSets[index])}
+                <div className="bg-[#0E0E10] border border-[#2E31F81A] rounded-3xl h-[350px] flex flex-col shadow-lg relative overflow-hidden">
+                  {index === 0 && (
+                        <Image
+                          src="/images/icons/f1.png"
+                          alt="Safety Features"
+                          fill
+                          className="object-cover"
+                        />
+                  )}
+                  {index === 1 && (
+                        <Image
+                          src="/images/icons/f2.png"
+                          alt="Cell Monitoring & Balancing"
+                          fill
+                          className="object-cover"
+                        />
+                  )}
+                  {index === 2 && (
+                        <Image
+                          src="/images/icons/f3.png"
+                          alt="Diagnostics and Monitoring"
+                          fill
+                          className="object-cover"
+                        />
+                  )}
+                  
+                  {/* Content Section - Overlay on image */}
+                  <div className="text-left relative z-10 bg-[#0E0E10]/80 p-4 mt-auto h-[150px] w-full max-w-[377px]">
+                    <h3 className="text-lg font-semibold text-white mb-3">
+                      {feature.title}
+                    </h3>
+                    <p className="text-sm text-gray-400 leading-relaxed">
+                      {feature.description}
+                    </p>
                   </div>
-                  <h3 className="text-lg font-semibold mt-4 mb-2">
-                    {feature.title}
-                  </h3>
-                  <p className="text-sm text-gray-300">
-                    {feature.description}
-                  </p>
                 </div>
               </AnimatedDiv>
             ))}

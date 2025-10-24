@@ -383,32 +383,66 @@ export default function BharatBMSESSPage() {
 
 
         {/* Features section (mirroring BharatBMS content) */}
-        <div className=" py-9 px-4 md:px-6 rounded-lg mb-1">
+        <div className="py-9 px-4 md:px-6 rounded-lg mb-1">
           <AnimatedDiv>
-            <h2 className={`text-2xl md:text-3xl font-semibold mb-12 text-center ${classes.color}`}>
+            <h2 className="text-2xl md:text-3xl font-semibold mb-12 text-center text-white">
               Features
             </h2>
           </AnimatedDiv>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 max-w-[1200px] mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-10 max-w-[1000px] mx-auto">
             {[
-              { title: "Cell Monitoring & Balancing", description: "Supports up to 18 series cells with passive balancing for equalization. Voltage accuracy: ±2mV." },
-              { title: "Communication & Control", description: "CAN FD, UART, SPI, and Ethernet for real-time processing and remote monitoring." },
-              { title: "Safety Features", description: "ISO 26262 compliant protection for voltage, current, and temperature with fault diagnostics." },
-              { title: "Thermal Management", description: "Real-time temperature sensing and thermal runaway detection for high-temperature control." },
-              { title: "Scalability", description: "Modular architecture supports series and parallel setups for larger energy storage needs." },
-              { title: "Diagnostics and Monitoring", description: "Real-time data visualization and lifecycle analytics for better battery management." },
+              { 
+                title: "Safety Features", 
+                description: "ISO 26262 compliant protection for voltage, current, and temperature with fault diagnostics.",
+                icon: FaShieldAlt
+              },
+              { 
+                title: "Cell Monitoring & Balancing", 
+                description: "Supports up to 18 series cells with passive balancing for equalization. Voltage accuracy: ±2mV.",
+                icon: FaBatteryFull
+              },
+              { 
+                title: "Diagnostics and Monitoring", 
+                description: "Real-time data visualization and lifecycle analytics for better battery management.",
+                icon: FaChartLine
+              }
             ].map((feature, index) => (
               <AnimatedDiv key={index}>
-                <div className="flex flex-col items-center text-center bg-[#1c1c1c] p-8 rounded-lg shadow-md h-full">
-                  <IconWithGradient size={25} title="Energy storage">
-                    {React.createElement(featureIconSets[index])}
-                  </IconWithGradient>
-                  <h3 className="text-lg font-semibold mt-4 mb-2">
-                    {feature.title}
-                  </h3>
-                  <p className="text-sm text-gray-300">
-                    {feature.description}
-                  </p>
+                <div className="bg-[#0E0E10] border border-[#2E31F81A] rounded-3xl h-[350px] flex flex-col shadow-lg relative overflow-hidden">
+                  {index === 0 && (
+                        <Image
+                          src="/images/icons/f1.png"
+                          alt="Safety Features"
+                          fill
+                          className="object-cover"
+                        />
+                  )}
+                  {index === 1 && (
+                        <Image
+                          src="/images/icons/f2.png"
+                          alt="Cell Monitoring & Balancing"
+                          fill
+                          className="object-cover"
+                        />
+                  )}
+                  {index === 2 && (
+                        <Image
+                          src="/images/icons/f3.png"
+                          alt="Diagnostics and Monitoring"
+                          fill
+                          className="object-cover"
+                        />
+                  )}
+                  
+                  {/* Content Section - Overlay on image */}
+                  <div className="text-left relative z-10 bg-[#0E0E10]/80 p-4 mt-auto h-[150px] w-full max-w-[377px]">
+                    <h3 className="text-lg font-semibold text-white mb-3">
+                      {feature.title}
+                    </h3>
+                    <p className="text-sm text-gray-400 leading-relaxed">
+                      {feature.description}
+                    </p>
+                  </div>
                 </div>
               </AnimatedDiv>
             ))}
@@ -417,44 +451,42 @@ export default function BharatBMSESSPage() {
 
         {/* Software section (mirroring BharatBMS style) */}
         <div className="py-6 px-4 md:px-6 rounded-lg mb-[-2rem]">
+          <div className="max-w-[1000px] mx-auto py-16">
           <AnimatedDiv>
-            <h2 className={`text-2xl md:text-3xl font-semibold mb-[-0.5rem] text-center ${classes.color}`}>
+              <div className="bg-[#0E0E10] border border-[#2E31F81A] rounded-[15px] p-8 shadow-lg w-full h-[250px] flex flex-col">
+                <h2 className="text-xl md:text-2xl font-semibold mb-8 text-center text-white">
               Software
             </h2>
-          </AnimatedDiv>
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 max-w-[1200px] mx-auto py-16">
+                <div className="grid grid-cols-3 gap-8 w-full flex-1">
             {[
               {
                 title: "SOC/SOH Estimation",
                 description: "Accurate algorithms for State-of-Charge and State-of-Health calculation, ensuring reliable battery status reporting.",
-                icon: <FaChartLine />,
               },
               {
                 title: "Software Framework",
                 description: "Optimized in C for high efficiency and real-time performance, suitable for demanding applications.",
-                icon: <FaCode />,
               },
               {
                 title: "Customizable API",
                 description: "Open API for seamless integration and tailoring system behavior to specific applications.",
-                icon: <FaCogs />,
               },
             ].map((feature, index) => (
-              <AnimatedDiv key={index}>
-                <div className="flex flex-col items-center text-center bg-gradient-to-b bg-[#1c1c1c] p-8 rounded-lg shadow-md hover:shadow-lg transition-shadow h-full">
-                  <IconWithGradient size={30} title="Energy storage">
-                    {feature.icon}
-                  </IconWithGradient>
-                  <h3 className="text-xl font-semibold mt-4 mb-3 text-white">
+                    <div key={index} className="text-center relative flex flex-col justify-center">
+                      {index < 2 && (
+                        <div className="absolute right-[-16px] top-0 bottom-0 w-px bg-gray-600"></div>
+                      )}
+                      <h3 className="text-lg font-semibold text-white mb-4">
                     {feature.title}
                   </h3>
-                  <p className="text-sm text-gray-300 flex-grow">
+                      <p className="text-sm text-gray-400 leading-relaxed">
                     {feature.description}
                   </p>
                 </div>
-              </AnimatedDiv>
             ))}
+                </div>
+              </div>
+            </AnimatedDiv>
           </div>
         </div>
 
