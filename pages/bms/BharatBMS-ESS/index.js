@@ -411,32 +411,32 @@ export default function BharatBMSESSPage() {
                 <div className="bg-[#0E0E10] border border-[#2E31F81A] rounded-3xl h-[350px] flex flex-col shadow-lg relative overflow-hidden">
                   {index === 0 && (
                         <Image
-                          src="/images/icons/f1.png"
+                          src="/images/icons/f11.svg"
                           alt="Safety Features"
                           fill
-                          className="object-cover"
+                          className="object-contain -mt-16"
                         />
                   )}
                   {index === 1 && (
                         <Image
-                          src="/images/icons/f2.png"
+                          src="/images/icons/f12.svg"
                           alt="Cell Monitoring & Balancing"
                           fill
-                          className="object-cover"
+                          className="object-contain -mt-16"
                         />
                   )}
                   {index === 2 && (
                         <Image
-                          src="/images/icons/f3.png"
+                          src="/images/icons/f13.svg"
                           alt="Diagnostics and Monitoring"
                           fill
-                          className="object-cover"
+                          className="object-contain -mt-16"
                         />
                   )}
                   
                   {/* Content Section - Overlay on image */}
                   <div className="text-left relative z-10 bg-[#0E0E10]/80 p-4 mt-auto h-[150px] w-full max-w-[377px]">
-                    <h3 className="text-lg font-semibold text-white mb-3">
+                    <h3 className="text-lg font-semibold text-white mb-[6px]">
                       {feature.title}
                     </h3>
                     <p className="text-sm text-gray-400 leading-relaxed">

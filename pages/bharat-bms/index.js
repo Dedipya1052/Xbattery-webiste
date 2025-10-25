@@ -196,77 +196,77 @@ const BharatBMS = () => {
                    title: "Diagnostics and Monitoring",
                   description:
                      "Real-time data visualization and lifecycle analytics for better battery management.",
-                },
-                {
-                  title: "Safety Features",
-                  description:
-                    "ISO 26262 compliant protection for voltage, current, and temperature with fault diagnostics.",
-                },
-                {
-                   title: "Cell Monitoring & Balancing",
-                  description:
-                     "Supports up to 18 series cells with passive balancing for equalization. Voltage accuracy: ±2mV.",
                  },
                  {
-                  title: "Diagnostics and Monitoring",
+                  title: "Thermal Management",
                   description:
-                    "Real-time data visualization and lifecycle analytics for better battery management.",
+                    "Real-time temperature sensing and thermal runaway detection for high-temperature control.",
+                },
+                {
+                  title: "Scalability",
+                  description:
+                    "Modular architecture supports series and parallel setups for larger energy storage needs.",
+                },
+                {
+                   title: "Communication & Control",
+                  description:
+                     "CAN FD, UART, SPI, and Ethernet for real-time processing and remote monitoring.",
                 },
               ].map((feature, index) => (
                 <AnimatedDiv key={index}>
                   <div className="bg-[#0E0E10] border border-[#2E31F81A] rounded-3xl h-[350px] flex flex-col shadow-lg relative overflow-hidden">
                     {index === 0 && (
                           <Image
-                            src="/images/icons/f1.png"
+                            src="/images/icons/f11.svg"
                             alt="Safety Features"
                             fill
-                            className="object-cover"
+                            className="object-contain -mt-16"
                           />
                     )}
                     {index === 1 && (
                           <Image
-                            src="/images/icons/f2.png"
+                            src="/images/icons/f12.svg"
                             alt="Cell Monitoring & Balancing"
                             fill
-                            className="object-cover"
+                            className="object-contain -mt-16"
                           />
                     )}
                     {index === 2 && (
                           <Image
-                            src="/images/icons/f3.png"
+                            src="/images/icons/f13.svg"
                             alt="Diagnostics and Monitoring"
                             fill
-                            className="object-cover"
+                            className="object-contain -mt-16"
                           />
                     )}
                     {index === 3 && (
                           <Image
-                            src="/images/icons/f4.png"
+                            src="/images/icons/f14.svg"
                             alt="Safety Features"
                             fill
-                            className="object-cover"
+                            className="object-contain -mt-16"
                           />
                     )}
                     {index === 4 && (
                           <Image
-                            src="/images/icons/f5.png"
+                            src="/images/icons/f15.svg"
                             alt="Cell Monitoring & Balancing"
                             fill
-                            className="object-cover"
+                            className="object-contain -mt-16"
                           />
                     )}
                     {index === 5 && (
                           <Image
-                            src="/images/icons/f6.png"
+                            src="/images/icons/f16.svg"
                             alt="Diagnostics and Monitoring"
                             fill
-                            className="object-cover"
+                            className="object-contain -mt-16"
                           />
                     )}
                     
                     {/* Content Section - Overlay on image */}
                     <div className="text-left relative z-10 bg-[#0E0E10]/80 p-4 mt-auto h-[150px] w-full max-w-[377px]">
-                      <h3 className="text-lg font-semibold text-white mb-3">
+                      <h3 className="text-lg font-semibold text-white mb-[6px]">
                       {feature.title}
                     </h3>
                       <p className="text-sm text-gray-400 leading-relaxed">
