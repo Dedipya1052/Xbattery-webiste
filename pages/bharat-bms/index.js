@@ -160,25 +160,21 @@ const BharatBMS = () => {
       {/* Existing Content Below Hero Section */}
       <div className={classes.head1}>
         <div className="bg-black text-white pt-8 pb-16 px-6 mx-auto w-[90%] xl:w-[80%] 2xl:w-[1500px]">
-          <AnimatedDiv>
-            <div className="w-[95%] lg:w-[80%] mx-auto text-center md:text-center">
-              <p className="text-lg md:text-xl leading-relaxed mb-2">
-                BharatBMS is India's first universal high-voltage Battery
-                Management System (BMS architecture) up to 800 volts for EVs and
-                energy storage that scales effortlessly from home applications
-                to industrial installations and EVs. It's as effective in a 5kWh
-                home backup system as it is in megawatt-scale battery packs.
-              </p>
-            </div>
-          </AnimatedDiv>
-
           {/* OUR BMS OFFERINGS - removed as per request */}
 
           <div className="py-9 px-6 rounded-lg mb-1">
             <AnimatedDiv>
-              <h2 className="text-2xl md:text-3xl font-semibold mb-12 text-center text-white">
+              <h2 className="text-2xl md:text-3xl font-semibold mb-8 text-center text-white">
                 Features
               </h2>
+            </AnimatedDiv>
+            
+            <AnimatedDiv>
+              <div className="w-[95%] lg:w-[80%] mx-auto text-center md:text-center mb-16">
+                <p className="text-lg md:text-xl leading-relaxed mb-2">
+                Xbattery BharatBMS-ESS is engineered on the BharatBMS architecture: a universal high-voltage Battery Management System that scales from home energy storage to industrial and EV applications, emphasizing reliability, safety, and ease of integration.
+                </p>
+              </div>
             </AnimatedDiv>
              <div className="grid grid-cols-1 md:grid-cols-3 gap-10 max-w-[1000px] mx-auto">
                {[
