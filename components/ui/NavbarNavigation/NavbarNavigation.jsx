@@ -6,6 +6,9 @@ const NavbarNavigation = ({ isProductsInView = false, isBlackNav = false }) => {
   const router = useRouter();
   const isHomePage = router.pathname === "/";
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  
+  // Debug logging
+  console.log('NavbarNavigation - isBlackNav:', isBlackNav, 'isHomePage:', isHomePage, 'pathname:', router.pathname);
   const [hoverTimeout, setHoverTimeout] = useState(null);
   const isHovering = useRef(false);
   const isMenuHovering = useRef(false);
@@ -65,10 +68,10 @@ const NavbarNavigation = ({ isProductsInView = false, isBlackNav = false }) => {
       {/* Products Text */}
       <div 
         className={`font-medium transition-colors duration-300 space-grotesk-medium cursor-pointer ${
-          isHomePage && router.pathname === "/"
-            ? `text-lg ${isProductsInView ? "text-white" : "text-[#cacaca] hover:text-white"}` 
-            : isBlackNav
-              ? "text-lg text-white hover:text-[#e6e6e6]"
+          isBlackNav || router.pathname === "/bharatbms-ess" || router.pathname === "/bharatbms-ev"
+            ? "text-lg text-[#cacaca] hover:text-[#e6e6e6]"
+            : isHomePage && router.pathname === "/"
+              ? `text-lg ${isProductsInView ? "text-white" : "text-[#cacaca] hover:text-white"}` 
               : router.pathname === "/about" || router.pathname.includes("bharat-bms") || router.pathname.includes("/bms")
                 ? "text-lg text-[#cacaca] hover:text-white"
                 : "text-[1rem] md:text-[1.2rem] text-black hover:text-[#45c945]"

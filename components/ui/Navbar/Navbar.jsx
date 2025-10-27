@@ -7,7 +7,7 @@ import { useRouter } from "next/router";
 import styles from "./styles.module.css"
 import Head from "next/head";
 
-const Navbar = () => {
+const Navbar = ({ isBlackNav = false }) => {
   const router = useRouter();
   const currentPath = router.pathname;
   const isHomePage =
@@ -20,7 +20,8 @@ const Navbar = () => {
     router.pathname.includes("contact") ||
     router.pathname.includes("bharat-bms") ||
     router.pathname.includes("/bms") ||
-    router.pathname.includes("docs")  ;
+    router.pathname.includes("docs") ||
+    isBlackNav;
 
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
@@ -260,7 +261,7 @@ const Navbar = () => {
                   </Link>
                 </div>
                 <div className="hidden lg:flex flex-col md:flex-row gap-[1rem] md:gap-[2rem] text-center md:text-left">
-                  <NavbarNavigation isBlackNav={isHomePage} />
+                  <NavbarNavigation isBlackNav={isHomePage || isBlackNav} />
                   <div
                     className={`text-[1rem] md:text-[1.2rem] transition-all duration-200 cursor-pointer space-grotesk-medium
                 ${
@@ -275,9 +276,13 @@ const Navbar = () => {
                   <div
                     className={`text-[1rem] md:text-[1.2rem] transition-all duration-200 space-grotesk-medium
                 ${
-                  currentPath === "/bharat-bms"
-                    ? "text-[#2faf2f]"
-                    : "hover:text-[#45c945]"
+                  isHomePage || isBlackNav
+                    ? currentPath === "/bharat-bms"
+                      ? "text-white"
+                      : "text-[#cacaca] hover:text-[#e6e6e6]"
+                    : currentPath === "/bharat-bms"
+                      ? "text-[#2faf2f]"
+                      : "hover:text-[#45c945]"
                 }`}
                   >
                     <Link href="/bharat-bms">BharatBMS</Link>
@@ -365,7 +370,7 @@ const Navbar = () => {
                   }`}
                 >
                   <div className="mb-4">
-                    <NavbarNavigation isBlackNav={isHomePage} />
+                    <NavbarNavigation isBlackNav={isHomePage || isBlackNav} />
                   </div>
                   <div
                     className={`block text-[1rem] transition-all duration-200 mb-2 cursor-pointer space-grotesk-medium

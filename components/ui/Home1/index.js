@@ -1548,7 +1548,7 @@ const Example = ({ media, recentBlogs }) => {
 
                       <AnimatedDiv>
 
-                        <Link href="/bms/BharatBMS-ESS#ess-48v-white" className="group focus:outline-none">
+                        <Link href="/bharatbms-ess#ess-48v-white" className="group focus:outline-none">
 
                          <div className="relative rounded-2xl bg-[#151a1d] border border-[#1e2a31] p-6 h-full min-h-[420px] md:min-h-[450px] lg:min-h-[480px] flex flex-col transition-colors duration-200 hover:bg-[#10151a] hover:border-[#1e2a31] hover:outline-none hover:shadow-[0_0_0_0.5px_rgba(0,229,255,0.55)] isolate w-full">
 
@@ -1620,7 +1620,7 @@ const Example = ({ media, recentBlogs }) => {
 
                       <AnimatedDiv>
 
-                    <Link href="/bms/BharatBMS-ESS#ess-72v-white" className="group focus:outline-none">
+                    <Link href="/bharatbms-ess#ess-72v-white" className="group focus:outline-none">
 
                      <div className="relative rounded-2xl bg-[#151a1d] border border-[#1e2a31] p-6 h-full min-h-[420px] md:min-h-[450px] lg:min-h-[480px] flex flex-col transition-all duration-200 hover:bg-[#10151a] hover:border-[#1e2a31] hover:outline-none hover:shadow-[0_0_0_0.5px_rgba(0,229,255,0.55)]">
 
@@ -1690,7 +1690,7 @@ const Example = ({ media, recentBlogs }) => {
 
                       <AnimatedDiv>
 
-                        <Link href="/bms/BharatBMS-ESS#ess-110v-white" className="group focus:outline-none">
+                        <Link href="/bharatbms-ess#ess-110v-white" className="group focus:outline-none">
 
                          <div className="relative rounded-2xl bg-[#151a1d] border border-[#1e2a31] p-6 h-full min-h-[420px] md:min-h-[450px] lg:min-h-[480px] flex flex-col transition-all duration-200 hover:bg-[#10151a] hover:border-[#1e2a31] hover:outline-none hover:shadow-[0_0_0_0.5px_rgba(0,229,255,0.55)]">
 
@@ -1769,7 +1769,7 @@ const Example = ({ media, recentBlogs }) => {
                     <>
                       {/* Xbattery BharatBMS-EV-110V */}
                       <AnimatedDiv>
-                        <Link href="/bms/BharatBMS-EV#ev-110v-white" className="group focus:outline-none">
+                        <Link href="/bharatbms-ev#ev-110v-white" className="group focus:outline-none">
                           <div className="relative rounded-2xl bg-[#151a1d] border border-[#1e2a31] p-6 h-full min-h-[420px] md:min-h-[450px] lg:min-h-[480px] flex flex-col transition-all duration-200 hover:bg-[#10151a] hover:border-[#00e5ff]/30 hover:border-2 hover:outline-none">
                             <div className="relative w-full h-[180px] md:h-[200px] rounded-xl overflow-hidden mb-4">
                               <Image src="/images/bms_offerings/ev-110v.png" alt="Xbattery BharatBMS-EV-110V" fill className="object-contain transition-transform duration-500 ease-out group-hover:scale-[1.35]" />
@@ -1800,7 +1800,7 @@ const Example = ({ media, recentBlogs }) => {
 
                       {/* Xbattery BharatBMS-EV-400V */}
                       <AnimatedDiv>
-                        <Link href="/bms/BharatBMS-EV#ev-400v-white" className="group focus:outline-none">
+                        <Link href="/bharatbms-ev#ev-400v-white" className="group focus:outline-none">
                           <div className="relative rounded-2xl bg-[#151a1d] border border-[#1e2a31] p-6 h-full min-h-[420px] md:min-h-[450px] lg:min-h-[480px] flex flex-col transition-all duration-200 hover:bg-[#10151a] hover:border-[#00e5ff]/30 hover:border-2 hover:outline-none">
                             <div className="relative w-full h-[180px] md:h-[200px] rounded-xl overflow-hidden mb-4">
                               <Image src="/images/bms_offerings/ev-400v-2.png" alt="Xbattery BharatBMS-EV-400V" fill className="object-contain object-[5%_center] transition-transform duration-500 ease-out group-hover:scale-[1.18]" />
@@ -1831,7 +1831,7 @@ const Example = ({ media, recentBlogs }) => {
 
                       {/* Xbattery BharatBMS-EV-600V */}
                       <AnimatedDiv>
-                        <Link href="/bms/BharatBMS-EV#ev-600v-white" className="group focus:outline-none">
+                        <Link href="/bharatbms-ev#ev-600v-white" className="group focus:outline-none">
                           <div className="relative rounded-2xl bg-[#151a1d] border border-[#1e2a31] p-6 h-full min-h-[420px] md:min-h-[450px] lg:min-h-[480px] flex flex-col transition-all duration-200 hover:bg-[#10151a] hover:border-[#00e5ff]/30 hover:border-2 hover:outline-none">
                             <div className="relative w-full h-[180px] md:h-[200px] rounded-xl overflow-hidden mb-4">
                               <Image src="/images/bms_offerings/ev-500v.png" alt="Xbattery BharatBMS-EV-500V" fill className="object-contain transition-transform duration-500 ease-out group-hover:scale-[1.20]" />

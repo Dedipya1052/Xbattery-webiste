@@ -18,8 +18,9 @@ import {
 } from "react-icons/fa";
 import FactoryIcon from "@/components/Icons/FactoryIcon";
 import Layout from "@/components/Layout";
+import Footer from "@/components/ui/Footer/Footer";
  
-import classes from "../../bharat-bms/styles.module.css";
+import classes from "../bharat-bms/styles.module.css";
 
 
 export default function BharatBMSEVPage() {
@@ -269,11 +270,11 @@ export default function BharatBMSEVPage() {
   // Navigation logic - simplified for unified page
   const prevBMS = {
     title: "Xbattery BharatBMS-ESS-110V",
-    link: "/bms/BharatBMS-ESS-110V"
+    link: "/bharatbms-ess-110v"
   };
   const nextBMS = {
     title: "Xbattery BharatBMS-EV-110V", 
-    link: "/bms/BharatBMS-EV-110V"
+    link: "/bharatbms-ev-110v"
   };
 
   // Icon sets for Features
@@ -293,7 +294,7 @@ export default function BharatBMSEVPage() {
   const flyerProductName = (data.title || "").replace(/^Xbattery\s+/i, "").toUpperCase();
 
   return (
-    <React.Fragment>
+    <Layout>
       <Head>
         <title>{data.title} | Xbattery</title>
       </Head>
@@ -340,17 +341,17 @@ export default function BharatBMSEVPage() {
           `,
         }}
       />
-      <div className={classes.head1}>
+      <div className={`${classes.head1} bg-black`}>
       <div className="bg-[#1c1c1c] text-white w-full relative">
         {/* Page header navigation icon (top-right) */}
-        <div className="absolute top-5 right-4 w-11 h-11 rounded-xl bg-[#0c0c0c] border border-white/20 flex items-center justify-center text-white overflow-visible z-50">
+        <div className="absolute top-24 right-4 w-11 h-11 rounded-xl bg-[#0c0c0c] border border-white/20 flex items-center justify-center text-white overflow-visible z-50">
           <CustomTooltip text="Electric Vehicles">
             <div className="w-10 h-10 rounded-xl overflow-hidden flex items-center justify-center">
               <Image src="/images/icons/truck.png" alt="Electric Vehicles" width={37} height={37} className="object-cover scale-[1.0]" />
             </div>
           </CustomTooltip>
         </div>
-        <div className="mx-auto w-[95%] md:w-[90%] xl:w-[95%] 2xl:w-[1500px] py-8 md:py-16 px-3 md:px-6 flex flex-col lg:flex-row items-center justify-center h-full min-h-[460px]">
+        <div className="mx-auto w-full max-w-none py-8 md:py-16 px-3 md:px-6 flex flex-col lg:flex-row items-center justify-center h-full min-h-[460px]">
           <div className="text-center lg:text-left p-2 md:p-4 mb-6 lg:mb-0 w-full ml-4">
             <h1 className={`text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-6 ${classes.color} leading-[35px] sm:leading-[40px] md:leading-[50px] lg:leading-[60px] lg:whitespace-nowrap`}>
               {data.title}
@@ -374,7 +375,7 @@ export default function BharatBMSEVPage() {
         </div>
       </div>
 
-      <div className="bg-black text-white py-16 px-3 md:px-6 mx-auto w-[95%] md:w-[90%] xl:w-[80%] 2xl:w-[1500px]">
+      <div className="bg-black text-white py-16 px-3 md:px-6 mx-auto w-full max-w-none">
         {/* Intro paragraph (same placement as BharatBMS) */}
         <AnimatedDiv>
           <div className="w-[95%] lg:w-[80%] mx-auto text-center md:text-center px-2">
@@ -891,6 +892,7 @@ export default function BharatBMSEVPage() {
         </div>
         </section>
       </div>
-    </React.Fragment>
+      <Footer />
+    </Layout>
   );
 }

@@ -23,37 +23,37 @@ const BMS_PRODUCTS = [
   {
     slug: "telecom-bms",
     title: "Xbattery BharatBMS-ESS-48V",
-      link: "/bms/BharatBMS-ESS-48V"
+      link: "/bharatbms-ess-48v"
   },
   {
     slug: "lv-bms", 
     title: "Xbattery BharatBMS-ESS-72V",
-      link: "/bms/BharatBMS-ESS-72V"
+      link: "/bharatbms-ess-72v"
   },
   {
     slug: "lv-bms-110v", 
     title: "Xbattery BharatBMS-ESS-110V",
-      link: "/bms/BharatBMS-ESS-110V"
+      link: "/bharatbms-ess-110v"
   },
   {
     slug: "ev-bms",
     title: "Xbattery BharatBMS-EV-400V", 
-      link: "/bms/BharatBMS-EV-400V"
+      link: "/bharatbms-ev-400v"
   },
   {
     slug: "ev-bms-110v",
     title: "Xbattery BharatBMS-EV-110V", 
-      link: "/bms/BharatBMS-EV-110V"
+      link: "/bharatbms-ev-110v"
   },
   {
     slug: "ev-bms-500v",
     title: "Xbattery BharatBMS-EV-600V", 
-      link: "/bms/BharatBMS-EV-500V"
+      link: "/bharatbms-ev-500v"
   },
   {
     slug: "ev-bms-800v",
     title: "Xbattery BharatBMS-EV-800V", 
-      link: "/bms/BharatBMS-EV-800V"
+      link: "/bharatbms-ev-800v"
   }
 ];
 

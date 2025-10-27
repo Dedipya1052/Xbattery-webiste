@@ -162,17 +162,17 @@ const MegaDropdown = ({ isOpen, onClose, onMouseEnter, onMouseLeave, pageType = 
                 onClick={() => {
                   // Navigate to specific section based on product
                   if (section.name === "Xbattery BharatBMS-ESS-48V") {
-                    window.location.href = "/bms/BharatBMS-ESS#ess-48v-white";
+                    window.location.href = "/bharatbms-ess#ess-48v-white";
                   } else if (section.name === "Xbattery BharatBMS-ESS-72V") {
-                    window.location.href = "/bms/BharatBMS-ESS#ess-72v-white";
+                    window.location.href = "/bharatbms-ess#ess-72v-white";
                   } else if (section.name === "Xbattery BharatBMS-ESS-110V") {
-                    window.location.href = "/bms/BharatBMS-ESS#ess-110v-white";
+                    window.location.href = "/bharatbms-ess#ess-110v-white";
                   } else if (section.name === "Xbattery BharatBMS-EV-110V") {
-                    window.location.href = "/bms/BharatBMS-EV#ev-110v-white";
+                    window.location.href = "/bharatbms-ev#ev-110v-white";
                   } else if (section.name === "Xbattery BharatBMS-EV-400V") {
-                    window.location.href = "/bms/BharatBMS-EV#ev-400v-white";
+                    window.location.href = "/bharatbms-ev#ev-400v-white";
                   } else if (section.name === "Xbattery BharatBMS-EV-600V") {
-                    window.location.href = "/bms/BharatBMS-EV#ev-600v-white";
+                    window.location.href = "/bharatbms-ev#ev-600v-white";
                   }
                 }}
               >

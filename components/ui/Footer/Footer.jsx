@@ -16,6 +16,10 @@ const Footer = () => {
   const isHomePage =
     router.pathname === "/" ||
     router.pathname === "/energy-storage" ||
+    router.pathname === "/bharatbms-ess" ||
+    router.pathname === "/bharatbms-ev" ||
+    router.pathname === "/BharatBMS-ESS" ||
+    router.pathname === "/BharatBMS-EV" ||
     router.pathname === "/terms" ||
     router.pathname === "/about" ||
     router.pathname === "/privacy" ||
@@ -39,7 +43,7 @@ const Footer = () => {
 
 
 const products = [
-  { name: "BMS for Energy Storage", link: "/bms/BharatBMS-ESS" },
+  { name: "BMS for Energy Storage", link: "/bharatbms-ess" },
   { name: "BMS for Electric Vehicles", link: "/energy-storage" },
   { name: "Xbattery 5kWh", link: "/energy-storage" },
 ];
@@ -120,7 +124,7 @@ const resources = [
 
                 <div className={styles.Footer_navigation__GbeEa}>
                   <h3 className={styles.footerSubheading}>Products</h3>
-                  <Link href="/bms/BharatBMS-ESS" className={styles.footerElements}>
+                  <Link href="/bharatbms-ess" className={styles.footerElements}>
                     BMS for Energy Storage
                   </Link>
                   <Link href="/energy-storage" className={styles.footerElements}>

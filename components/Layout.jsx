@@ -8,6 +8,7 @@ import Loading from "./ui/Loading";
 const Layout = ({ children }) => {
   const router = useRouter();
   const isHomePageMain = router.pathname === "/" || router.pathname === "/energy-storage";
+  const isBharatBMSPage = router.pathname === "/bharatbms-ess" || router.pathname === "/bharatbms-ev" || router.pathname === "/BharatBMS-ESS" || router.pathname === "/BharatBMS-EV";
   const [isLoading, setIsLoading] = useState(true); 
 
   useEffect(() => {
@@ -51,13 +52,14 @@ const Layout = ({ children }) => {
         <meta name="robots" content="index, follow" />
       </Head>
      
-     {!isHomePageMain && <Navbar />}
+     {!isHomePageMain && !isBharatBMSPage && <Navbar />}
+     {isBharatBMSPage && <Navbar isBlackNav={true} />}
      
-      <main className={`flex-grow ${isLoading ? "flex justify-center items-center" : "mt-[4rem]"}`}>
+      <main className={`flex-grow ${isLoading ? "flex justify-center items-center" : isBharatBMSPage ? "mt-0" : "mt-[4rem]"}`}>
         {isLoading ? <Loading /> : children}
       </main>
       
-      <Footer />
+      {!isBharatBMSPage && <Footer />}
     </div>
   );
 };
