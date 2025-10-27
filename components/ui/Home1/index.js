@@ -2667,7 +2667,7 @@ More Details
 
                 >
 
-Pre-Order
+Get Notified
 
                 </button>
 

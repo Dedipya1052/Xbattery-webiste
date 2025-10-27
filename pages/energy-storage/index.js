@@ -2846,7 +2846,7 @@ const Example = ({ media, recentBlogs }) => {
 
               >
 
-                Get the updates from Xbattery
+Pre-Order Xbattery 5 kWh Units
 
               </h2>
 
