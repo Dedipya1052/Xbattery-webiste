@@ -1977,13 +1977,13 @@ const Example = ({ media, recentBlogs }) => {
 
                       _hover={{ bg: "transparent" }}
 
-                      onClick={scrollToEmail}
+                      onClick={() => router.push('/energy-storage')}
 
                       className="min-h-[48px] min-w-[48px]"
 
                     >
 
-Pre-Order
+More Details
 
                     </Button>
 
