@@ -43,7 +43,7 @@ const NavigationIcon = ({ pageType = 'ess' }) => {
           boxShadow: 'none !important'
         }}>
         <span className="text-sm font-medium text-white transition-colors duration-200">
-          Products
+          BMS
         </span>
         <svg 
           width="16" 

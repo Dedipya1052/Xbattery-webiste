@@ -76,7 +76,7 @@ const NavbarNavigation = ({ isProductsInView = false, isBlackNav = false }) => {
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}
       >
-        Products
+        BMS
       </div>
 
       {/* Mega Dropdown */}

@@ -38,7 +38,7 @@ const MegaDropdown = ({ isOpen, onClose, onMouseEnter, onMouseLeave, pageType = 
 
   // Content data for different categories
   const essContent = {
-    title: "BharatBMS-ESS",
+    title: "BharatBMS for Energy Storage",
     sections: [
       {
         name: "Xbattery BharatBMS-ESS-48V",
@@ -60,7 +60,7 @@ const MegaDropdown = ({ isOpen, onClose, onMouseEnter, onMouseLeave, pageType = 
         name: "Xbattery BharatBMS-ESS-110V",
         products: [
           { 
-            name: "Advanced BMS for large ESS and grid storage, supports up to 42S for high voltage, high-performance energy systems"
+            name: "BMS for large ESS and grid storage, supports up to 42S for high voltage, high-performance energy systems"
           }
         ]
       }
@@ -68,7 +68,7 @@ const MegaDropdown = ({ isOpen, onClose, onMouseEnter, onMouseLeave, pageType = 
   };
 
   const evContent = {
-    title: "BharatBMS-EV",
+    title: "BharatBMS for Electric Vehicles",
     sections: [
       {
         name: "Xbattery BharatBMS-EV-110V",
@@ -97,33 +97,11 @@ const MegaDropdown = ({ isOpen, onClose, onMouseEnter, onMouseLeave, pageType = 
     ]
   };
 
-  const batteryCapacityContent = {
-    title: "Battery Management",
-    sections: [
-      {
-        name: "Battery Monitoring",
-        products: [
-          { name: "Cell Monitoring", description: "Individual cell voltage and temperature tracking" },
-          { name: "State of Charge", description: "Accurate SOC estimation algorithms" },
-          { name: "Health Monitoring", description: "Battery degradation and lifespan analysis" }
-        ]
-      },
-      {
-        name: "Safety Systems",
-        products: [
-          { name: "Thermal Management", description: "Advanced thermal protection systems" },
-          { name: "Fault Detection", description: "Real-time fault detection and isolation" },
-          { name: "Emergency Shutdown", description: "Safe emergency shutdown procedures" }
-        ]
-      }
-    ]
-  };
 
   const getCurrentContent = () => {
     switch(activeCategory) {
       case 'ess': return essContent;
       case 'ev': return evContent;
-      case 'capacity': return batteryCapacityContent;
       default: return essContent;
     }
   };
@@ -157,7 +135,7 @@ const MegaDropdown = ({ isOpen, onClose, onMouseEnter, onMouseLeave, pageType = 
               }}
               onMouseEnter={() => setActiveCategory('ess')}
             >
-              BharatBMS-ESS
+              BharatBMS for Energy Storage
             </div>
             <div 
               className={`text-white font-medium text-base py-2 px-3 rounded cursor-pointer transition-colors ${
@@ -168,18 +146,7 @@ const MegaDropdown = ({ isOpen, onClose, onMouseEnter, onMouseLeave, pageType = 
               }}
               onMouseEnter={() => setActiveCategory('ev')}
             >
-              BharatBMS-EV
-            </div>
-            <div 
-              className={`text-white font-medium text-base py-2 px-3 rounded cursor-pointer transition-colors ${
-                activeCategory === 'capacity' ? 'bg-gray-600' : 'hover:bg-gray-600'
-              }`}
-              style={{ 
-                backgroundColor: activeCategory === 'capacity' ? '#3A3A3C' : undefined
-              }}
-              onMouseEnter={() => setActiveCategory('capacity')}
-            >
-              Battery Management
+              BharatBMS for Electric Vehicles
             </div>
           </div>
         </div>

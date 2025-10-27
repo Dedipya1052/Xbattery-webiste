@@ -411,7 +411,7 @@ const BharatBMS = () => {
                           <span>Xbattery BharatBMS-ESS-72V</span>
                         </h4>
                         <div className="w-12 md:w-16 h-[2px] md:h-[3px] bg-[#00e5ff] rounded-full mb-3 md:mb-4"></div>
-                        <p className="text-xs md:text-sm text-[#cfe3ea] mb-3 md:mb-4 leading-relaxed">BharatBMS-ESS-72V is High-efficiency battery management for industrial and medium-scale energy storage systems supporting up to 28S configurations.</p>
+                        <p className="text-xs md:text-sm text-[#cfe3ea] mb-3 md:mb-4 leading-relaxed">BharatBMS-ESS-72V is high-efficiency BMS for industrial and medium-scale energy storage systems supporting up to 28S configurations.</p>
                         <div className="mt-auto">
                           <div className="text-xs md:text-sm text-[#64efff] tracking-wide mb-2">KEY FEATURES</div>
                           <ul className="text-xs md:text-sm text-[#cfe3ea] list-disc pl-3 md:pl-4 space-y-1 marker:text-[#00e5ff]">
@@ -444,7 +444,7 @@ const BharatBMS = () => {
                           <span>Xbattery BharatBMS-ESS-110V</span>
                         </h4>
                         <div className="w-12 md:w-16 h-[2px] md:h-[3px] bg-[#00e5ff] rounded-full mb-3 md:mb-4"></div>
-                        <p className="text-xs md:text-sm text-[#cfe3ea] mb-3 md:mb-4 leading-relaxed">BharatBMS-ESS-110V is an advanced battery management system for large-scale energy storage and grid applications supporting up to 42S configurations.</p>
+                        <p className="text-xs md:text-sm text-[#cfe3ea] mb-3 md:mb-4 leading-relaxed">BharatBMS-ESS-110V is a BMS for large-scale energy storage and grid applications supporting up to 42S configurations.</p>
                         <div className="mt-auto">
                           <div className="text-xs md:text-sm text-[#64efff] tracking-wide mb-2">KEY FEATURES</div>
                           <ul className="text-xs md:text-sm text-[#cfe3ea] list-disc pl-3 md:pl-4 space-y-1 marker:text-[#00e5ff]">
