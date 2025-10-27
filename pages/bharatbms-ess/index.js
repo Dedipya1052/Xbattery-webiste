@@ -690,7 +690,7 @@ export default function BharatBMSESSPage() {
                               height={10}
                               className="text-blue-400"
                             />
-                          </div>
+                            </div>
                           <div className="flex-1">
                             <h4 
                               className="mb-2"
