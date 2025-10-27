@@ -7,7 +7,7 @@ import Loading from "./ui/Loading";
 
 const Layout = ({ children }) => {
   const router = useRouter();
-  const isHomePageMain = router.pathname === "/";
+  const isHomePageMain = router.pathname === "/" || router.pathname === "/energy-storage";
   const [isLoading, setIsLoading] = useState(true); 
 
   useEffect(() => {

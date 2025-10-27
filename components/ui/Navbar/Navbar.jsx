@@ -87,28 +87,10 @@ const Navbar = () => {
     };
   }, [router]);
 
-  // Function to handle scroll to energy storage section
-  const scrollToEnergyStorage = (event) => {
+  // Function to handle navigation to energy storage page
+  const navigateToEnergyStorage = (event) => {
     event.preventDefault();
-    
-    // If we're not on the home page, navigate to home page first
-    if (router.pathname !== "/") {
-      router.push("/#energystorage");
-      return;
-    }
-    
-    // If we're already on the home page, scroll to the section
-    const element = document.getElementById("energystorage");
-    if (element) {
-      const headerOffset = 80; // Adjust this value to match your header height
-      const elementPosition = element.getBoundingClientRect().top;
-      const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
-
-      window.scrollTo({
-        top: offsetPosition,
-        behavior: "smooth",
-      });
-    }
+    router.push("/energy-storage");
   };
 
   // Helper to scroll to BMS offerings anchor
@@ -147,10 +129,10 @@ const Navbar = () => {
               <div className="hidden lg:flex gap-7 items-center ml-auto mr-8">
                 <NavbarNavigation />
                 <button
-                  onClick={scrollToEnergyStorage}
+                  onClick={navigateToEnergyStorage}
                   // unusual box and blue line for energy storage
                   className={`text-lg font-medium space-grotesk-medium ${
-                    currentPath === "/"
+                    currentPath === "/energy-storage"
                       ? "text-white"
                       : "text-[#cacaca] hover:text-[#e6e6e6]"
                   }`}
@@ -215,11 +197,11 @@ const Navbar = () => {
                 </div>
                 <button
                   onClick={(e) => {
-                    scrollToEnergyStorage(e);
+                    navigateToEnergyStorage(e);
                     handleMenuItemClick();
                   }}
                   className={`text-lg font-medium transition-colors duration-300 space-grotesk-medium ${
-                    currentPath === "/"
+                    currentPath === "/energy-storage"
                       ? "text-white"
                       : "text-[#cacaca] hover:text-[#e6e6e6]"
                   }`}
@@ -282,11 +264,11 @@ const Navbar = () => {
                   <div
                     className={`text-[1rem] md:text-[1.2rem] transition-all duration-200 cursor-pointer space-grotesk-medium
                 ${
-                  currentPath === "/"
+                  currentPath === "/energy-storage"
                     ? "text-[#2faf2f]"
                     : "hover:text-[#45c945]"
                 }`}
-                    onClick={scrollToEnergyStorage}
+                    onClick={navigateToEnergyStorage}
                   >
                     Energy Storage
                   </div>
@@ -388,12 +370,12 @@ const Navbar = () => {
                   <div
                     className={`block text-[1rem] transition-all duration-200 mb-2 cursor-pointer space-grotesk-medium
                 ${
-                  currentPath === "/"
+                  currentPath === "/energy-storage"
                     ? "text-[#2faf2f]"
                     : "hover:text-[#45c945]"
                 }`}
                     onClick={(e) => {
-                      scrollToEnergyStorage(e);
+                      navigateToEnergyStorage(e);
                       closeMenu();
                     }}
                   >

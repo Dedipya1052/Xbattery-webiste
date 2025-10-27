@@ -4,7 +4,7 @@ import Image from "next/image";
 
 import styles from "./styles.module.css";
 
-import LayoutEffect from "@/components/LayoutEffect";
+import LayoutEffect from "../../components/LayoutEffect";
 
 import { Button } from "@chakra-ui/react";
 
@@ -18,11 +18,11 @@ import { useRef } from "react";
 
 import Link from "next/link";
 
-import NavbarNavigation from "../NavbarNavigation";
+import NavbarNavigation from "../../components/ui/NavbarNavigation";
 
-import AnimatedDiv from "../Animate";
+import AnimatedDiv from "../../components/ui/Animate";
 
-import IconWithGradient from "../IconGradient";
+import IconWithGradient from "../../components/ui/IconGradient";
 
 import CustomTooltip from "@/components/ui/CustomTooltip";
 
@@ -36,6 +36,66 @@ import { useRouter } from "next/router";
 import BMSToggle from "@/components/ui/BMSToggle";
 
 import Head from "next/head";
+import { createClient } from "contentful";
+
+// Fetch home content
+async function fetchHomeContent() {
+  const client = createClient({
+    space: process.env.CONTENTFUL_SPACE,
+    accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
+  });
+  
+  const res = await client.getEntries({ content_type: "home" });
+  return res.items;
+}
+
+// Fetch blogs from contentful CMS
+async function fetchBlogs() {
+  const client = createClient({
+    space: process.env.CONTENTFUL_SPACE,
+    accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
+  });
+  
+  const res = await client.getEntries({ content_type: "blog" });
+  return res.items;
+}
+
+export async function getServerSideProps() {
+  // Fetch home content for video
+  let homeContent = await fetchHomeContent();
+  const firstBlog = homeContent[0]; // Get the first blog
+  
+  // Map the fields to a cleaner format for video
+  const homeMedia = {
+    video1: firstBlog.fields.video1,
+  };
+  // Fetch blogs
+  let blogs = await fetchBlogs();
+  
+  // Sort blogs by date (newest first) and take the top 3
+  const recentBlogs = blogs
+    .sort((a, b) => new Date(b.fields.date) - new Date(a.fields.date))
+    .slice(0, 3)
+    .map((blog) => ({
+      title: blog.fields.title,
+      thumbnail: blog.fields.thumbnail,
+      categories: blog.fields.categories,
+      slug: blog.fields.slug,
+      date: blog.fields.date,
+      description: blog.fields.description,
+      author: blog.fields.author,
+      subtitle: blog.fields.subtitle
+    }));
+
+  
+
+  return {
+    props: {
+      media: homeMedia,
+      recentBlogs,
+    },
+  };
+}
 
 
 
@@ -47,13 +107,11 @@ const Example = ({ media, recentBlogs }) => {
 
   const router = useRouter();
 
-  // Function to handle navigation to energy storage page
-  const navigateToEnergyStorage = (event) => {
-    event.preventDefault();
-    router.push("/energy-storage");
-  };
-
   const videoUrl1 = media?.video1?.fields?.file?.url;
+  
+  // Debug: Log video URL
+  console.log('Video URL:', videoUrl1);
+  console.log('Media object:', media);
 
 
 
@@ -740,17 +798,15 @@ const Example = ({ media, recentBlogs }) => {
         // For hero block 2: only play once
 
         if (entry.target === videoRefHero2.current) {
-
+          console.log('Video intersection detected:', entry.isIntersecting);
           if (entry.isIntersecting && !hasPlayedHero2.current) {
-
+            console.log('Playing video...');
             entry.target.currentTime = 0;
-
-            entry.target.play();
-
+            entry.target.play().catch((error) => {
+              console.warn("Video play failed:", error);
+            });
             hasPlayedHero2.current = true;
-
             setShowHero2Text(true); // Show text immediately
-
           }
 
           // Do NOT pause when not intersecting for hero2
@@ -1069,25 +1125,17 @@ const Example = ({ media, recentBlogs }) => {
 
               <NavbarNavigation isProductsInView={isProductsInView} isBlackNav={true} />
 
+              <Link href="/energy-storage">
               <button
-
-                onClick={navigateToEnergyStorage}
-
                 className={`text-lg font-medium transition-colors duration-300 space-grotesk-medium ${
-
-                  router.pathname === "/energy-storage"
-
+                    currentPath === "/energy-storage"
                     ? "text-white"
-
                     : "text-[#cacaca] hover:text-[#e6e6e6]"
-
                 }`}
-
               >
-
                 Energy Storage
-
               </button>
+              </Link>
 
               {[
 
@@ -1197,31 +1245,18 @@ const Example = ({ media, recentBlogs }) => {
 
               <NavbarNavigation isProductsInView={isProductsInView} isBlackNav={true} />
 
+              <Link href="/energy-storage">
               <button
-
-                onClick={(e) => {
-
-                  navigateToEnergyStorage(e);
-
-                  handleMenuItemClick();
-
-                }}
-
+                  onClick={handleMenuItemClick}
                 className={`text-lg font-medium transition-colors duration-300 space-grotesk-medium ${
-
-                  router.pathname === "/energy-storage"
-
+                    currentPath === "/energy-storage"
                     ? "text-white"
-
                     : "text-[#cacaca] hover:text-[#e6e6e6]"
-
                 }`}
-
               >
-
                 Energy Storage
-
               </button>
+              </Link>
 
               {[
 
@@ -1295,709 +1330,100 @@ const Example = ({ media, recentBlogs }) => {
 
           {/* hero block 1*/}
 
-          <LayoutEffect
 
-            className="duration-1000 delay-300"
 
-            isInviewState={{
 
-              trueState: "opacity-1",
 
-              falseState: "opacity-0",
 
-            }}
 
-          >
 
-            <div className="relative w-full top-[2rem] md:top-[-4rem] ">
 
-              <video
 
-                ref={videoRef1} // add reference for this video
-
-                className={`w-full h-[35vh] md:w-full md:h-auto object-contain object-center`}
-
-                autoPlay
-
-                muted
-
-                playsInline
-
-                preload="none" // Load only metadata for better performance
-
-                onLoadedData={(e) => {
-
-                  // Ensure video starts playing after it's loaded
-
-                  if (e.target.readyState >= 3) {
-
-                    // Check if video can be played
-
-                    e.target.play().catch((error) => {
-
-                      // Silently handle autoplay failures on mobile
-
-                      if (error.name !== 'AbortError') {
-
-                        console.warn("Autoplay failed:", error);
-
-                      }
-
-                    });
-
-                  }
-
-                }}
-
-              >
-
-                <source src="/videos/Xbattery-Hd.mp4" type="video/mp4" />
-
-                Your browser does not support the video tag.
-
-              </video>
-
-              <motion.div
-
-                ref={ref}
-
-                initial={{ y: "-100%" }}
-
-                animate={{ y: isInView ? 0 : "-100%" }}
-
-                transition={{ duration: 1, delay: 7.55 }}
-
-                className="absolute top-0 left-0 right-0 w-full h-full flex flex-col items-center justify-start md:justify-center p-4 md:p-16 space-y-2 text-center"
-
-              >
-
-                {/* <div className="text-white text-3xl lg:text-4xl font-medium mb-4">
-
-                Xbattery
-
-              </div> */}
-
-
-
-                             <div className="mt-[-3rem] sm:mt-[-1rem] md:mt-[-10rem] text-center flex flex-col items-center justify-center px-4">
-
-                <h1 className="text-white text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold">
-
-                Introducing BharatBMS
-
-                </h1>
-
-                <h2 className="text-white text-base sm:text-base md:text-lg lg:text-xl font-light md:font-semilight pt-3 sm:pt-4 md:pt-5">
-
-                Scalable BMS up to 800V for EVs & stationary energy storage
-
-                </h2>
-
-                {/* <div className="pt-8 flex gap-7 pl-2">
-
-                 
-                 
-                  <Link href="/bharat-bms">
-
-                    <Button
-
-                      bg="transparent"
-
-                      border="1px"
-
-                      borderColor="white"
-
-                      color="white"
-
-                      _hover={{ bg: "transparent" }}
-
-                      className="min-h-[48px] min-w-[48px]"
-
-                    >
-
-                      Know More
-
-                    </Button>
-
-                  </Link>
-
-                </div> */}
-
-                </div>
-
-              </motion.div>
-
-
-
-            </div>
-
-          </LayoutEffect>
-
-
-
-
-
-          <AnimatedDiv>
-
-
-
-          <div className="w-full bg-[#181818] mt-[-4rem] md:mt-[-11rem]">
-
-              <div
-
-                className="mt-[4rem] md:mt-[7rem] mb-[0rem] pt-[2rem] md:pt-[3rem] pb-[8rem] w-[94%] md:w-[90%] lg:w-[85%] xl:w-[80%] 2xl:w-[1450px] mx-auto "                // onClick={handleRedirect}
-
-
-
-              >
-
-                <div className="flex flex-col lg:flex-row items-center justify-center gap-[5%] p-6">
-
-                  <div className="w-full lg:w-[45%] mb-6 lg:mb-0">
-
-                    <Image
-
-                      src="/images/hero/bharat/chip1.png" // Replace with your image path
-
-                      alt="Energy Innovation"
-
-                      width={500} // Adjust width as needed
-
-                      height={300} // Adjust height as needed
-
-                      loading="lazy"
-
-                      className="rounded-lg w-full mx-auto xl:scale-[1.2] 2xl:scale-[1.0] opacity-[75%]"
-
-                    />
-
-                  </div>
-
-                  <div className="w-full lg:w-[50%] text-center lg:text-left">
-
-                    <h1
-
-                      className={`text-2xl md:text-3xl font-bold mb-4 ${styles.color} `}
-
-                    >
-
-                      BharatBMS
-
-                    </h1>
-
-                    <p className="text-base md:text-lg mb-6 text-white">
-
-                      India's first universal Battery Management System scales
-
-                      from 5kWh setups to megawatt applications, offering
-
-                      modular upgrades and reliable performance in tough power
-
-                      conditions.
-
-                    </p>
-
-                    <p className="text-base md:text-lg mb-6 text-white">
-
-                      Made in India with local components, it ensures fast
-
-                      support and customization while driving innovation in
-
-                      energy storage and EV products.
-
-                    </p>
-
-                    <Link href={"/bharat-bms"}>
-
-                      <button
-
-                        className={`px-6 py-3 rounded-lg font-bold text-white bg-transparent border-[2px] ${styles.gradientBorder}`}
-
-                      >
-
-                        Know More →
-
-                      </button>
-
-                    </Link>
-
-                  </div>
-
-                </div>
-
-              {/* BMS cards directly below BharatBMS text in the same section */}
-
-              <div className="mt-6" id="bms-offerings" ref={productsRef}>
-
-                <h3 className={`${styles.color} text-center text-2xl md:text-3xl font-bold mb-6 mt-[6rem]`}>OUR BMS OFFERINGS</h3>
-
-                <BMSToggle 
-
-                  onToggle={(value) => setBmsToggle(value)}
-
-                  initialValue={bmsToggle}
-
-                />
-
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-10 mb-[4rem]">
-                  {/* ESS Products */}
-                  {bmsToggle === 'ENERGY STORAGE' && (
-                    <>
-
-                      {/* Xbattery BharatBMS-ESS-48V */}
-
-                      <AnimatedDiv>
-
-                        <Link href="/bms/BharatBMS-ESS#ess-48v-white" className="group focus:outline-none">
-
-                         <div className="relative rounded-2xl bg-[#151a1d] border border-[#1e2a31] p-6 h-full min-h-[420px] md:min-h-[450px] lg:min-h-[480px] flex flex-col transition-colors duration-200 hover:bg-[#10151a] hover:border-[#1e2a31] hover:outline-none hover:shadow-[0_0_0_0.5px_rgba(0,229,255,0.55)] isolate w-full">
-
-              
-
-                            <div className="relative w-full h-[180px] md:h-[200px] rounded-xl overflow-hidden mb-4">
-
-                              <Image src="/images/telecom_good_looking-Photoroom.png" alt="Xbattery BharatBMS-ESS-48V" fill className="object-contain transition-transform duration-500 ease-out group-hover:scale-[1.30]" />
-
-                            </div>
-
-                            <h4 className={`text-lg md:text-xl font-semibold mb-2 text-[#00e5ff]`}>
-
-                              <span>Xbattery BharatBMS-ESS-48V</span>
-
-                            </h4>
-
-                            <div className="w-16 h-[3px] bg-[#00e5ff] rounded-full mb-4"></div>
-
-                            <p className="text-sm text-[#cfe3ea] mb-4 leading-relaxed break-words hyphens-auto w-full">BharatBMS-ESS-48V is a versatile 48V BMS<br />designed for modular energy storage systems with support for both LFP and NMC chemistries across 13-17 series configurations.</p>
-
-                            <div className="mt-auto">
-
-                          <div className="text-sm text-[#64efff] tracking-wide mb-2">KEY FEATURES</div>
-
-                          <ul className="text-sm text-[#cfe3ea] list-disc pl-4 space-y-1 marker:text-[#00e5ff]">
-
-                            <li>
-
-                              Supported Cell Chemistry: <span className="font-semibold">LFP/NMC</span>
-
-                            </li>
-
-                            <li>Cell Count Range: Up to 28S</li>
-
-                           
-                           
-                            <li>Nominal Pack Voltage: 48V</li>
-
-
-
-                          </ul>
-
-                      <div className="mt-3 flex justify-end">
-
-                        <svg width="36" height="36" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="text-white transition-transform duration-700 ease-out group-hover:text-[#00e5ff] group-hover:translate-x-2">
-
-                          <path d="M4 12H20" stroke="currentColor" strokeOpacity="0.95" strokeWidth="1.2" strokeLinecap="round"/>
-
-                          <path d="M14 6L20 12L14 18" stroke="currentColor" strokeOpacity="0.95" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round"/>
-
-                        </svg>
-
-                      </div>
-
-                      <div className="mt-3 border-t border-[#1d2a30]"></div>
-
-                        </div>
-
-                      </div>
-
-                    </Link>
-
-                      </AnimatedDiv>
-
-
-
-                      {/* Xbattery BharatBMS-ESS-72V */}
-
-                      <AnimatedDiv>
-
-                    <Link href="/bms/BharatBMS-ESS#ess-72v-white" className="group focus:outline-none">
-
-                     <div className="relative rounded-2xl bg-[#151a1d] border border-[#1e2a31] p-6 h-full min-h-[420px] md:min-h-[450px] lg:min-h-[480px] flex flex-col transition-all duration-200 hover:bg-[#10151a] hover:border-[#1e2a31] hover:outline-none hover:shadow-[0_0_0_0.5px_rgba(0,229,255,0.55)]">
 
           
-
-                        <div className="relative w-full h-[180px] md:h-[200px] rounded-xl overflow-hidden mb-4">
-
-                          <Image src="/images/bms_offerings/ess-72v.png" alt="XB-X 32S" fill className="object-contain transition-transform duration-500 ease-out group-hover:scale-[1.40]" />
-
-                        </div>
-
-                        <h4 className={`text-lg md:text-xl font-semibold mb-2 text-[#00e5ff]`}>
-
-                          <span>Xbattery BharatBMS-ESS-72V</span>
-
-                        </h4>
-
-                        <div className="w-16 h-[3px] bg-[#00e5ff] rounded-full mb-4"></div>
-
-                        <p className="text-sm text-[#cfe3ea] mb-4">BharatBMS-ESS-72V is high-efficiency BMS for industrial and medium-scale energy storage systems supporting up to 28S configurations.</p>
-
-                        <div className="mt-auto">
-
-                          <div className="text-sm text-[#64efff] tracking-wide mb-2">KEY FEATURES</div>
-
-                          <ul className="text-sm text-[#cfe3ea] list-disc pl-4 space-y-1 marker:text-[#00e5ff]">
-
-                            <li>
-
-                              Supported Cell Chemistry: <span className="font-semibold">LFP/NMC</span>
-
-                            </li>
-
-                            <li>Cell Count Range: Up to 28S</li>
-
-                            <li>Nominal Pack Voltage: 72V</li>
-                            
-                            
-                            
-                          </ul>
-
-                      <div className="mt-3 flex justify-end">
-
-                        <svg width="36" height="36" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="text-white transition-transform duration-700 ease-out group-hover:text-[#00e5ff] group-hover:translate-x-2">
-
-                          <path d="M4 12H20" stroke="currentColor" strokeOpacity="0.95" strokeWidth="1.2" strokeLinecap="round"/>
-
-                          <path d="M14 6L20 12L14 18" stroke="currentColor" strokeOpacity="0.95" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round"/>
-
-                        </svg>
-
-                      </div>
-
-                      <div className="mt-3 border-t border-[#1d2a30]"></div>
-
-                        </div>
-
-                      </div>
-
-                    </Link>
-
-                      </AnimatedDiv>
-
-
-
-                      {/* Xbattery BharatBMS-ESS-110V */}
-
-                      <AnimatedDiv>
-
-                        <Link href="/bms/BharatBMS-ESS#ess-110v-white" className="group focus:outline-none">
-
-                         <div className="relative rounded-2xl bg-[#151a1d] border border-[#1e2a31] p-6 h-full min-h-[420px] md:min-h-[450px] lg:min-h-[480px] flex flex-col transition-all duration-200 hover:bg-[#10151a] hover:border-[#1e2a31] hover:outline-none hover:shadow-[0_0_0_0.5px_rgba(0,229,255,0.55)]">
-
-              
-
-                            <div className="relative w-full h-[180px] md:h-[200px] rounded-xl overflow-hidden mb-4">
-
-                              <Image src="/images/bms_offerings/ess2-110v.png" alt="Xbattery BharatBMS-ESS-110V" fill className="object-contain transition-transform duration-500 ease-out group-hover:scale-[1.20]" />
-
-                            </div>
-
-                            <h4 className={`text-lg md:text-xl font-semibold mb-2 text-[#00e5ff]`}>
-
-                              <span>Xbattery BharatBMS-ESS-110V</span>
-
-                            </h4>
-
-                            <div className="w-16 h-[3px] bg-[#00e5ff] rounded-full mb-4"></div>
-
-                            <p className="text-sm text-[#cfe3ea] mb-4">BharatBMS-ESS-110V is a BMS for large-scale energy storage and grid applications supporting up to 42S configurations.</p>
-
-                            <div className="mt-auto">
-
-                          <div className="text-sm text-[#64efff] tracking-wide mb-2">KEY FEATURES</div>
-
-                          <ul className="text-sm text-[#cfe3ea] list-disc pl-4 space-y-1 marker:text-[#00e5ff]">
-
-                            <li>
-
-                              Supported Cell Chemistry: <span className="font-semibold">LFP/NMC</span>
-
-                            </li>
-
-                            <li>Cell Count Range: Up to 42S</li>
-
-                            <li>Nominal Pack Voltage: 110V</li>
-
-                          </ul>
-
-                      <div className="mt-3 flex justify-end">
-
-                        <svg width="36" height="36" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="text-white transition-transform duration-700 ease-out group-hover:text-[#00e5ff] group-hover:translate-x-2">
-
-                          <path d="M4 12H20" stroke="currentColor" strokeOpacity="0.95" strokeWidth="1.2" strokeLinecap="round"/>
-
-                          <path d="M14 6L20 12L14 18" stroke="currentColor" strokeOpacity="0.95" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round"/>
-
-                        </svg>
-
-                      </div>
-
-                      <div className="mt-3 border-t border-[#1d2a30]"></div>
-
-                        </div>
-
-                      </div>
-
-                    </Link>
-
-                      </AnimatedDiv>
-
-
-
-                      {/* Removed: Xbattery BharatBMS-ESS-72V-D2 card */}
-
-                    </>
-
-                  )}
-
-
-
-                  {/* EV Products */}
-
-                  {bmsToggle === 'ELECTRIC VEHICLES' && (
-
-                    <>
-                      {/* Xbattery BharatBMS-EV-110V */}
-                      <AnimatedDiv>
-                        <Link href="/bms/BharatBMS-EV#ev-110v-white" className="group focus:outline-none">
-                          <div className="relative rounded-2xl bg-[#151a1d] border border-[#1e2a31] p-6 h-full min-h-[420px] md:min-h-[450px] lg:min-h-[480px] flex flex-col transition-all duration-200 hover:bg-[#10151a] hover:border-[#00e5ff]/30 hover:border-2 hover:outline-none">
-                            <div className="relative w-full h-[180px] md:h-[200px] rounded-xl overflow-hidden mb-4">
-                              <Image src="/images/bms_offerings/ev-110v.png" alt="Xbattery BharatBMS-EV-110V" fill className="object-contain transition-transform duration-500 ease-out group-hover:scale-[1.35]" />
-                            </div>
-                            <h4 className={`text-lg md:text-xl font-semibold mb-2 text-[#00e5ff]`}>
-                              <span>Xbattery BharatBMS-EV-110V</span>
-                            </h4>
-                            <div className="w-16 h-[3px] bg-[#00e5ff] rounded-full mb-4"></div>
-                            <p className="text-sm text-[#cfe3ea] mb-4">BharatBMS-EV-110V is Optimized for e-rickshaws, autos, and tempos with up to 80S configurations and automotive-grade safety compliance.</p>
-                            <div className="mt-auto">
-                              <div className="text-sm text-[#64efff] tracking-wide mb-2">KEY FEATURES</div>
-                              <ul className="text-sm text-[#cfe3ea] list-disc pl-4 space-y-1 marker:text-[#00e5ff]">
-                                <li>Supported Cell Chemistry: <span className="font-semibold">LFP/NMC</span></li>
-                                <li>Cell Count Range: 32S to 60S</li>
-                                <li>Nominal Pack Voltage: 110V</li>
-                              </ul>
-                              <div className="mt-3 flex justify-end">
-                                <svg width="36" height="36" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="text-white transition-transform duration-700 ease-out group-hover:text-[#00e5ff] group-hover:translate-x-2">
-                                  <path d="M4 12H20" stroke="currentColor" strokeOpacity="0.95" strokeWidth="1.2" strokeLinecap="round"/>
-                                  <path d="M14 6L20 12L14 18" stroke="currentColor" strokeOpacity="0.95" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round"/>
-                                </svg>
-                              </div>
-                              <div className="mt-3 border-t border-[#1d2a30]"></div>
-                            </div>
-                          </div>
-                        </Link>
-                      </AnimatedDiv>
-
-                      {/* Xbattery BharatBMS-EV-400V */}
-                      <AnimatedDiv>
-                        <Link href="/bms/BharatBMS-EV#ev-400v-white" className="group focus:outline-none">
-                          <div className="relative rounded-2xl bg-[#151a1d] border border-[#1e2a31] p-6 h-full min-h-[420px] md:min-h-[450px] lg:min-h-[480px] flex flex-col transition-all duration-200 hover:bg-[#10151a] hover:border-[#00e5ff]/30 hover:border-2 hover:outline-none">
-                            <div className="relative w-full h-[180px] md:h-[200px] rounded-xl overflow-hidden mb-4">
-                              <Image src="/images/bms_offerings/ev-400v-2.png" alt="Xbattery BharatBMS-EV-400V" fill className="object-contain object-[5%_center] transition-transform duration-500 ease-out group-hover:scale-[1.18]" />
-                            </div>
-                            <h4 className={`text-lg md:text-xl font-semibold mb-2 text-[#00e5ff]`}>
-                              <span>Xbattery BharatBMS-EV-400V</span>
-                            </h4>
-                            <div className="w-16 h-[3px] bg-[#00e5ff] rounded-full mb-4"></div>
-                            <p className="text-sm text-[#cfe3ea] mb-4">BharatBMS-EV-400V is Designed for passenger cars with up to 120S configurations and advanced CAN FD communication protocols.</p>
-                            <div className="mt-auto">
-                              <div className="text-sm text-[#64efff] tracking-wide mb-2">KEY FEATURES</div>
-                              <ul className="text-sm text-[#cfe3ea] list-disc pl-4 space-y-1 marker:text-[#00e5ff]">
-                                <li>Supported Cell Chemistry: <span className="font-semibold">LFP/NMC</span></li>
-                                <li>Cell Count Range: 100S to 125S</li>
-                                <li>Nominal Pack Voltage: 400V</li>
-                              </ul>
-                              <div className="mt-3 flex justify-end">
-                                <svg width="36" height="36" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="text-white transition-transform duration-700 ease-out group-hover:text-[#00e5ff] group-hover:translate-x-2">
-                                  <path d="M4 12H20" stroke="currentColor" strokeOpacity="0.95" strokeWidth="1.2" strokeLinecap="round"/>
-                                  <path d="M14 6L20 12L14 18" stroke="currentColor" strokeOpacity="0.95" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round"/>
-                                </svg>
-                              </div>
-                              <div className="mt-3 border-t border-[#1d2a30]"></div>
-                            </div>
-                          </div>
-                        </Link>
-                      </AnimatedDiv>
-
-                      {/* Xbattery BharatBMS-EV-600V */}
-                      <AnimatedDiv>
-                        <Link href="/bms/BharatBMS-EV#ev-600v-white" className="group focus:outline-none">
-                          <div className="relative rounded-2xl bg-[#151a1d] border border-[#1e2a31] p-6 h-full min-h-[420px] md:min-h-[450px] lg:min-h-[480px] flex flex-col transition-all duration-200 hover:bg-[#10151a] hover:border-[#00e5ff]/30 hover:border-2 hover:outline-none">
-                            <div className="relative w-full h-[180px] md:h-[200px] rounded-xl overflow-hidden mb-4">
-                              <Image src="/images/bms_offerings/ev-500v.png" alt="Xbattery BharatBMS-EV-500V" fill className="object-contain transition-transform duration-500 ease-out group-hover:scale-[1.20]" />
-                            </div>
-                            <h4 className={`text-lg md:text-xl font-semibold mb-2 text-[#00e5ff]`}>
-                              <span>Xbattery BharatBMS-EV-600V</span>
-                            </h4>
-                            <div className="w-16 h-[3px] bg-[#00e5ff] rounded-full mb-4"></div>
-                            <p className="text-sm text-[#cfe3ea] mb-4">BharatBMS-EV-600V is built for buses and heavy commercial vehicles supporting up to 180S configurations with robust current handling.</p>
-                            <div className="mt-auto">
-                              <div className="text-sm text-[#64efff] tracking-wide mb-2">KEY FEATURES</div>
-                              <ul className="text-sm text-[#cfe3ea] list-disc pl-4 space-y-1 marker:text-[#00e5ff]">
-                                <li>Supported Cell Chemistry: <span className="font-semibold">LFP/NMC</span></li>
-                                <li>Cell Count Range: 125S to 156S</li>
-                                <li>Nominal Pack Voltage: 500V</li>
-                              </ul>
-                              <div className="mt-3 flex justify-end">
-                                <svg width="36" height="36" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="text-white transition-transform duration-700 ease-out group-hover:text-[#00e5ff] group-hover:translate-x-2">
-                                  <path d="M4 12H20" stroke="currentColor" strokeOpacity="0.95" strokeWidth="1.2" strokeLinecap="round"/>
-                                  <path d="M14 6L20 12L14 18" stroke="currentColor" strokeOpacity="0.95" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round"/>
-                                </svg>
-                              </div>
-                              <div className="mt-3 border-t border-[#1d2a30]"></div>
-                            </div>
-                          </div>
-                        </Link>
-                      </AnimatedDiv>
-                    </>
-
-                  )}
-
-                </div>
-
-              </div>
-
-              </div>
-
-            </div>
-
-          </AnimatedDiv>
-
 
 
           {/* hero block 2*/}
 
           <div id="energystorage" ref={energyStorageRef}></div>
 
+
+
+
+          {/* Power Your Home 24/7 Section */}
            <LayoutEffect
-
             className="duration-1000 delay-300"
-
             isInviewState={{
-
               trueState: "opacity-1",
-
               falseState: "opacity-0",
-
             }}
-
           >
-
             <div className="relative w-full top-[-4rem] " id="xbattery5kwh">
-
               <video
-
                 ref={videoRefHero2}
-
                 className={`w-auto h-[85vh] md:w-full md:h-auto object-cover ${objectPosition}`}
-
+                autoPlay
                 muted
-
                 playsInline
-
-                preload="none" // Load only metadata for better performance
-
+                loop
+                preload="auto"
                 onLoadedData={(e) => {
-
+                  console.log('Video loaded data:', e.target);
+                  console.log('Video src:', e.target.src);
                   if (e.target.readyState >= 3) {
-
                     e.target.play().catch((error) => {
-
                       // Silently handle autoplay failures on mobile
-
                       if (error.name !== 'AbortError') {
-
                         console.warn("Autoplay failed:", error);
-
                       }
-
                     });
-
                   }
-
                 }}
-
+                onError={(e) => {
+                  console.error('Video error:', e);
+                }}
               >
-
-                <source src={`https:${videoUrl1}`} type="video/mp4" />
-
+                {videoUrl1 ? (
+                  <source src={`https:${videoUrl1}`} type="video/mp4" />
+                ) : (
+                  <source src="/videos/Xbattery-Hd.mp4" type="video/mp4" />
+                )}
                 Your browser does not support the video tag.
-
               </video>
 
               {showHero2Text && (
-
                 <motion.div
-
                   ref={ref}
-
                   initial={{ x: "-100%" }}
-
                   animate={{ x: isInView ? 0 : "-100%" }}
-
                   transition={{ duration: 1, delay: 6 }}
-
                   className="absolute top-0 md:top-0 left-0 right-0 w-full h-full flex flex-col items-center md:items-start justify-center p-4 md:p-16 space-y-2 text-left"
-
                 >
-
                   <h1 className="text-white text-4xl lg:text-6xl text-center md:text-left font-bold">
-
                     Power Your Home 24/7 
-
                   </h1>
 
                   <h2 className="text-white text-lg lg:text-2xl text-center md:text-left font-light pt-5 pl-1">
-
                     High-performance lithium battery packs designed for India
-
                   </h2>
 
                   <div className=" pt-8 flex gap-7 pl-2">
-
                     <Button
-
                       bg="transparent"
-
                       border="1px"
-
                       borderColor="white"
-
                       color="white"
-
                       _hover={{ bg: "transparent" }}
-
                       onClick={scrollToEmail}
-
                       className="min-h-[48px] min-w-[48px]"
-
                     >
-
                       Get Notified
-
                     </Button>
-
                   </div>
-
                 </motion.div>
-
               )}
-
             </div>
-
           </LayoutEffect>
-
-
 
           {/* Capacity As Per Your Needs */}
 

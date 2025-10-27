@@ -1,0 +1,373 @@
+.head1 {
+  font-family: 'Open Sans', sans-serif;
+}
+/* @media (min-width:1600px) {
+  .head1 {
+    max-width: 1600px;
+    margin: 0 auto;
+  }
+} */
+
+@keyframes slideUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  @keyframes slideDown {
+    from {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    to {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+  }
+  
+  .slide-up {
+    animation: slideUp 0.5s forwards;
+  }
+  
+  .slide-down {
+    animation: slideDown 0.5s forwards;
+  }
+  
+
+/* styles.css */
+
+.gradientButton {
+  position: relative;
+  overflow: hidden;
+  padding: 0.5rem 1.5rem;
+  font-weight: bold;
+  border-radius: 0.375rem;
+  color: white;
+  background: #151a1d;
+  border: 1px solid #1e2a31;
+  transition: all 0.3s ease-in-out;
+  margin-bottom: 1rem;
+}
+
+.gradientButton:hover {
+  background: #10151a;
+  color: #00e5ff;
+  border-color: #00e5ff;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0, 229, 255, 0.3);
+}
+
+/* block2 */
+
+.block2Head{
+  font-size: 25px;
+  font-weight: 700;
+  /* color: transparent;
+  background-image: linear-gradient(90deg,#2c7ed0 -10.12%,#00a9ed 11.59%,#00db84 69.71%); */
+  color: transparent;
+  /* background-image: linear-gradient(90deg,#2c7ed0 -10.12%,#00a9ed 11.59%,#00db84 69.71%); */
+  background-image: linear-gradient(90deg, #25f1fc, #5bb2ff, #b15dfb);
+  /* color: white; */
+  -webkit-background-clip: text;
+  background-clip: text;
+
+}
+.block3Head{
+  font-size: xxx-large;
+  font-weight: 700;
+  margin-bottom:rem;
+  color: transparent;
+  /* background-image: linear-gradient(90deg,#2c7ed0 -10.12%,#00a9ed 11.59%,#00db84 69.71%); */
+  background-image: linear-gradient(90deg, #25f1fc, #5bb2ff, #b15dfb);
+  /* background-image: linear-gradient(90deg, #ffd700, #ffac47, #ff7b9c); */
+  /* background-image: linear-gradient(90deg, #79f535, #48fcc3 ,  #24f8e3); */
+
+
+
+  /* color: white; */
+  -webkit-background-clip: text;
+  background-clip: text;
+
+}
+
+.typingHead{
+  font-size: 2.5rem;
+  font-weight: 700;
+  /* margin-top: -2rem; */
+  color: transparent;
+  /* background-image: linear-gradient(90deg,#2c7ed0 -10.12%,#00a9ed 11.59%,#00db84 69.71%); */
+  background-image: linear-gradient(90deg, #25f1fc, #5bb2ff, #b15dfb);
+  /* color: white; */
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+
+.textColor{
+  color: transparent;
+  /* background-image: linear-gradient(90deg,#2c7ed0 -10.12%,#00a9ed 11.59%,#00db84 69.71%); */
+  background-image: linear-gradient(90deg, #25f1fc, #5bb2ff, #b15dfb);
+  -webkit-background-clip: text;
+  background-clip: text;
+  font-size: 1.8rem;
+}
+@media (max-width:500px) {
+  .typingHead{
+    font-size: larger;
+  }
+  .block3Head{
+    font-size: xx-large;
+  }
+  .textColor{
+    font-size: 1.5rem;
+  }
+}
+
+.plus1{
+  margin-top: 0.6rem;
+  color: white;
+  font-size: 0.8rem;
+  padding: 7px;
+  border: 1px solid white;
+  width: 19px;
+  height: 19px;
+  border-radius: 10px;
+  animation: zoomInOut 2s infinite;
+}
+
+@keyframes zoomInOut {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.3);
+  }
+}
+
+.circle {
+  width: 57%;
+  height: 100%;
+  border-radius: 50%;
+  border: 1px solid rgb(217, 217, 217);
+  position: absolute;
+  top: 21%;
+  left: 21.5%;
+  z-index: 2;
+  clip-path: circle(55% at 50% 75%);
+}
+
+.circle1 {
+  width: 57%;
+  height: 100%;
+  border-radius: 50%;
+  border: 0.5px solid rgb(217, 217, 217);
+  position: absolute;
+  top: 19%;
+  left: 21.5%;
+  z-index: 1;
+  clip-path: circle(55% at 50% 75%);
+  scale: 1.5;
+}
+
+
+
+
+.switchBox{
+  display: flex;
+  justify-content: space-between;
+  margin-top: 2rem;
+  font-size: 1.3rem;
+  border-radius: 4px;
+  border-top: 5px solid rgba(178, 178, 178, 0.443);
+}
+
+.textBox {
+  cursor: pointer;
+  padding: 10px;
+  margin: 5px 0;
+  text-align: center;
+  font-size: large;
+  font-weight: bold;
+  color:rgba(178, 178, 178, 0.443);
+  position: relative; /* Added to allow absolute positioning of the border */
+}
+@media (max-width:500px) {
+  .textBox {
+    font-size: x-small;
+  }
+}
+@media (min-width:1500px) {
+  .textBox {
+    font-size: x-large;
+  }
+}
+
+.selected {
+  color: transparent;
+  /* background-image: linear-gradient(90deg, #2c7ed0 -10.12%, #00a9ed 11.59%, #00db84 69.71%); */
+  background-image: linear-gradient(90deg, #25f1fc, #5bb2ff, #b15dfb);
+  -webkit-background-clip: text;
+  background-clip: text;
+  padding-top: 10px;
+}
+
+.selected::before {
+  content: '';
+  position: absolute;
+  top: -10px;
+  left: 50%; /* Start from the middle */
+  width: 0; /* Start with no width */
+  height: 5px;
+  /* background-image: linear-gradient(90deg, #2c7ed0 -10.12%, #00a9ed 11.59%, #00db84 69.71%); */
+  background-image: linear-gradient(90deg, #25f1fc, #5bb2ff, #b15dfb);
+  transition: none;
+}
+
+.selected.animate::before {
+  animation: expand-border 0.5s forwards;
+}
+
+@keyframes expand-border {
+  from {
+    width: 0;
+    left: 50%;
+  }
+  to {
+    width: 100%;
+    left: 0;
+  }
+}
+
+
+/* .vibrant {
+  background-image: linear-gradient(90deg, #2c7ed0 -10.12%, #00a9ed 11.59%, #00db84 69.71%);
+  color: white;
+  font-weight: bold;
+  font-size: 1.25rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+  border-radius: 8px;
+  padding: 1rem;
+  opacity: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+} */
+
+/* .vibrant {
+  border-radius: 10%;
+  background-color: black;
+  background-clip: padding-box;
+  border: 1.5px solid;
+  border-image: linear-gradient(90deg, #2c7ed0 -10.12%, #00a9ed 11.59%, #00db84 69.71%) 1;
+  color: white;
+  font-weight: bold;
+  font-size: 1.25rem;
+  box-shadow: 0 4px 20px rgba(53, 53, 53, 0.8);
+  padding: 0.8rem;
+  opacity: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.5s ease; 
+  transform: scale(0.9); 
+} */
+
+
+.vibrant {
+  /* background-color: rgb(0, 0, 0); */
+  /* background-clip: padding-box; */
+  /* border: 1.5px solid;
+  border-image: linear-gradient(90deg, #2c7ed0 -10.12%, #00a9ed 11.59%, #00db84 69.71%) 1; */
+  color: white;
+  font-weight: bold;
+  font-size: 1.5rem;
+  line-height: 31px;
+  /* box-shadow: 0 4px 20px rgba(53, 53, 53, 0.8); */
+  border-radius: 10%;
+  padding: 1rem;
+  opacity: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.5s ease; /* Smooth transition for opacity and scale */
+  transform: scale(0.9); /* Slight shrink initially for pop effect */
+  width: 250px; /* Fixed width for all features */
+  text-align: center; /* Center text inside the feature */
+  min-height: 50px; /* Ensure a minimum height for consistent layout */
+}
+
+
+.vibrant::after {
+  content: '';
+  position: absolute;
+  bottom: -10px; 
+  left: 50%;
+  transform: translateX(-50%);
+  width: 150px; 
+  height: 3px;
+  /* background-image: linear-gradient(90deg, #2c7ed0, #00a9ed, #00db84); */
+  background-image: linear-gradient(90deg, #25f1fc, #5bb2ff, #b15dfb);
+  border-radius: 2px;
+}
+
+/* .vibrant::before {
+  content: '';
+  position: absolute;
+  bottom: -15px;
+  left: 50%;
+  transform: translateX(350%);
+  width: 10px;
+  height: 10px;
+  background-color: #00db84;
+  border-radius: 50%;
+} */
+
+.color{
+  color: transparent;
+  /* background-image: linear-gradient(90deg,#2c7ed0 -10.12%,#00a9ed 11.59%,#00db84 69.71%); */
+  background-image: linear-gradient(90deg, #25f1fc, #5bb2ff, #b15dfb);
+  /* color: white; */
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+.color1{
+  font-size: 2.2rem;
+  font-weight: 700;
+ 
+  color: transparent;
+  background-image: linear-gradient(90deg, #25f1fc, #5bb2ff, #b15dfb);
+
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+@media (max-width:500px) {
+  .color1 {
+      font-size: 1.7rem;
+  }
+}
+
+.gradientBorder {
+  position: relative;
+  border: 2px solid transparent; /* let pseudo-element draw gradient */
+  border-radius: 24px; /* match rounded-3xl */
+}
+
+.gradientBorder::before {
+  content: "";
+  position: absolute;
+  inset: 0; /* full overlay */
+  padding: 2px; /* border width */
+  border-radius: inherit;
+  background: linear-gradient(90deg, #25f1fc, #5bb2ff, #b15dfb);
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude; /* standard */
+  pointer-events: none; /* click-through */
+}
+
+

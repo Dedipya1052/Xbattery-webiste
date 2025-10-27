@@ -15,6 +15,7 @@ const Footer = () => {
   const router = useRouter();
   const isHomePage =
     router.pathname === "/" ||
+    router.pathname === "/energy-storage" ||
     router.pathname === "/terms" ||
     router.pathname === "/about" ||
     router.pathname === "/privacy" ||
