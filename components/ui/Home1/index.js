@@ -1983,7 +1983,7 @@ const Example = ({ media, recentBlogs }) => {
 
                     >
 
-                      Get Notified
+Pre-Order
 
                     </Button>
 
@@ -3188,7 +3188,7 @@ const Example = ({ media, recentBlogs }) => {
 
                 >
 
-                  Get Notified
+Pre-Order
 
                 </button>
 

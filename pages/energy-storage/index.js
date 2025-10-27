@@ -781,7 +781,7 @@ const Example = ({ media, recentBlogs }) => {
 
   const hasPlayedHero2 = useRef(false);
 
-  const [showHero2Text, setShowHero2Text] = useState(false);
+  const [showHero2Text, setShowHero2Text] = useState(true);
 
 
 
@@ -1398,7 +1398,7 @@ const Example = ({ media, recentBlogs }) => {
                       onClick={scrollToEmail}
                       className="min-h-[48px] min-w-[48px]"
                     >
-                      Get Notified
+                      Pre-Order
                     </Button>
                   </div>
                 </motion.div>
@@ -2882,7 +2882,7 @@ const Example = ({ media, recentBlogs }) => {
 
                 >
 
-                  Get Notified
+Pre-Order
 
                 </button>
 

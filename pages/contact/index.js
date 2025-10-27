@@ -156,7 +156,7 @@ const Contact = () => {
                 type="submit"
                 className="px-6 py-2 border border-gray-300 text-white rounded-r-md hover:bg-[#181818] focus:outline-none focus:ring-2 min-h-[48px] min-w-[48px]"
               >
-                Get Notified
+                Pre-Order
               </button>
             </form>
             {message && <p className="text-gray-400 mt-4">{message}</p>}
