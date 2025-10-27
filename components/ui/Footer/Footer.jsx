@@ -39,10 +39,9 @@ const Footer = () => {
 
 
 const products = [
-  { name: "Xbattery 5kWh", link: "/#xbattery5kwh" },
-  { name: "BharatBMS", link: "/bharat-bms" },
   { name: "Energy Storage", link: "/bms/BharatBMS-ESS" },
   { name: "Electric Vehicle", link: "/bms/BharatBMS-EV" },
+  { name: "Xbattery 5kWh", link: "/#xbattery5kwh" },
 ];
 
 
@@ -121,17 +120,14 @@ const resources = [
 
                 <div className={styles.Footer_navigation__GbeEa}>
                   <h3 className={styles.footerSubheading}>Products</h3>
-                  <Link href="/#xbattery5kwh" className={styles.footerElements}>
-                    Xbattery 5kWh
-                  </Link>
-                  <Link href="/bharat-bms" className={styles.footerElements}>
-                    BharatBMS
-                  </Link>
                   <Link href="/bms/BharatBMS-ESS" className={styles.footerElements}>
                     Energy Storage
                   </Link>
                   <Link href="/bms/BharatBMS-EV" className={styles.footerElements}>
                     Electric Vehicle
+                  </Link>
+                  <Link href="/#xbattery5kwh" className={styles.footerElements}>
+                    Xbattery 5kWh
                   </Link>
                 </div>
                 <div className={styles.Footer_navigation__GbeEa}>

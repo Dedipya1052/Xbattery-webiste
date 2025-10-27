@@ -108,10 +108,6 @@ const Example = ({ media, recentBlogs }) => {
   const router = useRouter();
 
   const videoUrl1 = media?.video1?.fields?.file?.url;
-  
-  // Debug: Log video URL
-  console.log('Video URL:', videoUrl1);
-  console.log('Media object:', media);
 
 
 
@@ -798,13 +794,9 @@ const Example = ({ media, recentBlogs }) => {
         // For hero block 2: only play once
 
         if (entry.target === videoRefHero2.current) {
-          console.log('Video intersection detected:', entry.isIntersecting);
           if (entry.isIntersecting && !hasPlayedHero2.current) {
-            console.log('Playing video...');
             entry.target.currentTime = 0;
-            entry.target.play().catch((error) => {
-              console.warn("Video play failed:", error);
-            });
+            entry.target.play();
             hasPlayedHero2.current = true;
             setShowHero2Text(true); // Show text immediately
           }
@@ -1362,14 +1354,10 @@ const Example = ({ media, recentBlogs }) => {
               <video
                 ref={videoRefHero2}
                 className={`w-auto h-[85vh] md:w-full md:h-auto object-cover ${objectPosition}`}
-                autoPlay
                 muted
                 playsInline
-                loop
-                preload="auto"
+                preload="none" // Load only metadata for better performance
                 onLoadedData={(e) => {
-                  console.log('Video loaded data:', e.target);
-                  console.log('Video src:', e.target.src);
                   if (e.target.readyState >= 3) {
                     e.target.play().catch((error) => {
                       // Silently handle autoplay failures on mobile
@@ -1379,15 +1367,8 @@ const Example = ({ media, recentBlogs }) => {
                     });
                   }
                 }}
-                onError={(e) => {
-                  console.error('Video error:', e);
-                }}
               >
-                {videoUrl1 ? (
-                  <source src={`https:${videoUrl1}`} type="video/mp4" />
-                ) : (
-                  <source src="/videos/Xbattery-Hd.mp4" type="video/mp4" />
-                )}
+                <source src={`https:${videoUrl1}`} type="video/mp4" />
                 Your browser does not support the video tag.
               </video>
 
@@ -1876,6 +1857,293 @@ const Example = ({ media, recentBlogs }) => {
               </AnimatedDiv>
 
             )}
+
+          </div>
+
+
+          {/* modes */}
+
+          <div className="mx-auto w-[95%] md:w-[80%] xl:w-[72%] 2xl:w-[1450px] mt-[9rem]">
+
+            <AnimatedDiv>
+
+              <div
+
+                className={`${styles.block3Head} text-center text-[1.5rem] md:text-[2rem]`}
+
+              >
+
+                How It Works
+
+              </div>
+
+            </AnimatedDiv>
+
+            <AnimatedDiv>
+
+              <div className="text-white text-[1.2rem] md:text-[1.5rem] text-center mt-3  2xl:w-[90%] mx-auto">
+
+                You're covered at every stage of an outage. Its intelligent
+
+                modes kick in before the power goes out, ensuring your stays
+
+                powered through any disruption.
+
+              </div>
+
+            </AnimatedDiv>
+
+
+
+            <div className="mt-[3rem]">
+
+              <AnimatedDiv>
+
+                <video
+
+                  ref={videoRef1}
+
+                  className="w-full xl:w-[90%] 2xl:w-[80%] mx-auto min-h-[350px] md:min-h-[auto] 2xl:min-h-[480px] object-cover object-right"
+
+                  autoPlay
+
+                  muted
+
+                  playsInline
+
+                  preload="auto"
+
+                  loop
+
+                  onLoadedData={(e) => e.target.play()}
+
+                >
+
+                  <source
+
+                    src={
+
+                      selectedIndex === 0
+
+                        ? "/videos/steps/1.mp4"
+
+                        : selectedIndex === 1
+
+                        ? "/videos/steps/2.mp4"
+
+                        : selectedIndex === 2
+
+                        ? "/videos/steps/3.mp4"
+
+                        : selectedIndex === 3
+
+                        ? "/videos/steps/4.mp4"
+
+                        : ""
+
+                    }
+
+                    type="video/mp4"
+
+                  />
+
+                  Your browser does not support the video tag.
+
+                </video>
+
+
+
+                <div className={`${styles.switchBox} w-full xl:w-[90%]  2xl:w-[80%] mx-auto`}>
+
+                  {[
+
+                    "Normal Operation",
+
+                    "During Power Outages",
+
+                    "Power Restoration",
+
+                    "Solar Integration",
+
+                  ].map((label, index) => (
+
+                    <div
+
+                      key={index}
+
+                      className={`${styles.textBox} ${
+
+                        selectedIndex === index
+
+                          ? `${styles.selected} ${styles.animate}`
+
+                          : ""
+
+                      }`}
+
+                      onClick={() => handleVideoChange(index)}
+
+                    >
+
+                      {label}
+
+                    </div>
+
+                  ))}
+
+                </div>
+
+              </AnimatedDiv>
+
+
+
+              <AnimatedDiv>
+
+                {selectedIndex === 0 && (
+
+                  <div className="w-[full] xl:w-[90%]  2xl:w-[80%] mx-auto flex flex-col md:flex-row justify-between mt-4 md:mt-[2rem] ">
+
+                    <div className="w-full md:w-[50%] text-white opacity-[50%]">
+
+                      In Normal Mode, the 5kWh Xbattery provides reliable power
+
+                      for your home, ensuring daily activities run smoothly
+
+                      without any interruptions.
+
+                    </div>
+
+                    <div className="flex flex-col gap-[0rem] mt-3 md:mt-0">
+
+                      <div className="text-white text-[1.3rem] md:text-[2rem] font-bold">
+
+                        Normal Mode
+
+                      </div>
+
+                      <div className="text-white opacity-[50%]">
+
+                        Powers your home seamlessly throughout the day.
+
+                      </div>
+
+                    </div>
+
+                  </div>
+
+                )}
+
+
+
+                {selectedIndex === 1 && (
+
+                  <div className="w-[full] xl:w-[90%]  2xl:w-[80%] mx-auto flex flex-col md:flex-row justify-between mt-4 md:mt-[2rem]">
+
+                    <div className="w-full md:w-[50%] text-white opacity-[50%]">
+
+                      When a power outage occurs, the 5kWh Xbattery instantly
+
+                      switches to backup mode, keeping your home powered for up
+
+                      to a day without interruption.
+
+                    </div>
+
+                    <div className="flex flex-col gap-[0rem] mt-3 md:mt-0">
+
+                      <div className="text-white text-[1.22rem] md:text-[2rem] font-bold">
+
+                        Backup Power
+
+                      </div>
+
+                      <div className="text-white opacity-[50%]">
+
+                        Keeps your home running smoothly during power cuts.
+
+                      </div>
+
+                    </div>
+
+                  </div>
+
+                )}
+
+
+
+                {selectedIndex === 2 && (
+
+                  <div className="w-[full] xl:w-[90%]  2xl:w-[80%] mx-auto flex flex-col md:flex-row justify-between mt-4 md:mt-[2rem]">
+
+                    <div className="w-full md:w-[50%] text-white opacity-[50%]">
+
+                      Once the grid power is restored, the 5kWh Xbattery
+
+                      automatically switches back to normal mode, ensuring a
+
+                      smooth and seamless transition.
+
+                    </div>
+
+                    <div className="flex flex-col gap-[0rem] mt-3 md:mt-0">
+
+                      <div className="text-white text-[1.3rem] md:text-[2rem] font-bold">
+
+                        Power Restoration
+
+                      </div>
+
+                      <div className="text-white opacity-[50%]">
+
+                        Switches back to normal once power is restored.
+
+                      </div>
+
+                    </div>
+
+                  </div>
+
+                )}
+
+
+
+                {selectedIndex === 3 && (
+
+                  <div className="w-[full] xl:w-[90%]  2xl:w-[80%] mx-auto flex flex-col md:flex-row justify-between mt-4 md:mt-[2rem]">
+
+                    <div className="w-full md:w-[50%] text-white opacity-[50%]">
+
+                      The 5kWh Xbattery works seamlessly with your solar system,
+
+                      managing energy usage and maximizing storage to reduce
+
+                      your reliance on the grid.
+
+                    </div>
+
+                    <div className="flex flex-col gap-[0rem] mt-3 md:mt-0">
+
+                      <div className="text-white text-[1.3rem] md:text-[2rem] font-bold">
+
+                        Solar Integration
+
+                      </div>
+
+                      <div className="text-white opacity-[50%]">
+
+                        Optimizes your solar power usage for maximum efficiency.
+
+                      </div>
+
+                    </div>
+
+                  </div>
+
+                )}
+
+              </AnimatedDiv>
+
+            </div>
 
           </div>
 
