@@ -334,11 +334,12 @@ export default function BharatBMSEVPage() {
 
   const data = {
     title: "Xbattery BharatBMS-EV",
-    description: "Xbattery BharatBMS EV is a high-performance BMS designed for electric cars, trucks, and buses.Supporting up to 250S LFP and NMC cells, it ensures accurate monitoring, intelligent balancing, and advanced protection.",
+    description: "Xbattery BharatBMS-EV is a BMS designed for electric cars, trucks, and buses. It supports up to 250S LFP and NMC cells and enables cell monitoring, active balancing, and multi-level protection for reliable vehicle operation.",
     imageAlt: "LV-BMS Image",
     image: "/images/bms_offerings/ev-500v.png",
   };
 
+  
   // Navigation logic - simplified for unified page
   const prevBMS = {
     title: "Xbattery BharatBMS-ESS-110V",
