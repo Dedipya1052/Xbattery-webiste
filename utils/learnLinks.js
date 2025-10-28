@@ -58,6 +58,8 @@ export const bms = [
     name: "BMS Architecture Guide",
     link: "/learn/the-complete-guide-to-bms-architecture",
 
+
+
   },
   {
     name: "Active vs Passive Cell Balancing",
@@ -86,10 +88,14 @@ export const policies = [
     name: "EV Policies in India",
     link: "/learn/state-wise-ev-policies-in-india",
 
+
+
   },
   {
     name: "PLI Scheme for Batteries",
     link: "/learn/indias-pli-scheme-for-batteries",
+
+
 
   },
 ];
@@ -114,6 +120,8 @@ export const technology = [
   {
     name: "Cybersecurity in Batteries",
     link: "/learn/cybersecurity-threats-in-smart-battery-systems",
+
+
 
   },
 ];

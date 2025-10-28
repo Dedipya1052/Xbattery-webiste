@@ -377,6 +377,7 @@ export default function BlogPage({ blog, articles }) {
           </div>
         )}
 
+
       </div>
       <div className="bg-black h-[0.7px] w-[90%] mx-auto mt-[5rem] mb-[6rem]"></div>
       {/* Related Articles */}

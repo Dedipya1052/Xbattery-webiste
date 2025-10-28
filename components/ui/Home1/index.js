@@ -2526,7 +2526,6 @@ More Details
                               alt={blog.title}
 
                               layout="fill"
-
                               objectFit="contain"
                               className="transition-transform duration-500 hover:scale-[1.02]"
                               style={{ transform: 'scale(0.9)' }}
