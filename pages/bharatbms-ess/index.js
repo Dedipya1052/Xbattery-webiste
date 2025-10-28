@@ -504,419 +504,112 @@ export default function BharatBMSESSPage() {
             {/* Black Div Box */}
             <div id="ess-48v-white" className="w-full h-8 bg-black mb-12 mt-12"></div>
 
-            {/* ESS Product Card with Tabs */}
+            {/* ESS 48V Product */}
             <AnimatedDiv>
-              <div className="max-w-[1212px] mx-auto">
-                {/* Tabs */}
-                <div className="flex mb-0">
-                  <div 
-                    className="rounded-t-lg border-b-0 flex items-center justify-center"
-                    style={{ 
-                      width: '405px', 
-                      height: '65px',
-                      background: 'linear-gradient(135deg, #2A2B7A 60%, #FFFFFF 100%)',
-                      opacity: 0.5,
-                      border: '1px solid #FFFFFF99',
-                      borderBottom: 'none'
-                    }}
-                  >
-                    <span 
-                      style={{
-                        color: '#FFFFFF',
-                        textAlign: 'center',
-                        fontFamily: '"Bricolage Grotesque"',
-                        fontSize: '20px',
-                        fontStyle: 'normal',
-                        fontWeight: 500,
-                        lineHeight: '150%'
-                      }}
-                    >
-                      BharatBMS-ESS-48V
-                    </span>
-                  </div>
-                  <div 
-                    className="rounded-t-lg flex items-center justify-center"
-                    style={{ 
-                      width: '405px', 
-                      height: '65px',
-                      backgroundColor: '#2a2a2a',
-                      border: '1px solid #FFFFFF99'
-                    }}
-                  >
-                    <span 
-                      style={{
-                        color: '#9CA3AF',
-                        textAlign: 'center',
-                        fontFamily: '"Bricolage Grotesque"',
-                        fontSize: '20px',
-                        fontStyle: 'normal',
-                        fontWeight: 500,
-                        lineHeight: '150%'
-                      }}
-                    >
-                      BharatBMS-ESS-72V
-                    </span>
-                  </div>
-                  <div 
-                    className="rounded-t-lg flex items-center justify-center"
-                    style={{ 
-                      width: '405px', 
-                      height: '65px',
-                      backgroundColor: '#2a2a2a',
-                      border: '1px solid #FFFFFF99'
-                    }}
-                  >
-                    <span 
-                      style={{
-                        color: '#9CA3AF',
-                        textAlign: 'center',
-                        fontFamily: '"Bricolage Grotesque"',
-                        fontSize: '20px',
-                        fontStyle: 'normal',
-                        fontWeight: 500,
-                        lineHeight: '150%'
-                      }}
-                    >
-                      BharatBMS-ESS-110V
-                    </span>
-                  </div>
-                </div>
-
-                {/* Main Card */}
-                <div 
-                  className="w-full h-[508px] bg-[rgba(225,225,225,0.10)] border-[0.5px] border-[rgba(255,255,255,0.60)] rounded-[0_0_15px_15px] flex-shrink-0 relative"
-                  style={{
-                    width: '1212px',
-                    height: '508px',
-                    flexShrink: 0,
-                    borderRadius: '0 0 15px 15px',
-                    border: '0.5px solid rgba(255, 255, 255, 0.60)',
-                    background: 'rgba(225, 225, 225, 0.10)'
-                  }}
-                >
-                  {/* Product Image and Description - Left Side */}
-                  <div className="absolute top-16 left-6 w-[30%]">
-                    {/* Product Image */}
-                    <div className="mb-6 flex justify-center">
-                      <div className="w-full max-w-sm">
+            <div id="ess-48v" className="mb-0 bg-[#1c1c1c] border border-[#333] rounded-2xl p-2.5 md:p-3 shadow-[0_6px_18px_rgba(0,0,0,0.20)] max-w-7xl mx-auto">
+              <h3 className="text-xl md:text-2xl font-bold text-white text-center mb-6">Xbattery BharatBMS-ESS-48V</h3>
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-5 items-start">
+                {/* Left - Product Image */}
+                <div className="flex justify-center">
+                  <div className="w-full max-w-lg text-center">
+                     <div className="bg-[#1c1c1c] overflow-hidden h-[320px] md:h-[380px] flex items-center justify-center">
                     <Image
-                          src="/images/bms_offerings/ess-48v.png"
+                      src={productImages[0]}
                       alt="ESS 48V BMS Product"
-                          width={400}
-                          height={300}
-                          className="w-full h-auto object-contain"
+                          width={560}
+                          height={340}
+                          className="w-full h-full object-contain hover:scale-128 transition-transform duration-300 ease-in-out"
                     />
                     </div>
-                    </div>
-                    
-                    {/* Product Description */}
-                    <div className="mt-6">
-                      <p className="text-white text-sm leading-relaxed">
+                    <p className="text-gray-300 mt-4 text-center">
                     BharatBMS-ESS-48V is a versatile 48V BMS designed for modular energy storage systems with support for both LFP and NMC chemistries across 13-17 series configurations.
                     </p>
                 </div>
               </div>
 
-                  {/* Key Specifications - Top Right */}
-                  <div className="absolute top-8 right-8 w-[60%]">
-                    <h3 
-                      className="mb-8 text-left"
-                      style={{
-                        color: '#FFF',
-                        textAlign: 'left',
-                        fontFamily: '"Bricolage Grotesque"',
-                        fontSize: '20px',
-                        fontStyle: 'normal',
-                        fontWeight: 500,
-                        lineHeight: '150%'
-                      }}
-                    >
-                      Key Specifications
-                    </h3>
-                    <div className="flex">
-                      {/* Nominal Pack Voltage Range */}
-                      <div className="flex-1 relative px-6">
-                        <div className="flex items-start mb-4">
-                          <div className="w-5 h-7 mr-4 flex items-center justify-center flex-shrink-0 mt-1">
-                            <Image
-                              src="/images/icons/voltage.svg"
-                              alt="Voltage"
-                              width={18}
-                              height={30}
-                              className="text-blue-400"
-                            />
+                {/* Right - Specifications */}
+                <div className="space-y-2.5">
+                  {/* Key Specifications */}
+                   <div>
+                    <div className="flex items-center mb-4">
+                      <FaCogs className="text-gray-200 text-xl mr-3" />
+                      <h3 className="text-lg font-semibold text-white">Key Specifications</h3>
                       </div>
-                          <div className="flex-1">
-                            <h4 
-                              className="mb-2 leading-tight"
-                              style={{
-                                color: 'rgba(255, 255, 255, 0.90)',
-                                textAlign: 'left',
-                                fontFamily: '"Instrument Sans"',
-                                fontSize: '16px',
-                                fontStyle: 'normal',
-                                fontWeight: 300,
-                                lineHeight: '150%'
-                              }}
-                            >
-                              Nominal Pack<br />Voltage Range
-                            </h4>
-                            <p 
-                              style={{
-                                color: 'rgba(255, 255, 255, 0.60)',
-                                textAlign: 'left',
-                                fontFamily: '"Instrument Sans"',
-                                fontSize: '18px',
-                                fontStyle: 'normal',
-                                fontWeight: 500,
-                                lineHeight: '150%'
-                              }}
-                            >
-                              48.0V
-                            </p>
+                     <div className="grid grid-cols-1 sm:grid-cols-3 gap-2">
+                        <div className="bg-[#262626] p-4 rounded-lg text-center flex flex-col justify-center border border-[#333] h-[180px]">
+                          <FaCubes className="text-gray-200 text-2xl mx-auto mb-3" />
+                          <div className="flex flex-col justify-center">
+                            <h4 className="text-sm font-semibold text-white whitespace-nowrap">Cell Configuration</h4>
+                          <p className="text-gray-300 text-sm">Up to 28S</p>
                             </div>
                           </div>
-                        <div className="absolute right-0 top-0 bottom-0 w-px bg-gray-600"></div>
+                        <div className="bg-[#262626] p-4 rounded-lg text-center flex flex-col justify-center border border-[#333] h-[180px]">
+                          <FaBolt className="text-gray-200 text-2xl mx-auto mb-3 mt-2" />
+                          <div className="flex flex-col justify-center items-center">
+                            <h4 className="text-sm font-semibold text-white text-center">Nominal Pack<br />Voltage Range</h4>
+                            <p className="text-gray-300 text-sm text-center">48.0V</p>
                         </div>
-                      
-                      {/* Battery Capacity Range */}
-                      <div className="flex-1 relative px-6">
-                        <div className="flex items-start mb-4">
-                          <div className="w-4 h-2 mr-4 flex items-center justify-center flex-shrink-0 mt-3">
-                            <Image
-                              src="/images/icons/battery-capacity.svg"
-                              alt="Battery Capacity"
-                              width={20}
-                              height={10}
-                              className="text-blue-400"
-                            />
                             </div>
-                          <div className="flex-1">
-                            <h4 
-                              className="mb-2"
-                              style={{
-                                color: 'rgba(255, 255, 255, 0.90)',
-                                textAlign: 'left',
-                                fontFamily: '"Instrument Sans"',
-                                fontSize: '16px',
-                                fontStyle: 'normal',
-                                fontWeight: 300,
-                                lineHeight: '150%'
-                              }}
-                            >
-                              Battery Capacity<br />Range
-                            </h4>
-                            <p 
-                              style={{
-                                color: 'rgba(255, 255, 255, 0.60)',
-                                textAlign: 'left',
-                                fontFamily: '"Instrument Sans"',
-                                fontSize: '18px',
-                                fontStyle: 'normal',
-                                fontWeight: 500,
-                                lineHeight: '150%'
-                              }}
-                            >
-                              25kWh
-                            </p>
+                        <div className="bg-[#262626] p-4 rounded-lg text-center flex flex-col justify-center border border-[#333] h-[180px]">
+                          <FaBatteryFull className="text-gray-200 text-2xl mx-auto mb-3" />
+                          <div className="flex flex-col justify-center">
+                            <h4 className="text-sm font-semibold text-white whitespace-nowrap">Battery Capacity Range</h4>
+                          <p className="text-gray-300 text-sm">25kWh</p>
                         </div>
                       </div>
-                        <div className="absolute right-0 top-0 bottom-0 w-px bg-gray-600"></div>
+                    </div>
                   </div>
 
-                      {/* Cell Configuration */}
-                      <div className="flex-1 px-6">
-                        <div className="flex items-start mb-4">
-                          <div className="w-8 h-8 mr-4 flex items-center justify-center flex-shrink-0 mt-1">
-                            <Image
-                              src="/images/icons/cell.svg"
-                              alt="Cell Configuration"
-                              width={32}
-                              height={32}
-                              className="text-blue-400"
-                            />
+                   {/* Applications */}
+                    <div className="mt-8">
+                     <div className="flex items-center mb-4 mt-6">
+                       <FaIndustry className="text-gray-200 text-xl mr-3" />
+                       <h3 className="text-lg font-semibold text-white">Applications</h3>
                      </div>
-                          <div className="flex-1">
-                            <h4 
-                              className="mb-2"
-                              style={{
-                                color: 'rgba(255, 255, 255, 0.90)',
-                                textAlign: 'left',
-                                fontFamily: '"Instrument Sans"',
-                                fontSize: '16px',
-                                fontStyle: 'normal',
-                                fontWeight: 300,
-                                lineHeight: '150%'
-                              }}
-                            >
-                              Cell<br />Configuration
-                            </h4>
-                            <p 
-                              style={{
-                                color: 'rgba(255, 255, 255, 0.60)',
-                                textAlign: 'left',
-                                fontFamily: '"Instrument Sans"',
-                                fontSize: '18px',
-                                fontStyle: 'normal',
-                                fontWeight: 500,
-                                lineHeight: '150%'
-                              }}
-                            >
-                              Up to 28S
-                            </p>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-
-                  {/* Applications - Bottom Right */}
-                  <div className="absolute bottom-8 right-8 w-[60%]">
-                    <h3 
-                      className="mb-8 text-left"
-                      style={{
-                        color: '#FFF',
-                        textAlign: 'left',
-                        fontFamily: '"Bricolage Grotesque"',
-                        fontSize: '20px',
-                        fontStyle: 'normal',
-                        fontWeight: 500,
-                        lineHeight: '150%'
-                      }}
-                    >
-                      Applications
-                    </h3>
-                    <div className="flex">
-                      {/* Backup & UPS Systems */}
-                      <div className="flex-1 relative px-6">
-                        <div className="flex items-start mb-4">
-                          <div className="w-6 h-8 mr-4 flex items-center justify-center flex-shrink-0 mt-1">
+                      <div className="grid grid-cols-1 sm:grid-cols-3 gap-2">
+                        <div className="bg-[#262626] p-4 rounded-lg text-center h-[180px] flex flex-col justify-center border border-[#333]">
+                          <div className="w-12 h-10 mx-auto mb-3 -mt-1 flex items-center justify-center">
                             <Image
-                              src="/images/icons/backup.svg"
+                              src="/images/icons/4db28b5d-38ca-4b6f-bde7-428f5c59afb8-Photoroom.png"
                               alt="Backup & UPS Systems"
-                              width={24}
-                              height={32}
-                              className="text-blue-400"
+                              width={48}
+                              height={40}
+                              className="object-contain scale-90"
                             />
                           </div>
-                          <div className="flex-1">
-                            <h4 
-                              className="mb-2"
-                              style={{
-                                color: 'rgba(255, 255, 255, 0.90)',
-                                textAlign: 'left',
-                                fontFamily: '"Instrument Sans"',
-                                fontSize: '16px',
-                                fontStyle: 'normal',
-                                fontWeight: 300,
-                                lineHeight: '150%'
-                              }}
-                            >
-                              Backup & UPS<br />Systems
-                            </h4>
-                            <p 
-                              style={{
-                                color: 'rgba(255, 255, 255, 0.60)',
-                                textAlign: 'left',
-                                fontFamily: '"Instrument Sans"',
-                                fontSize: '18px',
-                                fontStyle: 'normal',
-                                fontWeight: 500,
-                                lineHeight: '150%'
-                              }}
-                            >
-                              Uninterrupted stable<br />energy support
-                            </p>
+                          <div className="flex flex-col justify-center mt-2">
+                            <h4 className="text-sm font-semibold text-white whitespace-nowrap">Backup & UPS Systems</h4>
+                        <p className="text-gray-300 text-sm">Uninterrupted, stable energy support</p>
                     </div>
                         </div>
-                        <div className="absolute right-0 top-0 bottom-0 w-px bg-gray-600"></div>
-                      </div>
-                      
-                      {/* Industrial Battery Packs */}
-                      <div className="flex-1 relative px-6">
-                        <div className="flex items-start mb-4">
-                          <div className="w-8 h-7 mr-4 flex items-center justify-center flex-shrink-0 mt-1">
+                        <div className="bg-[#262626] p-4 rounded-lg text-center h-[180px] flex flex-col justify-center border border-[#333]">
+                          <div className="w-12 h-10 mx-auto mb-3 mt-1 flex items-center justify-center">
                             <Image
-                              src="/images/icons/industry.svg"
+                              src="/images/icons/unnamed-Photoroom (4).png"
                               alt="Industrial Battery Packs"
-                              width={34}
-                              height={28}
-                              className="text-blue-400"
+                              width={48}
+                              height={40}
+                              className="object-contain scale-90"
                             />
                           </div>
-                          <div className="flex-1">
-                            <h4 
-                              className="mb-2"
-                              style={{
-                                color: 'rgba(255, 255, 255, 0.90)',
-                                textAlign: 'left',
-                                fontFamily: '"Instrument Sans"',
-                                fontSize: '16px',
-                                fontStyle: 'normal',
-                                fontWeight: 300,
-                                lineHeight: '150%'
-                              }}
-                            >
-                              Industrial Battery<br />Packs
-                            </h4>
-                            <p 
-                              style={{
-                                color: 'rgba(255, 255, 255, 0.60)',
-                                textAlign: 'left',
-                                fontFamily: '"Instrument Sans"',
-                                fontSize: '18px',
-                                fontStyle: 'normal',
-                                fontWeight: 500,
-                                lineHeight: '150%'
-                              }}
-                            >
-                              High-performance<br />power systems
-                            </p>
+                          <div className="flex flex-col justify-center">
+                            <h4 className="text-sm font-semibold text-white whitespace-nowrap">Industrial Battery Packs</h4>
+                        <p className="text-gray-300 text-sm">High-performance power systems</p>
                     </div>
                         </div>
-                        <div className="absolute right-0 top-0 bottom-0 w-px bg-gray-600"></div>
-                      </div>
-                      
-                      {/* Telecom Infrastructure */}
-                      <div className="flex-1 px-6">
-                        <div className="flex items-start mb-4">
-                          <div className="w-5 h-8 mr-4 flex items-center justify-center flex-shrink-0 mt-1">
+                        <div className="bg-[#262626] p-4 rounded-lg text-center h-[180px] flex flex-col justify-center border border-[#333]">
+                          <div className="w-12 h-10 mx-auto mb-3 mt-1 flex items-center justify-center">
                             <Image
-                              src="/images/icons/telecom.svg"
+                              src="/images/icons/unnamed-Photoroom (3).png"
                               alt="Telecom Infrastructure"
-                              width={22}
-                              height={32}
-                              className="text-blue-400"
+                              width={48}
+                              height={40}
+                              className="object-contain scale-90"
                             />
                           </div>
-                          <div className="flex-1">
-                            <h4 
-                              className="mb-2"
-                              style={{
-                                color: 'rgba(255, 255, 255, 0.90)',
-                                textAlign: 'left',
-                                fontFamily: '"Instrument Sans"',
-                                fontSize: '16px',
-                                fontStyle: 'normal',
-                                fontWeight: 300,
-                                lineHeight: '150%'
-                              }}
-                            >
-                              Telecom<br />Infrastructure
-                            </h4>
-                            <p 
-                              style={{
-                                color: 'rgba(255, 255, 255, 0.60)',
-                                textAlign: 'left',
-                                fontFamily: '"Instrument Sans"',
-                                fontSize: '18px',
-                                fontStyle: 'normal',
-                                fontWeight: 500,
-                                lineHeight: '150%'
-                              }}
-                            >
-                              Reliable backup for<br />towers
-                            </p>
+                          <div className="flex flex-col justify-center">
+                            <h4 className="text-sm font-semibold text-white whitespace-nowrap">Telecom Infrastructure</h4>
+                        <p className="text-gray-300 text-sm">Reliable backup for towers</p>
                           </div>
                     </div>
                     </div>
@@ -1161,7 +854,6 @@ export default function BharatBMSESSPage() {
                   </div>
                       </div>
             </AnimatedDiv>
-
 
         {/* Download Section */}
         <div className="py-8 px-4 md:px-6">
