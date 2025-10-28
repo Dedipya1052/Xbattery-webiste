@@ -758,7 +758,7 @@ export default function BharatBMSESSPage() {
                     />
                     </div>
                     <p className="text-gray-300 mt-4 text-center">
-                    BharatBMS-ESS-110V is an BMS for large-scale energy storage and grid applications supporting up to 42S configurations.
+                    BharatBMS-ESS-110V is a BMS designed for Backup & UPS systems, industrial battery packs, and renewable energy storage, it ensures stable and efficient power management..
                     </p>
                 </div>
               </div>
