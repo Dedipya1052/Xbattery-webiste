@@ -334,7 +334,7 @@ export default function BharatBMSEVPage() {
 
   const data = {
     title: "Xbattery BharatBMS-EV",
-    description: "Xbattery BharatBMS-EV is a BMS designed for electric cars, trucks, and buses. It supports up to 250S LFP and NMC cells and enables cell monitoring, active balancing, and multi-level protection for reliable vehicle operation.",
+    description: "Xbattery BharatBMS-EV is a BMS designed for electric cars, trucks, and buses. It supports up to 186S LFP and NMC cells and enables cell monitoring, active balancing, and multi-level protection for reliable vehicle operation.",
     imageAlt: "LV-BMS Image",
     image: "/images/bms_offerings/ev-500v.png",
   };
@@ -465,12 +465,12 @@ export default function BharatBMSEVPage() {
           </AnimatedDiv>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-10 max-w-[1000px] mx-auto">
             {[
-              { title: "Safety Features", description: "ISO 26262 compliant protection for voltage, current, and temperature with fault diagnostics." },
-              { title: "Cell Monitoring & Balancing", description: "Supports up to 18 series cells with passive balancing for equalization. Voltage accuracy: ±2mV." },
+              { title: "Safety Features", description: "Built-in protection against over-voltage, under-voltage, over-current, short-circuit, and ground faults." },
+              { title: "Cell Monitoring & Balancing", description: "Supports up to 186 series cells with passive balancing for equalization. Voltage accuracy: ±2mV." },
               { title: "Diagnostics and Monitoring", description: "Real-time data visualization and lifecycle analytics for better battery management." },
               { title: "Thermal Management", description: "Real-time temperature sensing and thermal runaway detection for high-temperature control." },
-              { title: "Scalability", description: "Modular architecture supports series and parallel setups for larger energy storage needs." },
-              { title: "Communication & Control", description: "CAN FD, UART, SPI, and Ethernet for real-time processing and remote monitoring." },
+              { title: "Scalability", description: "Modular architecture supports series and parallel setups for EV needs." },
+              { title: "Communication & Control", description: "CAN 2.0B, CAN FD, RS-485, ETPL, UART, and optional Ethernet for seamless integration and real-time diagnostics." },
             ].map((feature, index) => (
               <AnimatedDiv key={index}>
                 <div className="bg-[#0E0E10] border border-[#2E31F81A] rounded-3xl h-[350px] flex flex-col shadow-lg relative overflow-hidden">
@@ -612,7 +612,7 @@ export default function BharatBMSEVPage() {
                     />
                     </div>
                     <p className="text-gray-300 mt-3 md:mt-4 text-center text-sm md:text-base leading-relaxed px-2">
-                      BharatBMS-EV-110V is Optimized for e-rickshaws, autos, and tempos with up to 80S configurations and automotive-grade safety compliance.
+                    BharatBMS-EV-110V is optimized for e-rickshaws and tempos, featuring up to 36S configurations and automotive-grade safety compliance.
                     </p>
                 </div>
               </div>
@@ -730,7 +730,7 @@ export default function BharatBMSEVPage() {
                     />
                     </div>
                     <p className="text-gray-300 mt-3 md:mt-4 text-center text-sm md:text-base leading-relaxed px-2">
-                      BharatBMS-EV-400V is Designed for passenger cars with up to 120S configurations and advanced CAN FD communication protocols.
+                    BharatBMS-EV-400V is optimized for passenger cars, featuring up to 125S configurations and automotive-grade safety compliance.
                     </p>
                 </div>
               </div>
@@ -848,7 +848,7 @@ export default function BharatBMSEVPage() {
                     />
                     </div>
                     <p className="text-gray-300 mt-4 text-center">
-                      BharatBMS-EV-600V is Built for buses and heavy commercial vehicles supporting up to 180S configurations with robust current handling.
+                    BharatBMS-EV-600V is optimized for buses and heavy commercial vehicles, supporting up to 186S configurations with automotive-grade safety compliance.
                     </p>
                 </div>
               </div>

@@ -1568,7 +1568,7 @@ const Example = ({ media, recentBlogs }) => {
 
                             <div className="w-16 h-[3px] bg-[#00e5ff] rounded-full mb-4"></div>
 
-                            <p className="text-sm text-[#cfe3ea] mb-4 leading-relaxed break-words hyphens-auto w-full">Xbattery BharatBMS-ESS-48V delivers efficient <br /> management for modular energy storage systems, supporting LFP and NMC chemistries upto 16S configurations.</p>
+                            <p className="text-sm text-[#cfe3ea] mb-4 leading-relaxed break-words hyphens-auto w-full">Xbattery BharatBMS-ESS-48V delivers efficient <br /> management for modular energy storage systems, supporting upto 16S configurations.</p>
 
                             <div className="mt-auto">
 
@@ -1640,7 +1640,7 @@ const Example = ({ media, recentBlogs }) => {
 
                         <div className="w-16 h-[3px] bg-[#00e5ff] rounded-full mb-4"></div>
 
-                        <p className="text-sm text-[#cfe3ea] mb-4">Xbattery BharatBMS-ESS-72V is engineered for industrial and medium-scale energy storage systems, supporting LFP and NMC chemistries upto 28S configurations.</p>
+                        <p className="text-sm text-[#cfe3ea] mb-4">Xbattery BharatBMS-ESS-72V is engineered for industrial and medium-scale energy storage systems, supporting upto 28S configurations.</p>
 
                         <div className="mt-auto">
 
@@ -1710,7 +1710,7 @@ const Example = ({ media, recentBlogs }) => {
 
                             <div className="w-16 h-[3px] bg-[#00e5ff] rounded-full mb-4"></div>
 
-                            <p className="text-sm text-[#cfe3ea] mb-4">Xbattery BharatBMS-ESS-110V is engineered for large-scale energy storage and grid applications, supporting up to 42S configurations.</p>
+                            <p className="text-sm text-[#cfe3ea] mb-4">Xbattery BharatBMS-ESS-110V is engineered for large-scale energy storage applications, supporting up to 42S configurations.</p>
 
                             <div className="mt-auto">
 
@@ -1778,12 +1778,12 @@ const Example = ({ media, recentBlogs }) => {
                               <span>Xbattery BharatBMS-EV-110V</span>
                             </h4>
                             <div className="w-16 h-[3px] bg-[#00e5ff] rounded-full mb-4"></div>
-                            <p className="text-sm text-[#cfe3ea] mb-4">BharatBMS-EV-110V is Optimized for e-rickshaws, autos, and tempos with up to 80S configurations and automotive-grade safety compliance.</p>
+                            <p className="text-sm text-[#cfe3ea] mb-4">BharatBMS-EV-110V is engineered for e-rickshaws and tempos with up to 36S configurations and supports automotive-grade safety compliance.</p>
                             <div className="mt-auto">
                               <div className="text-sm text-[#64efff] tracking-wide mb-2">KEY FEATURES</div>
                               <ul className="text-sm text-[#cfe3ea] list-disc pl-4 space-y-1 marker:text-[#00e5ff]">
                                 <li>Supported Cell Chemistry: <span className="font-semibold">LFP/NMC</span></li>
-                                <li>Cell Count Range: 32S to 60S</li>
+                                <li>Cell Count Range: Up to 32S</li>
                                 <li>Nominal Pack Voltage: 110V</li>
                               </ul>
                               <div className="mt-3 flex justify-end">
@@ -1809,12 +1809,12 @@ const Example = ({ media, recentBlogs }) => {
                               <span>Xbattery BharatBMS-EV-400V</span>
                             </h4>
                             <div className="w-16 h-[3px] bg-[#00e5ff] rounded-full mb-4"></div>
-                            <p className="text-sm text-[#cfe3ea] mb-4">BharatBMS-EV-400V is Designed for passenger cars with up to 120S configurations and advanced CAN FD communication protocols.</p>
+                            <p className="text-sm text-[#cfe3ea] mb-4">BharatBMS-EV-400V is engineered for passenger cars, SUVs, light commercial vehicles, and fleet EV battery systems with up to 125S configurations.</p>
                             <div className="mt-auto">
                               <div className="text-sm text-[#64efff] tracking-wide mb-2">KEY FEATURES</div>
                               <ul className="text-sm text-[#cfe3ea] list-disc pl-4 space-y-1 marker:text-[#00e5ff]">
                                 <li>Supported Cell Chemistry: <span className="font-semibold">LFP/NMC</span></li>
-                                <li>Cell Count Range: 100S to 125S</li>
+                                <li>Cell Count Range: Up to 125S</li>
                                 <li>Nominal Pack Voltage: 400V</li>
                               </ul>
                               <div className="mt-3 flex justify-end">
@@ -1840,13 +1840,13 @@ const Example = ({ media, recentBlogs }) => {
                               <span>Xbattery BharatBMS-EV-600V</span>
                             </h4>
                             <div className="w-16 h-[3px] bg-[#00e5ff] rounded-full mb-4"></div>
-                            <p className="text-sm text-[#cfe3ea] mb-4">BharatBMS-EV-600V is built for buses and heavy commercial vehicles supporting up to 180S configurations with robust current handling.</p>
+                            <p className="text-sm text-[#cfe3ea] mb-4">BharatBMS-EV-600V is engineered for buses and heavy commercial vehicles, supporting up to 186S configurations with robust current handling.</p>
                             <div className="mt-auto">
                               <div className="text-sm text-[#64efff] tracking-wide mb-2">KEY FEATURES</div>
                               <ul className="text-sm text-[#cfe3ea] list-disc pl-4 space-y-1 marker:text-[#00e5ff]">
                                 <li>Supported Cell Chemistry: <span className="font-semibold">LFP/NMC</span></li>
-                                <li>Cell Count Range: 125S to 156S</li>
-                                <li>Nominal Pack Voltage: 500V</li>
+                                <li>Cell Count Range: Up to 186S</li>
+                                <li>Nominal Pack Voltage: 600V</li>
                               </ul>
                               <div className="mt-3 flex justify-end">
                                 <svg width="36" height="36" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="text-white transition-transform duration-700 ease-out group-hover:text-[#00e5ff] group-hover:translate-x-2">

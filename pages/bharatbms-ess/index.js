@@ -335,7 +335,7 @@ export default function BharatBMSESSPage() {
 
   const data = {
     title: "Xbattery BharatBMS-ESS",
-    description: "Xbattery BharatBMS-ESS is engineered and developed for Energy Storage Systems. It supports up to 42S LFP and NMC packs and enables cell monitoring, active balancing, fault detection, and protection functions for scalable battery operation.",
+    description: "Xbattery BharatBMS–ESS is a modular BMS for UPS, telecom, industrial energy storage. It supports 48V–110V LFP and NMC configurations with cell monitoring, balancing, protection, and system integration capabilities.",
     imageAlt: "EV-BMS Image",
     image: "/images/telecom_good_looking-Photoroom.png",
   };
@@ -421,9 +421,9 @@ export default function BharatBMSESSPage() {
             </div>
           </CustomTooltip>
         </div>
-        <div className="mx-auto w-full max-w-7xl py-8 md:py-16 px-3 md:px-6 flex flex-col lg:flex-row items-center justify-center h-full min-h-[460px]">
+        <div className="mx-auto w-full max-w-7xl py-7 md:py-14 px-3 md:px-6 flex flex-col lg:flex-row items-center justify-center h-full min-h-[420px]">
           <div className="text-center lg:text-left p-2 md:p-4 mb-6 lg:mb-0 w-full lg:w-1/2">
-            <h1 className={`text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-6 ${classes.color} leading-[35px] sm:leading-[40px] md:leading-[50px] lg:leading-[60px] whitespace-nowrap`}>
+            <h1 className={`text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-5 ${classes.color} leading-[35px] sm:leading-[40px] md:leading-[50px] lg:leading-[60px] whitespace-nowrap`}>
               {data.title}
             </h1>
             <h2 className="text-sm sm:text-base md:text-xl leading-relaxed max-w-xl mx-auto lg:mx-0 text-[#e9e9e9] px-1">
@@ -431,7 +431,7 @@ export default function BharatBMSESSPage() {
             </h2>
           </div>
           <div className="w-full lg:w-1/2 flex justify-center">
-            <div className="w-full max-w-lg rounded-lg bg-[#1c1c1c] h-[320px] md:h-[440px] overflow-hidden flex items-center justify-center">
+            <div className="w-full max-w-lg rounded-lg bg-[#1c1c1c] h-[300px] md:h-[420px] overflow-hidden flex items-center justify-center">
               <Image 
                 src={data.image} 
                 alt={data.imageAlt} 
@@ -456,7 +456,7 @@ export default function BharatBMSESSPage() {
             </h2>
             <div className="max-w-[1000px] mx-auto mb-12">
               <p className="text-sm sm:text-base md:text-lg leading-relaxed text-center text-gray-300">
-                {data.title} is engineered on the BharatBMS architecture: a universal high-voltage Battery Management System that scales from home energy storage to industrial and EV applications, emphasizing reliability, safety, and ease of integration.
+                Xbattery BharatBMS-ESS is a modular BMS platform for home, commercial, and industrial energy storage, supporting scalable configurations, LFP and NMC chemistries, with integrated monitoring, balancing, protection, and control.
               </p>
             </div>
           </AnimatedDiv>
@@ -469,7 +469,7 @@ export default function BharatBMSESSPage() {
               },
               { 
                 title: "Cell Monitoring & Balancing", 
-                description: "Supports up to 18 series cells with passive balancing for equalization. Voltage accuracy: ±2mV.",
+                description: "Supports up to 42S cells with ±2 mV precision and passive balancing.",
                 icon: FaBatteryFull
               },
               { 
@@ -479,17 +479,17 @@ export default function BharatBMSESSPage() {
               },
               { 
                 title: "Thermal Management", 
-                description: "Real-time temperature sensing and thermal runaway detection for high-temperature control.",
+                description: "Real-time temperature sensing and thermal runaway detection for efficient heat control.",
                 icon: FaThermometerHalf
               },
               { 
                 title: "Scalability", 
-                description: "Modular architecture supports series and parallel setups for larger energy storage needs.",
+                description: "Modular design allows flexible series and parallel configurations.",
                 icon: FaServer
               },
               { 
                 title: "Communication & Control", 
-                description: "CAN FD, UART, SPI, and Ethernet for real-time processing and remote monitoring.",
+                description: "CAN FD, UART, SPI, and Ethernet for real-time data and remote monitoring.",
                 icon: FaWifi
               }
             ].map((feature, index) => (
@@ -620,7 +620,7 @@ export default function BharatBMSESSPage() {
                 {/* Left - Product Image */}
                 <div className="flex justify-center">
                   <div className="w-full max-w-lg text-center">
-                     <div className="bg-[#1c1c1c] overflow-hidden h-[320px] md:h-[380px] flex items-center justify-center">
+                     <div className="bg-[#1c1c1c] overflow-hidden h-[320px] md:h-[380px] flex items-center justify-center mb-2">
                     <Image
                       src={productImages[0]}
                       alt="ESS 48V BMS Product"
@@ -629,8 +629,8 @@ export default function BharatBMSESSPage() {
                           className="w-full h-full object-contain hover:scale-128 transition-transform duration-300 ease-in-out"
                     />
                     </div>
-                    <p className="text-gray-300 mt-4 text-center">
-                    BharatBMS-ESS-48V is a versatile 48V BMS designed for modular energy storage systems with support for both LFP and NMC chemistries across 13-17 series configurations.
+                    <p className="text-gray-300 mt-1 text-center">
+                      Xbattery BharatBMS-ESS-48V is a BMS for UPS, telecom, and small ESS applications. It supports up to 16S LFP and NMC cells with voltage monitoring, balancing, and protection.
                     </p>
                 </div>
               </div>
@@ -748,7 +748,7 @@ export default function BharatBMSESSPage() {
                     />
                     </div>
                     <p className="text-gray-300 mt-4 text-center">
-                    BharatBMS-ESS-72V is high-efficiency BMS for industrial and medium-scale energy storage systems supporting up to 28S configurations.
+                    Xbattery BharatBMS-ESS-72V is a BMS for industrial and medium-scale ESS applications. It supports up to 28S LFP and NMC cells with voltage monitoring, balancing, and protection.
                     </p>
                 </div>
               </div>
@@ -866,7 +866,7 @@ export default function BharatBMSESSPage() {
                     />
                     </div>
                     <p className="text-gray-300 mt-4 text-center">
-                    BharatBMS-ESS-110V is a BMS designed for Backup & UPS systems, industrial battery packs, and renewable energy storage, it ensures stable and efficient power management..
+                    Xbattery BharatBMS-ESS-110V is a BMS for large-scale and grid-connected ESS applications. It supports up to 42S LFP and NMC cells with voltage monitoring, balancing, and protection.
                     </p>
                 </div>
               </div>

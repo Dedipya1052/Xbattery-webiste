@@ -172,7 +172,7 @@ const BharatBMS = () => {
             <AnimatedDiv>
               <div className="w-[95%] lg:w-[80%] mx-auto text-center md:text-center mb-16">
                 <p className="text-lg md:text-xl leading-relaxed mb-2">
-                Xbattery BharatBMS-ESS is engineered on the BharatBMS architecture: a universal high-voltage Battery Management System that scales from home energy storage to industrial and EV applications, emphasizing reliability, safety, and ease of integration.
+                BharatBMS is India's first universal high-voltage Battery Management System (BMS architecture) up to 800 volts for EVs and energy storage that scales effortlessly from home applications to industrial installations and EVs. It's as effective in a 5kWh home backup system as it is in megawatt-scale battery packs.
                 </p>
               </div>
             </AnimatedDiv>
@@ -378,7 +378,7 @@ const BharatBMS = () => {
                           <span>Xbattery BharatBMS-ESS-48V</span>
                         </h4>
                         <div className="w-12 md:w-16 h-[2px] md:h-[3px] bg-[#00e5ff] rounded-full mb-3 md:mb-4"></div>
-                        <p className="text-xs md:text-sm text-[#cfe3ea] mb-3 md:mb-4 leading-relaxed">Xbattery BharatBMS-ESS-48V delivers efficient <br />management for modular energy storage systems, supporting LFP and NMC chemistries upto 16S configurations.</p>
+                        <p className="text-xs md:text-sm text-[#cfe3ea] mb-3 md:mb-4 leading-relaxed">Xbattery BharatBMS-ESS-48V delivers efficient <br />management for modular energy storage systems, supporting upto 16S configurations.</p>
                         <div className="mt-auto">
                           <div className="text-xs md:text-sm text-[#64efff] tracking-wide mb-2">KEY FEATURES</div>
                           <ul className="text-xs md:text-sm text-[#cfe3ea] list-disc pl-3 md:pl-4 space-y-1 marker:text-[#00e5ff]">
@@ -411,7 +411,7 @@ const BharatBMS = () => {
                           <span>Xbattery BharatBMS-ESS-72V</span>
                         </h4>
                         <div className="w-12 md:w-16 h-[2px] md:h-[3px] bg-[#00e5ff] rounded-full mb-3 md:mb-4"></div>
-                        <p className="text-xs md:text-sm text-[#cfe3ea] mb-3 md:mb-4 leading-relaxed">Xbattery BharatBMS-ESS-72V is engineered for industrial and medium-scale energy storage systems, supporting LFP and NMC chemistries upto 28S configurations.</p>
+                        <p className="text-xs md:text-sm text-[#cfe3ea] mb-3 md:mb-4 leading-relaxed">Xbattery BharatBMS-ESS-72V is engineered for industrial and medium-scale energy storage systems, supporting upto 28S configurations.</p>
                         <div className="mt-auto">
                           <div className="text-xs md:text-sm text-[#64efff] tracking-wide mb-2">KEY FEATURES</div>
                           <ul className="text-xs md:text-sm text-[#cfe3ea] list-disc pl-3 md:pl-4 space-y-1 marker:text-[#00e5ff]">
@@ -544,7 +544,7 @@ const BharatBMS = () => {
                            <span>Xbattery BharatBMS-EV-600V</span>
                          </h4>
                          <div className="w-12 md:w-16 h-[2px] md:h-[3px] bg-[#00e5ff] rounded-full mb-3 md:mb-4"></div>
-                         <p className="text-xs md:text-sm text-[#cfe3ea] mb-3 md:mb-4 leading-relaxed">BharatBMS-EV-600V is Built for buses and heavy commercial vehicles supporting up to 180S configurations with robust current handling.</p>
+                         <p className="text-xs md:text-sm text-[#cfe3ea] mb-3 md:mb-4 leading-relaxed">BharatBMS-EV-600V is engineered for buses and heavy commercial vehicles, supporting up to 186S configurations with robust current handling.</p>
                          <div className="mt-auto">
                            <div className="text-xs md:text-sm text-[#64efff] tracking-wide mb-2">KEY FEATURES</div>
                            <ul className="text-xs md:text-sm text-[#cfe3ea] list-disc pl-3 md:pl-4 space-y-1 marker:text-[#00e5ff]">
