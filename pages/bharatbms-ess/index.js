@@ -31,6 +31,29 @@ export default function BharatBMSESSPage() {
   const ess110vSectionRef = useRef(null);
   const ess110vScrollableRef = useRef(null);
 
+  // Handle scrolling to specific section from menu navigation
+  useEffect(() => {
+    const scrollToSection = sessionStorage.getItem('scrollToSection');
+    if (scrollToSection) {
+      sessionStorage.removeItem('scrollToSection');
+      
+      // Wait for page to fully load before scrolling
+      setTimeout(() => {
+        const element = document.getElementById(scrollToSection);
+        if (element) {
+          const headerOffset = 80;
+          const elementPosition = element.getBoundingClientRect().top;
+          const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+          
+          window.scrollTo({
+            top: offsetPosition,
+            behavior: 'smooth'
+          });
+        }
+      }, 500);
+    }
+  }, []);
+
   // Product images (first image only)
   const productImages = [
     "/images/telecom_good_looking-Photoroom.png",

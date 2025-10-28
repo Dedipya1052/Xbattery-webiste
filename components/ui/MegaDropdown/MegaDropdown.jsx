@@ -10,6 +10,21 @@ const MegaDropdown = ({ isOpen, onClose, onMouseEnter, onMouseLeave, pageType = 
 
   console.log('MegaDropdown received isOpen:', isOpen);
 
+  // Function to scroll to a specific section
+  const scrollToSection = (sectionId) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      const headerOffset = 80;
+      const elementPosition = element.getBoundingClientRect().top;
+      const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+      
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth'
+      });
+    }
+  };
+
   // Close dropdown when clicking outside
   useEffect(() => {
     const handleClickOutside = (event) => {
@@ -160,19 +175,54 @@ const MegaDropdown = ({ isOpen, onClose, onMouseEnter, onMouseLeave, pageType = 
                 className="rounded-lg p-4 cursor-pointer hover:bg-gray-600/20 transition-colors duration-200" 
                 style={{ backgroundColor: '#3A3A3C' }}
                 onClick={() => {
+                  // Check if we're already on the target page
+                  const currentPath = window.location.pathname;
+                  
                   // Navigate to specific section based on product
                   if (section.name === "Xbattery BharatBMS-ESS-48V") {
-                    window.location.href = "/bharatbms-ess#ess-48v-white";
+                    if (currentPath === "/bharatbms-ess") {
+                      // Already on ESS page, just scroll to section
+                      scrollToSection('ess-48v-white');
+                    } else {
+                      // Different page, navigate and scroll
+                      sessionStorage.setItem('scrollToSection', 'ess-48v-white');
+                      window.location.href = "/bharatbms-ess";
+                    }
                   } else if (section.name === "Xbattery BharatBMS-ESS-72V") {
-                    window.location.href = "/bharatbms-ess#ess-72v-white";
+                    if (currentPath === "/bharatbms-ess") {
+                      scrollToSection('ess-72v-white');
+                    } else {
+                      sessionStorage.setItem('scrollToSection', 'ess-72v-white');
+                      window.location.href = "/bharatbms-ess";
+                    }
                   } else if (section.name === "Xbattery BharatBMS-ESS-110V") {
-                    window.location.href = "/bharatbms-ess#ess-110v-white";
+                    if (currentPath === "/bharatbms-ess") {
+                      scrollToSection('ess-110v-white');
+                    } else {
+                      sessionStorage.setItem('scrollToSection', 'ess-110v-white');
+                      window.location.href = "/bharatbms-ess";
+                    }
                   } else if (section.name === "Xbattery BharatBMS-EV-110V") {
-                    window.location.href = "/bharatbms-ev#ev-110v-white";
+                    if (currentPath === "/bharatbms-ev") {
+                      scrollToSection('ev-110v-white');
+                    } else {
+                      sessionStorage.setItem('scrollToSection', 'ev-110v-white');
+                      window.location.href = "/bharatbms-ev";
+                    }
                   } else if (section.name === "Xbattery BharatBMS-EV-400V") {
-                    window.location.href = "/bharatbms-ev#ev-400v-white";
+                    if (currentPath === "/bharatbms-ev") {
+                      scrollToSection('ev-400v-white');
+                    } else {
+                      sessionStorage.setItem('scrollToSection', 'ev-400v-white');
+                      window.location.href = "/bharatbms-ev";
+                    }
                   } else if (section.name === "Xbattery BharatBMS-EV-600V") {
-                    window.location.href = "/bharatbms-ev#ev-600v-white";
+                    if (currentPath === "/bharatbms-ev") {
+                      scrollToSection('ev-600v-white');
+                    } else {
+                      sessionStorage.setItem('scrollToSection', 'ev-600v-white');
+                      window.location.href = "/bharatbms-ev";
+                    }
                   }
                 }}
               >
