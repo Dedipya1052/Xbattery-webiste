@@ -944,7 +944,7 @@ const Example = ({ media, recentBlogs }) => {
 
         // Handle success
 
-        setMessage("Thank you for registering!");
+        setMessage("Thank you for your pre-order!");
 
       } else {
 
