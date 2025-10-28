@@ -335,7 +335,7 @@ export default function BharatBMSESSPage() {
 
   const data = {
     title: "Xbattery BharatBMS-ESS",
-    description: "The BharatBMS-ESS redefines energy management with intelligent performance, robust safety, and scalable design. Engineered for next-generation ESS solutions, it supports up to 42S LFP and NMC battery packs, ensuring precise monitoring, intelligent cell balancing, and multi-level protection, all in a compact, space-efficient form.",
+    description: "Xbattery BharatBMS-ESS is engineered and developed for Energy Storage Systems. It supports up to 42S LFP and NMC packs and enables cell monitoring, active balancing, fault detection, and protection functions for scalable battery operation.",
     imageAlt: "EV-BMS Image",
     image: "/images/telecom_good_looking-Photoroom.png",
   };
@@ -648,21 +648,21 @@ export default function BharatBMSESSPage() {
                           <FaCubes className="text-gray-200 text-2xl mx-auto mb-3" />
                           <div className="flex flex-col justify-center">
                             <h4 className="text-sm font-semibold text-white whitespace-nowrap">Cell Configuration</h4>
-                          <p className="text-gray-300 text-sm">Up to 28S</p>
+                          <p className="text-gray-300 text-sm">Up to 16S</p>
                             </div>
                           </div>
                         <div className="bg-[#262626] p-4 rounded-lg text-center flex flex-col justify-center border border-[#333] h-[180px]">
                           <FaBolt className="text-gray-200 text-2xl mx-auto mb-3 mt-2" />
                           <div className="flex flex-col justify-center items-center">
                             <h4 className="text-sm font-semibold text-white text-center">Nominal Pack<br />Voltage Range</h4>
-                            <p className="text-gray-300 text-sm text-center">48.0V</p>
+                            <p className="text-gray-300 text-sm text-center">51.2V</p>
                         </div>
                             </div>
                         <div className="bg-[#262626] p-4 rounded-lg text-center flex flex-col justify-center border border-[#333] h-[180px]">
                           <FaBatteryFull className="text-gray-200 text-2xl mx-auto mb-3" />
                           <div className="flex flex-col justify-center">
                             <h4 className="text-sm font-semibold text-white whitespace-nowrap">Battery Capacity Range</h4>
-                          <p className="text-gray-300 text-sm">25kWh</p>
+                          <p className="text-gray-300 text-sm">5kWh</p>
                         </div>
                       </div>
                     </div>

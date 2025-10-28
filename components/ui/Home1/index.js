@@ -1582,11 +1582,11 @@ const Example = ({ media, recentBlogs }) => {
 
                             </li>
 
-                            <li>Cell Count Range: Up to 28S</li>
+                            <li>Cell Count Range: Up to 16S</li>
 
                            
                            
-                            <li>Nominal Pack Voltage: 48V</li>
+                            <li>Nominal Pack Voltage: 51.2V</li>
 
 
 

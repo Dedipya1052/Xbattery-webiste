@@ -53,13 +53,13 @@ const MegaDropdown = ({ isOpen, onClose, onMouseEnter, onMouseLeave, pageType = 
 
   // Content data for different categories
   const essContent = {
-    title: "BharatBMS for Energy Storage",
+    title: "BharatBMS for ESS",
     sections: [
       {
         name: "Xbattery BharatBMS-ESS-48V",
         products: [
           { 
-            name: "Smart BMS for UPS, telecom, and small ESS applications, supports up to 28S for compact and reliable energy storage"
+            name: " For UPS, telecom, and small ESS applications."
           }
         ]
       },
@@ -67,7 +67,7 @@ const MegaDropdown = ({ isOpen, onClose, onMouseEnter, onMouseLeave, pageType = 
         name: "Xbattery BharatBMS-ESS-72V", 
         products: [
           { 
-            name: "High-efficiency BMS for industrial and medium-scale ESS, supports up to 28S for safe and efficient power management."
+            name: " For industrial and medium-scale ESS applications."
           }
         ]
       },
@@ -75,7 +75,7 @@ const MegaDropdown = ({ isOpen, onClose, onMouseEnter, onMouseLeave, pageType = 
         name: "Xbattery BharatBMS-ESS-110V",
         products: [
           { 
-            name: "BMS for large ESS and grid storage, supports up to 42S for high voltage, high-performance energy systems"
+            name: " For large ESS and grid storage applications."
           }
         ]
       }
@@ -89,7 +89,7 @@ const MegaDropdown = ({ isOpen, onClose, onMouseEnter, onMouseLeave, pageType = 
         name: "Xbattery BharatBMS-EV-110V",
         products: [
           { 
-            name: "Optimized for e-rickshaws, autos, and tempos. Supports up to 60S configurations, ensuring efficient, safe, and reliable performance for 3-wheel electric vehicles"
+            name: "For e-rickshaws, autos, and tempos"
           }
         ]
       },
@@ -97,7 +97,7 @@ const MegaDropdown = ({ isOpen, onClose, onMouseEnter, onMouseLeave, pageType = 
         name: "Xbattery BharatBMS-EV-400V", 
         products: [
           { 
-            name: "Designed for passenger cars, hatchbacks, and sedans. Supports up to 125S, delivering advanced power management and enhanced safety for smooth EV operation"
+            name: "For passenger cars, hatchbacks, and sedans"
           }
         ]
       },
@@ -105,7 +105,7 @@ const MegaDropdown = ({ isOpen, onClose, onMouseEnter, onMouseLeave, pageType = 
         name: "Xbattery BharatBMS-EV-600V",
         products: [
           { 
-            name: "Built for SUVs and light commercial vehicles. Supports up to 186S, providing high-performance control, protection, and durability for demanding applications"
+            name: "For SUVs, buses, trucks, and commercial vehicles"
           }
         ]
       }
@@ -150,7 +150,7 @@ const MegaDropdown = ({ isOpen, onClose, onMouseEnter, onMouseLeave, pageType = 
               }}
               onMouseEnter={() => setActiveCategory('ess')}
             >
-              BharatBMS for Energy Storage
+              BharatBMS for ESS
             </div>
             <div 
               className={`text-white font-medium text-base py-2 px-3 rounded cursor-pointer transition-colors ${
@@ -168,11 +168,11 @@ const MegaDropdown = ({ isOpen, onClose, onMouseEnter, onMouseLeave, pageType = 
 
         {/* Right Column - Product Details */}
         <div className="w-2/3 p-4" style={{ backgroundColor: '#2C2C2E' }}>
-          <div className="space-y-4">
+          <div className="space-y-3">
             {getCurrentContent().sections.map((section, sectionIndex) => (
               <div 
                 key={sectionIndex} 
-                className="rounded-lg p-4 cursor-pointer hover:bg-gray-600/20 transition-colors duration-200" 
+                className="rounded-lg p-3 cursor-pointer hover:bg-gray-600/20 transition-colors duration-200" 
                 style={{ backgroundColor: '#3A3A3C' }}
                 onClick={() => {
                   // Check if we're already on the target page
@@ -226,7 +226,7 @@ const MegaDropdown = ({ isOpen, onClose, onMouseEnter, onMouseLeave, pageType = 
                   }
                 }}
               >
-                <div className="flex items-center mb-3">
+                <div className="flex items-center mb-2">
                   <div className="w-6 h-6 flex items-center justify-center mr-3">
                     <div className="w-6 h-6 rounded-full border border-cyan-400 flex items-center justify-center">
                       <svg className="w-3 h-3" fill="url(#lightningGradient)" viewBox="0 0 20 20">
@@ -243,10 +243,10 @@ const MegaDropdown = ({ isOpen, onClose, onMouseEnter, onMouseLeave, pageType = 
                   <h3 className="text-white font-bold text-base">{section.name}</h3>
                 </div>
                 <div className="ml-9">
-                  <div className="space-y-3">
+                  <div className="space-y-2">
                     {section.products.map((product, productIndex) => (
-                      <div key={productIndex} className="mb-4">
-                        <p className="text-gray-300 text-sm leading-relaxed text-left tracking-normal">{product.name}</p>
+                      <div key={productIndex} className="mb-2">
+                        <p className="text-gray-300 text-sm leading-snug text-left tracking-normal">{product.name}</p>
                       </div>
                     ))}
                   </div>

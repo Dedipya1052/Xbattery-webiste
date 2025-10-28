@@ -385,8 +385,8 @@ const BharatBMS = () => {
                             <li className="leading-relaxed">
                               Supported Cell Chemistry: <span className="font-semibold">LFP/NMC</span>
                             </li>
-                            <li className="leading-relaxed">Cell Count Range: Up to 28S</li>
-                            <li className="leading-relaxed">Nominal Pack Voltage: 48V</li>
+                            <li className="leading-relaxed">Cell Count Range: Up to 16S</li>
+                            <li className="leading-relaxed">Nominal Pack Voltage: 51.2V</li>
                           </ul>
                           <div className="mt-3 flex justify-end">
                             <svg width="36" height="36" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="text-white transition-transform duration-700 ease-out group-hover:text-[#00e5ff] group-hover:translate-x-2">
