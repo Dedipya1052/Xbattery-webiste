@@ -1568,7 +1568,7 @@ const Example = ({ media, recentBlogs }) => {
 
                             <div className="w-16 h-[3px] bg-[#00e5ff] rounded-full mb-4"></div>
 
-                            <p className="text-sm text-[#cfe3ea] mb-4 leading-relaxed break-words hyphens-auto w-full">BharatBMS-ESS-48V is a versatile 48V BMS<br />designed for modular energy storage systems with support for both LFP and NMC chemistries across 13-17 series configurations.</p>
+                            <p className="text-sm text-[#cfe3ea] mb-4 leading-relaxed break-words hyphens-auto w-full">Xbattery BharatBMS-ESS-48V delivers efficient <br /> management for modular energy storage systems, supporting LFP and NMC chemistries upto 16S configurations.</p>
 
                             <div className="mt-auto">
 
@@ -1640,7 +1640,7 @@ const Example = ({ media, recentBlogs }) => {
 
                         <div className="w-16 h-[3px] bg-[#00e5ff] rounded-full mb-4"></div>
 
-                        <p className="text-sm text-[#cfe3ea] mb-4">BharatBMS-ESS-72V is high-efficiency BMS for industrial and medium-scale energy storage systems supporting up to 28S configurations.</p>
+                        <p className="text-sm text-[#cfe3ea] mb-4">Xbattery BharatBMS-ESS-72V is engineered for industrial and medium-scale energy storage systems, supporting LFP and NMC chemistries upto 28S configurations.</p>
 
                         <div className="mt-auto">
 
@@ -1710,7 +1710,7 @@ const Example = ({ media, recentBlogs }) => {
 
                             <div className="w-16 h-[3px] bg-[#00e5ff] rounded-full mb-4"></div>
 
-                            <p className="text-sm text-[#cfe3ea] mb-4">BharatBMS-ESS-110V is a BMS for large-scale energy storage and grid applications supporting up to 42S configurations.</p>
+                            <p className="text-sm text-[#cfe3ea] mb-4">Xbattery BharatBMS-ESS-110V is engineered for large-scale energy storage and grid applications, supporting up to 42S configurations.</p>
 
                             <div className="mt-auto">
 
@@ -1965,15 +1965,15 @@ const Example = ({ media, recentBlogs }) => {
 
                   <div className=" pt-8 flex gap-7 pl-2">
 
-                     <Button
+                    <Button
 
-                       bg="transparent"
+                      bg="transparent"
 
-                       border="1px"
+                      border="1px"
 
-                       borderColor="white"
+                      borderColor="white"
 
-                       color="white"
+                      color="white"
 
                        _hover={{ 
                          bg: "white",
@@ -1991,11 +1991,11 @@ const Example = ({ media, recentBlogs }) => {
 
                        transition="all 0.3s cubic-bezier(0.4, 0, 0.2, 1)"
 
-                       onClick={() => router.push('/energy-storage')}
+                      onClick={() => router.push('/energy-storage')}
 
                        className="min-h-[48px] min-w-[48px] font-medium tracking-wide"
 
-                     >
+                    >
 
 More Details
 

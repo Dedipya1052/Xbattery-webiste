@@ -423,47 +423,44 @@ export default function BharatBMSEVPage() {
             </div>
           </CustomTooltip>
         </div>
-        <div className="mx-auto w-full max-w-none py-8 md:py-16 px-3 md:px-6 flex flex-col lg:flex-row items-center justify-center h-full min-h-[460px]">
-          <div className="text-center lg:text-left p-2 md:p-4 mb-6 lg:mb-0 w-full ml-4">
-            <h1 className={`text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-6 ${classes.color} leading-[35px] sm:leading-[40px] md:leading-[50px] lg:leading-[60px] lg:whitespace-nowrap`}>
+        <div className="mx-auto w-full max-w-7xl py-8 md:py-16 px-3 md:px-6 flex flex-col lg:flex-row items-center justify-center h-full min-h-[460px]">
+          <div className="text-center lg:text-left p-2 md:p-4 mb-6 lg:mb-0 w-full lg:w-1/2">
+            <h1 className={`text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-6 ${classes.color} leading-[35px] sm:leading-[40px] md:leading-[50px] lg:leading-[60px]`}>
               {data.title}
             </h1>
-            <h2 className="text-sm sm:text-base md:text-xl leading-relaxed max-w-xl mx-auto md:mx-0 text-[#e9e9e9] px-1 md:pl-[1.5px]">
+            <h2 className="text-sm sm:text-base md:text-xl leading-relaxed max-w-xl mx-auto lg:mx-0 text-[#e9e9e9] px-1">
               {data.description}
             </h2>
           </div>
-          <div className="md:w-1/2 flex justify-start">
-            <div className="w-[100%] max-w-2xl rounded-lg bg-[#1c1c1c] h=[360px] md:h-[480px] overflow-hidden flex items-center justify-center -ml-20">
+          <div className="w-full lg:w-1/2 flex justify-center">
+            <div className="w-full max-w-lg rounded-lg bg-[#1c1c1c] h-[320px] md:h-[440px] overflow-hidden flex items-center justify-center">
               <Image 
                 src={data.image} 
                 alt={data.imageAlt} 
                 width={1000} 
                 height={600} 
-                className="object-contain w-full h-full scale-[1.18] md:scale-[1.25]" 
+                className="object-contain w-full h-full scale-[1.08] md:scale-[1.15]" 
               />
             </div>
-            </div>
           </div>
+        </div>
         </div>
       </div>
 
       <div className="bg-black text-white py-16 px-3 md:px-6 mx-auto w-full max-w-none">
-        {/* Intro paragraph (same placement as BharatBMS) */}
-        <AnimatedDiv>
-          <div className="w-[95%] lg:w-[80%] mx-auto text-center md:text-center px-2">
-            <p className="text-sm sm:text-base md:text-xl leading-relaxed mb-2">
-              {data.title} is engineered on the BharatBMS architecture: a universal high-voltage Battery Management System that scales from home energy storage to industrial and EV applications, emphasizing reliability, safety, and ease of integration.
-            </p>
-          </div>
-        </AnimatedDiv>
 
 
         {/* Features section (mirroring BharatBMS content) */}
         <div className=" py-9 px-4 md:px-6 rounded-lg mb-1">
           <AnimatedDiv>
-            <h2 className={`text-2xl md:text-3xl font-semibold mb-12 text-center ${classes.color}`}>
+            <h2 className={`text-2xl md:text-3xl font-semibold mb-8 text-center ${classes.color}`}>
               Features
             </h2>
+            <div className="max-w-[1000px] mx-auto mb-12">
+              <p className="text-sm sm:text-base md:text-lg leading-relaxed text-center text-gray-300">
+                {data.title} is engineered on the BharatBMS architecture: a universal high-voltage Battery Management System that scales from home energy storage to industrial and EV applications, emphasizing reliability, safety, and ease of integration.
+              </p>
+            </div>
           </AnimatedDiv>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-10 max-w-[1000px] mx-auto">
             {[
@@ -951,40 +948,40 @@ export default function BharatBMSEVPage() {
         <div className="py-8 px-4 md:px-6">
           <div className="w-full flex justify-end">
             <div className="flex flex-col items-center gap-2 mr-2">
-              <a
-                href="/api/download-ev"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="View brochure PDF"
-                className="inline-flex items-center justify-center w-12 h-12 rounded-lg bg-white border border-gray-200 shadow-[0_2px_8px_rgba(0,0,0,0.08)] hover:shadow-[0_4px_12px_rgba(0,0,0,0.12)] transition"
-              >
-                {/* Custom download icon with dual-color gradient stroke; button size increased */}
-                <svg
-                  width="28"
-                  height="28"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <defs>
-                    <linearGradient id="downloadGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                      <stop offset="0%" stopColor="#3B82F6" />
-                      <stop offset="100%" stopColor="#1D4ED8" />
-                    </linearGradient>
-                  </defs>
-                  <path
-                    d="M21 15V19C21 19.5304 20.7893 20.0391 20.4142 20.4142C20.0391 20.7893 19.5304 21 19 21H5C4.46957 21 3.96086 20.7893 3.58579 20.4142C3.21071 20.0391 3 19.5304 3 19V15M17 10L12 15M12 15L7 10M12 15V3"
-                    stroke="url(#downloadGradient)"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  />
-                </svg>
-              </a>
-              <span className="text-sm text-white font-medium text-center">
-                <div>PRODUCT FLYER</div>
-                <div>XBATTERY BHARATBMS-EV</div>
-              </span>
+               <a
+                 href="/api/download-ev"
+                 target="_blank"
+                 rel="noopener noreferrer"
+                 aria-label="View brochure PDF"
+                 className="inline-flex items-center justify-center w-12 h-12 rounded-lg bg-white border border-gray-200 shadow-[0_2px_8px_rgba(0,0,0,0.08)]"
+               >
+                 {/* Custom download icon with dual-color gradient stroke; button size increased */}
+                 <svg
+                   width="28"
+                   height="28"
+                   viewBox="0 0 24 24"
+                   fill="none"
+                   xmlns="http://www.w3.org/2000/svg"
+                 >
+                   <defs>
+                     <linearGradient id="downloadGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                       <stop offset="0%" stopColor="#3B82F6" />
+                       <stop offset="100%" stopColor="#1D4ED8" />
+                     </linearGradient>
+                   </defs>
+                   <path
+                     d="M21 15V19C21 19.5304 20.7893 20.0391 20.4142 20.4142C20.0391 20.7893 19.5304 21 19 21H5C4.46957 21 3.96086 20.7893 3.58579 20.4142C3.21071 20.0391 3 19.5304 3 19V15M17 10L12 15M12 15L7 10M12 15V3"
+                     stroke="url(#downloadGradient)"
+                     strokeWidth="2"
+                     strokeLinecap="round"
+                     strokeLinejoin="round"
+                   />
+                 </svg>
+               </a>
+               <span className="text-sm text-white font-medium text-center">
+                 <div className="text-white">PRODUCT FLYER</div>
+                 <div className="text-white">XBATTERY BHARATBMS-EV</div>
+               </span>
               </div>
             </div>
           </div>
