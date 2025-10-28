@@ -4,9 +4,9 @@ import path from "path";
 export default function handler(req, res) {
   try {
     // Try common locations for the PDF
-    const rootPath = path.join(process.cwd(), "bharat ev 1.pdf");
-    const publicPath = path.join(process.cwd(), "public", "bharat ev 1.pdf");
-    const parentPath = path.join(process.cwd(), "..", "bharat ev 1.pdf");
+    const rootPath = path.join(process.cwd(), "EV_Brochure V3.pdf");
+    const publicPath = path.join(process.cwd(), "public", "EV_Brochure V3.pdf");
+    const parentPath = path.join(process.cwd(), "..", "EV_Brochure V3.pdf");
 
     const filePath = [rootPath, publicPath, parentPath].find((p) => fs.existsSync(p));
     if (!filePath) {
@@ -16,7 +16,7 @@ export default function handler(req, res) {
 
     const stat = fs.statSync(filePath);
     res.setHeader("Content-Type", "application/pdf");
-    res.setHeader("Content-Disposition", 'inline; filename="bharat ev 1.pdf"');
+    res.setHeader("Content-Disposition", 'inline; filename="EV_Brochure V3.pdf"');
     res.setHeader("Content-Length", stat.size);
 
     const stream = fs.createReadStream(filePath);
