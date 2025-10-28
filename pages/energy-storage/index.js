@@ -107,7 +107,6 @@ const Example = ({ media, recentBlogs }) => {
 
   const router = useRouter();
 
-  const videoUrl1 = media?.video1?.fields?.file?.url;
 
 
 
@@ -415,10 +414,6 @@ const Example = ({ media, recentBlogs }) => {
 
   const controls = useAnimation();
 
-  const [objectPosition, setObjectPosition] = useState("object-center");
-
-
-
   const [objectPosition1, setObjectPosition1] = useState("object-right");
 
 
@@ -439,19 +434,6 @@ const Example = ({ media, recentBlogs }) => {
 
   
 
-  useEffect(() => {
-
-    const timer = setTimeout(() => {
-
-      setObjectPosition("object-right"); // After 6 seconds, change to 'object-right'
-
-    }, 6500); // 6000 milliseconds = 6 seconds
-
-
-
-    return () => clearTimeout(timer); // Cleanup the timer on component unmount
-
-  }, []);
 
 
 
@@ -777,11 +759,6 @@ const Example = ({ media, recentBlogs }) => {
 
   const videoRef3 = useRef(null);
 
-  const videoRefHero2 = useRef(null);
-
-  const hasPlayedHero2 = useRef(false);
-
-  const [showHero2Text, setShowHero2Text] = useState(true);
 
 
 
@@ -791,33 +768,17 @@ const Example = ({ media, recentBlogs }) => {
 
       entries.forEach((entry) => {
 
-        // For hero block 2: only play once
+        // Default behavior for videos
 
-        if (entry.target === videoRefHero2.current) {
-          if (entry.isIntersecting && !hasPlayedHero2.current) {
-            entry.target.currentTime = 0;
-            entry.target.play();
-            hasPlayedHero2.current = true;
-            setShowHero2Text(true); // Show text immediately
-          }
+        if (entry.isIntersecting) {
 
-          // Do NOT pause when not intersecting for hero2
+          entry.target.currentTime = 0;
+
+          entry.target.play();
 
         } else {
 
-          // Default behavior for other videos
-
-          if (entry.isIntersecting) {
-
-            entry.target.currentTime = 0;
-
-            entry.target.play();
-
-          } else {
-
-            entry.target.pause();
-
-          }
+          entry.target.pause();
 
         }
 
@@ -843,8 +804,6 @@ const Example = ({ media, recentBlogs }) => {
 
     const currentVideoRef3 = videoRef3.current;
 
-    const currentVideoRefHero2 = videoRefHero2.current;
-
 
 
     if (currentVideoRef1) observer.observe(currentVideoRef1);
@@ -852,8 +811,6 @@ const Example = ({ media, recentBlogs }) => {
     if (currentVideoRef2) observer.observe(currentVideoRef2);
 
     if (currentVideoRef3) observer.observe(currentVideoRef3);
-
-    if (currentVideoRefHero2) observer.observe(currentVideoRefHero2);
 
 
 
@@ -864,8 +821,6 @@ const Example = ({ media, recentBlogs }) => {
       if (currentVideoRef2) observer.unobserve(currentVideoRef2);
 
       if (currentVideoRef3) observer.unobserve(currentVideoRef3);
-
-      if (currentVideoRefHero2) observer.unobserve(currentVideoRefHero2);
 
     };
 
@@ -1342,69 +1297,6 @@ const Example = ({ media, recentBlogs }) => {
 
 
 
-          {/* Power Your Home 24/7 Section */}
-           <LayoutEffect
-            className="duration-1000 delay-300"
-            isInviewState={{
-              trueState: "opacity-1",
-              falseState: "opacity-0",
-            }}
-          >
-            <div className="relative w-full top-[-4rem] " id="xbattery5kwh">
-              <video
-                ref={videoRefHero2}
-                className={`w-auto h-[85vh] md:w-full md:h-auto object-cover ${objectPosition}`}
-                muted
-                playsInline
-                preload="none" // Load only metadata for better performance
-                onLoadedData={(e) => {
-                  if (e.target.readyState >= 3) {
-                    e.target.play().catch((error) => {
-                      // Silently handle autoplay failures on mobile
-                      if (error.name !== 'AbortError') {
-                        console.warn("Autoplay failed:", error);
-                      }
-                    });
-                  }
-                }}
-              >
-                <source src={`https:${videoUrl1}`} type="video/mp4" />
-                Your browser does not support the video tag.
-              </video>
-
-              {showHero2Text && (
-                <motion.div
-                  ref={ref}
-                  initial={{ x: "-100%" }}
-                  animate={{ x: isInView ? 0 : "-100%" }}
-                  transition={{ duration: 1, delay: 6 }}
-                  className="absolute top-0 md:top-0 left-0 right-0 w-full h-full flex flex-col items-center md:items-start justify-center p-4 md:p-16 space-y-2 text-left"
-                >
-                  <h1 className="text-white text-4xl lg:text-6xl text-center md:text-left font-bold">
-                    Power Your Home 24/7 
-                  </h1>
-
-                  <h2 className="text-white text-lg lg:text-2xl text-center md:text-left font-light pt-5 pl-1">
-                    High-performance lithium battery packs designed for India
-                  </h2>
-
-                  <div className=" pt-8 flex gap-7 pl-2">
-                    <Button
-                      bg="transparent"
-                      border="1px"
-                      borderColor="white"
-                      color="white"
-                      _hover={{ bg: "transparent" }}
-                      onClick={scrollToEmail}
-                      className="min-h-[48px] min-w-[48px]"
-                    >
-                      Pre-Order
-                    </Button>
-                  </div>
-                </motion.div>
-              )}
-            </div>
-          </LayoutEffect>
 
           {/* Capacity As Per Your Needs */}
 

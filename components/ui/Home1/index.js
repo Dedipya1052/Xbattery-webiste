@@ -1965,23 +1965,37 @@ const Example = ({ media, recentBlogs }) => {
 
                   <div className=" pt-8 flex gap-7 pl-2">
 
-                    <Button
+                     <Button
 
-                      bg="transparent"
+                       bg="transparent"
 
-                      border="1px"
+                       border="1px"
 
-                      borderColor="white"
+                       borderColor="white"
 
-                      color="white"
+                       color="white"
 
-                      _hover={{ bg: "transparent" }}
+                       _hover={{ 
+                         bg: "white",
+                         borderColor: "rgba(255, 255, 255, 0.8)",
+                         color: "black",
+                         transform: "translateY(-2px)",
+                         boxShadow: "0 4px 12px rgba(0, 0, 0, 0.15)"
+                       }}
 
-                      onClick={() => router.push('/energy-storage')}
+                       _active={{
+                         transform: "translateY(0px)",
+                         boxShadow: "0 2px 6px rgba(0, 0, 0, 0.1)",
+                         bg: "rgba(255, 255, 255, 0.95)"
+                       }}
 
-                      className="min-h-[48px] min-w-[48px]"
+                       transition="all 0.3s cubic-bezier(0.4, 0, 0.2, 1)"
 
-                    >
+                       onClick={() => router.push('/energy-storage')}
+
+                       className="min-h-[48px] min-w-[48px] font-medium tracking-wide"
+
+                     >
 
 More Details
 

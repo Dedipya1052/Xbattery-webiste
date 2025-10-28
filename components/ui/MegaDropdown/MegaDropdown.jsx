@@ -83,7 +83,7 @@ const MegaDropdown = ({ isOpen, onClose, onMouseEnter, onMouseLeave, pageType = 
   };
 
   const evContent = {
-    title: "BharatBMS for Electric Vehicles",
+    title: "BharatBMS for EVs",
     sections: [
       {
         name: "Xbattery BharatBMS-EV-110V",
@@ -161,7 +161,7 @@ const MegaDropdown = ({ isOpen, onClose, onMouseEnter, onMouseLeave, pageType = 
               }}
               onMouseEnter={() => setActiveCategory('ev')}
             >
-              BharatBMS for Electric Vehicles
+              BharatBMS for EVs
             </div>
           </div>
         </div>
