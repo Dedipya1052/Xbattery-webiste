@@ -87,15 +87,41 @@ export default function BharatBMSEVPage() {
     const handleHashNavigation = () => {
       const hash = window.location.hash.substring(1);
       if (hash) {
-        setTimeout(() => {
+        const scrollToElement = () => {
           const element = document.getElementById(hash);
           if (element) {
-            const headerOffset = 80;
-            const elementPosition = element.getBoundingClientRect().top;
-            const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
-            window.scrollTo({ top: offsetPosition, behavior: 'smooth' });
+            try {
+              const headerOffset = 80;
+              const elementPosition = element.getBoundingClientRect().top;
+              const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+              window.scrollTo({ top: offsetPosition, behavior: 'smooth' });
+              return true;
+            } catch (error) {
+              // Fallback to scrollIntoView if scrollTo fails
+              try {
+                element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                return true;
+              } catch (fallbackError) {
+                console.warn('Both scrollTo and scrollIntoView failed:', fallbackError);
+                return false;
+              }
+            }
           }
-        }, 100);
+          return false;
+        };
+
+        // Try immediately first
+        if (!scrollToElement()) {
+          // If element not found, try with increasing delays
+          const delays = [200, 500, 1000, 2000];
+          delays.forEach((delay, index) => {
+            setTimeout(() => {
+              if (!scrollToElement() && index === delays.length - 1) {
+                console.warn(`Element with id "${hash}" not found after ${delay}ms`);
+              }
+            }, delay);
+          });
+        }
       }
     };
 
@@ -109,6 +135,29 @@ export default function BharatBMSEVPage() {
       window.removeEventListener('hashchange', handleHashNavigation);
     };
   }, []);
+
+  // Additional hash navigation handler for router changes
+  useEffect(() => {
+    const handleRouteChange = () => {
+      const hash = router.asPath.split('#')[1];
+      if (hash) {
+        setTimeout(() => {
+          const element = document.getElementById(hash);
+          if (element) {
+            const headerOffset = 80;
+            const elementPosition = element.getBoundingClientRect().top;
+            const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+            window.scrollTo({ top: offsetPosition, behavior: 'smooth' });
+          }
+        }, 300);
+      }
+    };
+
+    router.events.on('routeChangeComplete', handleRouteChange);
+    return () => {
+      router.events.off('routeChangeComplete', handleRouteChange);
+    };
+  }, [router]);
 
   // Robust smooth scroll handling for pinned sections
   useEffect(() => {
@@ -421,6 +470,9 @@ export default function BharatBMSEVPage() {
               { title: "Safety Features", description: "ISO 26262 compliant protection for voltage, current, and temperature with fault diagnostics." },
               { title: "Cell Monitoring & Balancing", description: "Supports up to 18 series cells with passive balancing for equalization. Voltage accuracy: ±2mV." },
               { title: "Diagnostics and Monitoring", description: "Real-time data visualization and lifecycle analytics for better battery management." },
+              { title: "Thermal Management", description: "Real-time temperature sensing and thermal runaway detection for high-temperature control." },
+              { title: "Scalability", description: "Modular architecture supports series and parallel setups for larger energy storage needs." },
+              { title: "Communication & Control", description: "CAN FD, UART, SPI, and Ethernet for real-time processing and remote monitoring." },
             ].map((feature, index) => (
               <AnimatedDiv key={index}>
                 <div className="bg-[#0E0E10] border border-[#2E31F81A] rounded-3xl h-[350px] flex flex-col shadow-lg relative overflow-hidden">
@@ -444,6 +496,30 @@ export default function BharatBMSEVPage() {
                         <Image
                           src="/images/icons/f13.svg"
                           alt="Diagnostics and Monitoring"
+                          fill
+                          className="object-contain -mt-16"
+                        />
+                  )}
+                  {index === 3 && (
+                        <Image
+                          src="/images/icons/f14.svg"
+                          alt="Thermal Management"
+                          fill
+                          className="object-contain -mt-16"
+                        />
+                  )}
+                  {index === 4 && (
+                        <Image
+                          src="/images/icons/f15.svg"
+                          alt="Scalability"
+                          fill
+                          className="object-contain -mt-16"
+                        />
+                  )}
+                  {index === 5 && (
+                        <Image
+                          src="/images/icons/f16.svg"
+                          alt="Communication & Control"
                           fill
                           className="object-contain -mt-16"
                         />
