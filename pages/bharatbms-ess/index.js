@@ -91,10 +91,10 @@ export default function BharatBMSESSPage() {
           const element = document.getElementById(hash);
           if (element) {
             try {
-              const headerOffset = 80;
-              const elementPosition = element.getBoundingClientRect().top;
-              const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
-              window.scrollTo({ top: offsetPosition, behavior: 'smooth' });
+            const headerOffset = 80;
+            const elementPosition = element.getBoundingClientRect().top;
+            const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+            window.scrollTo({ top: offsetPosition, behavior: 'smooth' });
               return true;
             } catch (error) {
               // Fallback to scrollIntoView if scrollTo fails
@@ -440,8 +440,8 @@ export default function BharatBMSESSPage() {
                 className="object-contain w-full h-full scale-[1.08] md:scale-[1.15]" 
               />
             </div>
+            </div>
           </div>
-        </div>
         </div>
       </div>
 
@@ -967,40 +967,40 @@ export default function BharatBMSESSPage() {
         <div className="py-8 px-4 md:px-6">
           <div className="w-full flex justify-end">
             <div className="flex flex-col items-center gap-2 mr-2">
-                <a
-                  href="/api/download-ess"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label="View brochure PDF"
+              <a
+                href="/api/download-ess"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="View brochure PDF"
                   className="inline-flex items-center justify-center w-12 h-12 rounded-lg bg-white border border-gray-200 shadow-[0_2px_8px_rgba(0,0,0,0.08)]"
+              >
+                {/* Custom download icon with dual-color gradient stroke; button size increased */}
+                <svg
+                  width="28"
+                      height="28"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
                 >
-                 {/* Custom download icon with dual-color gradient stroke; button size increased */}
-                 <svg
-                   width="28"
-                   height="28"
-                   viewBox="0 0 24 24"
-                   fill="none"
-                   xmlns="http://www.w3.org/2000/svg"
-                 >
-                        <defs>
-                          <linearGradient id="downloadGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                            <stop offset="0%" stopColor="#3B82F6" />
-                            <stop offset="100%" stopColor="#1D4ED8" />
-                          </linearGradient>
-                        </defs>
-                       <path
-                         d="M21 15V19C21 19.5304 20.7893 20.0391 20.4142 20.4142C20.0391 20.7893 19.5304 21 19 21H5C4.46957 21 3.96086 20.7893 3.58579 20.4142C3.21071 20.0391 3 19.5304 3 19V15M17 10L12 15M12 15L7 10M12 15V3"
-                         stroke="url(#downloadGradient)"
-                         strokeWidth="2"
-                         strokeLinecap="round"
-                         strokeLinejoin="round"
-                       />
-                 </svg>
-               </a>
-                    <span className="text-sm text-white font-medium text-center">
+                      <defs>
+                        <linearGradient id="downloadGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                          <stop offset="0%" stopColor="#3B82F6" />
+                          <stop offset="100%" stopColor="#1D4ED8" />
+                        </linearGradient>
+                      </defs>
+                      <path
+                        d="M21 15V19C21 19.5304 20.7893 20.0391 20.4142 20.4142C20.0391 20.7893 19.5304 21 19 21H5C4.46957 21 3.96086 20.7893 3.58579 20.4142C3.21071 20.0391 3 19.5304 3 19V15M17 10L12 15M12 15L7 10M12 15V3"
+                        stroke="url(#downloadGradient)"
+                        strokeWidth="2"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      />
+                </svg>
+              </a>
+                  <span className="text-sm text-white font-medium text-center">
                       <div className="text-white">PRODUCT FLYER</div>
                       <div className="text-white">XBATTERY BHARATBMS-ESS</div>
-                    </span>
+                  </span>
               </div>
             </div>
           </div>

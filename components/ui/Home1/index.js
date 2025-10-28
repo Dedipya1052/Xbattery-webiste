@@ -2515,7 +2515,7 @@ More Details
 
                       <div className="bg-[#181818] rounded-lg overflow-hidden cursor-pointer transition-transform duration-300 hover:scale-[1.01] h-full flex flex-col">
 
-                        <div className="relative h-48 md:h-52 lg:h-50 xl:h-55 2xl:h-60 overflow-hidden">
+                        <div className="relative h-48 md:h-52 lg:h-50 xl:h-55 2xl:h-60 overflow-hidden bg-white">
 
                           {blog.thumbnail && blog.thumbnail.fields && blog.thumbnail.fields.file && (
 
@@ -2527,9 +2527,9 @@ More Details
 
                               layout="fill"
 
-                              objectFit="cover"
-
+                              objectFit="contain"
                               className="transition-transform duration-500 hover:scale-[1.02]"
+                              style={{ transform: 'scale(0.9)' }}
 
                             />
 

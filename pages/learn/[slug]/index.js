@@ -376,9 +376,11 @@ export default function BlogPage({ blog, articles }) {
             <div dangerouslySetInnerHTML={{ __html: contentMatch }} />
           </div>
         )}
-        {/* Related Articles */}
-        <RelatedArticles articles={articles} currentSlug={slug} />
+
       </div>
+      <div className="bg-black h-[0.7px] w-[90%] mx-auto mt-[5rem] mb-[6rem]"></div>
+      {/* Related Articles */}
+      <RelatedArticles articles={articles} currentSlug={slug} />
       {/* <div className="bg-black h-[0.7px] w-[90%] mx-auto mt-[5rem] mb-[6rem]"></div> */}
       {/* <TopBlogs blogs={blogs} slug={slug}/> */}
       {/* <TopBlogs blogs={blogs} slug={slug}/> */}

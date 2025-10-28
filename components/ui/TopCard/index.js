@@ -26,7 +26,15 @@ export default function Card({ blog }) {
             </div>
           </div>
           <div className={styles.categories}>
-            {categories.slice(0,2).map((category) => (
+            {categories
+              .filter(category => {
+                // Remove "Battery Management Systems (BMS)" tag from the "How AI is Shaping Safer EV Batteries" article
+                if (title && title.toLowerCase().includes('how ai is shaping safer ev batteries')) {
+                  return category !== 'Battery Management Systems (BMS)';
+                }
+                return true;
+              })
+              .slice(0,2).map((category) => (
               <span key={category} className={styles.category}>
                 #{category}
               </span>

@@ -22,20 +22,11 @@
   grid-template-columns: repeat(3, 1fr); 
   gap: 25px; 
   justify-content: center; 
+
+  justify-items: center;
   padding: 1.25rem; 
 }
 
-/* Center single card */
-.single_card {
-  grid-template-columns: 1fr !important;
-  justify-items: center;
-}
-
-/* Center two cards */
-.two_cards {
-  grid-template-columns: repeat(2, 1fr) !important;
-  justify-items: center;
-}
 @media (min-width:650px) and (max-width:1024px) {
   .wrapper{
     width: 90%;
@@ -43,12 +34,7 @@
   .card_grid {
     grid-template-columns: repeat(2, 1fr); 
   }
-  .single_card {
-    grid-template-columns: 1fr !important;
-  }
-  .two_cards {
-    grid-template-columns: repeat(2, 1fr) !important;
-  }
+
 }
 @media (max-width:650px) {
   .wrapper{
@@ -57,12 +43,9 @@
   .card_grid {
     grid-template-columns: repeat(1, 1fr); 
   }
-  .single_card {
-    grid-template-columns: 1fr !important;
-  }
-  .two_cards {
-    grid-template-columns: repeat(1, 1fr) !important;
-  }
+
+=======
+
 }
 
 .link {
@@ -96,7 +79,24 @@
   
   @media (min-width:1600px) {
     .card {
-      width:auto;
+
+      width: 480px;
+      height: 380px;
+    }
+  }
+  @media (min-width:3000px) {
+    .card {
+      width: 600px !important;
+      height: 450px !important;
+      max-width: 600px;
+      max-height: 450px;
+    }
+    .card_grid {
+      max-width: 2000px;
+      margin: 0 auto;
+      justify-content: center;
+      justify-items: center;
+
     }
   }
   @media (min-width:1024px) and (max-width:1210px) {
@@ -140,7 +140,16 @@
   .card img {
     width: 100%;
     height: 60%; 
-    object-fit: cover;
+
+    object-fit: contain;
+    background-color: white;
+  }
+  
+  .card .imageContainer {
+    background-color: white;
+    width: 100%;
+    height: 60%;
+
   }
   
   .content{

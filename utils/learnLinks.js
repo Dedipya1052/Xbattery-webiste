@@ -22,6 +22,7 @@ export const electricVehicles = [
   { name: "Indian EV Market", link: "/learn/indian-ev-market" },
   { name: "EVs and the Environment", link: "/learn/understanding-the-impact-of-electric-vehicles-on-the-environment" },
   { name: "Hydrogen vs Electric Cars", link: "/learn/hydrogen-vs-electric-cars" },
+  
 ];
 
 export const electricity = [
@@ -108,7 +109,6 @@ export const technology = [
   {
     name: "Smart Battery Systems",
     link: "/learn/iot-enabled-battery-monitoring",
-
 
   },
   {

@@ -3,6 +3,7 @@ import ThinBanner from "@/components/ui/ThinBanner";
 import { createClient } from "contentful";
 import { useRouter } from "next/router";
 import Head from "next/head";
+import FAQSchema from "@/components/ui/FAQSchema";
 
 // Fetch home content
 async function fetchHomeContent() {
@@ -54,17 +55,40 @@ export async function getServerSideProps() {
       subtitle: blog.fields.subtitle
     }));
 
-  
+  // Homepage FAQ data
+  const homeFAQs = [
+    {
+      question: "What is Xbattery BMS?",
+      answer: "Xbattery BMS is India's first unified Battery Management System for Energy Storage & EVs, integrating electronics and software to provide affordable and reliable energy solutions."
+    },
+    {
+      question: "What services does Xbattery provide?",
+      answer: "Xbattery provides advanced battery packs, energy storage systems, and India's first unified BMS for EVs, renewable energy, and smart grid integration."
+    },
+    {
+      question: "How does Xbattery help with energy storage?",
+      answer: "Xbattery builds lithium battery packs in India, integrating electronics and software to help businesses, EVs, and grids store and access energy affordably."
+    },
+    {
+      question: "What makes Xbattery different from other BMS providers?",
+      answer: "Xbattery offers India's first unified BMS solution that works across different applications - from electric vehicles to renewable energy storage and smart grid integration."
+    },
+    {
+      question: "Does Xbattery provide solutions for electric vehicles?",
+      answer: "Yes, Xbattery provides unified BMS solutions specifically designed for electric vehicles, ensuring optimal performance and safety of EV battery systems."
+    }
+  ];
 
   return {
     props: {
       media: homeMedia,
       recentBlogs,
+      homeFAQs,
     },
   };
 }
 
-export default function Home({ media, recentBlogs }) {
+export default function Home({ media, recentBlogs, homeFAQs }) {
   return (
     <>
       <Head>
@@ -131,6 +155,10 @@ export default function Home({ media, recentBlogs }) {
         <meta property="og:site_name" content="XBattery" />
         <meta property="article:author" content="XBattery Team" />
       </Head>
+      
+      {/* FAQ Schema for SEO */}
+      <FAQSchema faqs={homeFAQs} />
+      
       {/* Site-wide notification banner above navbar (home theme, above nav) */}
       <ThinBanner topClass="top-0" theme="home" withSpacer />
       <Example media={media} recentBlogs={recentBlogs} /> 

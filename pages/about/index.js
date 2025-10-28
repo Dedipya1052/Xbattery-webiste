@@ -436,7 +436,7 @@ const About = () => {
                       Make Xbattery the best chapter of your career.
                     </p>
                     <Link href="/careers">
-                      <button className="bg-white text-black py-2 px-6 rounded-full font-semibold transition hover:bg-gray-300">
+                      <button className="bg-white text-black py-2 px-6 rounded-full font-semibold transition hover:bg-gray-300 mt-1">
                         View Open Opportunities
                       </button>
                     </Link>

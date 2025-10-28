@@ -96,6 +96,7 @@
   object-fit: cover; /* Prevent distortion and ensure proper image fit */
   margin: 2rem auto;
   border-radius: 10px;
+  border: 0.8px solid black;
 }
 
 @media (min-width:500px) and (max-width: 900px) {
@@ -106,6 +107,7 @@
     object-fit: contain;
     min-height: 150px; 
     max-height: 400px;
+    border: 0.8px solid black;
   }
 }
 
@@ -118,6 +120,7 @@
     object-fit: contain;
     min-height: 150px; 
     max-height: 400px;
+    border: 0.8px solid black;
   }
 }
 
@@ -128,6 +131,7 @@
   object-fit: contain;
   margin: 2rem auto;
   border-radius: 5px;
+  border: 0.8px solid black;
 }
 
 @media (max-width:550px) {
@@ -138,6 +142,7 @@
     object-fit: contain;
     margin: 1rem auto;
     border-radius: 5px;
+    border: 0.8px solid black;
   }
 }
 
@@ -194,7 +199,7 @@
 }
 
 .blogholder {
-  display: flex;
+  display: block;
   margin-top: "-2rem";
 }
 

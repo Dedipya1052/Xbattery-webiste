@@ -139,7 +139,7 @@
     scale: 1.01;
   }
   .blogholder{
-    display: flex;
+    display: block;
     margin-top: "-2rem";
   }
   .blog{

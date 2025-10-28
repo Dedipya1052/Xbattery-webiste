@@ -60,7 +60,8 @@
   .card img {
     width: 100%;
     height: 60%; 
-    object-fit: cover;
+    object-fit: contain;
+    background-color: white;
   }
   .content{
     border-top: 0.8px solid rgb(36, 36, 36);

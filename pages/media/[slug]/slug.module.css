@@ -250,7 +250,7 @@
 }
 
 .blogholder {
-  display: flex;
+  display: block;
   margin-top: "-2rem";
 }
 

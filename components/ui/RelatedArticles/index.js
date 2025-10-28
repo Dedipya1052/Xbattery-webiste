@@ -30,13 +30,10 @@ export default function RelatedArticles({ articles = [], currentSlug }) {
     return null;
   }
 
-  // Determine grid class based on number of articles
+
+  // Use standard grid class like blog page
   const getGridClass = () => {
-    if (randomThreeArticles.length === 1) {
-      return `${styles.card_grid} ${styles.single_card}`;
-    } else if (randomThreeArticles.length === 2) {
-      return `${styles.card_grid} ${styles.two_cards}`;
-    }
+
     return styles.card_grid;
   };
 
@@ -67,14 +64,61 @@ export default function RelatedArticles({ articles = [], currentSlug }) {
                   </div>
                 </div>
                 <div className={styles.categories}>
-                  {article.categories && article.categories.slice(0,2).map((category) => (
-                    <span key={category} className={styles.category}>
-                      #{category}
+
+                  {/* Special handling for IoT-Enabled Battery Monitoring article */}
+                  {article.title?.toLowerCase().includes('iot-enabled battery monitoring') ? (
+                    <span className={styles.category}>
+                      #Internet of Things
                     </span>
-                  ))}
+                  ) : article.title?.toLowerCase().includes('cybersecurity threats in smart battery systems') ? (
+                    <span className={styles.category}>
+                      #Cybersecurity
+                    </span>
+                  ) : (
+                    article.categories && article.categories
+                      .filter(category => {
+                        // Remove "Environmental Sustainability" tag from the specific EV environment article
+                        if (article.title && article.title.toLowerCase().includes('understanding the impact of electric vehicles on the environment')) {
+                          return category !== 'Environmental Sustainability';
+                        }
+                        // Remove "Battery Management Systems" tag from the BMS Architecture article
+                        if (article.title && article.title.toLowerCase().includes('the complete guide to bms architecture')) {
+                          return category !== 'Battery Management Systems';
+                        }
+                        // Remove "Battery Technology" tag from the Active vs Passive Cell Balancing article
+                        if (article.title && article.title.toLowerCase().includes('active vs passive cell balancing')) {
+                          return category !== 'Battery Technology';
+                        }
+                        // Remove "Smart Energy Management" tag from the Best Battery Management System article
+                        if (article.title && article.title.toLowerCase().includes('best battery management system for lithium-ion batteries')) {
+                          return category !== 'Smart Energy Management';
+                        }
+                        // Show only relevant tags for the BIS Standards article (filter out unwanted tags)
+                        if (article.title && article.title.toLowerCase().includes('navigating bis standards for battery systems')) {
+                          // Remove only "Energy Storage Safety" tag, allow "BIS Compliance Guidelines" and others
+                          return category !== 'Energy Storage Safety';
+                        }
+                        // Remove "Renewable Energy Integration" tag from the Digital Twins article
+                        if (article.title && article.title.toLowerCase().includes('digital twins for battery management')) {
+                          return category !== 'Renewable Energy Integration';
+                        }
+                        // Remove "Digital Transformation in Energy" tag from the AI Battery Life Prediction article
+                        if (article.title && article.title.toLowerCase().includes('how ai is revolutionizing battery life prediction')) {
+                          return category !== 'Digital Transformation in Energy';
+                        }
+                        return true;
+                      })
+                      .slice(0,2).map((category) => (
+                      <span key={category} className={styles.category}>
+                        #{category}
+                      </span>
+                    ))
+                  )}
                 </div>
               </div>
             </Link>
+            
+
           </motion.div>
         ))}
       </div>
